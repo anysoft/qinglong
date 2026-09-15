@@ -123,8 +123,6 @@ class CronItem(TypedDict, total=False):
     labels: List[str]
     sub_id: Optional[int]
     extra_schedules: List[ExtraScheduleItem]
-    task_before: Optional[str]
-    task_after: Optional[str]
     status: Optional[int]
     log_path: Optional[str]
     pid: Optional[int]
@@ -139,8 +137,6 @@ class CreateCronParams(TypedDict):
     labels: List[str]
     sub_id: Optional[int]
     extra_schedules: List[ExtraScheduleItem]
-    task_before: Optional[str]
-    task_after: Optional[str]
 
 
 class UpdateCronParams(TypedDict):
@@ -151,8 +147,6 @@ class UpdateCronParams(TypedDict):
     labels: List[str]
     sub_id: Optional[int]
     extra_schedules: List[ExtraScheduleItem]
-    task_before: Optional[str]
-    task_after: Optional[str]
 
 
 class DeleteCronsParams(TypedDict):

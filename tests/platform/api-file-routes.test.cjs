@@ -41,7 +41,7 @@ mockModule('../../back/config/util', {
 mockModule('../../back/shared/utils', {
   writeFileWithLock: async () => {},
 });
-for (const service of ['config', 'script', 'log']) {
+for (const service of ['script', 'log']) {
   mockModule(`../../back/services/${service}`, {
     __esModule: true,
     default: class {},
@@ -53,7 +53,6 @@ mockModule('../../back/data/runningInstance', {
 });
 
 const deprecatedRoutes = [
-  ['config', '/configs/detail'],
   ['script', '/scripts/detail'],
   ['log', '/logs/detail'],
 ];
@@ -70,3 +69,5 @@ for (const [moduleName, replacement] of deprecatedRoutes) {
     assert.ok(router.stack.some(layer => layer.route?.path === '/detail'));
   });
 }
+
+test('arbitrary Config editor has no public controller or service',()=>{const fs=require('node:fs');assert.equal(fs.existsSync('back/api/config.ts'),false);assert.equal(fs.existsSync('back/services/config.ts'),false);});

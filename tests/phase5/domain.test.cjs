@@ -1,0 +1,53 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs/promises'),path=require('node:path');
+const {fixture}=require('./helpers.cjs');
+const binding=(asset,extra={})=>({asset_id:asset.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true,...extra});
+const hook=(extra={})=>({name:'before',phase:'BEFORE',command:'echo before',cwd_base:'TASK_CWD',position:10,timeout_seconds:60,failure_policy:'FAIL_EXECUTION',enabled:true,...extra});
+test('immutable revisions, optimistic edits, private storage, Secret response and downgrade protection',async t=>{
+ const h=await fixture(t),service=new(h.load('back/services/configAsset.ts').default)();
+ const a=await service.save({name:'../logical name',is_secret:false,content:'first 🌱'}),r1=(await service.revisions(a.id))[0].get({plain:true});
+ const a2=await service.save({...a,expected_version:a.version,content:'second'});assert.notEqual(a2.current_revision_id,a.current_revision_id);
+ assert.equal((await service.readRevision(r1)).toString(),'first 🌱');assert.equal(await service.content(a.id),'second');
+ assert.equal((await fs.stat(path.join(service.root,r1.storage_key))).mode&0o777,0o400);
+ await assert.rejects(service.save({...a,expected_version:a.version,content:'stale'}),{code:'CONFIG_EDIT_CONFLICT'});
+ const secret=await service.save({name:'secret',is_secret:true,content:'UNIQUE_SECRET_CONTENT'});
+ await assert.rejects(service.content(secret.id),{code:'SECRET_CONTENT_UNAVAILABLE'});
+ assert.ok(!JSON.stringify(await service.list()).includes('UNIQUE_SECRET_CONTENT'));
+ await assert.rejects(service.save({...secret,expected_version:secret.version,is_secret:false}),{code:'CONFIG_SECRET_DOWNGRADE_FORBIDDEN'});
+ const keep=await service.save({...secret,expected_version:secret.version,description:'metadata only'});assert.equal(keep.current_revision_id,secret.current_revision_id);
+ for(const content of ['\ud800','a'.repeat(1024*1024+1)])await assert.rejects(service.save({name:'bad',is_secret:false,content}),{code:'CONFIG_CONTENT_INVALID'});
+ const original=h.ConfigAssetRevisionModel.create;h.ConfigAssetRevisionModel.create=async()=>{throw Error('injected');};
+ await assert.rejects(service.save({...a2,expected_version:a2.version,content:'failed'}),{code:'CONFIG_SAVE_FAILED'});h.ConfigAssetRevisionModel.create=original;
+ assert.equal(await service.content(a.id),'second');assert.equal((await service.revisions(a.id)).length,2);
+ await service.save({...a2,expected_version:a2.version,content:'retry'});
+ const outcomes=await Promise.allSettled([1,2].map(i=>service.save({...keep,expected_version:keep.version,content:`parallel${i}`})));assert.equal(outcomes.filter(x=>x.status==='fulfilled').length,1);
+});
+test('Repository inheritance, Task override/MASK, normalized uniqueness, disabled and manual bindings, references and cascades',async t=>{
+ const h=await fixture(t),assets=new(h.load('back/services/configAsset.ts').default)(),configs=new(h.load('back/services/taskConfig.ts').default)();
+ const a=await assets.save({name:'repo',is_secret:false,content:'repo'}),b=await assets.save({name:'task',is_secret:false,content:'task'});
+ const repo=await h.RepositoryModel.create({name:'fixture',provider:'GENERIC',remote_url:'https://example.invalid/repo.git',normalized_url:'https://example.invalid/repo.git'}),sub=await h.SubscriptionModel.create({name:'sub',repository_id:repo.id}),task=await h.CrontabModel.create({command:'task subscription-1/main.sh',sub_id:sub.id});
+ await configs.save('repository',repo.id,binding(a));assert.equal((await configs.preview(task.id))[0].source,'REPOSITORY');
+ let override=await configs.save('task',task.id,binding(b));assert.equal((await configs.preview(task.id))[0].asset_id,b.id);
+ override=await configs.save('task',task.id,{...override,operation:'MASK',expected_version:override.version});assert.equal((await configs.preview(task.id)).length,0);
+ override=await configs.save('task',task.id,{...override,enabled:false,expected_version:override.version});assert.equal((await configs.preview(task.id))[0].asset_id,a.id);
+ await assert.rejects(assets.remove(a.id,a.version),{code:'CONFIG_ASSET_IN_USE'});
+ await assert.rejects(configs.save('repository',repo.id,binding(b)));
+ await configs.save('repository',repo.id,binding(a,{target_path:'cafe\u0301.json'}));await assert.rejects(configs.save('repository',repo.id,binding(a,{target_path:'café.json'})));
+ const manual=await h.CrontabModel.create({command:'task manual.sh'});await configs.save('task',manual.id,binding(b));assert.equal((await configs.preview(manual.id))[0].source,'TASK');
+ await manual.destroy();assert.equal(await h.TaskConfigBindingModel.count({where:{task_id:manual.id}}),0);
+ await repo.update({storage_state:'DELETING'});await assert.rejects(configs.save('repository',repo.id,binding(b,{target_path:'new'})),{code:'CONFIG_OWNER_DELETING'});
+});
+test('Hook CRUD, stable order, transactional reorder conflict rollback and Task cascade',async t=>{
+ const h=await fixture(t),service=new(h.load('back/services/taskHooks.ts').default)(),task=await h.CrontabModel.create({command:'task main.sh'});
+ const a=await service.save(task.id,hook()),b=await service.save(task.id,hook({name:'second',position:20}));
+ await service.reorder(task.id,[{id:a.id,position:20,version:a.version},{id:b.id,position:10,version:b.version}]);
+ let rows=(await service.list(task.id)).map(x=>x.get({plain:true}));assert.deepEqual(rows.map(x=>x.id),[b.id,a.id]);
+ await assert.rejects(service.reorder(task.id,rows.map(x=>({id:x.id,position:30,version:x.version}))));
+ assert.deepEqual((await service.list(task.id)).map(x=>x.get('position')),[10,20]);
+ await assert.rejects(service.save(task.id,{...a,expected_version:a.version}),{code:'HOOK_EDIT_CONFLICT'});
+ await task.destroy();assert.equal(await h.TaskHookModel.count(),0);
+});
+module.exports={binding,hook};
+test('uncommitted revision directory is retained and next edit allocates a fresh immutable path',async t=>{
+ const h=await fixture(t),assets=new(h.load('back/services/configAsset.ts').default)();const a=await assets.save({name:'orphan',is_secret:false,content:'first'}),orphan=path.join(assets.root,`asset-${a.id}/revisions/2`);await fs.mkdir(orphan);await fs.writeFile(path.join(orphan,'content'),'uncommitted evidence');
+ await assets.save({...a,expected_version:a.version,content:'next'});assert.equal((await assets.revisions(a.id))[0].get('revision_number'),3);assert.equal(await fs.readFile(path.join(orphan,'content'),'utf8'),'uncommitted evidence');assert.equal(await assets.content(a.id),'next');
+});

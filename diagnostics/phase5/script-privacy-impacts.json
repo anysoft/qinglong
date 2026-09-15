@@ -1,0 +1,16 @@
+[
+  {
+    "file": "back/api/script.ts",
+    "name": "back/api/script.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/script.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/script.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/script.ts",
+    "name": "isPathAllowed",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/api/script.ts:isPathAllowed\",\n    \"name\": \"isPathAllowed\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/api/script.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 3,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1,\n    \"2\": 1,\n    \"3\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/api/script.ts\",\n        \"name\": \"script.ts\",\n        \"filePath\": \"back/api/script.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ],\n    \"2\": [\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/api/index.ts\",\n        \"name\": \"index.ts\",\n        \"filePath\": \"back/api/index.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ],\n    \"3\": [\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/loaders/express.ts\",\n        \"name\": \"express.ts\",\n        \"filePath\": \"back/loaders/express.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

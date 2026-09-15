@@ -4,6 +4,10 @@ Locks remain held until a Git child is reaped, including controller disconnect.
 """
 import fcntl, json, os, selectors, signal, subprocess, sys, time
 
+# Isolated Python ignores PYTHONPATH; only import our installed helper directory.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from process_group import signal_group
+
 closing = False
 buffer = b''
 fds = []
@@ -62,7 +66,7 @@ def run(request):
                         overflow=True; output={'stdout':bytearray(),'stderr':bytearray()}; code=125; break
             if overflow or (child.poll() is not None and len(selector.get_map()) == 1): break
         if closing or code is not None:
-            try: os.killpg(child.pid, signal.SIGKILL)
+            try: signal_group(child.pid, signal.SIGKILL)
             except ProcessLookupError: pass
         result = child.wait()
         selector.close()
@@ -72,7 +76,7 @@ def run(request):
     finally:
         if child:
             # Reap any descendants before releasing advisory locks.
-            try: os.killpg(child.pid, signal.SIGKILL)
+            try: signal_group(child.pid, signal.SIGKILL)
             except ProcessLookupError: pass
             child.wait()
 

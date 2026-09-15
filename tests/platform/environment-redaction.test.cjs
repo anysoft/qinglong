@@ -9,7 +9,7 @@ test('streaming secret redaction preserves UTF-8 and masks literal and JSON-esca
   t.after(() => fs.rm(directory, { recursive: true, force: true }));
   const secret = 'a.[秘密]\n"token"';
   await fs.writeFile(path.join(directory, 'snapshot.json'), JSON.stringify({secretNames: ['TOKEN'], variables: { TOKEN: secret }}));
-  const child = spawn(process.execPath, ['shell/task_env_redact.cjs'], {env: {...process.env, QL_TASK_ENV_SNAPSHOT: directory}});
+  const child = spawn(process.execPath, ['tests/phase5/redaction-stream.cjs'], {env: {...process.env, QL_TASK_ENV_SNAPSHOT: directory}});
   let result = '';
   child.stdout.setEncoding('utf8');
   child.stdout.on('data', chunk => result += chunk);

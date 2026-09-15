@@ -5,7 +5,7 @@ test('real ID-to-SQLite shell bridge resolves current config, cleans per-run fil
   const h = await setup({ after: fn => t.after(fn), fileDatabase: true });
   const repo = await h.RepositoryModel.create({ name: 'bridge', provider: 'generic', remote_url: 'https://bridge.invalid/a', normalized_url: 'bridge.invalid/a' });
   const sub = await h.SubscriptionModel.create({ name: 'bridge', repository_id: repo.id });
-  const task = await h.CrontabModel.create({ command: 'task bridge.sh', sub_id: sub.id });
+  const task = await h.CrontabModel.create({ command: 'task subscription-1/bridge.sh', sub_id: sub.id });
   const p = await h.profiles.save({ repository_id: repo.id, name: 'prod', is_default: true });
   await h.variables.save('repository', p.id, [{ name: 'BRIDGE_TOKEN', value: 'bridge-private', is_secret: true }]); 
   fs.mkdirSync(path.join(h.dir, 'data/db'), { recursive: true });
@@ -13,8 +13,9 @@ test('real ID-to-SQLite shell bridge resolves current config, cleans per-run fil
   fs.mkdirSync(path.join(h.dir, 'static'), { recursive: true });
   fs.symlinkSync(path.join(h.root, 'static/build'), path.join(h.dir, 'static/build'));
   fs.writeFileSync(path.join(h.dir, '.env'), '');
-  fs.writeFileSync(path.join(h.dir, 'data/scripts/bridge.sh'), '[[ "$BRIDGE_TOKEN" == "bridge-private" ]] || exit 7\nprintf "BRIDGE_PASS\\n%s\\n" "$BRIDGE_TOKEN"');
-  const run = (id = String(task.id), file = 'bridge.sh') => new Promise((resolve, reject) => {
+  fs.mkdirSync(path.join(h.dir, 'data/scripts/subscription-1'));
+  fs.writeFileSync(path.join(h.dir, 'data/scripts/subscription-1/bridge.sh'), '[[ "$BRIDGE_TOKEN" == "bridge-private" ]] || exit 7\nprintf "BRIDGE_PASS\\n%s\\n" "$BRIDGE_TOKEN"');
+  const run = (id = String(task.id), file = 'subscription-1/bridge.sh') => new Promise((resolve, reject) => {
     const cp = spawn('/bin/bash', [path.join(h.dir, 'shell/task.sh'), file, 'now'], { env: { ...process.env, QL_DIR: h.dir, QL_DATA_DIR: path.join(h.dir, 'data'), ID: id, real_time: 'true' } });
     let output = ''; cp.stdout.on('data', x => output += x); cp.stderr.on('data', x => output += x); cp.on('error', reject); cp.on('close', code => resolve({ code, output }));
   });

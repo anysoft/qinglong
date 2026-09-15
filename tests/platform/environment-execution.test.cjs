@@ -3,7 +3,7 @@ const { spawn } = require('node:child_process');
 const setup = require('../phase4/helpers.cjs');
 function run(h, language, snapshot, extra = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn('/bin/bash', [path.join(h.dir, 'shell/task.sh'), `check.${language}`, 'now'], { env: { ...process.env, QL_DIR: h.dir, QL_DATA_DIR: path.join(h.dir, 'data'), ID: '', real_time: 'true', no_delay: 'true', QL_TASK_ENV_SNAPSHOT: snapshot.directory, ...extra } });
+    const child = spawn(process.execPath, [path.resolve('tests/phase5/snapshot-main.cjs'), `check.${language}`, 'now'], { env: { ...process.env, QL_DIR: h.dir, QL_DATA_DIR: path.join(h.dir, 'data'), ID: '', real_time: 'true', no_delay: 'true', QL_TASK_ENV_SNAPSHOT: snapshot.directory, ...extra } });
     let output = ''; child.stdout.on('data', x => output += x); child.stderr.on('data', x => output += x); child.on('error', reject); child.on('close', code => resolve({ code, output }));
   });
 }

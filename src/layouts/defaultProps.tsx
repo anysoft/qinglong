@@ -56,7 +56,7 @@ export default {
       },
       {
         path: '/config',
-        name: intl.get('配置文件'),
+        name: '配置资产',
         icon: <IconFont type="ql-icon-config" />,
         component: '@/pages/config/index',
       },

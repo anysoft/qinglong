@@ -1,0 +1,20 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Analyzer (1.6.12)
+
+  GitNexus Analyzer (1.6.12)
+[2K  Skipped 1 large files (>512KB, likely generated/vendored)
+[2K  - diagnostics/phase5/runtime-impacts.json
+[2K  Set GITNEXUS_MAX_FILE_SIZE=<KB> to include files above the default cap.
+{"level":40,"time":1789482359892,"name":"gitnexus","msg":"[scope-resolution] 1092 property read/write site(s) name a field that IS defined in this workspace, but only in another language, so per-language inference declined to link them. Queries for these fields return an empty result that does NOT mean \"unused\" — it means the definition anchor is in a different language. Affected: BACK_PORT (javascript), BIND_HOST (javascript), BIND_HOST_GRPC (javascript), GRPC_PORT (javascript), JSON (javascript), JWT_SECRET (javascript), NODE_ENV (javascript), QL_CONTAINER (javascript), QL_DATA_DIR (javascript), QL_DIR (javascript), …"}
+{"level":40,"time":1789482360234,"name":"gitnexus","truncation":{"truncated":true,"entryPointCandidatesDropped":718,"entryPointsUnexplored":0,"walksCutByBudget":24,"tracesDepthCapped":0,"calleesDropped":706,"processesDropped":0},"msg":"[processes] 431 flows reported, but whole flows are MISSING: 718 of 918 candidate entry point(s) never ranked in, 0 ranked entry point(s) never traced, 0 deduplicated flow(s) dropped at maxProcesses, 0 trace(s) cut at maxTraceDepth, 706 callee(s) skipped at maxBranching, 24 walk(s) cut by the per-entry trace budget. An absent flow does NOT mean the code path does not exist."}
+[2KIncremental: changed=15, added=29, deleted=1 (skipping wipe + 765 unchanged file rows preserved)
+[2KIncremental: +2 importer(s) added to writable set (BFS depth ≤ 4)
+{"level":30,"time":1789482369477,"name":"gitnexus","msg":"name-fallback resolution: 135 call sites (72 distinct caller-file/name pairs), 15 refused as impossible (guessed/refused by language: javascript 135/15)"}
+[2KParse cache: pruned 6 stale chunk entries
+
+  Repository indexed successfully (18.6s)
+
+  8,908 nodes | 22,004 edges | 347 clusters | 431 flows
+  /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+

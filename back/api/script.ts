@@ -1,3 +1,4 @@
+import { protectScriptConfigAccess } from '../shared/scriptConfigAccess';
 import { randomUUID } from 'crypto';
 import { resolveFileAccess } from '../shared/fileAccess';
 import { fileExist, readDirs, readDir, rmPath, IFile } from '../config/util';
@@ -41,7 +42,7 @@ export default (app: Router) => {
         path: Joi.string().optional().allow(''),
       }).unknown(true),
     }),
-    async (req: Request, res: Response, next: NextFunction) => {
+    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
       const logger: Logger = Container.get('logger');
       try {
         let result: IFile[] = [];
@@ -90,7 +91,7 @@ export default (app: Router) => {
         logger.error('🔥 error: %o', e);
         return next(e);
       }
-    },
+    }),
   );
 
   route.get(
@@ -101,7 +102,7 @@ export default (app: Router) => {
         file: Joi.string().required(),
       }).unknown(true),
     }),
-    async (req: Request, res: Response, next: NextFunction) => {
+    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
       try {
         const scriptService = Container.get(ScriptService);
         const content = await scriptService.getFile(
@@ -112,7 +113,7 @@ export default (app: Router) => {
       } catch (e) {
         return next(e);
       }
-    },
+    }),
   );
 
 
@@ -136,7 +137,7 @@ export default (app: Router) => {
         file: Joi.string().optional().allow(''),
       }).unknown(true),
     }),
-    async (req: Request, res: Response, next: NextFunction) => {
+    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
       try {
         let { filename, path, content, originFilename, directory } =
           req.body as {
@@ -206,7 +207,7 @@ export default (app: Router) => {
       } catch (e) {
         return next(e);
       }
-    },
+    }),
   );
 
   route.put(
@@ -218,7 +219,7 @@ export default (app: Router) => {
         content: Joi.string().required().allow(''),
       }),
     }),
-    async (req: Request, res: Response, next: NextFunction) => {
+    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
       try {
         let { filename, content, path } = req.body as {
           filename: string;
@@ -238,7 +239,7 @@ export default (app: Router) => {
       } catch (e) {
         return next(e);
       }
-    },
+    }),
   );
 
   route.delete(
@@ -250,7 +251,7 @@ export default (app: Router) => {
         type: Joi.string().optional(),
       }),
     }),
-    async (req: Request, res: Response, next: NextFunction) => {
+    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
       try {
         let { filename, path } = req.body as {
           filename: string;
@@ -272,7 +273,7 @@ export default (app: Router) => {
       } catch (e) {
         return next(e);
       }
-    },
+    }),
   );
 
   route.post(
@@ -283,7 +284,7 @@ export default (app: Router) => {
         path: Joi.string().optional().allow(''),
       }),
     }),
-    async (req: Request, res: Response, next: NextFunction) => {
+    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
       try {
         let { filename, path } = req.body as {
           filename: string;
@@ -308,7 +309,7 @@ export default (app: Router) => {
       } catch (e) {
         return next(e);
       }
-    },
+    }),
   );
 
   route.put(
@@ -320,7 +321,7 @@ export default (app: Router) => {
         path: Joi.string().optional().allow(''),
       }),
     }),
-    async (req: Request, res: Response, next: NextFunction) => {
+    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
       const logger: Logger = Container.get('logger');
       try {
         let { filename, content, path } = req.body;
@@ -340,7 +341,7 @@ export default (app: Router) => {
       } catch (e) {
         return next(e);
       }
-    },
+    }),
   );
 
   route.put(
@@ -386,7 +387,7 @@ export default (app: Router) => {
         newFilename: Joi.string().required(),
       }),
     }),
-    async (req: Request, res: Response, next: NextFunction) => {
+    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
       try {
         let { filename, path, newFilename } = req.body as {
           filename: string;
@@ -406,6 +407,6 @@ export default (app: Router) => {
       } catch (e) {
         return next(e);
       }
-    },
+    }),
   );
 };

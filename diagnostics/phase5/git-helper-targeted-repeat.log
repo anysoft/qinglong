@@ -1,0 +1,101 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: cross-process POSIX locks release after owner crash, success and errors
+ok 1 - cross-process POSIX locks release after owner crash, success and errors
+  ---
+  duration_ms: 1569.1365
+  type: 'test'
+  ...
+# Subtest: repository mutation matrix and execution lease exclusivity
+ok 2 - repository mutation matrix and execution lease exclusivity
+  ---
+  duration_ms: 6011.177916
+  type: 'test'
+  ...
+# Subtest: real Git timeout and controller crash during Git release locks after child termination
+ok 3 - real Git timeout and controller crash during Git release locks after child termination
+  ---
+  duration_ms: 1593.645542
+  type: 'test'
+  ...
+# Subtest: bare initialization is persistent; fetch updates/prunes remote refs and uses current credentials
+ok 4 - bare initialization is persistent; fetch updates/prunes remote refs and uses current credentials
+  ---
+  duration_ms: 3154.827125
+  type: 'test'
+  ...
+# Subtest: branch worktrees share objects; fetch never moves a worktree; update is explicit FF only
+ok 5 - branch worktrees share objects; fetch never moves a worktree; update is explicit FF only
+  ---
+  duration_ms: 4932.4895
+  type: 'test'
+  ...
+# Subtest: dirty, staged, ignored/untracked and conflicts are visible and protected
+ok 6 - dirty, staged, ignored/untracked and conflicts are visible and protected
+  ---
+  duration_ms: 6437.582584
+  type: 'test'
+  ...
+# Subtest: local commits are retained; diverged and detached worktrees cannot be reset by update/delete
+ok 7 - local commits are retained; diverged and detached worktrees cannot be reset by update/delete
+  ---
+  duration_ms: 5312.466666
+  type: 'test'
+  ...
+# Subtest: execution leases block mutation and prune; missing worktrees remain records and repair preserves branch
+ok 8 - execution leases block mutation and prune; missing worktrees remain records and repair preserves branch
+  ---
+  duration_ms: 5194.072167
+  type: 'test'
+  ...
+# Subtest: non-git storage and managed-path symlink replacements never trigger recursive deletion
+ok 9 - non-git storage and managed-path symlink replacements never trigger recursive deletion
+  ---
+  duration_ms: 679.901959
+  type: 'test'
+  ...
+# Subtest: worktree deletion DB failure is recoverable by reconstruction without resetting local history
+ok 10 - worktree deletion DB failure is recoverable by reconstruction without resetting local history
+  ---
+  duration_ms: 3733.395209
+  type: 'test'
+  ...
+# Subtest: repository delete can retry after filesystem success and DB failure
+ok 11 - repository delete can retry after filesystem success and DB failure
+  ---
+  duration_ms: 1713.680834
+  type: 'test'
+  ...
+# Subtest: operation timeout persists ERROR and releases mutation lease
+ok 12 - operation timeout persists ERROR and releases mutation lease
+  ---
+  duration_ms: 2044.224709
+  type: 'test'
+  ...
+# Subtest: ignored files and symlink replacement protect user data; orphan worktrees are diagnosed
+ok 13 - ignored files and symlink replacement protect user data; orphan worktrees are diagnosed
+  ---
+  duration_ms: 3551.789458
+  type: 'test'
+  ...
+# Subtest: remote spelling changes preserve identity, storage and subscription references
+ok 14 - remote spelling changes preserve identity, storage and subscription references
+  ---
+  duration_ms: 1938.987042
+  type: 'test'
+  ...
+# Subtest: Git core.worktree override cannot redirect status or mutations outside managed checkout
+ok 15 - Git core.worktree override cannot redirect status or mutations outside managed checkout
+  ---
+  duration_ms: 2528.375542
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 25948.799459

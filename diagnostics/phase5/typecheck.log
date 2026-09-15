@@ -1,0 +1,300 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[96msrc/app.ts[0m:[93m2[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'setLocale'.
+
+[7m2[0m import { setLocale } from '@umijs/max';
+[7m [0m [91m         ~~~~~~~~~[0m
+
+[96msrc/components/tag.tsx[0m:[93m29[0m:[93m30[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m29[0m   const handleInputChange = (e) => {
+[7m  [0m [91m                             ~[0m
+
+[96msrc/layouts/index.tsx[0m:[93m11[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m11[0m import { history, Link, Outlet, useLocation } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/layouts/index.tsx[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'Link'.
+
+[7m11[0m import { history, Link, Outlet, useLocation } from '@umijs/max';
+[7m  [0m [91m                  ~~~~[0m
+
+[96msrc/layouts/index.tsx[0m:[93m11[0m:[93m25[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'Outlet'.
+
+[7m11[0m import { history, Link, Outlet, useLocation } from '@umijs/max';
+[7m  [0m [91m                        ~~~~~~[0m
+
+[96msrc/layouts/index.tsx[0m:[93m11[0m:[93m33[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useLocation'.
+
+[7m11[0m import { history, Link, Outlet, useLocation } from '@umijs/max';
+[7m  [0m [91m                                ~~~~~~~~~~~[0m
+
+[96msrc/pages/crontab/detail.tsx[0m:[93m597[0m:[93m50[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m597[0m               {currentCron.extra_schedules?.map((x) => (
+[7m   [0m [91m                                                 ~[0m
+
+[96msrc/pages/crontab/index.tsx[0m:[93m26[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m26[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/crontab/index.tsx[0m:[93m26[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m26[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/crontab/index.tsx[0m:[93m395[0m:[93m36[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m395[0m               ...new Set(data.map((x) => x.sub_id).filter(Boolean)),
+[7m   [0m [91m                                   ~[0m
+
+[96msrc/pages/crontab/index.tsx[0m:[93m402[0m:[93m39[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m402[0m             subscriptions?.data?.map((x) => [x.id, x]),
+[7m   [0m [91m                                      ~[0m
+
+[96msrc/pages/crontab/index.tsx[0m:[93m406[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m406[0m             data.map((x) => {
+[7m   [0m [91m                      ~[0m
+
+[96msrc/pages/crontab/index.tsx[0m:[93m896[0m:[93m22[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m896[0m             .filter((x) => !x.isDisabled)
+[7m   [0m [91m                     ~[0m
+
+[96msrc/pages/crontab/index.tsx[0m:[93m897[0m:[93m19[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m897[0m             .map((x) => ({
+[7m   [0m [91m                  ~[0m
+
+[96msrc/pages/crontab/logModal.tsx[0m:[93m59[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'logStatus' does not exist on type 'IResponseData'.
+
+[7m59[0m       .then(({ code, data, logStatus, nextOffset }) => {
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/pages/crontab/logModal.tsx[0m:[93m59[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'nextOffset' does not exist on type 'IResponseData'.
+
+[7m59[0m       .then(({ code, data, logStatus, nextOffset }) => {
+[7m  [0m [91m                                      ~~~~~~~~~~[0m
+
+[96msrc/pages/crontab/viewCreateModal.tsx[0m:[93m81[0m:[93m29[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m81[0m     sub_id: data?.data.map((x) => ({ name: x.name, value: x.id })),
+[7m  [0m [91m                            ~[0m
+
+[96msrc/pages/crontab/viewCreateModal.tsx[0m:[93m125[0m:[93m21[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m125[0m         {props.map((x) => (
+[7m   [0m [91m                    ~[0m
+
+[96msrc/pages/crontab/viewCreateModal.tsx[0m:[93m151[0m:[93m37[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m151[0m         {STATUS_MAP[property]?.map((x) => (
+[7m   [0m [91m                                    ~[0m
+
+[96msrc/pages/crontab/viewManageModal.tsx[0m:[93m77[0m:[93m29[0m - [91merror[0m[90m TS7006: [0mParameter 'record' implicitly has an 'any' type.
+
+[7m77[0m   const islastEnableView = (record) => {
+[7m  [0m [91m                            ~~~~~~[0m
+
+[96msrc/pages/crontab/viewManageModal.tsx[0m:[93m86[0m:[93m16[0m - [91merror[0m[90m TS7006: [0mParameter 'v' implicitly has an 'any' type.
+
+[7m86[0m       render: (v) => (v === '全部任务' ? intl.get('全部任务') : v),
+[7m  [0m [91m               ~[0m
+
+[96msrc/pages/crontab/viewManageModal.tsx[0m:[93m92[0m:[93m16[0m - [91merror[0m[90m TS7006: [0mParameter 'v' implicitly has an 'any' type.
+
+[7m92[0m       render: (v) => (v === 1 ? intl.get('系统') : intl.get('个人')),
+[7m  [0m [91m               ~[0m
+
+[96msrc/pages/crontab/viewManageModal.tsx[0m:[93m188[0m:[93m6[0m - [91merror[0m[90m TS7006: [0mParameter 'dragIndex' implicitly has an 'any' type.
+
+[7m188[0m     (dragIndex, hoverIndex) => {
+[7m   [0m [91m     ~~~~~~~~~[0m
+
+[96msrc/pages/crontab/viewManageModal.tsx[0m:[93m188[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'hoverIndex' implicitly has an 'any' type.
+
+[7m188[0m     (dragIndex, hoverIndex) => {
+[7m   [0m [91m                ~~~~~~~~~~[0m
+
+[96msrc/pages/crontab/viewManageModal.tsx[0m:[93m256[0m:[93m11[0m - [91merror[0m[90m TS2322: [0mType '(record: any, index: number) => any' is not assignable to type 'GetComponentProps<any>'.
+  Types of parameters 'index' and 'index' are incompatible.
+    Type 'number | undefined' is not assignable to type 'number'.
+      Type 'undefined' is not assignable to type 'number'.
+
+[7m256[0m           onRow={(record: any, index: number) => {
+[7m   [0m [91m          ~~~~~[0m
+
+  [96mnode_modules/.pnpm/rc-table@7.26.0_react-dom@18.3.1_react@18.3.1/node_modules/rc-table/lib/Table.d.ts[0m:[93m52[0m:[93m5[0m
+    [7m52[0m     onRow?: GetComponentProps<RecordType>;
+    [7m  [0m [96m    ~~~~~[0m
+    The expected type comes from property 'onRow' which is declared here on type 'IntrinsicAttributes & TableProps<any> & { children?: ReactNode; } & { ref?: Ref<HTMLDivElement> | undefined; }'
+
+[96msrc/pages/dashboard/index.tsx[0m:[93m12[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m12[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/dependence/index.tsx[0m:[93m35[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m35[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/diff/index.tsx[0m:[93m10[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m10[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/diff/index.tsx[0m:[93m76[0m:[93m44[0m - [91merror[0m[90m TS7006: [0mParameter 'op' implicitly has an 'any' type.
+
+[7m76[0m   const originFileChange = (value: string, op) => {
+[7m  [0m [91m                                           ~~[0m
+
+[96msrc/pages/error/index.tsx[0m:[93m6[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m6[0m import { history, useOutletContext } from '@umijs/max';
+[7m [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/error/index.tsx[0m:[93m6[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m6[0m import { history, useOutletContext } from '@umijs/max';
+[7m [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/initialization/index.tsx[0m:[93m14[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m14[0m import { history } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/log/index.tsx[0m:[93m10[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m10[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/log/index.tsx[0m:[93m108[0m:[93m6[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m108[0m     (e) => {
+[7m   [0m [91m     ~[0m
+
+[96msrc/pages/login/index.tsx[0m:[93m13[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m13[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/login/index.tsx[0m:[93m13[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m13[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/script/editNameModal.tsx[0m:[93m72[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m72[0m   const typeChange = (e) => {
+[7m  [0m [91m                      ~[0m
+
+[96msrc/pages/script/editNameModal.tsx[0m:[93m76[0m:[93m20[0m - [91merror[0m[90m TS7006: [0mParameter 'data' implicitly has an 'any' type.
+
+[7m76[0m   const getDirs = (data) => {
+[7m  [0m [91m                   ~~~~[0m
+
+[96msrc/pages/script/editNameModal.tsx[0m:[93m80[0m:[93m20[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m80[0m           .filter((x) => x.type === 'directory')
+[7m  [0m [91m                   ~[0m
+
+[96msrc/pages/script/editNameModal.tsx[0m:[93m81[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m81[0m           .map((x) => ({ ...x, disabled: false }));
+[7m  [0m [91m                ~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m19[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m19[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m19[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m19[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m132[0m:[93m9[0m - [91merror[0m[90m TS2739: [0mType 'Record<string, any> & { children?: unknown[] | undefined; }' is missing the following properties from type '{ title: string | (string | null)[]; key: string | (string | null)[]; parent: string | (string | null)[] | null; }': title, key, parent
+
+[7m132[0m         obj.node = item;
+[7m   [0m [91m        ~~~~~~~~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m202[0m:[93m6[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m202[0m     (e) => {
+[7m   [0m [91m     ~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m382[0m:[93m16[0m - [91merror[0m[90m TS18048: [0m'item' is possibly 'undefined'.
+
+[7m382[0m       onSelect(item.title, item);
+[7m   [0m [91m               ~~~~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m383[0m:[93m23[0m - [91merror[0m[90m TS18048: [0m'item' is possibly 'undefined'.
+
+[7m383[0m       handleIsEditing(item.title, true);
+[7m   [0m [91m                      ~~~~[0m
+
+[96msrc/pages/setting/index.tsx[0m:[93m32[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m32[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/setting/notification.tsx[0m:[93m82[0m:[93m31[0m - [91merror[0m[90m TS7006: [0mParameter 'y' implicitly has an 'any' type.
+
+[7m82[0m                 {x.items.map((y) => (
+[7m  [0m [91m                              ~[0m
+
+[96msrc/pages/setting/security.tsx[0m:[93m6[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m6[0m import { history } from '@umijs/max';
+[7m [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/setting/security.tsx[0m:[93m98[0m:[93m21[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m98[0m   const onChange = (e) => {
+[7m  [0m [91m                    ~[0m
+
+[96msrc/pages/subscription/index.tsx[0m:[93m34[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m34[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/subscription/index.tsx[0m:[93m34[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m34[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/utils/http.tsx[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m4[0m import { history } from '@umijs/max';
+[7m [0m [91m         ~~~~~~~[0m
+
+
+Found 53 errors in 22 files.
+
+Errors  Files
+     1  src/app.ts[90m:2[0m
+     1  src/components/tag.tsx[90m:29[0m
+     4  src/layouts/index.tsx[90m:11[0m
+     1  src/pages/crontab/detail.tsx[90m:597[0m
+     7  src/pages/crontab/index.tsx[90m:26[0m
+     2  src/pages/crontab/logModal.tsx[90m:59[0m
+     3  src/pages/crontab/viewCreateModal.tsx[90m:81[0m
+     6  src/pages/crontab/viewManageModal.tsx[90m:77[0m
+     1  src/pages/dashboard/index.tsx[90m:12[0m
+     1  src/pages/dependence/index.tsx[90m:35[0m
+     2  src/pages/diff/index.tsx[90m:10[0m
+     2  src/pages/error/index.tsx[90m:6[0m
+     1  src/pages/initialization/index.tsx[90m:14[0m
+     2  src/pages/log/index.tsx[90m:10[0m
+     2  src/pages/login/index.tsx[90m:13[0m
+     4  src/pages/script/editNameModal.tsx[90m:72[0m
+     6  src/pages/script/index.tsx[90m:19[0m
+     1  src/pages/setting/index.tsx[90m:32[0m
+     1  src/pages/setting/notification.tsx[90m:82[0m
+     2  src/pages/setting/security.tsx[90m:6[0m
+     2  src/pages/subscription/index.tsx[90m:34[0m
+     1  src/utils/http.tsx[90m:4[0m

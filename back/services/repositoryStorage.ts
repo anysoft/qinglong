@@ -1,3 +1,4 @@
+import { RepositoryConfigBindingModel } from '../data/configAsset';
 import { Service, Container } from 'typedi';
 import fs from 'fs/promises';
 import path from 'path';
@@ -335,8 +336,9 @@ export default class RepositoryStorageService {
     );
   }
   async diagnostics(id: number) {
+    const config_bindings = await RepositoryConfigBindingModel.count({where:{repository_id:id}});
     const busy = await this.locks.probe('repository', id);
-    if (busy.busy) return { repository: await this.get(id), lock: busy };
+    if (busy.busy) return { repository: await this.get(id), lock: busy, config_bindings };
     return this.withRepository(id, 'diagnostics', async (guard, repo) => {
       const target = await this.location(repo);
       if (!(await exists(target))) {
@@ -344,6 +346,7 @@ export default class RepositoryStorageService {
         await this.mark(id, { storage_state: state });
         return {
           repository: await this.get(id),
+          config_bindings,
           exists: false,
           lock: { busy: false },
           worktrees: [],
@@ -368,6 +371,7 @@ export default class RepositoryStorageService {
         await this.metadata(guard, repo, target);
         return {
           repository: await this.get(id),
+          config_bindings,
           exists: true,
           is_bare: true,
           origin_matches: true,
@@ -385,6 +389,7 @@ export default class RepositoryStorageService {
         });
         return {
           repository: await this.get(id),
+          config_bindings,
           exists: true,
           error_code: e.error_code || 'DIAGNOSTICS_FAILED',
           lock: { busy: false },
@@ -469,7 +474,8 @@ export default class RepositoryStorageService {
           (await EnvironmentProfileModel.count({
             where: { repository_id: id },
             transaction,
-          }))
+          })) ||
+          (await RepositoryConfigBindingModel.count({where:{repository_id:id},transaction}))
         )
           throw new WorkspaceError('REPOSITORY_IN_USE');
         await RepositoryModel.update(

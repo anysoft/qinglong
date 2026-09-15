@@ -1,3 +1,4 @@
+import { ConfigBindings } from '@/components/config-bindings';
 import React, { useEffect, useState } from 'react';
 import {
   Alert,
@@ -182,6 +183,7 @@ export default function RepositoryWorkspacePage() {
       <Tabs
         defaultActiveKey="overview"
         items={[
+          { key: 'config', label: 'Config', children: <ConfigBindings scope="repository" id={id} /> },
           { key: 'environment', label: 'Environment', children: <RepositoryEnvironment id={id} /> },
           {
             key: 'overview',

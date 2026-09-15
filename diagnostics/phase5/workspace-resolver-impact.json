@@ -1,0 +1,9 @@
+{
+  "error": "Target 'resolve' not found",
+  "target": {
+    "name": "resolve"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

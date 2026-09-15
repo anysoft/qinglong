@@ -12,10 +12,13 @@ trap 'single_hanle SIGTSTP' TSTP
 trap 'single_hanle SIGQUIT' QUIT
 
 single_hanle() {
-  _task_exit_code="${_task_exit_code:-$?}"
-  [[ "$_task_exit_code" == "0" ]] && _task_exit_code="1"
-  eval MANUAL=true handle_task_end "$@"
-  exit 1
+  if [[ -n ${platform_child_pid:-} ]]; then
+    kill -TERM "$platform_child_pid" 2>/dev/null || true
+    wait "$platform_child_pid" 2>/dev/null || true
+    return
+  fi
+  _task_exit_code=143
+  exit 143
 }
 
 define_program() {
@@ -154,22 +157,51 @@ fi
 
 format_params "$@"
 define_program "${task_shell_params[@]}"
+if [[ ${PLATFORM_MAIN_ONLY:-} == 1 ]]; then
+  . "$dir_shell/task_env.sh"
+  file_env="$QL_TASK_ENV_SNAPSHOT/environment.sh"
+  ql_task_env_isolate
+  timeoutCmd=""
+  . "$dir_shell/otask.sh"
+  exit $?
+fi
+
 handle_log_path "${task_shell_params[@]}"
 init_begin_time
 
-if [[ -f "$dir_shell/task_env.sh" ]]; then
-  . "$dir_shell/task_env.sh"
-  if ! ql_task_env_prepare; then
-    _task_exit_code=1
-    handle_task_end "${task_shell_params[@]}"
-    exit 1
-  fi
+platform_execute() {
+  handle_task_start "${task_shell_params[@]}"
+  local task_id=0
+  [[ ${ID:-} =~ ^[1-9][0-9]*$ ]] && task_id=$ID
+  local executable="$dir_root/static/build/taskExecution.js"
+  node "$executable" "$task_id" "${command_timeout_time:-0}" "${task_shell_params[@]}" -- "${script_params[@]}" &
+  platform_child_pid=$!
+  wait "$platform_child_pid"
+  local result=$?
+  # An interrupted wait may finish before the child has completed FINALLY/CLEANUP.
+  if kill -0 "$platform_child_pid" 2>/dev/null; then wait "$platform_child_pid"; result=$?; fi
+  _task_exit_code=$result
+  unset platform_child_pid
+  handle_task_end "${task_shell_params[@]}"
+  return "$result"
+}
+# Keep the lifecycle owner in this shell so direct SIGTERM reaches it even when
+# logs are teed. A pipeline would put platform_execute in a separate subshell.
+if [[ ${log_dir:-} == /dev/null ]]; then
+  platform_execute >/dev/null 2>&1
+  result=$?
+elif [[ ${real_time:-} == true ]]; then
+  platform_execute
+  result=$?
+elif [[ ${no_tee:-} == true ]]; then
+  platform_execute >>"$dir_log/$log_path" 2>&1
+  result=$?
+else
+  exec 3> >(tee -a "$dir_log/$log_path")
+  platform_tee_pid=$!
+  platform_execute >&3 2>&1
+  result=$?
+  exec 3>&-
+  wait "$platform_tee_pid"
 fi
-if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then
-  file_env="$QL_TASK_ENV_SNAPSHOT/environment.sh"
-  ql_task_env_isolate
-  # Redact before either tee or file redirection, including real-time manual runs.
-  cmd="2>&1 | node \"$dir_shell/task_env_redact.cjs\" $cmd"
-fi
-eval . $dir_shell/otask.sh "$cmd"
-exit 0
+exit "$result"

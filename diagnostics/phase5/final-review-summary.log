@@ -1,0 +1,19 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+HEAD: Changes: 195 files, 809 symbols
+Affected processes: 71
+Risk level: critical
+
+Changed symbols:
+  Section Phase 5 Status: PARTIAL → PHASE5_REPORT.md
+  Section Tests / Builds / Typecheck → PHASE5_REPORT.md
+  Section Database Changes → PHASE5_REPORT.md
+  Section Config Asset Model / Revision Model → PHASE5_REPORT.md
+develop: Changes: 195 files, 809 symbols
+Affected processes: 71
+Risk level: critical
+
+Changed symbols:
+  Section Phase 5 Status: PARTIAL → PHASE5_REPORT.md
+  Section Tests / Builds / Typecheck → PHASE5_REPORT.md
+  Section Database Changes → PHASE5_REPORT.md
+  Section Config Asset Model / Revision Model → PHASE5_REPORT.md

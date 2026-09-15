@@ -4,17 +4,17 @@
 
 | ID / Component | Why still needed | Consumer / source | Planned replacement | Removal phase / exit gate |
 | --- | --- | --- | --- | --- |
-| B01 scripts staging | Task 实际执行副本；手工编辑混在其中 | ManagedSubscriptionService.stage；otask；ScriptService/api/script；Config editor；notify copy | Task.worktree_id/entrypoint + Runner lease + WorkspaceFileService | 9–12，最后编辑器/手工源消费者退场才删目录 |
-| B02 task.sh/otask.sh | 语言/cwd/args/hooks/日志/status/信号 | CronService.makeCommand、runCron、system crond、ScriptService | Execution Engine | 10，所有触发路径真实exit/stop/timeout/log/env一致 |
+| B01 scripts staging | Task 实际执行副本；手工编辑混在其中 | ManagedSubscriptionService.stage；otask；ScriptService/api/script；notify copy | Task.worktree_id/entrypoint + Runner lease + WorkspaceFileService | 9–12，最后编辑器/手工源消费者退场才删目录 |
+| B02 task.sh/otask.sh | 语言/cwd/args/日志/status/信号；外层接 Hooks v2 | CronService.makeCommand、runCron、system crond、ScriptService | Execution Engine | 10，所有触发路径真实exit/stop/timeout/log/env一致 |
 | B03 crontab.list | 仅 system scheduler projection | CronService.setCrontab → system crond | DB → scheduler adapter | 4.5B 已移除 Discovery/无 ID 反读；10 评估 system adapter |
 | B04 node-schedule/gRPC/queue adapters | 现任务与订阅周期、手工执行、恢复 | schedule/*、services/schedule、shared/pLimit/runCron/scheduler* | Task/Schedule/Execution dispatch | 9–10；核心调度语义继续保留，transport可替换 |
 | B05 Global generated ENV — REMOVED | 无剩余消费者 | 已删除 generator、语言导入、全局文件复制及 export-line parser | Global 唯一 key + 每次执行 full snapshot 已生效 | 4.5B PASS：global-only/no-ID/四语言/UNSET/Secret/50 并发 |
-| B06 language preload | hooks/QLAPI/全局包解析/账号选择/SIGTERM | sitecustomize.js/py、esm-loader.mjs、client.* | Hooks 5 + Runtime 6–8 + Runner/SDK 10 | 5–10；不能随B05整文件删除 |
+| B06 language preload — REDUCED | QLAPI/全局包解析/账号选择/SIGTERM | sitecustomize.js/py、esm-loader.mjs、client.* | Hooks 部分 Phase 5 已删除；Runtime 6–8 + Runner/SDK 10 | 5–10；不能随B05整文件删除 |
 | B07 explicit Discovery Adapter — REDUCED | 当前 Crontab publication 所需有限 metadata parser | SubscriptionDiscoveryAdapter；ManagedSubscriptionService.stage → CronService.publishSubscription | TaskDiscoveryService + Task v2 reconcile | 4.5B 已物理解耦 Git updater、改用 DB 投影与稳定 key；11 替换有限 parser |
 | B08 Shell status/stat/token loopback | 真实exit/instance/stat写DB | share/api.sh→open/crons/status + dashboard/record；token.ts、system App | Runner controller结果IPC + Domain Services | 10；没有结果通道前不删 /open或system token |
 | B09 dependency subsystem | 当前pnpm global/Python prefix安装供给 | DependenceService、util、Docker/start、node_path_cache | Runtime Env + explicit executable/lock | 6–8，现任务import/安装/取消/恢复通过 |
 | B10 deps/dep_cache | 共享辅助源码与已安装包，非纯cache | support 文件、NODE_PATH/PYTHONPATH、Dependencies | Workspace内容 + Runtime environments/cache | 6–8/11；不得新增消费者 |
-| B11 config.sh/before/after | 全局选项、可执行hook配置 | import_config、sitecustomize、taskCallbacks | Config Assets + Hooks v2 | 5；env/cwd/错误/阶段语义被明确承接 |
+| B11 platform-internal Settings — SHARPLY REDUCED | config.sh 内部运行选项；不再是用户 Config/Hook 接口 | import_config、Settings/SystemService | 显式平台选项存储/运维服务 | 后续 Settings/Runner gate；Phase 5 已删除公共 Config editor/API、旧 before/after 与 ENV 回传 |
 | B12 ql operations / share.sh | rmlog/check/reload/reset/启动+共同工具 | initTask、SystemService、entrypoint/start | 明确运维服务/启动工具 | 分段4.5B–14；不是删ql repo就删ql可执行文件 |
 | B13 script notification SDK | 脚本 notify、QLAPI 与 Global store SDK bridge | sample/notify.*、preload/client.*、EnvService、复制到 scripts | 显式SDK + Notification events | 10/13；Backend NotificationService继续KEEP |
 | B14 log identity | command/path/cron id 对应文件 | Cron/Subscription/task.sh/UI/retention | TaskRun / SyncRun ID | 10/13；保留drain、UTF8、边界与留存 |
@@ -37,6 +37,14 @@ B05 已退出；B07 缩减为独立 Backend adapter；B03 仅为 scheduler 输�
 - B04：开机任务在 HTTP 内部结果通道就绪后触发；空订阅 schedule 不注册 cron。
 - B09：安装由显式管理入口提供；启动仅取消中断操作，保留安装记录与日志。
 - B12：不再有 repo/raw/bot CLI、旧路径转换、auth.json 导入或自动包安装。
-- B06：preload 保留 hooks、SDK、账号选择、依赖查找和信号；不再加载 generated Global ENV。
+- B06：preload 保留 SDK、账号选择、依赖查找和信号；不再加载 generated Global ENV。
 
 验收与限制见 [最终报告](PHASE4_5B_REPORT.md)。Linux 实机 Gate 待 CI 执行，不影响已证明的本阶段代码收敛；不得将其写成 Linux PASS。
+
+## Phase 5 收敛
+
+| ID | 当前职责 | Consumer | 退出条件 |
+| --- | --- | --- | --- |
+| B17 TaskWorkspaceResolver / ConfigMaterializationLease | 映射当前 scripts source、逻辑根/cwd/锁键；租约覆盖配置完整生命周期；阻止 Script API 读取执行副本 | ExecutionPreparation、ConfigMaterialization、current Task bridge | Phase 9/10 ExecutionContext + Worktree direct execution 通过全部触发、隔离、恢复 gates 后替换 |
+
+旧 Config UI/API、Task before/after 字段、Subscription before/after、preload hook 与 `/tmp/env_PID` 回传已由新模型替代并删除。保留 B01/B02/B03/B04/B06 SDK+依赖+账号+信号/B08–B10/B11 内部选项/B12–B16；B05 不恢复。现行证据见 [Phase 5 报告](PHASE5_REPORT.md)，4.5B 报告保持历史记录。

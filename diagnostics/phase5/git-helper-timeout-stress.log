@@ -1,0 +1,16 @@
+6 1 {'error': 'WORKSPACE_HELPER_FAILED', 'diagnostic': {'type': 'PermissionError', 'errno': 1, 'frames': [['git_workspace_lock.py', '<module>', 98], ['git_workspace_lock.py', 'run', 75]]}}
+done 6
+5 1 {'error': 'WORKSPACE_HELPER_FAILED', 'diagnostic': {'type': 'PermissionError', 'errno': 1, 'frames': [['git_workspace_lock.py', '<module>', 98], ['git_workspace_lock.py', 'run', 75]]}}
+done 5
+1 2 {'error': 'WORKSPACE_HELPER_FAILED', 'diagnostic': {'type': 'PermissionError', 'errno': 1, 'frames': [['git_workspace_lock.py', '<module>', 98], ['git_workspace_lock.py', 'run', 75]]}}
+done 1
+3 3 {'error': 'WORKSPACE_HELPER_FAILED', 'diagnostic': {'type': 'PermissionError', 'errno': 1, 'frames': [['git_workspace_lock.py', '<module>', 98], ['git_workspace_lock.py', 'run', 75]]}}
+done 3
+7 7 {'error': 'WORKSPACE_HELPER_FAILED', 'diagnostic': {'type': 'PermissionError', 'errno': 1, 'frames': [['git_workspace_lock.py', '<module>', 98], ['git_workspace_lock.py', 'run', 75]]}}
+done 7
+2 9 {'error': 'WORKSPACE_HELPER_FAILED', 'diagnostic': {'type': 'PermissionError', 'errno': 1, 'frames': [['git_workspace_lock.py', '<module>', 98], ['git_workspace_lock.py', 'run', 75]]}}
+done 2
+4 54 {'error': 'WORKSPACE_HELPER_FAILED', 'diagnostic': {'type': 'PermissionError', 'errno': 1, 'frames': [['git_workspace_lock.py', '<module>', 98], ['git_workspace_lock.py', 'run', 75]]}}
+done 4
+0 64 {'error': 'WORKSPACE_HELPER_FAILED', 'diagnostic': {'type': 'PermissionError', 'errno': 1, 'frames': [['git_workspace_lock.py', '<module>', 98], ['git_workspace_lock.py', 'run', 75]]}}
+done 0

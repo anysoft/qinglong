@@ -1,0 +1,149 @@
+[
+  {
+    "file": "back/services/taskHookLifecycle.ts",
+    "name": "back/services/taskHookLifecycle.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/taskHookLifecycle.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/taskHookLifecycle.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHookLifecycle.ts",
+    "name": "TaskHookLifecycle",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskHookLifecycle' not found\",\n  \"target\": {\n    \"name\": \"TaskHookLifecycle\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHookLifecycle.ts",
+    "name": "cancel",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cancel' not found\",\n  \"target\": {\n    \"name\": \"cancel\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHookLifecycle.ts",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/taskExecution.ts",
+    "name": "back/taskExecution.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/taskExecution.ts' not found\",\n  \"target\": {\n    \"name\": \"back/taskExecution.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/taskExecution.ts",
+    "name": "consumePrepared",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'consumePrepared' not found\",\n  \"target\": {\n    \"name\": \"consumePrepared\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/taskExecution.ts",
+    "name": "assertHeld",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'assertHeld' not found\",\n  \"target\": {\n    \"name\": \"assertHeld\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/taskExecution.ts",
+    "name": "startExecution",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'startExecution' not found\",\n  \"target\": {\n    \"name\": \"startExecution\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "back/shared/configAssets.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/configAssets.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/configAssets.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "ConfigAssetError",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ConfigAssetError' not found\",\n  \"target\": {\n    \"name\": \"ConfigAssetError\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "targetPath",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'targetPath' not found\",\n  \"target\": {\n    \"name\": \"targetPath\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "safeParents",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'safeParents' not found\",\n  \"target\": {\n    \"name\": \"safeParents\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "privateDirectory",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'privateDirectory' not found\",\n  \"target\": {\n    \"name\": \"privateDirectory\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "atomicPrivateWrite",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'atomicPrivateWrite' not found\",\n  \"target\": {\n    \"name\": \"atomicPrivateWrite\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "back/services/configMaterialization.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/configMaterialization.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/configMaterialization.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "ConfigMaterializationService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ConfigMaterializationService' not found\",\n  \"target\": {\n    \"name\": \"ConfigMaterializationService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "journalRoot",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'journalRoot' not found\",\n  \"target\": {\n    \"name\": \"journalRoot\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "requireLease",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'requireLease' not found\",\n  \"target\": {\n    \"name\": \"requireLease\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "recover",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'recover' not found\",\n  \"target\": {\n    \"name\": \"recover\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "prepare",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'prepare' not found\",\n  \"target\": {\n    \"name\": \"prepare\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "restore",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'restore' not found\",\n  \"target\": {\n    \"name\": \"restore\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

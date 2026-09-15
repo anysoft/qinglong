@@ -23,17 +23,12 @@ const tmpPath = path.join(logPath, '.tmp/');
 const rootTmpPath = path.join(rootPath, '.tmp/');
 const confFile = path.join(configPath, 'config.sh');
 const sampleConfigFile = path.join(samplePath, 'config.sample.sh');
-const sampleTaskShellFile = path.join(samplePath, 'task.sample.sh');
 const sampleNotifyJsFile = path.join(samplePath, 'notify.js');
 const sampleNotifyPyFile = path.join(samplePath, 'notify.py');
 const scriptNotifyJsFile = path.join(scriptPath, 'sendNotify.js');
 const scriptNotifyPyFile = path.join(scriptPath, 'notify.py');
 const jsNotifyFile = path.join(preloadPath, '__ql_notify__.js');
 const pyNotifyFile = path.join(preloadPath, '__ql_notify__.py');
-const TaskBeforeFile = path.join(configPath, 'task_before.sh');
-const TaskBeforeJsFile = path.join(configPath, 'task_before.js');
-const TaskBeforePyFile = path.join(configPath, 'task_before.py');
-const TaskAfterFile = path.join(configPath, 'task_after.sh');
 const systemLogPath = path.join(dataPath, 'syslog');
 
 const directories = [
@@ -74,28 +69,7 @@ const files = [
     source: sampleNotifyPyFile,
     checkExistence: true,
   },
-  {
-    target: TaskBeforeFile,
-    source: sampleTaskShellFile,
-    checkExistence: true,
-  },
-  {
-    target: TaskBeforeJsFile,
-    content:
-      '// The JavaScript code that executes before the JavaScript task execution will execute.',
-    checkExistence: true,
-  },
-  {
-    target: TaskBeforePyFile,
-    content:
-      '# The Python code that executes before the Python task execution will execute.',
-    checkExistence: true,
-  },
-  {
-    target: TaskAfterFile,
-    source: sampleTaskShellFile,
-    checkExistence: true,
-  },
+
 ];
 
 export default async () => {
@@ -108,14 +82,7 @@ export default async () => {
   for (const item of files) {
     const exists = await fileExist(item.target);
     if (!item.checkExistence || !exists) {
-      if (!item.content && !item.source) {
-        throw new Error(
-          `Neither content nor source specified for ${item.target}`,
-        );
-      }
-      const content =
-        item.content ||
-        (await fs.readFile(item.source!, { encoding: 'utf-8' }));
+      const content = await fs.readFile(item.source, { encoding: 'utf-8' });
       await writeFileWithLock(item.target, content);
     }
   }

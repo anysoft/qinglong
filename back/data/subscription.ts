@@ -26,8 +26,6 @@ export class Subscription {
   is_disabled?: 1 | 0;
   log_path?: string;
   extensions?: string;
-  sub_before?: string;
-  sub_after?: string;
   autoAddCron?: 1 | 0;
   autoDelCron?: 1 | 0;
 
@@ -57,8 +55,6 @@ export class Subscription {
     this.schedule_type = options.schedule_type;
     this.interval_schedule = options.interval_schedule;
     this.extensions = options.extensions;
-    this.sub_before = options.sub_before;
-    this.sub_after = options.sub_after;
     this.autoAddCron = options.autoAddCron == null || options.autoAddCron ? 1 : 0;
     this.autoDelCron = options.autoDelCron == null || options.autoDelCron ? 1 : 0;
   }
@@ -109,8 +105,6 @@ export const SubscriptionModel = sequelize.define<SubscriptionInstance>(
     status: DataTypes.NUMBER,
     dependences: DataTypes.STRING,
     extensions: DataTypes.STRING,
-    sub_before: DataTypes.STRING,
-    sub_after: DataTypes.STRING,
     branch: DataTypes.STRING,
     pid: DataTypes.NUMBER,
     is_disabled: DataTypes.NUMBER,

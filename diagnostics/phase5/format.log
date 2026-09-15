@@ -1,0 +1,18 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+back/data/configAsset.ts 133ms
+back/api/configAssets.ts 36ms
+back/shared/configAssets.ts 16ms
+back/services/configAsset.ts 24ms
+back/services/configMaterialization.ts 23ms
+back/services/executionRedactor.ts 6ms
+back/services/hookExecutor.ts 5ms
+back/services/hookOutput.ts 7ms
+back/services/taskConfig.ts 17ms
+back/services/taskExecutionPreparation.ts 6ms
+back/services/taskHookLifecycle.ts 12ms
+back/services/taskHooks.ts 7ms
+back/services/taskWorkspace.ts 5ms
+back/taskExecution.ts 13ms
+src/components/config-bindings.tsx 23ms
+src/components/task-hooks.tsx 11ms
+src/pages/config/index.tsx 12ms

@@ -47,8 +47,6 @@ export const commonCronSchema = {
   labels: Joi.array().optional().allow(null),
   sub_id: Joi.number().optional().allow(null),
   extra_schedules: Joi.array().optional().allow(null),
-  task_before: Joi.string().optional().allow('').allow(null),
-  task_after: Joi.string().optional().allow('').allow(null),
   log_name: Joi.string()
     .optional()
     .allow('')

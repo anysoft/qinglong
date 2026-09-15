@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import user from './user';
-import config from './config';
+import configAssets from './configAssets';
 import log from './log';
 import cron from './cron';
 import script from './script';
@@ -19,7 +19,7 @@ import workspaceRoutes from './workspace';
 export default () => {
   const app = Router();
   user(app);
-  config(app);
+  configAssets(app);
   log(app);
   cron(app);
   script(app);

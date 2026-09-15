@@ -1,0 +1,35 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: BEFORE JSON set/unset/secret produces derived snapshot only and retains historical secrets
+ok 1 - BEFORE JSON set/unset/secret produces derived snapshot only and retains historical secrets
+  ---
+  duration_ms: 341.116416
+  type: 'test'
+  ...
+# Subtest: invalid output, reserved/invalid names, oversized values, unknown operations and symlink reject without secret errors
+ok 2 - invalid output, reserved/invalid names, oversized values, unknown operations and symlink reject without secret errors
+  ---
+  duration_ms: 135.309958
+  type: 'test'
+  ...
+# Subtest: UTF-8 streaming redactor covers chunk boundaries and newly tracked secrets
+ok 3 - UTF-8 streaming redactor covers chunk boundaries and newly tracked secrets
+  ---
+  duration_ms: 98.567
+  type: 'test'
+  ...
+# Subtest: Secret names require own ENV entries and unset never reintroduces prototype properties
+ok 4 - Secret names require own ENV entries and unset never reintroduces prototype properties
+  ---
+  duration_ms: 111.863917
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 949.289292

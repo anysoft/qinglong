@@ -26,9 +26,9 @@ jobs:
       - run: pnpm build:back
       - run: pnpm test
       - run: pnpm build:front
-      - run: node diagnostics/phase4.5b/static-audit.cjs
+      - run: node diagnostics/phase5/static-audit.cjs
       - name: Typecheck with recorded pre-existing diagnostic budget
-        run: node diagnostics/phase4.5b/check-typecheck.cjs
+        run: node diagnostics/phase5/check-typecheck.cjs
       - name: Install isolated browser acceptance runtime
         run: |
           npm install --prefix "$RUNNER_TEMP/platform-browser" --no-audit --no-fund ssh2@1.17.0 playwright@1.58.2
@@ -44,8 +44,8 @@ jobs:
           name: execution-baseline
           path: |
             execution-baseline.json
-            diagnostics/phase4.5b/platform-e2e.json
-            diagnostics/phase4.5b/platform-e2e-backend.log
-            diagnostics/phase4.5b/browser-*.png
-            diagnostics/phase4.5b/final-typecheck.*
-            diagnostics/phase4.5b/final-static-audit.json
+            diagnostics/phase5/platform-e2e.json
+            diagnostics/phase5/platform-e2e-backend.log
+            diagnostics/phase5/browser-*.png
+            diagnostics/phase5/final-typecheck.*
+            diagnostics/phase5/final-static-audit.json

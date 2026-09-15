@@ -8,7 +8,7 @@ data/
 ├── git/
 ├── worktrees/
 ├── runtime/          # future
-├── config-assets/    # future
+├── config-assets/    # Phase 5 implemented
 ├── logs/
 ├── cache/
 ├── tmp/
@@ -28,3 +28,7 @@ data/
 `db/`、`git/`、`worktrees/`、`.locks/`、`tmp/` 与 `scripts/`、`config/`、`deps/`、`dep_cache/`、`log/`、`syslog/`、`bak/`、`upload/`。Backend bootstrap 使用 0700 并拒绝 symlink；执行 snapshot 另有 owner 管理的私有 `.tmp/task-env/`。Git 凭据上下文独立创建/清理。
 
 未创建 repo/raw，未批量删除既有目录。编译脚本只清理 compiler-owned static/build，避免删除源文件后旧编译模块继续进入安装包。
+
+## Phase 5
+
+新增 `data/config-assets/asset-ID/revisions/N/content` 与 `data/tmp/config-materialization/<workspace-key>/run-UUID/`。ENV/Hook 私有计划沿用 `.tmp/task-env/run-*`。稳定 `.locks/config-<key>.lock` 协调共享执行工作区；publication lease 继续保护发布目录。旧用户 hook 文件不再创建或读取，但不会自动删除已有用户文件。

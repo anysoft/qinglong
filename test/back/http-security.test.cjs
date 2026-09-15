@@ -81,21 +81,10 @@ test('HTTP authentication protects init, scopes, expired sessions and config sec
       writeFileWithLock: (p, content) => fs.promises.writeFile(p, content),
     },
   };
-  const Config = load(path.join(__dirname, '../../back/services/config.ts'), {
-    ...mocks,
-    typedi: { Service: () => (x) => x },
-  }).default;
-  const configService = new Config();
-  mocks['../services/config'] = Config;
-  mocks.typedi = {
-    Container: { get: (x) => (x === User ? user : configService) },
-  };
+  mocks.typedi = { Container: { get: () => user } };
   mocks['../api'] = () => {
     const router = express.Router();
     load(path.join(__dirname, '../../back/api/user.ts'), mocks).default(router);
-    load(path.join(__dirname, '../../back/api/config.ts'), mocks).default(
-      router,
-    );
     router.get('/envs', (_req, res) => res.json({ code: 200 }));
     return router;
   };
@@ -124,7 +113,9 @@ test('HTTP authentication protects init, scopes, expired sessions and config sec
         ...(body ? { body: JSON.stringify(body) } : {}),
       },
     );
-    return { status: response.status, body: await response.json() };
+    const text = await response.text();
+    let parsed; try { parsed = JSON.parse(text); } catch { parsed = { text }; }
+    return { status: response.status, body: parsed };
   };
   for (const url of [
     '/api/user/init',
@@ -178,25 +169,8 @@ test('HTTP authentication protects init, scopes, expired sessions and config sec
     (await request('/open/configs/detail?path=normal.txt', 'env-app')).status,
     401,
   );
-  assert.equal(
-    (await request('/open/configs/detail?path=normal.txt', 'config-app')).body
-      .data,
-    'normal',
-  );
-  assert.equal(
-    (await request('/open/configs/detail?path=grpc/client.key', 'config-app'))
-      .body.code,
-    403,
-  );
-  assert.equal(
-    (
-      await request('/open/configs/save', 'config-app', 'POST', {
-        name: 'grpc/client.key',
-        content: 'changed',
-      })
-    ).body.code,
-    403,
-  );
+  for (const route of ['/open/configs/detail?path=normal.txt','/open/configs/detail?path=grpc/client.key']) assert.equal((await request(route, 'config-app')).status,404);
+  assert.equal((await request('/open/configs/save','config-app','POST',{name:'grpc/client.key',content:'changed'})).status,404);
   assert.equal(
     fs.readFileSync(path.join(tmp, 'config/grpc/client.key'), 'utf8'),
     'SENTINEL',

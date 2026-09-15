@@ -21,7 +21,7 @@ import {
 } from '../config/util';
 import { Op, where, col as colFn, FindOptions, fn, Order } from 'sequelize';
 import path from 'path';
-import { TASK_PREFIX, QL_PREFIX } from '../config/const';
+import { TASK_PREFIX } from '../config/const';
 import cronClient from '../schedule/client';
 import taskLimit from '../shared/pLimit';
 import { spawn } from 'cross-spawn';
@@ -201,7 +201,6 @@ export default class CronService {
         // Deletes and creates reuse the existing scheduler protocol. Compensation
         // restores original IDs instead of recreating user Tasks with new IDs.
         if (previous.length) await cronClient.delCron(previous.map(x => String(x.id)));
-        await CrontabModel.destroy({ where: { id: plan.drops } });
         for (const input of plan.adds) {
           const tab = new Crontab(input);
           tab.saved = false;
@@ -211,7 +210,11 @@ export default class CronService {
         for (const update of plan.updates) await CrontabModel.update(update, { where: { id: update.id } });
         const updated = (await CrontabModel.findAll({ where: { id: plan.updates.map(x => x.id!) } })).map(row => row.get({ plain: true }));
         await register([...added, ...updated]);
-        await this.setCrontab(undefined, true);
+        const projection = (await CrontabModel.findAll()).map(row => row.get({plain:true})).filter(row => !plan.drops.includes(row.id!));
+        await this.setCrontab({data:projection,total:projection.length}, true);
+        // Final fallible publication operation: retain Task-owned ENV/Config/Hooks
+        // until filesystem and both schedulers have accepted the new projection.
+        await CrontabModel.destroy({ where: { id: plan.drops } });
         try {
           await plan.notify?.();
         } catch {
@@ -225,8 +228,7 @@ export default class CronService {
               where: { id: added.map((x) => x.id!) },
             });
             for (const row of previous) {
-              if (plan.drops.includes(row.id!)) await CrontabModel.upsert(row);
-              else await CrontabModel.update({ name: row.name, command: row.command, schedule: row.schedule, discovery_definition: row.discovery_definition }, { where: { id: row.id } });
+              if (!plan.drops.includes(row.id!)) await CrontabModel.update({ name: row.name, command: row.command, schedule: row.schedule, discovery_definition: row.discovery_definition }, { where: { id: row.id } });
             }
             if (added.length)
               await cronClient.delCron(added.map((x) => String(x.id)));
@@ -1081,25 +1083,13 @@ export default class CronService {
 
   private makeCommand(tab: Crontab, realTime?: boolean) {
     let command = tab.command.trim();
-    if (!command.startsWith(TASK_PREFIX) && !command.startsWith(QL_PREFIX)) {
+    if (!command.startsWith(TASK_PREFIX)) {
       command = `${TASK_PREFIX}${tab.command}`;
     }
     let commandVariable = `real_time=${Boolean(realTime)} no_tee=true ID=${tab.id} `;
     // Only include log_name if it has a truthy value to avoid passing null/undefined to shell
     if (tab.log_name) {
       commandVariable += `log_name=${tab.log_name} `;
-    }
-    if (tab.task_before) {
-      commandVariable += `task_before='${tab.task_before
-        .replace(/'/g, "'\\''")
-        .replace(/;? *\n/g, ';')
-        .trim()}' `;
-    }
-    if (tab.task_after) {
-      commandVariable += `task_after='${tab.task_after
-        .replace(/'/g, "'\\''")
-        .replace(/;? *\n/g, ';')
-        .trim()}' `;
     }
     if (tab.work_dir) {
       commandVariable += `work_dir='${tab.work_dir.replace(/'/g, "'\\''")}' `;

@@ -1,0 +1,83 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 1 - real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 3178.662792
+  type: 'test'
+  ...
+# Subtest: real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 2 - real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 2876.972
+  type: 'test'
+  ...
+# Subtest: real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 3 - real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 3054.595458
+  type: 'test'
+  ...
+# Subtest: real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+ok 4 - real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+  ---
+  duration_ms: 3178.1655
+  type: 'test'
+  ...
+# Subtest: lifecycle: main failure
+ok 5 - lifecycle: main failure
+  ---
+  duration_ms: 2416.191041
+  type: 'test'
+  ...
+# Subtest: lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+ok 6 - lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+  ---
+  duration_ms: 2795.745875
+  type: 'test'
+  ...
+# Subtest: lifecycle: FINALLY failure changes success
+ok 7 - lifecycle: FINALLY failure changes success
+  ---
+  duration_ms: 2656.838584
+  type: 'test'
+  ...
+# Subtest: lifecycle: FINALLY failure preserves primary
+ok 8 - lifecycle: FINALLY failure preserves primary
+  ---
+  duration_ms: 2630.734833
+  type: 'test'
+  ...
+# Subtest: lifecycle: CONTINUE before failure permits MAIN
+ok 9 - lifecycle: CONTINUE before failure permits MAIN
+  ---
+  duration_ms: 2671.305291
+  type: 'test'
+  ...
+# Subtest: lifecycle: invalid BEFORE output fails without leaking generated log
+ok 10 - lifecycle: invalid BEFORE output fails without leaking generated log
+  ---
+  duration_ms: 1997.801458
+  type: 'test'
+  ...
+# Subtest: graceful cancellation executes AFTER_FAILURE/FINALLY with config, then restores original
+ok 11 - graceful cancellation executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 2541.41375
+  type: 'test'
+  ...
+# Subtest: same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+ok 12 - same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+  ---
+  duration_ms: 23445.92125
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 53684.028917

@@ -83,6 +83,7 @@ module.exports = async function setup(t) {
     ...get('data/subscription'),
     ...get('data/cron'),
     ...get('data/scopedEnv'),
+    ...get('data/configAsset'),
   };
   await sequelize.sync();
   for (const folder of ['scripts', 'config', 'log', 'deps'])

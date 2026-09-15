@@ -21,3 +21,7 @@
 ## Phase 4.5B 实际服务映射
 
 SubscriptionSync 由唯一 `ManagedSubscriptionService` 承担；Discovery 是 `SubscriptionDiscoveryAdapter`；Task publication 暂由 `CronService.publishSubscription` 直接调用，输入来自 DB，保留 scheduler/filesystem 补偿；`TaskEnvironmentResolver` + `ExecutionEnvironmentTransport` 提供每次执行 full snapshot。表内 Execution Engine/TaskService/ScheduleService 是后续领域目标，不表示本阶段新增这些模型。
+
+## Phase 5 实际服务映射
+
+ConfigAssetService 持有不可变存储；TaskConfigService 合并绑定与预览；TaskHookService 管理结构化计划；TaskExecutionPreparationService 在同一 DB 事务解析计划；TaskWorkspaceResolver 持有 B17 映射；ConfigMaterializationService 负责租约内注入/恢复；TaskHookLifecycle 与 HookExecutor 监督 Hook 并调用当前 MAIN bridge。Config API 不再拥有通用系统文件编辑权。

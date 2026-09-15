@@ -24,8 +24,6 @@ export class Crontab {
   discovery_definition?: { name: string; schedule: string; command: string };
   env_profile_id?: number | null;
   extra_schedules?: Array<{ schedule: string }>;
-  task_before?: string;
-  task_after?: string;
   log_name?: string;
   allow_multiple_instances?: 1 | 0;
   work_dir?: string;
@@ -55,8 +53,6 @@ export class Crontab {
     this.discovery_definition = options.discovery_definition;
     this.env_profile_id = options.env_profile_id;
     this.extra_schedules = options.extra_schedules;
-    this.task_before = options.task_before;
-    this.task_after = options.task_after;
     this.log_name = options.log_name;
     this.allow_multiple_instances = options.allow_multiple_instances || 0;
     this.work_dir = options.work_dir;
@@ -99,8 +95,6 @@ export const CrontabModel = sequelize.define<CronInstance>('Crontab', {
   discovery_definition: DataTypes.JSON,
   env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },
   extra_schedules: DataTypes.JSON,
-  task_before: DataTypes.STRING,
-  task_after: DataTypes.STRING,
   log_name: DataTypes.STRING,
   allow_multiple_instances: DataTypes.NUMBER,
   work_dir: DataTypes.STRING,

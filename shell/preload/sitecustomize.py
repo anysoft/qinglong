@@ -1,7 +1,5 @@
 import os
 import re
-import subprocess
-import json
 import builtins
 import sys
 import scoped_env
@@ -38,80 +36,7 @@ def expand_range(range_str, max_value):
 
 
 def run():
-    try:
-        prev_pythonpath = os.getenv("PREV_PYTHONPATH", "")
-        os.environ["PYTHONPATH"] = prev_pythonpath
-
-        split_str = "__sitecustomize__"
-        file_name = sys.argv[0].replace(f"{os.getenv('dir_scripts')}/", "")
-        
-        # 创建临时文件路径
-        temp_file = os.path.join(scoped_env.directory, f"before-{os.getpid()}.json") if scoped_env.directory else f"/tmp/env_{os.getpid()}.json"
-        if scoped_env.directory:
-            descriptor = os.open(temp_file, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
-            os.close(descriptor)
-        
-        # 构建命令数组
-        commands = [
-            f'source {os.getenv("file_task_before")} {file_name}'
-        ]
-        
-        task_before = os.getenv("task_before")
-        if task_before:
-            escaped_task_before = task_before.replace('"', '\\"').replace("$", "\\$")
-            commands.append(f"eval '{escaped_task_before}'")
-            print("执行前置命令\n")
-            
-        commands.append(f"echo -e '{split_str}'")
-        
-        # 修改 Python 命令，使用单行并正确处理引号
-        python_cmd = f"python3 -c 'import os,json; f=open(\\\"{temp_file}\\\",\\\"w\\\"); json.dump(dict(os.environ),f); f.close()'"
-        commands.append(python_cmd)
-        
-        command = " && ".join(cmd for cmd in commands if cmd)
-        command = f'bash -c "{command}"'
-
-        res = subprocess.check_output(command, shell=True, encoding="utf-8")
-        output = res.split(split_str)[0]
-
-        try:
-            with open(temp_file, 'r') as f:
-                env_json = json.loads(f.read())
-
-            for key, value in env_json.items():
-                os.environ[key] = value
-
-            os.unlink(temp_file)
-        except Exception as json_error:
-            print(f"\ue926 Failed to parse environment variables: {json_error}")
-            try:
-                os.unlink(temp_file)
-            except:
-                pass
-
-        if len(output) > 0:
-            print(output)
-        if task_before:
-            print("执行前置命令结束\n")
-
-    except subprocess.CalledProcessError as error:
-        print(f"\ue926 run task before error: {error}")
-        if task_before:
-            print("执行前置命令结束\n")
-    except OSError as error:
-        error_message = str(error)
-        if "Argument list too long" not in error_message:
-            print(f"\ue926 run task before error: {error}")
-        # else:
-            # environment variable is too large
-        if task_before:
-            print("执行前置命令结束\n")
-    except Exception as error:
-        print(f"\ue926 run task before error: {error}")
-        if task_before:
-            print("执行前置命令结束\n")
-
-    import task_before
+    os.environ["PYTHONPATH"] = os.getenv("PREV_PYTHONPATH", "")
 
     env_param = os.getenv("envParam")
     num_param = os.getenv("numParam")

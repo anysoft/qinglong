@@ -1,0 +1,257 @@
+[
+  {
+    "file": "shell/task.sh",
+    "name": "single_hanle",
+    "output": "{\n  \"error\": \"Target 'single_hanle' not found\",\n  \"target\": {\n    \"name\": \"single_hanle\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/task.sh",
+    "name": "define_program",
+    "output": "{\n  \"error\": \"Target 'define_program' not found\",\n  \"target\": {\n    \"name\": \"define_program\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/task.sh",
+    "name": "handle_log_path",
+    "output": "{\n  \"error\": \"Target 'handle_log_path' not found\",\n  \"target\": {\n    \"name\": \"handle_log_path\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/task.sh",
+    "name": "format_params",
+    "output": "{\n  \"error\": \"Target 'format_params' not found\",\n  \"target\": {\n    \"name\": \"format_params\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/task.sh",
+    "name": "init_begin_time",
+    "output": "{\n  \"error\": \"Target 'init_begin_time' not found\",\n  \"target\": {\n    \"name\": \"init_begin_time\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "random_delay",
+    "output": "{\n  \"error\": \"Target 'random_delay' not found\",\n  \"target\": {\n    \"name\": \"random_delay\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "gen_array_scripts",
+    "output": "{\n  \"error\": \"Target 'gen_array_scripts' not found\",\n  \"target\": {\n    \"name\": \"gen_array_scripts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "usage",
+    "output": "{\n  \"error\": \"Target 'usage' not found\",\n  \"target\": {\n    \"name\": \"usage\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "run_nohup",
+    "output": "{\n  \"error\": \"Target 'run_nohup' not found\",\n  \"target\": {\n    \"name\": \"run_nohup\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "env_str_to_array",
+    "output": "{\n  \"error\": \"Target 'env_str_to_array' not found\",\n  \"target\": {\n    \"name\": \"env_str_to_array\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "clear_non_sh_env",
+    "output": "{\n  \"error\": \"Target 'clear_non_sh_env' not found\",\n  \"target\": {\n    \"name\": \"clear_non_sh_env\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "append_node_dependency_path",
+    "output": "{\n  \"error\": \"Target 'append_node_dependency_path' not found\",\n  \"target\": {\n    \"name\": \"append_node_dependency_path\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "enter_script_workdir",
+    "output": "{\n  \"error\": \"Target 'enter_script_workdir' not found\",\n  \"target\": {\n    \"name\": \"enter_script_workdir\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "run_normal",
+    "output": "{\n  \"error\": \"Target 'run_normal' not found\",\n  \"target\": {\n    \"name\": \"run_normal\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "handle_env_split",
+    "output": "{\n  \"error\": \"Target 'handle_env_split' not found\",\n  \"target\": {\n    \"name\": \"handle_env_split\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "run_concurrent",
+    "output": "{\n  \"error\": \"Target 'run_concurrent' not found\",\n  \"target\": {\n    \"name\": \"run_concurrent\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "run_designated",
+    "output": "{\n  \"error\": \"Target 'run_designated' not found\",\n  \"target\": {\n    \"name\": \"run_designated\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "run_else",
+    "output": "{\n  \"error\": \"Target 'run_else' not found\",\n  \"target\": {\n    \"name\": \"run_else\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "check_file",
+    "output": "{\n  \"error\": \"Target 'check_file' not found\",\n  \"target\": {\n    \"name\": \"check_file\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "check_nounset",
+    "output": "{\n  \"error\": \"Target 'check_nounset' not found\",\n  \"target\": {\n    \"name\": \"check_nounset\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/otask.sh",
+    "name": "main",
+    "output": "{\n  \"error\": \"Target 'main' not found\",\n  \"target\": {\n    \"name\": \"main\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/task_env.sh",
+    "name": "ql_task_env_prepare",
+    "output": "{\n  \"error\": \"Target 'ql_task_env_prepare' not found\",\n  \"target\": {\n    \"name\": \"ql_task_env_prepare\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/task_env.sh",
+    "name": "ql_task_env_cleanup",
+    "output": "{\n  \"error\": \"Target 'ql_task_env_cleanup' not found\",\n  \"target\": {\n    \"name\": \"ql_task_env_cleanup\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/task_env.sh",
+    "name": "ql_task_env_apply",
+    "output": "{\n  \"error\": \"Target 'ql_task_env_apply' not found\",\n  \"target\": {\n    \"name\": \"ql_task_env_apply\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/task_env.sh",
+    "name": "ql_task_env_isolate",
+    "output": "{\n  \"error\": \"Target 'ql_task_env_isolate' not found\",\n  \"target\": {\n    \"name\": \"ql_task_env_isolate\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "init_env",
+    "output": "{\n  \"error\": \"Target 'init_env' not found\",\n  \"target\": {\n    \"name\": \"init_env\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "load_ql_envs",
+    "output": "{\n  \"error\": \"Target 'load_ql_envs' not found\",\n  \"target\": {\n    \"name\": \"load_ql_envs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "import_config",
+    "output": "{\n  \"error\": \"Target 'import_config' not found\",\n  \"target\": {\n    \"name\": \"import_config\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "t",
+    "output": "{\n  \"error\": \"Target 't' not found\",\n  \"target\": {\n    \"name\": \"t\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "set_proxy",
+    "output": "{\n  \"error\": \"Target 'set_proxy' not found\",\n  \"target\": {\n    \"name\": \"set_proxy\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "unset_proxy",
+    "output": "{\n  \"error\": \"Target 'unset_proxy' not found\",\n  \"target\": {\n    \"name\": \"unset_proxy\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "make_dir",
+    "output": "{\n  \"error\": \"Target 'make_dir' not found\",\n  \"target\": {\n    \"name\": \"make_dir\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "detect_termux",
+    "output": "{\n  \"error\": \"Target 'detect_termux' not found\",\n  \"target\": {\n    \"name\": \"detect_termux\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "detect_macos",
+    "output": "{\n  \"error\": \"Target 'detect_macos' not found\",\n  \"target\": {\n    \"name\": \"detect_macos\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "gen_random_num",
+    "output": "{\n  \"error\": \"Target 'gen_random_num' not found\",\n  \"target\": {\n    \"name\": \"gen_random_num\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "define_cmd",
+    "output": "{\n  \"error\": \"Target 'define_cmd' not found\",\n  \"target\": {\n    \"name\": \"define_cmd\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "fix_config",
+    "output": "{\n  \"error\": \"Target 'fix_config' not found\",\n  \"target\": {\n    \"name\": \"fix_config\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "npm_install_sub",
+    "output": "{\n  \"error\": \"Target 'npm_install_sub' not found\",\n  \"target\": {\n    \"name\": \"npm_install_sub\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "npm_install_2",
+    "output": "{\n  \"error\": \"Target 'npm_install_2' not found\",\n  \"target\": {\n    \"name\": \"npm_install_2\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "diff_and_copy",
+    "output": "{\n  \"error\": \"Target 'diff_and_copy' not found\",\n  \"target\": {\n    \"name\": \"diff_and_copy\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "random_range",
+    "output": "{\n  \"error\": \"Target 'random_range' not found\",\n  \"target\": {\n    \"name\": \"random_range\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "delete_pm2",
+    "output": "{\n  \"error\": \"Target 'delete_pm2' not found\",\n  \"target\": {\n    \"name\": \"delete_pm2\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "reload_pm2",
+    "output": "{\n  \"error\": \"Target 'reload_pm2' not found\",\n  \"target\": {\n    \"name\": \"reload_pm2\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "diff_time",
+    "output": "{\n  \"error\": \"Target 'diff_time' not found\",\n  \"target\": {\n    \"name\": \"diff_time\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "format_time",
+    "output": "{\n  \"error\": \"Target 'format_time' not found\",\n  \"target\": {\n    \"name\": \"format_time\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "format_log_time",
+    "output": "{\n  \"error\": \"Target 'format_log_time' not found\",\n  \"target\": {\n    \"name\": \"format_log_time\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "format_timestamp",
+    "output": "{\n  \"error\": \"Target 'format_timestamp' not found\",\n  \"target\": {\n    \"name\": \"format_timestamp\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "handle_task_start",
+    "output": "{\n  \"error\": \"Target 'handle_task_start' not found\",\n  \"target\": {\n    \"name\": \"handle_task_start\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "run_task_before",
+    "output": "{\n  \"error\": \"Target 'run_task_before' not found\",\n  \"target\": {\n    \"name\": \"run_task_before\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "run_task_after",
+    "output": "{\n  \"error\": \"Target 'run_task_after' not found\",\n  \"target\": {\n    \"name\": \"run_task_after\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "handle_task_end",
+    "output": "{\n  \"error\": \"Target 'handle_task_end' not found\",\n  \"target\": {\n    \"name\": \"handle_task_end\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  }
+]

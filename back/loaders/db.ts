@@ -1,4 +1,5 @@
 import Logger from './logger';
+import { configAssetModels } from '../data/configAsset';
 import { EnvModel } from '../data/env';
 import { CrontabModel } from '../data/cron';
 import { DependenceModel } from '../data/dependence';
@@ -25,7 +26,7 @@ export default async () => {
       GitCredentialModel, RepositoryModel, WorktreeModel, EnvironmentProfileModel,
       SubscriptionModel, CrontabModel, RepositoryEnvVariableModel, TaskEnvVariableModel,
       EnvModel, DependenceModel, AppModel, SystemModel, CrontabViewModel,
-      CrontabStatModel, RunningInstanceModel,
+      CrontabStatModel, RunningInstanceModel, ...configAssetModels,
     ]);
     await new ExecutionEnvironmentTransport().cleanupStale().catch(() => {
       Logger.warn('[environment] stale snapshot cleanup deferred');

@@ -63,8 +63,8 @@ message CronItem {
   repeated string labels = 5;
   optional int32 sub_id = 6;
   repeated ExtraScheduleItem extra_schedules = 7;
-  optional string task_before = 8;
-  optional string task_after = 9;
+  reserved 8, 9;
+  reserved "task_before", "task_after";
   optional int32 status = 10;
   optional string log_path = 11;
   optional int32 pid = 12;
@@ -79,8 +79,8 @@ message CreateCronRequest {
   repeated string labels = 4;
   optional int32 sub_id = 5;
   repeated ExtraScheduleItem extra_schedules = 6;
-  optional string task_before = 7;
-  optional string task_after = 8;
+  reserved 7, 8;
+  reserved "task_before", "task_after";
 }
 
 message UpdateCronRequest {
@@ -91,8 +91,8 @@ message UpdateCronRequest {
   repeated string labels = 5;
   optional int32 sub_id = 6;
   repeated ExtraScheduleItem extra_schedules = 7;
-  optional string task_before = 8;
-  optional string task_after = 9;
+  reserved 8, 9;
+  reserved "task_before", "task_after";
 }
 
 message DeleteCronsRequest { repeated int32 ids = 1; }

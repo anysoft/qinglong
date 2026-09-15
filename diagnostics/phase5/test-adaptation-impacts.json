@@ -1,0 +1,156 @@
+[
+  {
+    "file": "tests/phase2/helpers.cjs",
+    "name": "tests/phase2/helpers.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase2/helpers.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase2/helpers.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase2/helpers.cjs",
+    "name": "FixtureResolver",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:tests/phase2/helpers.cjs:FixtureResolver\",\n    \"name\": \"FixtureResolver\",\n    \"type\": \"Class\",\n    \"filePath\": \"tests/phase2/helpers.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:diagnostics/phase2/ui-smoke.cjs\",\n        \"name\": \"ui-smoke.cjs\",\n        \"filePath\": \"diagnostics/phase2/ui-smoke.cjs\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase2/helpers.cjs",
+    "name": "resolve",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:tests/phase2/helpers.cjs:FixtureResolver.resolve\",\n    \"name\": \"resolve\",\n    \"type\": \"Method\",\n    \"filePath\": \"tests/phase2/helpers.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"7 call sites invoking `resolve` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 7,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 34,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase4/helpers.cjs",
+    "name": "tests/phase4/helpers.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase4/helpers.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase4/helpers.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/fresh-schema.test.cjs",
+    "name": "tests/platform/fresh-schema.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/fresh-schema.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/fresh-schema.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/fresh-schema.test.cjs",
+    "name": "fixture",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:tests/platform/fresh-schema.test.cjs:fixture\",\n    \"name\": \"fixture\",\n    \"type\": \"Function\",\n    \"filePath\": \"tests/platform/fresh-schema.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/environment-entrypoint.test.cjs",
+    "name": "tests/platform/environment-entrypoint.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/environment-entrypoint.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/environment-entrypoint.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/environment-execution.test.cjs",
+    "name": "tests/platform/environment-execution.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/environment-execution.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/environment-execution.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/environment-execution.test.cjs",
+    "name": "run",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:tests/platform/environment-execution.test.cjs:run\",\n    \"name\": \"run\",\n    \"type\": \"Function\",\n    \"filePath\": \"tests/platform/environment-execution.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"76 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 76,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 0,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/environment-isolation.test.cjs",
+    "name": "tests/platform/environment-isolation.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/environment-isolation.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/environment-isolation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/environment-account-mode.test.cjs",
+    "name": "tests/platform/environment-account-mode.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/environment-account-mode.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/environment-account-mode.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/discovery.test.cjs",
+    "name": "tests/platform/discovery.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/discovery.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/discovery.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/discovery.test.cjs",
+    "name": "error",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:tests/platform/discovery.test.cjs:fn@37:115.error@39:26#0\",\n    \"name\": \"error\",\n    \"type\": \"Method\",\n    \"filePath\": \"tests/platform/discovery.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/discovery.test.cjs",
+    "name": "warn",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:tests/platform/discovery.test.cjs:fn@37:115.warn@39:38#0\",\n    \"name\": \"warn\",\n    \"type\": \"Method\",\n    \"filePath\": \"tests/platform/discovery.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/api-file-routes.test.cjs",
+    "name": "tests/platform/api-file-routes.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/api-file-routes.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/api-file-routes.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/api-file-routes.test.cjs",
+    "name": "mockModule",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:tests/platform/api-file-routes.test.cjs:mockModule\",\n    \"name\": \"mockModule\",\n    \"type\": \"Function\",\n    \"filePath\": \"tests/platform/api-file-routes.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "name": "test/back/http-security.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'test/back/http-security.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"test/back/http-security.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionRedactor.ts",
+    "name": "back/services/executionRedactor.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/executionRedactor.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/executionRedactor.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionRedactor.ts",
+    "name": "ExecutionRedactor",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ExecutionRedactor' not found\",\n  \"target\": {\n    \"name\": \"ExecutionRedactor\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionRedactor.ts",
+    "name": "add",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'add' not found\",\n  \"target\": {\n    \"name\": \"add\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionRedactor.ts",
+    "name": "write",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'write' not found\",\n  \"target\": {\n    \"name\": \"write\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionRedactor.ts",
+    "name": "flush",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'flush' not found\",\n  \"target\": {\n    \"name\": \"flush\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

@@ -128,20 +128,6 @@ export default class SubscriptionService {
           tf('## 开始执行... %s\n', startTime.format('YYYY-MM-DD HH:mm:ss')),
         );
 
-        // 执行sub_before
-        let beforeStr = '';
-        try {
-          if (doc.sub_before) {
-            await logStreamManager.write(absolutePath, `\n## ${t('执行before命令...')}\n\n`);
-            beforeStr = await promiseExec(doc.sub_before);
-          }
-        } catch (error: any) {
-          beforeStr =
-            (error.stderr && error.stderr.toString()) || JSON.stringify(error);
-        }
-        if (beforeStr) {
-          await logStreamManager.write(absolutePath, `${beforeStr}\n`);
-        }
       },
       onStart: async (cp: ChildProcessWithoutNullStreams, startTime) => {
         await SubscriptionModel.update(
@@ -156,24 +142,6 @@ export default class SubscriptionService {
         try {
           const sub = await this.getDb({ id: doc.id });
           absolutePath = await handleLogPath(sub.log_path as string);
-
-          // 执行 sub_after
-          let afterStr = '';
-          try {
-            if (sub.sub_after) {
-              await logStreamManager.write(
-                absolutePath,
-                `\n\n## ${t('执行after命令...')}\n\n`,
-              );
-              afterStr = await promiseExec(sub.sub_after);
-            }
-          } catch (error: any) {
-            afterStr =
-              (error.stderr && error.stderr.toString()) || JSON.stringify(error);
-          }
-          if (afterStr) {
-            await logStreamManager.write(absolutePath, `${afterStr}\n`);
-          }
 
           await logStreamManager.write(
             absolutePath,

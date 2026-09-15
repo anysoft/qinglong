@@ -419,5 +419,41 @@
     "path": "tests/archived/legacy/tests/phase4/migration.test.cjs",
     "classification": "ARCHIVED_LEGACY",
     "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/phase5/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase5/domain.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase5/hook-output.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase5/materialization.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase5/runtime.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/phase5/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase5/publication-integrity.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/phase5/script-access.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/phase5/process-group.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
   }
 ]

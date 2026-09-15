@@ -377,12 +377,8 @@ main() {
   fi
 }
 
-handle_task_start "${task_shell_params[@]}"
 check_file "${task_shell_params[@]}"
 append_node_dependency_path
-if [[ $isJsOrPythonFile == 'false' ]]; then
-  run_task_before "${task_shell_params[@]}"
-fi
 set_u_on="false"
 check_nounset
 main "${task_shell_params[@]}"
@@ -396,5 +392,4 @@ if [[ $isJsOrPythonFile == 'true' ]]; then
   export NODE_OPTIONS="${PREV_NODE_OPTIONS}"
   export PYTHONPATH="${PREV_PYTHONPATH}"
 fi
-run_task_after "${task_shell_params[@]}"
-handle_task_end "${task_shell_params[@]}"
+return "$_task_exit_code"

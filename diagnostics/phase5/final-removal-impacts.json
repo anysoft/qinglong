@@ -1,0 +1,212 @@
+[
+  {
+    "file": "back/taskEnvironment.ts",
+    "name": "back/taskEnvironment.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/taskEnvironment.ts' not found\",\n  \"target\": {\n    \"name\": \"back/taskEnvironment.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/taskEnvironment.ts",
+    "name": "prepareTaskEnvironment",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/taskEnvironment.ts:prepareTaskEnvironment\",\n    \"name\": \"prepareTaskEnvironment\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/taskEnvironment.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/taskEnvironment.ts\",\n        \"name\": \"taskEnvironment.ts\",\n        \"filePath\": \"back/taskEnvironment.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/task_env_redact.cjs",
+    "name": "shell/task_env_redact.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/task_env_redact.cjs' not found\",\n  \"target\": {\n    \"name\": \"shell/task_env_redact.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/task_env_redact.cjs",
+    "name": "flush",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:shell/task_env_redact.cjs:flush\",\n    \"name\": \"flush\",\n    \"type\": \"Function\",\n    \"filePath\": \"shell/task_env_redact.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"1 call site invoking `flush` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 1,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 0,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/task_env_redact.cjs\",\n        \"name\": \"task_env_redact.cjs\",\n        \"filePath\": \"shell/task_env_redact.cjs\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "shell/preload/client.py",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/preload/client.py' not found\",\n  \"target\": {\n    \"name\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "getattr",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'getattr' not found\",\n  \"target\": {\n    \"name\": \"getattr\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "EnvItem",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:EnvItem\",\n    \"name\": \"EnvItem\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "GetEnvsParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:GetEnvsParams\",\n    \"name\": \"GetEnvsParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "CreateEnvParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:CreateEnvParams\",\n    \"name\": \"CreateEnvParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "UpdateEnvParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:UpdateEnvParams\",\n    \"name\": \"UpdateEnvParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "DeleteEnvsParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:DeleteEnvsParams\",\n    \"name\": \"DeleteEnvsParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "MoveEnvParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:MoveEnvParams\",\n    \"name\": \"MoveEnvParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "DisableEnvsParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:DisableEnvsParams\",\n    \"name\": \"DisableEnvsParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "EnableEnvsParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:EnableEnvsParams\",\n    \"name\": \"EnableEnvsParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "UpdateEnvNamesParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:UpdateEnvNamesParams\",\n    \"name\": \"UpdateEnvNamesParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "GetEnvByIdParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:GetEnvByIdParams\",\n    \"name\": \"GetEnvByIdParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "SystemNotifyParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:SystemNotifyParams\",\n    \"name\": \"SystemNotifyParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "EnvsResponse",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:EnvsResponse\",\n    \"name\": \"EnvsResponse\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "EnvResponse",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:EnvResponse\",\n    \"name\": \"EnvResponse\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "Response",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:Response\",\n    \"name\": \"Response\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "ExtraScheduleItem",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:ExtraScheduleItem\",\n    \"name\": \"ExtraScheduleItem\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "CronItem",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:CronItem\",\n    \"name\": \"CronItem\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "CreateCronParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:CreateCronParams\",\n    \"name\": \"CreateCronParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "UpdateCronParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:UpdateCronParams\",\n    \"name\": \"UpdateCronParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "DeleteCronsParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:DeleteCronsParams\",\n    \"name\": \"DeleteCronsParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "CronDetailParams",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:CronDetailParams\",\n    \"name\": \"CronDetailParams\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "CronsResponse",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:CronsResponse\",\n    \"name\": \"CronsResponse\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "CronResponse",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:CronResponse\",\n    \"name\": \"CronResponse\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/client.py",
+    "name": "Client",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/client.py:Client\",\n    \"name\": \"Client\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/client.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 2,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 2\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Preload\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Class:shell/preload/sitecustomize.py:BaseApi\",\n        \"name\": \"BaseApi\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"EXTENDS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.py\",\n        \"name\": \"sitecustomize.py\",\n        \"filePath\": \"shell/preload/sitecustomize.py\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/environment-redaction.test.cjs",
+    "name": "tests/platform/environment-redaction.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/environment-redaction.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/environment-redaction.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

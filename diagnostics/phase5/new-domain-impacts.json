@@ -1,0 +1,226 @@
+[
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "back/services/taskConfig.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/taskConfig.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/taskConfig.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "TaskConfigService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskConfigService' not found\",\n  \"target\": {\n    \"name\": \"TaskConfigService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "model",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'model' not found\",\n  \"target\": {\n    \"name\": \"model\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "ownerKey",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ownerKey' not found\",\n  \"target\": {\n    \"name\": \"ownerKey\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "list",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'list' not found\",\n  \"target\": {\n    \"name\": \"list\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "save",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'save' not found\",\n  \"target\": {\n    \"name\": \"save\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "remove",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'remove' not found\",\n  \"target\": {\n    \"name\": \"remove\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "resolve",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'resolve' not found\",\n  \"target\": {\n    \"name\": \"resolve\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskConfig.ts",
+    "name": "preview",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'preview' not found\",\n  \"target\": {\n    \"name\": \"preview\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHooks.ts",
+    "name": "back/services/taskHooks.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/taskHooks.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/taskHooks.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHooks.ts",
+    "name": "TaskHookService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskHookService' not found\",\n  \"target\": {\n    \"name\": \"TaskHookService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHooks.ts",
+    "name": "list",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'list' not found\",\n  \"target\": {\n    \"name\": \"list\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHooks.ts",
+    "name": "save",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'save' not found\",\n  \"target\": {\n    \"name\": \"save\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHooks.ts",
+    "name": "remove",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'remove' not found\",\n  \"target\": {\n    \"name\": \"remove\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskHooks.ts",
+    "name": "reorder",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'reorder' not found\",\n  \"target\": {\n    \"name\": \"reorder\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "back/shared/configAssets.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/configAssets.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/configAssets.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "ConfigAssetError",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ConfigAssetError' not found\",\n  \"target\": {\n    \"name\": \"ConfigAssetError\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "targetPath",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'targetPath' not found\",\n  \"target\": {\n    \"name\": \"targetPath\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "safeParents",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'safeParents' not found\",\n  \"target\": {\n    \"name\": \"safeParents\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "privateDirectory",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'privateDirectory' not found\",\n  \"target\": {\n    \"name\": \"privateDirectory\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/configAssets.ts",
+    "name": "atomicPrivateWrite",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'atomicPrivateWrite' not found\",\n  \"target\": {\n    \"name\": \"atomicPrivateWrite\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "back/services/configMaterialization.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/configMaterialization.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/configMaterialization.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "ConfigMaterializationService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ConfigMaterializationService' not found\",\n  \"target\": {\n    \"name\": \"ConfigMaterializationService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "journalRoot",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'journalRoot' not found\",\n  \"target\": {\n    \"name\": \"journalRoot\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "requireLease",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'requireLease' not found\",\n  \"target\": {\n    \"name\": \"requireLease\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "recover",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'recover' not found\",\n  \"target\": {\n    \"name\": \"recover\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "prepare",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'prepare' not found\",\n  \"target\": {\n    \"name\": \"prepare\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/configMaterialization.ts",
+    "name": "restore",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'restore' not found\",\n  \"target\": {\n    \"name\": \"restore\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "name": "shell/preload/sitecustomize.js",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/preload/sitecustomize.js' not found\",\n  \"target\": {\n    \"name\": \"shell/preload/sitecustomize.js\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "name": "preferGlobalNodeModules",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:shell/preload/sitecustomize.js:preferGlobalNodeModules\",\n    \"name\": \"preferGlobalNodeModules\",\n    \"type\": \"Function\",\n    \"filePath\": \"shell/preload/sitecustomize.js\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.js\",\n        \"name\": \"sitecustomize.js\",\n        \"filePath\": \"shell/preload/sitecustomize.js\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "name": "expandRange",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:shell/preload/sitecustomize.js:expandRange\",\n    \"name\": \"expandRange\",\n    \"type\": \"Function\",\n    \"filePath\": \"shell/preload/sitecustomize.js\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 2,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 1,\n    \"2\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Preload\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Function:shell/preload/sitecustomize.js:run\",\n        \"name\": \"run\",\n        \"filePath\": \"shell/preload/sitecustomize.js\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ],\n    \"2\": [\n      {\n        \"depth\": 2,\n        \"id\": \"File:shell/preload/sitecustomize.js\",\n        \"name\": \"sitecustomize.js\",\n        \"filePath\": \"shell/preload/sitecustomize.js\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "name": "run",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:shell/preload/sitecustomize.js:run\",\n    \"name\": \"run\",\n    \"type\": \"Function\",\n    \"filePath\": \"shell/preload/sitecustomize.js\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"76 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 76,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 0,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/preload/sitecustomize.js\",\n        \"name\": \"sitecustomize.js\",\n        \"filePath\": \"shell/preload/sitecustomize.js\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

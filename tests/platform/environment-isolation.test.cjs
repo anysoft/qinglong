@@ -20,7 +20,7 @@ test('cross-repository and same-repository profiles stay isolated with task over
   const transport = new (h.get('services/executionEnvironmentTransport').default)();
   const run = snapshot => new Promise((resolve, reject) => {
     const env = { ...process.env, QL_DIR: h.dir, QL_DATA_DIR: path.join(h.dir, 'data'), real_time: 'true', ID: '', ...(snapshot ? { QL_TASK_ENV_SNAPSHOT: snapshot.directory } : {}) };
-    const cp = spawn('/bin/bash', [path.join(h.dir, 'shell/task.sh'), 'isolation.sh', 'now'], { env }); let out = '';
+    const cp = spawn(process.execPath, [path.resolve('tests/phase5/snapshot-main.cjs'), 'isolation.sh', 'now'], { env }); let out = '';
     cp.stdout.on('data', x => out += x); cp.stderr.on('data', x => out += x); cp.on('error', reject); cp.on('close', code => { assert.equal(code, 0, out); resolve(out); });
   });
   await Promise.all(resolved.map(async entry => { const snapshot = await transport.prepare(entry.env, process.pid); try { assert.ok((await run(snapshot)).includes(`VALUE:${entry.value}`)); } finally { await snapshot.cleanup(); } }));

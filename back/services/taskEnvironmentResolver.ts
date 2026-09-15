@@ -1,4 +1,5 @@
 import { Service } from 'typedi';
+import { Transaction } from 'sequelize';
 import { sequelize } from '../data';
 import { Crontab, CrontabModel } from '../data/cron';
 import { EnvModel } from '../data/env';
@@ -40,8 +41,8 @@ export function mergeTaskEnvironment(base: NodeJS.ProcessEnv, globals: ScopedVar
 @Service()
 export default class TaskEnvironmentResolver {
   constructor(private profiles: RepositoryEnvProfileService) {}
-  async resolve(taskOrId: number | Crontab | null, baseEnv: NodeJS.ProcessEnv = process.env): Promise<ResolvedTaskEnvironment> {
-    return sequelize.transaction(async transaction => {
+  async resolve(taskOrId: number | Crontab | null, baseEnv: NodeJS.ProcessEnv = process.env, existingTransaction?: Transaction): Promise<ResolvedTaskEnvironment> {
+    const read = async (transaction: Transaction) => {
       const task = typeof taskOrId === 'number' ? (await CrontabModel.findByPk(taskOrId, { transaction }))?.get({ plain: true }) : taskOrId ?? { command: '' };
       if (!task) throw new ScopedEnvironmentError('ENV_TASK_NOT_FOUND', 404);
       const sub = task.sub_id ? await SubscriptionModel.findByPk(task.sub_id, { transaction }) : null;
@@ -56,7 +57,8 @@ export default class TaskEnvironmentResolver {
         scoped: true, task_id: task.id, repository_id: repo?.id ?? null,
         selected_by: task.env_profile_id != null ? 'TASK' : sub?.env_profile_id != null ? 'SUBSCRIPTION' : repo?.default_env_profile_id != null ? 'REPOSITORY' : 'NONE', version: 1,
       });
-    });
+    };
+    return existingTransaction ? read(existingTransaction) : sequelize.transaction(read);
   }
   async preview(taskId: number) {
     const resolved = await this.resolve(taskId);

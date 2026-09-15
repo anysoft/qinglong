@@ -1,6 +1,6 @@
-# Fresh Schema Baseline v1 / 最终 Domain Schema
+# Operational Schema v2 / 最终 Domain Schema
 
-**Operational v1 已实现并冻结；下图仍是后续 Domain 目标。** 4.5B 使用 platform_schema_version=1，空库直接创建最终当前模型，非空未知签名拒绝启动；不支持 QingLong 升级导入。保留当前执行必需的桥表，Task/Schedule/TaskRun最终拆分在9/10。此图是最终目标，不是4.5B必须一次实现的schema。
+**当前为 Operational v2；v1 冻结内容用于签名验证迁移。下图含后续 Domain 目标。** 4.5B 使用 platform_schema_version=1，空库直接创建最终当前模型，非空未知签名拒绝启动；不支持 QingLong 升级导入。保留当前执行必需的桥表，Task/Schedule/TaskRun最终拆分在9/10。此图是最终目标，不是4.5B必须一次实现的schema。
 
 ```mermaid
 erDiagram
@@ -71,3 +71,7 @@ Auth/settings/API clients保持安全引导，未来独立admin_users/platform_s
 15 个当前 ORM 模型 + PlatformMetadata 直接建库。Subscriptions.repository_id NOT NULL FK；worktree_id nullable FK；删除全部 URL/mode/pull/credential override 字段。Envs.name UNIQUE、TEXT value、SET/UNSET、is_secret，仍保留 SDK metadata/status 表示；不存在重复聚合。Crontabs 新增 source_relative_path/discovery_key/discovery_definition 及 unique(sub_id, discovery_key)，执行状态/日志桥表保留。
 
 模型签名 + 实际 SQLite schema 签名 + foreign_key_check 决定重启是否接受；未知/中间检查点库不迁移、不清空。Fresh v1 Schema Frozen for next development phase。未来修改使用新平台自己的显式 schema evolution，不覆盖当前 v1。
+
+## Phase 5 Operational v2
+
+Fresh 与已验证 v1 通过显式事务迁移得到相同 v2 签名。新增 ConfigAssets、ConfigAssetRevisions、RepositoryConfigBindings、TaskConfigBindings、TaskHooks，移除旧 Task/Subscription Hook 字段。冻结 v1 记录保持不变。见 [Schema v2](../refactor/phase5/09-schema-v2.md)。

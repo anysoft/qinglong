@@ -1,9 +1,11 @@
+import { ConfigBindings } from '@/components/config-bindings';
+import { TaskHooks } from '@/components/task-hooks';
 import EditableTagGroup from '@/components/tag';
 import { TaskEnvironment } from '@/components/scoped-environment';
 import config from '@/utils/config';
 import { request } from '@/utils/http';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-import { Button, Form, Input, Modal, Select, Space, message } from 'antd';
+import { Button, Form, Input, Modal, Select, Space, Tabs, message } from 'antd';
 import CronExpressionParser from 'cron-parser';
 import { useEffect, useState } from 'react';
 import intl from 'react-intl-universal';
@@ -242,64 +244,8 @@ const CronModal = ({
         >
           <Input placeholder={intl.get('留空自动检测，或输入相对/绝对路径')} />
         </Form.Item>
-        <Form.Item
-          name="task_before"
-          label={intl.get('执行前')}
-          tooltip={intl.get(
-            '运行任务前执行的命令，比如 cp/mv/python3 xxx.py/node xxx.js',
-          )}
-          rules={[
-            {
-              validator(_, value) {
-                if (
-                  value &&
-                  (value.includes(' task ') || value.startsWith('task '))
-                ) {
-                  return Promise.reject(intl.get('不能包含 task 命令'));
-                }
-                return Promise.resolve();
-              },
-            },
-          ]}
-        >
-          <Input.TextArea
-            rows={4}
-            autoSize={{ minRows: 1, maxRows: 5 }}
-            placeholder={intl.get(
-              '请输入运行任务前要执行的命令，不能包含 task 命令',
-            )}
-          />
-        </Form.Item>
-        <Form.Item
-          name="task_after"
-          label={intl.get('执行后')}
-          tooltip={intl.get(
-            '运行任务后执行的命令，比如 cp/mv/python3 xxx.py/node xxx.js',
-          )}
-          rules={[
-            {
-              validator(_, value) {
-                if (
-                  value &&
-                  (value.includes(' task ') || value.startsWith('task '))
-                ) {
-                  return Promise.reject(intl.get('不能包含 task 命令'));
-                }
-                return Promise.resolve();
-              },
-            },
-          ]}
-        >
-          <Input.TextArea
-            rows={4}
-            autoSize={{ minRows: 1, maxRows: 5 }}
-            placeholder={intl.get(
-              '请输入运行任务后要执行的命令，不能包含 task 命令',
-            )}
-          />
-        </Form.Item>
       </Form>
-      {cron?.id && <TaskEnvironment id={cron.id} />}
+      {cron?.id && <Tabs items={[{key:"environment",label:"Environment",children:<TaskEnvironment id={cron.id}/>},{key:"config",label:"Config",children:<ConfigBindings scope="task" id={cron.id}/>},{key:"hooks",label:"Hooks",children:<TaskHooks id={cron.id}/>}]} />}
     </Modal>
   );
 };

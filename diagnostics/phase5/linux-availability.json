@@ -1,0 +1,13 @@
+{
+  "host": "Darwin",
+  "architecture": "arm64",
+  "tools": {
+    "docker": null,
+    "podman": null,
+    "colima": null,
+    "lima": null
+  },
+  "status": "PARTIAL",
+  "reason": "macOS host; Linux execution pending Ubuntu CI",
+  "workflow": ".github/workflows/validate.yml"
+}

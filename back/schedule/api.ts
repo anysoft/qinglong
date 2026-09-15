@@ -256,8 +256,6 @@ const normalizeCronData = (data: CronItem | null): CronItem | undefined => {
     sub_id: cron.sub_id ?? undefined,
     extra_schedules: cron.extra_schedules ?? [],
     pid: cron.pid ?? undefined,
-    task_before: cron.task_before ?? undefined,
-    task_after: cron.task_after ?? undefined,
   };
 };
 

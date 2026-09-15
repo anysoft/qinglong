@@ -30,11 +30,6 @@ export file_auth_sample=$dir_sample/auth.sample.json
 export file_auth_user=$dir_config/auth.json
 export file_auth_token=$dir_config/token.json
 export file_extra_shell=$dir_config/extra.sh
-export file_task_before=$dir_config/task_before.sh
-export file_task_before_js=$dir_config/task_before.js
-export file_task_before_py=$dir_config/task_before.py
-export file_task_after=$dir_config/task_after.sh
-export file_task_sample=$dir_sample/task.sample.sh
 export file_extra_sample=$dir_sample/extra.sample.sh
 export file_notify_js_sample=$dir_sample/notify.js
 export file_notify_py_sample=$dir_sample/notify.py
@@ -186,13 +181,9 @@ fix_config() {
     cp -f $file_config_sample $file_config_user
   fi
 
-  if [[ ! -f $file_task_before ]]; then
-    cp -f $file_task_sample $file_task_before
-  fi
 
-  if [[ ! -f $file_task_after ]]; then
-    cp -f $file_task_sample $file_task_after
-  fi
+
+
 
   if [[ ! -f $file_extra_shell ]]; then
     cp -f $file_extra_sample $file_extra_shell
@@ -353,26 +344,6 @@ handle_task_start() {
     fi
   fi
   t '## 开始执行... %s\n' "${begin_time}${error_message}"
-}
-
-run_task_before() {
-  . $file_task_before "$@"
-
-  if [[ ${task_before:=} ]]; then
-    t '执行前置命令\n'
-    eval "${task_before%;}"
-    t '\n执行前置命令结束\n'
-  fi
-}
-
-run_task_after() {
-  . $file_task_after "$@"
-
-  if [[ ${task_after:=} ]]; then
-    t '\n执行后置命令\n'
-    eval "${task_after%;}"
-    t '\n执行后置命令结束'
-  fi
 }
 
 handle_task_end() {

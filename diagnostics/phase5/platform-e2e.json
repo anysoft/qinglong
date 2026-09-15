@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "steps": [
+    "empty-root-bootstrap",
+    "browser-fresh-initialize-login",
+    "browser-credential-create",
+    "browser-repository-create",
+    "browser-initialize-fetch",
+    "browser-subscription-create-branch",
+    "browser-prepare-sync-discovery",
+    "browser-worktree-view",
+    "browser-global-create",
+    "browser-profile-create-default",
+    "browser-task-overrides-preview",
+    "browser-text-secret-assets-create",
+    "browser-revision-increment-secret-keep",
+    "browser-repository-config-bindings",
+    "browser-task-override-mask-preview-four-phase-hooks",
+    "browser-three-language-run-logs",
+    "browser-disable-enable",
+    "restart-relogin",
+    "restart-repeat-execution",
+    "browser-secret-response-audit",
+    "fresh-v2-fk-layout"
+  ],
+  "linux": false,
+  "response_payloads_inspected": 491,
+  "websocket_frames_inspected": 20
+}

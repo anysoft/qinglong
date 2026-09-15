@@ -1,0 +1,23 @@
+[
+  {
+    "file": "shell/git_workspace_lock.py",
+    "name": "shell/git_workspace_lock.py",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/git_workspace_lock.py' not found\",\n  \"target\": {\n    \"name\": \"shell/git_workspace_lock.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/hook_process.py",
+    "name": "shell/hook_process.py",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/hook_process.py' not found\",\n  \"target\": {\n    \"name\": \"shell/hook_process.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/execution_lease.py",
+    "name": "shell/execution_lease.py",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/execution_lease.py' not found\",\n  \"target\": {\n    \"name\": \"shell/execution_lease.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

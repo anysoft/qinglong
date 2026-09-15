@@ -1,0 +1,221 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: Config/Hook API contracts deny Secret plaintext in all responses and sanitize malformed payloads
+ok 1 - Config/Hook API contracts deny Secret plaintext in all responses and sanitize malformed payloads
+  ---
+  duration_ms: 899.798041
+  type: 'test'
+  ...
+# Subtest: immutable revisions, optimistic edits, private storage, Secret response and downgrade protection
+ok 2 - immutable revisions, optimistic edits, private storage, Secret response and downgrade protection
+  ---
+  duration_ms: 974.161292
+  type: 'test'
+  ...
+# Subtest: Repository inheritance, Task override/MASK, normalized uniqueness, disabled and manual bindings, references and cascades
+ok 3 - Repository inheritance, Task override/MASK, normalized uniqueness, disabled and manual bindings, references and cascades
+  ---
+  duration_ms: 324.9255
+  type: 'test'
+  ...
+# Subtest: Hook CRUD, stable order, transactional reorder conflict rollback and Task cascade
+ok 4 - Hook CRUD, stable order, transactional reorder conflict rollback and Task cascade
+  ---
+  duration_ms: 162.125625
+  type: 'test'
+  ...
+# Subtest: uncommitted revision directory is retained and next edit allocates a fresh immutable path
+ok 5 - uncommitted revision directory is retained and next edit allocates a fresh immutable path
+  ---
+  duration_ms: 184.661
+  type: 'test'
+  ...
+# Subtest: BEFORE JSON set/unset/secret produces derived snapshot only and retains historical secrets
+ok 6 - BEFORE JSON set/unset/secret produces derived snapshot only and retains historical secrets
+  ---
+  duration_ms: 499.438334
+  type: 'test'
+  ...
+# Subtest: invalid output, reserved/invalid names, oversized values, unknown operations and symlink reject without secret errors
+ok 7 - invalid output, reserved/invalid names, oversized values, unknown operations and symlink reject without secret errors
+  ---
+  duration_ms: 274.064708
+  type: 'test'
+  ...
+# Subtest: UTF-8 streaming redactor covers chunk boundaries and newly tracked secrets
+ok 8 - UTF-8 streaming redactor covers chunk boundaries and newly tracked secrets
+  ---
+  duration_ms: 114.290334
+  type: 'test'
+  ...
+# Subtest: COPY readonly=true, per-run copy, canonical immutable and cleanup
+ok 9 - COPY readonly=true, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 860.271042
+  type: 'test'
+  ...
+# Subtest: COPY readonly=false, per-run copy, canonical immutable and cleanup
+ok 10 - COPY readonly=false, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 324.598209
+  type: 'test'
+  ...
+# Subtest: SYMLINK readonly=true, per-run copy, canonical immutable and cleanup
+ok 11 - SYMLINK readonly=true, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 451.633458
+  type: 'test'
+  ...
+# Subtest: SYMLINK readonly=false, per-run copy, canonical immutable and cleanup
+ok 12 - SYMLINK readonly=false, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 385.776291
+  type: 'test'
+  ...
+# Subtest: replace restores original exact bytes/mode after simulated process loss and next acquire
+ok 13 - replace restores original exact bytes/mode after simulated process loss and next acquire
+  ---
+  duration_ms: 361.851875
+  type: 'test'
+  ...
+# Subtest: unsafe paths, symlink parents/targets, special files, duplicate physical aliases fail without touching user data
+ok 14 - unsafe paths, symlink parents/targets, special files, duplicate physical aliases fail without touching user data
+  ---
+  duration_ms: 340.064042
+  type: 'test'
+  ...
+# Subtest: unexpected replacement is preserved with backup and recoverable journal
+ok 15 - unexpected replacement is preserved with backup and recoverable journal
+  ---
+  duration_ms: 326.354459
+  type: 'test'
+  ...
+# Subtest: pinned revision remains old through asset edit; next resolve sees new revision
+ok 16 - pinned revision remains old through asset edit; next resolve sees new revision
+  ---
+  duration_ms: 382.947167
+  type: 'test'
+  ...
+# Subtest: real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 17 - real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 3610.842834
+  type: 'test'
+  ...
+# Subtest: real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 18 - real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 2972.918875
+  type: 'test'
+  ...
+# Subtest: real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 19 - real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 2872.156167
+  type: 'test'
+  ...
+# Subtest: real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+ok 20 - real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+  ---
+  duration_ms: 2995.333042
+  type: 'test'
+  ...
+# Subtest: lifecycle: main failure
+ok 21 - lifecycle: main failure
+  ---
+  duration_ms: 2288.886459
+  type: 'test'
+  ...
+# Subtest: lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+ok 22 - lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+  ---
+  duration_ms: 2539.711666
+  type: 'test'
+  ...
+# Subtest: lifecycle: FINALLY failure changes success
+ok 23 - lifecycle: FINALLY failure changes success
+  ---
+  duration_ms: 2581.097459
+  type: 'test'
+  ...
+# Subtest: lifecycle: FINALLY failure preserves primary
+ok 24 - lifecycle: FINALLY failure preserves primary
+  ---
+  duration_ms: 2581.35625
+  type: 'test'
+  ...
+# Subtest: lifecycle: CONTINUE before failure permits MAIN
+ok 25 - lifecycle: CONTINUE before failure permits MAIN
+  ---
+  duration_ms: 2604.448375
+  type: 'test'
+  ...
+# Subtest: lifecycle: invalid BEFORE output fails without leaking generated log
+ok 26 - lifecycle: invalid BEFORE output fails without leaking generated log
+  ---
+  duration_ms: 1894.731291
+  type: 'test'
+  ...
+# Subtest: graceful cancellation tee=false executes AFTER_FAILURE/FINALLY with config, then restores original
+ok 27 - graceful cancellation tee=false executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 2449.651
+  type: 'test'
+  ...
+# Subtest: graceful cancellation tee=true executes AFTER_FAILURE/FINALLY with config, then restores original
+ok 28 - graceful cancellation tee=true executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 2458.742791
+  type: 'test'
+  ...
+# Subtest: same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+ok 29 - same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+  ---
+  duration_ms: 5700.495125
+  type: 'test'
+  ...
+# Subtest: live execution pins Config revision, ENV and Hook plan across edits; next run observes new values
+ok 30 - live execution pins Config revision, ENV and Hook plan across edits; next run observes new values
+  ---
+  duration_ms: 4089.01225
+  type: 'test'
+  ...
+# Subtest: manual, Node runCron and system command entrypoints share Config/Hooks and exit semantics
+ok 31 - manual, Node runCron and system command entrypoints share Config/Hooks and exit semantics
+  ---
+  duration_ms: 8299.069417
+  type: 'test'
+  ...
+# Subtest: frozen platform v1 upgrades transactionally to identical fresh v2 and preserves data/hooks
+ok 32 - frozen platform v1 upgrades transactionally to identical fresh v2 and preserves data/hooks
+  ---
+  duration_ms: 778.962459
+  type: 'test'
+  ...
+# Subtest: migration failure rolls back DDL, data, hooks and version then permits retry
+ok 33 - migration failure rolls back DDL, data, hooks and version then permits retry
+  ---
+  duration_ms: 188.940291
+  type: 'test'
+  ...
+# Subtest: unknown and tampered v1 databases fail closed without touching user rows
+ok 34 - unknown and tampered v1 databases fail closed without touching user rows
+  ---
+  duration_ms: 156.091333
+  type: 'test'
+  ...
+# Subtest: late migration failure after old columns drop restores all v1 data and hook fields
+ok 35 - late migration failure after old columns drop restores all v1 data and hook fields
+  ---
+  duration_ms: 142.522
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 50217.339208

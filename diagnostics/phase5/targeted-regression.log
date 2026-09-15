@@ -1,0 +1,114 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: Config/Hook API contracts deny Secret plaintext in all responses and sanitize malformed payloads
+not ok 1 - Config/Hook API contracts deny Secret plaintext in all responses and sanitize malformed payloads
+  ---
+  duration_ms: 673.66875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/api.test.cjs:3:1'
+  failureType: 'testCodeFailure'
+  error: '_a.getMetadata is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ContainerInstance.getServiceValue (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/cjs/container-instance.class.js:206:88)
+    ContainerInstance.get (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/cjs/container-instance.class.js:29:25)
+    Container.get (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/cjs/container.class.js:28:36)
+    Object.configAssetRoutes [as default] (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:38:39)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/api.test.cjs:4:120)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: BEFORE JSON set/unset/secret produces derived snapshot only and retains historical secrets
+ok 2 - BEFORE JSON set/unset/secret produces derived snapshot only and retains historical secrets
+  ---
+  duration_ms: 528.088042
+  type: 'test'
+  ...
+# Subtest: invalid output, reserved/invalid names, oversized values, unknown operations and symlink reject without secret errors
+ok 3 - invalid output, reserved/invalid names, oversized values, unknown operations and symlink reject without secret errors
+  ---
+  duration_ms: 218.651541
+  type: 'test'
+  ...
+# Subtest: UTF-8 streaming redactor covers chunk boundaries and newly tracked secrets
+ok 4 - UTF-8 streaming redactor covers chunk boundaries and newly tracked secrets
+  ---
+  duration_ms: 169.300209
+  type: 'test'
+  ...
+# Subtest: scoped sh account concurrency keeps split secrets in private temporary logs
+ok 5 - scoped sh account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1874.938083
+  type: 'test'
+  ...
+# Subtest: scoped js account concurrency keeps split secrets in private temporary logs
+ok 6 - scoped js account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1188.299917
+  type: 'test'
+  ...
+# Subtest: scoped py account concurrency keeps split secrets in private temporary logs
+ok 7 - scoped py account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1339.583083
+  type: 'test'
+  ...
+# Subtest: real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+ok 8 - real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+  ---
+  duration_ms: 4485.228375
+  type: 'test'
+  ...
+# Subtest: cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue
+ok 9 - cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue
+  ---
+  duration_ms: 2321.232208
+  type: 'test'
+  ...
+# Subtest: malformed scoped request JSON is never echoed by the HTTP error boundary
+ok 10 - malformed scoped request JSON is never echoed by the HTTP error boundary
+  ---
+  duration_ms: 206.427333
+  type: 'test'
+  ...
+# Subtest: empty data root creates v2, all bridge/core tables, and restarts without schema writes
+ok 11 - empty data root creates v2, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 366.40125
+  type: 'test'
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 12 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 141.787875
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+ok 13 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 164.861959
+  type: 'test'
+  ...
+# Subtest: unexpected schema objects are rejected on restart
+ok 14 - unexpected schema objects are rejected on restart
+  ---
+  duration_ms: 160.577167
+  type: 'test'
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 15 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 3.63125
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 14
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4861.72975

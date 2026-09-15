@@ -1,0 +1,9 @@
+PASS worker 1 100 real Git timeouts
+PASS worker 0 100 real Git timeouts
+PASS worker 6 100 real Git timeouts
+PASS worker 3 100 real Git timeouts
+PASS worker 4 100 real Git timeouts
+PASS worker 5 100 real Git timeouts
+PASS worker 2 100 real Git timeouts
+PASS worker 7 100 real Git timeouts
+PASS: 800 timeouts, 0 helper errors

@@ -38,7 +38,7 @@ test('symlinks fail closed and no cron metadata never invents a schedule', async
 test('definition DB failure and scheduler failure compensate updates without changing task identity or overrides', async t => {
   const h = await setup(t), Cron = h.get('services/cron').default;
   const cron = new Cron({ error() {}, warn() {} });
-  const old = await h.CrontabModel.create({ name: 'Old', command: 'task subscription-1/job.js', schedule: '0 8 * * *', sub_id: 1, discovery_key: 'source-key', source_relative_path: 'job.js', discovery_definition: { name: 'Old', command: 'task subscription-1/job.js', schedule: '0 8 * * *' }, isDisabled: 1, task_before: 'keep hook' });
+  const old = await h.CrontabModel.create({ name: 'Old', command: 'task subscription-1/job.js', schedule: '0 8 * * *', sub_id: 1, discovery_key: 'source-key', source_relative_path: 'job.js', discovery_definition: { name: 'Old', command: 'task subscription-1/job.js', schedule: '0 8 * * *' }, isDisabled: 1 });
   for (const failure of ['db', 'scheduler']) {
     let live = 'old', cleaned = false, once = true;
     const update = h.CrontabModel.update, set = cron.setCrontab;
@@ -48,7 +48,7 @@ test('definition DB failure and scheduler failure compensate updates without cha
     await assert.rejects(cron.publishSubscription(discover, async () => {}));
     h.CrontabModel.update = update; cron.setCrontab = set;
     assert.equal(live, 'old'); assert.equal(cleaned, true); await old.reload();
-    assert.equal(old.schedule, '0 8 * * *'); assert.equal(old.task_before, 'keep hook'); assert.equal(old.isDisabled, 1);
+    assert.equal(old.schedule, '0 8 * * *'); assert.equal(old.isDisabled, 1);
     await cron.publishSubscription(discover, async () => {}); assert.equal(live, 'new');
     await old.reload();
     await old.update({ schedule: '0 8 * * *', discovery_definition: { ...old.discovery_definition, schedule: '0 8 * * *' } });
