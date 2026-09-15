@@ -1,0 +1,471 @@
+[
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "back/services/nodeEnvironment.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/nodeEnvironment.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/nodeEnvironment.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "NodeEnvironmentService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'NodeEnvironmentService' not found\",\n  \"target\": {\n    \"name\": \"NodeEnvironmentService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "getProvider",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'getProvider' not found\",\n  \"target\": {\n    \"name\": \"getProvider\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "runtime",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runtime' not found\",\n  \"target\": {\n    \"name\": \"runtime\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "toolchain",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'toolchain' not found\",\n  \"target\": {\n    \"name\": \"toolchain\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "environment",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'environment' not found\",\n  \"target\": {\n    \"name\": \"environment\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "revision",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'revision' not found\",\n  \"target\": {\n    \"name\": \"revision\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "build",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'build' not found\",\n  \"target\": {\n    \"name\": \"build\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "runtimes",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runtimes' not found\",\n  \"target\": {\n    \"name\": \"runtimes\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "toolchains",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'toolchains' not found\",\n  \"target\": {\n    \"name\": \"toolchains\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "environments",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'environments' not found\",\n  \"target\": {\n    \"name\": \"environments\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "builds",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'builds' not found\",\n  \"target\": {\n    \"name\": \"builds\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "revisions",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'revisions' not found\",\n  \"target\": {\n    \"name\": \"revisions\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "toolchainReferences",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'toolchainReferences' not found\",\n  \"target\": {\n    \"name\": \"toolchainReferences\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "assertVersion",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'assertVersion' not found\",\n  \"target\": {\n    \"name\": \"assertVersion\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "definition",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'definition' not found\",\n  \"target\": {\n    \"name\": \"definition\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "metadata",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'metadata' not found\",\n  \"target\": {\n    \"name\": \"metadata\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "clone",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'clone' not found\",\n  \"target\": {\n    \"name\": \"clone\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "prepare",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'prepare' not found\",\n  \"target\": {\n    \"name\": \"prepare\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "execute",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'execute' not found\",\n  \"target\": {\n    \"name\": \"execute\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "failed",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'failed' not found\",\n  \"target\": {\n    \"name\": \"failed\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "cleanupCancelled",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cleanupCancelled' not found\",\n  \"target\": {\n    \"name\": \"cleanupCancelled\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "diff",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diff' not found\",\n  \"target\": {\n    \"name\": \"diff\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironment.ts",
+    "name": "diagnostics",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diagnostics' not found\",\n  \"target\": {\n    \"name\": \"diagnostics\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "back/services/nodePackageManager.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/nodePackageManager.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/nodePackageManager.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "NodePackageManager",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'NodePackageManager' not found\",\n  \"target\": {\n    \"name\": \"NodePackageManager\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "environment",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'environment' not found\",\n  \"target\": {\n    \"name\": \"environment\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "validate",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'validate' not found\",\n  \"target\": {\n    \"name\": \"validate\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "cli",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cli' not found\",\n  \"target\": {\n    \"name\": \"cli\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "verify",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'verify' not found\",\n  \"target\": {\n    \"name\": \"verify\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "install",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'install' not found\",\n  \"target\": {\n    \"name\": \"install\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "manifest",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'manifest' not found\",\n  \"target\": {\n    \"name\": \"manifest\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "lockName",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'lockName' not found\",\n  \"target\": {\n    \"name\": \"lockName\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "configure",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'configure' not found\",\n  \"target\": {\n    \"name\": \"configure\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "installBuild",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'installBuild' not found\",\n  \"target\": {\n    \"name\": \"installBuild\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "snapshot",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'snapshot' not found\",\n  \"target\": {\n    \"name\": \"snapshot\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePackageManager.ts",
+    "name": "verifyBuild",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'verifyBuild' not found\",\n  \"target\": {\n    \"name\": \"verifyBuild\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "back/services/nodeDistributionProvider.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/nodeDistributionProvider.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/nodeDistributionProvider.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "exactNodeVersion",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'exactNodeVersion' not found\",\n  \"target\": {\n    \"name\": \"exactNodeVersion\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "nodePlatform",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'nodePlatform' not found\",\n  \"target\": {\n    \"name\": \"nodePlatform\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "parseNodeCatalog",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'parseNodeCatalog' not found\",\n  \"target\": {\n    \"name\": \"parseNodeCatalog\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "NodeDistributionProvider",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'NodeDistributionProvider' not found\",\n  \"target\": {\n    \"name\": \"NodeDistributionProvider\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "download",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'download' not found\",\n  \"target\": {\n    \"name\": \"download\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "catalog",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'catalog' not found\",\n  \"target\": {\n    \"name\": \"catalog\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "verifyAt",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'verifyAt' not found\",\n  \"target\": {\n    \"name\": \"verifyAt\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "verify",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'verify' not found\",\n  \"target\": {\n    \"name\": \"verify\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeDistributionProvider.ts",
+    "name": "install",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'install' not found\",\n  \"target\": {\n    \"name\": \"install\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "back/services/nodePaths.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/nodePaths.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/nodePaths.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "nodeFileHash",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'nodeFileHash' not found\",\n  \"target\": {\n    \"name\": \"nodeFileHash\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "nodeHash",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'nodeHash' not found\",\n  \"target\": {\n    \"name\": \"nodeHash\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "NodePathResolver",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'NodePathResolver' not found\",\n  \"target\": {\n    \"name\": \"NodePathResolver\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "relative",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'relative' not found\",\n  \"target\": {\n    \"name\": \"relative\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "target",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'target' not found\",\n  \"target\": {\n    \"name\": \"target\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "marker",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'marker' not found\",\n  \"target\": {\n    \"name\": \"marker\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "own",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'own' not found\",\n  \"target\": {\n    \"name\": \"own\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "create",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'create' not found\",\n  \"target\": {\n    \"name\": \"create\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "assertOwned",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'assertOwned' not found\",\n  \"target\": {\n    \"name\": \"assertOwned\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "remove",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'remove' not found\",\n  \"target\": {\n    \"name\": \"remove\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "file",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'file' not found\",\n  \"target\": {\n    \"name\": \"file\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "text",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'text' not found\",\n  \"target\": {\n    \"name\": \"text\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "lease",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'lease' not found\",\n  \"target\": {\n    \"name\": \"lease\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "ResourceLock",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ResourceLock' not found\",\n  \"target\": {\n    \"name\": \"ResourceLock\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "lock",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'lock' not found\",\n  \"target\": {\n    \"name\": \"lock\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "operation",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'operation' not found\",\n  \"target\": {\n    \"name\": \"operation\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodePaths.ts",
+    "name": "buildSlot",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'buildSlot' not found\",\n  \"target\": {\n    \"name\": \"buildSlot\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/schema/nodeEnvironmentSchema.ts",
+    "name": "back/schema/nodeEnvironmentSchema.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/schema/nodeEnvironmentSchema.ts' not found\",\n  \"target\": {\n    \"name\": \"back/schema/nodeEnvironmentSchema.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/schema/nodeEnvironmentSchema.ts",
+    "name": "createNodeEnvironmentSchema",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'createNodeEnvironmentSchema' not found\",\n  \"target\": {\n    \"name\": \"createNodeEnvironmentSchema\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

@@ -1,5 +1,7 @@
 # Domain Model（目标）
 
+> **当前基线：Phase 8，schema v5。** Runtime Core 同时支持 Python 与 Node；Node 新增 exact PackageManagerToolchain、NodeEnvironment、不可变 Revision/Build，独立 node_modules 与共享 store。下文早期阶段描述保留为演进记录；当前结构见 [Node Runtime 架构](12-node-runtime-environments.md)，最新约束以该文档和 [Phase 8 schema](../refactor/phase8/10-schema-evolution.md) 为准。Task/Hook 仍使用现有 Runner Bridge，未实现 Phase 9/10 绑定。
+
 | Domain | 所有权/边界 |
 | --- | --- |
 | Credential | 独立可复用 Secret + transport policy；Repository 引用，不由 Subscription 持有 override |

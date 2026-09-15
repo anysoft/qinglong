@@ -1,3 +1,4 @@
+import { nodeEnvironmentModels } from '../data/nodeEnvironment';
 import { pythonEnvironmentModels } from '../data/pythonEnvironment';
 import Logger from './logger';
 import { runtimeModels } from '../data/runtime';
@@ -28,7 +29,7 @@ export default async () => {
       GitCredentialModel, RepositoryModel, WorktreeModel, EnvironmentProfileModel,
       SubscriptionModel, CrontabModel, RepositoryEnvVariableModel, TaskEnvVariableModel,
       EnvModel, DependenceModel, AppModel, SystemModel, CrontabViewModel,
-      CrontabStatModel, RunningInstanceModel, ...configAssetModels, ...runtimeModels, ...pythonEnvironmentModels,
+      CrontabStatModel, RunningInstanceModel, ...configAssetModels, ...runtimeModels, ...pythonEnvironmentModels, ...nodeEnvironmentModels,
     ]);
     await new ExecutionEnvironmentTransport().cleanupStale().catch(() => {
       Logger.warn('[environment] stale snapshot cleanup deferred');

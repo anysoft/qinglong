@@ -1,0 +1,34 @@
+[PREPARING]
+[CREATING_VENV]
+{"executable": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/bin/python", "prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv", "base_prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/pyenv/versions/3.13.15", "version": "3.13.15", "implementation": "CPython", "system": "Darwin", "arch": "arm64", "user_site": false, "site_packages": ["/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages"], "purelib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages", "platlib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages", "pip_file": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/__init__.py", "pip_version": "26.2.1"}
+[INSTALLING_DEPENDENCIES]
+Using pip 26.2.1 from /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip (python 3.13)
+Looking in indexes: http://127.0.0.1:51155/simple
+Collecting ql-phase7-fail==1.0.0
+  Downloading ql_phase7_fail-1.0.0.tar.gz (410 bytes)
+  Getting requirements to build wheel: started
+  Running command Getting requirements to build wheel
+  Traceback (most recent call last):
+    File "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+      main()
+      ~~~~^^
+    File "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+      json_out["return_val"] = hook(**hook_input["kwargs"])
+                               ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 143, in get_requires_for_build_wheel
+      return hook(config_settings)
+    File "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/tmp/runtime/python/operation-9/tmp/pip-install-48m1ezfj/ql-phase7-fail_33cdf1a44890486dac27bd6b514c821b/backend.py", line 3, in get_requires_for_build_wheel
+      raise RuntimeError('CONTROLLED_BUILD_FAILURE')
+  RuntimeError: CONTROLLED_BUILD_FAILURE
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> No available output.
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  full command: /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/bin/python /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py get_requires_for_build_wheel /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/tmp/runtime/python/operation-9/tmp/tmp06d9tbg6
+  cwd: /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-ZXnUPJ/tmp/runtime/python/operation-9/tmp/pip-install-48m1ezfj/ql-phase7-fail_33cdf1a44890486dac27bd6b514c821b
+  Getting requirements to build wheel: finished with status 'error'
+ERROR: Failed to build 'ql-phase7-fail' when getting requirements to build wheel
+[DEPENDENCY_BUILD_FAILED]

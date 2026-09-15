@@ -65,3 +65,18 @@ B05 已退出；B07 缩减为独立 Backend adapter；B03 仅为 scheduler 输�
 - B05 保持 REMOVED；其他活跃 bridge 保留既有责任。没有新增 Task Runtime bridge。
 - `runtime_lease.py` 继续作为 POSIX lease helper，新增 Environment/Build shared/exclusive 使用；Provider FD 仍由当前 supervisor 传递。最终整合由 Phase 10 通用监督器完成，不能提前删除。
 - **Shared Package Layer: DEFERRED**。只共享 pip artifact cache，不共享 mutable site-packages。
+
+
+## Phase 8 — Node Runtime / Environment 边界核查
+
+**B09/B10：RETAINED UNTIL PHASE 9/10。** 新 Node Environment 全部使用 private Toolchain、Build node_modules 与 cache；没有新增旧全局依赖消费者。现有 Runner 的执行职责尚未替换，不能仅因新安装功能存在而删桥。
+
+| 实际 consumer | 仍承担的职责 | 退出条件 |
+|---|---|---|
+| `back/config/util.ts`、`DependenceService` | 当前全局 Node 依赖查询/安装/删除 | Task 资源绑定、执行替换与依赖 UI 拆分通过 |
+| `shell/start.sh`、`shell/check.sh` | 平台 bootstrap、全局工具检查/修复 | 平台工具与任务依赖拆分 |
+| `shell/share.sh` | NODE_PATH、npm_install_sub、当前脚本运行 | Phase 9/10 Runner 消费 Environment Resolver |
+| `shell/preload/sitecustomize.js`、`esm-loader.mjs` | 当前模块搜索路径 | managed Build 模块解析接管且旧 Task 回归通过 |
+| Docker、shell/lang | 平台 Node/pm2/ts-node 和 bootstrap 提示 | 单独审计平台工具职责，不作为业务 Runtime |
+
+Python dependency bridge 同样保留既有当前 Runner consumer；Linux packages 不属于 Node 清理授权。B05 已移除，B01–B04、B06–B17 的其余退出条件沿用当前登记。本阶段无自动 Task/Repository package.json/lockfile 绑定，无 NODE_PATH 新核心设计。静态证据：`diagnostics/phase8/final-static-audit.json`。

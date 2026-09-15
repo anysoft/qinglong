@@ -1,0 +1,10 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+{
+  "status": "PARTIAL",
+  "original": 53,
+  "remaining": 53,
+  "new": [],
+  "raw_exit_code": 2,
+  "regression_gate": "PASS"
+}
+PASS: 339 files, 0 forbidden/unclassified, 69 explained references

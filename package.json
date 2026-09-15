@@ -26,7 +26,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "postinstall": "max setup 2>/dev/null || true",
     "test:platform": "node tests/platform/run.cjs",
-    "test:platform:e2e": "node diagnostics/phase7/platform-e2e.cjs",
+    "test:platform:e2e": "node diagnostics/phase8/platform-e2e.cjs",
     "typecheck": "tsc --noEmit --skipLibCheck"
   },
   "gitHooks": {

@@ -1,3 +1,4 @@
+import { NodeRuntimeReferenceSource } from './nodeEnvironmentReferences';
 import { PythonRuntimeReferenceSource } from './pythonEnvironmentReferences';
 import { RuntimeError, runtimeId } from '../shared/runtime';
 export interface RuntimeReference {
@@ -14,7 +15,7 @@ export default class RuntimeReferenceService {
   async inspect(id: number) {
     const references = (
       await Promise.all(
-        [new PythonRuntimeReferenceSource(), ...this.sources].map((source) =>
+        [new PythonRuntimeReferenceSource(), new NodeRuntimeReferenceSource(), ...this.sources].map((source) =>
           source.inspect(runtimeId(id)),
         ),
       )

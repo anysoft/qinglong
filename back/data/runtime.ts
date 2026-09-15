@@ -1,5 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import { sequelize } from '.';
+import type { NodeOperationType } from '../shared/nodeEnvironment';
 import type { PythonEnvironmentOperationType } from './pythonEnvironment';
 
 export type ProviderState =
@@ -18,6 +19,7 @@ export type RuntimeState =
   | 'MISSING'
   | 'REMOVED';
 export type OperationType =
+  | NodeOperationType
   | PythonEnvironmentOperationType
   | 'PROVIDER_INSTALL'
   | 'PROVIDER_UPDATE'
@@ -37,8 +39,8 @@ export type OperationStatus =
   | 'INTERRUPTED';
 export interface RuntimeProvider {
   id: number;
-  language: 'PYTHON';
-  provider_type: 'PYENV';
+  language: 'PYTHON' | 'NODE';
+  provider_type: 'PYENV' | 'NODE_DISTRIBUTION';
   state: ProviderState;
   provider_version: string | null;
   provider_revision: string | null;
@@ -52,8 +54,8 @@ export interface RuntimeProvider {
 export interface RuntimeInstallation {
   id: number;
   provider_id: number;
-  language: 'PYTHON';
-  implementation: 'CPYTHON';
+  language: 'PYTHON' | 'NODE';
+  implementation: 'CPYTHON' | 'NODEJS';
   version: string;
   state: RuntimeState;
   executable_relative_path: string;

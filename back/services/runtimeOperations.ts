@@ -1,3 +1,7 @@
+import NodeEnvironmentService from './nodeEnvironment';
+import NodeDistributionProvider from './nodeDistributionProvider';
+import NodePathResolver from './nodePaths';
+import { NodeOperationInput, NodeOperationType, nodeOperationTypes } from '../shared/nodeEnvironment';
 import fs from 'fs/promises';
 import path from 'path';
 import { randomUUID } from 'crypto';
@@ -35,6 +39,7 @@ import RuntimeDiagnosticsService from './runtimeDiagnostics';
 const activeStates = ['QUEUED', 'RUNNING'];
 const kinds: OperationType[] = [
   ...pythonEnvironmentOperationTypes,
+  ...nodeOperationTypes,
   'PROVIDER_INSTALL',
   'PROVIDER_UPDATE',
   'PROVIDER_VERIFY',
@@ -54,6 +59,7 @@ type Active = {
 /** Database-tracked resource operations; leases and inherited FDs prove ownership. */
 export default class RuntimeOperationService {
   readonly paths: RuntimePathResolver;
+  readonly node: NodeEnvironmentService;
   readonly diagnostics: RuntimeDiagnosticsService;
   readonly environments: PythonEnvironmentBuildService;
   private active = new Map<number, Active>();
@@ -63,8 +69,10 @@ export default class RuntimeOperationService {
     readonly provider = new PyenvProvider(),
     readonly references = new RuntimeReferenceService(),
     environmentIndex?: string,
+    nodeOptions?: { provider?: NodeDistributionProvider; registry?: string },
   ) {
     this.paths = provider.paths;
+    this.node = new NodeEnvironmentService(nodeOptions?.provider ?? new NodeDistributionProvider(new NodePathResolver(this.paths.dataRoot)), nodeOptions?.registry);
     this.diagnostics = new RuntimeDiagnosticsService(this.paths);
     this.environments = new PythonEnvironmentBuildService(
       this.paths,
@@ -155,7 +163,7 @@ export default class RuntimeOperationService {
   }
   async runtimes() {
     const rows = await RuntimeInstallationModel.findAll({
-      where: { state: { [Op.ne]: 'REMOVED' } },
+      where: { language: 'PYTHON', state: { [Op.ne]: 'REMOVED' } },
       order: [['id', 'DESC']],
     });
     return Promise.all(
@@ -190,6 +198,7 @@ export default class RuntimeOperationService {
       jobs?: number;
       timeout_seconds?: number;
       environment?: PythonEnvironmentOperationInput;
+      node?: NodeOperationInput;
     } = {},
   ) {
     if (!kinds.includes(type))
@@ -205,6 +214,7 @@ export default class RuntimeOperationService {
       timeout > 7200
     )
       throw new RuntimeError('RUNTIME_REQUEST_INVALID', 400);
+    if (type.startsWith('NODE_')) return this.requestNode(type as NodeOperationType, input.node ?? {}, timeout);
     const initial = await this.getProvider(),
       lease = await RuntimeLease.acquire(this.paths, initial.id);
     try {
@@ -353,6 +363,32 @@ export default class RuntimeOperationService {
       throw error;
     }
   }
+  private async requestNode(type: NodeOperationType, input: NodeOperationInput, timeout: number) {
+    await this.recoverNode();
+    await this.node.getProvider();
+    const resources: RuntimeLease[] = [];
+    let lease: RuntimeLease | undefined;
+    try {
+      const operation = await sequelize.transaction(async transaction => {
+        const prepared = await this.node.prepare(type, input, transaction, resources, this.references);
+        const token = randomUUID();
+        const row = await RuntimeOperationModel.create({provider_id:prepared.provider.id,runtime_id:prepared.runtime_id,operation_type:type,status:'QUEUED',stage:'QUEUED',owner_token:token,owner_pid:process.pid,cancel_requested:false,log_identity:'pending-'+token,metadata:{...prepared.metadata,timeout_seconds:timeout,jobs:4}},{transaction});
+        lease = await this.node.paths.lease('operation',Number(row.get('id')));
+        await row.update({log_identity:'runtime-operation-'+row.get('id')},{transaction});
+        return row.get({plain:true});
+      });
+      const active:Active={lease:lease!,resourceLeases:resources};this.active.set(operation.id,active);
+      const provider=await this.node.getProvider();
+      active.done=new Promise<void>(resolve=>setImmediate(()=>{this.execute(operation,provider,null,active).then(resolve,resolve);}));return operation;
+    }catch(error){await lease?.release();for(const item of resources.reverse())await item.release();throw error;}
+  }
+  private async recoverNode() {
+    const rows=await RuntimeOperationModel.findAll({where:{operation_type:{[Op.in]:[...nodeOperationTypes]},status:{[Op.in]:activeStates}}});
+    for(const row of rows){let lease:RuntimeLease|undefined;try{
+      lease=await this.node.paths.lease('operation',Number(row.get('id')));
+      await sequelize.transaction(async transaction=>{const fresh=await RuntimeOperationModel.findByPk(Number(row.get('id')),{transaction});if(!fresh||!activeStates.includes(String(fresh.get('status'))))return;const op=fresh.get({plain:true});await this.node.failed(op,'NODE_OPERATION_INTERRUPTED',transaction,true);await fresh.update({status:'INTERRUPTED',stage:'RECOVERY_REQUIRED',finished_at:new Date(),error_code:'NODE_OPERATION_INTERRUPTED',error_summary:'NODE_OPERATION_INTERRUPTED'},{transaction});});
+    }catch(e){if(!(e instanceof RuntimeError)||e.error_code!=='RUNTIME_BUSY')throw e;}finally{await lease?.release();}}
+  }
   private async requestEnvironmentLocked(
     type: PythonEnvironmentOperationType,
     input: PythonEnvironmentOperationInput,
@@ -440,19 +476,21 @@ export default class RuntimeOperationService {
         { status: 'RUNNING', started_at: new Date(), stage: 'PREPARING' },
         { where: { id: operation.id } },
       );
-      directory = await this.paths.operation(operation.id);
+      const nodeOperation = operation.operation_type.startsWith('NODE_');
+      const operationPaths = nodeOperation ? this.node.paths : this.paths;
+      directory = await operationPaths.operation(operation.id);
       const home = await this.paths.directory(
-        `tmp/runtime/python/operation-${operation.id}/home`,
+        `tmp/runtime/${nodeOperation ? 'node' : 'python'}/operation-${operation.id}/home`,
         true,
       );
       log = await RuntimeOperationLog.open(this.paths, operation.id, home);
-      await this.paths.provider(
+      if (!nodeOperation) await this.paths.provider(
         ['PROVIDER_INSTALL', 'PROVIDER_REPAIR'].includes(
           operation.operation_type,
         ),
         provider.id,
       );
-      const build = await runtimeBuildEnvironment(
+      const build = nodeOperation ? {directory, environment:{PATH:'/usr/bin:/bin:/usr/sbin:/sbin',HOME:home,TMPDIR:directory,LANG:'C.UTF-8',LC_ALL:'C.UTF-8',npm_config_userconfig:path.join(home,'user.npmrc'),npm_config_globalconfig:path.join(home,'global.npmrc'),npm_config_update_notifier:'false'}} : await runtimeBuildEnvironment(
         this.paths,
         operation.id,
         Number(operation.metadata.jobs),
@@ -462,6 +500,7 @@ export default class RuntimeOperationService {
         active.lease,
         Number(operation.metadata.timeout_seconds),
         (text) => log!.write(text),
+        active.resourceLeases,
       );
       const checkCancel = async () => {
         if ((await this.operation(operation.id)).cancel_requested) {
@@ -494,7 +533,8 @@ export default class RuntimeOperationService {
       let resourceCommit:
         | ((transaction: Transaction) => Promise<void>)
         | undefined;
-      if (operation.operation_type.startsWith('PYTHON_ENV_'))
+      if (nodeOperation) resourceCommit = await this.node.execute(ctx, operation, this.references);
+      else if (operation.operation_type.startsWith('PYTHON_ENV_'))
         resourceCommit = await this.environments.execute(ctx, operation);
       else
         switch (operation.operation_type) {
@@ -614,6 +654,7 @@ export default class RuntimeOperationService {
           await log?.write('[PYTHON_ENV_CLEANUP_REQUIRED]\n').catch(() => {});
         });
       }
+      if (code === 'RUNTIME_CANCELLED' && operation.operation_type.startsWith('NODE_')) await this.node.cleanupCancelled(operation).catch(async()=>{await log?.write('[NODE_CLEANUP_REQUIRED]\n').catch(()=>{});});
       await log?.write(`[${code}]\n`).catch(() => {});
       await sequelize
         .transaction(async (transaction) => {
@@ -635,7 +676,8 @@ export default class RuntimeOperationService {
             },
             { where: { id: operation.id }, transaction },
           );
-          if (operation.operation_type.startsWith('PYTHON_ENV_'))
+          if (operation.operation_type.startsWith('NODE_')) await this.node.failed(operation, code, transaction);
+          else if (operation.operation_type.startsWith('PYTHON_ENV_'))
             await this.environments.failed(operation, code, transaction);
           else if (runtime)
             await RuntimeInstallationModel.update(
@@ -666,7 +708,7 @@ export default class RuntimeOperationService {
       if (directory)
         try {
           await this.paths.directory(
-            `tmp/runtime/python/operation-${operation.id}`,
+            `tmp/runtime/${operation.operation_type.startsWith('NODE_') ? 'node' : 'python'}/operation-${operation.id}`,
           );
           await fs.rm(directory, { recursive: true, force: true });
         } catch {
@@ -727,8 +769,9 @@ export default class RuntimeOperationService {
     if (this.recovering) return;
     this.recovering = true;
     try {
+      await this.recoverNode();
       const pending = await RuntimeOperationModel.findAll({
-        where: { status: { [Op.in]: activeStates } },
+        where: { operation_type: { [Op.notIn]: [...nodeOperationTypes] }, status: { [Op.in]: activeStates } },
         attributes: ['provider_id'],
       });
       const ids: number[] = [

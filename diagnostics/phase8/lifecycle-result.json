@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "parallel_environments": true,
+  "python_provider_parallel": true,
+  "cancelled_pids": [
+    6855,
+    6882
+  ],
+  "timeout_pid": 6938,
+  "crash_pid": 7013,
+  "current_preserved": 62,
+  "all_children_stopped": true,
+  "restart_resolver": true
+}

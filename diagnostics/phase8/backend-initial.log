@@ -1,0 +1,71 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[96mback/services/nodeEnvironment.ts[0m:[93m54[0m:[93m124[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 2, '(this: ModelStatic<...>, values: { id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 8 more ...; install_scripts_policy?: Fn | ... 4 more ... | undefined; }, options: Omit<...> & { ...; }): Promise<...>', gave the following error.
+    Type 'unknown' is not assignable to type 'number | Fn | Col | Literal | null | undefined'.
+  Overload 2 of 2, '(this: ModelStatic<...>, values: { id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 8 more ...; install_scripts_policy?: Fn | ... 4 more ... | undefined; }, options: UpdateOptions<...>): Promise<...>', gave the following error.
+    Type 'unknown' is not assignable to type 'number | Fn | Col | Literal | null | undefined'.
+
+[7m54[0m     await Envs.update({name:input.name.trim(),description:input.description??'',runtime_id:runtime.id,toolchain_id:tool.id,current_revision_id:revision.get('id'),version:previous?env.version+1:1,...policies},{where:{id:env.id},transaction});return this.environment(env.id,transaction);
+[7m  [0m [91m                                                                                                                           ~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mback/data/nodeEnvironment.ts[0m:[93m8[0m:[93m95[0m
+    [7m8[0m   id:number;name:string;description:string;runtime_id:number;toolchain_id:number;state:string;current_revision_id:number|null;current_build_id:number|null;version:number;last_error:string|null;
+    [7m [0m [96m                                                                                              ~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from property 'current_revision_id' which is declared here on type '{ id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 8 more ...; install_scripts_policy?: Fn | ... 4 more ... | undefined; }'
+  [96mback/data/nodeEnvironment.ts[0m:[93m8[0m:[93m95[0m
+    [7m8[0m   id:number;name:string;description:string;runtime_id:number;toolchain_id:number;state:string;current_revision_id:number|null;current_build_id:number|null;version:number;last_error:string|null;
+    [7m [0m [96m                                                                                              ~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from property 'current_revision_id' which is declared here on type '{ id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 8 more ...; install_scripts_policy?: Fn | ... 4 more ... | undefined; }'
+
+[96mback/services/nodeEnvironment.ts[0m:[93m85[0m:[93m180[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'number'.
+
+[7m85[0m     const row=await Tools.create({runtime_id:runtime.id,manager_type:manager,version,state:'INSTALLING',metadata:{}},{transaction});leases.push(await this.paths.lease('toolchain',row.get('id')));metadata.toolchain_id=row.get('id');
+[7m  [0m [91m                                                                                                                                                                                   ~~~~~~~~~~~~~[0m
+
+[96mback/services/nodeEnvironment.ts[0m:[93m96[0m:[93m274[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'number'.
+
+[7m96[0m     const row=await Builds.create({environment_id:env.id,revision_id:revision.id,runtime_id:revision.runtime_id,toolchain_id:revision.toolchain_id,state:'QUEUED',health:'UNVERIFIED'},{transaction});metadata.build_id=row.get('id');leases.push(await this.paths.lease('build',row.get('id')));await Envs.update({state:'BUILDING',last_error:null},{where:{id:env.id},transaction});
+[7m  [0m [91m                                                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~[0m
+
+[96mback/services/nodeEnvironment.ts[0m:[93m98[0m:[93m150[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'number'.
+
+[7m98[0m     for(const b of await Builds.findAll({where:{environment_id:env.id},order:[['id','ASC']],transaction}))leases.push(await this.paths.lease('build',b.get('id')));
+[7m  [0m [91m                                                                                                                                                     ~~~~~~~~~~~[0m
+
+[96mback/services/nodePaths.ts[0m:[93m11[0m:[93m50[0m - [91merror[0m[90m TS2322: [0mType 'number' is not assignable to type 'string'.
+
+[7m11[0m  for await(const chunk of createReadStream(file,{flags:constants.O_RDONLY|constants.O_NOFOLLOW}))hash.update(chunk);
+[7m  [0m [91m                                                 ~~~~~[0m
+
+[96mback/services/runtimeOperations.ts[0m:[93m376[0m:[93m57[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'number'.
+
+[7m376[0m         lease = await this.node.paths.lease('operation',row.get('id'));
+[7m   [0m [91m                                                        ~~~~~~~~~~~~~[0m
+
+[96mback/services/runtimeOperations.ts[0m:[93m388[0m:[93m53[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'number'.
+
+[7m388[0m       lease=await this.node.paths.lease('operation',row.get('id'));
+[7m   [0m [91m                                                    ~~~~~~~~~~~~~[0m
+
+[96mback/services/runtimeOperations.ts[0m:[93m389[0m:[93m104[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 2, '(this: ModelStatic<Model<RuntimeOperation, Partial<...>>>, identifier: Identifier, options: Omit<NonNullFindOptions<RuntimeOperation>, "where">): Promise<...>', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'Identifier'.
+  Overload 2 of 2, '(this: ModelStatic<Model<RuntimeOperation, Partial<...>>>, identifier?: Identifier | undefined, options?: Omit<FindOptions<RuntimeOperation>, "where"> | undefined): Promise<...>', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'Identifier | undefined'.
+
+[7m389[0m       await sequelize.transaction(async transaction=>{const fresh=await RuntimeOperationModel.findByPk(row.get('id'),{transaction});if(!fresh||!activeStates.includes(fresh.get('status')))return;const op=fresh.get({plain:true});await this.node.failed(op,'NODE_OPERATION_INTERRUPTED',transaction,true);await fresh.update({status:'INTERRUPTED',stage:'RECOVERY_REQUIRED',finished_at:new Date(),error_code:'NODE_OPERATION_INTERRUPTED',error_summary:'NODE_OPERATION_INTERRUPTED'},{transaction});});
+[7m   [0m [91m                                                                                                       ~~~~~~~~~~~~~[0m
+
+
+[96mback/services/runtimeOperations.ts[0m:[93m389[0m:[93m167[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'string'.
+
+[7m389[0m       await sequelize.transaction(async transaction=>{const fresh=await RuntimeOperationModel.findByPk(row.get('id'),{transaction});if(!fresh||!activeStates.includes(fresh.get('status')))return;const op=fresh.get({plain:true});await this.node.failed(op,'NODE_OPERATION_INTERRUPTED',transaction,true);await fresh.update({status:'INTERRUPTED',stage:'RECOVERY_REQUIRED',finished_at:new Date(),error_code:'NODE_OPERATION_INTERRUPTED',error_summary:'NODE_OPERATION_INTERRUPTED'},{transaction});});
+[7m   [0m [91m                                                                                                                                                                      ~~~~~~~~~~~~~~~~~~~[0m
+
+
+Found 9 errors in 3 files.
+
+Errors  Files
+     4  back/services/nodeEnvironment.ts[90m:54[0m
+     1  back/services/nodePaths.ts[90m:11[0m
+     4  back/services/runtimeOperations.ts[90m:376[0m

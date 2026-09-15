@@ -1,3 +1,4 @@
+import nodeEnvironmentRoutes from './nodeEnvironment';
 import pythonEnvironmentRoutes from './pythonEnvironment';
 import { Router, Request, Response } from 'express';
 import { Joi } from 'celebrate';
@@ -23,6 +24,8 @@ export function operationDto(row: RuntimeOperation) {
   return {
     id: row.id,
     provider_id: row.provider_id,
+    language: row.operation_type.startsWith('NODE_') ? 'NODE' : 'PYTHON',
+    toolchain_id: row.metadata.toolchain_id ?? null,
     runtime_id: row.runtime_id,
     environment_id: row.metadata.environment_id ?? null,
     build_id: row.metadata.build_id ?? null,
@@ -71,6 +74,7 @@ export default function runtimeRoutes(
   const runtime = service ?? (shared ??= new RuntimeOperationService());
   runtime.startRecovery();
   pythonEnvironmentRoutes(app, runtime);
+  nodeEnvironmentRoutes(app, runtime);
   const base = '/runtime/python';
   app.get(
     base + '/provider',

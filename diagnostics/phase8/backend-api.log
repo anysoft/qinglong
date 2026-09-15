@@ -1,0 +1,11 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[96mback/api/nodeEnvironment.ts[0m:[93m12[0m:[93m85[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Record<string, unknown>' is not assignable to parameter of type 'PartialSchemaMap<{ [x: string]: ...; }>'.
+  'string' index signatures are incompatible.
+    Type 'unknown' is not assignable to type 'SchemaLike | SchemaLike[] | undefined'.
+
+[7m12[0m function body(req:Request,fields:Record<string,unknown>={}){const result=Joi.object(fields).unknown(false).validate(req.body??{},{convert:false});if(result.error)throw new RuntimeError('NODE_REQUEST_INVALID',400);return result.value;}
+[7m  [0m [91m                                                                                    ~~~~~~[0m
+
+
+Found 1 error in back/api/nodeEnvironment.ts[90m:12[0m
+

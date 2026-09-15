@@ -1,0 +1,2 @@
+const {attach}=require('./managed-helper.cjs');
+(async()=>{const h=await attach(process.argv[2],process.argv[3]),env=await h.service.environment(Number(process.argv[4])),op=await h.operations.request('NODE_ENV_BUILD',{node:{environment_id:env.id,expected_version:env.version},timeout_seconds:120});process.send({operation_id:op.id});setInterval(()=>{},1000);})().catch(e=>{console.error(e);process.exit(1)});

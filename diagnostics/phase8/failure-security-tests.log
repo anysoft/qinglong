@@ -1,0 +1,47 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: Node Build publish transaction failure and ENOSPC keep Current and Runtime healthy
+ok 1 - Node Build publish transaction failure and ENOSPC keep Current and Runtime healthy
+  ---
+  duration_ms: 1889.825458
+  type: 'test'
+  ...
+# Subtest: Node partial filesystem deletion remains ERROR, preserves unknown files, and explicit retry finalizes DB
+ok 2 - Node partial filesystem deletion remains ERROR, preserves unknown files, and explicit retry finalizes DB
+  ---
+  duration_ms: 1266.178291
+  type: 'test'
+  ...
+# Subtest: official-provider download boundary: checksum mismatch and cancellation never publish Runtime and clean private staging
+ok 3 - official-provider download boundary: checksum mismatch and cancellation never publish Runtime and clean private staging
+  ---
+  duration_ms: 1748.995625
+  type: 'test'
+  ...
+# Subtest: archive preflight rejects traversal, absolute paths, symlink/hardlink escape, special files and link ancestors before extraction
+ok 4 - archive preflight rejects traversal, absolute paths, symlink/hardlink escape, special files and link ancestors before extraction
+  ---
+  duration_ms: 1155.812125
+  type: 'test'
+  ...
+# Subtest: Node resource IDs, ownership, inode and symlink boundary fail closed without deleting unknown data
+ok 5 - Node resource IDs, ownership, inode and symlink boundary fail closed without deleting unknown data
+  ---
+  duration_ms: 574.494709
+  type: 'test'
+  ...
+# Subtest: Node catalog, exact versions, platform and registry credential/source policy
+ok 6 - Node catalog, exact versions, platform and registry credential/source policy
+  ---
+  duration_ms: 195.650292
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3359.207708

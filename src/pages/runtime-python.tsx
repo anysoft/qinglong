@@ -20,6 +20,7 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
 import PythonEnvironments from '@/components/PythonEnvironments';
+import NodeRuntime from '@/components/NodeRuntime';
 const base = `${config.apiPrefix}runtime/python`;
 const active = (row: any) => ['QUEUED', 'RUNNING'].includes(row.status);
 const bytes = (value?: number) =>
@@ -37,6 +38,7 @@ export default function PythonRuntimePage() {
     [detail, setDetail] = useState<any>(),
     [submitting, setSubmitting] = useState(false),
     [error, setError] = useState('');
+  const [language, setLanguage] = useState('PYTHON');
   const [form] = Form.useForm();
   const load = async () => {
     const responses = await Promise.all(
@@ -49,7 +51,7 @@ export default function PythonRuntimePage() {
     setProvider(responses[0].data);
     setCatalog(responses[1].data.versions);
     setRows(responses[2].data);
-    setOperations(responses[3].data);
+    setOperations(responses[3].data.filter((x:any)=>!x.operation_type.startsWith('NODE_')));
     setDiagnostics(responses[4].data);
     setError('');
   };
@@ -111,8 +113,8 @@ export default function PythonRuntimePage() {
   const busy = submitting || operations.some(active);
   return (
     <PageContainer
-      title="Runtime · Python"
-      extra={
+      title="Runtime"
+      extra={language === 'PYTHON' &&
         <Button
           type="primary"
           disabled={busy || provider?.state !== 'READY'}
@@ -132,6 +134,9 @@ export default function PythonRuntimePage() {
           action={<Button onClick={() => load().catch(() => {})}>重试</Button>}
         />
       )}
+      <Tabs activeKey={language} onChange={setLanguage} items={[{key:'PYTHON',label:'Python'},{key:'NODE',label:'Node.js'}]} />
+      {language === 'NODE' && <NodeRuntime onOperation={setSelected} />}
+      <div style={{display:language === 'PYTHON' ? undefined : 'none'}}>
       <Tabs
         defaultActiveKey="versions"
         items={[
@@ -365,6 +370,7 @@ export default function PythonRuntimePage() {
           },
         ]}
       />
+      </div>
       <Modal
         title="安装 Python"
         open={install}
@@ -415,6 +421,7 @@ export default function PythonRuntimePage() {
       </Modal>
       <Modal
         title={`Runtime Operation #${selected ?? ''}`}
+        zIndex={1200}
         open={!!selected}
         onCancel={() => setSelected(undefined)}
         footer={null}

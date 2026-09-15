@@ -67,6 +67,7 @@ export class RuntimeCommand {
     private lease: RuntimeLease,
     timeout: number,
     private output: (text: string) => Promise<void>,
+    private resourceLeases: RuntimeLease[] = [],
   ) {
     this.deadline = Date.now() + timeout * 1000;
   }
@@ -96,8 +97,8 @@ export class RuntimeCommand {
       ],
       {
         cwd,
-        env: { ...environment, PLATFORM_LEASE_FDS: '3' },
-        stdio: ['pipe', 'pipe', 'pipe', this.lease.handle.fd],
+        env: { ...environment, PLATFORM_LEASE_FDS: [this.lease, ...this.resourceLeases].map((_, i) => String(i + 3)).join(',') },
+        stdio: ['pipe', 'pipe', 'pipe', this.lease.handle.fd, ...this.resourceLeases.map(x => x.handle.fd)],
       },
     ) as ChildProcessWithoutNullStreams;
     this.child = child;

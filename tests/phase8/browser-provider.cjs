@@ -1,0 +1,14 @@
+// Browser fixtures reuse this phase's verified official artifacts; API/DB/operations/pnpm installs are real.
+require('../phase6/browser-provider.cjs');
+const fs=require('node:fs/promises'),path=require('node:path');
+const Python=require('../../static/build/services/pyenvProvider').default,originalPython=Python.prototype.install;
+Python.prototype.catalog=async()=>['3.13.15','3.13.12','3.12.12'];
+Python.prototype.install=async function(ctx,runtime){if(runtime.version!=='3.13.15')return originalPython.call(this,ctx,runtime);const manifest=require('../../diagnostics/phase8/managed-runtime/result.json');if(manifest.status!=='PASS')throw Error('Official CPython fixture required');const target=await this.paths.createInstallation(runtime.version,runtime.id,ctx.providerId);await fs.cp(path.join(manifest.root,'runtime/python/pyenv/versions',runtime.version),target,{recursive:true,dereference:false,verbatimSymlinks:true});return this.verify(ctx,runtime,true);};
+const manifest=require('../../diagnostics/phase8/managed-node/result.json');if(manifest.status!=='PASS')throw Error('Official Node fixture required');
+const Node=require('../../static/build/services/nodeDistributionProvider').default;
+Node.prototype.catalog=async()=>require('../../diagnostics/phase8/official-node-index.json').filter(x=>x.version==='v'+manifest.runtime.version).map(x=>({version:x.version.slice(1),date:x.date,lts:x.lts,files:x.files,npm:x.npm}));
+Node.prototype.install=async function(ctx,runtime){const target=await this.paths.create('runtime',runtime.id);await ctx.stage('MATERIALIZING_VERIFIED_OFFICIAL_NODE_FIXTURE');await fs.cp(path.join(manifest.root,'runtime/node/versions/runtime-'+manifest.runtime.id),target,{recursive:true,dereference:false,verbatimSymlinks:true});return this.verify(ctx,runtime);};
+const Manager=require('../../static/build/services/nodePackageManager').default,install=Manager.prototype.install;
+Manager.prototype.install=async function(ctx,runtime,tool){if(tool.manager_type==='NPM')return install.call(this,ctx,runtime,tool);const source=manifest.toolchains.find(x=>x.manager_type==='PNPM'&&x.version===tool.version);if(!source)throw Error('Exact pnpm fixture required');const target=await this.paths.create('toolchain',tool.id);await ctx.stage('MATERIALIZING_EXACT_PNPM_TEST_TOOLCHAIN');await fs.cp(path.join(manifest.root,'runtime/node/package-managers/toolchain-'+source.id),target,{recursive:true,dereference:false,verbatimSymlinks:true});return this.verify(ctx,runtime,tool);};
+const modulePath=require.resolve('../../static/build/services/runtimeOperations'),Base=require(modulePath).default;
+require.cache[modulePath].exports.default=class BrowserOperations extends Base{constructor(provider,references){super(provider,references,process.env.QL_PHASE7_TEST_INDEX,{registry:process.env.QL_PHASE8_TEST_REGISTRY});}};

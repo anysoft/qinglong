@@ -1,0 +1,23 @@
+[
+  {
+    "file": "src/pages/runtime-python.tsx",
+    "name": "src/pages/runtime-python.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/runtime-python.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/runtime-python.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/runtime-python.tsx",
+    "name": "PythonRuntimePage",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:src/pages/runtime-python.tsx:PythonRuntimePage\",\n    \"name\": \"PythonRuntimePage\",\n    \"type\": \"Function\",\n    \"filePath\": \"src/pages/runtime-python.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {},\n  \"staleness\": {\n    \"status\": \"behind\",\n    \"commitsBehind\": 1,\n    \"hint\": \"⚠️ Index is 1 commit behind HEAD. Run analyze tool to update.\"\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/layouts/defaultProps.tsx",
+    "name": "src/layouts/defaultProps.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/layouts/defaultProps.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/layouts/defaultProps.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

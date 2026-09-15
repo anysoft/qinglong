@@ -3,10 +3,12 @@ import { ModelStatic, Model, QueryTypes, Sequelize, Transaction } from 'sequeliz
 import platformV1 from '../schema/platformV1';
 import platformV2 from '../schema/platformV2';
 import platformV3 from '../schema/platformV3';
+import platformV4 from '../schema/platformV4';
+import { createNodeEnvironmentSchema } from '../schema/nodeEnvironmentSchema';
 import { createPythonEnvironmentSchema } from '../schema/pythonEnvironmentSchema';
 import { createRuntimeSchema } from '../schema/runtimeSchema';
 
-export const PLATFORM_SCHEMA_VERSION = 4;
+export const PLATFORM_SCHEMA_VERSION = 5;
 export class UnsupportedDatabaseSchemaError extends Error {
   readonly code = 'UNSUPPORTED_DATABASE_SCHEMA';
   constructor() { super('UNSUPPORTED_DATABASE_SCHEMA: Expected a valid platform database or an empty database.'); }
@@ -76,21 +78,33 @@ export async function initializeOperationalSchema(database: Sequelize, models: M
         if (record.model_signature !== platformV3.metadata.model_signature || record.schema_signature !== platformV3.metadata.schema_signature || schemaSignature(await objects()) !== platformV3.metadata.schema_signature) throw new UnsupportedDatabaseSchemaError();
         await createPythonEnvironmentSchema(database, transaction);
         await database.query('DROP TABLE PlatformMetadata', {transaction});
+        await database.query(platformV4.objects.find(x => x.name === 'PlatformMetadata')!.sql, {transaction});
+        await database.query('INSERT INTO PlatformMetadata VALUES (:platform_schema_version,:model_signature,:schema_signature)', {replacements:platformV4.metadata,transaction});
+        record = platformV4.metadata;
+      }
+      if (record.platform_schema_version === 4) {
+        if (record.model_signature !== platformV4.metadata.model_signature || record.schema_signature !== platformV4.metadata.schema_signature || schemaSignature(await objects()) !== platformV4.metadata.schema_signature) throw new UnsupportedDatabaseSchemaError();
+        await createNodeEnvironmentSchema(database, transaction);
+        await database.query('DROP TABLE PlatformMetadata', {transaction});
         createMetadata = true;
       } else if (record.platform_schema_version !== PLATFORM_SCHEMA_VERSION || record.model_signature !== signature || record.schema_signature !== schemaSignature(current)) {
         throw new UnsupportedDatabaseSchemaError();
       }
     } else {
-      for (const model of models) if (!['RuntimeProviders','RuntimeInstallations','RuntimeOperations','PythonEnvironments','PythonEnvironmentRevisions','PythonEnvironmentBuilds'].includes(String(model.tableName))) await model.sync(Object.assign({force:false},{transaction}));
+      for (const model of models) if (!['RuntimeProviders','RuntimeInstallations','RuntimeOperations','PythonEnvironments','PythonEnvironmentRevisions','PythonEnvironmentBuilds','NodePackageManagerToolchains','NodeEnvironments','NodeEnvironmentRevisions','NodeEnvironmentBuilds'].includes(String(model.tableName))) await model.sync(Object.assign({force:false},{transaction}));
       await createRuntimeSchema(database, transaction);
       await createPythonEnvironmentSchema(database, transaction);
+      await createNodeEnvironmentSchema(database, transaction);
     }
     if (createMetadata) {
-      await database.query('CREATE TABLE PlatformMetadata (platform_schema_version INTEGER NOT NULL PRIMARY KEY CHECK(platform_schema_version = 4), model_signature TEXT NOT NULL, schema_signature TEXT NOT NULL)', { transaction });
+      await database.query('CREATE TABLE PlatformMetadata (platform_schema_version INTEGER NOT NULL PRIMARY KEY CHECK(platform_schema_version = 5), model_signature TEXT NOT NULL, schema_signature TEXT NOT NULL)', { transaction });
       await database.query('INSERT INTO PlatformMetadata VALUES (:version, :signature, :schemaSignature)', {
         replacements: { version: PLATFORM_SCHEMA_VERSION, signature, schemaSignature: schemaSignature(await objects()) }, transaction,
       });
     }
     if ((await database.query('PRAGMA foreign_key_check', { type: QueryTypes.SELECT, transaction })).length) throw new UnsupportedDatabaseSchemaError();
+    // Rebuilt referenced tables leave stale deferred-FK counters in SQLite.
+    // Only clear after explicit validation of every final FK, inside the same transaction.
+    await database.query('PRAGMA defer_foreign_keys=OFF', { transaction });
   });
 }

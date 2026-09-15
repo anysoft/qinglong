@@ -68,7 +68,7 @@ export default {
       },
       {
         path: '/runtime-python',
-        name: 'Runtime · Python',
+        name: 'Runtime',
         icon: <SettingOutlined />,
         component: '@/pages/runtime-python',
       },
