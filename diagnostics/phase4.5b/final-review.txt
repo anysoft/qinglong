@@ -1,0 +1,36 @@
+Changes: 280 files, 722 symbols
+Affected processes: 88
+Risk level: critical
+
+Changed symbols:
+  Section Greenfield Legacy Audit & Removal Plan → GREENFIELD_REMOVAL_PLAN.md
+  Section Phase 4.5B Status: PASS → PHASE4_5B_REPORT.md
+  Section Tests / Build / Typecheck → PHASE4_5B_REPORT.md
+  Section Fresh Install / Browser / Linux → PHASE4_5B_REPORT.md
+  Section Previous Checkpoint → PHASE4_5B_REPORT.md
+  Section Breaking Changes → PHASE4_5B_REPORT.md
+  Section Final Fresh Schema → PHASE4_5B_REPORT.md
+  Section Removed Legacy Components → PHASE4_5B_REPORT.md
+  Section Repository / Subscription Model → PHASE4_5B_REPORT.md
+  Section Discovery Architecture → PHASE4_5B_REPORT.md
+  Section ENV Architecture → PHASE4_5B_REPORT.md
+  Section API Changes / UI Changes → PHASE4_5B_REPORT.md
+  Section Filesystem → PHASE4_5B_REPORT.md
+  Section Security / Concurrency → PHASE4_5B_REPORT.md
+  Section Platform Test Baseline → PHASE4_5B_REPORT.md
+... and 707 more
+
+Affected execution flows:
+  • WithBinding → WorkspaceError (10 steps) — changed: prepare, initialize
+  • WithBinding → Root (10 steps) — changed: prepare, initialize
+  • WithBinding → Release (7 steps) — changed: prepare, initialize
+  • Save → ScopedEnvironmentError (5 steps) — changed: save, list, owner
+  • GitResources → GetDb (4 steps) — changed: gitResources
+  • CronModal → Load (4 steps) — changed: load, ScopedVariables
+  • CronModal → Open (4 steps) — changed: ScopedVariables
+  • Autosave_crontab → FormatFilterQuery (4 steps) — changed: autosave_crontab
+  • Autosave_crontab → FormatSearchText (4 steps) — changed: autosave_crontab
+  • Autosave_crontab → FormatViewQuery (4 steps) — changed: autosave_crontab
+... and 78 more
+
+  GitNexus Detect Changes (1.6.12)

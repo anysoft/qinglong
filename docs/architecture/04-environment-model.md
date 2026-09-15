@@ -1,9 +1,15 @@
-# Unified Scoped Environment
+# Unified Scoped Environment — 当前实现
 
-Base Runtime ENV → Global → Repository Profile → Task Override → immutable Execution Snapshot → Child Process。
+Base Runtime ENV → Global → Repository Profile → Task Override → immutable Full Execution Snapshot → Child Process。
 
-Global/RepoProfile/Task内key唯一；所有值为literal string，空字符串合法；disabled不参与、UNSET删除，删除override恢复低层值。Profile选择 Task > Subscription > Repository default；选中disabled/missing/wrong-repo明确失败。不做按名字猜Secret。
+Global/Profile/Task 内 key 唯一，值为 literal string，空字符串/空白/Unicode/多行均保持；disabled 不参与、UNSET 删除，删除 override 恢复低层值。Profile 选择 Task > Subscription > Repository default；显式选中 disabled/missing/wrong-repo 失败。
 
-Base只携带运行需要的系统变量，和后端JWT/通知/Git认证环境分离；解析不得mutate backend process.env。Preview与执行使用同一map，Secret和SYSTEM值受控展示。Secret keep/replace/clear、clone内部复制、0600/0700临时上下文及输出脱敏保留。SQLite当前plaintext at rest，不作加密宣称。
+Base allowlist：PATH、HOME、LANG、LC_*、TMPDIR、TZ、TERM、QL_DIR、QL_DATA_DIR、BACK_PORT、GRPC_PORT。任务需要的端口使 SDK/status bridge 能连接当前实例；JWT、Backend token、DB/Git Secret 不继承。不使用 process.env 全量拷贝，不改父进程。
 
-Phase4尚未达到全量统一：transport只写overlay，另复制旧global三文件，无scope不创建快照。4.5B必须先替换所有入口（包括global-only和editor无ID）才删除env.py/js/sh生成器。语言preload剩余hooks/SDK/包查找由后阶段替换，详见[ENV计划](../refactor/phase4.5/05-env-cleanup-plan.md)。
+Resolver 输出完整变量 map，不是 overlay。每次执行，包括 Global-only、no-ID/editor、手工/调度，都创建独立 owner/snapshot.json/environment.sh，私有 0700/0600、参数只传不透明路径、结束清理、崩溃回收核对 owner。既有运行冻结，下一次读取新配置。
+
+Panel 单一 Environment 入口含 Global、Repository Profiles、Task Overrides；Global 使用相同 ScopedVariable contract。原 EnvService 只作 B13 SDK bridge，使用同一 store 并屏蔽 Secret，数字 status 是内部表示，不是第二种产品语义。
+
+已删除 generated env.py/env.js/Global shell 文件、全局复制、聚合与模板求值；environment.sh 只属于单次 snapshot。shell/env.sh 为运维工具；/api/env.js 为前端非 Secret server config，不属于 Global generator。
+
+四语言 literal/空白/UNSET、50 个同时运行冻结与隔离、父进程隔离、Secret 预览/日志/REST/错误、流式 UTF-8 脱敏均通过。SQLite 仍 plaintext at rest，不宣称加密；非 ENV preload 职责见桥登记。

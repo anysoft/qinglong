@@ -35,11 +35,7 @@ RandomDelayIgnoredMinutes=""
 ## 如果你自己会写shell脚本，并且希望在每次容器启动时，额外运行你的 shell 脚本，请赋值为 "true"
 EnableExtraShell=""
 
-## 是否自动启动bot，默认不启动，设置为true时自动启动，目前需要自行克隆bot仓库所需代码，存到ql/repo目录下，文件夹命名为dockerbot
-AutoStartBot=""
 
-## 是否使用第三方bot，默认不使用，使用时填入仓库地址，存到ql/repo目录下，文件夹命名为diybot
-BotRepoUrl=""
 
 ## 通知环境变量
 ## 1. Server酱

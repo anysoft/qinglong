@@ -263,6 +263,9 @@ class Application {
     const serverLoader = await import('./loaders/server');
     await (serverLoader.default as any)({ server });
     this.setupWorkerShutdown('http');
+    // Execution bridge starts only after the result API is listening, outside schema bootstrap.
+    const bootAfter = await import('./loaders/bootAfter');
+    await bootAfter.default();
   }
 
   private async startGrpcService() {

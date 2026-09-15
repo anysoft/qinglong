@@ -1,0 +1,128 @@
+[
+  {
+    "file": "shell/update.sh",
+    "name": "shell/update.sh",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/update.sh' not found\",\n  \"target\": {\n    \"name\": \"shell/update.sh\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "shell/share.sh",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/share.sh' not found\",\n  \"target\": {\n    \"name\": \"shell/share.sh\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/bot.sh",
+    "name": "shell/bot.sh",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/bot.sh' not found\",\n  \"target\": {\n    \"name\": \"shell/bot.sh\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/start.sh",
+    "name": "shell/start.sh",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/start.sh' not found\",\n  \"target\": {\n    \"name\": \"shell/start.sh\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "docker/docker-entrypoint.sh",
+    "name": "docker/docker-entrypoint.sh",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'docker/docker-entrypoint.sh' not found\",\n  \"target\": {\n    \"name\": \"docker/docker-entrypoint.sh\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/config/index.ts",
+    "name": "back/config/index.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/config/index.ts' not found\",\n  \"target\": {\n    \"name\": \"back/config/index.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "back/services/sshKey.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/sshKey.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "SshKeyService",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:back/services/sshKey.ts:SshKeyService\",\n    \"name\": \"SshKeyService\",\n    \"type\": \"Class\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 6,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 2,\n    \"2\": 2,\n    \"3\": 2\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/loaders/initTask.ts\",\n        \"name\": \"initTask.ts\",\n        \"filePath\": \"back/loaders/initTask.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/services/subscription.ts\",\n        \"name\": \"subscription.ts\",\n        \"filePath\": \"back/services/subscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ],\n    \"2\": [\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/api/subscription.ts\",\n        \"name\": \"subscription.ts\",\n        \"filePath\": \"back/api/subscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/loaders/app.ts\",\n        \"name\": \"app.ts\",\n        \"filePath\": \"back/loaders/app.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ],\n    \"3\": [\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/api/index.ts\",\n        \"name\": \"index.ts\",\n        \"filePath\": \"back/api/index.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/app.ts\",\n        \"name\": \"app.ts\",\n        \"filePath\": \"back/app.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "initSshConfigFile",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.initSshConfigFile#0\",\n    \"name\": \"initSshConfigFile\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Services\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.constructor#1\",\n        \"name\": \"constructor\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "generatePrivateKeyFile",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.generatePrivateKeyFile#2\",\n    \"name\": \"generatePrivateKeyFile\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 2,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 2\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Services\",\n      \"hits\": 2,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.addGlobalSSHKey#2\",\n        \"name\": \"addGlobalSSHKey\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.addSSHKey#4\",\n        \"name\": \"addSSHKey\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "removePrivateKeyFile",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.removePrivateKeyFile#1\",\n    \"name\": \"removePrivateKeyFile\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 2,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 2\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Services\",\n      \"hits\": 2,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.removeGlobalSSHKey#1\",\n        \"name\": \"removeGlobalSSHKey\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.removeSSHKey#3\",\n        \"name\": \"removeSSHKey\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "generateSingleSshConfig",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.generateSingleSshConfig#3\",\n    \"name\": \"generateSingleSshConfig\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Services\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.addSSHKey#4\",\n        \"name\": \"addSSHKey\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "removeSshConfig",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.removeSshConfig#1\",\n    \"name\": \"removeSshConfig\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 2,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 2\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Services\",\n      \"hits\": 2,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.removeGlobalSSHKey#1\",\n        \"name\": \"removeGlobalSSHKey\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.removeSSHKey#3\",\n        \"name\": \"removeSSHKey\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "addSSHKey",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.addSSHKey#4\",\n    \"name\": \"addSSHKey\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "removeSSHKey",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.removeSSHKey#3\",\n    \"name\": \"removeSSHKey\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "addGlobalSSHKey",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.addGlobalSSHKey#2\",\n    \"name\": \"addGlobalSSHKey\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "removeGlobalSSHKey",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.removeGlobalSSHKey#1\",\n    \"name\": \"removeGlobalSSHKey\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/sshKey.ts",
+    "name": "generateGlobalSshConfig",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:back/services/sshKey.ts:SshKeyService.generateGlobalSshConfig#1\",\n    \"name\": \"generateGlobalSshConfig\",\n    \"type\": \"Method\",\n    \"filePath\": \"back/services/sshKey.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Services\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/sshKey.ts:SshKeyService.addGlobalSSHKey#2\",\n        \"name\": \"addGlobalSSHKey\",\n        \"filePath\": \"back/services/sshKey.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

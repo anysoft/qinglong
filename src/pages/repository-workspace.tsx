@@ -26,7 +26,7 @@ const explanations: Record<string, string> = {
   WORKTREE_DIVERGED: '本地分支与远端已分叉，不会自动 merge、rebase 或 reset。',
   WORKTREE_LOCAL_COMMITS: '工作区包含本地提交，删除已被阻止。',
   WORKTREE_IN_USE:
-    '工作区仍被订阅引用，请先修改或删除订阅绑定；切回 Legacy 会保留绑定。',
+    '工作区仍被订阅引用，请先修改或删除订阅绑定。',
   WORKTREE_BUSY: '工作区正被其他操作占用，请稍后刷新。',
   REPOSITORY_BUSY: '仓库正在执行其他操作，请稍后刷新。',
   WORKTREE_STALE:

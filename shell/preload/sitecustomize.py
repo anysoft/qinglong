@@ -5,11 +5,6 @@ import json
 import builtins
 import sys
 import scoped_env
-if scoped_env.directory:
-    with open(os.path.join(scoped_env.directory, 'global.py'), encoding='utf-8') as source:
-        exec(compile(source.read(), 'global.py', 'exec'))
-else:
-    import env
 scoped_env.apply_scoped_environment()
 import signal
 from client import Client

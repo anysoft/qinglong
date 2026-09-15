@@ -13,4 +13,4 @@ def apply_scoped_environment():
         return
     for name in snapshot['unset']:
         os.environ.pop(name, None)
-    os.environ.update(snapshot['overlay'])
+    os.environ.update(snapshot['variables'])

@@ -1,0 +1,5 @@
+const fs=require('node:fs'),ts=require('typescript'),{spawnSync}=require('node:child_process');
+const output=process.argv[2],files=process.argv.slice(3),rows=[];
+for(const file of files){const source=ts.createSourceFile(file,fs.readFileSync(file,'utf8'),ts.ScriptTarget.Latest,true);const names=new Set([file]);function visit(node){if((ts.isClassDeclaration(node)||ts.isFunctionDeclaration(node)||ts.isMethodDeclaration(node))&&node.name)names.add(node.name.getText(source));ts.forEachChild(node,visit)}visit(source);for(const name of names){const r=spawnSync('gitnexus',['impact',name,'--file',file,'--direction','upstream','--repo','qinglong'],{encoding:'utf8',maxBuffer:12*1024*1024});rows.push({file,name,status:r.status,output:r.stdout,stderr:r.stderr});}}
+fs.writeFileSync(output,JSON.stringify(rows,null,2)+'\n');
+console.log(JSON.stringify(rows.map(x=>{try{const r=JSON.parse(x.output.slice(x.output.indexOf('{')));return {file:x.file,name:x.name,risk:r.risk,direct:r.summary?.direct,total:r.impactedCount}}catch{return {file:x.file,name:x.name,status:x.status}}})));

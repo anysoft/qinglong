@@ -29,7 +29,6 @@ import { getClientIp, normalizeClientIp } from '../shared/clientIp';
 import { isDefaultAuthInfo } from '../shared/auth';
 import {
   hashPassword,
-  isPasswordHash,
   verifyPassword,
 } from '../shared/password';
 import { serializeAuthMutation } from '../shared/authMutation';
@@ -155,9 +154,6 @@ export default class UserService {
       );
 
       await this.updateAuthInfo(content, {
-        password: isPasswordHash(cPassword)
-          ? cPassword
-          : await hashPassword(password),
         token,
         tokens: updatedTokens,
         lastlogon: timestamp,
@@ -356,6 +352,7 @@ export default class UserService {
       return { code: 400, message: t('密码不能设置为admin') };
     }
     await this.updateAuthInfo(authInfo, {
+      initialized: true,
       username,
       password: await hashPassword(password),
       token: '',
@@ -569,25 +566,7 @@ export default class UserService {
     const normalized: Record<string, TokenInfo[]> = {};
 
     for (const [platform, value] of Object.entries(tokens)) {
-      if (typeof value === 'string') {
-        // Legacy format: convert string token to TokenInfo array
-        if (value) {
-          normalized[platform] = [
-            {
-              value,
-              timestamp: Date.now(),
-              ip: '',
-              address: '',
-              platform,
-            },
-          ];
-        } else {
-          normalized[platform] = [];
-        }
-      } else {
-        // Already in new format
-        normalized[platform] = value || [];
-      }
+      normalized[platform] = Array.isArray(value) ? value : [];
     }
 
     return normalized;

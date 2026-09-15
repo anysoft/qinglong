@@ -1,6 +1,7 @@
 import { Service } from 'typedi';
 import { Transaction } from 'sequelize';
 import { sequelize } from '../data';
+import { EnvModel } from '../data/env';
 import { CrontabModel } from '../data/cron';
 import { SubscriptionModel } from '../data/subscription';
 import { ScopedVariable, RepositoryEnvVariableModel, TaskEnvVariableModel } from '../data/scopedEnv';
@@ -16,34 +17,35 @@ export function publicVariable(row: ScopedVariable) {
 @Service()
 export default class ScopedEnvVariableService {
   constructor(private profiles: RepositoryEnvProfileService) {}
-  private async owner(scope: 'repository' | 'task', id: number, transaction?: Transaction) {
+  private async owner(scope: 'global' | 'repository' | 'task', id: number, transaction?: Transaction) {
+    if (scope === 'global') return null;
     if (scope === 'repository') return this.profiles.get(id, transaction);
     const task = await CrontabModel.findByPk(id, { transaction });
     if (!task) throw new ScopedEnvironmentError('ENV_TASK_NOT_FOUND', 404);
     return task;
   }
-  async list(scope: 'repository' | 'task', id: number) {
+  async list(scope: 'global' | 'repository' | 'task', id: number) {
     await this.owner(scope, id);
-    const model = scope === 'repository' ? RepositoryEnvVariableModel : TaskEnvVariableModel;
-    const rows = await model.unscoped().findAll({ where: { [scope === 'repository' ? 'profile_id' : 'cron_id']: id }, order: [['position', 'DESC'], ['name', 'ASC']] });
-    return rows.map(x => publicVariable(x.get({ plain: true })));
+    const model: any = scope === 'global' ? EnvModel : scope === 'repository' ? RepositoryEnvVariableModel : TaskEnvVariableModel;
+    const rows = await model.unscoped().findAll({ where: scope === 'global' ? {} : { [scope === 'repository' ? 'profile_id' : 'cron_id']: id }, order: [['position', 'DESC'], ['name', 'ASC']] });
+    return rows.map((x: any) => { const row = x.get({ plain: true }); return publicVariable({ ...row, status: scope === 'global' ? row.status === 1 ? 'disabled' : 'enabled' : row.status }); });
   }
-  async save(scope: 'repository' | 'task', id: number, patches: VariablePatch[]) {
+  async save(scope: 'global' | 'repository' | 'task', id: number, patches: VariablePatch[]) {
     if (!Array.isArray(patches) || patches.length > 1000) throw new ScopedEnvironmentError('ENV_VALUE_INVALID');
-    const model = scope === 'repository' ? RepositoryEnvVariableModel : TaskEnvVariableModel;
+    const model: any = scope === 'global' ? EnvModel : scope === 'repository' ? RepositoryEnvVariableModel : TaskEnvVariableModel;
     const key = scope === 'repository' ? 'profile_id' : 'cron_id';
     try {
       await sequelize.transaction(async transaction => {
         await this.owner(scope, id, transaction);
-        const rows = await model.unscoped().findAll({ where: { [key]: id }, transaction });
-        const existing = new Map(rows.map(x => [x.name, x.get({ plain: true })]));
+        const rows = await model.unscoped().findAll({ where: scope === 'global' ? {} : { [key]: id }, transaction });
+        const existing = new Map<string, ScopedVariable>(rows.map((x: any) => { const row = x.get({ plain: true }); return [x.name, { ...row, status: scope === 'global' ? row.status === 1 ? 'disabled' : 'enabled' : row.status }]; }));
         const seen = new Set<string>();
         for (const patch of patches) {
           validateEnvironmentName(patch.name);
           if (seen.has(patch.name)) throw new ScopedEnvironmentError('ENV_NAME_DUPLICATE');
           seen.add(patch.name);
           const old = existing.get(patch.name);
-          if (patch.clear === true) { await model.destroy({ where: { [key]: id, name: patch.name }, transaction }); continue; }
+          if (patch.clear === true) { await model.destroy({ where: { ...(scope === 'global' ? {} : { [key]: id }), name: patch.name }, transaction }); continue; }
           const operation = patch.operation ?? old?.operation ?? 'SET';
           const status = patch.status ?? old?.status ?? 'enabled';
           const is_secret = patch.is_secret ?? old?.is_secret ?? false;
@@ -53,7 +55,7 @@ export default class ScopedEnvVariableService {
           if (patch.value === '********' || patch.value === '••••••••') throw new ScopedEnvironmentError('ENV_SECRET_UPDATE_INVALID');
           const value = operation === 'UNSET' ? null : patch.value === undefined ? old?.value : patch.value;
           if (operation === 'SET') validateEnvironmentValue(value);
-          const fields = { [key]: id, name: patch.name, value, operation, status, is_secret, position: patch.position ?? old?.position ?? 0, labels: patch.labels ?? old?.labels ?? [] };
+          const fields = { ...(scope === 'global' ? {} : { [key]: id }), name: patch.name, value, operation, status: scope === 'global' ? status === 'disabled' ? 1 : 0 : status, is_secret, position: patch.position ?? old?.position ?? 0, labels: patch.labels ?? old?.labels ?? [] };
           if (old) await model.update(fields, { where: { id: old.id }, transaction });
           else await model.create(fields, { transaction });
         }

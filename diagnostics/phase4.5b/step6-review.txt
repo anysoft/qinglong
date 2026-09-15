@@ -1,0 +1,37 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Detect Changes (1.6.12)
+Changes: 78 files, 159 symbols
+Affected processes: 90
+Risk level: critical
+
+Changed symbols:
+  Section Temporary Bridges — 退出条件登记 → TEMPORARY_BRIDGES.md
+  Section 必须特别避免的误删 → TEMPORARY_BRIDGES.md
+  Section Phase 4.5B Step 1 实施检查点 → TEMPORARY_BRIDGES.md
+  Const route → back/api/env.ts
+  Const storage → back/api/env.ts
+  Function destination → back/api/env.ts
+  Function filename → back/api/env.ts
+  Const upload → back/api/env.ts
+  Const labelSchema → back/api/env.ts
+  Function gitResources → back/api/gitResources.ts
+  Function scopedEnvironmentRoutes → back/api/scopedEnvironment.ts
+  Function id → back/api/scopedEnvironment.ts
+  Class Application → back/app.ts
+  Method startHttpService → back/app.ts
+  Const scriptPath → back/config/index.ts
+... and 144 more
+
+Affected execution flows:
+  • WithBinding → WorkspaceError (10 steps) — changed: prepare, initialize
+  • WithBinding → Root (10 steps) — changed: prepare, initialize
+  • WithBinding → Release (7 steps) — changed: prepare, initialize
+  • Env → Request (5 steps) — changed: update, EnvLabelModal
+  • Move → Find (5 steps) — changed: update
+  • Save → ScopedEnvironmentError (5 steps) — changed: save, list, owner
+  • GitResources → GetDb (4 steps) — changed: gitResources
+  • SendNotify → Post (4 steps) — changed: logger
+  • CronModal → Load (4 steps) — changed: ScopedVariables
+  • CronModal → Open (4 steps) — changed: ScopedVariables
+... and 80 more

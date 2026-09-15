@@ -1,0 +1,26 @@
+{
+  "status": "PARTIAL",
+  "bootstrap_gates": "PASS",
+  "fresh_process": "step1-process.json",
+  "targeted_tests": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "regression": {
+    "existing_passed": 176,
+    "phase0_passed": 17,
+    "phase1_to_4_passed": 105,
+    "failed": 0,
+    "skipped": 3
+  },
+  "backend_build": "PASS",
+  "typecheck": "step1-typecheck.json",
+  "impact": "HIGH",
+  "remaining": [
+    "Subscription target fields (Step 2)",
+    "Global ENV target fields (Step 5)",
+    "Archive historical migration source/tests (Step 7)"
+  ],
+  "release_ready": false
+}

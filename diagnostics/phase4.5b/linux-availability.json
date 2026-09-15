@@ -1,0 +1,14 @@
+{
+  "host": "Darwin",
+  "tools": {
+    "docker": null,
+    "podman": null,
+    "colima": null,
+    "limactl": null
+  },
+  "status": "PARTIAL",
+  "reason": "No local Linux virtualization or accessible configured Linux runner; workflow not dispatched from this task.",
+  "workflow": ".github/workflows/validate.yml",
+  "harness": "diagnostics/phase4.5b/platform-e2e.cjs",
+  "linux_execution": "NOT_RUN"
+}

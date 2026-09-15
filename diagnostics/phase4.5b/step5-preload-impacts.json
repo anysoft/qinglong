@@ -1,0 +1,44 @@
+[
+  {
+    "file": "shell/preload/scoped-env.js",
+    "name": "shell/preload/scoped-env.js",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/preload/scoped-env.js' not found\",\n  \"target\": {\n    \"name\": \"shell/preload/scoped-env.js\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/scoped_env.py",
+    "name": "shell/preload/scoped_env.py",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/preload/scoped_env.py' not found\",\n  \"target\": {\n    \"name\": \"shell/preload/scoped_env.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/sitecustomize.py",
+    "name": "shell/preload/sitecustomize.py",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/preload/sitecustomize.py' not found\",\n  \"target\": {\n    \"name\": \"shell/preload/sitecustomize.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/preload/sitecustomize.py",
+    "name": "BaseApi",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:shell/preload/sitecustomize.py:BaseApi\",\n    \"name\": \"BaseApi\",\n    \"type\": \"Class\",\n    \"filePath\": \"shell/preload/sitecustomize.py\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/task_env_redact.cjs",
+    "name": "shell/task_env_redact.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'shell/task_env_redact.cjs' not found\",\n  \"target\": {\n    \"name\": \"shell/task_env_redact.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "shell/task_env_redact.cjs",
+    "name": "flush",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:shell/task_env_redact.cjs:flush\",\n    \"name\": \"flush\",\n    \"type\": \"Function\",\n    \"filePath\": \"shell/task_env_redact.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"1 call site invoking `flush` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 1,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 0,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:shell/task_env_redact.cjs\",\n        \"name\": \"task_env_redact.cjs\",\n        \"filePath\": \"shell/task_env_redact.cjs\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

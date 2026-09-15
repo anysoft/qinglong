@@ -629,3 +629,326 @@ ok 71 - shared repository/branch binding is retained and blocks worktree deletio
   duration_ms: 4339.284792
   type: 'test'
   ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=8884b7a493107e922f3ee99b0e5a94c78b9e1802 -> 8884b7a493107e922f3ee99b0e5a94c78b9e1802
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] REPOSITORY_FETCH: GIT_COMMAND_FAILED
+# Subtest: fetch, scanner, copy and Cron failures preserve Tasks; every failure can retry
+    # Subtest: network failure never reaches discovery
+    ok 1 - network failure never reaches discovery
+      ---
+      duration_ms: 147.494208
+      type: 'test'
+      ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=8884b7a493107e922f3ee99b0e5a94c78b9e1802 -> 0093dbde6f0445c2fed56d965f5f38d6184f977f
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] COPY_AND_CRON: MANAGED_SYNC_FAILED
+    # Subtest: partial Cron registration failure restores original ID and scripts
+    ok 2 - partial Cron registration failure restores original ID and scripts
+      ---
+      duration_ms: 2436.82175
+      type: 'test'
+      ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=0093dbde6f0445c2fed56d965f5f38d6184f977f -> 0093dbde6f0445c2fed56d965f5f38d6184f977f
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+    # Subtest: retry at already updated commit applies old scanner add/drop
+    ok 3 - retry at already updated commit applies old scanner add/drop
+      ---
+      duration_ms: 2632.581583
+      type: 'test'
+      ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=0093dbde6f0445c2fed56d965f5f38d6184f977f -> 0093dbde6f0445c2fed56d965f5f38d6184f977f
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: DISCOVERY_FAILED
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=0093dbde6f0445c2fed56d965f5f38d6184f977f -> 0093dbde6f0445c2fed56d965f5f38d6184f977f
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+    # Subtest: copy failure leaves current scripts intact
+    ok 4 - copy failure leaves current scripts intact
+      ---
+      duration_ms: 4619.476625
+      type: 'test'
+      ...
+    1..4
+ok 72 - fetch, scanner, copy and Cron failures preserve Tasks; every failure can retry
+  ---
+  duration_ms: 14671.05475
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=4b7d1e4a20132ba51dfbbac155267fe6f60fd1cd -> 4b7d1e4a20132ba51dfbbac155267fe6f60fd1cd
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: Managed leases block overlapping sync, update and binding changes
+ok 73 - Managed leases block overlapping sync, update and binding changes
+  ---
+  duration_ms: 6610.909542
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=a9e710a87753f6311110dd1742d9de1ec828b726 -> a9e710a87753f6311110dd1742d9de1ec828b726
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=a9e710a87753f6311110dd1742d9de1ec828b726 -> 0c12532e5893866819a93c2dffbbdb906ecbfc95
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: PATH_CONFLICT
+# Subtest: symlink source is refused without reading or copying outside data root
+ok 74 - symlink source is refused without reading or copying outside data root
+  ---
+  duration_ms: 7008.412708
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=1786775058d9d30cc7a564337df2ef966ba7eb5c -> 1786775058d9d30cc7a564337df2ef966ba7eb5c
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=2 commit=1786775058d9d30cc7a564337df2ef966ba7eb5c -> 1786775058d9d30cc7a564337df2ef966ba7eb5c
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: branch selection creates a new binding and preserves the old Worktree
+ok 75 - branch selection creates a new binding and preserves the old Worktree
+  ---
+  duration_ms: 9632.855209
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=9a3f051c08c908d156dd11049f82e61140444995 -> 9a3f051c08c908d156dd11049f82e61140444995
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: REF_NOT_FOUND
+# Subtest: branch deleted stops before scripts and Task diff
+ok 76 - branch deleted stops before scripts and Task diff
+  ---
+  duration_ms: 6296.374291
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=d0fc207e9e277b9f7afdf8a8c81f86abce2cec5a -> d0fc207e9e277b9f7afdf8a8c81f86abce2cec5a
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_DIVERGED
+# Subtest: force push stops before scripts and Task diff
+ok 77 - force push stops before scripts and Task diff
+  ---
+  duration_ms: 6024.1585
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=a1c017a8ebf43aeef72422604ad87dcb3b51d51d -> a1c017a8ebf43aeef72422604ad87dcb3b51d51d
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] REPOSITORY_FETCH: REPOSITORY_NOT_INITIALIZED
+# Subtest: storage missing stops before scripts and Task diff
+ok 78 - storage missing stops before scripts and Task diff
+  ---
+  duration_ms: 5106.395917
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=f2003176f77e02c5be0539216fec91b22a7fa592 -> f2003176f77e02c5be0539216fec91b22a7fa592
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] REPOSITORY_FETCH: MANAGED_SYNC_FAILED
+# Subtest: disabled credential stops before scripts and Task diff
+ok 79 - disabled credential stops before scripts and Task diff
+  ---
+  duration_ms: 4661.953917
+  type: 'test'
+  ...
+# Subtest: scoped sh account concurrency keeps split secrets in private temporary logs
+ok 80 - scoped sh account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1514.554375
+  type: 'test'
+  ...
+# Subtest: scoped js account concurrency keeps split secrets in private temporary logs
+ok 81 - scoped js account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1168.61525
+  type: 'test'
+  ...
+# Subtest: scoped py account concurrency keeps split secrets in private temporary logs
+ok 82 - scoped py account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1135.920292
+  type: 'test'
+  ...
+# Subtest: real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+ok 83 - real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+  ---
+  duration_ms: 469.696833
+  type: 'test'
+  ...
+# Subtest: profile CRUD, uniqueness, default, clone secrets, and reference protection
+ok 84 - profile CRUD, uniqueness, default, clone secrets, and reference protection
+  ---
+  duration_ms: 365.362917
+  type: 'test'
+  ...
+# Subtest: secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors
+ok 85 - secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors
+  ---
+  duration_ms: 142.255792
+  type: 'test'
+  ...
+# Subtest: profile precedence, manual task, disabled and wrong repository fail closed
+ok 86 - profile precedence, manual task, disabled and wrong repository fail closed
+  ---
+  duration_ms: 143.326625
+  type: 'test'
+  ...
+# Subtest: SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation
+ok 87 - SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation
+  ---
+  duration_ms: 132.04825
+  type: 'test'
+  ...
+# Subtest: real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+ok 88 - real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+  ---
+  duration_ms: 1547.737542
+  type: 'test'
+  ...
+# Subtest: actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+ok 89 - actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+  ---
+  duration_ms: 2482.439375
+  type: 'test'
+  ...
+# Subtest: 50 parallel isolated executions and frozen values after configuration update
+ok 90 - 50 parallel isolated executions and frozen values after configuration update
+  ---
+  duration_ms: 5943.281667
+  type: 'test'
+  ...
+# Subtest: cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue
+ok 91 - cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue
+  ---
+  duration_ms: 1567.111542
+  type: 'test'
+  ...
+# Subtest: malformed scoped request JSON is never echoed by the HTTP error boundary
+ok 92 - malformed scoped request JSON is never echoed by the HTTP error boundary
+  ---
+  duration_ms: 229.382166
+  type: 'test'
+  ...
+# Subtest: pre-integration characterization: actual task.sh sh duplicates, disabled host fallback, spaces, templates
+ok 93 - pre-integration characterization: actual task.sh sh duplicates, disabled host fallback, spaces, templates
+  ---
+  duration_ms: 824.855417
+  type: 'test'
+  ...
+# Subtest: pre-integration characterization: actual task.sh js duplicates, disabled host fallback, spaces, templates
+ok 94 - pre-integration characterization: actual task.sh js duplicates, disabled host fallback, spaces, templates
+  ---
+  duration_ms: 818.90475
+  type: 'test'
+  ...
+# Subtest: pre-integration characterization: actual task.sh py duplicates, disabled host fallback, spaces, templates
+ok 95 - pre-integration characterization: actual task.sh py duplicates, disabled host fallback, spaces, templates
+  ---
+  duration_ms: 794.914417
+  type: 'test'
+  ...
+# Subtest: Phase 3 upgrade is additive, idempotent and indexed, with nullable bindings and unchanged globals
+ok 96 - Phase 3 upgrade is additive, idempotent and indexed, with nullable bindings and unchanged globals
+  ---
+  duration_ms: 65.974792
+  type: 'test'
+  ...
+# Subtest: failed DDL rolls back tables, references and ledger, then safely retries
+ok 97 - failed DDL rolls back tables, references and ledger, then safely retries
+  ---
+  duration_ms: 8.186458
+  type: 'test'
+  ...
+# Subtest: streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values
+ok 98 - streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values
+  ---
+  duration_ms: 183.293209
+  type: 'test'
+  ...
+# Subtest: profile references block repository filesystem deletion before mutation
+ok 99 - profile references block repository filesystem deletion before mutation
+  ---
+  duration_ms: 1164.908875
+  type: 'test'
+  ...
+# Subtest: snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment
+ok 100 - snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment
+  ---
+  duration_ms: 346.937209
+  type: 'test'
+  ...
+# Subtest: unconfigured task never allocates a snapshot or changes global generated files
+ok 101 - unconfigured task never allocates a snapshot or changes global generated files
+  ---
+  duration_ms: 132.543959
+  type: 'test'
+  ...
+1..101
+# tests 105
+# suites 0
+# pass 105
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 204928.899417

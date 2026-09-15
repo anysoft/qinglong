@@ -1,5 +1,7 @@
 # Greenfield Legacy Audit & Removal Plan
 
+> 实施状态更新：Phase 4.5B Step 2–7 已完成，最终 Fresh v1 已冻结。当前状态与例外见 [PHASE4_5B_REPORT.md](PHASE4_5B_REPORT.md)。下文保留 Phase 4.5A 审计时点与计划依据，不代表当前尚未执行。
+
 ## Executive Summary
 
 **Phase 4.5A: PASS（审计与计划完成，未执行清理）。** 新方向为 **Git-native Script Automation / Scheduling Platform，Fresh Install Only**。不再保留 QingLong 数据库、API、Filesystem、Subscription、ENV、Dependency 或 CLI 兼容义务。

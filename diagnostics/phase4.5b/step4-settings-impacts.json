@@ -1,0 +1,37 @@
+[
+  {
+    "file": "src/pages/setting/other.tsx",
+    "name": "src/pages/setting/other.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/setting/other.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/setting/other.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/setting/other.tsx",
+    "name": "onOk",
+    "status": 0,
+    "output": "{\n  \"status\": \"ambiguous\",\n  \"message\": \"Found 2 symbols matching 'onOk'. Blast radius differs per candidate (max 0 impacted at risk UNKNOWN). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.\",\n  \"target\": {\n    \"name\": \"onOk\"\n  },\n  \"direction\": \"upstream\",\n  \"totalCandidates\": 2,\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\",\n  \"maxImpactedCount\": 0,\n  \"maxRisk\": \"UNKNOWN\",\n  \"candidates\": [\n    {\n      \"uid\": \"Function:src/pages/setting/other.tsx:Other.previewStorageCleanup@174:32.fn@183:12.onOk@213:10\",\n      \"name\": \"onOk\",\n      \"kind\": \"Function\",\n      \"filePath\": \"src/pages/setting/other.tsx\",\n      \"line\": 214,\n      \"score\": 0.96,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    },\n    {\n      \"uid\": \"Method:src/pages/setting/other.tsx:Other.showReloadModal@260:26.onOk@273:6#0\",\n      \"name\": \"onOk\",\n      \"kind\": \"Method\",\n      \"filePath\": \"src/pages/setting/other.tsx\",\n      \"line\": 274,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    }\n  ]\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/system.ts",
+    "name": "back/api/system.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/system.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/system.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/loaders/initFile.ts",
+    "name": "back/loaders/initFile.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/loaders/initFile.ts' not found\",\n  \"target\": {\n    \"name\": \"back/loaders/initFile.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/loaders/initTask.ts",
+    "name": "back/loaders/initTask.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/loaders/initTask.ts' not found\",\n  \"target\": {\n    \"name\": \"back/loaders/initTask.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

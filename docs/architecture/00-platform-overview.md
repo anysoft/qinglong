@@ -1,27 +1,29 @@
 # Git-native Script Automation / Scheduling Platform
 
-**当前设计方向：greenfield-only。** 仅 Fresh Install / Database / Configuration / Repository / Task Setup；不支持 QingLong 数据、API、目录、ENV、CLI 或依赖兼容。Phase 0–4 是 Historical Refactor Records，不再是新设计的兼容契约。
+**Phase 4.5B 已完成，Fresh Operational Schema v1 已冻结。** 平台仅接受 Fresh 安装；不支持 QingLong 数据、旧 API、ENV、CLI 或目录迁移。Phase 0–4 与 4.5A 为历史记录/实施依据，当前行为以源码及 [最终报告](../../PHASE4_5B_REPORT.md) 为准。
 
-本文描述目标与实施边界，不代表目标全部已经实现。已实现核心：Credential、Repository、persistent Git、Worktree、锁/lease、Managed sync、Scoped ENV。Task/Scheduler/Runner/Discovery/Dependency 仍有桥；4.5A 不修改生产行为。
+## 当前已实现架构
 
 ```mermaid
 flowchart TD
- UI[Platform UI/API] --> R[Repository + Credential]
- R --> G[Git Storage / safe Git runner]
- G --> W[Worktree Workspace]
- W --> S[Subscription Sync]
- S --> D[DiscoveryPolicy + DiscoveryService]
- D --> T[TaskService reconcile]
- T --> SC[Schedule]
- SC --> Q[Scheduler]
- T --> E[Execution Engine]
- Q --> E
- V[Base + Global + Profile + Task ENV] --> E
- W -->|execution lease| E
- E --> RUN[TaskRun + Logs + Events]
- RUN --> N[Notification / Observability]
+ C[Credential] --> R[Repository]
+ R --> G[Persistent Git Storage]
+ G --> W[Worktree]
+ W --> S[Repository-only Subscription]
+ S --> D[SubscriptionDiscoveryAdapter]
+ DB[DB Task projection] --> D
+ D --> P[CronService publication bridge]
+ P --> ST[Private stage → live scripts]
+ P --> SC[Current Scheduler bridge]
+ SC --> RUN[Current Runner bridge]
+ ST --> RUN
+ ENV[Base → Global → Repository Profile → Task Override] --> SN[Full immutable execution snapshot]
+ SN --> RUN
+ RUN --> LOG[Status / Logs / Notification bridges]
 ```
 
-DB 是领域定义来源，Git 是对象/refs/工作区内容来源；日志是运行观测，不反写 Task 定义。source身份不用路径字符串猜测。运行环境不污染 Backend/Git/installer。fresh-only 并不取消安全验证、失败恢复、身份认证或新平台版本升级。
+DB 是领域定义来源，Git 保存对象、refs 与工作区内容。Subscription ID 与 relative-path discovery key 决定发布身份；展示名、URL 拼写不参与。Git locks/lease、dirty/local commit 保护及发布补偿继续有效。任务子环境不继承 Backend secrets，不修改父进程环境。
 
-当前→目标间的 [桥登记](../../TEMPORARY_BRIDGES.md)、[清理计划](../../GREENFIELD_REMOVAL_PLAN.md) 是实施约束。下一步4.5B仅清理与有限整合；不开始Phase5。
+## 后续边界
+
+Task/Schedule/TaskRun 拆分、Config Assets/Hooks、Runtime、Runner v2、完整 Discovery v2 仍是后续阶段，未创建占位页面或空表。B05 已删除，B07/B03 已缩减；其余当前职责见 [桥登记](../../TEMPORARY_BRIDGES.md)。Linux 实机验收待执行已配置的 CI；本机浏览器、Fresh 全链路及重启验收通过。

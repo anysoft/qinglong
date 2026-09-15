@@ -1,0 +1,398 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: fresh seed is local, idempotent and creates no usable password or legacy startup task
+ok 1 - fresh seed is local, idempotent and creates no usable password or legacy startup task
+  ---
+  duration_ms: 67.383
+  type: 'test'
+  ...
+# Subtest: empty data root creates v1, all bridge/core tables, and restarts without schema writes
+ok 2 - empty data root creates v1, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 253.62
+  type: 'test'
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 3 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 74.75775
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+ok 4 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 87.660791
+  type: 'test'
+  ...
+# Subtest: unexpected schema objects are rejected on restart
+ok 5 - unexpected schema objects are rejected on restart
+  ---
+  duration_ms: 77.226292
+  type: 'test'
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 6 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 2.538042
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=366d74bc12841626864eedc6163a2042ad39ad3b -> 366d74bc12841626864eedc6163a2042ad39ad3b
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=366d74bc12841626864eedc6163a2042ad39ad3b -> 366d74bc12841626864eedc6163a2042ad39ad3b
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=366d74bc12841626864eedc6163a2042ad39ad3b -> 7b9cb6b3a0a5f503eca3ab0f7035accba019dc86
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: repository-only prepare, first sync, no-change retry and FF update retain stable namespace
+ok 7 - repository-only prepare, first sync, no-change retry and FF update retain stable namespace
+  ---
+  duration_ms: 12930.763459
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=d5ef23136144e27764f770306475dd692d36e0d6 -> d5ef23136144e27764f770306475dd692d36e0d6
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_DIRTY
+# Subtest: dirty Worktree preserves last scripts and Tasks
+ok 8 - dirty Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 5882.154167
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=9930d66484f74d5e861312c3c8e9c1c464d2b094 -> 9930d66484f74d5e861312c3c8e9c1c464d2b094
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_DIRTY
+# Subtest: untracked Worktree preserves last scripts and Tasks
+ok 9 - untracked Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 5225.323875
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=d9259295cb34fad66f8b291fe6ad5f2e204fce77 -> d9259295cb34fad66f8b291fe6ad5f2e204fce77
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_LOCAL_COMMITS
+# Subtest: ahead Worktree preserves last scripts and Tasks
+ok 10 - ahead Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 5432.328875
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=26f852a0d8ec5b77726c6d64893b4d05f06e82fb -> 26f852a0d8ec5b77726c6d64893b4d05f06e82fb
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_MISSING
+# Subtest: missing Worktree preserves last scripts and Tasks
+ok 11 - missing Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 5256.69175
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=76dce70e4594c25ad54a288b8e21515da2e063ae -> 76dce70e4594c25ad54a288b8e21515da2e063ae
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_STALE
+# Subtest: detached Worktree preserves last scripts and Tasks
+ok 12 - detached Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 5257.602792
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=34f9c8ff1eb4ddf7280dc75e2cc0a5fcb01257f1 -> 34f9c8ff1eb4ddf7280dc75e2cc0a5fcb01257f1
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=34f9c8ff1eb4ddf7280dc75e2cc0a5fcb01257f1 -> 34f9c8ff1eb4ddf7280dc75e2cc0a5fcb01257f1
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: DISCOVERY_FAILED
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=34f9c8ff1eb4ddf7280dc75e2cc0a5fcb01257f1 -> 34f9c8ff1eb4ddf7280dc75e2cc0a5fcb01257f1
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: discovery failure preserves last good state and retry at same commit succeeds
+ok 13 - discovery failure preserves last good state and retry at same commit succeeds
+  ---
+  duration_ms: 8291.23775
+  type: 'test'
+  ...
+# Subtest: shared repository/branch binding is retained and blocks worktree deletion
+ok 14 - shared repository/branch binding is retained and blocks worktree deletion
+  ---
+  duration_ms: 4136.690166
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=83d81716fca3455a9c790751cdb8f4751706a7fe -> 83d81716fca3455a9c790751cdb8f4751706a7fe
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] REPOSITORY_FETCH: GIT_COMMAND_FAILED
+# Subtest: fetch, scanner, copy and Cron failures preserve Tasks; every failure can retry
+    # Subtest: network failure never reaches discovery
+    ok 1 - network failure never reaches discovery
+      ---
+      duration_ms: 136.438583
+      type: 'test'
+      ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=83d81716fca3455a9c790751cdb8f4751706a7fe -> 73f9c323825a8e72360284b8552765bd661f3f1c
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] COPY_AND_CRON: MANAGED_SYNC_FAILED
+    # Subtest: partial Cron registration failure restores original ID and scripts
+    ok 2 - partial Cron registration failure restores original ID and scripts
+      ---
+      duration_ms: 2334.018375
+      type: 'test'
+      ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=73f9c323825a8e72360284b8552765bd661f3f1c -> 73f9c323825a8e72360284b8552765bd661f3f1c
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+    # Subtest: retry at already updated commit applies old scanner add/drop
+    ok 3 - retry at already updated commit applies old scanner add/drop
+      ---
+      duration_ms: 2191.270708
+      type: 'test'
+      ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=73f9c323825a8e72360284b8552765bd661f3f1c -> 73f9c323825a8e72360284b8552765bd661f3f1c
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: DISCOVERY_FAILED
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=73f9c323825a8e72360284b8552765bd661f3f1c -> 73f9c323825a8e72360284b8552765bd661f3f1c
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+    # Subtest: copy failure leaves current scripts intact
+    ok 4 - copy failure leaves current scripts intact
+      ---
+      duration_ms: 4098.67325
+      type: 'test'
+      ...
+    1..4
+ok 15 - fetch, scanner, copy and Cron failures preserve Tasks; every failure can retry
+  ---
+  duration_ms: 13352.315125
+  type: 'test'
+  ...
+# Subtest: Managed leases block overlapping sync, update and binding changes
+not ok 16 - Managed leases block overlapping sync, update and binding changes
+  ---
+  duration_ms: 2495.350875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:214:1'
+  failureType: 'testCodeFailure'
+  error: 'h.managed.mode is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:220:36
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:218:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=657c3e9135cbb767177accc60318c5ea2699dd7e -> 657c3e9135cbb767177accc60318c5ea2699dd7e
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=657c3e9135cbb767177accc60318c5ea2699dd7e -> 5934d1448e0fa4625db75d1a2273c4a97f3e1447
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: PATH_CONFLICT
+# Subtest: symlink source is refused without reading or copying outside data root
+ok 17 - symlink source is refused without reading or copying outside data root
+  ---
+  duration_ms: 6396.237875
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=e0404b5734a55bd09dcfe95a5eebed3b69af652b -> e0404b5734a55bd09dcfe95a5eebed3b69af652b
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=2 commit=e0404b5734a55bd09dcfe95a5eebed3b69af652b -> e0404b5734a55bd09dcfe95a5eebed3b69af652b
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: branch selection creates a new binding and preserves the old Worktree
+not ok 18 - branch selection creates a new binding and preserves the old Worktree
+  ---
+  duration_ms: 7728.88675
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:243:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/ql-managed3-Lo0akz/scripts/team_project_feature/new/job.js'"
+  code: 'ENOENT'
+  stack: |-
+    async open (node:internal/fs/promises:639:25)
+    async Object.readFile (node:internal/fs/promises:1252:14)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:257:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=901f29d9314c2318bd60aaf017ff799325a9c38a -> 901f29d9314c2318bd60aaf017ff799325a9c38a
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: REF_NOT_FOUND
+# Subtest: branch deleted stops before scripts and Task diff
+ok 19 - branch deleted stops before scripts and Task diff
+  ---
+  duration_ms: 5393.024333
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=4b527c9ca525dcaa30ac99a8a4d093bd7448aabe -> 4b527c9ca525dcaa30ac99a8a4d093bd7448aabe
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_DIVERGED
+# Subtest: force push stops before scripts and Task diff
+ok 20 - force push stops before scripts and Task diff
+  ---
+  duration_ms: 5511.729958
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=b5e1853a69a58bb7a1d2bceb96759249c26cde6f -> b5e1853a69a58bb7a1d2bceb96759249c26cde6f
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] REPOSITORY_FETCH: REPOSITORY_NOT_INITIALIZED
+# Subtest: storage missing stops before scripts and Task diff
+ok 21 - storage missing stops before scripts and Task diff
+  ---
+  duration_ms: 4625.021834
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=245b1b3ec7c5a1d57a091c79ab69c5abc75e4370 -> 245b1b3ec7c5a1d57a091c79ab69c5abc75e4370
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=245b1b3ec7c5a1d57a091c79ab69c5abc75e4370 -> 245b1b3ec7c5a1d57a091c79ab69c5abc75e4370
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: disabled credential stops before scripts and Task diff
+not ok 22 - disabled credential stops before scripts and Task diff
+  ---
+  duration_ms: 6520.007708
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:270:3'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:302:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..22
+# tests 26
+# suites 0
+# pass 23
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 105806.003917

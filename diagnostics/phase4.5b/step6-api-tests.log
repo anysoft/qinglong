@@ -1,0 +1,53 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: Git resource HTTP boundary never reflects submitted secrets or internal errors; routes are read/write specific
+ok 1 - Git resource HTTP boundary never reflects submitted secrets or internal errors; routes are read/write specific
+  ---
+  duration_ms: 140.387167
+  type: 'test'
+  ...
+# Subtest: workspace HTTP API rejects paths/force/ref injection and preserves operation error codes
+ok 2 - workspace HTTP API rejects paths/force/ref injection and preserves operation error codes
+  ---
+  duration_ms: 1730.537417
+  type: 'test'
+  ...
+# Subtest: config filename route is removed while the detail API remains
+ok 3 - config filename route is removed while the detail API remains
+  ---
+  duration_ms: 94.297958
+  type: 'test'
+  ...
+# Subtest: script filename route is removed while the detail API remains
+ok 4 - script filename route is removed while the detail API remains
+  ---
+  duration_ms: 56.465917
+  type: 'test'
+  ...
+# Subtest: log filename route is removed while the detail API remains
+ok 5 - log filename route is removed while the detail API remains
+  ---
+  duration_ms: 23.624
+  type: 'test'
+  ...
+# Subtest: database loader rejects initialization failure rather than allowing workers to start
+ok 6 - database loader rejects initialization failure rather than allowing workers to start
+  ---
+  duration_ms: 42.210917
+  type: 'test'
+  ...
+# Subtest: real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+ok 7 - real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+  ---
+  duration_ms: 390.616625
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2163.222333

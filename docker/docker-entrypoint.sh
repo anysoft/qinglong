@@ -117,10 +117,6 @@ pm2 l &>/dev/null || log_with_style "WARN" "PM2 初始化可能失败，将在�
 log_with_style "INFO" "⚙️  2. 启动 pm2 服务..."
 reload_pm2
 
-if [[ $AutoStartBot == true ]]; then
-  log_with_style "INFO" "🤖  3. 启动 bot..."
-  nohup ql bot >$dir_log/bot.log 2>&1 &
-fi
 
 if [[ $EnableExtraShell == true ]]; then
   log_with_style "INFO" "🛠️  4. 执行自定义脚本..."

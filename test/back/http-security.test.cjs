@@ -19,8 +19,8 @@ test('HTTP authentication protects init, scopes, expired sessions and config sec
   const auth = {
     username: 'owner',
     password: 'configured',
-    token: valid,
-    tokens: { desktop: [{ value: expired }] },
+    token: '',
+    tokens: { desktop: [{ value: valid }, { value: expired }] },
   };
   const configSource = fs.readFileSync(
     path.join(__dirname, '../../back/config/index.ts'),

@@ -1,0 +1,155 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: same GitHub identity: https://github.com/anysoft/test.git
+ok 1 - same GitHub identity: https://github.com/anysoft/test.git
+  ---
+  duration_ms: 0.928583
+  type: 'test'
+  ...
+# Subtest: same GitHub identity: https://GITHUB.COM/anysoft/test
+ok 2 - same GitHub identity: https://GITHUB.COM/anysoft/test
+  ---
+  duration_ms: 0.202708
+  type: 'test'
+  ...
+# Subtest: same GitHub identity: git@github.com:anysoft/test.git
+ok 3 - same GitHub identity: git@github.com:anysoft/test.git
+  ---
+  duration_ms: 0.081
+  type: 'test'
+  ...
+# Subtest: same GitHub identity: ssh://git@github.com/anysoft/test.git
+ok 4 - same GitHub identity: ssh://git@github.com/anysoft/test.git
+  ---
+  duration_ms: 0.079291
+  type: 'test'
+  ...
+# Subtest: provider neutral nested identity: gitlab.com
+ok 5 - provider neutral nested identity: gitlab.com
+  ---
+  duration_ms: 0.075916
+  type: 'test'
+  ...
+# Subtest: provider neutral nested identity: gitee.com
+ok 6 - provider neutral nested identity: gitee.com
+  ---
+  duration_ms: 0.05025
+  type: 'test'
+  ...
+# Subtest: provider neutral nested identity: git.example.internal
+ok 7 - provider neutral nested identity: git.example.internal
+  ---
+  duration_ms: 0.105375
+  type: 'test'
+  ...
+# Subtest: generic paths remain case sensitive and nondefault ports distinct
+ok 8 - generic paths remain case sensitive and nondefault ports distinct
+  ---
+  duration_ms: 0.291
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 9 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.496792
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 10 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.311
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 11 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.102875
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 12 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.042333
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 13 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.044291
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 14 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.032
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 15 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.030667
+  type: 'test'
+  ...
+# Subtest: redacts split output, authorization, URL, private material and encoded secrets
+ok 16 - redacts split output, authorization, URL, private material and encoded secrets
+  ---
+  duration_ms: 62.496209
+  type: 'test'
+  ...
+# Subtest: concurrent HTTPS contexts have private immutable snapshots and idempotent cleanup
+ok 17 - concurrent HTTPS contexts have private immutable snapshots and idempotent cleanup
+  ---
+  duration_ms: 641.793
+  type: 'test'
+  ...
+# Subtest: SSH contexts isolate keys and require verified known_hosts
+ok 18 - SSH contexts isolate keys and require verified known_hosts
+  ---
+  duration_ms: 10.543791
+  type: 'test'
+  ...
+# Subtest: disabled, missing, wrong transport and READ push fail closed
+ok 19 - disabled, missing, wrong transport and READ push fail closed
+  ---
+  duration_ms: 4.616375
+  type: 'test'
+  ...
+# Subtest: bounded output cannot leak a partial secret at truncation boundary; timeout terminates
+ok 20 - bounded output cannot leak a partial secret at truncation boundary; timeout terminates
+  ---
+  duration_ms: 114.603666
+  type: 'test'
+  ...
+# Subtest: timeout terminates a child process group before credential cleanup
+ok 21 - timeout terminates a child process group before credential cleanup
+  ---
+  duration_ms: 157.405917
+  type: 'test'
+  ...
+# Subtest: repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns
+ok 22 - repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns
+  ---
+  duration_ms: 785.56275
+  type: 'test'
+  ...
+# Subtest: CRUD, cron/interval registration, manual dispatch, stop and ID log identity use one pipeline
+ok 23 - CRUD, cron/interval registration, manual dispatch, stop and ID log identity use one pipeline
+  ---
+  duration_ms: 770.026042
+  type: 'test'
+  ...
+# Subtest: only repository credential is resolved; disabled credential fails instead of anonymous fallback
+ok 24 - only repository credential is resolved; disabled credential fails instead of anonymous fallback
+  ---
+  duration_ms: 433.511958
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2227.041042

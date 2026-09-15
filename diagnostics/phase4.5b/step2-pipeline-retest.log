@@ -1,0 +1,59 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=368263d050996563435218427037ae47e8081652 -> 368263d050996563435218427037ae47e8081652
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: Managed leases block overlapping sync, update and binding changes
+ok 1 - Managed leases block overlapping sync, update and binding changes
+  ---
+  duration_ms: 6488.414125
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=8fc07edd9de73af6c000ea2e7f6b5671fbfeb57d -> 8fc07edd9de73af6c000ea2e7f6b5671fbfeb57d
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=2 commit=8fc07edd9de73af6c000ea2e7f6b5671fbfeb57d -> 8fc07edd9de73af6c000ea2e7f6b5671fbfeb57d
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: branch selection creates a new binding and preserves the old Worktree
+ok 2 - branch selection creates a new binding and preserves the old Worktree
+  ---
+  duration_ms: 8455.500375
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=46fe0183929e34a2d6655f2c3e979cb780bddbb1 -> 46fe0183929e34a2d6655f2c3e979cb780bddbb1
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] REPOSITORY_FETCH: MANAGED_SYNC_FAILED
+# Subtest: disabled credential stops before scripts and Task diff
+ok 3 - disabled credential stops before scripts and Task diff
+  ---
+  duration_ms: 4756.805084
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 19931.252375

@@ -19,6 +19,9 @@ export class Crontab {
   last_running_time?: number;
   last_execution_time?: number;
   sub_id?: number;
+  discovery_key?: string;
+  source_relative_path?: string;
+  discovery_definition?: { name: string; schedule: string; command: string };
   env_profile_id?: number | null;
   extra_schedules?: Array<{ schedule: string }>;
   task_before?: string;
@@ -47,6 +50,9 @@ export class Crontab {
     this.last_running_time = options.last_running_time || 0;
     this.last_execution_time = options.last_execution_time || 0;
     this.sub_id = options.sub_id;
+    this.discovery_key = options.discovery_key;
+    this.source_relative_path = options.source_relative_path;
+    this.discovery_definition = options.discovery_definition;
     this.env_profile_id = options.env_profile_id;
     this.extra_schedules = options.extra_schedules;
     this.task_before = options.task_before;
@@ -67,15 +73,12 @@ export enum CrontabStatus {
 export interface CronInstance extends Model<Crontab, Crontab>, Crontab {}
 export const CrontabModel = sequelize.define<CronInstance>('Crontab', {
   name: {
-    unique: 'compositeIndex',
     type: DataTypes.STRING,
   },
   command: {
-    unique: 'compositeIndex',
     type: DataTypes.STRING,
   },
   schedule: {
-    unique: 'compositeIndex',
     type: DataTypes.STRING,
   },
   timestamp: DataTypes.STRING,
@@ -90,7 +93,10 @@ export const CrontabModel = sequelize.define<CronInstance>('Crontab', {
   labels: DataTypes.JSON,
   last_running_time: DataTypes.NUMBER,
   last_execution_time: DataTypes.NUMBER,
-  sub_id: { type: DataTypes.NUMBER, allowNull: true },
+  sub_id: { type: DataTypes.NUMBER, allowNull: true, unique: 'discoveryIdentity' },
+  discovery_key: { type: DataTypes.STRING, allowNull: true, unique: 'discoveryIdentity' },
+  source_relative_path: DataTypes.STRING,
+  discovery_definition: DataTypes.JSON,
   env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },
   extra_schedules: DataTypes.JSON,
   task_before: DataTypes.STRING,

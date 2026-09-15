@@ -1,0 +1,72 @@
+[
+  {
+    "file": "back/shared/schemaMigrations.ts",
+    "name": "back/shared/schemaMigrations.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/schemaMigrations.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/schemaMigrations.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/schemaMigrations.ts",
+    "name": "migrateSchema",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/shared/schemaMigrations.ts:migrateSchema\",\n    \"name\": \"migrateSchema\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/shared/schemaMigrations.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 0,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 1,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/gitResourceMigration.ts",
+    "name": "back/shared/gitResourceMigration.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/gitResourceMigration.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/gitResourceMigration.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/gitResourceMigration.ts",
+    "name": "migrateGitResources",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/shared/gitResourceMigration.ts:migrateGitResources\",\n    \"name\": \"migrateGitResources\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/shared/gitResourceMigration.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Migrate\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Function:back/shared/schemaMigrations.ts:migrateSchema\",\n        \"name\": \"migrateSchema\",\n        \"filePath\": \"back/shared/schemaMigrations.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/workspaceMigration.ts",
+    "name": "back/shared/workspaceMigration.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/workspaceMigration.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/workspaceMigration.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/workspaceMigration.ts",
+    "name": "migrateWorkspace",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/shared/workspaceMigration.ts:migrateWorkspace\",\n    \"name\": \"migrateWorkspace\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/shared/workspaceMigration.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Migrate\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Function:back/shared/schemaMigrations.ts:migrateSchema\",\n        \"name\": \"migrateSchema\",\n        \"filePath\": \"back/shared/schemaMigrations.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/managedSubscriptionMigration.ts",
+    "name": "back/shared/managedSubscriptionMigration.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/managedSubscriptionMigration.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/managedSubscriptionMigration.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/managedSubscriptionMigration.ts",
+    "name": "migrateManagedSubscriptions",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/shared/managedSubscriptionMigration.ts:migrateManagedSubscriptions\",\n    \"name\": \"migrateManagedSubscriptions\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/shared/managedSubscriptionMigration.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Migrate\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Function:back/shared/schemaMigrations.ts:migrateSchema\",\n        \"name\": \"migrateSchema\",\n        \"filePath\": \"back/shared/schemaMigrations.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/scopedEnvMigration.ts",
+    "name": "back/shared/scopedEnvMigration.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/scopedEnvMigration.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/scopedEnvMigration.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/scopedEnvMigration.ts",
+    "name": "migrateScopedEnvironment",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/shared/scopedEnvMigration.ts:migrateScopedEnvironment\",\n    \"name\": \"migrateScopedEnvironment\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/shared/scopedEnvMigration.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 1,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [\n    {\n      \"name\": \"Migrate\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"Function:back/shared/schemaMigrations.ts:migrateSchema\",\n        \"name\": \"migrateSchema\",\n        \"filePath\": \"back/shared/schemaMigrations.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

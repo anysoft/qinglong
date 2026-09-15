@@ -1,6 +1,6 @@
 # Fresh Schema Baseline v1 / 最终 Domain Schema
 
-**提案，不执行DDL。** 4.5B用platform_schema_version=1表示新的fresh operational baseline；新库拒绝QingLong升级导入。保留当前执行必需的桥表，Task/Schedule/TaskRun最终拆分在9/10。此图是最终目标，不是4.5B必须一次实现的schema。
+**Operational v1 已实现并冻结；下图仍是后续 Domain 目标。** 4.5B 使用 platform_schema_version=1，空库直接创建最终当前模型，非空未知签名拒绝启动；不支持 QingLong 升级导入。保留当前执行必需的桥表，Task/Schedule/TaskRun最终拆分在9/10。此图是最终目标，不是4.5B必须一次实现的schema。
 
 ```mermaid
 erDiagram
@@ -65,3 +65,9 @@ erDiagram
 Global可单独global_environment_variables，Profile环境表避免nullable复合unique的SQLite NULL漏洞；Task/Profile名称分别unique(owner_id,name)。cross-resource同repo校验不能只靠三个独立FK解决。运行中的任务删除采用软删/显式stop与lease协调，SQL transaction不能代替进程控制。
 
 Auth/settings/API clients保持安全引导，未来独立admin_users/platform_settings/notification_config/audit，不为画图好看删掉。Runtime/Config Assets留未来外键，不在本阶段创建空表。
+
+## 已冻结的 Operational v1
+
+15 个当前 ORM 模型 + PlatformMetadata 直接建库。Subscriptions.repository_id NOT NULL FK；worktree_id nullable FK；删除全部 URL/mode/pull/credential override 字段。Envs.name UNIQUE、TEXT value、SET/UNSET、is_secret，仍保留 SDK metadata/status 表示；不存在重复聚合。Crontabs 新增 source_relative_path/discovery_key/discovery_definition 及 unique(sub_id, discovery_key)，执行状态/日志桥表保留。
+
+模型签名 + 实际 SQLite schema 签名 + foreign_key_check 决定重启是否接受；未知/中间检查点库不迁移、不清空。Fresh v1 Schema Frozen for next development phase。未来修改使用新平台自己的显式 schema evolution，不覆盖当前 v1。

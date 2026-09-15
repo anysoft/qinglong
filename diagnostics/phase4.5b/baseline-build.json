@@ -1,0 +1,17 @@
+{
+  "backend": {
+    "status": "PASS",
+    "command": "npm run build:back"
+  },
+  "frontend": {
+    "status": "PASS",
+    "command": "npm run build:front"
+  },
+  "runtime": "Node 22",
+  "log": "baseline-build.log",
+  "typecheck": {
+    "status": "FAIL",
+    "diagnostics": 65,
+    "log": "baseline-typecheck.log"
+  }
+}

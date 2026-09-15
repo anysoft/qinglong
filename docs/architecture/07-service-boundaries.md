@@ -17,3 +17,7 @@
 目标依赖单向：Domain DB→Projection/Runner；Runner result→TaskRun持久化，不反向修改Task定义。进程间消息需要显式认证/类型/幂等处理；“direct service call”只在Backend同进程可用。旧Shell→OpenAPI是可替换IPC，不应简单关闭导致真实退出状态丢失。
 
 4.5B保留CronService+scheduler transport与TaskShellBridge，按[桥登记](../../TEMPORARY_BRIDGES.md)封装，禁止新模块继续依赖其路径与文本格式。
+
+## Phase 4.5B 实际服务映射
+
+SubscriptionSync 由唯一 `ManagedSubscriptionService` 承担；Discovery 是 `SubscriptionDiscoveryAdapter`；Task publication 暂由 `CronService.publishSubscription` 直接调用，输入来自 DB，保留 scheduler/filesystem 补偿；`TaskEnvironmentResolver` + `ExecutionEnvironmentTransport` 提供每次执行 full snapshot。表内 Execution Engine/TaskService/ScheduleService 是后续领域目标，不表示本阶段新增这些模型。

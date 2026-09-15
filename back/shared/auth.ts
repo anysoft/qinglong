@@ -2,12 +2,12 @@ import { AuthInfo, TokenInfo } from '../data/system';
 import jwt from 'jsonwebtoken';
 
 export function isDefaultAuthInfo(authInfo: AuthInfo): boolean {
-  return authInfo.username === 'admin' && authInfo.password === 'admin';
+  return authInfo.initialized === false;
 }
 
 /**
  * Validates if a token exists in the authentication info.
- * Supports both legacy string tokens and new TokenInfo array format.
+ * Requires an authenticated platform session with token metadata.
  *
  * @param authInfo - The authentication information
  * @param headerToken - The token to validate
@@ -33,26 +33,8 @@ export function isValidToken(
     return false;
   }
 
-  const { token = '', tokens = {} } = authInfo;
-
-  // Check legacy token field
-  if (headerToken === token) {
-    return true;
-  }
-
-  // Check platform-specific tokens (support both legacy string and new TokenInfo[] format)
-  const platformTokens = tokens[platform];
-
-  // Handle null/undefined platformTokens
-  if (platformTokens === null || platformTokens === undefined) {
-    return false;
-  }
-
-  if (typeof platformTokens === 'string') {
-    // Legacy format: single string token
-    return headerToken === platformTokens;
-  } else if (Array.isArray(platformTokens)) {
-    // New format: array of TokenInfo objects
+  const platformTokens = authInfo.tokens?.[platform];
+  if (Array.isArray(platformTokens)) {
     return platformTokens.some(
       (t: TokenInfo) =>
         t &&
@@ -61,6 +43,6 @@ export function isValidToken(
     );
   }
 
-  // Unexpected type - log warning and reject
+  // Malformed or obsolete session shapes fail closed.
   return false;
 }

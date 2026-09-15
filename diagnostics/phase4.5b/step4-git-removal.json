@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "tests": {
+    "passed": 65,
+    "failed": 0
+  },
+  "evidence": [
+    "step4-regression.log",
+    "step4-build.log"
+  ],
+  "shell_syntax": "PASS",
+  "data_deletion": "No existing user data directories touched"
+}

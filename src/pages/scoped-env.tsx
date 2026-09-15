@@ -18,8 +18,8 @@ export default function ScopedEnvironmentPage() {
   useEffect(() => { setSelected(undefined); loadProfiles().catch(() => {}); }, [repository]);
   const edit = (row: any = {}) => { setEditor(row); form.resetFields(); form.setFieldsValue({ name: row.name, description: row.description || '', status: row.status || 'enabled' }); };
   const refresh = async () => { await load(); await loadProfiles(); };
-  return <div style={{ padding: 24 }}><h2>环境变量</h2><Tabs defaultActiveKey={task ? 'tasks' : 'repositories'} items={[
-    { key: 'global', label: <a href={`${config.baseUrl}env`}>Global</a>, children: <a href={`${config.baseUrl}env`}>打开 Global 环境变量</a> },
+  return <div style={{ padding: 24 }}><h2>环境变量</h2><Tabs defaultActiveKey={task ? 'tasks' : repository ? 'repositories' : 'global'} items={[
+    { key: 'global', label: 'Global', children: <ScopedVariables resource="global" id={0} /> },
     { key: 'repositories', label: 'Repository', children: <Space direction="vertical" style={{ width: '100%' }}>
       <Select aria-label="Repository" placeholder="选择 Repository" style={{ width: 420 }} value={repository} onChange={setRepository} options={repositories.map(r => ({ value: r.id, label: `${r.name} (${r.profiles_count} Profiles)` }))} />
       <Button disabled={!repository} onClick={() => edit()}>创建 Profile</Button>

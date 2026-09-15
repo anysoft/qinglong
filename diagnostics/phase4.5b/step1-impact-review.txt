@@ -1,0 +1,49 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Analyzer (1.6.12)
+
+  GitNexus Analyzer (1.6.12)
+{"level":40,"time":1789467946167,"name":"gitnexus","msg":"[scope-resolution] 878 property read/write site(s) name a field that IS defined in this workspace, but only in another language, so per-language inference declined to link them. Queries for these fields return an empty result that does NOT mean \"unused\" — it means the definition anchor is in a different language. Affected: HOME (javascript), JSON (javascript), PATH (javascript), QL_CONTAINER (javascript), QL_DATA_DIR (javascript), QL_DIR (javascript), QL_WORKER_APM (javascript), URL (javascript), apiWhiteList (javascript), baseUrl (javascript), …"}
+{"level":40,"time":1789467946287,"name":"gitnexus","truncation":{"truncated":true,"entryPointCandidatesDropped":685,"entryPointsUnexplored":0,"walksCutByBudget":24,"tracesDepthCapped":0,"calleesDropped":658,"processesDropped":0},"msg":"[processes] 431 flows reported, but whole flows are MISSING: 685 of 885 candidate entry point(s) never ranked in, 0 ranked entry point(s) never traced, 0 deduplicated flow(s) dropped at maxProcesses, 0 trace(s) cut at maxTraceDepth, 658 callee(s) skipped at maxBranching, 24 walk(s) cut by the per-entry trace budget. An absent flow does NOT mean the code path does not exist."}
+[2KIncremental: changed=12, added=16, deleted=0 (skipping wipe + 528 unchanged file rows preserved)
+[2KIncremental: +43 importer(s) added to writable set (BFS depth ≤ 4)
+{"level":30,"time":1789467952972,"name":"gitnexus","msg":"name-fallback resolution: 42 call sites (19 distinct caller-file/name pairs), 12 refused as impossible (guessed/refused by language: javascript 42/12)"}
+[2KParse cache: pruned 13 stale chunk entries
+
+  Repository indexed successfully (11.3s)
+
+  7,661 nodes | 18,681 edges | 311 clusters | 431 flows
+  /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+
+
+  GitNexus Detect Changes (1.6.12)
+Changes: 12 files, 12 symbols
+Affected processes: 12
+Risk level: high
+
+Changed symbols:
+  Class Application → back/app.ts
+  Method startHttpService → back/app.ts
+  Interface AuthInfo → back/data/system.ts
+  Property initialized → back/data/system.ts
+  Class UserService → back/services/user.ts
+  Method authenticate → back/services/user.ts
+  Method initializeUser → back/services/user.ts
+  Function isDefaultAuthInfo → back/shared/auth.ts
+  Function verifyPassword → back/shared/password.ts
+  Function bootstrapDirectories → test/back/schema-migrations.test.cjs
+  Function initializeOperationalSchema → test/back/schema-migrations.test.cjs
+  Function initialized → test/back/user-security.test.cjs
+
+Affected execution flows:
+  • TwoFactorLogin → GetDb (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetAuthInfo (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetClients (4 steps) — changed: authenticate
+  • TwoFactorLogin → UpdateAuthDb (4 steps) — changed: authenticate
+  • TwoFactorLogin → UpdateAuthInfo (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetLoginLog (3 steps) — changed: authenticate
+  • TwoFactorLogin → InsertDb (3 steps) — changed: authenticate
+  • InitializeUser → GetDb (3 steps) — changed: initializeUser
+  • InitializeUser → GetAuthInfo (3 steps) — changed: initializeUser
+  • InitializeUser → GetClients (3 steps) — changed: initializeUser
+... and 2 more

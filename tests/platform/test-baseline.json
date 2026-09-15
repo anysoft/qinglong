@@ -1,0 +1,423 @@
+[
+  {
+    "path": "test/back/auth-security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/build-provenance.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/cron-log-name.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/cron-validation.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/dashboard-failures.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/dependence-cache-status.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/ecosystem.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/archived/legacy/test/back/env-name-parsing.test.cjs",
+    "classification": "ARCHIVED_LEGACY"
+  },
+  {
+    "path": "test/back/execution-lifecycle.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/file-access-security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/fileTreeListing.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/grpc-cron-response.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/http-exclusive-listen.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/http-security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/listen-security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/log-path-security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/logReader.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/manual-execution.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/manual-stop-claim.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/metrics.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/monitoring.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/node-path-cache.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/node-path-lock.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/primary-apm.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/process-exit-state.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/protected-path-case.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/qlServiceLogCommand.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/retention.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/schedule-health.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/scheduler-file-lock.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/scheduler-mutation.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/scheduler-readiness.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/scheduler-reconciliation.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/scheduler-rpc-timeout.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/shell-api-parsing.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/sock-security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/stop-race.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/subscription-cleanup.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/system-dependence-cache.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/task-time.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/user-api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/user-security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "test/back/worker-apm.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/back/wpush-grpc.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "test/front/http-error.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/phase1/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase1/normalization.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase1/security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase2/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase2/locks.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase2/workspace.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase3/cron-publication.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/phase4/repository-deletion.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/api-file-routes.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/platform/bootstrap-data.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/bootstrap-failure.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/credential-resources.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/discovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/environment-account-mode.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/environment-api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/environment-domain.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/environment-entrypoint.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/environment-execution.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/environment-isolation.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/environment-redaction.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/environment-transport.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/fresh-schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/repository-recovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/runtime-bridges.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/platform/subscription-domain.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/subscription-lease.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/subscription-pipeline.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/platform/task-model-bridge.test.cjs",
+    "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/platform/workspace-paths.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/archived/legacy/test/back/deprecated-file-routes.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "410 compatibility removed; api-file-routes replacement"
+  },
+  {
+    "path": "tests/archived/legacy/test/back/schema-migrations.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Old DB upgrades removed; fresh-schema and bootstrap-failure preserve fail-closed/rollback coverage"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase0/shell-baseline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase0/service-baseline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase0/database-baseline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase1/pipeline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase1/resources.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase1/migration.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase1/helper.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase2/domain.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase2/recovery.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase3/discovery.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase3/lease.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase3/pipeline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase3/migration.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/account-mode.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/redaction.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/domain.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/entrypoint.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/transport.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/isolation.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/legacy-characterization.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/api.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/execution.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  },
+  {
+    "path": "tests/archived/legacy/tests/phase4/migration.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "replacement_reason": "Historical phase semantics removed or replaced by platform tests; see test-baseline mapping"
+  }
+]

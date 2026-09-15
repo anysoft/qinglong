@@ -3,7 +3,7 @@ const fs = require('fs');
 const { StringDecoder } = require('string_decoder');
 const snapshot = JSON.parse(fs.readFileSync(process.env.QL_TASK_ENV_SNAPSHOT + '/snapshot.json', 'utf8'));
 const secrets = [...new Set(snapshot.secretNames.flatMap(name => {
-  const value = snapshot.overlay[name];
+  const value = snapshot.variables[name];
   return value ? [value, ...value.split('&').filter(Boolean)].flatMap(part => [part, JSON.stringify(part).slice(1, -1), encodeURIComponent(part), Buffer.from(part).toString('base64')]) : [];
 }))].sort((a, b) => b.length - a.length);
 const max = Math.max(1, ...secrets.map(x => x.length));

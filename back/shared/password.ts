@@ -19,10 +19,7 @@ export async function verifyPassword(
   stored: string,
 ): Promise<boolean> {
   if (!isPasswordHash(stored)) {
-    // Existing installations migrate after a successful password check.
-    const input = Buffer.from(password);
-    const expected = Buffer.from(stored);
-    return input.length === expected.length && timingSafeEqual(input, expected);
+    return false;
   }
   const [, salt, hash] = stored.split('$');
   const key = (await deriveKey(password, salt, 64)) as Buffer;

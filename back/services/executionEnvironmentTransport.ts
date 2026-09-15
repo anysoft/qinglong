@@ -32,7 +32,6 @@ export default class ExecutionEnvironmentTransport {
     }
   }
   async prepare(resolved: ResolvedTaskEnvironment, ownerPid: number) {
-    if (!resolved.metadata.scoped) return null;
     // Conservative portable budget leaves room for task.sh's bookkeeping and argv.
     const environmentBytes = Object.entries(resolved.variables).reduce((size, [name, value]) => size + Buffer.byteLength(name) + Buffer.byteLength(value) + 2, 0);
     if (environmentBytes > 128 * 1024) throw new ScopedEnvironmentError('ENVIRONMENT_TOO_LARGE');
@@ -44,17 +43,13 @@ export default class ExecutionEnvironmentTransport {
       await fs.chmod(directory, 0o700);
       const write = (name: string, body: string) => fs.writeFile(path.join(directory!, name), body, { mode: 0o600, flag: 'wx' });
       await write('owner.json', JSON.stringify({ pid: ownerPid, created_at: new Date().toISOString() }));
-      // Preserve the generated legacy language semantics while freezing this execution's base.
-      for (const [name, source] of [['global.sh', config.envFile], ['global.js', config.jsEnvFile], ['global.py', config.pyEnvFile]]) {
-        await write(name, await fs.readFile(source, 'utf8'));
-      }
-      await write('snapshot.json', JSON.stringify({ overlay: resolved.overlay, unset: resolved.unsetVariables, secretNames: resolved.secretNames, metadata: resolved.metadata }));
+      await write('snapshot.json', JSON.stringify({ variables: resolved.variables, unset: resolved.unsetVariables, secretNames: resolved.secretNames, metadata: resolved.metadata }));
       const quote = (value: string) => "'" + value.replace(/'/g, "'\\''") + "'";
       const shell = [
         ...resolved.unsetVariables.map(name => `unset ${name}`),
-        ...Object.entries(resolved.overlay).map(([name, value]) => `export ${name}=${quote(value)}`),
+        ...Object.entries(resolved.variables).map(([name, value]) => `export ${name}=${quote(value)}`),
       ].join('\n') + '\n';
-      await write('overlay.sh', shell);
+      await write('environment.sh', shell);
       return { directory, cleanup: () => fs.rm(directory!, { recursive: true, force: true }) };
     } catch {
       if (directory) await fs.rm(directory, { recursive: true, force: true });

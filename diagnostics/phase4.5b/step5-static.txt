@@ -1,0 +1,1 @@
+shell/preload/sitecustomize.js:5:const scopedEnvironment = require('./scoped-env.js');

@@ -232,7 +232,7 @@ export default function RepositoryPage() {
                     {
                       title: '引用',
                       render: (_, r) =>
-                        `${r.used_by.repositories} 仓库 / ${r.used_by.subscriptions} 订阅`,
+                        `${r.used_by.repositories} 仓库`,
                     },
                     { title: '状态', dataIndex: 'status' },
                     {

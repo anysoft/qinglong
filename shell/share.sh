@@ -15,18 +15,14 @@ export dir_sample=$dir_root/sample
 export dir_static=$dir_root/static
 export dir_config=$dir_data/config
 export dir_scripts=$dir_data/scripts
-export dir_repo=$dir_data/repo
-export dir_raw=$dir_data/raw
 export dir_log=$dir_data/log
 export dir_db=$dir_data/db
 export dir_dep=$dir_data/deps
 export dir_list_tmp=$dir_log/.tmp
 export dir_update_log=$dir_log/update
-export ql_static_repo=$dir_repo/static
 
 ## 文件
 export file_config_sample=$dir_sample/config.sample.sh
-export file_env=$dir_preload/env.sh
 export file_preload_js=$dir_preload/sitecustomize.js
 export file_sharecode=$dir_config/sharecode.sh
 export file_config_user=$dir_config/config.sh
@@ -52,7 +48,6 @@ export dep_notify_py=$dir_dep/notify.py
 export dep_notify_js=$dir_dep/sendNotify.js
 
 ## 清单文件
-list_crontab_user=$dir_config/crontab.list
 list_crontab_sample=$dir_sample/crontab.sample.list
 list_own_scripts=$dir_list_tmp/own_scripts.list
 list_own_user=$dir_list_tmp/own_user.list
@@ -71,8 +66,8 @@ init_env() {
 
 load_ql_envs() {
   ql_base_url=${QlBaseUrl:-"/"}
-  ql_port=${QlPort:-"5700"}
-  ql_grpc_port=${QlGrpcPort:-"5500"}
+  ql_port=${BACK_PORT:-"5700"}
+  ql_grpc_port=${GRPC_PORT:-"5500"}
   current_branch=${QL_BRANCH:-""}
 }
 
@@ -184,8 +179,6 @@ fix_config() {
   make_dir $dir_db
   make_dir $dir_scripts
   make_dir $dir_list_tmp
-  make_dir $dir_repo
-  make_dir $dir_raw
   make_dir $dir_update_log
   make_dir $dir_dep
 
@@ -260,21 +253,6 @@ diff_and_copy() {
   fi
 }
 
-git_clone_scripts() {
-  local url="$1"
-  local dir="$2"
-  local branch="$3"
-  local proxy="$4"
-  [[ $branch ]] && local part_cmd="-b $branch "
-  t '开始拉取仓库 %s 到 %s\n' "${uniq_path}" "$dir"
-
-  set_proxy "$proxy"
-
-  git clone -q --depth=1 $part_cmd $url $dir
-  exit_status=$?
-
-  unset_proxy
-}
 
 random_range() {
   local beg=$1
@@ -364,26 +342,6 @@ format_timestamp() {
   else
     echo $(date -d "$time" "+%s")
   fi
-}
-
-get_env_array() {
-  exported_variables=()
-  # Preserve the legacy export-line/second-field rules without evaluating values.
-  local export_name_program='/^export / { name = $2; sub(/=.*/, "", name); print name }'
-  if [[ ${BASH_VERSINFO[0]} -ge 4 ]]; then
-    builtin mapfile -t exported_variables < <(awk "$export_name_program" "$file_env")
-  else
-    # macOS still ships Bash 3, which does not provide mapfile.
-    while IFS= read -r line; do
-      exported_variables+=("$line")
-    done < <(awk "$export_name_program" "$file_env")
-  fi
-}
-
-clear_env() {
-  for var in "${exported_variables[@]}"; do
-    unset "$var"
-  done
 }
 
 handle_task_start() {

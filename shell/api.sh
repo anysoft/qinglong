@@ -27,7 +27,7 @@ get_token() {
 }
 
 # Read the status response once; preserve multiline error messages and the
-# legacy code/message variables used by the shell API callers.
+# code/message variables used by the shell API callers.
 ql_parse_status_response() {
   # Both task status and statistics endpoints normally return this exact body.
   # Match the whole document; all other JSON and malformed responses still
@@ -45,117 +45,9 @@ ql_parse_status_response() {
   message=${parsed#*$'\n'}
 }
 
-add_cron_api() {
-  local currentTimeStamp=$(date +%s)
-  if [[ $# -eq 1 ]]; then
-    local schedule=$(echo "$1" | awk -F ":" '{print $1}')
-    local command=$(echo "$1" | awk -F ":" '{print $2}')
-    local name=$(echo "$1" | awk -F ":" '{print $3}')
-    local sub_id=$(echo "$1" | awk -F ":" '{print $4}')
-  else
-    local schedule="$1"
-    local command="$2"
-    local name="$3"
-    local sub_id="$4"
-  fi
 
-  if [[ ! $sub_id ]]; then
-    sub_id="null"
-  fi
 
-  local api=$(
-    curl -s --noproxy "*" "http://localhost:${ql_port}/open/crons?t=$currentTimeStamp" \
-      -H "Authorization: Bearer ${__ql_token__}" \
-      -H "Content-Type: application/json;charset=UTF-8" \
-      --data-raw "{\"name\":\"${name//\"/\\\"}\",\"command\":\"${command//\"/\\\"}\",\"schedule\":\"$schedule\",\"sub_id\":$sub_id}" \
-      --compressed
-  )
-  code=$(echo "$api" | jq -r .code)
-  message=$(echo "$api" | jq -r .message)
-  if [[ $code == 200 ]]; then
-    t '%s -> 添加成功' "$name"
-  else
-    t '%s -> 添加失败(%s)' "$name" "$message"
-  fi
-}
 
-update_cron_api() {
-  local currentTimeStamp=$(date +%s)
-  if [[ $# -eq 1 ]]; then
-    local schedule=$(echo "$1" | awk -F ":" '{print $1}')
-    local command=$(echo "$1" | awk -F ":" '{print $2}')
-    local name=$(echo "$1" | awk -F ":" '{print $3}')
-    local id=$(echo "$1" | awk -F ":" '{print $4}')
-  else
-    local schedule="$1"
-    local command="$2"
-    local name="$3"
-    local id="$4"
-  fi
-
-  local api=$(
-    curl -s --noproxy "*" "http://localhost:${ql_port}/open/crons?t=$currentTimeStamp" \
-      -X 'PUT' \
-      -H "Authorization: Bearer ${__ql_token__}" \
-      -H "Content-Type: application/json;charset=UTF-8" \
-      --data-raw "{\"name\":\"${name//\"/\\\"}\",\"command\":\"${command//\"/\\\"}\",\"schedule\":\"$schedule\",\"id\":\"$id\"}" \
-      --compressed
-  )
-  code=$(echo "$api" | jq -r .code)
-  message=$(echo "$api" | jq -r .message)
-  if [[ $code == 200 ]]; then
-    t '%s -> 更新成功' "$name"
-  else
-    t '%s -> 更新失败(%s)' "$name" "$message"
-  fi
-}
-
-update_cron_command_api() {
-  local currentTimeStamp=$(date +%s)
-  if [[ $# -eq 1 ]]; then
-    local command=$(echo "$1" | awk -F ":" '{print $1}')
-    local id=$(echo "$1" | awk -F ":" '{print $2}')
-  else
-    local command="$1"
-    local id="$2"
-  fi
-
-  local api=$(
-    curl -s --noproxy "*" "http://localhost:${ql_port}/open/crons?t=$currentTimeStamp" \
-      -X 'PUT' \
-      -H "Authorization: Bearer ${__ql_token__}" \
-      -H "Content-Type: application/json;charset=UTF-8" \
-      --data-raw "{\"command\":\"${command//\"/\\\"}\",\"id\":\"$id\"}" \
-      --compressed
-  )
-  code=$(echo "$api" | jq -r .code)
-  message=$(echo "$api" | jq -r .message)
-  if [[ $code == 200 ]]; then
-    t '%s -> 更新成功' "$command"
-  else
-    t '%s -> 更新失败(%s)' "$command" "$message"
-  fi
-}
-
-del_cron_api() {
-  local ids="$1"
-  local currentTimeStamp=$(date +%s)
-  local api=$(
-    curl -s --noproxy "*" "http://localhost:${ql_port}/open/crons?t=$currentTimeStamp" \
-      -X 'DELETE' \
-      -H "Authorization: Bearer ${__ql_token__}" \
-      -H "Content-Type: application/json;charset=UTF-8" \
-      --data-raw "[$ids]" \
-      --compressed
-  )
-  code=$(echo "$api" | jq -r .code)
-  message=$(echo "$api" | jq -r .message)
-  if [[ $code == 200 ]]; then
-    t '成功'
-  else
-    t '失败(%s)' "$message"
-  fi
-}
 
 update_cron() {
   local ids="$1"

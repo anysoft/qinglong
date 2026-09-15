@@ -1,0 +1,26 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Analyzer (1.6.12)
+
+  GitNexus Analyzer (1.6.12)
+{"level":40,"time":1789473432508,"name":"gitnexus","msg":"[scope-resolution] 1094 property read/write site(s) name a field that IS defined in this workspace, but only in another language, so per-language inference declined to link them. Queries for these fields return an empty result that does NOT mean \"unused\" — it means the definition anchor is in a different language. Affected: BACK_PORT (javascript), BIND_HOST (javascript), BIND_HOST_GRPC (javascript), GRPC_PORT (javascript), JSON (javascript), JWT_SECRET (javascript), NODE_ENV (javascript), QL_CONTAINER (javascript), QL_DATA_DIR (javascript), QL_DIR (javascript), …"}
+{"level":40,"time":1789473432665,"name":"gitnexus","truncation":{"truncated":true,"entryPointCandidatesDropped":652,"entryPointsUnexplored":0,"walksCutByBudget":20,"tracesDepthCapped":0,"calleesDropped":597,"processesDropped":0},"msg":"[processes] 407 flows reported, but whole flows are MISSING: 652 of 852 candidate entry point(s) never ranked in, 0 ranked entry point(s) never traced, 0 deduplicated flow(s) dropped at maxProcesses, 0 trace(s) cut at maxTraceDepth, 597 callee(s) skipped at maxBranching, 20 walk(s) cut by the per-entry trace budget. An absent flow does NOT mean the code path does not exist."}
+[2KIncremental: changed=9, added=6, deleted=1 (skipping wipe + 670 unchanged file rows preserved)
+[2KIncremental: +62 importer(s) added to writable set (BFS depth ≤ 4)
+{"level":30,"time":1789473437432,"name":"gitnexus","msg":"name-fallback resolution: 42 call sites (23 distinct caller-file/name pairs), 12 refused as impossible (guessed/refused by language: javascript 42/12)"}
+[2KParse cache: pruned 2 stale chunk entries
+
+  Repository indexed successfully (8.4s)
+
+  8,101 nodes | 19,637 edges | 324 clusters | 407 flows
+  /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+
+Changes: 280 files, 722 symbols
+Affected processes: 88
+Risk level: critical
+
+Changed symbols:
+  Section Greenfield Legacy Audit & Removal Plan → GREENFIELD_REMOVAL_PLAN.md
+  Section Phase 4.5B Status: PASS → PHASE4_5B_REPORT.md
+  Section Tests / Build / Typecheck → PHASE4_5B_REPORT.md
+  Section Fresh Install / Browser / Linux → PHASE4_5B_REPORT.md

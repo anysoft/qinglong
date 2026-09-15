@@ -95,10 +95,5 @@ export default (app: Router) => {
     },
   );
 
-  route.get('/:file', (req: Request, res: Response) => {
-    return res.send({
-      code: 410,
-      message: t('接口已下线，请使用 /configs/detail 接口'),
-    });
-  });
+
 };

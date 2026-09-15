@@ -16,21 +16,11 @@ const token = (payload = {}, options = {}) =>
     expiresIn: '1h',
     ...options,
   });
-const info = (value) => ({ token: value, tokens: {} });
+const info = (value) => ({ tokens: { desktop: [{ value }] } });
 
-test('valid legacy and platform sessions retain compatibility', () => {
-  const value = token();
-  for (const auth of [
-    info(value),
-    { tokens: { desktop: value } },
-    { tokens: { desktop: [{ value }] } },
-  ]) {
-    assert.equal(isValidToken(auth, value, 'desktop', secret), true);
-  }
-  assert.equal(
-    isValidToken({ tokens: { mobile: value } }, value, 'desktop', secret),
-    false,
-  );
+test('platform sessions validate and obsolete single-token shapes fail closed', () => {
+ const value=token();assert.equal(isValidToken(info(value),value,'desktop',secret),true);
+ for(const auth of [{token:value,tokens:{}},{tokens:{desktop:value}},{tokens:{mobile:[{value}]}}])assert.equal(isValidToken(auth,value,'desktop',secret),false);
 });
 
 test('session membership never bypasses JWT signature, expiry, algorithm or nbf', () => {
@@ -62,13 +52,13 @@ test('platform token metadata can shorten but cannot extend JWT expiration', () 
   );
 });
 
-test('passwords are salted and legacy plaintext can migrate without changing the password', async () => {
+test('passwords are salted and plaintext credentials are rejected', async () => {
   const first = await hashPassword('owner-password');
   const second = await hashPassword('owner-password');
   assert.notEqual(first, second);
   assert.equal(await verifyPassword('owner-password', first), true);
   assert.equal(await verifyPassword('wrong-password', first), false);
   assert.equal(await verifyPassword(first, first), false);
-  assert.equal(await verifyPassword('old-password', 'old-password'), true);
+  assert.equal(await verifyPassword('old-password', 'old-password'), false);
   assert.equal(await verifyPassword('wrong', 'old-password'), false);
 });

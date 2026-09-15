@@ -1,0 +1,6 @@
+const test=require('node:test'),assert=require('node:assert/strict');const setup=require('../phase3/helpers.cjs');
+test('staging Bash timeout kills its process group and releases the existing POSIX lease',async t=>{const h=await setup(t);const resource=[{kind:'subscription',id:7}];const result=await h.storage.locks.with(resource,'DISCOVERY_TIMEOUT',guard=>guard.run(['-c','sleep 10'],h.root,{PATH:process.env.PATH},100,'bash'));assert.equal(result.code,124);await h.storage.locks.with(resource,'RETRY',async()=>{});});
+test('preflight refuses an execution lease instead of accepting cached clean status',async t=>{
+ const h=await setup(t);await h.storage.initialize(h.repo.id);const tree=await h.worktrees.create({repository_id:h.repo.id,name:'leased',ref_type:'branch',ref_name:'main'});const sub=await h.SubscriptionModel.create({repository_id:h.repo.id,name:'preflight',branch:'main'});
+ const Managed=h.get('services/managedSubscription').default,Resolver=h.get('services/subscriptionGit').default,managed=new Managed(h.storage,h.worktrees,new Resolver());const lease=await h.worktrees.acquireExecutionLease(tree.id,{owner_type:'test',owner_id:'preflight'});try{await assert.rejects(managed.preflight(sub.id),{error_code:'WORKTREE_BUSY'});assert.equal((await sub.reload()).worktree_id,null);}finally{await lease.release();}
+});

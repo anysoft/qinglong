@@ -1,0 +1,292 @@
+[
+  {
+    "file": "shell/update.sh",
+    "name": "diff_cron",
+    "output": "{\n  \"error\": \"Target 'diff_cron' not found\",\n  \"target\": {\n    \"name\": \"diff_cron\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "output_list_add_drop",
+    "output": "{\n  \"error\": \"Target 'output_list_add_drop' not found\",\n  \"target\": {\n    \"name\": \"output_list_add_drop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "del_cron",
+    "output": "{\n  \"error\": \"Target 'del_cron' not found\",\n  \"target\": {\n    \"name\": \"del_cron\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "add_cron",
+    "output": "{\n  \"error\": \"Target 'add_cron' not found\",\n  \"target\": {\n    \"name\": \"add_cron\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "update_repo",
+    "output": "{\n  \"error\": \"Target 'update_repo' not found\",\n  \"target\": {\n    \"name\": \"update_repo\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "update_raw",
+    "output": "{\n  \"error\": \"Target 'update_raw' not found\",\n  \"target\": {\n    \"name\": \"update_raw\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "run_extra_shell",
+    "output": "{\n  \"error\": \"Target 'run_extra_shell' not found\",\n  \"target\": {\n    \"name\": \"run_extra_shell\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "show_service_logs",
+    "output": "{\n  \"error\": \"Target 'show_service_logs' not found\",\n  \"target\": {\n    \"name\": \"show_service_logs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "usage",
+    "output": "{\n  \"error\": \"Target 'usage' not found\",\n  \"target\": {\n    \"name\": \"usage\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "reload_qinglong",
+    "output": "{\n  \"error\": \"Target 'reload_qinglong' not found\",\n  \"target\": {\n    \"name\": \"reload_qinglong\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "update_qinglong",
+    "output": "{\n  \"error\": \"Target 'update_qinglong' not found\",\n  \"target\": {\n    \"name\": \"update_qinglong\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "update_qinglong_static",
+    "output": "{\n  \"error\": \"Target 'update_qinglong_static' not found\",\n  \"target\": {\n    \"name\": \"update_qinglong_static\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "check_update_dep",
+    "output": "{\n  \"error\": \"Target 'check_update_dep' not found\",\n  \"target\": {\n    \"name\": \"check_update_dep\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "diff_scripts",
+    "output": "{\n  \"error\": \"Target 'diff_scripts' not found\",\n  \"target\": {\n    \"name\": \"diff_scripts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "gen_list_repo",
+    "output": "{\n  \"error\": \"Target 'gen_list_repo' not found\",\n  \"target\": {\n    \"name\": \"gen_list_repo\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "get_uniq_path",
+    "output": "{\n  \"error\": \"Target 'get_uniq_path' not found\",\n  \"target\": {\n    \"name\": \"get_uniq_path\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/update.sh",
+    "name": "main",
+    "output": "{\n  \"error\": \"Target 'main' not found\",\n  \"target\": {\n    \"name\": \"main\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "init_env",
+    "output": "{\n  \"error\": \"Target 'init_env' not found\",\n  \"target\": {\n    \"name\": \"init_env\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "load_ql_envs",
+    "output": "{\n  \"error\": \"Target 'load_ql_envs' not found\",\n  \"target\": {\n    \"name\": \"load_ql_envs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "import_config",
+    "output": "{\n  \"error\": \"Target 'import_config' not found\",\n  \"target\": {\n    \"name\": \"import_config\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "t",
+    "output": "{\n  \"error\": \"Target 't' not found\",\n  \"target\": {\n    \"name\": \"t\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "set_proxy",
+    "output": "{\n  \"error\": \"Target 'set_proxy' not found\",\n  \"target\": {\n    \"name\": \"set_proxy\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "unset_proxy",
+    "output": "{\n  \"error\": \"Target 'unset_proxy' not found\",\n  \"target\": {\n    \"name\": \"unset_proxy\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "make_dir",
+    "output": "{\n  \"error\": \"Target 'make_dir' not found\",\n  \"target\": {\n    \"name\": \"make_dir\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "detect_termux",
+    "output": "{\n  \"error\": \"Target 'detect_termux' not found\",\n  \"target\": {\n    \"name\": \"detect_termux\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "detect_macos",
+    "output": "{\n  \"error\": \"Target 'detect_macos' not found\",\n  \"target\": {\n    \"name\": \"detect_macos\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "gen_random_num",
+    "output": "{\n  \"error\": \"Target 'gen_random_num' not found\",\n  \"target\": {\n    \"name\": \"gen_random_num\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "define_cmd",
+    "output": "{\n  \"error\": \"Target 'define_cmd' not found\",\n  \"target\": {\n    \"name\": \"define_cmd\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "fix_config",
+    "output": "{\n  \"error\": \"Target 'fix_config' not found\",\n  \"target\": {\n    \"name\": \"fix_config\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "npm_install_sub",
+    "output": "{\n  \"error\": \"Target 'npm_install_sub' not found\",\n  \"target\": {\n    \"name\": \"npm_install_sub\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "npm_install_2",
+    "output": "{\n  \"error\": \"Target 'npm_install_2' not found\",\n  \"target\": {\n    \"name\": \"npm_install_2\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "diff_and_copy",
+    "output": "{\n  \"error\": \"Target 'diff_and_copy' not found\",\n  \"target\": {\n    \"name\": \"diff_and_copy\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "git_clone_scripts",
+    "output": "{\n  \"error\": \"Target 'git_clone_scripts' not found\",\n  \"target\": {\n    \"name\": \"git_clone_scripts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "random_range",
+    "output": "{\n  \"error\": \"Target 'random_range' not found\",\n  \"target\": {\n    \"name\": \"random_range\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "delete_pm2",
+    "output": "{\n  \"error\": \"Target 'delete_pm2' not found\",\n  \"target\": {\n    \"name\": \"delete_pm2\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "reload_pm2",
+    "output": "{\n  \"error\": \"Target 'reload_pm2' not found\",\n  \"target\": {\n    \"name\": \"reload_pm2\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "diff_time",
+    "output": "{\n  \"error\": \"Target 'diff_time' not found\",\n  \"target\": {\n    \"name\": \"diff_time\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "format_time",
+    "output": "{\n  \"error\": \"Target 'format_time' not found\",\n  \"target\": {\n    \"name\": \"format_time\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "format_log_time",
+    "output": "{\n  \"error\": \"Target 'format_log_time' not found\",\n  \"target\": {\n    \"name\": \"format_log_time\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "format_timestamp",
+    "output": "{\n  \"error\": \"Target 'format_timestamp' not found\",\n  \"target\": {\n    \"name\": \"format_timestamp\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "get_env_array",
+    "output": "{\n  \"error\": \"Target 'get_env_array' not found\",\n  \"target\": {\n    \"name\": \"get_env_array\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "clear_env",
+    "output": "{\n  \"error\": \"Target 'clear_env' not found\",\n  \"target\": {\n    \"name\": \"clear_env\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "handle_task_start",
+    "output": "{\n  \"error\": \"Target 'handle_task_start' not found\",\n  \"target\": {\n    \"name\": \"handle_task_start\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "run_task_before",
+    "output": "{\n  \"error\": \"Target 'run_task_before' not found\",\n  \"target\": {\n    \"name\": \"run_task_before\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "run_task_after",
+    "output": "{\n  \"error\": \"Target 'run_task_after' not found\",\n  \"target\": {\n    \"name\": \"run_task_after\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/share.sh",
+    "name": "handle_task_end",
+    "output": "{\n  \"error\": \"Target 'handle_task_end' not found\",\n  \"target\": {\n    \"name\": \"handle_task_end\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "create_token",
+    "output": "{\n  \"error\": \"Target 'create_token' not found\",\n  \"target\": {\n    \"name\": \"create_token\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "get_token",
+    "output": "{\n  \"error\": \"Target 'get_token' not found\",\n  \"target\": {\n    \"name\": \"get_token\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "ql_parse_status_response",
+    "output": "{\n  \"error\": \"Target 'ql_parse_status_response' not found\",\n  \"target\": {\n    \"name\": \"ql_parse_status_response\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "add_cron_api",
+    "output": "{\n  \"error\": \"Target 'add_cron_api' not found\",\n  \"target\": {\n    \"name\": \"add_cron_api\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "update_cron_api",
+    "output": "{\n  \"error\": \"Target 'update_cron_api' not found\",\n  \"target\": {\n    \"name\": \"update_cron_api\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "update_cron_command_api",
+    "output": "{\n  \"error\": \"Target 'update_cron_command_api' not found\",\n  \"target\": {\n    \"name\": \"update_cron_command_api\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "del_cron_api",
+    "output": "{\n  \"error\": \"Target 'del_cron_api' not found\",\n  \"target\": {\n    \"name\": \"del_cron_api\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "update_cron",
+    "output": "{\n  \"error\": \"Target 'update_cron' not found\",\n  \"target\": {\n    \"name\": \"update_cron\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "notify_api",
+    "output": "{\n  \"error\": \"Target 'notify_api' not found\",\n  \"target\": {\n    \"name\": \"notify_api\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "find_cron_api",
+    "output": "{\n  \"error\": \"Target 'find_cron_api' not found\",\n  \"target\": {\n    \"name\": \"find_cron_api\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "update_auth_config",
+    "output": "{\n  \"error\": \"Target 'update_auth_config' not found\",\n  \"target\": {\n    \"name\": \"update_auth_config\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  },
+  {
+    "file": "shell/api.sh",
+    "name": "record_cron_stat",
+    "output": "{\n  \"error\": \"Target 'record_cron_stat' not found\",\n  \"target\": {\n    \"name\": \"record_cron_stat\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n"
+  }
+]

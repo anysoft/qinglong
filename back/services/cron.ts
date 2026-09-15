@@ -141,14 +141,14 @@ export default class CronService {
     });
   }
 
-  // Managed discovery is computed under the existing scheduler mutation lock.
-  // Existing commands, IDs and metadata remain unchanged unless the old scanner
-  // explicitly adds/deletes a path. Files are rolled back with DB definitions.
+  // Discovery uses a DB projection under the scheduler mutation lock.
+  // Source identity survives definition updates; publication compensates files, DB and scheduler.
   public async publishSubscription(
     discover: () => Promise<{
       adds: Crontab[];
       drops: number[];
-      commandPrefix?: string;
+      subscriptionId: number;
+      updates: Array<Partial<Pick<Crontab, 'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'>>>;
       checkpoint?: (tasks: Crontab[]) => Promise<void>;
       notify?: () => Promise<void>;
       publish: () => Promise<void>;
@@ -160,11 +160,11 @@ export default class CronService {
     return withSchedulerMutation(async () => {
       const plan = await discover();
       const previous = (
-        await CrontabModel.findAll({ where: { id: plan.drops } })
+        await CrontabModel.findAll({ where: { id: [...plan.drops, ...plan.updates.map(x => x.id!)] } })
       ).map((x) => x.get({ plain: true }));
       if (
-        plan.commandPrefix &&
-        previous.some((row) => !row.command.startsWith(plan.commandPrefix!))
+        previous.some((row) => row.sub_id !== plan.subscriptionId || !row.discovery_key) ||
+        plan.adds.some(row => row.sub_id !== plan.subscriptionId || !row.discovery_key)
       ) {
         await plan.cleanup();
         throw Object.assign(new Error('INVALID_DISCOVERY_PLAN'), {
@@ -187,7 +187,7 @@ export default class CronService {
             })),
         );
       try {
-        for (const tab of plan.adds) {
+        for (const tab of [...plan.adds, ...plan.updates.map(update => ({ ...previous.find(x => x.id === update.id), ...update }))]) {
           if (
             !tab.schedule ||
             !CronExpressionParser.parse(tab.schedule).hasNext()
@@ -200,7 +200,7 @@ export default class CronService {
         await plan.publish();
         // Deletes and creates reuse the existing scheduler protocol. Compensation
         // restores original IDs instead of recreating user Tasks with new IDs.
-        if (plan.drops.length) await cronClient.delCron(plan.drops.map(String));
+        if (previous.length) await cronClient.delCron(previous.map(x => String(x.id)));
         await CrontabModel.destroy({ where: { id: plan.drops } });
         for (const input of plan.adds) {
           const tab = new Crontab(input);
@@ -208,7 +208,9 @@ export default class CronService {
           tab.log_name = await this.getLogName(tab);
           added.push(await this.insert(tab));
         }
-        await register(added);
+        for (const update of plan.updates) await CrontabModel.update(update, { where: { id: update.id } });
+        const updated = (await CrontabModel.findAll({ where: { id: plan.updates.map(x => x.id!) } })).map(row => row.get({ plain: true }));
+        await register([...added, ...updated]);
         await this.setCrontab(undefined, true);
         try {
           await plan.notify?.();
@@ -222,7 +224,10 @@ export default class CronService {
             await CrontabModel.destroy({
               where: { id: added.map((x) => x.id!) },
             });
-            for (const row of previous) await CrontabModel.upsert(row);
+            for (const row of previous) {
+              if (plan.drops.includes(row.id!)) await CrontabModel.upsert(row);
+              else await CrontabModel.update({ name: row.name, command: row.command, schedule: row.schedule, discovery_definition: row.discovery_definition }, { where: { id: row.id } });
+            }
             if (added.length)
               await cronClient.delCron(added.map((x) => String(x.id)));
             await register(previous);
@@ -232,8 +237,8 @@ export default class CronService {
             this.logger.error(
               'Managed subscription publication rollback requires recovery',
             );
-            throw Object.assign(new Error('MANAGED_RECOVERY_REQUIRED'), {
-              error_code: 'MANAGED_RECOVERY_REQUIRED',
+            throw Object.assign(new Error('SUBSCRIPTION_RECOVERY_REQUIRED'), {
+              error_code: 'SUBSCRIPTION_RECOVERY_REQUIRED',
               cause: recoveryError,
             });
           }
@@ -1141,44 +1146,7 @@ export default class CronService {
     await CrontabModel.update({ saved: true }, { where: {} });
   }
 
-  public importCrontab() {
-    exec('crontab -l', (error, stdout) => {
-      if (error) {
-        const errorMsg = error.message || String(error);
-        this.logger.error('[crontab] Failed to read system crontab:', errorMsg);
-      }
 
-      const lines = stdout.split('\n');
-      const namePrefix = new Date().getTime();
-
-      lines.reverse().forEach(async (line, index) => {
-        line = line.replace(/\t+/g, ' ');
-        const regex =
-          /^((\@[a-zA-Z]+\s+)|(([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+))/;
-        const command = line.replace(regex, '').trim();
-        const schedule = line.replace(command, '').trim();
-
-        if (
-          command &&
-          schedule &&
-          CronExpressionParser.parse(schedule).hasNext()
-        ) {
-          const name = namePrefix + '_' + index;
-
-          const _crontab = await CrontabModel.findOne({
-            where: { command, schedule },
-          });
-          if (!_crontab) {
-            await this.create({ name, command, schedule });
-          } else {
-            _crontab.command = command;
-            _crontab.schedule = schedule;
-            await this.update(_crontab);
-          }
-        }
-      });
-    });
-  }
 
   public async autosave_crontab(requireScheduler = false) {
     return withSchedulerMutation(async () => {
@@ -1204,7 +1172,7 @@ export default class CronService {
 
       // 先同步 crontab.list 与系统 crontab，确保其始终反映数据库真实状态。
       // gRPC 调度注册为尽力而为：失败时不阻断文件同步，调度器重启后会重新注册。
-      // 这避免了因调度器短暂不可用导致 crontab.list 与数据库脱节（订阅更新误判任务已存在）。
+      // 这避免了因调度器短暂不可用导致 crontab.list 与数据库脱节。
       await this.setCrontab(tabs);
       try {
         await cronClient.addCron(regularCrons, requireScheduler);

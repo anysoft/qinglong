@@ -3,12 +3,14 @@ import fs from 'fs/promises';
 import path from 'path';
 import config from '../config';
 import { Subscription, SubscriptionModel } from '../data/subscription';
-import SubscriptionGitResolver, { legacyCheckoutName } from './subscriptionGit';
+import SubscriptionGitResolver from './subscriptionGit';
 import RepositoryStorageService, { exists } from './repositoryStorage';
 import WorktreeService from './worktree';
 import { WorkspaceError } from '../shared/workspaceError';
 import { WorkspaceGuard } from './workspaceLocks';
 import CronService from './cron';
+import { CrontabModel } from '../data/cron';
+import SubscriptionDiscoveryAdapter from './subscriptionDiscovery';
 
 @Service()
 export default class ManagedSubscriptionService {
@@ -27,25 +29,18 @@ export default class ManagedSubscriptionService {
   }
 
   async prepare(sub: Subscription, phase?: (name: string) => Promise<void>) {
-    if (sub.type === 'file' || !sub.repository_id)
-      throw new WorkspaceError('MANAGED_REPOSITORY_REQUIRED');
-    if (sub.proxy)
-      throw new WorkspaceError(
-        'MANAGED_PROXY_UNSUPPORTED',
-        '订阅 proxy 仅用于 Legacy；Managed 使用 Git 网络配置',
-      );
+    if (!sub.repository_id) throw new WorkspaceError('REPOSITORY_REQUIRED');
     const resolved = await this.resolver.resolveSubscriptionGitContext(sub);
     if (!resolved.repository)
-      throw new WorkspaceError('MANAGED_REPOSITORY_REQUIRED');
+      throw new WorkspaceError('REPOSITORY_REQUIRED');
     if (sub.branch) this.worktrees.validateRef('branch', sub.branch);
-    const credentialId = resolved.credential?.id || null;
     const repo = await this.storage.get(sub.repository_id);
     if (repo.storage_state !== 'READY')
-      await this.storage.initialize(repo.id!, credentialId);
-    await this.storage.fetch(repo.id!, credentialId);
+      await this.storage.initialize(repo.id!);
+    await this.storage.fetch(repo.id!);
     const branch =
       sub.branch || (await this.storage.get(repo.id!)).default_branch;
-    if (!branch) throw new WorkspaceError('MANAGED_BRANCH_REQUIRED');
+    if (!branch) throw new WorkspaceError('SUBSCRIPTION_BRANCH_REQUIRED');
     await phase?.('WORKTREE_ENSURE');
     const tree = await this.worktrees.ensure({
       repository_id: repo.id!,
@@ -81,36 +76,19 @@ export default class ManagedSubscriptionService {
     return this.exclusive(id, async () => {
       const sub = await SubscriptionModel.findByPk(id);
       if (!sub) throw new WorkspaceError('SUBSCRIPTION_NOT_FOUND');
-      const { tree, branch } = await this.prepare(sub.get({ plain: true }));
-      return {
-        worktree_id: tree.id,
-        branch,
-        local_path: tree.local_path,
-        ready: true,
-      };
-    });
-  }
-
-  async mode(id: number, mode: 'LEGACY' | 'MANAGED') {
-    return this.exclusive(id, async () => {
-      const sub = await SubscriptionModel.findByPk(id);
-      if (!sub) throw new WorkspaceError('SUBSCRIPTION_NOT_FOUND');
-      if (mode === 'LEGACY') {
-        await sub.update({ git_mode: mode }); // Retain binding and all Git objects.
-      } else {
-        await this.withBinding(sub.get({ plain: true }), (id) =>
-          sub.update({ git_mode: mode, worktree_id: id }),
-        );
-      }
-      return sub.get({ plain: true });
+      return this.withBinding(sub.get({ plain: true }), async worktreeId => {
+        await sub.update({ worktree_id: worktreeId });
+        const tree = await this.worktrees.get(worktreeId);
+        return { worktree_id: worktreeId, branch: tree.ref_name, local_path: tree.local_path, ready: true };
+      });
     });
   }
 
   async run(id: number) {
     return this.exclusive(id, async () => {
       const sub = await SubscriptionModel.findByPk(id);
-      if (!sub || sub.git_mode !== 'MANAGED')
-        throw new WorkspaceError('MANAGED_SUBSCRIPTION_REQUIRED');
+      if (!sub)
+        throw new WorkspaceError('SUBSCRIPTION_NOT_FOUND');
       let phase = 'REPOSITORY_FETCH';
       const mark = async (next: string) => {
         phase = next;
@@ -143,7 +121,6 @@ export default class ManagedSubscriptionService {
                   async () => {
                     const plan = await this.stage(
                       sub.get({ plain: true }),
-                      resolved.remoteUrl,
                       worktree.local_path!,
                       guard,
                     );
@@ -185,7 +162,7 @@ export default class ManagedSubscriptionService {
       } catch (error: any) {
         const code = /^[A-Z_]+$/.test(error.error_code || '')
           ? error.error_code
-          : 'MANAGED_SYNC_FAILED';
+          : 'SUBSCRIPTION_SYNC_FAILED';
         await sub.update({
           last_sync_state: 'FAILED',
           last_sync_phase: phase,
@@ -215,20 +192,16 @@ export default class ManagedSubscriptionService {
 
   private async stage(
     sub: Subscription,
-    remote: string,
     source: string,
     guard: WorkspaceGuard,
   ) {
     await this.validateFiles(source);
-    const prefix = legacyCheckoutName(remote, sub.branch);
+    const prefix = `subscription-${sub.id}`;
     const root = await this.storage.paths.root();
     const scriptsRoot = path.join(root, 'scripts');
     const destination = path.join(scriptsRoot, prefix);
     for (const file of ['sendNotify.js', 'notify.py'])
       await this.storage.paths.assertSafe(path.join(scriptsRoot, file));
-    await this.storage.paths.assertSafe(
-      path.join(root, 'config', 'crontab.list'),
-    );
     await this.storage.paths.assertSafe(destination);
     if (await exists(destination)) await this.validateFiles(destination);
     const deps = path.join(root, 'deps');
@@ -244,69 +217,21 @@ export default class ManagedSubscriptionService {
       await fs.mkdir(staged, { recursive: true });
       if (await exists(destination))
         await fs.cp(destination, staged, { recursive: true });
-      await fs.copyFile(config.crontabFile, path.join(stage, 'crontab.list'));
-      const result = await guard.run(
-        [
-          path.join(config.rootPath, 'shell/managed_discovery.sh'),
-          source,
-          stage,
-          prefix,
-          sub.whitelist || '',
-          sub.blacklist || '',
-          sub.dependences || '',
-          sub.extensions || '',
-          String(sub.autoAddCron == null ? true : Boolean(sub.autoAddCron)),
-          String(sub.autoDelCron == null ? true : Boolean(sub.autoDelCron)),
-        ],
-        config.rootPath,
-        {
-          PATH: process.env.PATH,
-          HOME: process.env.HOME,
-          QL_DIR: config.rootPath,
-          QL_DATA_DIR: config.dataPath,
-          SUB_ID: String(sub.id),
-          LANG: 'C.UTF-8',
-        },
-        300000,
-        'bash',
-      );
-      if (result.code || !(await exists(path.join(stage, 'complete'))))
-        throw new WorkspaceError('DISCOVERY_FAILED');
-      const lines = async (name: string) =>
-        (await fs.readFile(path.join(stage, name), 'utf8'))
-          .split('\n')
-          .filter(Boolean)
-          .map((line) => JSON.parse(line));
-      const adds = await lines('add.jsonl'),
-        drops = (await lines('drop.jsonl')).flat().map(Number);
-      if (
-        drops.some((id) => !Number.isSafeInteger(id) || id <= 0) ||
-        adds.some(
-          (x) =>
-            x.sub_id !== sub.id || !x.command.startsWith(`task ${prefix}/`),
-        )
-      )
-        throw new WorkspaceError('INVALID_DISCOVERY_PLAN');
+      const current = (await CrontabModel.findAll({ where: { sub_id: sub.id } })).map(row => row.get({ plain: true }));
+      const plan = await new SubscriptionDiscoveryAdapter().discover(source, staged, sub, current);
+      const { adds, updates, drops, diagnostics } = plan;
       await this.validateFiles(staged);
       process.stdout.write(
         `[Managed] discovery add=${adds.length} drop=${drops.length}\n`,
       );
-      const notifications = await lines('notifications.jsonl');
+      for (const item of diagnostics) process.stdout.write(`[Discovery] ${item.code} ${item.relative_path}\n`);
       return {
         adds,
         drops,
-        commandPrefix: `task ${prefix}/`,
+        updates,
+        subscriptionId: sub.id!,
         checkpoint: async (tasks: unknown[]) => {
           await fs.writeFile(path.join(stage, 'recovery.json'), JSON.stringify({ subscription_id: sub.id, destination, backup, tasks }, null, 2), { mode: 0o600 });
-        },
-        notify: async () => {
-          if (!notifications.length) return;
-          const { default: NotificationService } = await import('./notify');
-          for (const item of notifications)
-            await Container.get(NotificationService).notify(
-              item.title,
-              item.content,
-            );
         },
         publish: async () => {
           await this.storage.paths.assertSafe(destination);

@@ -81,13 +81,11 @@ env_str_to_array() {
   local IFS="&"
   read -ra array <<<"${!env_param}"
   array_length=${#array[@]}
-  clear_env
   if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then ql_task_env_apply; fi
 }
 
 clear_non_sh_env() {
   if [[ $file_param != *.sh ]]; then
-    clear_env
     if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then ql_task_env_apply; fi
   fi
 }
@@ -315,7 +313,9 @@ check_file() {
     isJsOrPythonFile="true"
   fi
   if [[ -f $file_env ]]; then
-    get_env_array
+    if [[ $1 == *.ts ]]; then
+      export TS_NODE_COMPILER_OPTIONS='{"module":"CommonJS","moduleResolution":"node"}'
+    fi
     if [[ $isJsOrPythonFile == 'true' ]]; then
       export PREV_NODE_OPTIONS="${NODE_OPTIONS:=}"
       export PREV_PYTHONPATH="${PYTHONPATH:=}"
@@ -397,5 +397,4 @@ if [[ $isJsOrPythonFile == 'true' ]]; then
   export PYTHONPATH="${PREV_PYTHONPATH}"
 fi
 run_task_after "${task_shell_params[@]}"
-clear_env
 handle_task_end "${task_shell_params[@]}"

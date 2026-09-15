@@ -1,0 +1,118 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: valid legacy and platform sessions retain compatibility
+ok 1 - valid legacy and platform sessions retain compatibility
+  ---
+  duration_ms: 6.443958
+  type: 'test'
+  ...
+# Subtest: session membership never bypasses JWT signature, expiry, algorithm or nbf
+ok 2 - session membership never bypasses JWT signature, expiry, algorithm or nbf
+  ---
+  duration_ms: 1.62925
+  type: 'test'
+  ...
+# Subtest: platform token metadata can shorten but cannot extend JWT expiration
+ok 3 - platform token metadata can shorten but cannot extend JWT expiration
+  ---
+  duration_ms: 0.340125
+  type: 'test'
+  ...
+# Subtest: passwords are salted and plaintext credentials are rejected
+ok 4 - passwords are salted and plaintext credentials are rejected
+  ---
+  duration_ms: 171.309958
+  type: 'test'
+  ...
+# Subtest: initialization checks state inside a serialized mutation
+ok 5 - initialization checks state inside a serialized mutation
+  ---
+  duration_ms: 221.336541
+  type: 'test'
+  ...
+# Subtest: password change revokes sessions and closes connected clients
+ok 6 - password change revokes sessions and closes connected clients
+  ---
+  duration_ms: 239.223917
+  type: 'test'
+  ...
+# Subtest: a concurrent old-password login cannot restore a session after reset
+ok 7 - a concurrent old-password login cannot restore a session after reset
+  ---
+  duration_ms: 184.133792
+  type: 'test'
+  ...
+# Subtest: plaintext passwords are rejected without conversion
+ok 8 - plaintext passwords are rejected without conversion
+  ---
+  duration_ms: 73.05925
+  type: 'test'
+  ...
+# Subtest: TOTP failures are counted serially and further attempts are throttled
+ok 9 - TOTP failures are counted serially and further attempts are throttled
+  ---
+  duration_ms: 198.620458
+  type: 'test'
+  ...
+# Subtest: TOTP challenge expires and valid codes cannot be reused in the same step
+ok 10 - TOTP challenge expires and valid codes cannot be reused in the same step
+  ---
+  duration_ms: 258.245208
+  type: 'test'
+  ...
+# Subtest: active two-factor secret cannot be silently replaced and disabling revokes sessions
+ok 11 - active two-factor secret cannot be silently replaced and disabling revokes sessions
+  ---
+  duration_ms: 63.891333
+  type: 'test'
+  ...
+# Subtest: unknown default credentials do not grant fresh initialization
+ok 12 - unknown default credentials do not grant fresh initialization
+  ---
+  duration_ms: 32.537792
+  type: 'test'
+  ...
+# Subtest: empty data root creates v1, all bridge/core tables, and restarts without schema writes
+ok 13 - empty data root creates v1, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 229.28775
+  type: 'test'
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 14 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 73.09725
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+ok 15 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 89.155333
+  type: 'test'
+  ...
+# Subtest: forged version marker, missing table, and extra objects are rejected
+ok 16 - forged version marker, missing table, and extra objects are rejected
+  ---
+  duration_ms: 77.721458
+  type: 'test'
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 17 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 1.434625
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1535.128291
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> @whyour/qinglong@2.21.0-16 build:back
+> tsc -p back/tsconfig.json
+

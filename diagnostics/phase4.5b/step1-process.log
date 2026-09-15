@@ -1,0 +1,48 @@
+[[32minfo[39m 2026-09-15 18:50:50]:	[boot] DB loaded
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] grpc worker started (PID: 63670)
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] Generating gRPC mTLS certificates...
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] gRPC mTLS certificates generated successfully
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] gRPC mTLS certificates saved to /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-fresh-process-Z588W5/data/config/grpc
+[[34mdebug[39m 2026-09-15 18:50:51]:	[boot] gRPC service started successfully on 127.0.0.1:58943
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] http worker started (PID: 63690)
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-15 18:50:51]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-15 18:50:52]:	[boot] Init file down
+[[32minfo[39m 2026-09-15 18:50:52]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-15 18:50:52]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-15 18:50:52]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-15 18:50:52]:	[panel][取消interval任务] 任务ID: NaN, 任务名: Generate token
+[[32minfo[39m 2026-09-15 18:50:52]:	[panel][创建interval任务] 任务ID: NaN, 任务名: Generate token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-fresh-process-Z588W5/static/build/token.js
+[[32minfo[39m 2026-09-15 18:50:52]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-15 18:50:52]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-15 18:50:52]:	[boot] HTTP service started successfully on 127.0.0.1:58942
+[[32minfo[39m 2026-09-15 18:50:52]:	[boot] Sock loaded
+[[34mdebug[39m 2026-09-15 18:50:52]:	HTTP service stopped
+[[32minfo[39m 2026-09-15 18:50:52]:	Worker 63690 exited
+[[34mdebug[39m 2026-09-15 18:50:52]:	gRPC service stopped
+[[32minfo[39m 2026-09-15 18:50:52]:	Worker 63670 exited
+[[32minfo[39m 2026-09-15 18:50:52]:	[boot] DB loaded
+[[32minfo[39m 2026-09-15 18:50:52]:	[boot] grpc worker started (PID: 63700)
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[34mdebug[39m 2026-09-15 18:50:53]:	[boot] gRPC service started successfully on 127.0.0.1:58943
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] http worker started (PID: 63701)
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Init file down
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-15 18:50:53]:	[panel][取消interval任务] 任务ID: NaN, 任务名: Generate token
+[[32minfo[39m 2026-09-15 18:50:53]:	[panel][创建interval任务] 任务ID: NaN, 任务名: Generate token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-fresh-process-Z588W5/static/build/token.js
+[[32minfo[39m 2026-09-15 18:50:53]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-15 18:50:53]:	[boot] HTTP service started successfully on 127.0.0.1:58942
+[[32minfo[39m 2026-09-15 18:50:53]:	[boot] Sock loaded
+[[34mdebug[39m 2026-09-15 18:50:53]:	HTTP service stopped
+[[32minfo[39m 2026-09-15 18:50:53]:	Worker 63701 exited
+[[34mdebug[39m 2026-09-15 18:50:53]:	gRPC service stopped
+[[32minfo[39m 2026-09-15 18:50:53]:	Worker 63700 exited

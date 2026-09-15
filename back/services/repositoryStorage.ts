@@ -149,12 +149,9 @@ export default class RepositoryStorageService {
     }
     return target;
   }
-  async initialize(id: number, credentialId?: number | null) {
+  async initialize(id: number) {
     return this.withRepository(id, 'initialize', async (guard, stored) => {
-      const repo =
-        credentialId === undefined
-          ? stored
-          : { ...stored, default_credential_id: credentialId };
+      const repo = stored;
       const target = await this.location(repo);
       if (await exists(target)) {
         await this.verify(guard, repo);
@@ -275,12 +272,9 @@ export default class RepositoryStorageService {
       last_fetch_status: 'OK',
     });
   }
-  async fetch(id: number, credentialId?: number | null) {
+  async fetch(id: number) {
     return this.withRepository(id, 'fetch', async (guard, stored) => {
-      const repo =
-        credentialId === undefined
-          ? stored
-          : { ...stored, default_credential_id: credentialId };
+      const repo = stored;
       const target = await this.verify(guard, repo);
       await this.mark(id, { storage_state: 'FETCHING', last_error: null });
       try {
@@ -430,16 +424,6 @@ export default class RepositoryStorageService {
       if (identity.normalized_url !== r.normalized_url)
         throw new WorkspaceError('REMOTE_IDENTITY_CHANGED');
       await sequelize.transaction(async (transaction) => {
-        if (
-          await SubscriptionModel.count({
-            where: { repository_id: id },
-            transaction,
-          })
-        )
-          throw new WorkspaceError(
-            'REPOSITORY_IN_USE',
-            'Remote spelling cannot change while legacy subscriptions reference this repository',
-          );
         await RepositoryModel.update(identity, { where: { id }, transaction });
       });
       const updated = await this.get(id),

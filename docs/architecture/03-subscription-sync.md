@@ -1,9 +1,13 @@
-# Subscription Sync / Discovery
+# Subscription Sync / Discovery — 当前实现
 
-Repository必填 → 当前仓库凭据 → initialize/fetch → ensure Worktree → clean/local history检查 → FF → DiscoveryPolicy → DiscoveredTaskDefinition[] → TaskService.reconcile → 成功水位与事件。无变化commit仍可重新reconcile，以修复上次发布失败。
+Repository 必填 → 仓库当前凭据 → initialize/fetch → ensure Worktree → clean/local history 检查 → FF-only → Discovery Adapter → scripts staging / CronService publication → 成功水位。当前只支持 branch，不声称 tag/commit Ref Model 已实现。
 
-当前Managed服务实现前半段，并通过Shell scanner+scripts/Cron publication bridge完成后半段。4.5B去Legacy/Managed双轨、URL/内嵌凭据/override；抽scanner库、DB投影、ID publication prefix。不得删scan/filter/补偿能力，完整DiscoveryPolicy/parser在11。
+不存在 Legacy/Managed 双模式、URL-only、credential override 或 convert。内部 `ManagedSubscriptionService` 名字表示唯一正常流水线，不是可切换模式。`subscription-ID` 是发布 namespace；展示名与 URL 不构成文件所有权。
 
-目标只操作subscription-owned definitions；手工Task与用户覆盖不得被文件缺失误删。Definition由workspace+relative_path+entrypoint identity产生，name/schedule不是主键。任务缺失源的默认策略建议停用/退役并保留Run历史；实际策略在新API中显式选择。
+`SubscriptionDiscoveryAdapter` 是 Backend discovery-only 边界：接收已锁定 Worktree、策略、私有 stage 和当前 DB Task 投影，产出变更与诊断，不 clone/fetch、不拥有 DB、不调用 HTTP、不读取 live crontab.list。保留 nested、extensions、include/exclude、cron/name 注释、autoAdd/autoDel；无 cron 的文件给出 NO_CRON_METADATA，不随机创建任务。
 
-锁序继续subscription→repository→worktree→publication→scheduler mutation。SQLite与Git/文件系统/外部scheduler不构成单事务，保留recovery material与失败可重试；fresh-only不会消除崩溃窗口。
+identity 为 subscription_id + SHA256(relative_path)，持久化 source_relative_path/discovery_key/discovery_definition。更新仅替换仍等于上次 source definition 的字段，保留用户覆盖、ENV、hook、禁用和运行状态。仅 reconcile 当前订阅所拥有的定义与文件。
+
+锁序继续 subscription → repository → worktree → publication → scheduler mutation。私有 stage、上一版 live、DB/scheduler 补偿与 recovery material 保留。失败不覆盖成功水位，补偿失败保留材料并要求恢复；无变更 commit 仍可重试 reconcile。
+
+B01 scripts 与 B15 Crontab 仍是执行桥。完整 metadata DSL、Task/Schedule v2 与 reconcile engine 属于后续 Phase 9–11。

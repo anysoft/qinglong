@@ -3,7 +3,6 @@ const Module = require('module');
 const path = require('path');
 const client = require('./client.js');
 const scopedEnvironment = require('./scoped-env.js');
-require(scopedEnvironment.directory ? path.join(scopedEnvironment.directory, 'global.js') : './env.js');
 scopedEnvironment.apply();
 
 // 注册 ESM loader，使全局安装的包也可通过 import 导入

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "empty_data_root": true,
+  "real_backend": true,
+  "real_grpc": true,
+  "fresh_admin": true,
+  "login": true,
+  "restart": true,
+  "foreign_keys": true,
+  "linux": false
+}

@@ -32,6 +32,8 @@ function endpoint(action: (req: Request) => Promise<unknown>) {
 export default function scopedEnvironmentRoutes(app: Router) {
   const router = Router();
   app.use('/scoped-env', router);
+  router.get('/global/variables', endpoint(async () => Container.get(ScopedEnvVariableService).list('global', 0)));
+  router.put('/global/variables', endpoint(async req => Container.get(ScopedEnvVariableService).save('global', 0, validate(variableSchema, req.body))));
   const id = (req: Request) => validate(idSchema, req.params.id);
   router.get('/repositories', endpoint(async () => sequelize.query('SELECT r.id,r.name,r.default_env_profile_id,COUNT(p.id) AS profiles_count FROM Repositories r LEFT JOIN EnvironmentProfiles p ON p.repository_id=r.id GROUP BY r.id ORDER BY r.name', { type: QueryTypes.SELECT })));
   router.get('/tasks', endpoint(async () => sequelize.query('SELECT c.id,c.name,c.env_profile_id,c.sub_id,COUNT(v.id) AS variables_count FROM Crontabs c LEFT JOIN TaskEnvVariables v ON v.cron_id=c.id GROUP BY c.id ORDER BY c.id DESC', { type: QueryTypes.SELECT })));

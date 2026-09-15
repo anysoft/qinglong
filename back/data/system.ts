@@ -40,7 +40,6 @@ export interface SystemConfigInfo {
   pythonMirror?: string;
   linuxMirror?: string;
   timezone?: string;
-  globalSshKey?: string;
   runningInstanceRetentionDays?: number;
   cronStatRetentionDays?: number;
 }
@@ -67,6 +66,7 @@ export interface TokenInfo {
 }
 
 export interface AuthInfo {
+  initialized?: boolean;
   username: string;
   password: string;
   retries: number;

@@ -6,5 +6,5 @@ exports.directory = directory;
 exports.apply = function applyScopedEnvironment() {
   if (!snapshot) return;
   for (const name of snapshot.unset) delete process.env[name];
-  for (const [name, value] of Object.entries(snapshot.overlay)) process.env[name] = value;
+  for (const [name, value] of Object.entries(snapshot.variables)) process.env[name] = value;
 };

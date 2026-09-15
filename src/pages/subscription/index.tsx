@@ -55,13 +55,7 @@ export enum IntervalSchedule {
   'seconds' = '秒',
 }
 
-export enum SubscriptionType {
-  'private-repo' = '私有仓库',
-  'public-repo' = '公开仓库',
-  'file' = '单文件',
-}
-
-const Subscription = () => {
+export const Subscription = () => {
   const { headerStyle, isPhone } = useOutletContext<SharedContext>();
 
   const [repositoryNames, setRepositoryNames] = useState<Record<number, string>>({});
@@ -73,13 +67,10 @@ const Subscription = () => {
   const columns: any = [
     {
       title: 'Git 同步',
-      key: 'git_mode',
+      key: 'repository',
       width: 190,
       render: (_: any, row: any) => (
         <Space direction="vertical" size={0}>
-          <Tag color={row.git_mode === 'MANAGED' ? 'blue' : undefined}>
-            {row.git_mode || 'LEGACY'}
-          </Tag>
           {row.repository_id && (
             <a href={`${config.baseUrl}repository`}>
               {repositoryNames[row.repository_id] || 'Repository'} #{row.repository_id}
@@ -122,37 +113,6 @@ const Subscription = () => {
       sorter: {
         compare: (a: any, b: any) => a.name.localeCompare(b.name),
         multiple: 2,
-      },
-    },
-    {
-      title: intl.get('链接'),
-      dataIndex: 'url',
-      key: 'url',
-      sorter: {
-        compare: (a: any, b: any) => a.name.localeCompare(b.name),
-        multiple: 2,
-      },
-      render: (text: string, record: any) => {
-        return (
-          <Paragraph
-            style={{
-              wordBreak: 'break-all',
-              marginBottom: 0,
-            }}
-            ellipsis={{ tooltip: text, rows: 2 }}
-          >
-            {text}
-          </Paragraph>
-        );
-      },
-    },
-    {
-      title: intl.get('类型'),
-      dataIndex: 'type',
-      key: 'type',
-      width: 130,
-      render: (text: string, record: any) => {
-        return (SubscriptionType as any)[record.type];
       },
     },
     {
@@ -374,7 +334,7 @@ const Subscription = () => {
     setIsModalVisible(true);
   };
 
-  const onCheckChange = (e) => {
+  const onCheckChange = (e: { target: { checked: boolean } }) => {
     deleteCheckRef.current = e.target.checked;
   };
 
@@ -390,7 +350,7 @@ const Subscription = () => {
           {intl.get('吗')}
           <div style={{ marginTop: 20 }}>
             <Checkbox onChange={onCheckChange}>
-              {record.worktree_id || record.git_mode === 'MANAGED' ? '同时删除关联任务（保留 scripts 和工作区）' : intl.get('同时删除关联任务和脚本')}
+              {'同时删除关联任务（保留 scripts 和工作区）'}
             </Checkbox>
           </div>
         </>

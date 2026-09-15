@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "runtime": "Node 22",
+  "passed": 298,
+  "failed": 0,
+  "skipped": 3,
+  "suites": [
+    {
+      "name": "existing",
+      "passed": 176,
+      "failed": 0,
+      "skipped": 3
+    },
+    {
+      "name": "phase0",
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "name": "phase1-4",
+      "passed": 105,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "logs": [
+    "baseline-existing.log",
+    "baseline-phases.log"
+  ]
+}

@@ -1,0 +1,142 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> @whyour/qinglong@2.21.0-16 build:back
+> tsc -p back/tsconfig.json
+
+TAP version 13
+# Subtest: fresh seed is local, idempotent and creates no usable password or legacy startup task
+ok 1 - fresh seed is local, idempotent and creates no usable password or legacy startup task
+  ---
+  duration_ms: 60.889292
+  type: 'test'
+  ...
+# Subtest: scoped sh account concurrency keeps split secrets in private temporary logs
+ok 2 - scoped sh account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1650.974667
+  type: 'test'
+  ...
+# Subtest: scoped js account concurrency keeps split secrets in private temporary logs
+ok 3 - scoped js account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1104.108833
+  type: 'test'
+  ...
+# Subtest: scoped py account concurrency keeps split secrets in private temporary logs
+ok 4 - scoped py account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 4094.052292
+  type: 'test'
+  ...
+# Subtest: real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+ok 5 - real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+  ---
+  duration_ms: 818.56
+  type: 'test'
+  ...
+# Subtest: profile CRUD, uniqueness, default, clone secrets, and reference protection
+ok 6 - profile CRUD, uniqueness, default, clone secrets, and reference protection
+  ---
+  duration_ms: 748.375833
+  type: 'test'
+  ...
+# Subtest: secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors
+ok 7 - secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors
+  ---
+  duration_ms: 205.98175
+  type: 'test'
+  ...
+# Subtest: profile precedence, manual task, disabled and wrong repository fail closed
+ok 8 - profile precedence, manual task, disabled and wrong repository fail closed
+  ---
+  duration_ms: 151.264958
+  type: 'test'
+  ...
+# Subtest: SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation
+ok 9 - SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation
+  ---
+  duration_ms: 143.256083
+  type: 'test'
+  ...
+# Subtest: Global unique contract masks secrets across SDK responses and rejects inherited backend secrets
+ok 10 - Global unique contract masks secrets across SDK responses and rejects inherited backend secrets
+  ---
+  duration_ms: 101.167209
+  type: 'test'
+  ...
+# Subtest: real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+ok 11 - real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+  ---
+  duration_ms: 2749.521375
+  type: 'test'
+  ...
+# Subtest: actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+ok 12 - actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+  ---
+  duration_ms: 3069.703375
+  type: 'test'
+  ...
+# Subtest: 50 simultaneously live runs across repositories/profiles/tasks isolate snapshots and preserve A across update to B
+ok 13 - 50 simultaneously live runs across repositories/profiles/tasks isolate snapshots and preserve A across update to B
+  ---
+  duration_ms: 7786.072708
+  type: 'test'
+  ...
+# Subtest: streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values
+ok 14 - streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values
+  ---
+  duration_ms: 251.063666
+  type: 'test'
+  ...
+# Subtest: snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment
+ok 15 - snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment
+  ---
+  duration_ms: 661.791083
+  type: 'test'
+  ...
+# Subtest: global-only execution allocates a private full snapshot
+ok 16 - global-only execution allocates a private full snapshot
+  ---
+  duration_ms: 191.795542
+  type: 'test'
+  ...
+# Subtest: empty data root creates v1, all bridge/core tables, and restarts without schema writes
+ok 17 - empty data root creates v1, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 400.033916
+  type: 'test'
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 18 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 145.909709
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+ok 19 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 204.482208
+  type: 'test'
+  ...
+# Subtest: unexpected schema objects are rejected on restart
+ok 20 - unexpected schema objects are rejected on restart
+  ---
+  duration_ms: 103.016334
+  type: 'test'
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 21 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 1.9535
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11245.665875

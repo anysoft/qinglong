@@ -29,10 +29,8 @@ import ScheduleService, { TaskCallbacks } from './schedule';
 import { SimpleIntervalSchedule } from 'toad-scheduler';
 import SockService from './sock';
 import { t, tf } from '../shared/i18n';
-import SshKeyService from './sshKey';
 import dayjs from 'dayjs';
 import { LOG_END_SYMBOL } from '../config/const';
-import { formatCommand, formatUrl } from '../config/subscription';
 import { CrontabModel } from '../data/cron';
 import CrontabService from './cron';
 import taskLimit from '../shared/pLimit';
@@ -45,7 +43,6 @@ export default class SubscriptionService {
     @Inject('logger') private logger: winston.Logger,
     private scheduleService: ScheduleService,
     private sockService: SockService,
-    private sshKeyService: SshKeyService,
     private crontabService: CrontabService,
   ) {}
 
@@ -66,9 +63,6 @@ export default class SubscriptionService {
         [Op.or]: [
           {
             name: reg,
-          },
-          {
-            url: reg,
           },
         ],
       };
@@ -92,15 +86,13 @@ export default class SubscriptionService {
     needCreate = true,
     runImmediately = false,
   ) {
-    doc.command = doc.repository_id
-      ? repositorySubscriptionCommand(doc.id!)
-      : formatCommand(doc, formatUrl(doc).url as string);
+    const command = repositorySubscriptionCommand(doc.id!);
 
     if (doc.schedule_type === 'crontab') {
       this.scheduleService.cancelCronTask(doc as any);
-      needCreate &&
+      needCreate && !!doc.schedule?.trim() &&
         (await this.scheduleService.createCronTask(
-          { ...doc, runOrigin: 'subscription' } as any,
+          { ...doc, command, runOrigin: 'subscription' } as any,
           this.taskCallbacks(doc),
           runImmediately,
         ));
@@ -109,7 +101,7 @@ export default class SubscriptionService {
       const { type, value } = doc.interval_schedule;
       needCreate &&
         (await this.scheduleService.createIntervalTask(
-          { ...doc, runOrigin: 'subscription' } as any,
+          { ...doc, command, runOrigin: 'subscription' } as any,
           { [type]: value } as SimpleIntervalSchedule,
           runImmediately,
           this.taskCallbacks(doc),
@@ -117,16 +109,13 @@ export default class SubscriptionService {
     }
   }
 
-  public async setSshConfig() {
-    const docs = await SubscriptionModel.findAll();
-    await this.sshKeyService.setSshConfig(docs.filter(doc => !doc.repository_id));
-  }
+
 
   private taskCallbacks(doc: Subscription): TaskCallbacks {
     return {
       onBefore: async (startTime) => {
         const logTime = startTime.format('YYYY-MM-DD-HH-mm-ss');
-        const logPath = `${doc.alias}/${logTime}.log`;
+        const logPath = `subscription-${doc.id}/${logTime}.log`;
         await SubscriptionModel.update(
           {
             status: SubscriptionStatus.running,
@@ -227,27 +216,11 @@ export default class SubscriptionService {
 
   public async create(payload: Subscription): Promise<Subscription> {
     const tab = new Subscription(payload);
-    const save = async () =>
-      tab.repository_id || tab.credential_id
-        ? sequelize.transaction(async (transaction) => {
-            await Container.get(
-              SubscriptionGitResolver,
-            ).resolveSubscriptionGitContext(tab, transaction);
-            return SubscriptionModel.create(tab, { transaction });
-          })
-        : this.insert(tab);
-    const doc =
-      tab.git_mode === 'MANAGED'
-        ? await Container.get(ManagedSubscriptionService).withBinding(
-            tab,
-            async (id) => {
-              tab.worktree_id = id;
-              return save();
-            },
-          )
-        : await save();
-    await this.handleTask(doc.get({ plain: true }));
-    await this.setSshConfig();
+    const doc = await sequelize.transaction(async transaction => {
+      await Container.get(SubscriptionGitResolver).resolveSubscriptionGitContext(tab, transaction);
+      return SubscriptionModel.create(tab, { transaction });
+    });
+    await this.handleTask(doc.get({ plain: true }), !doc.is_disabled);
     return doc;
   }
 
@@ -256,50 +229,19 @@ export default class SubscriptionService {
   }
 
   public async update(payload: Subscription): Promise<Subscription> {
-    const current = await this.getDb({ id: payload.id });
-    if (
-      !current.repository_id &&
-      !payload.repository_id &&
-      !current.worktree_id
-    )
-      return this.updateUnlocked(payload);
-    return Container.get(ManagedSubscriptionService).exclusive(
-      payload.id!,
-      () => this.updateUnlocked(payload),
-    );
+    return Container.get(ManagedSubscriptionService).exclusive(payload.id!, () => this.updateUnlocked(payload));
   }
 
   private async updateUnlocked(payload: Subscription): Promise<Subscription> {
-    const doc = await this.getDb({ id: payload.id });
-    const tab = new Subscription({ ...doc, ...payload });
-    if (tab.repository_id !== doc.repository_id || tab.branch !== doc.branch)
-      tab.worktree_id = null;
-    const save = async () =>
-      tab.repository_id || tab.credential_id
-        ? sequelize.transaction(async (transaction) => {
-            await Container.get(
-              SubscriptionGitResolver,
-            ).resolveSubscriptionGitContext(tab, transaction);
-            await SubscriptionModel.update(tab, {
-              where: { id: tab.id },
-              transaction,
-            });
-            return tab;
-          })
-        : this.updateDb(tab);
-    const newDoc =
-      tab.git_mode === 'MANAGED'
-        ? await Container.get(ManagedSubscriptionService).withBinding(
-            tab,
-            async (id) => {
-              tab.worktree_id = id;
-              return save();
-            },
-          )
-        : await save();
-    await this.handleTask(newDoc, !newDoc.is_disabled);
-    await this.setSshConfig();
-    return newDoc;
+    const current = await this.getDb({ id: payload.id });
+    const tab = new Subscription({ ...current, ...payload });
+    if (tab.repository_id !== current.repository_id || tab.branch !== current.branch) tab.worktree_id = null;
+    await sequelize.transaction(async transaction => {
+      await Container.get(SubscriptionGitResolver).resolveSubscriptionGitContext(tab, transaction);
+      await SubscriptionModel.update(tab, { where: { id: tab.id }, transaction });
+    });
+    await this.handleTask(tab, !tab.is_disabled);
+    return tab;
   }
 
   public async updateDb(payload: Subscription): Promise<Subscription> {
@@ -359,20 +301,13 @@ export default class SubscriptionService {
       await this.handleTask(doc.get({ plain: true }), false);
     }
     await SubscriptionModel.destroy({ where: { id: ids } });
-    await this.setSshConfig();
 
     if (query?.force === true) {
       const crons = await CrontabModel.findAll({ where: { sub_id: ids } });
       if (crons?.length) {
         await this.crontabService.remove(crons.map((x) => x.id!));
       }
-      for (const doc of docs) {
-        if (doc.worktree_id || doc.git_mode === 'MANAGED') continue;
-        const filePath = join(config.scriptPath, doc.alias);
-        const repoPath = join(config.repoPath, doc.alias);
-        await rmPath(filePath);
-        await rmPath(repoPath);
-      }
+
     }
   }
 
@@ -410,7 +345,7 @@ export default class SubscriptionService {
 
     await SubscriptionModel.update(
       { last_sync_state: 'FAILED', last_sync_phase: 'CANCELLED', last_sync_error: 'SUBSCRIPTION_CANCELLED' },
-      { where: { id: ids, git_mode: 'MANAGED', last_sync_state: 'RUNNING' } },
+      { where: { id: ids, last_sync_state: 'RUNNING' } },
     );
     await SubscriptionModel.update(
       { status: SubscriptionStatus.idle, pid: undefined },
@@ -424,7 +359,7 @@ export default class SubscriptionService {
       return;
     }
 
-    const command = subscription.repository_id ? repositorySubscriptionCommand(subscription.id!) : formatCommand(subscription);
+    const command = repositorySubscriptionCommand(subscription.id!);
 
     this.scheduleService.runTask(command, this.taskCallbacks(subscription), {
       name: subscription.name,
@@ -438,7 +373,6 @@ export default class SubscriptionService {
   public async disabled(ids: number[]) {
     await SubscriptionModel.update({ is_disabled: 1 }, { where: { id: ids } });
     const docs = await SubscriptionModel.findAll({ where: { id: ids } });
-    await this.setSshConfig();
     for (const doc of docs) {
       await this.handleTask(doc.get({ plain: true }), false);
     }
@@ -447,7 +381,6 @@ export default class SubscriptionService {
   public async enabled(ids: number[]) {
     await SubscriptionModel.update({ is_disabled: 0 }, { where: { id: ids } });
     const docs = await SubscriptionModel.findAll({ where: { id: ids } });
-    await this.setSshConfig();
     for (const doc of docs) {
       await this.handleTask(doc.get({ plain: true }));
     }

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "evidence": [
+    "step6-api-tests.log (7 pass)",
+    "step6-auth-regression.log (14 pass)",
+    "step6-build.log",
+    "step6-build-front-retest.log",
+    "platform-e2e.json"
+  ],
+  "browser": "real Chromium, real backend/gRPC, local authenticated SSH Git server, empty DATA_DIR, restart"
+}

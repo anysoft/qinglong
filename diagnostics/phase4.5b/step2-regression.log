@@ -1,0 +1,147 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: cross-process POSIX locks release after owner crash, success and errors
+ok 1 - cross-process POSIX locks release after owner crash, success and errors
+  ---
+  duration_ms: 1216.802
+  type: 'test'
+  ...
+# Subtest: repository mutation matrix and execution lease exclusivity
+ok 2 - repository mutation matrix and execution lease exclusivity
+  ---
+  duration_ms: 5123.340709
+  type: 'test'
+  ...
+# Subtest: real Git timeout and controller crash during Git release locks after child termination
+ok 3 - real Git timeout and controller crash during Git release locks after child termination
+  ---
+  duration_ms: 1299.046708
+  type: 'test'
+  ...
+# Subtest: worktree deletion DB failure is recoverable by reconstruction without resetting local history
+ok 4 - worktree deletion DB failure is recoverable by reconstruction without resetting local history
+  ---
+  duration_ms: 3601.004583
+  type: 'test'
+  ...
+# Subtest: repository delete can retry after filesystem success and DB failure
+ok 5 - repository delete can retry after filesystem success and DB failure
+  ---
+  duration_ms: 1582.774208
+  type: 'test'
+  ...
+# Subtest: operation timeout persists ERROR and releases mutation lease
+ok 6 - operation timeout persists ERROR and releases mutation lease
+  ---
+  duration_ms: 1981.557625
+  type: 'test'
+  ...
+# Subtest: ignored files and symlink replacement protect user data; orphan worktrees are diagnosed
+ok 7 - ignored files and symlink replacement protect user data; orphan worktrees are diagnosed
+  ---
+  duration_ms: 3297.1665
+  type: 'test'
+  ...
+# Subtest: remote spelling changes preserve identity and storage while protecting legacy subscriptions
+not ok 8 - remote spelling changes preserve identity and storage while protecting legacy subscriptions
+  ---
+  duration_ms: 1671.517208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase2/recovery.test.cjs:104:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase2/recovery.test.cjs:127:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Git core.worktree override cannot redirect status or mutations outside managed checkout
+ok 9 - Git core.worktree override cannot redirect status or mutations outside managed checkout
+  ---
+  duration_ms: 2283.390917
+  type: 'test'
+  ...
+# Subtest: bare initialization is persistent; fetch updates/prunes remote refs and uses current credentials
+ok 10 - bare initialization is persistent; fetch updates/prunes remote refs and uses current credentials
+  ---
+  duration_ms: 3010.087208
+  type: 'test'
+  ...
+# Subtest: branch worktrees share objects; fetch never moves a worktree; update is explicit FF only
+ok 11 - branch worktrees share objects; fetch never moves a worktree; update is explicit FF only
+  ---
+  duration_ms: 4366.495875
+  type: 'test'
+  ...
+# Subtest: dirty, staged, ignored/untracked and conflicts are visible and protected
+ok 12 - dirty, staged, ignored/untracked and conflicts are visible and protected
+  ---
+  duration_ms: 5384.488125
+  type: 'test'
+  ...
+# Subtest: local commits are retained; diverged and detached worktrees cannot be reset by update/delete
+ok 13 - local commits are retained; diverged and detached worktrees cannot be reset by update/delete
+  ---
+  duration_ms: 5224.223417
+  type: 'test'
+  ...
+# Subtest: execution leases block mutation and prune; missing worktrees remain records and repair preserves branch
+ok 14 - execution leases block mutation and prune; missing worktrees remain records and repair preserves branch
+  ---
+  duration_ms: 4676.4165
+  type: 'test'
+  ...
+# Subtest: non-git storage and managed-path symlink replacements never trigger recursive deletion
+ok 15 - non-git storage and managed-path symlink replacements never trigger recursive deletion
+  ---
+  duration_ms: 590.341833
+  type: 'test'
+  ...
+# Subtest: fresh seed is local, idempotent and creates no usable password or legacy startup task
+ok 16 - fresh seed is local, idempotent and creates no usable password or legacy startup task
+  ---
+  duration_ms: 55.307666
+  type: 'test'
+  ...
+# Subtest: empty data root creates v1, all bridge/core tables, and restarts without schema writes
+ok 17 - empty data root creates v1, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 182.001166
+  type: 'test'
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 18 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 66.791583
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+ok 19 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 74.626459
+  type: 'test'
+  ...
+# Subtest: unexpected schema objects are rejected on restart
+ok 20 - unexpected schema objects are rejected on restart
+  ---
+  duration_ms: 63.71575
+  type: 'test'
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 21 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 2.155
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 20
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 46839.142375

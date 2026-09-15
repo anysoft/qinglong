@@ -5,14 +5,13 @@ import SubscriptionService from '../services/subscription';
 import { celebrate, Joi } from 'celebrate';
 import CronExpressionParser from 'cron-parser';
 import ManagedSubscriptionService from '../services/managedSubscription';
-import SubscriptionGitResolver from '../services/subscriptionGit';
 const route = Router();
 
 export default (app: Router) => {
   app.use('/subscriptions', route);
 
   route.post(
-    '/:id/managed/preflight',
+    '/:id/prepare',
     celebrate({
       params: Joi.object({ id: Joi.number().integer().positive().required() }),
       body: Joi.object({}),
@@ -30,29 +29,6 @@ export default (app: Router) => {
       }
     },
   );
-  route.put(
-    '/:id/git-mode',
-    celebrate({
-      params: Joi.object({ id: Joi.number().integer().positive().required() }),
-      body: Joi.object({
-        git_mode: Joi.string().valid('LEGACY', 'MANAGED').required(),
-      }),
-    }),
-    async (req, res, next) => {
-      try {
-        res.send({
-          code: 200,
-          data: await Container.get(ManagedSubscriptionService).mode(
-            Number(req.params.id),
-            req.body.git_mode,
-          ),
-        });
-      } catch (e) {
-        next(e);
-      }
-    },
-  );
-
   route.get('/', async (req: Request, res: Response, next: NextFunction) => {
     const logger: Logger = Container.get('logger');
     try {
@@ -72,7 +48,6 @@ export default (app: Router) => {
     '/',
     celebrate({
       body: Joi.object({
-        type: Joi.string().required(),
         schedule: Joi.string().optional().allow('').allow(null),
         interval_schedule: Joi.object({
           type: Joi.string().required(),
@@ -81,27 +56,17 @@ export default (app: Router) => {
           .optional()
           .allow('')
           .allow(null),
-        name: Joi.string().optional().allow('').allow(null),
-        url: Joi.when('repository_id', {
-          is: Joi.number().integer().positive().required(),
-          then: Joi.string().optional().allow('').allow(null),
-          otherwise: Joi.string().required(),
-        }),
-        git_mode: Joi.string().valid('LEGACY', 'MANAGED').optional(),
-        repository_id: Joi.number().integer().positive().optional().allow(null),
-        credential_id: Joi.number().integer().positive().optional().allow(null),
+        name: Joi.string().required(),
+        repository_id: Joi.number().integer().positive().required(),
         whitelist: Joi.string().optional().allow('').allow(null),
         blacklist: Joi.string().optional().allow('').allow(null),
         branch: Joi.string().optional().allow('').allow(null),
         dependences: Joi.string().optional().allow('').allow(null),
-        pull_type: Joi.string().optional().allow('').allow(null),
-        pull_option: Joi.object().optional().allow('').allow(null),
         extensions: Joi.string().optional().allow('').allow(null),
         sub_before: Joi.string().optional().allow('').allow(null),
         sub_after: Joi.string().optional().allow('').allow(null),
-        schedule_type: Joi.string().required(),
-        alias: Joi.string().required(),
-        proxy: Joi.string().optional().allow('').allow(null),
+        schedule_type: Joi.string().valid('crontab', 'interval').required(),
+        is_disabled: Joi.number().valid(0, 1).optional(),
         autoAddCron: Joi.boolean().optional().allow('').allow(null),
         autoDelCron: Joi.boolean().optional().allow('').allow(null),
       }),
@@ -115,10 +80,7 @@ export default (app: Router) => {
         ) {
           const subscriptionService = Container.get(SubscriptionService);
           const data = await subscriptionService.create(req.body);
-          const warnings = await Container.get(
-            SubscriptionGitResolver,
-          ).collisions(data);
-          return res.send({ code: 200, data, warnings });
+          return res.send({ code: 200, data });
         } else {
           return res.send({ code: 400, message: 'param schedule error' });
         }
@@ -233,30 +195,19 @@ export default (app: Router) => {
     '/',
     celebrate({
       body: Joi.object({
-        type: Joi.string().required(),
         schedule: Joi.string().optional().allow('').allow(null),
         interval_schedule: Joi.object().optional().allow('').allow(null),
-        name: Joi.string().optional().allow('').allow(null),
-        url: Joi.when('repository_id', {
-          is: Joi.number().integer().positive().required(),
-          then: Joi.string().optional().allow('').allow(null),
-          otherwise: Joi.string().required(),
-        }),
-        git_mode: Joi.string().valid('LEGACY', 'MANAGED').optional(),
-        repository_id: Joi.number().integer().positive().optional().allow(null),
-        credential_id: Joi.number().integer().positive().optional().allow(null),
+        name: Joi.string().required(),
+        repository_id: Joi.number().integer().positive().required(),
         whitelist: Joi.string().optional().allow('').allow(null),
         blacklist: Joi.string().optional().allow('').allow(null),
         branch: Joi.string().optional().allow('').allow(null),
         dependences: Joi.string().optional().allow('').allow(null),
-        pull_type: Joi.string().optional().allow('').allow(null),
-        pull_option: Joi.object().optional().allow('').allow(null),
-        schedule_type: Joi.string().optional().allow('').allow(null),
+        schedule_type: Joi.string().valid('crontab', 'interval').required(),
         extensions: Joi.string().optional().allow('').allow(null),
         sub_before: Joi.string().optional().allow('').allow(null),
         sub_after: Joi.string().optional().allow('').allow(null),
-        alias: Joi.string().required(),
-        proxy: Joi.string().optional().allow('').allow(null),
+        is_disabled: Joi.number().valid(0, 1).optional(),
         autoAddCron: Joi.boolean().optional().allow('').allow(null),
         autoDelCron: Joi.boolean().optional().allow('').allow(null),
         id: Joi.number().required(),
@@ -272,10 +223,7 @@ export default (app: Router) => {
         ) {
           const subscriptionService = Container.get(SubscriptionService);
           const data = await subscriptionService.update(req.body);
-          const warnings = await Container.get(
-            SubscriptionGitResolver,
-          ).collisions(data);
-          return res.send({ code: 200, data, warnings });
+          return res.send({ code: 200, data });
         } else {
           return res.send({ code: 400, message: 'param schedule error' });
         }

@@ -9,7 +9,7 @@ test('WebSocket connections reject expired tokens and close when sessions are re
   const secret = 'sock-test';
   const valid = jwt.sign({}, secret, { algorithm: 'HS384', expiresIn: '1h' });
   const expired = jwt.sign({}, secret, { algorithm: 'HS384', expiresIn: -1 });
-  let auth = { token: valid, tokens: { desktop: [{ value: expired }] } };
+  let auth = { token: '', tokens: { desktop: [{ value: valid }, { value: expired }] } };
   let onConnection;
   const clients = new Set();
   const Sock = class {};

@@ -34,9 +34,6 @@ const TaskBeforeFile = path.join(configPath, 'task_before.sh');
 const TaskBeforeJsFile = path.join(configPath, 'task_before.js');
 const TaskBeforePyFile = path.join(configPath, 'task_before.py');
 const TaskAfterFile = path.join(configPath, 'task_after.sh');
-const homedir = os.homedir();
-const sshPath = path.resolve(homedir, '.ssh');
-const sshdPath = path.join(dataPath, 'ssh.d');
 const systemLogPath = path.join(dataPath, 'syslog');
 
 const directories = [
@@ -47,9 +44,7 @@ const directories = [
   tmpPath,
   rootTmpPath,
   uploadPath,
-  sshPath,
   bakPath,
-  sshdPath,
   systemLogPath,
 ];
 
@@ -106,7 +101,7 @@ const files = [
 export default async () => {
   for (const dirPath of directories) {
     if (!(await fileExist(dirPath))) {
-      await fs.mkdir(dirPath);
+      await fs.mkdir(dirPath, { recursive: true, mode: 0o700 });
     }
   }
 

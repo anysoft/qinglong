@@ -1,0 +1,28 @@
+const test = require('node:test'), assert = require('node:assert/strict'), express = require('express');
+const { Container } = require('typedi');
+const setup = require('../phase4/helpers.cjs');
+test('real HTTP APIs mask secrets and validation errors, enforce scope and block open access', async t => {
+  const h = await setup(t);
+  for (const [module, instance] of [['repositoryEnvProfile', h.profiles], ['scopedEnvVariable', h.variables], ['taskEnvironmentResolver', h.resolver]]) Container.set(h.get('services/' + module).default, instance);
+  const repo = await h.RepositoryModel.create({ name: 'repo', provider: 'generic', remote_url: 'https://a.invalid/a', normalized_url: 'a.invalid/a' });
+  const task = await h.CrontabModel.create({ command: 'task manual.py' });
+  const app = express(); app.use(express.json());
+  h.get('api/scopedEnvironment').default(app);
+  const open = express.Router(); h.get('api/scopedEnvironment').default(open); app.use('/open', open); app.use('/panel/open', open);
+  const server = app.listen(0, '127.0.0.1'); await new Promise(r => server.once('listening', r)); t.after(() => new Promise(r => server.close(r)));
+  const secret = 'http-private-four', base = 'http://127.0.0.1:' + server.address().port;
+  const call = async (url, method = 'GET', body) => { const r = await fetch(base + url, { method, headers: { 'content-type': 'application/json' }, body: body === undefined ? undefined : JSON.stringify(body) }); const text = await r.text(); assert.ok(!text.includes(secret), text); return { status: r.status, body: JSON.parse(text) }; };
+  assert.equal((await call('/scoped-env/global/variables', 'PUT', [{ name: 'GLOBAL_SECRET', value: secret, is_secret: true }])).status, 200);
+  assert.equal((await call('/scoped-env/global/variables')).body.data[0].value, null);
+  const p = await call('/scoped-env/profiles', 'POST', { repository_id: repo.id, name: 'prod' }); assert.equal(p.status, 200);
+  const id = p.body.data.id;
+  assert.equal((await call(`/scoped-env/profiles/${id}/variables`, 'PUT', [{ name: 'TOKEN', value: secret, is_secret: true }])).status, 200);
+  assert.equal((await call(`/scoped-env/profiles/${id}/variables`)).body.data[0].value, null);
+  assert.equal((await call(`/scoped-env/tasks/${task.id}/variables`, 'PUT', [{ name: 'TOKEN', value: secret, is_secret: true }])).status, 200);
+  assert.equal((await call(`/scoped-env/tasks/${task.id}/preview`)).status, 200);
+  assert.equal((await call(`/scoped-env/tasks/${task.id}/profile`, 'PUT', { env_profile_id: id })).body.message, 'ENV_PROFILE_REPOSITORY_MISMATCH');
+  assert.equal((await call(`/scoped-env/profiles/${id}/variables`, 'PUT', [{ name: 'TOKEN', value: secret, arbitrary: secret }])).status, 400);
+  assert.equal((await call(`/open/scoped-env/profiles/${id}`)).status, 403);
+  assert.equal((await call(`/panel/open/scoped-env/profiles/${id}`)).status, 403);
+  assert.equal((await call('/scoped-env/repositories')).body.data[0].profiles_count, 1);
+});

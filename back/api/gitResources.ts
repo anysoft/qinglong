@@ -2,8 +2,6 @@ import { Router, Request, Response } from 'express';
 import { Container } from 'typedi';
 import GitCredentialService from '../services/gitCredential';
 import RepositoryService from '../services/repository';
-import SubscriptionGitResolver from '../services/subscriptionGit';
-import SubscriptionService from '../services/subscription';
 import { normalizeRepositoryUrl } from '../shared/gitProvider';
 import { GitResourceError } from '../shared/gitSecurity';
 import { Joi } from 'celebrate';
@@ -158,15 +156,6 @@ export default function gitResources(app: Router) {
       return Container.get(RepositoryService).save(input);
     }),
   );
-  repositories.delete(
-    '/:id',
-    endpoint(async (req) => {
-      await Container.get(RepositoryService).remove(
-        validate(idSchema, req.params.id),
-      );
-      return null;
-    }),
-  );
   repositories.post(
     '/:id/test',
     endpoint(async (req) =>
@@ -174,25 +163,5 @@ export default function gitResources(app: Router) {
         validate(idSchema, req.params.id),
       ),
     ),
-  );
-  app.post(
-    '/subscriptions/:id/convert',
-    endpoint(async (req) => {
-      const input = validate(
-        Joi.object({ credential_id: nullableId }),
-        req.body,
-      );
-      const resolver = Container.get(SubscriptionGitResolver);
-      const data = await resolver.convert(
-        validate(idSchema, req.params.id),
-        input.credential_id,
-      );
-      // Registration only: conversion never runs the subscription or touches scripts.
-      await Container.get(SubscriptionService).handleTask(
-        data,
-        !data.is_disabled,
-      );
-      return { subscription: data, warnings: await resolver.collisions(data) };
-    }),
   );
 }

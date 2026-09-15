@@ -40,9 +40,6 @@ handle_log_path() {
     file_param="task"
   fi
 
-  if [[ -z ${ID:=} ]]; then
-    ID=$(cat $list_crontab_user | grep -E "$cmd_task.* $file_param" | perl -pe "s|.*ID=(.*) $cmd_task.* $file_param\.*|\1|" | head -1 | awk -F " " '{print $1}')
-  fi
   local suffix=""
   if [[ ! -z $ID ]]; then
     if [[ "$ID" -gt 0 ]] 2>/dev/null; then
@@ -169,7 +166,8 @@ if [[ -f "$dir_shell/task_env.sh" ]]; then
   fi
 fi
 if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then
-  file_env="$QL_TASK_ENV_SNAPSHOT/global.sh"
+  file_env="$QL_TASK_ENV_SNAPSHOT/environment.sh"
+  ql_task_env_isolate
   # Redact before either tee or file redirection, including real-time manual runs.
   cmd="2>&1 | node \"$dir_shell/task_env_redact.cjs\" $cmd"
 fi

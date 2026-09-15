@@ -1,0 +1,37 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Detect Changes (1.6.12)
+Changes: 16 files, 69 symbols
+Affected processes: 12
+Risk level: high
+
+Changed symbols:
+  Class Application → back/app.ts
+  Method startHttpService → back/app.ts
+  Interface AuthInfo → back/data/system.ts
+  Property initialized → back/data/system.ts
+  Class UserService → back/services/user.ts
+  Method authenticate → back/services/user.ts
+  Method initializeUser → back/services/user.ts
+  Function isDefaultAuthInfo → back/shared/auth.ts
+  Function bootstrapDirectories → back/shared/bootstrapDirectories.ts
+  Const PLATFORM_SCHEMA_VERSION → back/shared/operationalSchema.ts
+  Class UnsupportedDatabaseSchemaError → back/shared/operationalSchema.ts
+  Property code → back/shared/operationalSchema.ts
+  Method constructor → back/shared/operationalSchema.ts
+  Function initializeOperationalSchema → back/shared/operationalSchema.ts
+  Property force → back/shared/operationalSchema.ts
+... and 54 more
+
+Affected execution flows:
+  • TwoFactorLogin → GetDb (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetAuthInfo (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetClients (4 steps) — changed: authenticate
+  • TwoFactorLogin → UpdateAuthDb (4 steps) — changed: authenticate
+  • TwoFactorLogin → UpdateAuthInfo (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetLoginLog (3 steps) — changed: authenticate
+  • TwoFactorLogin → InsertDb (3 steps) — changed: authenticate
+  • InitializeUser → GetDb (3 steps) — changed: initializeUser
+  • InitializeUser → GetAuthInfo (3 steps) — changed: initializeUser
+  • InitializeUser → GetClients (3 steps) — changed: initializeUser
+... and 2 more

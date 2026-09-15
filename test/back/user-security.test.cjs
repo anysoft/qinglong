@@ -79,7 +79,8 @@ function fixture(initial) {
 }
 const initialized = () => ({
   username: 'owner',
-  password: 'old-password',
+  password: 'scrypt$' + '00'.repeat(16) + '$' + require('node:crypto').scryptSync('old-password', '00'.repeat(16), 64).toString('hex'),
+  initialized: true,
   token: 'stolen-token',
   tokens: { desktop: [{ value: 'stolen-token' }] },
   retries: 0,
@@ -87,12 +88,12 @@ const initialized = () => ({
 });
 
 test('initialization checks state inside a serialized mutation', async () => {
-  const f = fixture({ username: 'admin', password: 'admin' });
+  const f = fixture({ initialized: false, username: '', password: '' });
   assert.equal(
-    (await f.user.login({ username: 'admin', password: 'admin' }, req)).code,
+    (await f.user.login({ initialized: false, username: '', password: '' }, req)).code,
     450,
   );
-  assert.deepEqual(f.auth, { username: 'admin', password: 'admin' });
+  assert.deepEqual(f.auth, { initialized: false, username: '', password: '' });
   const results = await Promise.all([
     f.user.initializeUser({ username: 'owner', password: 'first-password' }),
     f.user.initializeUser({
@@ -152,15 +153,10 @@ test('a concurrent old-password login cannot restore a session after reset', asy
   assert.equal(await verifyPassword('new-password', f.auth.password), true);
 });
 
-test('legacy plaintext migrates after a successful login', async () => {
-  const f = fixture(initialized());
-  assert.equal(
-    (await f.user.login({ username: 'owner', password: 'old-password' }, req))
-      .code,
-    200,
-  );
-  assert.equal(isPasswordHash(f.auth.password), true);
-  assert.equal(await verifyPassword('old-password', f.auth.password), true);
+test('plaintext passwords are rejected without conversion', async () => {
+  const f = fixture({ ...initialized(), password: 'old-password' });
+  assert.equal((await f.user.login({ username: 'owner', password: 'old-password' }, req)).code, 400);
+  assert.equal(f.auth.password, 'old-password');
 });
 
 test('TOTP failures are counted serially and further attempts are throttled', async () => {
@@ -224,25 +220,8 @@ test('active two-factor secret cannot be silently replaced and disabling revokes
   assert.equal(f.auth.twoFactorSecret, '');
 });
 
-test('default credentials with historical metadata still require initialization', async () => {
-  const f = fixture({
-    username: 'admin',
-    password: 'admin',
-    retries: 1,
-    token: 'old-default-session',
-  });
-  assert.equal(
-    (await f.user.login({ username: 'admin', password: 'admin' }, req)).code,
-    450,
-  );
-  assert.equal(
-    (
-      await f.user.initializeUser({
-        username: 'owner',
-        password: 'new-password',
-      })
-    ).code,
-    200,
-  );
-  assert.equal(f.auth.token, '');
+test('unknown default credentials do not grant fresh initialization', async () => {
+  const f = fixture({ username: 'admin', password: 'admin', retries: 0, lastlogon: 0 });
+  assert.equal((await f.user.login({ username: 'admin', password: 'admin' }, req)).code, 400);
+  assert.equal((await f.user.initializeUser({ username: 'owner', password: 'new-password' })).code, 450);
 });

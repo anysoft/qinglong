@@ -1,0 +1,15 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> @whyour/qinglong@2.21.0-16 build:back
+> tsc -p back/tsconfig.json
+
+[96mback/shared/operationalSchema.ts[0m:[93m49[0m:[93m54[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ transaction: Transaction; }' is not assignable to parameter of type 'SyncOptions'.
+  Object literal may only specify known properties, and 'transaction' does not exist in type 'SyncOptions'.
+
+[7m49[0m       for (const model of models) await model.sync({ transaction });
+[7m  [0m [91m                                                     ~~~~~~~~~~~[0m
+
+
+Found 1 error in back/shared/operationalSchema.ts[90m:49[0m
+

@@ -1,0 +1,37 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Detect Changes (1.6.12)
+Changes: 48 files, 107 symbols
+Affected processes: 68
+Risk level: critical
+
+Changed symbols:
+  Section Temporary Bridges — 退出条件登记 → TEMPORARY_BRIDGES.md
+  Section 必须特别避免的误删 → TEMPORARY_BRIDGES.md
+  Section Phase 4.5B Step 1 实施检查点 → TEMPORARY_BRIDGES.md
+  Function gitResources → back/api/gitResources.ts
+  Class Application → back/app.ts
+  Method startHttpService → back/app.ts
+  Const scriptPath → back/config/index.ts
+  Const dbPath → back/config/index.ts
+  Class Crontab → back/data/cron.ts
+  Property env_profile_id → back/data/cron.ts
+  Property extra_schedules → back/data/cron.ts
+  Property task_before → back/data/cron.ts
+  Method constructor → back/data/cron.ts
+  Const CrontabModel → back/data/cron.ts
+  Class Subscription → back/data/subscription.ts
+... and 92 more
+
+Affected execution flows:
+  • WithBinding → WorkspaceError (10 steps) — changed: prepare, initialize
+  • WithBinding → Root (10 steps) — changed: prepare, initialize
+  • WithBinding → Release (7 steps) — changed: prepare, initialize
+  • GitResources → GetDb (4 steps) — changed: gitResources
+  • SendNotify → Post (4 steps) — changed: timezone
+  • TwoFactorLogin → GetDb (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetAuthInfo (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetClients (4 steps) — changed: authenticate
+  • TwoFactorLogin → UpdateAuthDb (4 steps) — changed: authenticate
+  • TwoFactorLogin → UpdateAuthInfo (4 steps) — changed: authenticate
+... and 58 more

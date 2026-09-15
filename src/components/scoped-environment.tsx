@@ -4,12 +4,13 @@ import { request } from '@/utils/http';
 import config from '@/utils/config';
 const api = `${config.apiPrefix}scoped-env/`;
 
-export function ScopedVariables({ resource, id }: { resource: 'profiles' | 'tasks'; id: number }) {
+export function ScopedVariables({ resource, id }: { resource: 'global' | 'profiles' | 'tasks'; id: number }) {
+  const endpoint = `${api}${resource === 'global' ? 'global' : `${resource}/${id}`}/variables`;
   const [rows, setRows] = useState<any[]>([]);
   const [editing, setEditing] = useState<any>();
   const [form] = Form.useForm();
   const secret = Form.useWatch('is_secret', form), operation = Form.useWatch('operation', form), replace = Form.useWatch('replace_secret', form);
-  const load = async () => { const r = await request.get(`${api}${resource}/${id}/variables`); if (r.code === 200) setRows(r.data); };
+  const load = async () => { const r = await request.get(endpoint); if (r.code === 200) setRows(r.data); };
   useEffect(() => { load().catch(() => {}); }, [resource, id]);
   const open = (row: any = {}) => {
     setEditing(row); form.resetFields();
@@ -19,7 +20,7 @@ export function ScopedVariables({ resource, id }: { resource: 'profiles' | 'task
     try {
       const values = await form.validateFields();
       if (values.operation === 'UNSET' || (editing?.is_secret && !values.replace_secret)) delete values.value;
-      const r = await request.put(`${api}${resource}/${id}/variables`, [values]);
+      const r = await request.put(endpoint, [values]);
       if (r.code === 200) { setEditing(undefined); form.resetFields(); await load(); message.success('环境变量已保存'); }
     } catch {}
   };
@@ -28,7 +29,7 @@ export function ScopedVariables({ resource, id }: { resource: 'profiles' | 'task
     <Table rowKey="name" size="small" dataSource={rows} pagination={false} columns={[
       { title: '变量名', dataIndex: 'name' }, { title: '值', render: (_: any, r: any) => r.operation === 'UNSET' ? <Tag>UNSET</Tag> : r.is_secret ? '••••••••' : <span style={{ whiteSpace: 'pre-wrap' }}>{r.value}</span> },
       { title: '状态', dataIndex: 'status' }, { title: 'Secret', render: (_: any, r: any) => r.is_secret ? 'Secret' : 'Plain' },
-      { title: '操作', render: (_: any, r: any) => <Space><Button type="link" onClick={() => open(r)}>编辑变量</Button><Popconfirm title="删除这个变量？" onConfirm={async () => { await request.put(`${api}${resource}/${id}/variables`, [{ name: r.name, clear: true }]); await load(); }}><Button type="link" danger>删除变量</Button></Popconfirm></Space> },
+      { title: '操作', render: (_: any, r: any) => <Space><Button type="link" onClick={() => open(r)}>编辑变量</Button><Popconfirm title="删除这个变量？" onConfirm={async () => { await request.put(endpoint, [{ name: r.name, clear: true }]); await load(); }}><Button type="link" danger>删除变量</Button></Popconfirm></Space> },
     ]} />
     <Modal title="编辑环境变量" open={editing !== undefined} onCancel={() => { setEditing(undefined); form.resetFields(); }} onOk={save} destroyOnClose>
       <Form form={form} layout="vertical" preserve={false}>

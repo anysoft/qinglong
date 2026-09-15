@@ -1,0 +1,76 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Impact (1.6.12)
+{
+  "target": {
+    "id": "Function:diagnostics/phase4.5b/platform-e2e.cjs:until",
+    "name": "until",
+    "type": "Function",
+    "filePath": "diagnostics/phase4.5b/platform-e2e.cjs"
+  },
+  "direction": "upstream",
+  "impactedCount": 4,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 4,
+    "processes_affected": 0,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 4
+  },
+  "affected_processes": [],
+  "affected_modules": [
+    {
+      "name": "Phase4.5b",
+      "hits": 3,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase4.5b/platform-e2e.cjs",
+        "name": "platform-e2e.cjs",
+        "filePath": "diagnostics/phase4.5b/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:diagnostics/phase4.5b/platform-e2e.cjs:fn@12:1.login@43:1",
+        "name": "login",
+        "filePath": "diagnostics/phase4.5b/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:diagnostics/phase4.5b/platform-e2e.cjs:fn@12:1.repositoryAction@53:1",
+        "name": "repositoryAction",
+        "filePath": "diagnostics/phase4.5b/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:diagnostics/phase4.5b/platform-e2e.cjs:fn@12:1.start@38:1",
+        "name": "start",
+        "filePath": "diagnostics/phase4.5b/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ]
+  }
+}

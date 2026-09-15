@@ -2,7 +2,6 @@ import { Service } from 'typedi';
 import { Transaction } from 'sequelize';
 import { GitCredential, GitCredentialModel } from '../data/gitCredential';
 import { RepositoryModel } from '../data/repository';
-import { SubscriptionModel } from '../data/subscription';
 import { sequelize } from '../data';
 import CredentialSecretService, { CredentialSecret } from './credentialSecret';
 import GitCredentialResolver, { runGitProcess } from './gitCredentialResolver';
@@ -30,11 +29,7 @@ export default class GitCredentialService {
       where: { default_credential_id: id },
       transaction,
     });
-    const subscriptions = await SubscriptionModel.count({
-      where: { credential_id: id },
-      transaction,
-    });
-    return { repositories, subscriptions, total: repositories + subscriptions };
+    return { repositories, total: repositories };
   }
   async detail(id: number) {
     const metadata = await this.get(id);

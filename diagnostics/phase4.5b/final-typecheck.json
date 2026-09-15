@@ -1,0 +1,8 @@
+{
+  "status": "PARTIAL",
+  "original": 65,
+  "remaining": 54,
+  "new": [],
+  "raw_exit_code": 2,
+  "regression_gate": "PASS"
+}

@@ -1,0 +1,53 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Analyzer (1.6.12)
+
+  GitNexus Analyzer (1.6.12)
+{"level":40,"time":1789469284122,"name":"gitnexus","msg":"[scope-resolution] 927 property read/write site(s) name a field that IS defined in this workspace, but only in another language, so per-language inference declined to link them. Queries for these fields return an empty result that does NOT mean \"unused\" — it means the definition anchor is in a different language. Affected: BACK_PORT (javascript), BIND_HOST (javascript), BIND_HOST_GRPC (javascript), GRPC_PORT (javascript), HOME (javascript), JSON (javascript), JWT_SECRET (javascript), NODE_ENV (javascript), PATH (javascript), QL_CONTAINER (javascript), …"}
+{"level":40,"time":1789469284243,"name":"gitnexus","truncation":{"truncated":true,"entryPointCandidatesDropped":672,"entryPointsUnexplored":0,"walksCutByBudget":20,"tracesDepthCapped":0,"calleesDropped":607,"processesDropped":0},"msg":"[processes] 413 flows reported, but whole flows are MISSING: 672 of 872 candidate entry point(s) never ranked in, 0 ranked entry point(s) never traced, 0 deduplicated flow(s) dropped at maxProcesses, 0 trace(s) cut at maxTraceDepth, 607 callee(s) skipped at maxBranching, 20 walk(s) cut by the per-entry trace budget. An absent flow does NOT mean the code path does not exist."}
+[2KIncremental: changed=14, added=21, deleted=6 (skipping wipe + 562 unchanged file rows preserved)
+[2KIncremental: +16 importer(s) added to writable set (BFS depth ≤ 4)
+{"level":30,"time":1789469290823,"name":"gitnexus","msg":"name-fallback resolution: 45 call sites (21 distinct caller-file/name pairs), 12 refused as impossible (guessed/refused by language: javascript 45/12)"}
+[2KParse cache: pruned 22 stale chunk entries
+
+  Repository indexed successfully (13.1s)
+
+  7,740 nodes | 18,909 edges | 314 clusters | 413 flows
+  /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+
+
+  GitNexus Detect Changes (1.6.12)
+Changes: 33 files, 69 symbols
+Affected processes: 56
+Risk level: critical
+
+Changed symbols:
+  Section Temporary Bridges — 退出条件登记 → TEMPORARY_BRIDGES.md
+  Section 必须特别避免的误删 → TEMPORARY_BRIDGES.md
+  Section Phase 4.5B Step 1 实施检查点 → TEMPORARY_BRIDGES.md
+  Function gitResources → back/api/gitResources.ts
+  Class Application → back/app.ts
+  Method startHttpService → back/app.ts
+  Class Subscription → back/data/subscription.ts
+  Property repository_id → back/data/subscription.ts
+  Property env_profile_id → back/data/subscription.ts
+  Property name → back/data/subscription.ts
+  Property interval_schedule → back/data/subscription.ts
+  Property status → back/data/subscription.ts
+  Property log_path → back/data/subscription.ts
+  Property sub_after → back/data/subscription.ts
+  Method constructor → back/data/subscription.ts
+... and 54 more
+
+Affected execution flows:
+  • WithBinding → WorkspaceError (10 steps) — changed: prepare, initialize
+  • WithBinding → Root (10 steps) — changed: prepare, initialize
+  • WithBinding → Release (7 steps) — changed: prepare, initialize
+  • GitResources → GetDb (4 steps) — changed: gitResources
+  • TwoFactorLogin → GetDb (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetAuthInfo (4 steps) — changed: authenticate
+  • TwoFactorLogin → GetClients (4 steps) — changed: authenticate
+  • TwoFactorLogin → UpdateAuthDb (4 steps) — changed: authenticate
+  • TwoFactorLogin → UpdateAuthInfo (4 steps) — changed: authenticate
+  • GitResources → Status (3 steps) — changed: gitResources
+... and 46 more

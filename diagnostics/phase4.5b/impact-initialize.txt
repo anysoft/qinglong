@@ -1,0 +1,201 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Impact (1.6.12)
+{
+  "target": {
+    "id": "Method:back/services/user.ts:UserService.initializeUser#1",
+    "name": "initializeUser",
+    "type": "Method",
+    "filePath": "back/services/user.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 0,
+  "risk": "UNKNOWN",
+  "riskSharedAxes": "UNKNOWN",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+  "epistemic": "lower-bound",
+  "boundaries": [
+    "4 call sites invoking `initializeUser` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+  ],
+  "causes": {
+    "scopeExtractionFiles": 0,
+    "receiverTyping": 4,
+    "dispatchBoundary": 0,
+    "externalBoundary": 0,
+    "undecidedSatisfaction": 0,
+    "callableValueReferences": 0
+  },
+  "summary": {
+    "direct": 0,
+    "processes_affected": 0,
+    "modules_affected": 0
+  },
+  "byDepthCounts": {},
+  "affected_processes": [],
+  "affected_modules": [],
+  "byDepth": {},
+  "staleness": {
+    "status": "behind",
+    "commitsBehind": 1,
+    "hint": "⚠️ Index is 1 commit behind HEAD. Run analyze tool to update."
+  }
+}
+
+  GitNexus Query (1.6.12)
+{
+  "processes": [
+    {
+      "id": "proc_0_withbinding",
+      "summary": "WithBinding → Root",
+      "priority": 0.107,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 10
+    },
+    {
+      "id": "proc_347_initialize",
+      "summary": "Initialize → WorkspaceError",
+      "priority": 0.107,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 8
+    },
+    {
+      "id": "proc_350_initialize",
+      "summary": "Initialize → WorkspaceGuard",
+      "priority": 0.107,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 5
+    },
+    {
+      "id": "proc_351_initialize",
+      "summary": "Initialize → Release",
+      "priority": 0.107,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 5
+    },
+    {
+      "id": "proc_121_create",
+      "summary": "Create → AsError",
+      "priority": 0.092,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 8
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.initialize#2",
+      "name": "initialize",
+      "filePath": "back/services/repositoryStorage.ts",
+      "startLine": 152,
+      "endLine": 206,
+      "module": "Services",
+      "process_id": "proc_0_withbinding",
+      "step_index": 3
+    },
+    {
+      "id": "Function:back/shared/childProcess.ts:observeChildProcess",
+      "name": "observeChildProcess",
+      "filePath": "back/shared/childProcess.ts",
+      "startLine": 15,
+      "endLine": 78,
+      "module": "Schedule",
+      "process_id": "proc_121_create",
+      "step_index": 5
+    }
+  ],
+  "definitions": [
+    {
+      "id": "Interface:back/data/repository.ts:Repository",
+      "name": "Repository",
+      "filePath": "back/data/repository.ts",
+      "startLine": 4,
+      "endLine": 13,
+      "module": "Data"
+    },
+    {
+      "id": "Function:src/pages/initialization/index.tsx:Initialization",
+      "name": "Initialization",
+      "filePath": "src/pages/initialization/index.tsx",
+      "startLine": 23,
+      "endLine": 259,
+      "module": "Initialization"
+    },
+    {
+      "id": "Function:test/back/user-security.test.cjs:initialized",
+      "name": "initialized",
+      "filePath": "test/back/user-security.test.cjs",
+      "startLine": 80,
+      "endLine": 87
+    },
+    {
+      "id": "File:tests/phase0/database-baseline.test.cjs",
+      "name": "database-baseline.test.cjs",
+      "filePath": "tests/phase0/database-baseline.test.cjs"
+    },
+    {
+      "id": "Method:back/services/grpc.ts:GrpcServerService.initialize#0",
+      "name": "initialize",
+      "filePath": "back/services/grpc.ts",
+      "startLine": 27,
+      "endLine": 71,
+      "module": "Config"
+    },
+    {
+      "id": "Method:back/services/http.ts:HttpServerService.initialize#2",
+      "name": "initialize",
+      "filePath": "back/services/http.ts",
+      "startLine": 12,
+      "endLine": 38,
+      "module": "Back"
+    },
+    {
+      "id": "File:PHASE2_REPORT.md",
+      "name": "PHASE2_REPORT.md",
+      "filePath": "PHASE2_REPORT.md"
+    },
+    {
+      "id": "Function:tests/phase3/migration.test.cjs:database",
+      "name": "database",
+      "filePath": "tests/phase3/migration.test.cjs",
+      "startLine": 5,
+      "endLine": 23
+    },
+    {
+      "id": "File:PHASE1_REPORT.md",
+      "name": "PHASE1_REPORT.md",
+      "filePath": "PHASE1_REPORT.md"
+    },
+    {
+      "id": "File:PHASE3_REPORT.md",
+      "name": "PHASE3_REPORT.md",
+      "filePath": "PHASE3_REPORT.md"
+    },
+    {
+      "id": "File:PHASE0_REPORT.md",
+      "name": "PHASE0_REPORT.md",
+      "filePath": "PHASE0_REPORT.md"
+    }
+  ],
+  "timing": {
+    "vector": 6.9,
+    "bm25": 115.2,
+    "merge": 0.1,
+    "symbol_lookup": 19.3,
+    "ranking": 0.1,
+    "formatting": 0.2,
+    "wall": 135.2
+  },
+  "staleness": {
+    "status": "behind",
+    "commitsBehind": 1,
+    "hint": "⚠️ Index is 1 commit behind HEAD. Run analyze tool to update."
+  }
+}

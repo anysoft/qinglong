@@ -9,22 +9,24 @@ import { CrontabViewModel } from '../data/cronView';
 import { CrontabStatModel } from '../data/cronStats';
 import { RunningInstanceModel } from '../data/runningInstance';
 import { sequelize } from '../data';
-import { migrateSchema } from '../shared/schemaMigrations';
+import { initializeOperationalSchema } from '../shared/operationalSchema';
+import { bootstrapDirectories } from '../shared/bootstrapDirectories';
+import config from '../config';
+import { GitCredentialModel } from '../data/gitCredential';
+import { RepositoryModel } from '../data/repository';
+import { WorktreeModel } from '../data/worktree';
+import { EnvironmentProfileModel, RepositoryEnvVariableModel, TaskEnvVariableModel } from '../data/scopedEnv';
 import ExecutionEnvironmentTransport from '../services/executionEnvironmentTransport';
 
 export default async () => {
   try {
-    await CrontabModel.sync();
-    await DependenceModel.sync();
-    await AppModel.sync();
-    await SystemModel.sync();
-    await EnvModel.sync();
-    await SubscriptionModel.sync();
-    await CrontabViewModel.sync();
-    await CrontabStatModel.sync();
-    await RunningInstanceModel.sync();
-
-    await migrateSchema(sequelize);
+    await bootstrapDirectories(config.dataPath);
+    await initializeOperationalSchema(sequelize, [
+      GitCredentialModel, RepositoryModel, WorktreeModel, EnvironmentProfileModel,
+      SubscriptionModel, CrontabModel, RepositoryEnvVariableModel, TaskEnvVariableModel,
+      EnvModel, DependenceModel, AppModel, SystemModel, CrontabViewModel,
+      CrontabStatModel, RunningInstanceModel,
+    ]);
     await new ExecutionEnvironmentTransport().cleanupStale().catch(() => {
       Logger.warn('[environment] stale snapshot cleanup deferred');
     });

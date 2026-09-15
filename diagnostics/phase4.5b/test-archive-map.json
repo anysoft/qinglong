@@ -1,0 +1,158 @@
+[
+  {
+    "previous_path": "test/back/deprecated-file-routes.test.cjs",
+    "archive_path": "tests/archived/legacy/test/back/deprecated-file-routes.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "410 compatibility removed; api-file-routes replacement"
+  },
+  {
+    "previous_path": "test/back/schema-migrations.test.cjs",
+    "archive_path": "tests/archived/legacy/test/back/schema-migrations.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Old DB upgrades removed; fresh-schema and bootstrap-failure preserve fail-closed/rollback coverage"
+  },
+  {
+    "previous_path": "tests/phase0/shell-baseline.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase0/shell-baseline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 ql repo/raw acquisition、export-file characterization 能力删除；task runtime 由 environment-entrypoint/execution 与原 active shell safety tests 覆盖。"
+  },
+  {
+    "previous_path": "tests/phase0/service-baseline.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase0/service-baseline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 Subscription command/ENV generator 删除；依赖命令与真实 node-schedule 保留在 runtime-bridges.test.cjs。"
+  },
+  {
+    "previous_path": "tests/phase0/database-baseline.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase0/database-baseline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 URL-only Subscription schema 删除；当前 Task 定义/状态/exit bridge 在 task-model-bridge.test.cjs，新 schema 在 fresh-schema.test.cjs。"
+  },
+  {
+    "previous_path": "tests/phase1/pipeline.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase1/pipeline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧每次 clone acquisition 删除；persistent fetch/FF/protection 由 phase2/workspace、subscription-pipeline 与 repository-recovery 覆盖。"
+  },
+  {
+    "previous_path": "tests/phase1/resources.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase1/resources.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "legacy credential priority/convert 删除；资源 identity/reuse/masking/context 核心用例保留在 credential-resources.test.cjs。"
+  },
+  {
+    "previous_path": "tests/phase1/migration.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase1/migration.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 QingLong/checkpoint schema migration 能力删除；原迁移实现归档。fresh-schema.test.cjs 覆盖最终空库、未知库拒绝、FK、事务回滚与重启不改结构。"
+  },
+  {
+    "previous_path": "tests/phase1/helper.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase1/helper.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 URL/SSH alias helper 删除；ID helper、真实独立 helper mTLS 与 Repository credential failure 由 subscription-pipeline 和完整 E2E 覆盖。"
+  },
+  {
+    "previous_path": "tests/phase2/domain.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase2/domain.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "混合旧 mode/迁移测试归档；路径/symlink 在 workspace-paths，资源模型与 binding 在 subscription-domain，fresh rollback 在 fresh-schema。"
+  },
+  {
+    "previous_path": "tests/phase2/recovery.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase2/recovery.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "相同恢复能力已转入 repository-recovery.test.cjs 并采用 Repository-only fixture；dirty/lease/local-history 用例保留。"
+  },
+  {
+    "previous_path": "tests/phase3/discovery.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase3/discovery.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "source update.sh、new Env scraping 与随机 fallback 删除；discovery.test.cjs 覆盖 DB projection、metadata/filter/stable identity/update/compensation。"
+  },
+  {
+    "previous_path": "tests/phase3/lease.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase3/lease.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "无 mode 夹具替换为 subscription-lease.test.cjs；timeout 与 preflight lease 原安全职责保留。"
+  },
+  {
+    "previous_path": "tests/phase3/pipeline.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase3/pipeline.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "模式字段/旧 scanner fixture 删除；subscription-pipeline.test.cjs 保留 persistent sync、重试、copy/recovery、共享仓库分支覆盖。"
+  },
+  {
+    "previous_path": "tests/phase3/migration.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase3/migration.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 QingLong/checkpoint schema migration 能力删除；原迁移实现归档。fresh-schema.test.cjs 覆盖最终空库、未知库拒绝、FK、事务回滚与重启不改结构。"
+  },
+  {
+    "previous_path": "tests/phase4/account-mode.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/account-mode.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "overlay transport 被 full snapshot 替代；environment-account-mode.test.cjs 保留三语言账号与循环语义。"
+  },
+  {
+    "previous_path": "tests/phase4/redaction.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/redaction.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "snapshot 格式替代；environment-redaction.test.cjs 保留流式 Secret 与 UTF-8 边界。"
+  },
+  {
+    "previous_path": "tests/phase4/domain.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/domain.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Global 聚合被唯一 key 替代；environment-domain.test.cjs 覆盖统一 contract/优先级/Secret/profile 错误。"
+  },
+  {
+    "previous_path": "tests/phase4/entrypoint.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/entrypoint.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "无 scope bypass 删除；environment-entrypoint.test.cjs 覆盖真实 ID/no-ID/parent isolation/cleanup。"
+  },
+  {
+    "previous_path": "tests/phase4/transport.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/transport.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 Global copies/overlay 删除；environment-transport.test.cjs 覆盖 full files、权限、owner、stale、容量预算。"
+  },
+  {
+    "previous_path": "tests/phase4/isolation.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/isolation.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧形状替换为 environment-isolation.test.cjs；同/跨 Repo、Task、malformed Secret 错误边界保留。"
+  },
+  {
+    "previous_path": "tests/phase4/legacy-characterization.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/legacy-characterization.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "重复 key & 聚合、trim/template semantics 为明确删除能力；literal/unique/UNSET 在 environment-domain/execution 中反向约束。"
+  },
+  {
+    "previous_path": "tests/phase4/api.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/api.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧全局 /envs panel 模型删除；environment-api.test.cjs 覆盖统一 Global/Profile/Task、Secret 与授权。"
+  },
+  {
+    "previous_path": "tests/phase4/execution.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/execution.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 overlay 夹具替换为 environment-execution.test.cjs；四语言 literal 和 50 个真实同时运行冻结/隔离覆盖。"
+  },
+  {
+    "previous_path": "tests/phase4/migration.test.cjs",
+    "archive_path": "tests/archived/legacy/tests/phase4/migration.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "旧 QingLong/checkpoint schema migration 能力删除；原迁移实现归档。fresh-schema.test.cjs 覆盖最终空库、未知库拒绝、FK、事务回滚与重启不改结构。"
+  },
+  {
+    "previous_path": "test/back/env-name-parsing.test.cjs",
+    "archive_path": "tests/archived/legacy/test/back/env-name-parsing.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Generated Global export-file parsing removed with zero production consumers; environment-transport, environment-shell-runtime and environment-account cover full snapshot isolation/literal/cleanup instead."
+  }
+]

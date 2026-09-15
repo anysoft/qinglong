@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "implemented": true,
+  "gates_run": true,
+  "evidence": [
+    "step2-domain.log",
+    "step2-pipeline-retest.log",
+    "step2-regression-retest.log",
+    "step2-build.log",
+    "step2-static.txt",
+    "step1-process.json"
+  ],
+  "note": "Initial copied legacy expectations corrected; subsequent full pipeline regression belongs to Step 3."
+}

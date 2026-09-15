@@ -9,8 +9,8 @@ import { ScopedEnvironmentError } from './shared/scopedEnv';
 async function prepareTaskEnvironment() {
   const id = Number(process.argv[2]);
   const pid = Number(process.argv[3]);
-  if (!Number.isSafeInteger(id) || id <= 0 || !Number.isSafeInteger(pid) || pid <= 0) throw new ScopedEnvironmentError('ENV_TASK_NOT_FOUND');
-  const resolved = await new TaskEnvironmentResolver(new RepositoryEnvProfileService()).resolve(id, process.env);
+  if (!Number.isSafeInteger(id) || id < 0 || !Number.isSafeInteger(pid) || pid < 0) throw new ScopedEnvironmentError('ENV_TASK_NOT_FOUND');
+  const resolved = await new TaskEnvironmentResolver(new RepositoryEnvProfileService()).resolve(id === 0 ? null : id, process.env);
   const snapshot = await new ExecutionEnvironmentTransport().prepare(resolved, pid);
   if (snapshot) process.stdout.write(snapshot.directory);
 }
