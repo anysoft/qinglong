@@ -1,0 +1,25 @@
+const fs = require('node:fs'), path = require('node:path'), os = require('node:os');
+const { Sequelize, Transaction } = require('sequelize');
+const load = require('../../test/helpers/load-security-module.cjs');
+require('reflect-metadata');
+module.exports = async function setup(t) {
+  const root = path.resolve(__dirname, '../..'), dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ql-env4-'));
+  const sequelize = new Sequelize({ dialect: 'sqlite', storage: t.fileDatabase ? path.join(dir, 'database.sqlite') : ':memory:', logging: false, transactionType: Transaction.TYPES.IMMEDIATE, retry: { max: 10, match: ['SQLITE_BUSY: database is locked'] } });
+  const logs = [], logger = { info: (...args) => logs.push(args), error: (...args) => logs.push(args), warn: (...args) => logs.push(args) };
+  const config = { rootPath: dir, dataPath: path.join(dir, 'data'), envFile: path.join(dir, 'shell/preload/env.sh'), jsEnvFile: path.join(dir, 'shell/preload/env.js'), pyEnvFile: path.join(dir, 'shell/preload/env.py') };
+  const mocks = { '.': { sequelize }, '../data': { sequelize }, '../config': config, '../loaders/logger': logger, '../shared/utils': { writeFileWithLock: async (f, s) => fs.writeFileSync(f, s) } };
+  const cache = new Map(), get = f => load(path.join(root, 'back', f + '.ts'), mocks, cache);
+  const models = Object.assign({}, ...['gitCredential', 'repository', 'worktree', 'subscription', 'cron', 'env', 'scopedEnv'].map(f => get('data/' + f)));
+  await sequelize.sync();
+  const profiles = new (get('services/repositoryEnvProfile').default)();
+  const variables = new (get('services/scopedEnvVariable').default)(profiles);
+  const resolver = new (get('services/taskEnvironmentResolver').default)(profiles);
+  t.after(async () => { await sequelize.close(); fs.rmSync(dir, { recursive: true, force: true }); });
+  fs.cpSync(path.join(root, 'shell'), path.join(dir, 'shell'), { recursive: true });
+  for (const d of ['config', 'scripts', 'log']) fs.mkdirSync(path.join(dir, 'data', d), { recursive: true });
+  for (const f of ['config.sh', 'crontab.list', 'task_before.sh', 'task_after.sh', 'task_before.js', 'task_before.py']) fs.writeFileSync(path.join(dir, 'data/config', f), '');
+  fs.writeFileSync(path.join(dir, 'shell/api.sh'), 'update_cron() { :; }\nrecord_cron_stat() { :; }\n');
+  for (const [f, s] of Object.entries({ 'client.js': 'module.exports={}', 'client.py': 'class Client: pass\n', '__ql_notify__.js': 'exports.sendNotify=()=>{}', '__ql_notify__.py': 'def send(*args): pass\n' })) fs.writeFileSync(path.join(dir, 'shell/preload', f), s);
+  const globals = new (get('services/env').default)(logger);
+  return { root, dir, sequelize, get, config, ...models, profiles, variables, resolver, globals, logs };
+};

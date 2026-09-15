@@ -17,6 +17,7 @@ test('actual ORM tables, automatic and manual tasks, and execution exit code in 
     const model=Object.values(exports).find(x=>x?.getTableName);
     assert.equal(model.getTableName(),table);
   }
+  load(path.join(root,'back/data/scopedEnv.ts'),mocks);
   await sequelize.sync();
   assert.equal(CrontabModel.getTableName(),'Crontabs');
   assert.equal(SubscriptionModel.getTableName(),'Subscriptions');
@@ -37,5 +38,5 @@ test('actual ORM tables, automatic and manual tasks, and execution exit code in 
   const instance=await RunningInstanceModel.findOne({where:{cron_id:discovered.id}});
   assert.equal(instance.exit_code,7);assert.equal(instance.status,InstanceStatus.error);
   assert.equal((await CrontabModel.findByPk(discovered.id)).status,1);
-  const fk=await sequelize.query('PRAGMA foreign_key_list("Crontabs")', {type:Sequelize.QueryTypes.SELECT});assert.equal(fk.length,0);
+  const fk=await sequelize.query('PRAGMA foreign_key_list("Crontabs")', {type:Sequelize.QueryTypes.SELECT});assert.equal(fk.length,1);assert.equal(fk[0].from,'env_profile_id');assert.equal(fk[0].table,'EnvironmentProfiles');
 });

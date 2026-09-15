@@ -4,7 +4,13 @@ import subprocess
 import json
 import builtins
 import sys
-import env
+import scoped_env
+if scoped_env.directory:
+    with open(os.path.join(scoped_env.directory, 'global.py'), encoding='utf-8') as source:
+        exec(compile(source.read(), 'global.py', 'exec'))
+else:
+    import env
+scoped_env.apply_scoped_environment()
 import signal
 from client import Client
 
@@ -45,7 +51,10 @@ def run():
         file_name = sys.argv[0].replace(f"{os.getenv('dir_scripts')}/", "")
         
         # 创建临时文件路径
-        temp_file = f"/tmp/env_{os.getpid()}.json"
+        temp_file = os.path.join(scoped_env.directory, f"before-{os.getpid()}.json") if scoped_env.directory else f"/tmp/env_{os.getpid()}.json"
+        if scoped_env.directory:
+            descriptor = os.open(temp_file, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+            os.close(descriptor)
         
         # 构建命令数组
         commands = [

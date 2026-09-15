@@ -82,6 +82,7 @@ module.exports = async function setup(t) {
     ...get('data/worktree'),
     ...get('data/subscription'),
     ...get('data/cron'),
+    ...get('data/scopedEnv'),
   };
   await sequelize.sync();
   for (const folder of ['scripts', 'config', 'log', 'deps'])

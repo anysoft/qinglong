@@ -6,6 +6,7 @@ type SimpleIntervalScheduleUnit = keyof SimpleIntervalSchedule;
 export class Subscription {
   id?: number;
   repository_id?: number | null;
+  env_profile_id?: number | null;
   credential_id?: number | null;
   git_mode?: 'LEGACY' | 'MANAGED';
   worktree_id?: number | null;
@@ -44,6 +45,7 @@ export class Subscription {
   constructor(options: Subscription) {
     this.id = options.id;
     this.repository_id = options.repository_id;
+    this.env_profile_id = options.env_profile_id;
     this.credential_id = options.credential_id;
     this.git_mode = options.git_mode || 'LEGACY';
     this.worktree_id = options.worktree_id;
@@ -94,6 +96,7 @@ export interface SubscriptionInstance
 export const SubscriptionModel = sequelize.define<SubscriptionInstance>(
   'Subscription',
   {
+    env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },
     repository_id: {
       type: DataTypes.INTEGER,
       allowNull: true,

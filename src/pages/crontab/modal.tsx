@@ -1,4 +1,5 @@
 import EditableTagGroup from '@/components/tag';
+import { TaskEnvironment } from '@/components/scoped-environment';
 import config from '@/utils/config';
 import { request } from '@/utils/http';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
@@ -298,6 +299,7 @@ const CronModal = ({
           />
         </Form.Item>
       </Form>
+      {cron?.id && <TaskEnvironment id={cron.id} />}
     </Modal>
   );
 };

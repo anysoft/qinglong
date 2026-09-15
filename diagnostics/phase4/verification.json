@@ -1,0 +1,57 @@
+{
+  "baseline_head": "998a4d66",
+  "environment": "macOS / Node 22 / Chrome",
+  "tests": {
+    "existing": {
+      "pass": 176,
+      "fail": 0,
+      "skip": 3
+    },
+    "phase0": {
+      "pass": 17,
+      "fail": 0,
+      "skip": 0
+    },
+    "phase1_to_3": {
+      "pass": 83,
+      "fail": 0,
+      "skip": 0
+    },
+    "phase4": {
+      "pass": 22,
+      "fail": 0,
+      "skip": 0
+    },
+    "total": {
+      "pass": 298,
+      "fail": 0,
+      "skip": 3
+    }
+  },
+  "build": {
+    "backend": "PASS",
+    "frontend": "PASS",
+    "standalone_frontend_typecheck_errors": 65
+  },
+  "concurrency": {
+    "executions": 50,
+    "simultaneous_per_batch": 10
+  },
+  "browser": {
+    "result": "PASS",
+    "harness": "ui-smoke.cjs",
+    "production_crond_started": false
+  },
+  "syntax": {
+    "bash": "PASS",
+    "python_ast": "PASS"
+  },
+  "deployment": false,
+  "commit": false,
+  "gitnexus": {
+    "risk": "CRITICAL",
+    "files": 83,
+    "symbols": 223,
+    "affected_processes": 57
+  }
+}

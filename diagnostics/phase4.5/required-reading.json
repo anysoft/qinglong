@@ -1,0 +1,206 @@
+[
+  {
+    "file": "PHASE0_REPORT.md",
+    "lines": 155
+  },
+  {
+    "file": "PHASE1_REPORT.md",
+    "lines": 113
+  },
+  {
+    "file": "PHASE2_REPORT.md",
+    "lines": 124
+  },
+  {
+    "file": "PHASE3_REPORT.md",
+    "lines": 127
+  },
+  {
+    "file": "PHASE4_REPORT.md",
+    "lines": 99
+  },
+  {
+    "file": "docs/refactor/00-phase0-current-architecture.md",
+    "lines": 86
+  },
+  {
+    "file": "docs/refactor/01-current-data-model.md",
+    "lines": 99
+  },
+  {
+    "file": "docs/refactor/02-current-git-subscription-flow.md",
+    "lines": 68
+  },
+  {
+    "file": "docs/refactor/03-current-task-execution-flow.md",
+    "lines": 61
+  },
+  {
+    "file": "docs/refactor/04-current-env-model.md",
+    "lines": 45
+  },
+  {
+    "file": "docs/refactor/05-current-dependency-model.md",
+    "lines": 43
+  },
+  {
+    "file": "docs/refactor/06-current-filesystem-layout.md",
+    "lines": 87
+  },
+  {
+    "file": "docs/refactor/07-current-risks.md",
+    "lines": 42
+  },
+  {
+    "file": "docs/refactor/08-refactor-impact-map.md",
+    "lines": 34
+  },
+  {
+    "file": "docs/refactor/09-repository-worktree-coupling.md",
+    "lines": 31
+  },
+  {
+    "file": "docs/refactor/10-legacy-compatibility-contract.md",
+    "lines": 27
+  },
+  {
+    "file": "docs/refactor/11-test-baseline.md",
+    "lines": 58
+  },
+  {
+    "file": "docs/refactor/12-source-inventory.md",
+    "lines": 778
+  },
+  {
+    "file": "docs/refactor/13-delivery-manifest.md",
+    "lines": 37
+  },
+  {
+    "file": "docs/refactor/phase1/01-git-credential-model.md",
+    "lines": 22
+  },
+  {
+    "file": "docs/refactor/phase1/02-repository-model.md",
+    "lines": 68
+  },
+  {
+    "file": "docs/refactor/phase1/03-repository-normalization.md",
+    "lines": 20
+  },
+  {
+    "file": "docs/refactor/phase1/04-subscription-compatibility.md",
+    "lines": 21
+  },
+  {
+    "file": "docs/refactor/phase1/05-credential-security.md",
+    "lines": 29
+  },
+  {
+    "file": "docs/refactor/phase1/06-phase1-test-report.md",
+    "lines": 49
+  },
+  {
+    "file": "docs/refactor/phase1/07-phase1-migration.md",
+    "lines": 41
+  },
+  {
+    "file": "docs/refactor/phase2/01-repository-storage.md",
+    "lines": 35
+  },
+  {
+    "file": "docs/refactor/phase2/02-worktree-model.md",
+    "lines": 20
+  },
+  {
+    "file": "docs/refactor/phase2/03-worktree-lifecycle.md",
+    "lines": 21
+  },
+  {
+    "file": "docs/refactor/phase2/04-lock-and-lease.md",
+    "lines": 21
+  },
+  {
+    "file": "docs/refactor/phase2/05-git-status-model.md",
+    "lines": 13
+  },
+  {
+    "file": "docs/refactor/phase2/06-filesystem-layout.md",
+    "lines": 32
+  },
+  {
+    "file": "docs/refactor/phase2/07-failure-recovery.md",
+    "lines": 26
+  },
+  {
+    "file": "docs/refactor/phase2/08-phase2-test-report.md",
+    "lines": 48
+  },
+  {
+    "file": "docs/refactor/phase3/01-managed-subscription-model.md",
+    "lines": 19
+  },
+  {
+    "file": "docs/refactor/phase3/02-managed-git-pipeline.md",
+    "lines": 22
+  },
+  {
+    "file": "docs/refactor/phase3/03-subscription-worktree-binding.md",
+    "lines": 11
+  },
+  {
+    "file": "docs/refactor/phase3/04-discovery-compatibility.md",
+    "lines": 21
+  },
+  {
+    "file": "docs/refactor/phase3/05-lock-and-consistency.md",
+    "lines": 19
+  },
+  {
+    "file": "docs/refactor/phase3/06-failure-preservation.md",
+    "lines": 18
+  },
+  {
+    "file": "docs/refactor/phase3/07-legacy-migration.md",
+    "lines": 22
+  },
+  {
+    "file": "docs/refactor/phase3/08-phase3-test-report.md",
+    "lines": 17
+  },
+  {
+    "file": "docs/refactor/phase4/01-scoped-env-model.md",
+    "lines": 34
+  },
+  {
+    "file": "docs/refactor/phase4/02-repository-env-profiles.md",
+    "lines": 13
+  },
+  {
+    "file": "docs/refactor/phase4/03-task-env-overrides.md",
+    "lines": 19
+  },
+  {
+    "file": "docs/refactor/phase4/04-environment-resolution.md",
+    "lines": 13
+  },
+  {
+    "file": "docs/refactor/phase4/05-execution-env-transport.md",
+    "lines": 23
+  },
+  {
+    "file": "docs/refactor/phase4/06-secret-handling.md",
+    "lines": 13
+  },
+  {
+    "file": "docs/refactor/phase4/07-legacy-env-compatibility.md",
+    "lines": 20
+  },
+  {
+    "file": "docs/refactor/phase4/08-phase4-test-report.md",
+    "lines": 35
+  },
+  {
+    "file": "refactor/1.roadmaps.md",
+    "lines": 18
+  }
+]

@@ -624,6 +624,7 @@ const Env = () => {
       className="ql-container-wrapper env-wrapper"
       title={intl.get('环境变量')}
       extra={[
+        <Button key="scoped-env" href={`${config.baseUrl}scoped-env`}>Repository / Task ENV</Button>,
         <Search
           placeholder={intl.get('请输入名称/值/备注')}
           style={{ width: 'auto' }}

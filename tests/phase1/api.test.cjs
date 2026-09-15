@@ -39,6 +39,7 @@ test('Git resource HTTP boundary never reflects submitted secrets or internal er
     [Subscription, {}],
   ]);
   const register = load('back/api/gitResources.ts', {
+    './scopedEnvironment': () => {}, // Separate scoped ENV routes have their own real HTTP tests.
     typedi: { Container: { get: (key) => services.get(key) } },
     '../services/gitCredential': Credentials,
     '../services/repository': Repositories,

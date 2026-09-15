@@ -2,7 +2,9 @@ const { execSync } = require('child_process');
 const Module = require('module');
 const path = require('path');
 const client = require('./client.js');
-require(`./env.js`);
+const scopedEnvironment = require('./scoped-env.js');
+require(scopedEnvironment.directory ? path.join(scopedEnvironment.directory, 'global.js') : './env.js');
+scopedEnvironment.apply();
 
 // 注册 ESM loader，使全局安装的包也可通过 import 导入
 try {
@@ -72,7 +74,10 @@ function run() {
 
     const splitStr = '__sitecustomize__';
     const fileName = process.argv[1].replace(`${dir_scripts}/`, '');
-    const tempFile = `/tmp/env_${process.pid}.json`;
+    const tempFile = scopedEnvironment.directory
+      ? path.join(scopedEnvironment.directory, `before-${process.pid}.json`)
+      : `/tmp/env_${process.pid}.json`;
+    if (scopedEnvironment.directory) require('fs').writeFileSync(tempFile, '', { mode: 0o600, flag: 'wx' });
 
     const commands = [
       `source ${file_task_before} ${fileName}`,
@@ -126,7 +131,7 @@ function run() {
     }
   } catch (error) {
     if (!error.message.includes('spawnSync /bin/bash E2BIG')) {
-      console.log(`\ue926 run task before error: `, error);
+      console.log(`\ue926 run task before error: `, scopedEnvironment.directory ? 'ENV_TASK_BEFORE_FAILED' : error);
     } else {
       // environment variable is too large
     }

@@ -1,0 +1,37 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Detect Changes (1.6.12)
+Changes: 83 files, 223 symbols
+Affected processes: 57
+Risk level: critical
+
+Changed symbols:
+  Function gitResources → back/api/gitResources.ts
+  Const idSchema → back/api/scopedEnvironment.ts
+  Const profileSchema → back/api/scopedEnvironment.ts
+  Const variableSchema → back/api/scopedEnvironment.ts
+  Function validate → back/api/scopedEnvironment.ts
+  Function endpoint → back/api/scopedEnvironment.ts
+  Function scopedEnvironmentRoutes → back/api/scopedEnvironment.ts
+  Function id → back/api/scopedEnvironment.ts
+  Property env_profile_id → back/api/scopedEnvironment.ts
+  Class Crontab → back/data/cron.ts
+  Method constructor → back/data/cron.ts
+  Const CrontabModel → back/data/cron.ts
+  Interface Repository → back/data/repository.ts
+  Const RepositoryModel → back/data/repository.ts
+  Interface EnvironmentProfile → back/data/scopedEnv.ts
+... and 208 more
+
+Affected execution flows:
+  • Update → OnBefore (6 steps) — changed: env_profile_id
+  • Update → OnEnd (6 steps) — changed: env_profile_id
+  • Update → OnError (6 steps) — changed: env_profile_id
+  • Env → Request (5 steps) — changed: Env
+  • Save → ScopedEnvironmentError (5 steps) — changed: ScopedEnvironmentError, save, list, owner, get
+  • GitResources → GetDb (4 steps) — changed: gitResources
+  • SendNotify → Post (4 steps) — changed: env_profile_id
+  • CronModal → Load (4 steps) — changed: TaskEnvironment, load, ScopedVariables, CronModal
+  • CronModal → Open (4 steps) — changed: TaskEnvironment, open, ScopedVariables, CronModal
+  • Env → AutomaticClick (4 steps) — changed: Env
+... and 47 more

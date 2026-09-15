@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: actual ORM tables, automatic and manual tasks, and execution exit code in isolated SQLite
+ok 1 - actual ORM tables, automatic and manual tasks, and execution exit code in isolated SQLite
+  ---
+  duration_ms: 2050.216458
+  type: 'test'
+  ...
+# Subtest: production ENV generator merges enabled duplicates, omits disabled and invalid names across three languages
+ok 2 - production ENV generator merges enabled duplicates, omits disabled and invalid names across three languages
+  ---
+  duration_ms: 1230.425875
+  type: 'test'
+  ...
+# Subtest: characterization: JavaScript ENV evaluates template expressions; Shell preserves literal
+ok 3 - characterization: JavaScript ENV evaluates template expressions; Shell preserves literal
+  ---
+  duration_ms: 95.822209
+  type: 'test'
+  ...
+# Subtest: characterization: shell trims combined ENV; JS preserves surrounding whitespace
+ok 4 - characterization: shell trims combined ENV; JS preserves surrounding whitespace
+  ---
+  duration_ms: 120.8275
+  type: 'test'
+  ...
+# Subtest: Subscription command preserves legacy argument order, embedded credentials and flags
+ok 5 - Subscription command preserves legacy argument order, embedded credentials and flags
+  ---
+  duration_ms: 8.471583
+  type: 'test'
+  ...
+# Subtest: dependency command generation retains global Node and optional Python prefix without installing packages
+ok 6 - dependency command generation retains global Node and optional Python prefix without installing packages
+  ---
+  duration_ms: 966.023916
+  type: 'test'
+  ...
+# Subtest: real node-schedule trigger reaches production runTask and drains stdout/stderr
+ok 7 - real node-schedule trigger reaches production runTask and drains stdout/stderr
+  ---
+  duration_ms: 220.518375
+  type: 'test'
+  ...
+# Subtest: real local clone, nested discovery, metadata and auto-create API payloads
+ok 8 - real local clone, nested discovery, metadata and auto-create API payloads
+  ---
+  duration_ms: 911.405084
+  type: 'test'
+  ...
+# Subtest: update deletes modified workspace and reclones upstream
+ok 9 - update deletes modified workspace and reclones upstream
+  ---
+  duration_ms: 1653.074792
+  type: 'test'
+  ...
+# Subtest: update deletes untracked workspace and reclones upstream
+ok 10 - update deletes untracked workspace and reclones upstream
+  ---
+  duration_ms: 1906.925542
+  type: 'test'
+  ...
+# Subtest: update deletes local-commit workspace and reclones upstream
+ok 11 - update deletes local-commit workspace and reclones upstream
+  ---
+  duration_ms: 1748.336125
+  type: 'test'
+  ...
+# Subtest: update deletes detached workspace and reclones upstream
+ok 12 - update deletes detached workspace and reclones upstream
+  ---
+  duration_ms: 1396.732333
+  type: 'test'
+  ...
+# Subtest: update deletes conflict workspace and reclones upstream
+ok 13 - update deletes conflict workspace and reclones upstream
+  ---
+  duration_ms: 1085.713708
+  type: 'test'
+  ...
+# Subtest: different branches use separate clones; same URL and branch reuse destructive destination
+ok 14 - different branches use separate clones; same URL and branch reuse destructive destination
+  ---
+  duration_ms: 1106.210417
+  type: 'test'
+  ...
+# Subtest: actual task.sh executes python, injects ENV, captures output and reports status
+ok 15 - actual task.sh executes python, injects ENV, captures output and reports status
+  ---
+  duration_ms: 671.663834
+  type: 'test'
+  ...
+# Subtest: actual task.sh executes node, injects ENV, captures output and reports status
+ok 16 - actual task.sh executes node, injects ENV, captures output and reports status
+  ---
+  duration_ms: 696.120459
+  type: 'test'
+  ...
+# Subtest: actual task.sh executes shell, injects ENV, captures output and reports status
+ok 17 - actual task.sh executes shell, injects ENV, captures output and reports status
+  ---
+  duration_ms: 515.6655
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11767.975

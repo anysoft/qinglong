@@ -1,0 +1,65 @@
+{
+  "status": "found",
+  "symbol": {
+    "uid": "Class:back/services/taskEnvironmentResolver.ts:TaskEnvironmentResolver",
+    "name": "TaskEnvironmentResolver",
+    "kind": "Class",
+    "filePath": "back/services/taskEnvironmentResolver.ts",
+    "startLine": 46,
+    "endLine": 76
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "Function:back/taskEnvironment.ts:prepareTaskEnvironment",
+        "name": "prepareTaskEnvironment",
+        "filePath": "back/taskEnvironment.ts"
+      }
+    ],
+    "imports": [
+      {
+        "uid": "File:back/api/scopedEnvironment.ts",
+        "name": "scopedEnvironment.ts",
+        "filePath": "back/api/scopedEnvironment.ts"
+      },
+      {
+        "uid": "File:back/services/executionEnvironmentTransport.ts",
+        "name": "executionEnvironmentTransport.ts",
+        "filePath": "back/services/executionEnvironmentTransport.ts"
+      },
+      {
+        "uid": "File:back/taskEnvironment.ts",
+        "name": "taskEnvironment.ts",
+        "filePath": "back/taskEnvironment.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "has_method": [
+      {
+        "uid": "Method:back/services/taskEnvironmentResolver.ts:TaskEnvironmentResolver.constructor#1",
+        "name": "constructor",
+        "filePath": "back/services/taskEnvironmentResolver.ts"
+      },
+      {
+        "uid": "Method:back/services/taskEnvironmentResolver.ts:TaskEnvironmentResolver.preview#1",
+        "name": "preview",
+        "filePath": "back/services/taskEnvironmentResolver.ts"
+      },
+      {
+        "uid": "Method:back/services/taskEnvironmentResolver.ts:TaskEnvironmentResolver.resolve#2",
+        "name": "resolve",
+        "filePath": "back/services/taskEnvironmentResolver.ts"
+      }
+    ],
+    "has_property": [
+      {
+        "uid": "Property:back/services/taskEnvironmentResolver.ts:TaskEnvironmentResolver.profiles",
+        "name": "profiles",
+        "filePath": "back/services/taskEnvironmentResolver.ts"
+      }
+    ]
+  },
+  "processes": []
+}

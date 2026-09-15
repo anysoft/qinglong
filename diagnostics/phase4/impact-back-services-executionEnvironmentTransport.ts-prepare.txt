@@ -1,0 +1,58 @@
+{
+  "target": {
+    "id": "Method:back/services/executionEnvironmentTransport.ts:ExecutionEnvironmentTransport.prepare#2",
+    "name": "prepare",
+    "type": "Method",
+    "filePath": "back/services/executionEnvironmentTransport.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 2,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 1,
+    "processes_affected": 0,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 1,
+    "2": 1
+  },
+  "affected_processes": [],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 1,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Function:back/taskEnvironment.ts:prepareTaskEnvironment",
+        "name": "prepareTaskEnvironment",
+        "filePath": "back/taskEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ],
+    "2": [
+      {
+        "depth": 2,
+        "id": "File:back/taskEnvironment.ts",
+        "name": "taskEnvironment.ts",
+        "filePath": "back/taskEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ]
+  }
+}

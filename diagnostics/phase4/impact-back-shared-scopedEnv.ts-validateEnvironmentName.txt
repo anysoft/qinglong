@@ -1,0 +1,68 @@
+{
+  "target": {
+    "id": "Function:back/shared/scopedEnv.ts:validateEnvironmentName",
+    "name": "validateEnvironmentName",
+    "type": "Function",
+    "filePath": "back/shared/scopedEnv.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 1,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 1,
+    "processes_affected": 1,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 1
+  },
+  "affected_processes": [
+    {
+      "name": "save",
+      "type": "Function",
+      "filePath": "back/services/scopedEnvVariable.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 1,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Method:back/services/scopedEnvVariable.ts:ScopedEnvVariableService.save#3",
+        "name": "save",
+        "filePath": "back/services/scopedEnvVariable.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_109_save",
+            "label": "Save → PublicVariable",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_21_save",
+            "label": "Save → ScopedEnvironmentError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      }
+    ]
+  }
+}

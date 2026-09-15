@@ -1,0 +1,45 @@
+ M back/api/gitResources.ts
+ M back/data/cron.ts
+ M back/data/repository.ts
+ M back/data/subscription.ts
+ M back/loaders/db.ts
+ M back/loaders/express.ts
+ M back/services/repositoryStorage.ts
+ M back/shared/schemaMigrations.ts
+ M shell/otask.sh
+ M shell/preload/sitecustomize.js
+ M shell/preload/sitecustomize.py
+ M shell/task.sh
+ M src/pages/crontab/modal.tsx
+ M src/pages/env/index.tsx
+ M src/pages/repository-workspace.tsx
+ M src/pages/repository/index.tsx
+ M src/pages/subscription/modal.tsx
+ M test/back/schema-migrations.test.cjs
+ M tests/phase0/database-baseline.test.cjs
+ M tests/phase1/api.test.cjs
+ M tests/phase1/resources.test.cjs
+ M tests/phase2/helpers.cjs
+ M tests/phase3/helpers.cjs
+?? PHASE4_REPORT.md
+?? back/api/scopedEnvironment.ts
+?? back/data/scopedEnv.ts
+?? back/services/executionEnvironmentTransport.ts
+?? back/services/repositoryEnvProfile.ts
+?? back/services/scopedEnvVariable.ts
+?? back/services/taskEnvironmentResolver.ts
+?? back/shared/scopedEnv.ts
+?? back/shared/scopedEnvHttp.ts
+?? back/shared/scopedEnvMigration.ts
+?? back/taskEnvironment.ts
+?? diagnostics/phase4.5/
+?? diagnostics/phase4/
+?? docs/refactor/phase4/
+?? shell/preload/scoped-env.js
+?? shell/preload/scoped_env.py
+?? shell/task_env.sh
+?? shell/task_env_redact.cjs
+?? src/components/repository-environment.tsx
+?? src/components/scoped-environment.tsx
+?? src/pages/scoped-env.tsx
+?? tests/phase4/

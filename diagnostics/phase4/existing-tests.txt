@@ -1,0 +1,1089 @@
+
+> @whyour/qinglong@2.21.0-16 test
+> TS_NODE_PROJECT=back/tsconfig.json node -r ts-node/register/transpile-only --test test/back/*.test.cjs test/front/*.test.cjs
+
+TAP version 13
+# Subtest: valid legacy and platform sessions retain compatibility
+ok 1 - valid legacy and platform sessions retain compatibility
+  ---
+  duration_ms: 4.195333
+  type: 'test'
+  ...
+# Subtest: session membership never bypasses JWT signature, expiry, algorithm or nbf
+ok 2 - session membership never bypasses JWT signature, expiry, algorithm or nbf
+  ---
+  duration_ms: 1.916875
+  type: 'test'
+  ...
+# Subtest: platform token metadata can shorten but cannot extend JWT expiration
+ok 3 - platform token metadata can shorten but cannot extend JWT expiration
+  ---
+  duration_ms: 2.122375
+  type: 'test'
+  ...
+# Subtest: passwords are salted and legacy plaintext can migrate without changing the password
+ok 4 - passwords are salted and legacy plaintext can migrate without changing the password
+  ---
+  duration_ms: 270.013875
+  type: 'test'
+  ...
+# Subtest: build verification accepts matching source and rejects stale or dirty artifacts
+ok 5 - build verification accepts matching source and rejects stale or dirty artifacts
+  ---
+  duration_ms: 805.675917
+  type: 'test'
+  ...
+# Subtest: release images receive the same-run artifact and verify it before use
+ok 6 - release images receive the same-run artifact and verify it before use
+  ---
+  duration_ms: 15.49825
+  type: 'test'
+  ...
+# Subtest: complete artifact manifests reject changed, missing, extra files and untracked build inputs
+ok 7 - complete artifact manifests reject changed, missing, extra files and untracked build inputs
+  ---
+  duration_ms: 2794.160417
+  type: 'test'
+  ...
+# Subtest: form and API accept Chinese log names and existing supported names
+ok 8 - form and API accept Chinese log names and existing supported names
+  ---
+  duration_ms: 2.429916
+  type: 'test'
+  ...
+# Subtest: form and API still reject unsafe relative names and excessive length
+ok 9 - form and API still reject unsafe relative names and excessive length
+  ---
+  duration_ms: 6.537084
+  type: 'test'
+  ...
+# Subtest: API restricts absolute log paths to the configured directory or /dev/null
+ok 10 - API restricts absolute log paths to the configured directory or /dev/null
+  ---
+  duration_ms: 0.12475
+  type: 'test'
+  ...
+# Subtest: cron validation accepts leading-zero schedules and legacy null labels
+ok 11 - cron validation accepts leading-zero schedules and legacy null labels
+  ---
+  duration_ms: 52.460584
+  type: 'test'
+  ...
+# Subtest: cron validation identifies invalid fields
+ok 12 - cron validation identifies invalid fields
+  ---
+  duration_ms: 2.992291
+  type: 'test'
+  ...
+# Subtest: today failures includes recovered and deleted tasks, excluding previous days and successes
+ok 13 - today failures includes recovered and deleted tasks, excluding previous days and successes
+  ---
+  duration_ms: 231.977917
+  type: 'test'
+  ...
+# Subtest: dependency listing marks cache entries missing from disk for reinstall
+ok 14 - dependency listing marks cache entries missing from disk for reinstall
+  ---
+  duration_ms: 378.522041
+  type: 'test'
+  ...
+# Subtest: config filename route points callers to its detail API
+ok 15 - config filename route points callers to its detail API
+  ---
+  duration_ms: 295.439792
+  type: 'test'
+  ...
+# Subtest: script filename route points callers to its detail API
+ok 16 - script filename route points callers to its detail API
+  ---
+  duration_ms: 149.056375
+  type: 'test'
+  ...
+# Subtest: log filename route points callers to its detail API
+ok 17 - log filename route points callers to its detail API
+  ---
+  duration_ms: 94.960417
+  type: 'test'
+  ...
+# Subtest: container logging discards stdout and forwards startup errors without persistent copies
+ok 18 - container logging discards stdout and forwards startup errors without persistent copies
+  ---
+  duration_ms: 11.602333
+  type: 'test'
+  ...
+# Subtest: non-container installs keep the PM2 logging defaults
+ok 19 - non-container installs keep the PM2 logging defaults
+  ---
+  duration_ms: 7.379167
+  type: 'test'
+  ...
+# Subtest: matches legacy pipeline for whitespace, malformed lines, CRLF and final unterminated line
+ok 20 - matches legacy pipeline for whitespace, malformed lines, CRLF and final unterminated line
+  ---
+  duration_ms: 58.52925
+  type: 'test'
+  ...
+# Subtest: resets prior names for an empty file
+ok 21 - resets prior names for an empty file
+  ---
+  duration_ms: 20.017333
+  type: 'test'
+  ...
+# Subtest: extracting names never evaluates command substitutions or shell syntax in values
+ok 22 - extracting names never evaluates command substitutions or shell syntax in values
+  ---
+  duration_ms: 25.127958
+  type: 'test'
+  ...
+# Subtest: clear_env removes listed exports and preserves unrelated values
+ok 23 - clear_env removes listed exports and preserves unrelated values
+  ---
+  duration_ms: 19.725
+  type: 'test'
+  ...
+# Subtest: large configuration preserves order and duplicate names
+ok 24 - large configuration preserves order and duplicate names
+  ---
+  duration_ms: 260.9025
+  type: 'test'
+  ...
+# Subtest: spawn failure settles without exit, and the next scheduled run can proceed
+ok 25 - spawn failure settles without exit, and the next scheduled run can proceed
+  ---
+  duration_ms: 86.250291
+  type: 'test'
+  ...
+# Subtest: completion waits for slow log consumers and preserves the final output
+ok 26 - completion waits for slow log consumers and preserves the final output
+  ---
+  duration_ms: 81.963917
+  type: 'test'
+  ...
+# Subtest: exit is not completion, and UTF-8 split across writes remains intact
+ok 27 - exit is not completion, and UTF-8 split across writes remains intact
+  ---
+  duration_ms: 16.640292
+  type: 'test'
+  ...
+# Subtest: failed log sink drains large output instead of blocking the child
+ok 28 - failed log sink drains large output instead of blocking the child
+  ---
+  duration_ms: 64.806458
+  type: 'test'
+  ...
+# Subtest: PID response keeps queue capacity occupied until cleanup completes
+ok 29 - PID response keeps queue capacity occupied until cleanup completes
+  ---
+  duration_ms: 344.50425
+  type: 'test'
+  ...
+# Subtest: before/error/end callback failures settle and release capacity
+ok 30 - before/error/end callback failures settle and release capacity
+  ---
+  duration_ms: 58.709792
+  type: 'test'
+  ...
+# Subtest: concurrent writes and closes preserve all bytes, and failed files can be closed
+ok 31 - concurrent writes and closes preserve all bytes, and failed files can be closed
+  ---
+  duration_ms: 120.860875
+  type: 'test'
+  ...
+# Subtest: file access enforces directory boundaries, blacklist descendants and symlinks
+ok 32 - file access enforces directory boundaries, blacklist descendants and symlinks
+  ---
+  duration_ms: 4.057166
+  type: 'test'
+  ...
+# Subtest: readDirs preserves the recursive tree contract and ignores blocked entries
+ok 33 - readDirs preserves the recursive tree contract and ignores blocked entries
+  ---
+  duration_ms: 158.287
+  type: 'test'
+  ...
+# Subtest: gRPC cron response preserves Sequelize model fields through protobuf serialization
+ok 34 - gRPC cron response preserves Sequelize model fields through protobuf serialization
+  ---
+  duration_ms: 199.905
+  type: 'test'
+  ...
+# Subtest: legacy plain cron rows normalize absent repeated fields
+ok 35 - legacy plain cron rows normalize absent repeated fields
+  ---
+  duration_ms: 0.198209
+  type: 'test'
+  ...
+# Subtest: HTTP listener preserves private binding and releases its port after shutdown
+ok 36 - HTTP listener preserves private binding and releases its port after shutdown
+  ---
+  duration_ms: 120.835375
+  type: 'test'
+  ...
+# Subtest: custom cluster deployments can restore shared listening
+ok 37 - custom cluster deployments can restore shared listening
+  ---
+  duration_ms: 1.23575
+  type: 'test'
+  ...
+# Subtest: HTTP authentication protects init, scopes, expired sessions and config secrets
+ok 38 - HTTP authentication protects init, scopes, expired sessions and config secrets
+  ---
+  duration_ms: 1280.291166
+  type: 'test'
+  ...
+# Subtest: HTTP binding 127.0.0.1 never broadens an explicit private address
+ok 39 - HTTP binding 127.0.0.1 never broadens an explicit private address
+  ---
+  duration_ms: 128.486542
+  type: 'test'
+  ...
+# Subtest: gRPC binding 127.0.0.1 never broadens an explicit private address
+ok 40 - gRPC binding 127.0.0.1 never broadens an explicit private address
+  ---
+  duration_ms: 14.456083
+  type: 'test'
+  ...
+# Subtest: HTTP binding ::1 never broadens an explicit private address
+ok 41 - HTTP binding ::1 never broadens an explicit private address
+  ---
+  duration_ms: 21.367292
+  type: 'test'
+  ...
+# Subtest: gRPC binding ::1 never broadens an explicit private address
+ok 42 - gRPC binding ::1 never broadens an explicit private address
+  ---
+  duration_ms: 41.470458
+  type: 'test'
+  ...
+# Subtest: HTTP binding 192.0.2.1 never broadens an explicit private address
+ok 43 - HTTP binding 192.0.2.1 never broadens an explicit private address
+  ---
+  duration_ms: 16.778958
+  type: 'test'
+  ...
+# Subtest: gRPC binding 192.0.2.1 never broadens an explicit private address
+ok 44 - gRPC binding 192.0.2.1 never broadens an explicit private address
+  ---
+  duration_ms: 13.450875
+  type: 'test'
+  ...
+# Subtest: HTTP binding :: never broadens an explicit private address
+ok 45 - HTTP binding :: never broadens an explicit private address
+  ---
+  duration_ms: 48.528375
+  type: 'test'
+  ...
+# Subtest: gRPC binding :: never broadens an explicit private address
+ok 46 - gRPC binding :: never broadens an explicit private address
+  ---
+  duration_ms: 20.687041
+  type: 'test'
+  ...
+# Subtest: log streams reject traversal, sibling prefixes and escaping symlinks before writing
+ok 47 - log streams reject traversal, sibling prefixes and escaping symlinks before writing
+  ---
+  duration_ms: 51.985542
+  type: 'test'
+  ...
+# Subtest: log initialization rejects unsafe paths before mkdir or file writes
+ok 48 - log initialization rejects unsafe paths before mkdir or file writes
+  ---
+  duration_ms: 633.031
+  type: 'test'
+  ...
+# Subtest: manual execution rejects escaping log names before creating directories or spawning
+ok 49 - manual execution rejects escaping log names before creating directories or spawning
+  ---
+  duration_ms: 959.209292
+  type: 'test'
+  ...
+# Subtest: log reader defaults to a bounded tail and supports incremental reads
+ok 50 - log reader defaults to a bounded tail and supports incremental reads
+  ---
+  duration_ms: 35.331834
+  type: 'test'
+  ...
+# Subtest: log reader enforces the maximum chunk size
+ok 51 - log reader enforces the maximum chunk size
+  ---
+  duration_ms: 11.323
+  type: 'test'
+  ...
+# Subtest: log reader preserves UTF-8 characters across byte boundaries
+ok 52 - log reader preserves UTF-8 characters across byte boundaries
+  ---
+  duration_ms: 7.935125
+  type: 'test'
+  ...
+# Subtest: missing logs return an empty chunk
+ok 53 - missing logs return an empty chunk
+  ---
+  duration_ms: 1.110209
+  type: 'test'
+  ...
+# Subtest: manual execution captures a short child before slow status storage and flushes before release
+ok 54 - manual execution captures a short child before slow status storage and flushes before release
+  ---
+  duration_ms: 1239.687375
+  type: 'test'
+  ...
+# Subtest: manual startup loses its conditional claim after stop and terminates the late child
+ok 55 - manual startup loses its conditional claim after stop and terminates the late child
+  ---
+  duration_ms: 496.6415
+  type: 'test'
+  ...
+# Subtest: manual startup loses its conditional claim after newer-queue and terminates the late child
+ok 56 - manual startup loses its conditional claim after newer-queue and terminates the late child
+  ---
+  duration_ms: 362.848709
+  type: 'test'
+  ...
+# Subtest: manual startup loses its conditional claim after stop-requeue and terminates the late child
+ok 57 - manual startup loses its conditional claim after stop-requeue and terminates the late child
+  ---
+  duration_ms: 337.525417
+  type: 'test'
+  ...
+# Subtest: verified termination waits for a SIGTERM-resistant target to exit
+ok 58 - verified termination waits for a SIGTERM-resistant target to exit
+  ---
+  duration_ms: 1210.61
+  type: 'test'
+  ...
+# Subtest: a runner waiting for a concurrency slot cannot adopt a newer queued generation
+ok 59 - a runner waiting for a concurrency slot cannot adopt a newer queued generation
+  ---
+  duration_ms: 257.64425
+  type: 'test'
+  ...
+# Subtest: metrics keep only the newest bounded samples
+ok 60 - metrics keep only the newest bounded samples
+  ---
+  duration_ms: 78.464667
+  type: 'test'
+  ...
+# Subtest: empty metric queries return finite aggregates
+ok 61 - empty metric queries return finite aggregates
+  ---
+  duration_ms: 0.522667
+  type: 'test'
+  ...
+# Subtest: health probes bypass request metric retention with or without base URL
+ok 62 - health probes bypass request metric retention with or without base URL
+  ---
+  duration_ms: 1.010125
+  type: 'test'
+  ...
+# Subtest: non-health requests keep bounded service metrics
+ok 63 - non-health requests keep bounded service metrics
+  ---
+  duration_ms: 0.324958
+  type: 'test'
+  ...
+# Subtest: ordinary request metrics are sampled instead of retained per request
+ok 64 - ordinary request metrics are sampled instead of retained per request
+  ---
+  duration_ms: 0.345958
+  type: 'test'
+  ...
+# Subtest: warm cache avoids pnpm, preserves spaces, and never evaluates cached text
+ok 65 - warm cache avoids pnpm, preserves spaces, and never evaluates cached text
+  ---
+  duration_ms: 817.173791
+  type: 'test'
+  ...
+# Subtest: config, environment, cwd, and executable changes invalidate discovery
+ok 66 - config, environment, cwd, and executable changes invalidate discovery
+  ---
+  duration_ms: 1422.379959
+  type: 'test'
+  ...
+# Subtest: expired or malformed records refresh and failed lookups are not cached
+ok 67 - expired or malformed records refresh and failed lookups are not cached
+  ---
+  duration_ms: 987.214209
+  type: 'test'
+  ...
+# Subtest: disabled or unavailable cache falls back without changing discovery output
+ok 68 - disabled or unavailable cache falls back without changing discovery output
+  ---
+  duration_ms: 299.931292
+  type: 'test'
+  ...
+# Subtest: concurrent refreshes publish complete records and do not overwrite symlink targets
+ok 69 - concurrent refreshes publish complete records and do not overwrite symlink targets
+  ---
+  duration_ms: 442.998333
+  type: 'test'
+  ...
+# Subtest: task entry tolerates discovery failure with errexit enabled
+ok 70 - task entry tolerates discovery failure with errexit enabled
+  ---
+  duration_ms: 487.251583
+  type: 'test'
+  ...
+# Subtest: simultaneous cold and expired lookups share one successful refresh
+ok 71 - simultaneous cold and expired lookups share one successful refresh # SKIP
+  ---
+  duration_ms: 0.551834
+  type: 'test'
+  ...
+# Subtest: waiters with different configuration do not reuse another key
+ok 72 - waiters with different configuration do not reuse another key # SKIP
+  ---
+  duration_ms: 0.081625
+  type: 'test'
+  ...
+# Subtest: lock timeout falls back while a holder is still alive
+ok 73 - lock timeout falls back while a holder is still alive # SKIP
+  ---
+  duration_ms: 0.094458
+  type: 'test'
+  ...
+# Subtest: absent or unsupported flock and unsafe lock paths preserve discovery
+ok 74 - absent or unsupported flock and unsafe lock paths preserve discovery
+  ---
+  duration_ms: 2623.602084
+  type: 'test'
+  ...
+# Subtest: failed refresh releases lock and does not publish a success
+ok 75 - failed refresh releases lock and does not publish a success
+  ---
+  duration_ms: 965.6375
+  type: 'test'
+  ...
+# Subtest: refresh leaves the caller file descriptor and umask unchanged
+ok 76 - refresh leaves the caller file descriptor and umask unchanged
+  ---
+  duration_ms: 753.250541
+  type: 'test'
+  ...
+# Subtest: container APM policy keeps worker isolation and can restore all inherited probes
+ok 77 - container APM policy keeps worker isolation and can restore all inherited probes
+  ---
+  duration_ms: 3.371
+  type: 'test'
+  ...
+# Subtest: standalone PM2 monitoring stays enabled
+ok 78 - standalone PM2 monitoring stays enabled
+  ---
+  duration_ms: 0.859542
+  type: 'test'
+  ...
+# Subtest: termination accepts Linux exited state Z before PID reaping
+ok 79 - termination accepts Linux exited state Z before PID reaping
+  ---
+  duration_ms: 30.207
+  type: 'test'
+  ...
+# Subtest: termination accepts Linux exited state X before PID reaping
+ok 80 - termination accepts Linux exited state X before PID reaping
+  ---
+  duration_ms: 11.097084
+  type: 'test'
+  ...
+# Subtest: termination accepts Linux exited state x before PID reaping
+ok 81 - termination accepts Linux exited state x before PID reaping
+  ---
+  duration_ms: 9.903583
+  type: 'test'
+  ...
+# Subtest: termination keeps waiting while the process is running
+ok 82 - termination keeps waiting while the process is running
+  ---
+  duration_ms: 31.362667
+  type: 'test'
+  ...
+# Subtest: a process disappearing during the procfs read is accepted
+ok 83 - a process disappearing during the procfs read is accepted
+  ---
+  duration_ms: 9.697709
+  type: 'test'
+  ...
+# Subtest: permission failures are not reported as successful termination
+ok 84 - permission failures are not reported as successful termination
+  ---
+  duration_ms: 8.860625
+  type: 'test'
+  ...
+# Subtest: rejects case variations under protected API namespaces
+ok 85 - rejects case variations under protected API namespaces
+  ---
+  duration_ms: 1.27675
+  type: 'test'
+  ...
+# Subtest: allows normalized protected paths and unrelated paths
+ok 86 - allows normalized protected paths and unrelated paths
+  ---
+  duration_ms: 0.194
+  type: 'test'
+  ...
+# Subtest: ql log reads the requested system log history without PM2
+ok 87 - ql log reads the requested system log history without PM2
+  ---
+  duration_ms: 29.704959
+  type: 'test'
+  ...
+# Subtest: ql log follows the current Winston system log without PM2
+ok 88 - ql log follows the current Winston system log without PM2
+  ---
+  duration_ms: 1144.396167
+  type: 'test'
+  ...
+# Subtest: ql log reports when no persisted system log exists
+ok 89 - ql log reports when no persisted system log exists
+  ---
+  duration_ms: 12.512791
+  type: 'test'
+  ...
+# Subtest: retention policy defaults to disabled and clamps invalid values
+ok 90 - retention policy defaults to disabled and clamps invalid values
+  ---
+  duration_ms: 1.914041
+  type: 'test'
+  ...
+# Subtest: directory preview counts files recursively and ignores symlinks
+ok 91 - directory preview counts files recursively and ignores symlinks
+  ---
+  duration_ms: 35.60975
+  type: 'test'
+  ...
+# Subtest: cleanup previews first, protects running instances, and uses explicit options
+ok 92 - cleanup previews first, protects running instances, and uses explicit options
+  ---
+  duration_ms: 197.959541
+  type: 'test'
+  ...
+# Subtest: schedule health check uses the HTTP health endpoint and system logs
+    # Subtest: returns serving for a healthy prefixed HTTP service
+    ok 1 - returns serving for a healthy prefixed HTTP service
+      ---
+      duration_ms: 61.360333
+      type: 'test'
+      ...
+    # Subtest: reports recent system logs when HTTP startup fails
+    ok 2 - reports recent system logs when HTTP startup fails
+      ---
+      duration_ms: 20.385667
+      type: 'test'
+      ...
+    1..2
+ok 93 - schedule health check uses the HTTP health endpoint and system logs
+  ---
+  duration_ms: 85.601625
+  type: 'test'
+  ...
+# Subtest: scheduler lock survives nested file writes and releases after success
+ok 94 - scheduler lock survives nested file writes and releases after success
+  ---
+  duration_ms: 119.604167
+  type: 'test'
+  ...
+# Subtest: scheduler lock survives nested file writes and releases after failure
+ok 95 - scheduler lock survives nested file writes and releases after failure
+  ---
+  duration_ms: 108.291417
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent create
+ok 96 - recovery snapshot cannot overwrite concurrent create
+  ---
+  duration_ms: 625.919583
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent update
+ok 97 - recovery snapshot cannot overwrite concurrent update
+  ---
+  duration_ms: 429.37575
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent remove
+ok 98 - recovery snapshot cannot overwrite concurrent remove
+  ---
+  duration_ms: 243.14025
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent disabled
+ok 99 - recovery snapshot cannot overwrite concurrent disabled
+  ---
+  duration_ms: 219.101916
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent enabled
+ok 100 - recovery snapshot cannot overwrite concurrent enabled
+  ---
+  duration_ms: 308.441542
+  type: 'test'
+  ...
+# Subtest: recovery waits for an admitted mutation to finish registration before reading the DB
+ok 101 - recovery waits for an admitted mutation to finish registration before reading the DB
+  ---
+  duration_ms: 250.098958
+  type: 'test'
+  ...
+# Subtest: create preserves scheduler 503 after rollback and releases its lock
+ok 102 - create preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 124.254
+  type: 'test'
+  ...
+# Subtest: update preserves scheduler 503 after rollback and releases its lock
+ok 103 - update preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 205.261666
+  type: 'test'
+  ...
+# Subtest: enabled preserves scheduler 503 after rollback and releases its lock
+ok 104 - enabled preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 300.934667
+  type: 'test'
+  ...
+# Subtest: scheduler lock excludes a second OS process and leaves no lock after completion
+ok 105 - scheduler lock excludes a second OS process and leaves no lock after completion
+  ---
+  duration_ms: 599.66075
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+ok 106 - update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 108.571834
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+ok 107 - update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 154.124917
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+ok 108 - update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 87.940958
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+ok 109 - update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 68.652958
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+ok 110 - remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 58.995833
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+ok 111 - remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 53.537375
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+ok 112 - remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 61.966041
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+ok 113 - remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 66.598792
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+ok 114 - disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 71.316625
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+ok 115 - disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 91.195208
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+ok 116 - disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 56.289375
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+ok 117 - disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 61.977791
+  type: 'test'
+  ...
+# Subtest: configuration rollback cannot restore an obsolete manual queue token
+ok 118 - configuration rollback cannot restore an obsolete manual queue token
+  ---
+  duration_ms: 56.340875
+  type: 'test'
+  ...
+# Subtest: readiness stays false through failed restoration and retries without idle polling
+ok 119 - readiness stays false through failed restoration and retries without idle polling
+  ---
+  duration_ms: 90.021541
+  type: 'test'
+  ...
+# Subtest: single-flight recovery cannot mark an invalidated generation ready
+ok 120 - single-flight recovery cannot mark an invalidated generation ready
+  ---
+  duration_ms: 47.079417
+  type: 'test'
+  ...
+# Subtest: mutation waiting is bounded, a later recovery can succeed
+ok 121 - mutation waiting is bounded, a later recovery can succeed
+  ---
+  duration_ms: 18.215709
+  type: 'test'
+  ...
+# Subtest: probe failure immediately invalidates a previously ready scheduler
+ok 122 - probe failure immediately invalidates a previously ready scheduler
+  ---
+  duration_ms: 41.389209
+  type: 'test'
+  ...
+# Subtest: health uses actual readiness and returns HTTP 503 until recovery
+ok 123 - health uses actual readiness and returns HTTP 503 until recovery
+  ---
+  duration_ms: 169.745
+  type: 'test'
+  ...
+# Subtest: recovery registration errors propagate while ordinary autosave retains file synchronization
+ok 124 - recovery registration errors propagate while ordinary autosave retains file synchronization
+  ---
+  duration_ms: 8.980084
+  type: 'test'
+  ...
+# Subtest: scheduler probe uses the cron channel and failed writes are not replayed
+ok 125 - scheduler probe uses the cron channel and failed writes are not replayed
+  ---
+  duration_ms: 122.432042
+  type: 'test'
+  ...
+# Subtest: scheduler health probe never calls back into HTTP health
+ok 126 - scheduler health probe never calls back into HTTP health
+  ---
+  duration_ms: 16.564208
+  type: 'test'
+  ...
+# Subtest: recovery reconciles a surviving scheduler after missed deletes and disables, including an empty DB
+ok 127 - recovery reconciles a surviving scheduler after missed deletes and disables, including an empty DB
+  ---
+  duration_ms: 44.315792
+  type: 'test'
+  ...
+# Subtest: invalid replacement leaves the previous schedule intact
+ok 128 - invalid replacement leaves the previous schedule intact
+  ---
+  duration_ms: 26.771
+  type: 'test'
+  ...
+# Subtest: pre-RPC channel failures invalidate readiness and return 503 without executing or replaying writes
+ok 129 - pre-RPC channel failures invalidate readiness and return 503 without executing or replaying writes
+  ---
+  duration_ms: 144.735375
+  type: 'test'
+  ...
+# Subtest: addCron invalidates an uncertain timed-out write without replaying it
+ok 130 - addCron invalidates an uncertain timed-out write without replaying it
+  ---
+  duration_ms: 181.377084
+  type: 'test'
+  ...
+# Subtest: delCron invalidates an uncertain timed-out write without replaying it
+ok 131 - delCron invalidates an uncertain timed-out write without replaying it
+  ---
+  duration_ms: 67.152708
+  type: 'test'
+  ...
+# Subtest: legacy database upgrades without losing rows and repeated migration is idempotent
+ok 132 - legacy database upgrades without losing rows and repeated migration is idempotent
+  ---
+  duration_ms: 376.023833
+  type: 'test'
+  ...
+# Subtest: migration failure rolls back added columns and can be retried after repair
+ok 133 - migration failure rolls back added columns and can be retried after repair
+  ---
+  duration_ms: 209.926666
+  type: 'test'
+  ...
+# Subtest: offline pre-upgrade backup restores the legacy schema and data
+ok 134 - offline pre-upgrade backup restores the legacy schema and data
+  ---
+  duration_ms: 86.58175
+  type: 'test'
+  ...
+# Subtest: database loader rejects initialization failure rather than allowing workers to start
+ok 135 - database loader rejects initialization failure rather than allowing workers to start
+  ---
+  duration_ms: 121.099792
+  type: 'test'
+  ...
+# Subtest: valid token cache is read with one jq and reused without generation
+ok 136 - valid token cache is read with one jq and reused without generation
+  ---
+  duration_ms: 681.933458
+  type: 'test'
+  ...
+# Subtest: expired, corrupt, missing or header-unsafe token cache refreshes under errexit
+ok 137 - expired, corrupt, missing or header-unsafe token cache refreshes under errexit
+  ---
+  duration_ms: 692.735583
+  type: 'test'
+  ...
+# Subtest: success with a message still parses once and stays silent
+ok 138 - success with a message still parses once and stays silent
+  ---
+  duration_ms: 333.256625
+  type: 'test'
+  ...
+# Subtest: status and statistics errors preserve multiline Unicode messages
+ok 139 - status and statistics errors preserve multiline Unicode messages
+  ---
+  duration_ms: 419.907917
+  type: 'test'
+  ...
+# Subtest: non-JSON errors fall back to raw text and absent messages retain legacy null
+ok 140 - non-JSON errors fall back to raw text and absent messages retain legacy null
+  ---
+  duration_ms: 586.390416
+  type: 'test'
+  ...
+# Subtest: statistics without a task id perform no JSON parsing
+ok 141 - statistics without a task id perform no JSON parsing
+  ---
+  duration_ms: 8.168583
+  type: 'test'
+  ...
+# Subtest: canonical success resets prior errors and matches jq missing-message semantics
+ok 142 - canonical success resets prior errors and matches jq missing-message semantics
+  ---
+  duration_ms: 20.585459
+  type: 'test'
+  ...
+# Subtest: noncanonical JSON always uses jq, including whitespace, duplicate keys and embedded success text
+ok 143 - noncanonical JSON always uses jq, including whitespace, duplicate keys and embedded success text
+  ---
+  duration_ms: 371.630208
+  type: 'test'
+  ...
+# Subtest: success-shaped invalid documents retain the raw-response error fallback
+ok 144 - success-shaped invalid documents retain the raw-response error fallback
+  ---
+  duration_ms: 252.75425
+  type: 'test'
+  ...
+# Subtest: WebSocket connections reject expired tokens and close when sessions are revoked
+ok 145 - WebSocket connections reject expired tokens and close when sessions are revoked
+  ---
+  duration_ms: 1053.338916
+  type: 'test'
+  ...
+# Subtest: stop wins when shell exit writes error or success during termination, preserving exit codes
+ok 146 - stop wins when shell exit writes error or success during termination, preserving exit codes
+  ---
+  duration_ms: 541.049042
+  type: 'test'
+  ...
+# Subtest: late shell completion cannot overwrite stopped instances
+ok 147 - late shell completion cannot overwrite stopped instances
+  ---
+  duration_ms: 265.455875
+  type: 'test'
+  ...
+# Subtest: rows created after the stop snapshot are not relabelled
+ok 148 - rows created after the stop snapshot are not relabelled
+  ---
+  duration_ms: 217.328416
+  type: 'test'
+  ...
+# Subtest: repeated stop does not rewrite historical rows or their finished timestamps
+ok 149 - repeated stop does not rewrite historical rows or their finished timestamps
+  ---
+  duration_ms: 233.773125
+  type: 'test'
+  ...
+# Subtest: batch stop captures running instances from every requested cron
+ok 150 - batch stop captures running instances from every requested cron
+  ---
+  duration_ms: 318.628042
+  type: 'test'
+  ...
+# Subtest: stop signals every snapshotted PID exactly once and preserves a later running instance
+ok 151 - stop signals every snapshotted PID exactly once and preserves a later running instance
+  ---
+  duration_ms: 227.513
+  type: 'test'
+  ...
+# Subtest: failed termination is not finalized as stopped
+ok 152 - failed termination is not finalized as stopped
+  ---
+  duration_ms: 169.9195
+  type: 'test'
+  ...
+# Subtest: subscription becomes idle and closes its log even when completion logging fails
+ok 153 - subscription becomes idle and closes its log even when completion logging fails
+  ---
+  duration_ms: 631.53775
+  type: 'test'
+  ...
+# Subtest: clearing a dependency cache marks installed entries for reinstall
+ok 154 - clearing a dependency cache marks installed entries for reinstall
+  ---
+  duration_ms: 298.198041
+  type: 'test'
+  ...
+# Subtest: Linux task timestamps share a snapshot and retain millisecond log names across midnight
+ok 155 - Linux task timestamps share a snapshot and retain millisecond log names across midnight
+  ---
+  duration_ms: 25.12925
+  type: 'test'
+  ...
+# Subtest: explicit log paths and output mode remain intact
+ok 156 - explicit log paths and output mode remain intact
+  ---
+  duration_ms: 24.231084
+  type: 'test'
+  ...
+# Subtest: task failure keeps exit code and minimum one-second runtime
+ok 157 - task failure keeps exit code and minimum one-second runtime
+  ---
+  duration_ms: 22.554
+  type: 'test'
+  ...
+# Subtest: manual stop retains stopped message and exit status reporting
+ok 158 - manual stop retains stopped message and exit status reporting
+  ---
+  duration_ms: 22.2435
+  type: 'test'
+  ...
+# Subtest: macos keeps legacy time conversion helpers
+ok 159 - macos keeps legacy time conversion helpers
+  ---
+  duration_ms: 60.796291
+  type: 'test'
+  ...
+# Subtest: custom keeps legacy time conversion helpers
+ok 160 - custom keeps legacy time conversion helpers
+  ---
+  duration_ms: 50.587542
+  type: 'test'
+  ...
+# Subtest: initialization returns the username and password validation result
+ok 161 - initialization returns the username and password validation result
+  ---
+  duration_ms: 427.49925
+  type: 'test'
+  ...
+# Subtest: initialization checks state inside a serialized mutation
+ok 162 - initialization checks state inside a serialized mutation
+  ---
+  duration_ms: 450.69625
+  type: 'test'
+  ...
+# Subtest: password change revokes sessions and closes connected clients
+ok 163 - password change revokes sessions and closes connected clients
+  ---
+  duration_ms: 286.507834
+  type: 'test'
+  ...
+# Subtest: a concurrent old-password login cannot restore a session after reset
+ok 164 - a concurrent old-password login cannot restore a session after reset
+  ---
+  duration_ms: 239.613875
+  type: 'test'
+  ...
+# Subtest: legacy plaintext migrates after a successful login
+ok 165 - legacy plaintext migrates after a successful login
+  ---
+  duration_ms: 149.282125
+  type: 'test'
+  ...
+# Subtest: TOTP failures are counted serially and further attempts are throttled
+ok 166 - TOTP failures are counted serially and further attempts are throttled
+  ---
+  duration_ms: 45.42025
+  type: 'test'
+  ...
+# Subtest: TOTP challenge expires and valid codes cannot be reused in the same step
+ok 167 - TOTP challenge expires and valid codes cannot be reused in the same step
+  ---
+  duration_ms: 139.929458
+  type: 'test'
+  ...
+# Subtest: active two-factor secret cannot be silently replaced and disabling revokes sessions
+ok 168 - active two-factor secret cannot be silently replaced and disabling revokes sessions
+  ---
+  duration_ms: 42.408667
+  type: 'test'
+  ...
+# Subtest: default credentials with historical metadata still require initialization
+ok 169 - default credentials with historical metadata still require initialization
+  ---
+  duration_ms: 86.887417
+  type: 'test'
+  ...
+# Subtest: PM2-managed primary disables only inherited worker APM and keeps worker metadata
+ok 170 - PM2-managed primary disables only inherited worker APM and keeps worker metadata
+  ---
+  duration_ms: 1.556458
+  type: 'test'
+  ...
+# Subtest: worker APM opt-in restores inherited PM2 settings, including explicit disable
+ok 171 - worker APM opt-in restores inherited PM2 settings, including explicit disable
+  ---
+  duration_ms: 1.422459
+  type: 'test'
+  ...
+# Subtest: standalone startup does not introduce a PM2-specific override
+ok 172 - standalone startup does not introduce a PM2-specific override
+  ---
+  duration_ms: 8.497333
+  type: 'test'
+  ...
+# Subtest: replacement workers receive the same monitoring policy
+ok 173 - replacement workers receive the same monitoring policy
+  ---
+  duration_ms: 0.912042
+  type: 'test'
+  ...
+# Subtest: WPUSH survives protobuf and JSON round trips without changing existing modes
+ok 174 - WPUSH survives protobuf and JSON round trips without changing existing modes
+  ---
+  duration_ms: 6.616875
+  type: 'test'
+  ...
+# Subtest: decoded SystemNotify requests reach WPUSH with explicit or saved configuration
+ok 175 - decoded SystemNotify requests reach WPUSH with explicit or saved configuration
+  ---
+  duration_ms: 276.103958
+  type: 'test'
+  ...
+# Subtest: validation errors include the failing field names
+ok 176 - validation errors include the failing field names
+  ---
+  duration_ms: 1.382584
+  type: 'test'
+  ...
+# Subtest: existing API error details remain visible
+ok 177 - existing API error details remain visible
+  ---
+  duration_ms: 0.1125
+  type: 'test'
+  ...
+1..177
+# tests 179
+# suites 0
+# pass 176
+# fail 0
+# cancelled 0
+# skipped 3
+# todo 0
+# duration_ms 8788.399167

@@ -22,6 +22,8 @@ async function setup(t) {
   const { RepositoryModel } = get('data/repository');
   const { SubscriptionModel } = get('data/subscription');
   get('data/worktree'); // Subscription now has a nullable Worktree foreign key.
+  get('data/cron');
+  get('data/scopedEnv'); // Phase 4 nullable profile references.
   await sequelize.sync();
   const Secret = get('services/credentialSecret').default,
     Resolver = get('services/gitCredentialResolver').default;

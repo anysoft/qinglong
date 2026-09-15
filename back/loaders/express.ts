@@ -15,6 +15,7 @@ import path from 'path';
 import { t } from '../shared/i18n';
 import { AppScope } from '../data/open';
 import protectedPathCase from '../middlewares/protectedPathCase';
+import { scopedEnvironmentHttpError } from '../shared/scopedEnvHttp';
 
 function resolveTrustProxy(value = process.env.QL_TRUST_PROXY) {
   const setting = value?.trim();
@@ -189,6 +190,7 @@ export default ({ app }: { app: Application }) => {
     });
   });
 
+  app.use(scopedEnvironmentHttpError);
   app.use(errors());
 
   app.use(

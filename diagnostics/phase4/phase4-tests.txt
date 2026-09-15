@@ -1,0 +1,148 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> @whyour/qinglong@2.21.0-16 build:back
+> tsc -p back/tsconfig.json
+
+TAP version 13
+# Subtest: scoped sh account concurrency keeps split secrets in private temporary logs
+ok 1 - scoped sh account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1453.852042
+  type: 'test'
+  ...
+# Subtest: scoped js account concurrency keeps split secrets in private temporary logs
+ok 2 - scoped js account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1078.888042
+  type: 'test'
+  ...
+# Subtest: scoped py account concurrency keeps split secrets in private temporary logs
+ok 3 - scoped py account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 1166.545583
+  type: 'test'
+  ...
+# Subtest: real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+ok 4 - real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+  ---
+  duration_ms: 471.816208
+  type: 'test'
+  ...
+# Subtest: profile CRUD, uniqueness, default, clone secrets, and reference protection
+ok 5 - profile CRUD, uniqueness, default, clone secrets, and reference protection
+  ---
+  duration_ms: 358.418625
+  type: 'test'
+  ...
+# Subtest: secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors
+ok 6 - secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors
+  ---
+  duration_ms: 134.518417
+  type: 'test'
+  ...
+# Subtest: profile precedence, manual task, disabled and wrong repository fail closed
+ok 7 - profile precedence, manual task, disabled and wrong repository fail closed
+  ---
+  duration_ms: 149.370458
+  type: 'test'
+  ...
+# Subtest: SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation
+ok 8 - SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation
+  ---
+  duration_ms: 122.794333
+  type: 'test'
+  ...
+# Subtest: real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+ok 9 - real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+  ---
+  duration_ms: 1653.287917
+  type: 'test'
+  ...
+# Subtest: actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+ok 10 - actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+  ---
+  duration_ms: 2585.7175
+  type: 'test'
+  ...
+# Subtest: 50 parallel isolated executions and frozen values after configuration update
+ok 11 - 50 parallel isolated executions and frozen values after configuration update
+  ---
+  duration_ms: 6126.582
+  type: 'test'
+  ...
+# Subtest: cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue
+ok 12 - cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue
+  ---
+  duration_ms: 1577.382
+  type: 'test'
+  ...
+# Subtest: malformed scoped request JSON is never echoed by the HTTP error boundary
+ok 13 - malformed scoped request JSON is never echoed by the HTTP error boundary
+  ---
+  duration_ms: 236.12725
+  type: 'test'
+  ...
+# Subtest: pre-integration characterization: actual task.sh sh duplicates, disabled host fallback, spaces, templates
+ok 14 - pre-integration characterization: actual task.sh sh duplicates, disabled host fallback, spaces, templates
+  ---
+  duration_ms: 827.367333
+  type: 'test'
+  ...
+# Subtest: pre-integration characterization: actual task.sh js duplicates, disabled host fallback, spaces, templates
+ok 15 - pre-integration characterization: actual task.sh js duplicates, disabled host fallback, spaces, templates
+  ---
+  duration_ms: 794.067041
+  type: 'test'
+  ...
+# Subtest: pre-integration characterization: actual task.sh py duplicates, disabled host fallback, spaces, templates
+ok 16 - pre-integration characterization: actual task.sh py duplicates, disabled host fallback, spaces, templates
+  ---
+  duration_ms: 824.280125
+  type: 'test'
+  ...
+# Subtest: Phase 3 upgrade is additive, idempotent and indexed, with nullable bindings and unchanged globals
+ok 17 - Phase 3 upgrade is additive, idempotent and indexed, with nullable bindings and unchanged globals
+  ---
+  duration_ms: 65.73825
+  type: 'test'
+  ...
+# Subtest: failed DDL rolls back tables, references and ledger, then safely retries
+ok 18 - failed DDL rolls back tables, references and ledger, then safely retries
+  ---
+  duration_ms: 7.502459
+  type: 'test'
+  ...
+# Subtest: streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values
+ok 19 - streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values
+  ---
+  duration_ms: 184.03175
+  type: 'test'
+  ...
+# Subtest: profile references block repository filesystem deletion before mutation
+ok 20 - profile references block repository filesystem deletion before mutation
+  ---
+  duration_ms: 1131.748917
+  type: 'test'
+  ...
+# Subtest: snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment
+ok 21 - snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment
+  ---
+  duration_ms: 337.994042
+  type: 'test'
+  ...
+# Subtest: unconfigured task never allocates a snapshot or changes global generated files
+ok 22 - unconfigured task never allocates a snapshot or changes global generated files
+  ---
+  duration_ms: 138.778375
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 23940.29325

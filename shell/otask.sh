@@ -77,15 +77,18 @@ run_nohup() {
 
 env_str_to_array() {
   . $file_env
+  if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then ql_task_env_apply; fi
   local IFS="&"
   read -ra array <<<"${!env_param}"
   array_length=${#array[@]}
   clear_env
+  if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then ql_task_env_apply; fi
 }
 
 clear_non_sh_env() {
   if [[ $file_param != *.sh ]]; then
     clear_env
+    if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then ql_task_env_apply; fi
   fi
 }
 
@@ -195,19 +198,25 @@ run_concurrent() {
   local j=0
   for i in ${array_run[@]}; do
     single_log_path="$dir_log/$log_dir/${single_log_time}_$((j + 1)).log"
+    if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then single_log_path="$QL_TASK_ENV_SNAPSHOT/account-$j.log"; fi
     let j++
 
     if [[ $isJsOrPythonFile == 'false' ]]; then
       export "${env_param}=${array[$i - 1]}"
       clear_non_sh_env
     fi
-    eval envParam="${env_param}" numParam="${i}" $timeoutCmd $which_program $file_param "${script_params[@]}" &>$single_log_path &
+    if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then
+      (umask 077; eval envParam="${env_param}" numParam="${i}" $timeoutCmd $which_program $file_param "${script_params[@]}" &>"$single_log_path") &
+    else
+      eval envParam="${env_param}" numParam="${i}" $timeoutCmd $which_program $file_param "${script_params[@]}" &>$single_log_path &
+    fi
   done
 
   wait
   local k=0
   for i in ${array_run[@]}; do
     single_log_path="$dir_log/$log_dir/${single_log_time}_$((k + 1)).log"
+    if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then single_log_path="$QL_TASK_ENV_SNAPSHOT/account-$k.log"; fi
     let k++
     cat $single_log_path
     [[ -f $single_log_path ]] && rm -f $single_log_path
@@ -317,6 +326,7 @@ check_file() {
       fi
     else
       . $file_env
+      if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then ql_task_env_apply; fi
     fi
   fi
 }

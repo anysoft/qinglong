@@ -46,6 +46,8 @@ module.exports = async function setup(t) {
     ...get('data/repository'),
     ...get('data/worktree'),
     ...get('data/subscription'),
+    ...get('data/cron'),
+    ...get('data/scopedEnv'),
   };
   await sequelize.sync();
   const BaseResolver = get('services/gitCredentialResolver').default,

@@ -160,5 +160,18 @@ define_program "${task_shell_params[@]}"
 handle_log_path "${task_shell_params[@]}"
 init_begin_time
 
+if [[ -f "$dir_shell/task_env.sh" ]]; then
+  . "$dir_shell/task_env.sh"
+  if ! ql_task_env_prepare; then
+    _task_exit_code=1
+    handle_task_end "${task_shell_params[@]}"
+    exit 1
+  fi
+fi
+if [[ -n ${QL_TASK_ENV_SNAPSHOT:-} ]]; then
+  file_env="$QL_TASK_ENV_SNAPSHOT/global.sh"
+  # Redact before either tee or file redirection, including real-time manual runs.
+  cmd="2>&1 | node \"$dir_shell/task_env_redact.cjs\" $cmd"
+fi
 eval . $dir_shell/otask.sh "$cmd"
 exit 0

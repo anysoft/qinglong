@@ -18,6 +18,7 @@ import {
 } from 'antd';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
+import RepositoryEnvironment from '@/components/repository-environment';
 const explanations: Record<string, string> = {
   WORKTREE_DIRTY:
     '工作区包含未提交、未跟踪或忽略文件，操作已停止。请先自行保存或提交。',
@@ -179,7 +180,9 @@ export default function RepositoryWorkspacePage() {
         />
       )}
       <Tabs
+        defaultActiveKey="overview"
         items={[
+          { key: 'environment', label: 'Environment', children: <RepositoryEnvironment id={id} /> },
           {
             key: 'overview',
             label: 'Overview',

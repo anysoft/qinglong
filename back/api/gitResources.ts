@@ -7,6 +7,7 @@ import SubscriptionService from '../services/subscription';
 import { normalizeRepositoryUrl } from '../shared/gitProvider';
 import { GitResourceError } from '../shared/gitSecurity';
 import { Joi } from 'celebrate';
+import scopedEnvironmentRoutes from './scopedEnvironment';
 
 const idSchema = Joi.number().integer().positive().required();
 const nullableId = Joi.number().integer().positive().allow(null);
@@ -64,6 +65,7 @@ function endpoint(action: (req: Request) => Promise<unknown>) {
   };
 }
 export default function gitResources(app: Router) {
+  scopedEnvironmentRoutes(app);
   const credentials = Router(),
     repositories = Router();
   app.use('/git-credentials', credentials);

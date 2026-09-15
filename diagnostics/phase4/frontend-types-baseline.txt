@@ -1,0 +1,69 @@
+src/app.ts(2,10): error TS2305: Module '"@umijs/max"' has no exported member 'setLocale'.
+src/components/tag.tsx(29,30): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/layouts/index.tsx(11,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/layouts/index.tsx(11,19): error TS2305: Module '"@umijs/max"' has no exported member 'Link'.
+src/layouts/index.tsx(11,25): error TS2305: Module '"@umijs/max"' has no exported member 'Outlet'.
+src/layouts/index.tsx(11,33): error TS2305: Module '"@umijs/max"' has no exported member 'useLocation'.
+src/pages/config/index.tsx(15,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/crontab/detail.tsx(597,50): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(26,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/crontab/index.tsx(26,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/crontab/index.tsx(395,36): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(402,39): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(406,23): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(896,22): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(897,19): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/logModal.tsx(59,28): error TS2339: Property 'logStatus' does not exist on type 'IResponseData'.
+src/pages/crontab/logModal.tsx(59,39): error TS2339: Property 'nextOffset' does not exist on type 'IResponseData'.
+src/pages/crontab/viewCreateModal.tsx(81,29): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/viewCreateModal.tsx(125,21): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/viewCreateModal.tsx(151,37): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(77,29): error TS7006: Parameter 'record' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(86,16): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(92,16): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(188,6): error TS7006: Parameter 'dragIndex' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(188,17): error TS7006: Parameter 'hoverIndex' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(256,11): error TS2322: Type '(record: any, index: number) => any' is not assignable to type 'GetComponentProps<any>'.
+  Types of parameters 'index' and 'index' are incompatible.
+    Type 'number | undefined' is not assignable to type 'number'.
+      Type 'undefined' is not assignable to type 'number'.
+src/pages/dashboard/index.tsx(12,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/dependence/index.tsx(35,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/diff/index.tsx(10,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/diff/index.tsx(76,44): error TS7006: Parameter 'op' implicitly has an 'any' type.
+src/pages/env/index.tsx(16,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/env/index.tsx(471,17): error TS2345: Argument of type 'ForwardedRef<unknown>' is not assignable to parameter of type 'ConnectableElement'.
+  Type '(instance: unknown) => void' is not assignable to type 'ConnectableElement'.
+src/pages/error/index.tsx(6,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/error/index.tsx(6,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/initialization/index.tsx(14,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/log/index.tsx(10,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/log/index.tsx(108,6): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/login/index.tsx(13,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/login/index.tsx(13,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/script/editNameModal.tsx(72,23): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/script/editNameModal.tsx(76,20): error TS7006: Parameter 'data' implicitly has an 'any' type.
+src/pages/script/editNameModal.tsx(80,20): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/script/editNameModal.tsx(81,17): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/script/index.tsx(19,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/script/index.tsx(19,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/script/index.tsx(132,9): error TS2739: Type 'Record<string, any> & { children?: unknown[] | undefined; }' is missing the following properties from type '{ title: string | (string | null)[]; key: string | (string | null)[]; parent: string | (string | null)[] | null; }': title, key, parent
+src/pages/script/index.tsx(202,6): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/script/index.tsx(382,16): error TS18048: 'item' is possibly 'undefined'.
+src/pages/script/index.tsx(383,23): error TS18048: 'item' is possibly 'undefined'.
+src/pages/setting/index.tsx(32,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/setting/notification.tsx(82,31): error TS7006: Parameter 'y' implicitly has an 'any' type.
+src/pages/setting/other.tsx(498,17): error TS2532: Object is possibly 'undefined'.
+src/pages/setting/security.tsx(6,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/setting/security.tsx(98,21): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/index.tsx(34,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/subscription/index.tsx(34,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/subscription/index.tsx(377,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/modal.tsx(113,23): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/modal.tsx(125,31): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/modal.tsx(130,27): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/modal.tsx(134,24): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/modal.tsx(141,27): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/modal.tsx(316,36): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/modal.tsx(323,25): error TS7006: Parameter 'sub' implicitly has an 'any' type.
+src/utils/http.tsx(4,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.

@@ -10,6 +10,7 @@ import { CrontabStatModel } from '../data/cronStats';
 import { RunningInstanceModel } from '../data/runningInstance';
 import { sequelize } from '../data';
 import { migrateSchema } from '../shared/schemaMigrations';
+import ExecutionEnvironmentTransport from '../services/executionEnvironmentTransport';
 
 export default async () => {
   try {
@@ -24,6 +25,9 @@ export default async () => {
     await RunningInstanceModel.sync();
 
     await migrateSchema(sequelize);
+    await new ExecutionEnvironmentTransport().cleanupStale().catch(() => {
+      Logger.warn('[environment] stale snapshot cleanup deferred');
+    });
 
     Logger.info('[boot] DB loaded');
   } catch (error) {

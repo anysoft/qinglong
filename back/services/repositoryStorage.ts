@@ -5,6 +5,7 @@ import config from '../config';
 import { Repository, RepositoryModel } from '../data/repository';
 import { WorktreeModel } from '../data/worktree';
 import { SubscriptionModel } from '../data/subscription';
+import { EnvironmentProfileModel } from '../data/scopedEnv';
 import { sequelize } from '../data';
 import { normalizeRepositoryUrl } from '../shared/gitProvider';
 import { WorkspaceError } from '../shared/workspaceError';
@@ -478,6 +479,10 @@ export default class RepositoryStorageService {
             transaction,
           })) ||
           (await WorktreeModel.count({
+            where: { repository_id: id },
+            transaction,
+          })) ||
+          (await EnvironmentProfileModel.count({
             where: { repository_id: id },
             transaction,
           }))

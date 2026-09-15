@@ -14,6 +14,7 @@ import {
 } from 'antd';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
+import { TaskEnvironment } from '@/components/scoped-environment';
 import CronExpressionParser from 'cron-parser';
 import isNil from 'lodash/isNil';
 
@@ -741,6 +742,7 @@ const SubscriptionModal = ({
           </Form.Item>
         </Form.Item>
       </Form>
+      {subscription?.id && <TaskEnvironment id={subscription.id} subscription />}
     </Modal>
   );
 };

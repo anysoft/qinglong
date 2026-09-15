@@ -19,6 +19,7 @@ export class Crontab {
   last_running_time?: number;
   last_execution_time?: number;
   sub_id?: number;
+  env_profile_id?: number | null;
   extra_schedules?: Array<{ schedule: string }>;
   task_before?: string;
   task_after?: string;
@@ -46,6 +47,7 @@ export class Crontab {
     this.last_running_time = options.last_running_time || 0;
     this.last_execution_time = options.last_execution_time || 0;
     this.sub_id = options.sub_id;
+    this.env_profile_id = options.env_profile_id;
     this.extra_schedules = options.extra_schedules;
     this.task_before = options.task_before;
     this.task_after = options.task_after;
@@ -89,6 +91,7 @@ export const CrontabModel = sequelize.define<CronInstance>('Crontab', {
   last_running_time: DataTypes.NUMBER,
   last_execution_time: DataTypes.NUMBER,
   sub_id: { type: DataTypes.NUMBER, allowNull: true },
+  env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },
   extra_schedules: DataTypes.JSON,
   task_before: DataTypes.STRING,
   task_after: DataTypes.STRING,

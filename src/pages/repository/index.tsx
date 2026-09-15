@@ -166,6 +166,7 @@ export default function RepositoryPage() {
   return (
     <div style={{ padding: 24 }}>
       <h2>仓库管理</h2>
+      <Button href={`${config.baseUrl}scoped-env`}>Environment Profiles</Button>
       <Tabs
         items={[
           {

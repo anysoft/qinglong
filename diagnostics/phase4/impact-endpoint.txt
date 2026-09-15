@@ -1,0 +1,83 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Impact (1.6.12)
+{
+  "target": {
+    "id": "Function:back/api/scopedEnvironment.ts:endpoint",
+    "name": "endpoint",
+    "type": "Function",
+    "filePath": "back/api/scopedEnvironment.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 1,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 1,
+    "processes_affected": 1,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 1
+  },
+  "affected_processes": [
+    {
+      "name": "scopedEnvironmentRoutes",
+      "type": "Function",
+      "filePath": "back/api/scopedEnvironment.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 1,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Function:back/api/scopedEnvironment.ts:scopedEnvironmentRoutes",
+        "name": "scopedEnvironmentRoutes",
+        "filePath": "back/api/scopedEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_169_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → Status",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_356_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → Request",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_252_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → ScopedEnvironmentError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_141_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      }
+    ]
+  }
+}
