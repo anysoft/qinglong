@@ -1,4 +1,7 @@
-import { Service, Inject } from 'typedi';
+import { sequelize } from '../data';
+import SubscriptionGitResolver from './subscriptionGit';
+import { repositorySubscriptionCommand } from '../shared/subscriptionGitCommand';
+import { Service, Inject, Container } from 'typedi';
 import winston from 'winston';
 import config from '../config';
 import {
@@ -88,9 +91,9 @@ export default class SubscriptionService {
     needCreate = true,
     runImmediately = false,
   ) {
-    const { url } = formatUrl(doc);
-
-    doc.command = formatCommand(doc, url as string);
+    doc.command = doc.repository_id
+      ? repositorySubscriptionCommand(doc.id!)
+      : formatCommand(doc, formatUrl(doc).url as string);
 
     if (doc.schedule_type === 'crontab') {
       this.scheduleService.cancelCronTask(doc as any);
@@ -115,7 +118,7 @@ export default class SubscriptionService {
 
   public async setSshConfig() {
     const docs = await SubscriptionModel.findAll();
-    await this.sshKeyService.setSshConfig(docs);
+    await this.sshKeyService.setSshConfig(docs.filter(doc => !doc.repository_id));
   }
 
   private taskCallbacks(doc: Subscription): TaskCallbacks {
@@ -223,7 +226,12 @@ export default class SubscriptionService {
 
   public async create(payload: Subscription): Promise<Subscription> {
     const tab = new Subscription(payload);
-    const doc = await this.insert(tab);
+    const doc = tab.repository_id || tab.credential_id
+      ? await sequelize.transaction(async transaction => {
+          await Container.get(SubscriptionGitResolver).resolveSubscriptionGitContext(tab, transaction);
+          return SubscriptionModel.create(tab, { transaction });
+        })
+      : await this.insert(tab);
     await this.handleTask(doc.get({ plain: true }));
     await this.setSshConfig();
     return doc;
@@ -236,7 +244,13 @@ export default class SubscriptionService {
   public async update(payload: Subscription): Promise<Subscription> {
     const doc = await this.getDb({ id: payload.id });
     const tab = new Subscription({ ...doc, ...payload });
-    const newDoc = await this.updateDb(tab);
+    const newDoc = tab.repository_id || tab.credential_id
+      ? await sequelize.transaction(async transaction => {
+          await Container.get(SubscriptionGitResolver).resolveSubscriptionGitContext(tab, transaction);
+          await SubscriptionModel.update(tab, { where: { id: tab.id }, transaction });
+          return tab;
+        })
+      : await this.updateDb(tab);
     await this.handleTask(newDoc, !newDoc.is_disabled);
     await this.setSshConfig();
     return newDoc;
@@ -344,7 +358,7 @@ export default class SubscriptionService {
       return;
     }
 
-    const command = formatCommand(subscription);
+    const command = subscription.repository_id ? repositorySubscriptionCommand(subscription.id!) : formatCommand(subscription);
 
     this.scheduleService.runTask(command, this.taskCallbacks(subscription), {
       name: subscription.name,

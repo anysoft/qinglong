@@ -1,4 +1,5 @@
 import { QueryTypes, Sequelize } from 'sequelize';
+import { migrateGitResources } from './gitResourceMigration';
 
 // Append new entries; IDs are persisted and must not be renumbered or reused.
 const columns = [
@@ -25,6 +26,8 @@ const columns = [
   { table: 'Envs', column: 'isPinned', type: 'NUMBER' },
   { table: 'Envs', column: 'labels', type: 'JSON' },
   { table: 'Crontabs', column: 'queued_token', type: 'VARCHAR(255)' },
+  { table: 'Subscriptions', column: 'repository_id', type: 'INTEGER REFERENCES Repositories(id) ON DELETE RESTRICT' },
+  { table: 'Subscriptions', column: 'credential_id', type: 'INTEGER REFERENCES GitCredentials(id) ON DELETE RESTRICT' },
 ];
 
 export async function migrateSchema(database: Sequelize): Promise<void> {
@@ -33,6 +36,7 @@ export async function migrateSchema(database: Sequelize): Promise<void> {
       'CREATE TABLE IF NOT EXISTS "SchemaMigrations" ("id" TEXT PRIMARY KEY, "applied_at" TEXT NOT NULL)',
       { transaction },
     );
+    await migrateGitResources(database, transaction);
     const applied = await database.query<{ id: string }>(
       'SELECT "id" FROM "SchemaMigrations"',
       { type: QueryTypes.SELECT, transaction },

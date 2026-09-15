@@ -43,7 +43,8 @@ test('legacy database upgrades without losing rows and repeated migration is ide
   const applied = await database.query('SELECT id FROM "SchemaMigrations"', {
     type: QueryTypes.SELECT,
   });
-  assert.equal(applied.length, 15);
+  assert.equal(applied.length, 18); // 15 legacy + resources + 2 nullable references
+  assert.equal(applied.filter(row => row.id === 'phase1-git-resources').length, 1);
 });
 
 test('migration failure rolls back added columns and can be retried after repair', async (t) => {

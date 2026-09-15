@@ -1,0 +1,50 @@
+{
+  "baseline_commit": "4eb27427f809b565202f0b1bfa8129073f3fe5bd",
+  "node": "22.23.2",
+  "suites": {
+    "existing": {
+      "passed": 176,
+      "failed": 0,
+      "skipped": 3
+    },
+    "phase0": {
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0
+    },
+    "phase1": {
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "ui_smoke": "passed (headless Chrome, in-memory SQLite)",
+  "backend_build": "passed",
+  "frontend_build": "passed",
+  "standalone_frontend_typecheck": {
+    "baseline_errors": 65,
+    "current_errors": 65,
+    "new_error_multiset": []
+  },
+  "gitnexus": {
+    "scope": "compare",
+    "base_ref": "develop",
+    "risk": "CRITICAL",
+    "tracked_files": 8,
+    "symbols": 19,
+    "affected_flows": 21,
+    "untracked_files": "separately indexed, tested and reviewed"
+  },
+  "unchanged_sha256": {
+    "shell/update.sh": "81703ec0645c79a61ce350c2cd18c72482519a70e9f6cf13b32ecacaab9cd1b8",
+    "shell/share.sh": "3dbedc5f7d487790618d7407da98e200b6f5a7d45a6aa27ebdeb7bf38cf605ea",
+    "shell/task.sh": "78997653348c777678b67d2135e9641389e4191deb7e26ad4d301a1cb2fc57f4",
+    "shell/otask.sh": "314f5aa4e965a0f2f36be98a112679afa4d0260547084677de6151e00eeabc08",
+    "back/services/cron.ts": "ae181a0fef4ad4d2140a5d98e21e8f149bbf31eecaeb0869095feab2907ba371",
+    "back/services/env.ts": "f5d456cc0083f475ce47334487b27fbfece8d2cbe432f0465d7bfd42c472730a",
+    "back/services/dependence.ts": "64d033df3838a4ef3233e402f2b86d4cd0faca4c7e793c8a8bb1080dd8a7541b",
+    "back/services/schedule.ts": "d09c55f72387adb8d160b726fefccc9eefd56539e878656f5c41d68ae19852b7",
+    "back/config/subscription.ts": "492bda4779dc3dec5b151f106b7e0009b90a428023cf464de76d10b247d4f162",
+    "back/services/sshKey.ts": "8ab88ce4a7bf26eba12e04eeb15a03357a40603b8de717f702d30092e5a75f45"
+  }
+}

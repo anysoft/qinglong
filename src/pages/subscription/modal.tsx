@@ -9,6 +9,8 @@ import {
   Select,
   Input,
   Switch,
+  Button,
+  Alert,
 } from 'antd';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
@@ -28,6 +30,27 @@ const SubscriptionModal = ({
 }) => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const [sourceMode, setSourceMode] = useState(subscription?.repository_id ? 'repository' : 'legacy');
+  const [repositories, setRepositories] = useState<any[]>([]);
+  const [credentials, setCredentials] = useState<any[]>([]);
+  useEffect(() => {
+    Promise.all([request.get(`${config.apiPrefix}repositories`), request.get(`${config.apiPrefix}git-credentials`)])
+      .then(([r,c]) => { if(r.code===200) { setRepositories(r.data); if(subscription?.repository_id && !subscription.url) { const repo = r.data.find((item: any) => item.id === subscription.repository_id); if(repo) form.setFieldsValue({url:repo.remote_url}); } } if(c.code===200)setCredentials(c.data); }).catch(()=>{});
+  }, []);
+  const chooseRepository = (id: number) => {
+    const repo = repositories.find(r => r.id === id);
+    if (!repo) return;
+    const branch = form.getFieldValue('branch');
+    form.setFieldsValue({ url: repo.remote_url, type: 'public-repo', alias: formatAlias(repo.remote_url.endsWith('.git') ? repo.remote_url : repo.remote_url+'.git', branch) || `repository_${id}`, pull_option: null, pull_type: null });
+    setType('public-repo');
+  };
+  const convert = async () => {
+    setLoading(true);
+    try {
+      const result = await request.post(`${config.apiPrefix}subscriptions/${subscription.id}/convert`, { credential_id: form.getFieldValue('credential_id') || null });
+      if(result.code===200) { (result.data.warnings || []).forEach((w: {message: string}) => message.warning(w.message)); message.success('已转换，未运行订阅'); handleCancel(true); }
+    } catch {} finally { setLoading(false); }
+  };
   const [type, setType] = useState(subscription?.type || 'public-repo');
   const [scheduleType, setScheduleType] = useState(
     subscription?.schedule_type || 'crontab',
@@ -41,6 +64,8 @@ const SubscriptionModal = ({
     const method = subscription ? 'put' : 'post';
     const payload = {
       ...values,
+      repository_id: sourceMode === 'repository' ? values.repository_id : null,
+      credential_id: sourceMode === 'repository' ? (values.credential_id || null) : null,
       autoAddCron: Boolean(values.autoAddCron),
       autoDelCron: Boolean(values.autoDelCron),
     };
@@ -48,11 +73,12 @@ const SubscriptionModal = ({
       payload.id = subscription.id;
     }
     try {
-      const { code, data } = await request[method](
+      const { code, data, warnings }: {code?: number; data?: any; warnings?: {message: string}[]} = await request[method](
         `${config.apiPrefix}subscriptions`,
         payload,
       );
       if (code === 200) {
+        (warnings || []).forEach((w: {message: string}) => message.warning(w.message));
         message.success(
           subscription ? intl.get('更新订阅成功') : intl.get('创建订阅成功'),
         );
@@ -303,9 +329,7 @@ const SubscriptionModal = ({
           .then((values) => {
             handleOk(values);
           })
-          .catch((info) => {
-            console.log('Validate Failed:', info);
-          });
+          .catch(() => {});
       }}
       onCancel={() => handleCancel()}
       confirmLoading={loading}
@@ -326,7 +350,22 @@ const SubscriptionModal = ({
             onPaste={onNamePaste}
           />
         </Form.Item>
+        <Form.Item label="Repository Source / 仓库来源">
+          <Radio.Group value={sourceMode} onChange={e => { setSourceMode(e.target.value); if(e.target.value==='legacy') form.setFieldsValue({repository_id:null,credential_id:null}); }}>
+            <Radio value="repository">Existing Repository</Radio><Radio value="legacy">Manual URL (Legacy)</Radio>
+          </Radio.Group>
+        </Form.Item>
+        {sourceMode === 'repository' && <>
+          <Form.Item name="repository_id" label="Repository" rules={[{required:true}]}><Select showSearch optionFilterProp="label" options={repositories.map(r=>({value:r.id,label:r.name+' · '+r.remote_url}))} onChange={chooseRepository}/></Form.Item>
+          <Form.Item name="credential_id" label="Credential Override"><Select allowClear placeholder="使用仓库默认凭证" options={credentials.map(c=>({value:c.id,label:c.name+' · '+c.status}))}/></Form.Item>
+        </>}
+        {sourceMode === 'legacy' && subscription?.id && !subscription.repository_id && type !== 'file' && <>
+          <Alert type="info" message="转换保留已保存的 URL、分支和唯一值，不运行订阅。内嵌密码或 Token 须先手工清理并保存为独立凭证。" />
+          <Form.Item name="credential_id" label="转换时使用的凭证（可选）"><Select allowClear options={credentials.map(c=>({value:c.id,label:c.name}))}/></Form.Item>
+          <Button onClick={convert} loading={loading} style={{marginBottom:16}}>Convert to Repository</Button>
+        </>}
         <Form.Item
+          hidden={sourceMode === 'repository'}
           name="type"
           label={intl.get('类型')}
           rules={[{ required: true }]}
@@ -340,10 +379,11 @@ const SubscriptionModal = ({
         </Form.Item>
         <Form.Item
           name="url"
+          hidden={sourceMode === 'repository'}
           label={intl.get('链接')}
           rules={[
             { required: true },
-            { pattern: type === 'file' ? fileUrlRegx : repoUrlRegx },
+            ...(sourceMode === 'legacy' ? [{ pattern: type === 'file' ? fileUrlRegx : repoUrlRegx }] : []),
           ]}
         >
           <Input.TextArea
@@ -358,7 +398,7 @@ const SubscriptionModal = ({
             <Input
               placeholder={intl.get('请输入分支')}
               onPaste={onNamePaste}
-              onChange={onBranchChange}
+              onChange={e => { if(sourceMode === 'repository') form.setFieldsValue({alias: `repository_${form.getFieldValue('repository_id')}_${e.target.value.replaceAll('/', '_')}`}); else onBranchChange(e); }}
             />
           </Form.Item>
         )}
@@ -370,7 +410,7 @@ const SubscriptionModal = ({
         >
           <Input placeholder={intl.get('自动生成')} disabled />
         </Form.Item>
-        {type === 'private-repo' && (
+        {sourceMode === 'legacy' && type === 'private-repo' && (
           <>
             <Form.Item
               name="pull_type"

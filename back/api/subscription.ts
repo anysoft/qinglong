@@ -4,6 +4,7 @@ import { Logger } from 'winston';
 import SubscriptionService from '../services/subscription';
 import { celebrate, Joi } from 'celebrate';
 import CronExpressionParser from 'cron-parser';
+import SubscriptionGitResolver from '../services/subscriptionGit';
 const route = Router();
 
 export default (app: Router) => {
@@ -38,7 +39,9 @@ export default (app: Router) => {
           .allow('')
           .allow(null),
         name: Joi.string().optional().allow('').allow(null),
-        url: Joi.string().required(),
+        url: Joi.when('repository_id', { is: Joi.number().integer().positive().required(), then: Joi.string().optional().allow('').allow(null), otherwise: Joi.string().required() }),
+        repository_id: Joi.number().integer().positive().optional().allow(null),
+        credential_id: Joi.number().integer().positive().optional().allow(null),
         whitelist: Joi.string().optional().allow('').allow(null),
         blacklist: Joi.string().optional().allow('').allow(null),
         branch: Joi.string().optional().allow('').allow(null),
@@ -64,7 +67,8 @@ export default (app: Router) => {
         ) {
           const subscriptionService = Container.get(SubscriptionService);
           const data = await subscriptionService.create(req.body);
-          return res.send({ code: 200, data });
+          const warnings = await Container.get(SubscriptionGitResolver).collisions(data);
+          return res.send({ code: 200, data, warnings });
         } else {
           return res.send({ code: 400, message: 'param schedule error' });
         }
@@ -183,7 +187,9 @@ export default (app: Router) => {
         schedule: Joi.string().optional().allow('').allow(null),
         interval_schedule: Joi.object().optional().allow('').allow(null),
         name: Joi.string().optional().allow('').allow(null),
-        url: Joi.string().required(),
+        url: Joi.when('repository_id', { is: Joi.number().integer().positive().required(), then: Joi.string().optional().allow('').allow(null), otherwise: Joi.string().required() }),
+        repository_id: Joi.number().integer().positive().optional().allow(null),
+        credential_id: Joi.number().integer().positive().optional().allow(null),
         whitelist: Joi.string().optional().allow('').allow(null),
         blacklist: Joi.string().optional().allow('').allow(null),
         branch: Joi.string().optional().allow('').allow(null),
@@ -211,7 +217,8 @@ export default (app: Router) => {
         ) {
           const subscriptionService = Container.get(SubscriptionService);
           const data = await subscriptionService.update(req.body);
-          return res.send({ code: 200, data });
+          const warnings = await Container.get(SubscriptionGitResolver).collisions(data);
+          return res.send({ code: 200, data, warnings });
         } else {
           return res.send({ code: 400, message: 'param schedule error' });
         }

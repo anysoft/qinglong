@@ -5,6 +5,8 @@ import { SimpleIntervalSchedule } from 'toad-scheduler';
 type SimpleIntervalScheduleUnit = keyof SimpleIntervalSchedule;
 export class Subscription {
   id?: number;
+  repository_id?: number | null;
+  credential_id?: number | null;
   name?: string;
   type?: 'public-repo' | 'private-repo' | 'file';
   schedule_type?: 'crontab' | 'interval';
@@ -34,6 +36,8 @@ export class Subscription {
 
   constructor(options: Subscription) {
     this.id = options.id;
+    this.repository_id = options.repository_id;
+    this.credential_id = options.credential_id;
     this.name = options.name || options.alias;
     this.type = options.type;
     this.schedule = options.schedule;
@@ -76,6 +80,8 @@ export interface SubscriptionInstance
 export const SubscriptionModel = sequelize.define<SubscriptionInstance>(
   'Subscription',
   {
+    repository_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'Repositories', key: 'id' }, onDelete: 'RESTRICT' },
+    credential_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'GitCredentials', key: 'id' }, onDelete: 'RESTRICT' },
     name: {
       unique: 'compositeIndex',
       type: DataTypes.STRING,

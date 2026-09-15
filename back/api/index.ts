@@ -14,6 +14,7 @@ import dashboard from './dashboard';
 import health from './health';
 import clientIp from './clientIp';
 import retention from './retention';
+import gitResources from './gitResources';
 
 export default () => {
   const app = Router();
@@ -26,6 +27,7 @@ export default () => {
   open(app);
   dependence(app);
   system(app);
+  gitResources(app);
   subscription(app);
   update(app);
   dashboard(app);

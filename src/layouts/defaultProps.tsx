@@ -43,6 +43,12 @@ export default {
         component: '@/pages/subscription/index',
       },
       {
+        path: '/repository',
+        name: '仓库管理',
+        icon: <IconFont type="ql-icon-subs" />,
+        component: '@/pages/repository/index',
+      },
+      {
         path: '/env',
         name: intl.get('环境变量'),
         icon: <IconFont type="ql-icon-env" />,
