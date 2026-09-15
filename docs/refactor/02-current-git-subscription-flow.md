@@ -1,5 +1,7 @@
 # 当前 Git / Subscription 调用链
 
+> 下文为 Phase 0 Legacy 快照。显式 Managed 分支及最新架构图见 [Phase 3 Git 管线](phase3/02-managed-git-pipeline.md)；旧分支仍保留。
+
 > Phase 0 历史快照：本文记录重构前基线。当前代码已新增 GitCredential / Repository、可空订阅引用及兼容适配器；现状增量、测试和限制见 [Phase 1 报告](../../PHASE1_REPORT.md)。旧执行管线保持基线行为。
 
 ## 两个入口到共同执行器

@@ -7,6 +7,13 @@ export class Subscription {
   id?: number;
   repository_id?: number | null;
   credential_id?: number | null;
+  git_mode?: 'LEGACY' | 'MANAGED';
+  worktree_id?: number | null;
+  last_synced_commit?: string | null;
+  last_sync_at?: Date | null;
+  last_sync_state?: 'RUNNING' | 'SUCCESS' | 'FAILED' | null;
+  last_sync_phase?: string | null;
+  last_sync_error?: string | null;
   name?: string;
   type?: 'public-repo' | 'private-repo' | 'file';
   schedule_type?: 'crontab' | 'interval';
@@ -38,6 +45,13 @@ export class Subscription {
     this.id = options.id;
     this.repository_id = options.repository_id;
     this.credential_id = options.credential_id;
+    this.git_mode = options.git_mode || 'LEGACY';
+    this.worktree_id = options.worktree_id;
+    this.last_synced_commit = options.last_synced_commit;
+    this.last_sync_at = options.last_sync_at;
+    this.last_sync_state = options.last_sync_state;
+    this.last_sync_phase = options.last_sync_phase;
+    this.last_sync_error = options.last_sync_error;
     this.name = options.name || options.alias;
     this.type = options.type;
     this.schedule = options.schedule;
@@ -80,8 +94,34 @@ export interface SubscriptionInstance
 export const SubscriptionModel = sequelize.define<SubscriptionInstance>(
   'Subscription',
   {
-    repository_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'Repositories', key: 'id' }, onDelete: 'RESTRICT' },
-    credential_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'GitCredentials', key: 'id' }, onDelete: 'RESTRICT' },
+    repository_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: { model: 'Repositories', key: 'id' },
+      onDelete: 'RESTRICT',
+    },
+    credential_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: { model: 'GitCredentials', key: 'id' },
+      onDelete: 'RESTRICT',
+    },
+    git_mode: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'LEGACY',
+    },
+    worktree_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: { model: 'Worktrees', key: 'id' },
+      onDelete: 'RESTRICT',
+    },
+    last_synced_commit: DataTypes.STRING,
+    last_sync_at: DataTypes.DATE,
+    last_sync_state: DataTypes.STRING,
+    last_sync_phase: DataTypes.STRING,
+    last_sync_error: DataTypes.TEXT,
     name: {
       unique: 'compositeIndex',
       type: DataTypes.STRING,

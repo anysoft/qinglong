@@ -1,4 +1,5 @@
 import { sequelize } from '../data';
+import ManagedSubscriptionService from './managedSubscription';
 import SubscriptionGitResolver from './subscriptionGit';
 import { repositorySubscriptionCommand } from '../shared/subscriptionGitCommand';
 import { Service, Inject, Container } from 'typedi';
@@ -226,12 +227,25 @@ export default class SubscriptionService {
 
   public async create(payload: Subscription): Promise<Subscription> {
     const tab = new Subscription(payload);
-    const doc = tab.repository_id || tab.credential_id
-      ? await sequelize.transaction(async transaction => {
-          await Container.get(SubscriptionGitResolver).resolveSubscriptionGitContext(tab, transaction);
-          return SubscriptionModel.create(tab, { transaction });
-        })
-      : await this.insert(tab);
+    const save = async () =>
+      tab.repository_id || tab.credential_id
+        ? sequelize.transaction(async (transaction) => {
+            await Container.get(
+              SubscriptionGitResolver,
+            ).resolveSubscriptionGitContext(tab, transaction);
+            return SubscriptionModel.create(tab, { transaction });
+          })
+        : this.insert(tab);
+    const doc =
+      tab.git_mode === 'MANAGED'
+        ? await Container.get(ManagedSubscriptionService).withBinding(
+            tab,
+            async (id) => {
+              tab.worktree_id = id;
+              return save();
+            },
+          )
+        : await save();
     await this.handleTask(doc.get({ plain: true }));
     await this.setSshConfig();
     return doc;
@@ -242,15 +256,47 @@ export default class SubscriptionService {
   }
 
   public async update(payload: Subscription): Promise<Subscription> {
+    const current = await this.getDb({ id: payload.id });
+    if (
+      !current.repository_id &&
+      !payload.repository_id &&
+      !current.worktree_id
+    )
+      return this.updateUnlocked(payload);
+    return Container.get(ManagedSubscriptionService).exclusive(
+      payload.id!,
+      () => this.updateUnlocked(payload),
+    );
+  }
+
+  private async updateUnlocked(payload: Subscription): Promise<Subscription> {
     const doc = await this.getDb({ id: payload.id });
     const tab = new Subscription({ ...doc, ...payload });
-    const newDoc = tab.repository_id || tab.credential_id
-      ? await sequelize.transaction(async transaction => {
-          await Container.get(SubscriptionGitResolver).resolveSubscriptionGitContext(tab, transaction);
-          await SubscriptionModel.update(tab, { where: { id: tab.id }, transaction });
-          return tab;
-        })
-      : await this.updateDb(tab);
+    if (tab.repository_id !== doc.repository_id || tab.branch !== doc.branch)
+      tab.worktree_id = null;
+    const save = async () =>
+      tab.repository_id || tab.credential_id
+        ? sequelize.transaction(async (transaction) => {
+            await Container.get(
+              SubscriptionGitResolver,
+            ).resolveSubscriptionGitContext(tab, transaction);
+            await SubscriptionModel.update(tab, {
+              where: { id: tab.id },
+              transaction,
+            });
+            return tab;
+          })
+        : this.updateDb(tab);
+    const newDoc =
+      tab.git_mode === 'MANAGED'
+        ? await Container.get(ManagedSubscriptionService).withBinding(
+            tab,
+            async (id) => {
+              tab.worktree_id = id;
+              return save();
+            },
+          )
+        : await save();
     await this.handleTask(newDoc, !newDoc.is_disabled);
     await this.setSshConfig();
     return newDoc;
@@ -293,6 +339,21 @@ export default class SubscriptionService {
   }
 
   public async remove(ids: number[], query: { force?: boolean }) {
+    const candidates = await SubscriptionModel.findAll({ where: { id: ids } });
+    if (candidates.some((doc) => doc.repository_id || doc.worktree_id)) {
+      const storage = Container.get(ManagedSubscriptionService);
+      const acquire = (index: number): Promise<void> =>
+        index === ids.length
+          ? this.removeUnlocked(ids, query)
+          : storage.exclusive([...ids].sort((a, b) => a - b)[index], () =>
+              acquire(index + 1),
+            );
+      return acquire(0);
+    }
+    return this.removeUnlocked(ids, query);
+  }
+
+  private async removeUnlocked(ids: number[], query: { force?: boolean }) {
     const docs = await SubscriptionModel.findAll({ where: { id: ids } });
     for (const doc of docs) {
       await this.handleTask(doc.get({ plain: true }), false);
@@ -306,6 +367,7 @@ export default class SubscriptionService {
         await this.crontabService.remove(crons.map((x) => x.id!));
       }
       for (const doc of docs) {
+        if (doc.worktree_id || doc.git_mode === 'MANAGED') continue;
         const filePath = join(config.scriptPath, doc.alias);
         const repoPath = join(config.repoPath, doc.alias);
         await rmPath(filePath);
@@ -346,6 +408,10 @@ export default class SubscriptionService {
       }
     }
 
+    await SubscriptionModel.update(
+      { last_sync_state: 'FAILED', last_sync_phase: 'CANCELLED', last_sync_error: 'SUBSCRIPTION_CANCELLED' },
+      { where: { id: ids, git_mode: 'MANAGED', last_sync_state: 'RUNNING' } },
+    );
     await SubscriptionModel.update(
       { status: SubscriptionStatus.idle, pid: undefined },
       { where: { id: ids } },

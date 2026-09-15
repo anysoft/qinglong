@@ -20,6 +20,7 @@ export interface Worktree {
     | 'DELETING';
   dirty_state?: 'UNKNOWN' | 'CLEAN' | 'DIRTY' | 'CONFLICT';
   managed?: boolean;
+  purpose?: 'USER' | 'SUBSCRIPTION';
   status_snapshot?: any;
   last_update_at?: Date | null;
   last_error?: string | null;
@@ -42,6 +43,7 @@ export const WorktreeModel = sequelize.define<WorktreeInstance>('Worktree', {
   local_path: DataTypes.TEXT,
   lifecycle_state: { type: DataTypes.STRING, defaultValue: 'CREATING' },
   dirty_state: { type: DataTypes.STRING, defaultValue: 'UNKNOWN' },
+  purpose: { type: DataTypes.STRING, allowNull: false, defaultValue: 'USER' },
   managed: { type: DataTypes.BOOLEAN, defaultValue: true },
   status_snapshot: DataTypes.JSON,
   last_update_at: DataTypes.DATE,

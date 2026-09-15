@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import path from 'path';
 import { Container } from 'typedi';
 import config from './config';
+import winston from 'winston';
 import { sequelize } from './data';
 import { SubscriptionModel } from './data/subscription';
 import SubscriptionGitResolver from './services/subscriptionGit';
@@ -14,6 +15,19 @@ import GitCredentialResolver, {
 export async function runRepositorySubscription(id: number) {
   const sub = await SubscriptionModel.findByPk(id);
   if (!sub) throw new Error('Subscription not found');
+  if (sub.git_mode === 'MANAGED') {
+    if (!Container.has('logger'))
+      Container.set(
+        'logger',
+        winston.createLogger({
+          transports: [new winston.transports.Console()],
+        }),
+      );
+    const { default: ManagedSubscriptionService } = await import(
+      './services/managedSubscription'
+    );
+    return Container.get(ManagedSubscriptionService).run(id);
+  }
   const resolved = await Container.get(
     SubscriptionGitResolver,
   ).resolveSubscriptionGitContext(sub.get({ plain: true }));

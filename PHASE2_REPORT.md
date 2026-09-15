@@ -1,5 +1,7 @@
 # Phase 2 Status
 
+> 历史阶段报告：Phase 3 已增加显式 Managed 订阅管线；当前增量与验证结果见 [PHASE3_REPORT.md](PHASE3_REPORT.md)。原阶段结论保留为历史快照。
+
 **PASS** — persistent bare repository storage, native Worktrees, safe lifecycle operations and cross-process locks/leases implemented alongside the unchanged legacy execution pipeline.
 
 Baseline: `53ac03c8` (develop). Changes are local and uncommitted. No live database upgrade or deployment was performed.

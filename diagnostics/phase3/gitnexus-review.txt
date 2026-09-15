@@ -1,0 +1,35 @@
+  GitNexus Detect Changes (1.6.12)
+Changes: 47 files, 208 symbols
+Affected processes: 118
+Risk level: critical
+
+Changed symbols:
+  Section PHASE0_REPORT → PHASE0_REPORT.md
+  Section Phase 1 Status → PHASE1_REPORT.md
+  Section Phase 2 Status → PHASE2_REPORT.md
+  Section Phase 3 Status → PHASE3_REPORT.md
+  Section Tests → PHASE3_REPORT.md
+  Section Production Behavior Changed → PHASE3_REPORT.md
+  Section Database Changes → PHASE3_REPORT.md
+  Section API Changes → PHASE3_REPORT.md
+  Section UI Changes → PHASE3_REPORT.md
+  Section Subscription Mode Model → PHASE3_REPORT.md
+  Section Managed Pipeline → PHASE3_REPORT.md
+  Section Worktree Binding → PHASE3_REPORT.md
+  Section Lock Ordering → PHASE3_REPORT.md
+  Section Discovery Compatibility → PHASE3_REPORT.md
+  Section Legacy Equivalence → PHASE3_REPORT.md
+... and 193 more
+
+Affected execution flows:
+  • WithBinding → Root (10 steps) — changed: withBinding, prepare, initialize, lock, with, acquire
+  • EnsureReady → WorkspaceError (10 steps) — changed: lock, probe, acquire
+  • Update → AsError (9 steps) — changed: updateUnlocked, update
+  • Mode → Invalid (7 steps) — changed: mode, withBinding, prepare
+  • EnsureReady → WorkspaceGuard (7 steps) — changed: WorkspaceGuard, probe, acquire
+  • EnsureReady → Release (7 steps) — changed: probe, acquire
+  • Update → OnBefore (6 steps) — changed: updateUnlocked, update
+  • Update → OnEnd (6 steps) — changed: updateUnlocked, update
+  • Update → OnError (6 steps) — changed: updateUnlocked, update
+  • WithBinding → LegacyCheckoutName (5 steps) — changed: withBinding, prepare
+... and 108 more

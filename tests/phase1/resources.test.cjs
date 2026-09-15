@@ -21,6 +21,7 @@ async function setup(t) {
   const { GitCredentialModel } = get('data/gitCredential');
   const { RepositoryModel } = get('data/repository');
   const { SubscriptionModel } = get('data/subscription');
+  get('data/worktree'); // Subscription now has a nullable Worktree foreign key.
   await sequelize.sync();
   const Secret = get('services/credentialSecret').default,
     Resolver = get('services/gitCredentialResolver').default;

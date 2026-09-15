@@ -34,7 +34,8 @@ def message():
 def run(request):
     child = None
     try:
-        child = subprocess.Popen(['git'] + request['args'], cwd=request['cwd'], env=request['env'],
+        program = {'git': 'git', 'bash': '/bin/bash'}[request.get('program', 'git')]
+        child = subprocess.Popen([program] + request['args'], cwd=request['cwd'], env=request['env'],
                                  stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                  start_new_session=True, pass_fds=tuple(fds))
         selector = selectors.DefaultSelector()

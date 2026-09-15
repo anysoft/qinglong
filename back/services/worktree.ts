@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { Worktree, WorktreeModel } from '../data/worktree';
 import { Repository } from '../data/repository';
+import { SubscriptionModel } from '../data/subscription';
 import RepositoryStorageService, { exists } from './repositoryStorage';
 import { WorkspaceGuard, LockOwner } from './workspaceLocks';
 import { WorkspaceError } from '../shared/workspaceError';
@@ -25,6 +26,12 @@ export default class WorktreeService {
     return Promise.all(
       rows.map(async (row) => ({
         ...row.get({ plain: true }),
+        subscriptions: (
+          await SubscriptionModel.findAll({
+            where: { worktree_id: row.id },
+            attributes: ['id', 'name'],
+          })
+        ).map((s) => s.get({ plain: true })),
         lease: await this.storage.locks.probe('worktree', row.id!),
       })),
     );
@@ -245,6 +252,7 @@ export default class WorktreeService {
     name: string;
     ref_type: 'branch' | 'tag' | 'commit';
     ref_name: string;
+    purpose?: 'USER' | 'SUBSCRIPTION';
   }) {
     this.validateRef(input.ref_type, input.ref_name);
     if (!input.name?.trim() || input.name.length > 255)
@@ -329,6 +337,7 @@ export default class WorktreeService {
     name: string;
     ref_type: 'branch' | 'tag' | 'commit';
     ref_name: string;
+    purpose?: 'USER' | 'SUBSCRIPTION';
   }) {
     const existing =
       input.ref_type === 'branch'
@@ -364,33 +373,79 @@ export default class WorktreeService {
       throw new WorkspaceError('WORKTREE_LOCAL_COMMITS');
   }
   async update(id: number) {
-    return this.locked(id, 'update-worktree', async (g, r, row, bare) => {
-      const snapshot = await this.snapshot(g, r, row, bare);
-      this.clean(snapshot);
-      if (row.ref_type !== 'branch' || snapshot.git!.detached)
-        throw new WorkspaceError('DETACHED_HEAD');
-      if (snapshot.git!.branch !== row.branch)
-        throw new WorkspaceError('WORKTREE_STALE');
-      if (snapshot.git!.remote_missing)
-        throw new WorkspaceError('REF_NOT_FOUND');
-      if (snapshot.git!.ahead! > 0 && snapshot.git!.behind! > 0)
-        throw new WorkspaceError('WORKTREE_DIVERGED');
-      if (snapshot.git!.ahead! > 0) return snapshot;
-      const target = await this.verifyPath(row, bare);
-      await this.storage.commands.run(
-        g,
-        r,
-        [
-          'merge',
-          '--ff-only',
-          '--no-edit',
-          `refs/remotes/origin/${row.ref_name}`,
-        ],
-        target,
-      );
-      await row.update({ last_update_at: new Date() });
-      return this.snapshot(g, r, row, bare);
+    return this.locked(id, 'update-worktree', (g, r, row, bare) =>
+      this.updateLocked(g, r, row, bare),
+    );
+  }
+  private async updateLocked(
+    g: WorkspaceGuard,
+    r: Repository,
+    row: Awaited<ReturnType<WorktreeService['get']>>,
+    bare: string,
+  ) {
+    const snapshot = await this.snapshot(g, r, row, bare);
+    this.clean(snapshot);
+    if (row.ref_type !== 'branch' || snapshot.git!.detached)
+      throw new WorkspaceError('DETACHED_HEAD');
+    if (snapshot.git!.branch !== row.branch)
+      throw new WorkspaceError('WORKTREE_STALE');
+    if (snapshot.git!.remote_missing) throw new WorkspaceError('REF_NOT_FOUND');
+    if (snapshot.git!.ahead! > 0 && snapshot.git!.behind! > 0)
+      throw new WorkspaceError('WORKTREE_DIVERGED');
+    if (snapshot.git!.ahead! > 0) return snapshot;
+    const target = await this.verifyPath(row, bare);
+    await this.storage.commands.run(
+      g,
+      r,
+      [
+        'merge',
+        '--ff-only',
+        '--no-edit',
+        `refs/remotes/origin/${row.ref_name}`,
+      ],
+      target,
+    );
+    await row.update({ last_update_at: new Date() });
+    return this.snapshot(g, r, row, bare);
+  }
+  async withSync<T>(
+    id: number,
+    action: (state: {
+      before: string;
+      after: string;
+      worktree: Worktree;
+      guard: WorkspaceGuard;
+    }) => Promise<T>,
+  ) {
+    return this.locked(id, 'SUBSCRIPTION_SYNC', async (g, r, row, bare) => {
+      const initial = await this.snapshot(g, r, row, bare);
+      this.clean(initial);
+      this.safeLocalCommits(initial, row);
+      const updated = await this.updateLocked(g, r, row, bare);
+      this.clean(updated);
+      this.safeLocalCommits(updated, row);
+      if (updated.git!.ahead !== 0 || updated.git!.behind !== 0)
+        throw new WorkspaceError('WORKTREE_NOT_AT_REMOTE');
+      return action({
+        before: initial.git!.head!,
+        after: updated.git!.head!,
+        worktree: row.get({ plain: true }),
+        guard: g,
+      });
     });
+  }
+  private async assertUnreferenced(id: number) {
+    const subscriptions = await SubscriptionModel.findAll({
+      where: { worktree_id: id },
+      attributes: ['id'],
+    });
+    if (subscriptions.length)
+      throw new WorkspaceError(
+        'WORKTREE_IN_USE',
+        `Worktree is used by subscriptions: ${subscriptions
+          .map((s) => s.id)
+          .join(', ')}`,
+      );
   }
   async rename(id: number, name: string) {
     if (!name?.trim() || name.length > 255)
@@ -402,6 +457,7 @@ export default class WorktreeService {
   }
   async remove(id: number) {
     return this.locked(id, 'delete-worktree', async (g, r, row, bare) => {
+      await this.assertUnreferenced(id);
       const snapshot = await this.snapshot(g, r, row, bare);
       this.clean(snapshot);
       this.safeLocalCommits(snapshot, row);
@@ -486,6 +542,7 @@ export default class WorktreeService {
   }
   async removeRecord(id: number) {
     return this.locked(id, 'remove-missing-record', async (g, r, row, bare) => {
+      await this.assertUnreferenced(id);
       if (await exists(await this.path(row)))
         throw new WorkspaceError(
           'PATH_CONFLICT',

@@ -34,8 +34,21 @@ const SubscriptionModal = ({
   const [repositories, setRepositories] = useState<any[]>([]);
   const [credentials, setCredentials] = useState<any[]>([]);
   useEffect(() => {
-    Promise.all([request.get(`${config.apiPrefix}repositories`), request.get(`${config.apiPrefix}git-credentials`)])
-      .then(([r,c]) => { if(r.code===200) { setRepositories(r.data); if(subscription?.repository_id && !subscription.url) { const repo = r.data.find((item: any) => item.id === subscription.repository_id); if(repo) form.setFieldsValue({url:repo.remote_url}); } } if(c.code===200)setCredentials(c.data); }).catch(()=>{});
+    Promise.all([
+      request.get(`${config.apiPrefix}repositories`),
+      request.get(`${config.apiPrefix}git-credentials`),
+    ])
+      .then(([r, c]) => {
+        if (r.code === 200) {
+          setRepositories(r.data);
+          if (subscription?.repository_id && !subscription.url) {
+            const repo = r.data.find((item: any) => item.id === subscription.repository_id);
+            if (repo) form.setFieldsValue({ url: repo.remote_url });
+          }
+        }
+        if (c.code === 200) setCredentials(c.data);
+      })
+      .catch(() => {});
   }, []);
   const chooseRepository = (id: number) => {
     const repo = repositories.find(r => r.id === id);
@@ -64,8 +77,11 @@ const SubscriptionModal = ({
     const method = subscription ? 'put' : 'post';
     const payload = {
       ...values,
+      git_mode:
+        sourceMode === 'repository' ? values.git_mode || 'LEGACY' : 'LEGACY',
       repository_id: sourceMode === 'repository' ? values.repository_id : null,
-      credential_id: sourceMode === 'repository' ? (values.credential_id || null) : null,
+      credential_id:
+        sourceMode === 'repository' ? values.credential_id || null : null,
       autoAddCron: Boolean(values.autoAddCron),
       autoDelCron: Boolean(values.autoDelCron),
     };
@@ -73,12 +89,16 @@ const SubscriptionModal = ({
       payload.id = subscription.id;
     }
     try {
-      const { code, data, warnings }: {code?: number; data?: any; warnings?: {message: string}[]} = await request[method](
-        `${config.apiPrefix}subscriptions`,
-        payload,
-      );
+      const {
+        code,
+        data,
+        warnings,
+      }: { code?: number; data?: any; warnings?: { message: string }[] } =
+        await request[method](`${config.apiPrefix}subscriptions`, payload);
       if (code === 200) {
-        (warnings || []).forEach((w: {message: string}) => message.warning(w.message));
+        (warnings || []).forEach((w: { message: string }) =>
+          message.warning(w.message),
+        );
         message.success(
           subscription ? intl.get('更新订阅成功') : intl.get('创建订阅成功'),
         );
@@ -338,7 +358,11 @@ const SubscriptionModal = ({
         form={form}
         name="form_in_modal"
         layout="vertical"
-        initialValues={{ ...subscription, ...formatParams(subscription) }}
+        initialValues={{
+          git_mode: 'LEGACY',
+          ...subscription,
+          ...formatParams(subscription),
+        }}
       >
         <Form.Item
           name="name"
@@ -351,19 +375,133 @@ const SubscriptionModal = ({
           />
         </Form.Item>
         <Form.Item label="Repository Source / 仓库来源">
-          <Radio.Group value={sourceMode} onChange={e => { setSourceMode(e.target.value); if(e.target.value==='legacy') form.setFieldsValue({repository_id:null,credential_id:null}); }}>
-            <Radio value="repository">Existing Repository</Radio><Radio value="legacy">Manual URL (Legacy)</Radio>
+          <Radio.Group
+            value={sourceMode}
+            onChange={(e) => {
+              setSourceMode(e.target.value);
+              if (e.target.value === 'legacy')
+                form.setFieldsValue({
+                  repository_id: null,
+                  credential_id: null,
+                });
+            }}
+          >
+            <Radio value="repository">Existing Repository</Radio>
+            <Radio value="legacy">Manual URL (Legacy)</Radio>
           </Radio.Group>
         </Form.Item>
-        {sourceMode === 'repository' && <>
-          <Form.Item name="repository_id" label="Repository" rules={[{required:true}]}><Select showSearch optionFilterProp="label" options={repositories.map(r=>({value:r.id,label:r.name+' · '+r.remote_url}))} onChange={chooseRepository}/></Form.Item>
-          <Form.Item name="credential_id" label="Credential Override"><Select allowClear placeholder="使用仓库默认凭证" options={credentials.map(c=>({value:c.id,label:c.name+' · '+c.status}))}/></Form.Item>
-        </>}
-        {sourceMode === 'legacy' && subscription?.id && !subscription.repository_id && type !== 'file' && <>
-          <Alert type="info" message="转换保留已保存的 URL、分支和唯一值，不运行订阅。内嵌密码或 Token 须先手工清理并保存为独立凭证。" />
-          <Form.Item name="credential_id" label="转换时使用的凭证（可选）"><Select allowClear options={credentials.map(c=>({value:c.id,label:c.name}))}/></Form.Item>
-          <Button onClick={convert} loading={loading} style={{marginBottom:16}}>Convert to Repository</Button>
-        </>}
+        {sourceMode === 'repository' && (
+          <>
+            <Form.Item
+              name="repository_id"
+              label="Repository"
+              rules={[{ required: true }]}
+            >
+              <Select
+                showSearch
+                optionFilterProp="label"
+                options={repositories.map((r) => ({
+                  value: r.id,
+                  label: r.name + ' · ' + r.remote_url,
+                }))}
+                onChange={chooseRepository}
+              />
+            </Form.Item>
+            {subscription?.id && (
+              <Button
+                loading={loading}
+                onClick={async () => {
+                  setLoading(true);
+                  try {
+                    const result = await request.post(
+                      `${config.apiPrefix}subscriptions/${subscription.id}/managed/preflight`,
+                      {},
+                    );
+                    if (result.code === 200)
+                      message.success(
+                        `检查通过：Worktree #${result.data.worktree_id}，模式尚未改变`,
+                      );
+                  } catch {
+                  } finally {
+                    setLoading(false);
+                  }
+                }}
+              >
+                检查已保存配置的 Managed 就绪状态
+              </Button>
+            )}
+            <Form.Item
+              name="git_mode"
+              label="Git 同步模式"
+              extra="Managed 保存前会 Fetch 并检查 Worktree；脚本仍复制到 scripts 执行。切回 Legacy 保留工作区。"
+            >
+              <Radio.Group>
+                <Radio value="LEGACY">Legacy（重新克隆）</Radio>
+                <Radio value="MANAGED">Managed（持久工作区）</Radio>
+              </Radio.Group>
+            </Form.Item>
+            {subscription?.worktree_id && (
+              <Alert
+                type="info"
+                showIcon
+                message={`Worktree #${subscription.worktree_id} · ${
+                  subscription.last_sync_state || '尚未同步'
+                } · ${subscription.last_sync_phase || ''}`}
+                description={
+                  <>
+                    <div>
+                      {subscription.last_sync_error ||
+                        subscription.last_synced_commit ||
+                        ''}
+                    </div>
+                    <a
+                      href={`${config.baseUrl}repository-workspace?id=${subscription.repository_id}`}
+                    >
+                      查看工作区
+                    </a>
+                  </>
+                }
+              />
+            )}
+            <Form.Item name="credential_id" label="Credential Override">
+              <Select
+                allowClear
+                placeholder="使用仓库默认凭证"
+                options={credentials.map((c) => ({
+                  value: c.id,
+                  label: c.name + ' · ' + c.status,
+                }))}
+              />
+            </Form.Item>
+          </>
+        )}
+        {sourceMode === 'legacy' &&
+          subscription?.id &&
+          !subscription.repository_id &&
+          type !== 'file' && (
+            <>
+              <Alert
+                type="info"
+                message="转换保留已保存的 URL、分支和唯一值，不运行订阅。内嵌密码或 Token 须先手工清理并保存为独立凭证。"
+              />
+              <Form.Item name="credential_id" label="转换时使用的凭证（可选）">
+                <Select
+                  allowClear
+                  options={credentials.map((c) => ({
+                    value: c.id,
+                    label: c.name,
+                  }))}
+                />
+              </Form.Item>
+              <Button
+                onClick={convert}
+                loading={loading}
+                style={{ marginBottom: 16 }}
+              >
+                Convert to Repository
+              </Button>
+            </>
+          )}
         <Form.Item
           hidden={sourceMode === 'repository'}
           name="type"
@@ -383,7 +521,9 @@ const SubscriptionModal = ({
           label={intl.get('链接')}
           rules={[
             { required: true },
-            ...(sourceMode === 'legacy' ? [{ pattern: type === 'file' ? fileUrlRegx : repoUrlRegx }] : []),
+            ...(sourceMode === 'legacy'
+              ? [{ pattern: type === 'file' ? fileUrlRegx : repoUrlRegx }]
+              : []),
           ]}
         >
           <Input.TextArea
@@ -398,7 +538,15 @@ const SubscriptionModal = ({
             <Input
               placeholder={intl.get('请输入分支')}
               onPaste={onNamePaste}
-              onChange={e => { if(sourceMode === 'repository') form.setFieldsValue({alias: `repository_${form.getFieldValue('repository_id')}_${e.target.value.replaceAll('/', '_')}`}); else onBranchChange(e); }}
+              onChange={(e) => {
+                if (sourceMode === 'repository')
+                  form.setFieldsValue({
+                    alias: `repository_${form.getFieldValue(
+                      'repository_id',
+                    )}_${e.target.value.replaceAll('/', '_')}`,
+                  });
+                else onBranchChange(e);
+              }}
             />
           </Form.Item>
         )}
@@ -452,7 +600,9 @@ const SubscriptionModal = ({
                   ) {
                     return Promise.resolve();
                   } else {
-                    return Promise.reject(intl.get('Subscription表达式格式有误'));
+                    return Promise.reject(
+                      intl.get('Subscription表达式格式有误'),
+                    );
                   }
                 } catch (e) {
                   return Promise.reject(intl.get('Subscription表达式格式有误'));

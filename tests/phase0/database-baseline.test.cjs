@@ -11,7 +11,7 @@ test('actual ORM tables, automatic and manual tasks, and execution exit code in 
   const {SubscriptionModel}=load(path.join(root,'back/data/subscription.ts'),mocks);
   const {RunningInstanceModel,InstanceStatus}=load(path.join(root,'back/data/runningInstance.ts'),mocks);
   // Phase 1 adds referenced tables; retain all original task/data assertions.
-  const expected={gitCredential:'GitCredentials',repository:'Repositories',cronView:'CrontabViews',cronStats:'CrontabStats',dependence:'Dependences',env:'Envs',open:'Apps',system:'Auths'};
+  const expected={worktree:'Worktrees',gitCredential:'GitCredentials',repository:'Repositories',cronView:'CrontabViews',cronStats:'CrontabStats',dependence:'Dependences',env:'Envs',open:'Apps',system:'Auths'};
   for(const [file,table] of Object.entries(expected)) {
     const exports=load(path.join(root,`back/data/${file}.ts`),mocks);
     const model=Object.values(exports).find(x=>x?.getTableName);

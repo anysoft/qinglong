@@ -59,9 +59,12 @@ export class WorkspaceGuard {
     cwd: string,
     env: NodeJS.ProcessEnv,
     timeout: number,
+    program: 'git' | 'bash' = 'git',
   ) {
     const response = this.receive();
-    this.child.stdin.write(JSON.stringify({ args, cwd, env, timeout }) + '\n');
+    this.child.stdin.write(
+      JSON.stringify({ args, cwd, env, timeout, program }) + '\n',
+    );
     const result = await response;
     if (result.error) throw new WorkspaceError('WORKSPACE_HELPER_FAILED');
     return result as { code: number; stdout: string; stderr: string };
@@ -77,7 +80,10 @@ export class WorkspaceLocks {
     private helper = path.join(config.rootPath, 'shell/git_workspace_lock.py'),
   ) {}
   async acquire(
-    resources: { kind: 'repository' | 'worktree'; id: number }[],
+    resources: {
+      kind: 'repository' | 'worktree' | 'subscription' | 'publication';
+      id: number;
+    }[],
     owner: LockOwner,
     probe = false,
   ) {
@@ -112,7 +118,10 @@ export class WorkspaceLocks {
     return guard;
   }
   async with<T>(
-    resources: { kind: 'repository' | 'worktree'; id: number }[],
+    resources: {
+      kind: 'repository' | 'worktree' | 'subscription' | 'publication';
+      id: number;
+    }[],
     operation: string,
     action: (guard: WorkspaceGuard) => Promise<T>,
   ) {
@@ -127,7 +136,10 @@ export class WorkspaceLocks {
       await guard.release();
     }
   }
-  async probe(kind: 'repository' | 'worktree', id: number) {
+  async probe(
+    kind: 'repository' | 'worktree' | 'subscription' | 'publication',
+    id: number,
+  ) {
     return this.acquire(
       [{ kind, id }],
       { owner_type: 'probe', owner_id: '', operation: 'status' },

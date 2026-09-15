@@ -68,6 +68,7 @@ test('an existing Phase1 DB rolls back partial Phase2 DDL and preserves resource
     await db.query(`CREATE TABLE ${table}(id INTEGER PRIMARY KEY,name TEXT)`);
   const phase1 = load('back/shared/schemaMigrations.ts', {
     './workspaceMigration': { migrateWorkspace: async () => {} },
+    './managedSubscriptionMigration': { migrateManagedSubscriptions: async () => {} },
   });
   await phase1.migrateSchema(db);
   await db.query(

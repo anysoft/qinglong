@@ -64,7 +64,56 @@ export enum SubscriptionType {
 const Subscription = () => {
   const { headerStyle, isPhone } = useOutletContext<SharedContext>();
 
+  const [repositoryNames, setRepositoryNames] = useState<Record<number, string>>({});
+  useEffect(() => {
+    request.get(`${config.apiPrefix}repositories`).then(result => {
+      if (result.code === 200) setRepositoryNames(Object.fromEntries(result.data.map((repo: any) => [repo.id, repo.name])));
+    }).catch(() => {});
+  }, []);
   const columns: any = [
+    {
+      title: 'Git 同步',
+      key: 'git_mode',
+      width: 190,
+      render: (_: any, row: any) => (
+        <Space direction="vertical" size={0}>
+          <Tag color={row.git_mode === 'MANAGED' ? 'blue' : undefined}>
+            {row.git_mode || 'LEGACY'}
+          </Tag>
+          {row.repository_id && (
+            <a href={`${config.baseUrl}repository`}>
+              {repositoryNames[row.repository_id] || 'Repository'} #{row.repository_id}
+            </a>
+          )}
+          {row.worktree_id && (
+            <a
+              href={`${config.baseUrl}repository-workspace?id=${row.repository_id}`}
+            >
+              Worktree #{row.worktree_id}
+            </a>
+          )}
+          {row.last_sync_state && (
+            <Tooltip
+              title={`${row.last_sync_phase || ''} ${
+                row.last_sync_error || ''
+              } ${row.last_sync_at || ''} ${row.last_synced_commit || ''}`}
+            >
+              <Tag
+                color={
+                  row.last_sync_state === 'FAILED'
+                    ? 'red'
+                    : row.last_sync_state === 'SUCCESS'
+                    ? 'green'
+                    : 'processing'
+                }
+              >
+                {row.last_sync_state}
+              </Tag>
+            </Tooltip>
+          )}
+        </Space>
+      ),
+    },
     {
       title: intl.get('名称'),
       dataIndex: 'name',
@@ -341,7 +390,7 @@ const Subscription = () => {
           {intl.get('吗')}
           <div style={{ marginTop: 20 }}>
             <Checkbox onChange={onCheckChange}>
-              {intl.get('同时删除关联任务和脚本')}
+              {record.worktree_id || record.git_mode === 'MANAGED' ? '同时删除关联任务（保留 scripts 和工作区）' : intl.get('同时删除关联任务和脚本')}
             </Checkbox>
           </div>
         </>

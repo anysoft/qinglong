@@ -42,7 +42,10 @@ export class RepositoryPathResolver {
     await this.assertSafe(result);
     return result;
   }
-  async lock(kind: 'repository' | 'worktree', id: number) {
+  async lock(
+    kind: 'repository' | 'worktree' | 'subscription' | 'publication',
+    id: number,
+  ) {
     return path.join(
       await this.base('.locks'),
       `${kind}-${workspaceId(id)}.lock`,

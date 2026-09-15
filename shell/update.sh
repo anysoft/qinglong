@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+if [[ "${QL_DISCOVERY_LIBRARY_ONLY:-0}" != 1 ]]; then
 dir_shell=$QL_DIR/shell
 . $dir_shell/share.sh
 . $dir_shell/api.sh
@@ -7,6 +8,7 @@ load_ql_envs
 . $dir_shell/env.sh
 
 send_mark=$dir_shell/send_mark
+fi
 
 ## 检测cron的差异，$1：脚本清单文件路径，$2：cron任务清单文件路径，$3：增加任务清单文件路径，$4：删除任务清单文件路径
 diff_cron() {
@@ -626,7 +628,8 @@ main() {
   fi
 }
 
+if [[ "${QL_DISCOVERY_LIBRARY_ONLY:-0}" != 1 ]]; then
 import_config "$@"
 main "$@"
-
 exit 0
+fi

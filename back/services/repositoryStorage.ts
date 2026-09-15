@@ -148,8 +148,12 @@ export default class RepositoryStorageService {
     }
     return target;
   }
-  async initialize(id: number) {
-    return this.withRepository(id, 'initialize', async (guard, repo) => {
+  async initialize(id: number, credentialId?: number | null) {
+    return this.withRepository(id, 'initialize', async (guard, stored) => {
+      const repo =
+        credentialId === undefined
+          ? stored
+          : { ...stored, default_credential_id: credentialId };
       const target = await this.location(repo);
       if (await exists(target)) {
         await this.verify(guard, repo);
@@ -270,8 +274,12 @@ export default class RepositoryStorageService {
       last_fetch_status: 'OK',
     });
   }
-  async fetch(id: number) {
-    return this.withRepository(id, 'fetch', async (guard, repo) => {
+  async fetch(id: number, credentialId?: number | null) {
+    return this.withRepository(id, 'fetch', async (guard, stored) => {
+      const repo =
+        credentialId === undefined
+          ? stored
+          : { ...stored, default_credential_id: credentialId };
       const target = await this.verify(guard, repo);
       await this.mark(id, { storage_state: 'FETCHING', last_error: null });
       try {

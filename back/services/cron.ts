@@ -7,10 +7,7 @@ import { Service, Inject } from 'typedi';
 import winston from 'winston';
 import config from '../config';
 import { Crontab, CrontabModel, CrontabStatus } from '../data/cron';
-import {
-  RunningInstanceModel,
-  InstanceStatus,
-} from '../data/runningInstance';
+import { RunningInstanceModel, InstanceStatus } from '../data/runningInstance';
 import { exec, execSync } from 'child_process';
 import fs from 'fs/promises';
 import CronExpressionParser from 'cron-parser';
@@ -141,6 +138,116 @@ export default class CronService {
 
       await this.setCrontab();
       return doc;
+    });
+  }
+
+  // Managed discovery is computed under the existing scheduler mutation lock.
+  // Existing commands, IDs and metadata remain unchanged unless the old scanner
+  // explicitly adds/deletes a path. Files are rolled back with DB definitions.
+  public async publishSubscription(
+    discover: () => Promise<{
+      adds: Crontab[];
+      drops: number[];
+      commandPrefix?: string;
+      checkpoint?: (tasks: Crontab[]) => Promise<void>;
+      notify?: () => Promise<void>;
+      publish: () => Promise<void>;
+      rollback: () => Promise<void>;
+      cleanup: () => Promise<void>;
+    }>,
+    publishing: () => Promise<void>,
+  ) {
+    return withSchedulerMutation(async () => {
+      const plan = await discover();
+      const previous = (
+        await CrontabModel.findAll({ where: { id: plan.drops } })
+      ).map((x) => x.get({ plain: true }));
+      if (
+        plan.commandPrefix &&
+        previous.some((row) => !row.command.startsWith(plan.commandPrefix!))
+      ) {
+        await plan.cleanup();
+        throw Object.assign(new Error('INVALID_DISCOVERY_PLAN'), {
+          error_code: 'INVALID_DISCOVERY_PLAN',
+        });
+      }
+      const added: Crontab[] = [];
+      let started = false,
+        recovered = true;
+      const register = (rows: Crontab[]) =>
+        cronClient.addCron(
+          rows
+            .filter((x) => x.isDisabled !== 1 && this.shouldUseCronClient(x))
+            .map((doc) => ({
+              name: doc.name || '',
+              id: String(doc.id),
+              schedule: doc.schedule!,
+              command: this.makeCommand(doc),
+              extra_schedules: doc.extra_schedules || [],
+            })),
+        );
+      try {
+        for (const tab of plan.adds) {
+          if (
+            !tab.schedule ||
+            !CronExpressionParser.parse(tab.schedule).hasNext()
+          )
+            throw new Error('Invalid discovered schedule');
+        }
+        await plan.checkpoint?.(previous);
+        await publishing();
+        started = true;
+        await plan.publish();
+        // Deletes and creates reuse the existing scheduler protocol. Compensation
+        // restores original IDs instead of recreating user Tasks with new IDs.
+        if (plan.drops.length) await cronClient.delCron(plan.drops.map(String));
+        await CrontabModel.destroy({ where: { id: plan.drops } });
+        for (const input of plan.adds) {
+          const tab = new Crontab(input);
+          tab.saved = false;
+          tab.log_name = await this.getLogName(tab);
+          added.push(await this.insert(tab));
+        }
+        await register(added);
+        await this.setCrontab(undefined, true);
+        try {
+          await plan.notify?.();
+        } catch {
+          this.logger.warn('Managed subscription notification failed');
+        }
+      } catch (error) {
+        if (started) {
+          try {
+            await plan.rollback();
+            await CrontabModel.destroy({
+              where: { id: added.map((x) => x.id!) },
+            });
+            for (const row of previous) await CrontabModel.upsert(row);
+            if (added.length)
+              await cronClient.delCron(added.map((x) => String(x.id)));
+            await register(previous);
+            await this.setCrontab(undefined, true);
+          } catch (recoveryError) {
+            recovered = false;
+            this.logger.error(
+              'Managed subscription publication rollback requires recovery',
+            );
+            throw Object.assign(new Error('MANAGED_RECOVERY_REQUIRED'), {
+              error_code: 'MANAGED_RECOVERY_REQUIRED',
+              cause: recoveryError,
+            });
+          }
+        }
+        throw error;
+      } finally {
+        // Keep the previous files available for manual recovery if compensation fails.
+        if (recovered)
+          await plan
+            .cleanup()
+            .catch(() =>
+              this.logger.warn('Managed subscription staging cleanup failed'),
+            );
+      }
     });
   }
 
@@ -997,7 +1104,7 @@ export default class CronService {
     return crontab_job_string;
   }
 
-  private async setCrontab(data?: { data: Crontab[]; total: number }) {
+  private async setCrontab(data?: { data: Crontab[]; total: number }, strict = false) {
     const tabs = data ?? (await this.crontabs());
     var crontab_string = '';
     tabs.data.forEach((tab) => {
@@ -1027,6 +1134,7 @@ export default class CronService {
       } catch (error: any) {
         const errorMsg = error.message || String(error);
         this.logger.error('[crontab] Failed to update system crontab:', errorMsg);
+        if (strict) throw error;
       }
     }
 

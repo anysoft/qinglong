@@ -1,0 +1,59 @@
+{
+  "baseline": "a2f1ac2d",
+  "node": "22",
+  "tests": {
+    "existing": {
+      "pass": 176,
+      "fail": 0,
+      "skipped": 3
+    },
+    "phase0": {
+      "pass": 17,
+      "fail": 0,
+      "skipped": 0
+    },
+    "phases_1_2_3_without_lease": {
+      "pass": 81,
+      "fail": 0,
+      "skipped": 0
+    },
+    "phase3_lease": {
+      "pass": 2,
+      "fail": 0,
+      "skipped": 0
+    }
+  },
+  "total": {
+    "passed": 276,
+    "failed": 0,
+    "skipped": 3
+  },
+  "build": {
+    "backend": "PASS",
+    "frontend": "PASS"
+  },
+  "browser": {
+    "phase2": "PASS",
+    "phase3": "PASS",
+    "page_errors": 0,
+    "scheduler_transport": "isolated test double; real API/Git/SQLite/pipeline"
+  },
+  "syntax": {
+    "bash": "PASS",
+    "python": "PASS"
+  },
+  "production_deployment": false,
+  "git_commit_created": false,
+  "gitnexus": {
+    "scope": "compare",
+    "base_ref": "develop",
+    "includes_new_files_via_temporary_index": true,
+    "changed_files": 47,
+    "changed_symbols": 208,
+    "affected_processes": 118,
+    "risk": "CRITICAL",
+    "index_nodes": 6897,
+    "index_edges": 17255,
+    "index_flows": 416
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "baseline": "a2f1ac2d",
+  "files": [
+    {
+      "path": "shell/task.sh",
+      "sha256": "78997653348c777678b67d2135e9641389e4191deb7e26ad4d301a1cb2fc57f4",
+      "unchanged": true
+    },
+    {
+      "path": "shell/otask.sh",
+      "sha256": "314f5aa4e965a0f2f36be98a112679afa4d0260547084677de6151e00eeabc08",
+      "unchanged": true
+    },
+    {
+      "path": "shell/share.sh",
+      "sha256": "3dbedc5f7d487790618d7407da98e200b6f5a7d45a6aa27ebdeb7bf38cf605ea",
+      "unchanged": true
+    },
+    {
+      "path": "back/config/subscription.ts",
+      "sha256": "492bda4779dc3dec5b151f106b7e0009b90a428023cf464de76d10b247d4f162",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/subscriptionGit.ts",
+      "sha256": "527568d19c8e4fcdb6b30ba1c65b5d0f0d12985fdbf9ebd41bbf9c5f666de443",
+      "unchanged": true
+    },
+    {
+      "path": "back/shared/subscriptionGitCommand.ts",
+      "sha256": "3e8a0e3f0da258ace353b36e7e85a1de95a0f2381b725f4c731a2e3169f64ceb",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/schedule.ts",
+      "sha256": "d09c55f72387adb8d160b726fefccc9eefd56539e878656f5c41d68ae19852b7",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/env.ts",
+      "sha256": "f5d456cc0083f475ce47334487b27fbfece8d2cbe432f0465d7bfd42c472730a",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/dependence.ts",
+      "sha256": "64d033df3838a4ef3233e402f2b86d4cd0faca4c7e793c8a8bb1080dd8a7541b",
+      "unchanged": true
+    },
+    {
+      "path": "back/shared/pLimit.ts",
+      "sha256": "7e94eef1fed8fb96c8d6ba02ed37cc97baf8f4e985c6caa886542a6836881500",
+      "unchanged": true
+    },
+    {
+      "path": "back/schedule/client.ts",
+      "sha256": "7e9b50659adc1653c7655ef19f49febf38927b7ca9406c42c1b716a3c57402d6",
+      "unchanged": true
+    },
+    {
+      "path": "back/schedule/addCron.ts",
+      "sha256": "74ca30bd7002b404773543973d1eb06f300d052243b04e45755a150360295ba7",
+      "unchanged": true
+    },
+    {
+      "path": "back/schedule/delCron.ts",
+      "sha256": "04f5c1ceedbca370d9596cbf95c09b8d2911d0a00867c1b72d8bd2e0d20650b8",
+      "unchanged": true
+    },
+    {
+      "path": "back/data/cron.ts",
+      "sha256": "2f4c84895de683fb04bd0a8ecebdfb0bdf58b81c0a21dcaf0822a486f10b75fd",
+      "unchanged": true
+    }
+  ],
+  "shell_functions": [
+    {
+      "name": "get_uniq_path",
+      "unchanged": true
+    },
+    {
+      "name": "update_repo",
+      "unchanged": true
+    },
+    {
+      "name": "gen_list_repo",
+      "unchanged": true
+    },
+    {
+      "name": "diff_scripts",
+      "unchanged": true
+    },
+    {
+      "name": "diff_cron",
+      "unchanged": true
+    },
+    {
+      "name": "add_cron",
+      "unchanged": true
+    },
+    {
+      "name": "del_cron",
+      "unchanged": true
+    },
+    {
+      "name": "output_list_add_drop",
+      "unchanged": true
+    }
+  ],
+  "cron_methods": [
+    {
+      "name": "makeCommand",
+      "unchanged": true
+    },
+    {
+      "name": "runSingle",
+      "unchanged": true
+    }
+  ]
+}

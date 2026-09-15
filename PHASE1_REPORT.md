@@ -1,5 +1,7 @@
 # Phase 1 Status
 
+> 历史阶段报告：Phase 3 已增加显式 Managed 订阅管线；当前增量与验证结果见 [PHASE3_REPORT.md](PHASE3_REPORT.md)。原阶段结论保留为历史快照。
+
 > Historical report. Phase 1 is now committed in baseline `53ac03c8`. Phase 2 additively extends storage and Worktrees; see [PHASE2_REPORT.md](PHASE2_REPORT.md). The original delivery statements below describe the Phase 1 snapshot.
 
 Phase 1 implemented on `develop`, against Phase 0 baseline commit `4eb27427f809b565202f0b1bfa8129073f3fe5bd`. Changes are local and uncommitted. No live database was upgraded or deployment performed.
