@@ -1,3 +1,4 @@
+import pythonEnvironmentRoutes from './pythonEnvironment';
 import { Router, Request, Response } from 'express';
 import { Joi } from 'celebrate';
 import RuntimeOperationService from '../services/runtimeOperations';
@@ -23,6 +24,8 @@ export function operationDto(row: RuntimeOperation) {
     id: row.id,
     provider_id: row.provider_id,
     runtime_id: row.runtime_id,
+    environment_id: row.metadata.environment_id ?? null,
+    build_id: row.metadata.build_id ?? null,
     operation_type: row.operation_type,
     status: row.status,
     stage: row.stage,
@@ -34,7 +37,7 @@ export function operationDto(row: RuntimeOperation) {
     error_summary: row.error_summary,
   };
 }
-function endpoint(
+export function endpoint(
   action: (req: Request) => Promise<unknown>,
   accepted = false,
 ) {
@@ -47,12 +50,16 @@ function endpoint(
     } catch (error) {
       const known = error instanceof RuntimeError,
         status = known ? error.status : 500;
-      res
-        .status(status)
-        .send({
-          code: status,
-          message: known ? error.error_code : 'RUNTIME_OPERATION_FAILED',
-        });
+      res.status(status).send({
+        code: status,
+        message: known ? error.error_code : 'RUNTIME_OPERATION_FAILED',
+        ...(known && error.error_code === 'RUNTIME_REFERENCED'
+          ? {
+              references: (error as RuntimeError & { references?: unknown })
+                .references,
+            }
+          : {}),
+      });
     }
   };
 }
@@ -63,6 +70,7 @@ export default function runtimeRoutes(
 ) {
   const runtime = service ?? (shared ??= new RuntimeOperationService());
   runtime.startRecovery();
+  pythonEnvironmentRoutes(app, runtime);
   const base = '/runtime/python';
   app.get(
     base + '/provider',

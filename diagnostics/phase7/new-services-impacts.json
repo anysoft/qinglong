@@ -1,0 +1,240 @@
+[
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "back/services/pythonEnvironment.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pythonEnvironment.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pythonEnvironment.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "PythonEnvironmentService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonEnvironmentService' not found\",\n  \"target\": {\n    \"name\": \"PythonEnvironmentService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "environment",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'environment' not found\",\n  \"target\": {\n    \"name\": \"environment\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "build",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'build' not found\",\n  \"target\": {\n    \"name\": \"build\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "builds",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'builds' not found\",\n  \"target\": {\n    \"name\": \"builds\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "revisions",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'revisions' not found\",\n  \"target\": {\n    \"name\": \"revisions\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "list",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'list' not found\",\n  \"target\": {\n    \"name\": \"list\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "withMutation",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'withMutation' not found\",\n  \"target\": {\n    \"name\": \"withMutation\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "healthyRuntime",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'healthyRuntime' not found\",\n  \"target\": {\n    \"name\": \"healthyRuntime\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "create",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'create' not found\",\n  \"target\": {\n    \"name\": \"create\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "revise",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'revise' not found\",\n  \"target\": {\n    \"name\": \"revise\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "metadata",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'metadata' not found\",\n  \"target\": {\n    \"name\": \"metadata\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "clone",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'clone' not found\",\n  \"target\": {\n    \"name\": \"clone\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "diff",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diff' not found\",\n  \"target\": {\n    \"name\": \"diff\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironment.ts",
+    "name": "diagnostics",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diagnostics' not found\",\n  \"target\": {\n    \"name\": \"diagnostics\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentBuild.ts",
+    "name": "back/services/pythonEnvironmentBuild.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pythonEnvironmentBuild.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pythonEnvironmentBuild.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentBuild.ts",
+    "name": "PythonEnvironmentBuildService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonEnvironmentBuildService' not found\",\n  \"target\": {\n    \"name\": \"PythonEnvironmentBuildService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentBuild.ts",
+    "name": "prepare",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'prepare' not found\",\n  \"target\": {\n    \"name\": \"prepare\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentBuild.ts",
+    "name": "execute",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'execute' not found\",\n  \"target\": {\n    \"name\": \"execute\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentBuild.ts",
+    "name": "failed",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'failed' not found\",\n  \"target\": {\n    \"name\": \"failed\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentReferences.ts",
+    "name": "back/services/pythonEnvironmentReferences.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pythonEnvironmentReferences.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pythonEnvironmentReferences.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentReferences.ts",
+    "name": "PythonRuntimeReferenceSource",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonRuntimeReferenceSource' not found\",\n  \"target\": {\n    \"name\": \"PythonRuntimeReferenceSource\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentReferences.ts",
+    "name": "inspect",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'inspect' not found\",\n  \"target\": {\n    \"name\": \"inspect\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentReferences.ts",
+    "name": "PythonEnvironmentReferenceService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonEnvironmentReferenceService' not found\",\n  \"target\": {\n    \"name\": \"PythonEnvironmentReferenceService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentReferences.ts",
+    "name": "build",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'build' not found\",\n  \"target\": {\n    \"name\": \"build\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentReferences.ts",
+    "name": "requireUnusedBuild",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'requireUnusedBuild' not found\",\n  \"target\": {\n    \"name\": \"requireUnusedBuild\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentResolver.ts",
+    "name": "back/services/pythonEnvironmentResolver.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pythonEnvironmentResolver.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pythonEnvironmentResolver.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentResolver.ts",
+    "name": "PythonEnvironmentResolver",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonEnvironmentResolver' not found\",\n  \"target\": {\n    \"name\": \"PythonEnvironmentResolver\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentResolver.ts",
+    "name": "resolve",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'resolve' not found\",\n  \"target\": {\n    \"name\": \"resolve\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/pythonEnvironment.ts",
+    "name": "back/api/pythonEnvironment.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/pythonEnvironment.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/pythonEnvironment.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/pythonEnvironment.ts",
+    "name": "payload",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'payload' not found\",\n  \"target\": {\n    \"name\": \"payload\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/pythonEnvironment.ts",
+    "name": "pythonEnvironmentRoutes",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'pythonEnvironmentRoutes' not found\",\n  \"target\": {\n    \"name\": \"pythonEnvironmentRoutes\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/PythonEnvironments/index.tsx",
+    "name": "src/components/PythonEnvironments/index.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/components/PythonEnvironments/index.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/components/PythonEnvironments/index.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/PythonEnvironments/index.tsx",
+    "name": "PythonEnvironments",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonEnvironments' not found\",\n  \"target\": {\n    \"name\": \"PythonEnvironments\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

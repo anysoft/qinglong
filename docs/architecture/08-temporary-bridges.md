@@ -11,3 +11,7 @@
 B06 的 Hook 部分已移除；B11 缩为内部 Settings；新增 B17 source workspace 映射和配置执行租约。完整消费者与退出条件以 [登记表](../../TEMPORARY_BRIDGES.md) 为准。
 
 Phase 6 已复核 B02/B06/B09/B10/B17 并保留。Runtime 自身 lease/supervisor helper 的原因、消费者与退出条件见根目录 [桥登记](../../TEMPORARY_BRIDGES.md#phase-6-复核)。
+
+## Phase 7 bridge outcome
+
+B09/B10 Python 仍被当前 Task prefix/preload/Dependency installer 使用，明确 RETAINED；新 Environment 不是自动默认 Task 环境。退出条件为 Phase 9/10 的显式绑定与执行替换 gate，Node/Linux 依赖待 Phase 8。没有新增 Task bridge。

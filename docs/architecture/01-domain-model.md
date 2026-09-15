@@ -18,3 +18,7 @@ Task/Schedule/TaskRun 分离能避免 Crontab 的状态、当前pid、多个sche
 ## Phase 6 已实现 Runtime Domain
 
 RuntimeProvider(PYTHON/PYENV) → RuntimeInstallation(CPYTHON + exact version)；RuntimeOperation 独立于 TaskRun/SyncRun。Phase 6 无 RuntimeEnvironment、venv/package、Task/Hook Runtime FK。后续连接见 [Runtime 架构](10-python-runtime.md)。
+
+## Python Environment (Phase 7)
+
+PythonEnvironment 是独立平台资源，持有 Desired Revision 和 Current Build。Revision 固定 Runtime 与直接依赖；Build 固定 venv、resolved packages 与主机/验证 metadata。三类引用均保护 Runtime。没有 Repository/Task 自动绑定。

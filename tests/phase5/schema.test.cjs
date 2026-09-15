@@ -7,7 +7,7 @@ test('frozen platform v1 upgrades transactionally to identical fresh latest sche
  await upgrade.db.query("INSERT INTO Envs (name,value,createdAt,updatedAt) VALUES ('KEEP',' 私有 value 🌱 ',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)");
  await upgrade.initializeOperationalSchema(upgrade.db,upgrade.models);
  assert.equal(upgrade.schemaSignature(await objects(upgrade)),fresh.schemaSignature(await objects(fresh)));
- const meta=await upgrade.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});assert.equal(meta[0].platform_schema_version,3);
+ const meta=await upgrade.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});assert.equal(meta[0].platform_schema_version,4);
  assert.equal(meta[0].model_signature,(await fresh.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0].model_signature);
  assert.deepEqual((await upgrade.TaskHookModel.findAll({order:[['id','ASC']]})).map(x=>[x.get('phase'),x.get('command'),x.get('failure_policy')]),[['BEFORE','printf before','CONTINUE'],['FINALLY','printf after','CONTINUE']]);
  assert.equal((await upgrade.EnvModel.unscoped().findOne()).get('value'),' 私有 value 🌱 ');

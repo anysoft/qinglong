@@ -1,5 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import { sequelize } from '.';
+import type { PythonEnvironmentOperationType } from './pythonEnvironment';
 
 export type ProviderState =
   | 'UNINITIALIZED'
@@ -17,6 +18,7 @@ export type RuntimeState =
   | 'MISSING'
   | 'REMOVED';
 export type OperationType =
+  | PythonEnvironmentOperationType
   | 'PROVIDER_INSTALL'
   | 'PROVIDER_UPDATE'
   | 'PROVIDER_VERIFY'

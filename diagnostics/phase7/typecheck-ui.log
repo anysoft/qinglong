@@ -1,0 +1,14 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+{
+  "status": "FAIL",
+  "original": 53,
+  "remaining": 54,
+  "new": [
+    [
+      "src/components/PythonEnvironments/index.tsx: error TS2349: This expression is not callable.",
+      1
+    ]
+  ],
+  "raw_exit_code": 2,
+  "regression_gate": "FAIL"
+}

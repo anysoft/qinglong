@@ -1,0 +1,27 @@
+{
+  "started_at": "2026-09-15T16:40:38.460Z",
+  "operations": [
+    {
+      "id": 77,
+      "type": "RUNTIME_VERIFY",
+      "status": "SUCCESS",
+      "exit_code": 0,
+      "error_code": null
+    },
+    {
+      "id": 78,
+      "type": "RUNTIME_REMOVE",
+      "status": "SUCCESS",
+      "exit_code": 0,
+      "error_code": null
+    }
+  ],
+  "references": {
+    "count": 0,
+    "references": []
+  },
+  "remaining": 0,
+  "status": "PASS",
+  "fixture_removed": true,
+  "finished_at": "2026-09-15T16:40:39.453Z"
+}

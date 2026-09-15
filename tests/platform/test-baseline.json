@@ -475,5 +475,21 @@
   {
     "path": "tests/phase6/provider.test.cjs",
     "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase7/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase7/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase7/paths.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase7/failures.test.cjs",
+    "classification": "PLATFORM_CORE"
   }
 ]

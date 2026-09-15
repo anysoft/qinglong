@@ -79,3 +79,7 @@ Fresh 与已验证 v1 通过显式事务迁移得到相同 v2 签名。新增 Co
 ## Phase 6 Operational v3
 
 新增 RuntimeProviders、RuntimeInstallations、RuntimeOperations。Fresh、有效 v2→v3 与有效 v1→v2→v3 最终签名相同；Runtime SQL 使用实际 CHECK/FK/唯一约束。冻结 v2 来源 platform-phase5，不能覆盖。详见 [Schema v3](../refactor/phase6/09-schema-v3.md)。
+
+## Phase 7 current schema: v4
+
+冻结 Phase 6 actual v3 后演化到 v4，旧 v1/v2 签名不变。新增 PythonEnvironments/Revisions/Builds，RuntimeOperations 扩展 enum。复合 FK 保证 Current 与 Build/Revision 属于同环境；runtime RESTRICT 与不可变触发器补充服务校验。valid v1→v2→v3→v4 与 fresh 同最终签名。详见 [schema evolution](../refactor/phase7/09-schema-evolution.md)。

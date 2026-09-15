@@ -10,7 +10,11 @@ import RuntimePathResolver from './runtimePaths';
 export class RuntimeLease {
   private closed = false;
   private constructor(readonly handle: FileHandle) {}
-  static async acquire(paths: RuntimePathResolver, provider: number) {
+  static async acquire(
+    paths: RuntimePathResolver,
+    provider: number,
+    mode: 'exclusive' | 'shared' = 'exclusive',
+  ) {
     const handle = await fs.open(
       await paths.lock(provider),
       constants.O_CREAT | constants.O_RDWR | constants.O_NOFOLLOW,
@@ -22,7 +26,12 @@ export class RuntimeLease {
         throw new RuntimeError('RUNTIME_PATH_INVALID');
       const child = spawn(
         '/usr/bin/python3',
-        ['-I', '-S', path.join(config.rootPath, 'shell/runtime_lease.py')],
+        [
+          '-I',
+          '-S',
+          path.join(config.rootPath, 'shell/runtime_lease.py'),
+          mode,
+        ],
         {
           env: { PATH: RUNTIME_TOOL_PATH },
           stdio: ['pipe', 'pipe', 'pipe', handle.fd],

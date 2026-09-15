@@ -34,3 +34,7 @@ Task/Schedule/TaskRun 拆分、Python Environment、Node Runtime、Runner v2、�
 Config Assets 与四阶段 Hook 已落地，见[配置与生命周期架构](09-config-assets-and-hooks.md)。B06 的 Hook 部分已移除，B11 缩为平台内部 Settings，B17 接入当前 source workspace。
 
 Python Runtime 是已实现的平台资源，见[Runtime 架构](10-python-runtime.md)。它独立于 Task 当前执行、Config snapshot、Hook lifecycle 和 B17。Phase 7 才开始 venv/依赖环境。
+
+## Phase 7 current Runtime layer
+
+Managed CPython → Python Environment → immutable Desired Revision → immutable venv Build / Resolved snapshot。Schema v4，RuntimeOperation 统一日志/取消/恢复；Current pointer 原子发布。Task Binding 留待 Phase 9。详见 [Python Environments](11-python-environments.md)。

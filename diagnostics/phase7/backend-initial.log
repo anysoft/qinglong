@@ -1,0 +1,154 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[96mback/api/pythonEnvironment.ts[0m:[93m16[0m:[93m27[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Record<string, unknown>' is not assignable to parameter of type 'PartialSchemaMap<{ [x: string]: ...; }>'.
+  'string' index signatures are incompatible.
+    Type 'unknown' is not assignable to type 'SchemaLike | SchemaLike[] | undefined'.
+
+[7m16[0m   const result=Joi.object(fields).unknown(false).validate(req.body??{},{convert:false});
+[7m  [0m [91m                          ~~~~~~[0m
+
+[96mback/services/pythonEnvironment.ts[0m:[93m34[0m:[93m77[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'Identifier | undefined'.
+
+[7m34[0m       if(build) try { const runtime=await RuntimeInstallationModel.findByPk(build.get('runtime_id'));if(!runtime||runtime.get('state')!=='READY')throw new RuntimeError('PYTHON_ENV_RUNTIME_INVALID');await this.operations.environments.paths.executable(build.get({plain:true}),runtime.get({plain:true})); }
+[7m  [0m [91m                                                                            ~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironment.ts[0m:[93m37[0m:[93m173[0m - [91merror[0m[90m TS2571: [0mObject is of type 'unknown'.
+
+[7m37[0m       return {...environment,state:environment.state==='READY'&&health!=='HEALTHY'?'ERROR':environment.state,health,runtime_version:runtime?.get('version'),direct_packages:revision?.get('dependencies').length??0,resolved_packages:build?.get('resolved').length??0,current_build:build?.get({plain:true})??null};
+[7m  [0m [91m                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironment.ts[0m:[93m37[0m:[93m231[0m - [91merror[0m[90m TS2571: [0mObject is of type 'unknown'.
+
+[7m37[0m       return {...environment,state:environment.state==='READY'&&health!=='HEALTHY'?'ERROR':environment.state,health,runtime_version:runtime?.get('version'),direct_packages:revision?.get('dependencies').length??0,resolved_packages:build?.get('resolved').length??0,current_build:build?.get({plain:true})??null};
+[7m  [0m [91m                                                                                                                                                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironment.ts[0m:[93m68[0m:[93m48[0m - [91merror[0m[90m TS2322: [0mType 'unknown' is not assignable to type 'number | undefined'.
+
+[7m68[0m         const revision=await Revisions.create({environment_id:environment.get('id'),runtime_id:runtime.id,dependencies,spec_hash:this.dependencies.hash(runtime.id,dependencies,this.operations.environments.pip.index)},{transaction});
+[7m  [0m [91m                                               ~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironment.ts[0m:[93m69[0m:[93m15[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 2, '(key: keyof PythonEnvironment, value: string | number | Fn | Col | Literal | null, options?: InstanceUpdateOptions<PythonEnvironment> | undefined): Promise<...>', gave the following error.
+    Argument of type '{ current_revision_id: unknown; }' is not assignable to parameter of type 'keyof PythonEnvironment'.
+  Overload 2 of 2, '(keys: { id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 5 more ...; last_error?: string | ... 4 more ... | undefined; }, options?: InstanceUpdateOptions<...> | undefined): Promise<...>', gave the following error.
+    Type 'unknown' is not assignable to type 'number | Fn | Col | Literal | null | undefined'.
+
+[7m69[0m         await environment.update({current_revision_id:revision.get('id')},{transaction});return environment.get({plain:true});
+[7m  [0m [91m              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mback/data/pythonEnvironment.ts[0m:[93m7[0m:[93m3[0m
+    [7m7[0m   current_revision_id: number | null; current_build_id: number | null; version: number; last_error: string | null;
+    [7m [0m [96m  ~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from property 'current_revision_id' which is declared here on type '{ id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 5 more ...; last_error?: string | ... 4 more ... | undefined; }'
+
+[96mback/services/pythonEnvironment.ts[0m:[93m82[0m:[93m58[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 2, '(this: ModelStatic<...>, values: { id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 5 more ...; last_error?: string | ... 4 more ... | undefined; }, options: Omit<...> & { ...; }): Promise<...>', gave the following error.
+    Type 'unknown' is not assignable to type 'number | Fn | Col | Literal | null | undefined'.
+  Overload 2 of 2, '(this: ModelStatic<...>, values: { id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 5 more ...; last_error?: string | ... 4 more ... | undefined; }, options: UpdateOptions<...>): Promise<...>', gave the following error.
+    Type 'unknown' is not assignable to type 'number | Fn | Col | Literal | null | undefined'.
+
+[7m82[0m         await Environments.update({runtime_id:runtime.id,current_revision_id:revision.get('id'),version:environment.version+1},{where:{id},transaction});
+[7m  [0m [91m                                                         ~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mback/data/pythonEnvironment.ts[0m:[93m7[0m:[93m3[0m
+    [7m7[0m   current_revision_id: number | null; current_build_id: number | null; version: number; last_error: string | null;
+    [7m [0m [96m  ~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from property 'current_revision_id' which is declared here on type '{ id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 5 more ...; last_error?: string | ... 4 more ... | undefined; }'
+  [96mback/data/pythonEnvironment.ts[0m:[93m7[0m:[93m3[0m
+    [7m7[0m   current_revision_id: number | null; current_build_id: number | null; version: number; last_error: string | null;
+    [7m [0m [96m  ~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from property 'current_revision_id' which is declared here on type '{ id?: number | Fn | Col | Literal | undefined; name?: string | Fn | Col | Literal | undefined; description?: string | Fn | Col | Literal | undefined; ... 5 more ...; last_error?: string | ... 4 more ... | undefined; }'
+
+[96mback/services/pythonEnvironment.ts[0m:[93m97[0m:[93m66[0m - [91merror[0m[90m TS2322: [0mType 'unknown' is not assignable to type 'number'.
+
+[7m97[0m     return this.create({name,description:environment.description,runtime_id:revision.get('runtime_id'),requirements:revision.get('dependencies').map(x=>x.requirement)});
+[7m  [0m [91m                                                                 ~~~~~~~~~~[0m
+
+  [96mback/services/pythonEnvironment.ts[0m:[93m60[0m:[93m56[0m
+    [7m60[0m   async create(input: {name:string;description?:string;runtime_id:number;requirements:string[]}) {
+    [7m  [0m [96m                                                       ~~~~~~~~~~[0m
+    The expected type comes from property 'runtime_id' which is declared here on type '{ name: string; description?: string | undefined; runtime_id: number; requirements: string[]; }'
+
+[96mback/services/pythonEnvironment.ts[0m:[93m97[0m:[93m117[0m - [91merror[0m[90m TS2571: [0mObject is of type 'unknown'.
+
+[7m97[0m     return this.create({name,description:environment.description,runtime_id:revision.get('runtime_id'),requirements:revision.get('dependencies').map(x=>x.requirement)});
+[7m  [0m [91m                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironment.ts[0m:[93m97[0m:[93m150[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m97[0m     return this.create({name,description:environment.description,runtime_id:revision.get('runtime_id'),requirements:revision.get('dependencies').map(x=>x.requirement)});
+[7m  [0m [91m                                                                                                                                                     ~[0m
+
+[96mback/services/pythonEnvironmentBuild.ts[0m:[93m33[0m:[93m61[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 2, '(this: ModelStatic<Model<RuntimeInstallation, Partial<...>>>, identifier: Identifier, options: Omit<NonNullFindOptions<RuntimeInstallation>, "where">): Promise<...>', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'Identifier'.
+  Overload 2 of 2, '(this: ModelStatic<...>, identifier?: Identifier | undefined, options?: Omit<FindOptions<RuntimeInstallation>, "where"> | undefined): Promise<...>', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'Identifier | undefined'.
+
+[7m33[0m       const runtime=await RuntimeInstallationModel.findByPk(revision.get('runtime_id'),{transaction});
+[7m  [0m [91m                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[96mback/services/pythonEnvironmentBuild.ts[0m:[93m35[0m:[93m43[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'string'.
+
+[7m35[0m       await this.paths.runtime.executable(runtime.get('version'),runtime.get('id'),runtime.get('provider_id'));
+[7m  [0m [91m                                          ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironmentBuild.ts[0m:[93m36[0m:[93m65[0m - [91merror[0m[90m TS2322: [0mType 'unknown' is not assignable to type 'number | undefined'.
+
+[7m36[0m       build=(await Builds.create({environment_id:environment.id,revision_id:revision.get('id'),runtime_id:revision.get('runtime_id'),state:'QUEUED',health:'UNVERIFIED'}, {transaction})).get({plain:true});
+[7m  [0m [91m                                                                ~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironmentBuild.ts[0m:[93m36[0m:[93m96[0m - [91merror[0m[90m TS2322: [0mType 'unknown' is not assignable to type 'number | undefined'.
+
+[7m36[0m       build=(await Builds.create({environment_id:environment.id,revision_id:revision.get('id'),runtime_id:revision.get('runtime_id'),state:'QUEUED',health:'UNVERIFIED'}, {transaction})).get({plain:true});
+[7m  [0m [91m                                                                                               ~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironmentBuild.ts[0m:[93m41[0m:[93m67[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'number'.
+
+[7m41[0m       for(const item of builds) leases.push(await this.paths.lock(item.get('id'),'build'));
+[7m  [0m [91m                                                                  ~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironmentBuild.ts[0m:[93m116[0m:[93m58[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 2, '(this: ModelStatic<Model<PythonEnvironmentBuild, Partial<...>>>, identifier: Identifier, options: Omit<NonNullFindOptions<PythonEnvironmentBuild>, "where">): Promise<...>', gave the following error.
+    Argument of type '{}' is not assignable to parameter of type 'Identifier'.
+  Overload 2 of 2, '(this: ModelStatic<...>, identifier?: Identifier | undefined, options?: Omit<FindOptions<PythonEnvironmentBuild>, "where"> | undefined): Promise<...>', gave the following error.
+    Argument of type '{}' is not assignable to parameter of type 'Identifier | undefined'.
+
+[7m116[0m       const stillHealthy=current&&(await Builds.findByPk(current,{transaction}))?.get('health')==='HEALTHY';
+[7m   [0m [91m                                                         ~~~~~~~[0m
+
+
+[96mback/services/pythonEnvironmentReferences.ts[0m:[93m9[0m:[93m24[0m - [91merror[0m[90m TS2684: [0mThe 'this' context of type 'ModelCtor<Model<PythonEnvironment, Partial<PythonEnvironment>>> | ModelCtor<Model<PythonEnvironmentRevision, Partial<...>>> | ModelCtor<...>' is not assignable to method's 'this' of type 'ModelStatic<Model<PythonEnvironment, Partial<PythonEnvironment>>>'.
+  Type 'ModelCtor<Model<PythonEnvironmentRevision, Partial<PythonEnvironmentRevision>>>' is not assignable to type 'ModelStatic<Model<PythonEnvironment, Partial<PythonEnvironment>>>'.
+    Type 'ModelCtor<Model<PythonEnvironmentRevision, Partial<PythonEnvironmentRevision>>>' is not assignable to type 'new () => Model<PythonEnvironment, Partial<PythonEnvironment>>'.
+      Construct signature return types 'Model<PythonEnvironmentRevision, Partial<PythonEnvironmentRevision>>' and 'Model<PythonEnvironment, Partial<PythonEnvironment>>' are incompatible.
+        The types of '_attributes' are incompatible between these types.
+          Type 'PythonEnvironmentRevision' is not assignable to type 'PythonEnvironment'.
+
+[7m9[0m       const rows=await model.findAll({where:{runtime_id:runtimeId(id)},attributes:['id']});
+[7m [0m [91m                       ~~~~~[0m
+
+[96mback/services/pythonEnvironmentResolver.ts[0m:[93m16[0m:[93m62[0m - [91merror[0m[90m TS2345: [0mArgument of type '{}' is not assignable to parameter of type 'Identifier | undefined'.
+
+[7m16[0m       const build=await PythonEnvironmentBuildModel.findByPk(environment.get('current_build_id')!);
+[7m  [0m [91m                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironmentResolver.ts[0m:[93m18[0m:[93m64[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'number'.
+
+[7m18[0m       buildLease=await this.operations.environments.paths.lock(build.get('id'),'build','shared');
+[7m  [0m [91m                                                               ~~~~~~~~~~~~~~~[0m
+
+[96mback/services/pythonEnvironmentResolver.ts[0m:[93m19[0m:[93m61[0m - [91merror[0m[90m TS2345: [0mArgument of type 'unknown' is not assignable to parameter of type 'Identifier | undefined'.
+
+[7m19[0m       const runtime=await RuntimeInstallationModel.findByPk(build.get('runtime_id'));
+[7m  [0m [91m                                                            ~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+Found 20 errors in 5 files.
+
+Errors  Files
+     1  back/api/pythonEnvironment.ts[90m:16[0m
+     9  back/services/pythonEnvironment.ts[90m:34[0m
+     6  back/services/pythonEnvironmentBuild.ts[90m:33[0m
+     1  back/services/pythonEnvironmentReferences.ts[90m:9[0m
+     3  back/services/pythonEnvironmentResolver.ts[90m:16[0m

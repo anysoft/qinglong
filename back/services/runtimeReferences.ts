@@ -1,3 +1,4 @@
+import { PythonRuntimeReferenceSource } from './pythonEnvironmentReferences';
 import { RuntimeError, runtimeId } from '../shared/runtime';
 export interface RuntimeReference {
   type: string;
@@ -13,13 +14,18 @@ export default class RuntimeReferenceService {
   async inspect(id: number) {
     const references = (
       await Promise.all(
-        this.sources.map((source) => source.inspect(runtimeId(id))),
+        [new PythonRuntimeReferenceSource(), ...this.sources].map((source) =>
+          source.inspect(runtimeId(id)),
+        ),
       )
     ).flat();
     return { count: references.length, references };
   }
   async requireUnused(id: number) {
-    if ((await this.inspect(id)).count)
-      throw new RuntimeError('RUNTIME_REFERENCED');
+    const report = await this.inspect(id);
+    if (report.count)
+      throw Object.assign(new RuntimeError('RUNTIME_REFERENCED'), {
+        references: report,
+      });
   }
 }

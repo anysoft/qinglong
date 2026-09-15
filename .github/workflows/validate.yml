@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   regression:
+    timeout-minutes: 70
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -26,9 +27,15 @@ jobs:
       - run: pnpm build:back
       - run: pnpm test
       - run: pnpm build:front
-      - run: node diagnostics/phase6/static-audit.cjs
+      - run: node diagnostics/phase7/static-audit.cjs
       - name: Typecheck with recorded pre-existing diagnostic budget
-        run: node diagnostics/phase6/check-typecheck.cjs
+        run: node diagnostics/phase7/check-typecheck.cjs
+      # Provision a real managed CPython once; package acceptance below uses only local artifacts.
+      - run: sudo apt-get install -y build-essential curl tar libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libffi-dev liblzma-dev
+      - name: Provision official managed CPython for Python Environment gates
+        run: node diagnostics/phase7/prepare-managed-runtime.cjs
+      - name: Mandatory offline real venv and dependency environment gate
+        run: node --test tests/phase7/offline.test.cjs
       - name: Install isolated browser acceptance runtime
         run: |
           npm install --prefix "$RUNNER_TEMP/platform-browser" --no-audit --no-fund ssh2@1.17.0 playwright@1.58.2
@@ -44,11 +51,13 @@ jobs:
           name: execution-baseline
           path: |
             execution-baseline.json
-            diagnostics/phase6/platform-e2e.json
-            diagnostics/phase6/platform-e2e-backend.log
-            diagnostics/phase6/browser-*.png
-            diagnostics/phase6/final-typecheck.*
-            diagnostics/phase6/final-static-audit.json
+            diagnostics/phase7/platform-e2e.json
+            diagnostics/phase7/platform-e2e-backend.log
+            diagnostics/phase7/browser-*.png
+            diagnostics/phase7/final-typecheck.*
+            diagnostics/phase7/final-static-audit.json
+            diagnostics/phase7/offline-result.json
+            diagnostics/phase7/managed-runtime/
 
   real-python-runtime:
     runs-on: ubuntu-latest

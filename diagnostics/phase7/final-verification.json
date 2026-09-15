@@ -1,0 +1,78 @@
+{
+  "phase": 7,
+  "status": "PARTIAL",
+  "phase6_checkpoint": "1eafedc7cb5cb48df0ccb9969293d668155c0169",
+  "branch": "codex/phase7-python-environments",
+  "schema": {
+    "platform_schema_version": 4,
+    "model_signature": "f87ccaa6e53e9a975ca25c8215dddd418900ac8c24370799f33cd3860efc973d",
+    "schema_signature": "bed6850a372e4e208f56326de92dd784cb78ef009689519215706cb850a96f09"
+  },
+  "release": {
+    "tests": 338,
+    "passed": 335,
+    "failed": 0,
+    "skipped": 3
+  },
+  "offline": {
+    "tests": 1,
+    "passed": 1,
+    "failed": 0,
+    "artifact": "offline-result.json"
+  },
+  "builds": {
+    "backend_exit": 0,
+    "frontend_exit": 0,
+    "source": "completed tool command results; logs retained"
+  },
+  "typecheck": {
+    "status": "PARTIAL",
+    "original": 53,
+    "remaining": 53,
+    "new": [],
+    "raw_exit_code": 2,
+    "regression_gate": "PASS"
+  },
+  "browser": {
+    "status": "PASS",
+    "steps": 37,
+    "http_responses": 1115,
+    "websocket_frames": 26
+  },
+  "static": {
+    "files": 325,
+    "forbidden": 0,
+    "dependency_references": 48
+  },
+  "linux": "PARTIAL - workflow prepared; no Linux run",
+  "legacy_python_bridge": "RETAINED",
+  "shared_layer": "DEFERRED",
+  "runtime_cleanup": {
+    "started_at": "2026-09-15T16:40:38.460Z",
+    "operations": [
+      {
+        "id": 77,
+        "type": "RUNTIME_VERIFY",
+        "status": "SUCCESS",
+        "exit_code": 0,
+        "error_code": null
+      },
+      {
+        "id": 78,
+        "type": "RUNTIME_REMOVE",
+        "status": "SUCCESS",
+        "exit_code": 0,
+        "error_code": null
+      }
+    ],
+    "references": {
+      "count": 0,
+      "references": []
+    },
+    "remaining": 0,
+    "status": "PASS",
+    "fixture_removed": true,
+    "finished_at": "2026-09-15T16:40:39.453Z"
+  },
+  "finished_at": "2026-09-15T16:42:52.911Z"
+}

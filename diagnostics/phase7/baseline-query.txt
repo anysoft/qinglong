@@ -1,0 +1,238 @@
+{
+  "processes": [
+    {
+      "id": "proc_451_cancel",
+      "summary": "Cancel → RuntimeError",
+      "priority": 0.113,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 4
+    },
+    {
+      "id": "proc_445_runtimebuildenvironm",
+      "summary": "RuntimeBuildEnvironment → RuntimeError",
+      "priority": 0.112,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 5
+    },
+    {
+      "id": "proc_112_save",
+      "summary": "Save → References",
+      "priority": 0.078,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_0_prepare",
+      "summary": "Prepare → RuntimeError",
+      "priority": 0.074,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 10
+    },
+    {
+      "id": "proc_129_withbinding",
+      "summary": "WithBinding → RuntimeError",
+      "priority": 0.074,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 10
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.operation#1",
+      "name": "operation",
+      "filePath": "back/services/runtimeOperations.ts",
+      "startLine": 74,
+      "endLine": 78,
+      "module": "Services",
+      "process_id": "proc_451_cancel",
+      "step_index": 2
+    },
+    {
+      "id": "Method:back/services/runtimePaths.ts:RuntimePathResolver.operation#1",
+      "name": "operation",
+      "filePath": "back/services/runtimePaths.ts",
+      "startLine": 211,
+      "endLine": 216,
+      "module": "Services",
+      "process_id": "proc_445_runtimebuildenvironm",
+      "step_index": 2
+    },
+    {
+      "id": "Method:back/services/gitCredential.ts:GitCredentialService.references#2",
+      "name": "references",
+      "filePath": "back/services/gitCredential.ts",
+      "startLine": 27,
+      "endLine": 33,
+      "module": "Services",
+      "process_id": "proc_112_save",
+      "step_index": 3
+    },
+    {
+      "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.initialize#1",
+      "name": "initialize",
+      "filePath": "back/services/repositoryStorage.ts",
+      "startLine": 153,
+      "endLine": 204,
+      "module": "Services",
+      "process_id": "proc_0_prepare",
+      "step_index": 2
+    }
+  ],
+  "definitions": [
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.operations#0",
+      "name": "operations",
+      "filePath": "back/services/runtimeOperations.ts",
+      "startLine": 128,
+      "endLine": 135
+    },
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.runtime#1",
+      "name": "runtime",
+      "filePath": "back/services/runtimeOperations.ts",
+      "startLine": 136,
+      "endLine": 141,
+      "module": "Services"
+    },
+    {
+      "id": "Class:back/services/runtimePaths.ts:RuntimePathResolver",
+      "name": "RuntimePathResolver",
+      "filePath": "back/services/runtimePaths.ts",
+      "startLine": 9,
+      "endLine": 250,
+      "module": "Services"
+    },
+    {
+      "id": "TypeAlias:back/data/runtime.ts:OperationType",
+      "name": "OperationType",
+      "filePath": "back/data/runtime.ts",
+      "startLine": 19,
+      "endLine": 28
+    },
+    {
+      "id": "File:back/data/runtime.ts",
+      "name": "runtime.ts",
+      "filePath": "back/data/runtime.ts"
+    },
+    {
+      "id": "Interface:back/data/scopedEnv.ts:ScopedVariable",
+      "name": "ScopedVariable",
+      "filePath": "back/data/scopedEnv.ts",
+      "startLine": 11,
+      "endLine": 22
+    },
+    {
+      "id": "Function:tests/phase5/runtime.test.cjs:runtime",
+      "name": "runtime",
+      "filePath": "tests/phase5/runtime.test.cjs",
+      "startLine": 3,
+      "endLine": 20,
+      "module": "Phase5"
+    },
+    {
+      "id": "File:tests/phase5/runtime.test.cjs",
+      "name": "runtime.test.cjs",
+      "filePath": "tests/phase5/runtime.test.cjs"
+    },
+    {
+      "id": "Const:back/shared/runtime.ts:RUNTIME_LOG_LIMIT",
+      "name": "RUNTIME_LOG_LIMIT",
+      "filePath": "back/shared/runtime.ts",
+      "startLine": 33,
+      "endLine": 33
+    },
+    {
+      "id": "Const:back/shared/runtime.ts:RUNTIME_LOG_WINDOW",
+      "name": "RUNTIME_LOG_WINDOW",
+      "filePath": "back/shared/runtime.ts",
+      "startLine": 34,
+      "endLine": 34
+    },
+    {
+      "id": "File:back/shared/runtime.ts",
+      "name": "runtime.ts",
+      "filePath": "back/shared/runtime.ts"
+    },
+    {
+      "id": "Interface:back/data/system.ts:AuthInfo",
+      "name": "AuthInfo",
+      "filePath": "back/data/system.ts",
+      "startLine": 68,
+      "endLine": 86
+    },
+    {
+      "id": "File:docs/refactor/phase6/04-runtime-operations.md",
+      "name": "04-runtime-operations.md",
+      "filePath": "docs/refactor/phase6/04-runtime-operations.md"
+    },
+    {
+      "id": "Interface:back/data/cronView.ts:FilterType",
+      "name": "FilterType",
+      "filePath": "back/data/cronView.ts",
+      "startLine": 14,
+      "endLine": 18
+    },
+    {
+      "id": "Interface:back/services/workspaceLocks.ts:LockOwner",
+      "name": "LockOwner",
+      "filePath": "back/services/workspaceLocks.ts",
+      "startLine": 7,
+      "endLine": 11
+    },
+    {
+      "id": "Interface:back/data/configAsset.ts:ConfigBinding",
+      "name": "ConfigBinding",
+      "filePath": "back/data/configAsset.ts",
+      "startLine": 28,
+      "endLine": 41
+    },
+    {
+      "id": "Const:scripts/benchmark-execution.cjs:fs",
+      "name": "fs",
+      "filePath": "scripts/benchmark-execution.cjs",
+      "startLine": 2,
+      "endLine": 2
+    },
+    {
+      "id": "Const:scripts/benchmark-execution.cjs:os",
+      "name": "os",
+      "filePath": "scripts/benchmark-execution.cjs",
+      "startLine": 3,
+      "endLine": 3
+    },
+    {
+      "id": "Const:scripts/benchmark-execution.cjs:crypto",
+      "name": "crypto",
+      "filePath": "scripts/benchmark-execution.cjs",
+      "startLine": 4,
+      "endLine": 4
+    },
+    {
+      "id": "Function:diagnostics/phase2/ui-smoke.cjs:fn@8:1.operation@66:4",
+      "name": "operation",
+      "filePath": "diagnostics/phase2/ui-smoke.cjs",
+      "startLine": 67,
+      "endLine": 74,
+      "module": "Phase2"
+    }
+  ],
+  "timing": {
+    "vector": 5.1,
+    "bm25": 174.1,
+    "merge": 0.1,
+    "symbol_lookup": 15.3,
+    "ranking": 0,
+    "formatting": 0.1,
+    "wall": 189.9
+  },
+  "staleness": {
+    "status": "behind",
+    "commitsBehind": 1,
+    "hint": "⚠️ Index is 1 commit behind HEAD. Run analyze tool to update."
+  }
+}

@@ -36,3 +36,11 @@ data/
 ## Phase 6
 
 新增 platform-owned runtime/python/pyenv、cache/runtime/python/downloads、tmp/runtime/python、log/runtime，以及 .locks/runtime-provider-ID.lock。Provider code、versions、ownership 分开；Repair 隔离区不自动删除。文件系统与删除规则见 [Runtime filesystem](../refactor/phase6/06-runtime-filesystem.md)。未新增 scripts/deps/dep_cache 消费者；现有 Backup bridge 不承诺完整包含这些资源。
+
+## Phase 7 Python environments
+
+- `runtime/python/environments/env-ID/builds/build-ID/venv`：独立不可变 generation，固定路径不搬移。
+- `runtime/python/environments/env-ID/metadata/build-ID.json`：ownership sidecar；环境根 sidecar 在父目录。
+- `cache/python/pip`：共享可重建下载缓存，不是 site-packages。
+- `.locks/python-environment-ID.lock` / `.locks/python-build-ID.lock`：稳定 inode 互斥/共享 pin。
+- 操作 tmp/log 沿用 Runtime 目录。未被 DB 登记的内容仅报告，不接管或自动删除。

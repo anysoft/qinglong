@@ -7,11 +7,11 @@ async function fixture(t,{initialize=true}={}) {
  const config={rootPath:root,dataPath:root,dbPath:root,scriptPath:path.join(root,'scripts')};
  const cache=new Map(),mocks={'.':{sequelize:db},'../data':{sequelize:db},'../config':{default:config,__esModule:true}};
  const modules={},all={};
- for(const name of ['gitCredential','repository','worktree','scopedEnv','subscription','cron','env','dependence','open','system','cronView','cronStats','runningInstance','configAsset','runtime']) {
+ for(const name of ['gitCredential','repository','worktree','scopedEnv','subscription','cron','env','dependence','open','system','cronView','cronStats','runningInstance','configAsset','runtime','pythonEnvironment']) {
   const m=load(path.resolve(`back/data/${name}.ts`),mocks,cache);modules[name]=m;Object.assign(all,m);mocks['../data/'+name]=m;
  }
  const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','CrontabModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','CrontabStatModel','RunningInstanceModel'];
- const models=[...names.map(n=>all[n]),...all.configAssetModels,...all.runtimeModels];
+ const models=[...names.map(n=>all[n]),...all.configAssetModels,...all.runtimeModels,...all.pythonEnvironmentModels];
  const schema=load(path.resolve('back/shared/operationalSchema.ts'),mocks,cache);
  if(initialize)await schema.initializeOperationalSchema(db,models);
  await fs.mkdir(config.scriptPath,{mode:0o700});

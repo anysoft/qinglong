@@ -1,0 +1,191 @@
+[
+  {
+    "file": "back/schema/pythonEnvironmentSchema.ts",
+    "name": "back/schema/pythonEnvironmentSchema.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/schema/pythonEnvironmentSchema.ts' not found\",\n  \"target\": {\n    \"name\": \"back/schema/pythonEnvironmentSchema.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/schema/pythonEnvironmentSchema.ts",
+    "name": "createPythonEnvironmentSchema",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'createPythonEnvironmentSchema' not found\",\n  \"target\": {\n    \"name\": \"createPythonEnvironmentSchema\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "back/services/pythonEnvironmentPaths.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pythonEnvironmentPaths.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pythonEnvironmentPaths.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "EnvironmentLockPaths",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'EnvironmentLockPaths' not found\",\n  \"target\": {\n    \"name\": \"EnvironmentLockPaths\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "lock",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'lock' not found\",\n  \"target\": {\n    \"name\": \"lock\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "PythonEnvironmentPathResolver",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonEnvironmentPathResolver' not found\",\n  \"target\": {\n    \"name\": \"PythonEnvironmentPathResolver\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "relative",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'relative' not found\",\n  \"target\": {\n    \"name\": \"relative\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "environment",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'environment' not found\",\n  \"target\": {\n    \"name\": \"environment\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "build",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'build' not found\",\n  \"target\": {\n    \"name\": \"build\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "executable",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'executable' not found\",\n  \"target\": {\n    \"name\": \"executable\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "removeBuild",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'removeBuild' not found\",\n  \"target\": {\n    \"name\": \"removeBuild\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "removeEnvironment",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'removeEnvironment' not found\",\n  \"target\": {\n    \"name\": \"removeEnvironment\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonEnvironmentPaths.ts",
+    "name": "cache",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cache' not found\",\n  \"target\": {\n    \"name\": \"cache\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonVenv.ts",
+    "name": "back/services/pythonVenv.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pythonVenv.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pythonVenv.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonVenv.ts",
+    "name": "PythonVenvManager",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonVenvManager' not found\",\n  \"target\": {\n    \"name\": \"PythonVenvManager\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonVenv.ts",
+    "name": "create",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'create' not found\",\n  \"target\": {\n    \"name\": \"create\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonVenv.ts",
+    "name": "verify",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'verify' not found\",\n  \"target\": {\n    \"name\": \"verify\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonDependency.ts",
+    "name": "back/services/pythonDependency.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pythonDependency.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pythonDependency.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonDependency.ts",
+    "name": "PythonDependencyService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonDependencyService' not found\",\n  \"target\": {\n    \"name\": \"PythonDependencyService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonDependency.ts",
+    "name": "validateInput",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'validateInput' not found\",\n  \"target\": {\n    \"name\": \"validateInput\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonDependency.ts",
+    "name": "parse",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'parse' not found\",\n  \"target\": {\n    \"name\": \"parse\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pythonDependency.ts",
+    "name": "hash",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'hash' not found\",\n  \"target\": {\n    \"name\": \"hash\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pipPackageManager.ts",
+    "name": "back/services/pipPackageManager.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pipPackageManager.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pipPackageManager.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pipPackageManager.ts",
+    "name": "PipPackageManager",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PipPackageManager' not found\",\n  \"target\": {\n    \"name\": \"PipPackageManager\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pipPackageManager.ts",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pipPackageManager.ts",
+    "name": "install",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'install' not found\",\n  \"target\": {\n    \"name\": \"install\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pipPackageManager.ts",
+    "name": "snapshot",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'snapshot' not found\",\n  \"target\": {\n    \"name\": \"snapshot\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

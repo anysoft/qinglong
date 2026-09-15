@@ -1,7 +1,13 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { randomUUID } from 'crypto';
-import { Op } from 'sequelize';
+import { Op, Transaction } from 'sequelize';
+import PythonEnvironmentBuildService from './pythonEnvironmentBuild';
+import {
+  pythonEnvironmentOperationTypes,
+  PythonEnvironmentOperationInput,
+  PythonEnvironmentOperationType,
+} from '../shared/pythonEnvironment';
 import { sequelize } from '../data';
 import {
   RuntimeProviderModel,
@@ -28,6 +34,7 @@ import RuntimeDiagnosticsService from './runtimeDiagnostics';
 
 const activeStates = ['QUEUED', 'RUNNING'];
 const kinds: OperationType[] = [
+  ...pythonEnvironmentOperationTypes,
   'PROVIDER_INSTALL',
   'PROVIDER_UPDATE',
   'PROVIDER_VERIFY',
@@ -40,6 +47,7 @@ const kinds: OperationType[] = [
 ];
 type Active = {
   lease: RuntimeLease;
+  resourceLeases?: RuntimeLease[];
   command?: RuntimeCommand;
   done?: Promise<void>;
 };
@@ -47,15 +55,21 @@ type Active = {
 export default class RuntimeOperationService {
   readonly paths: RuntimePathResolver;
   readonly diagnostics: RuntimeDiagnosticsService;
+  readonly environments: PythonEnvironmentBuildService;
   private active = new Map<number, Active>();
   private recoveryTimer?: NodeJS.Timeout;
   private recovering = false;
   constructor(
     readonly provider = new PyenvProvider(),
     readonly references = new RuntimeReferenceService(),
+    environmentIndex?: string,
   ) {
     this.paths = provider.paths;
     this.diagnostics = new RuntimeDiagnosticsService(this.paths);
+    this.environments = new PythonEnvironmentBuildService(
+      this.paths,
+      environmentIndex,
+    );
   }
   async getProvider() {
     const [model] = await RuntimeProviderModel.findOrCreate({
@@ -175,6 +189,7 @@ export default class RuntimeOperationService {
       version?: string;
       jobs?: number;
       timeout_seconds?: number;
+      environment?: PythonEnvironmentOperationInput;
     } = {},
   ) {
     if (!kinds.includes(type))
@@ -197,6 +212,17 @@ export default class RuntimeOperationService {
       const provider = (await RuntimeProviderModel.findByPk(initial.id))!.get({
         plain: true,
       });
+      if (type.startsWith('PYTHON_ENV_')) {
+        if (!input.environment)
+          throw new RuntimeError('PYTHON_ENV_REQUEST_INVALID', 400);
+        return await this.requestEnvironmentLocked(
+          type as PythonEnvironmentOperationType,
+          input.environment,
+          provider,
+          lease,
+          timeout,
+        );
+      }
       let runtime: RuntimeInstallation | null = null;
       if (type === 'RUNTIME_INSTALL') {
         exactPythonVersion(input.version);
@@ -327,6 +353,64 @@ export default class RuntimeOperationService {
       throw error;
     }
   }
+  private async requestEnvironmentLocked(
+    type: PythonEnvironmentOperationType,
+    input: PythonEnvironmentOperationInput,
+    provider: RuntimeProvider,
+    lease: RuntimeLease,
+    timeout: number,
+  ) {
+    const resourceLeases: RuntimeLease[] = [];
+    try {
+      const operation = await sequelize.transaction(async (transaction) => {
+        const resource = await this.environments.prepare(
+          type,
+          input,
+          transaction,
+          resourceLeases,
+        );
+        const token = randomUUID();
+        const row = await RuntimeOperationModel.create(
+          {
+            provider_id: provider.id,
+            runtime_id: resource.runtime_id,
+            operation_type: type,
+            status: 'QUEUED',
+            stage: 'QUEUED',
+            owner_token: token,
+            owner_pid: process.pid,
+            cancel_requested: false,
+            log_identity: 'pending-' + token,
+            metadata: {
+              ...resource.metadata,
+              timeout_seconds: timeout,
+              jobs: 4,
+            },
+          },
+          { transaction },
+        );
+        await row.update(
+          { log_identity: 'runtime-operation-' + row.get('id') },
+          { transaction },
+        );
+        return row.get({ plain: true });
+      });
+      const active: Active = { lease, resourceLeases };
+      this.active.set(operation.id, active);
+      active.done = new Promise<void>((resolve) =>
+        setImmediate(() => {
+          this.execute(operation, provider, null, active).then(
+            resolve,
+            resolve,
+          );
+        }),
+      );
+      return operation;
+    } catch (error) {
+      for (const item of resourceLeases.reverse()) await item.release();
+      throw error;
+    }
+  }
   async cancel(id: number) {
     const operation = await this.operation(id);
     if (!activeStates.includes(operation.status))
@@ -407,70 +491,77 @@ export default class RuntimeOperationService {
       let metadata: Record<string, unknown> | undefined,
         providerUpdate: Partial<RuntimeProvider> | undefined;
       const revision = provider.provider_revision!;
-      switch (operation.operation_type) {
-        case 'PROVIDER_INSTALL':
-        case 'PROVIDER_UPDATE':
-        case 'PROVIDER_REPAIR': {
-          const result = await this.provider.setup(
-            ctx,
-            operation.operation_type === 'PROVIDER_REPAIR',
-          );
-          await ctx.stage('REFRESHING_CATALOG');
-          providerUpdate = {
-            state: 'READY',
-            provider_revision: result.revision,
-            provider_version: result.release,
-            catalog: await this.provider.catalog(ctx, result.revision),
-            last_refresh_at: new Date(),
-            last_verified_at: new Date(),
-            last_error: null,
-          };
-          break;
+      let resourceCommit:
+        | ((transaction: Transaction) => Promise<void>)
+        | undefined;
+      if (operation.operation_type.startsWith('PYTHON_ENV_'))
+        resourceCommit = await this.environments.execute(ctx, operation);
+      else
+        switch (operation.operation_type) {
+          case 'PROVIDER_INSTALL':
+          case 'PROVIDER_UPDATE':
+          case 'PROVIDER_REPAIR': {
+            const result = await this.provider.setup(
+              ctx,
+              operation.operation_type === 'PROVIDER_REPAIR',
+            );
+            await ctx.stage('REFRESHING_CATALOG');
+            providerUpdate = {
+              state: 'READY',
+              provider_revision: result.revision,
+              provider_version: result.release,
+              catalog: await this.provider.catalog(ctx, result.revision),
+              last_refresh_at: new Date(),
+              last_verified_at: new Date(),
+              last_error: null,
+            };
+            break;
+          }
+          case 'PROVIDER_VERIFY':
+            await ctx.stage('VERIFYING');
+            await this.provider.verifyProvider(ctx, revision);
+            providerUpdate = {
+              state: 'READY',
+              last_verified_at: new Date(),
+              last_error: null,
+            };
+            break;
+          case 'CATALOG_REFRESH':
+            await ctx.stage('REFRESHING_CATALOG');
+            await this.provider.verifyProvider(ctx, revision);
+            providerUpdate = {
+              catalog: await this.provider.catalog(ctx, revision),
+              last_refresh_at: new Date(),
+              last_error: null,
+            };
+            break;
+          case 'RUNTIME_INSTALL':
+            await this.diagnostics.beforeInstall();
+            await this.provider.verifyProvider(ctx, revision);
+            metadata = await this.provider.install(ctx, runtime!, revision);
+            break;
+          case 'RUNTIME_VERIFY':
+            await ctx.stage('VERIFYING');
+            metadata = await this.provider.verify(ctx, runtime!);
+            break;
+          case 'RUNTIME_REMOVE':
+            await ctx.stage('REMOVING');
+            await this.references.requireUnused(runtime!.id);
+            await this.provider.uninstall(ctx, runtime!);
+            break;
+          case 'RUNTIME_REPAIR':
+            await this.diagnostics.beforeInstall();
+            await this.references.requireUnused(runtime!.id);
+            await this.provider.verifyProvider(ctx, revision);
+            await ctx.stage('REPAIRING');
+            metadata = await this.provider.repair(ctx, runtime!, revision);
+            break;
         }
-        case 'PROVIDER_VERIFY':
-          await ctx.stage('VERIFYING');
-          await this.provider.verifyProvider(ctx, revision);
-          providerUpdate = {
-            state: 'READY',
-            last_verified_at: new Date(),
-            last_error: null,
-          };
-          break;
-        case 'CATALOG_REFRESH':
-          await ctx.stage('REFRESHING_CATALOG');
-          await this.provider.verifyProvider(ctx, revision);
-          providerUpdate = {
-            catalog: await this.provider.catalog(ctx, revision),
-            last_refresh_at: new Date(),
-            last_error: null,
-          };
-          break;
-        case 'RUNTIME_INSTALL':
-          await this.diagnostics.beforeInstall();
-          await this.provider.verifyProvider(ctx, revision);
-          metadata = await this.provider.install(ctx, runtime!, revision);
-          break;
-        case 'RUNTIME_VERIFY':
-          await ctx.stage('VERIFYING');
-          metadata = await this.provider.verify(ctx, runtime!);
-          break;
-        case 'RUNTIME_REMOVE':
-          await ctx.stage('REMOVING');
-          await this.references.requireUnused(runtime!.id);
-          await this.provider.uninstall(ctx, runtime!);
-          break;
-        case 'RUNTIME_REPAIR':
-          await this.diagnostics.beforeInstall();
-          await this.references.requireUnused(runtime!.id);
-          await this.provider.verifyProvider(ctx, revision);
-          await ctx.stage('REPAIRING');
-          metadata = await this.provider.repair(ctx, runtime!, revision);
-          break;
-      }
       await checkCancel();
       await log.close();
       log = undefined;
       await sequelize.transaction(async (transaction) => {
+        if (resourceCommit) await resourceCommit(transaction);
         if (providerUpdate)
           await RuntimeProviderModel.update(
             { ...providerUpdate, version: provider.version + 1 },
@@ -515,6 +606,14 @@ export default class RuntimeOperationService {
           : (error as NodeJS.ErrnoException).code === 'ENOENT'
           ? 'RUNTIME_MISSING'
           : 'RUNTIME_OPERATION_FAILED';
+      if (
+        code === 'RUNTIME_CANCELLED' &&
+        operation.operation_type.startsWith('PYTHON_ENV_')
+      ) {
+        await this.environments.cleanupCancelled(operation).catch(async () => {
+          await log?.write('[PYTHON_ENV_CLEANUP_REQUIRED]\n').catch(() => {});
+        });
+      }
       await log?.write(`[${code}]\n`).catch(() => {});
       await sequelize
         .transaction(async (transaction) => {
@@ -536,7 +635,9 @@ export default class RuntimeOperationService {
             },
             { where: { id: operation.id }, transaction },
           );
-          if (runtime)
+          if (operation.operation_type.startsWith('PYTHON_ENV_'))
+            await this.environments.failed(operation, code, transaction);
+          else if (runtime)
             await RuntimeInstallationModel.update(
               {
                 state: code === 'RUNTIME_MISSING' ? 'MISSING' : 'ERROR',
@@ -578,6 +679,8 @@ export default class RuntimeOperationService {
             { where: { id: operation.id } },
           ).catch(() => {});
         }
+      for (const lease of [...(active.resourceLeases ?? [])].reverse())
+        await lease.release();
       await active.lease.release();
       this.active.delete(operation.id);
     }
@@ -600,7 +703,14 @@ export default class RuntimeOperationService {
           },
           { transaction },
         );
-        if (operation.runtime_id)
+        if (operation.operation_type.startsWith('PYTHON_ENV_'))
+          await this.environments.failed(
+            operation,
+            'PYTHON_ENV_INTERRUPTED',
+            transaction,
+            true,
+          );
+        else if (operation.runtime_id)
           await RuntimeInstallationModel.update(
             { state: 'ERROR', last_error: 'RUNTIME_INTERRUPTED' },
             { where: { id: operation.runtime_id }, transaction },

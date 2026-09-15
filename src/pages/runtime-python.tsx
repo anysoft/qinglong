@@ -11,6 +11,7 @@ import {
   Select,
   Space,
   Table,
+  Tabs,
   Tag,
   Typography,
   message,
@@ -18,6 +19,7 @@ import {
 import { PageContainer } from '@ant-design/pro-layout';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
+import PythonEnvironments from '@/components/PythonEnvironments';
 const base = `${config.apiPrefix}runtime/python`;
 const active = (row: any) => ['QUEUED', 'RUNNING'].includes(row.status);
 const bytes = (value?: number) =>
@@ -130,197 +132,239 @@ export default function PythonRuntimePage() {
           action={<Button onClick={() => load().catch(() => {})}>重试</Button>}
         />
       )}
-      <Card
-        title="Python Provider"
-        style={{ marginBottom: 16 }}
-        extra={
-          <Tag>
-            {provider?.state ?? 'LOADING'} · {provider?.health}
-          </Tag>
-        }
-      >
-        <Descriptions size="small" column={2}>
-          <Descriptions.Item label="Provider">
-            pyenv · {provider?.provider_version ?? '尚未安装'}
-          </Descriptions.Item>
-          <Descriptions.Item label="Revision">
-            <Typography.Text copyable={!!provider?.provider_revision}>
-              {provider?.provider_revision ?? '—'}
-            </Typography.Text>
-          </Descriptions.Item>
-          <Descriptions.Item label="Catalog Updated">
-            {provider?.last_refresh_at ?? '—'}
-          </Descriptions.Item>
-          <Descriptions.Item label="Last Error">
-            {provider?.last_error ?? '—'}
-          </Descriptions.Item>
-        </Descriptions>
-        <Space wrap>
-          <Button
-            disabled={busy || provider?.state === 'READY'}
-            onClick={() => perform('provider/setup')}
-          >
-            设置 Provider
-          </Button>
-          <Button
-            disabled={busy || !provider?.provider_revision}
-            onClick={() => perform('provider/update')}
-          >
-            更新 Provider
-          </Button>
-          <Button
-            disabled={busy || !provider?.provider_revision}
-            onClick={() => perform('provider/verify')}
-          >
-            验证 Provider
-          </Button>
-          <Button
-            disabled={busy || !provider?.provider_revision}
-            onClick={() => perform('provider/catalog')}
-          >
-            刷新版本列表
-          </Button>
-          <Popconfirm
-            title="重新获取 Provider？已安装 Python 会保留。"
-            onConfirm={() => perform('provider/repair')}
-          >
-            <Button disabled={busy}>修复 Provider</Button>
-          </Popconfirm>
-        </Space>
-      </Card>
-      <Table
-        rowKey="id"
-        dataSource={rows}
-        pagination={{ pageSize: 10 }}
-        scroll={{ x: 1050 }}
-        columns={[
-          { title: 'Python Version', dataIndex: 'version' },
+      <Tabs
+        defaultActiveKey="versions"
+        items={[
           {
-            title: 'State',
-            dataIndex: 'state',
-            render: (value) => <Tag>{value}</Tag>,
+            key: 'versions',
+            label: 'Versions',
+            children: (
+              <>
+                <Card
+                  title="Python Provider"
+                  style={{ marginBottom: 16 }}
+                  extra={
+                    <Tag>
+                      {provider?.state ?? 'LOADING'} · {provider?.health}
+                    </Tag>
+                  }
+                >
+                  <Descriptions size="small" column={2}>
+                    <Descriptions.Item label="Provider">
+                      pyenv · {provider?.provider_version ?? '尚未安装'}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Revision">
+                      <Typography.Text copyable={!!provider?.provider_revision}>
+                        {provider?.provider_revision ?? '—'}
+                      </Typography.Text>
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Catalog Updated">
+                      {provider?.last_refresh_at ?? '—'}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Last Error">
+                      {provider?.last_error ?? '—'}
+                    </Descriptions.Item>
+                  </Descriptions>
+                  <Space wrap>
+                    <Button
+                      disabled={busy || provider?.state === 'READY'}
+                      onClick={() => perform('provider/setup')}
+                    >
+                      设置 Provider
+                    </Button>
+                    <Button
+                      disabled={busy || !provider?.provider_revision}
+                      onClick={() => perform('provider/update')}
+                    >
+                      更新 Provider
+                    </Button>
+                    <Button
+                      disabled={busy || !provider?.provider_revision}
+                      onClick={() => perform('provider/verify')}
+                    >
+                      验证 Provider
+                    </Button>
+                    <Button
+                      disabled={busy || !provider?.provider_revision}
+                      onClick={() => perform('provider/catalog')}
+                    >
+                      刷新版本列表
+                    </Button>
+                    <Popconfirm
+                      title="重新获取 Provider？已安装 Python 会保留。"
+                      onConfirm={() => perform('provider/repair')}
+                    >
+                      <Button disabled={busy}>修复 Provider</Button>
+                    </Popconfirm>
+                  </Space>
+                </Card>
+                <Table
+                  rowKey="id"
+                  dataSource={rows}
+                  pagination={{ pageSize: 10 }}
+                  scroll={{ x: 1050 }}
+                  columns={[
+                    { title: 'Python Version', dataIndex: 'version' },
+                    {
+                      title: 'State',
+                      dataIndex: 'state',
+                      render: (value) => <Tag>{value}</Tag>,
+                    },
+                    { title: 'Health', dataIndex: 'health' },
+                    { title: 'Provider', render: () => 'pyenv' },
+                    { title: 'Installed At', dataIndex: 'installed_at' },
+                    {
+                      title: 'Disk Usage',
+                      render: (_, row) => bytes(row.metadata?.disk_usage_bytes),
+                    },
+                    {
+                      title: '操作',
+                      render: (_, row) => (
+                        <Space wrap>
+                          <Button
+                            disabled={busy}
+                            onClick={() =>
+                              perform(`installations/${row.id}/verify`)
+                            }
+                          >
+                            验证 / Test
+                          </Button>
+                          <Button
+                            onClick={async () => {
+                              const r = await request.get(
+                                `${base}/installations/${row.id}/references`,
+                              );
+                              if (r.code === 200)
+                                setDetail({ ...row, references: r.data });
+                            }}
+                          >
+                            详情
+                          </Button>
+                          <Popconfirm
+                            title={`修复 Python ${row.version}？当前目录会保留到隔离区，再重新安装。`}
+                            onConfirm={() =>
+                              perform(`installations/${row.id}/repair`)
+                            }
+                          >
+                            <Button
+                              disabled={busy || provider?.state !== 'READY'}
+                            >
+                              修复
+                            </Button>
+                          </Popconfirm>
+                          <Popconfirm
+                            title={`删除 Python ${row.version}？该安装目录将被删除；有引用时会拒绝。`}
+                            onConfirm={() =>
+                              perform(`installations/${row.id}`, {}, true)
+                            }
+                          >
+                            <Button danger disabled={busy}>
+                              删除
+                            </Button>
+                          </Popconfirm>
+                        </Space>
+                      ),
+                    },
+                  ]}
+                />
+                <Card title="Runtime Operations" style={{ marginTop: 16 }}>
+                  <Table
+                    rowKey="id"
+                    size="small"
+                    dataSource={operations}
+                    pagination={{ pageSize: 8 }}
+                    scroll={{ x: 750 }}
+                    columns={[
+                      { title: 'ID', dataIndex: 'id' },
+                      { title: 'Operation', dataIndex: 'operation_type' },
+                      { title: 'Status', dataIndex: 'status' },
+                      { title: 'Stage', dataIndex: 'stage' },
+                      { title: 'Error', dataIndex: 'error_code' },
+                      {
+                        title: '操作',
+                        render: (_, row) => (
+                          <Space>
+                            <Button onClick={() => setSelected(row.id)}>
+                              日志
+                            </Button>
+                            {active(row) && (
+                              <Button
+                                disabled={row.cancel_requested}
+                                onClick={() =>
+                                  perform(`operations/${row.id}/cancel`)
+                                }
+                              >
+                                取消
+                              </Button>
+                            )}
+                          </Space>
+                        ),
+                      },
+                    ]}
+                  />
+                </Card>
+                <Card title="Build Diagnostics" style={{ marginTop: 16 }}>
+                  <Alert
+                    type={
+                      diagnostics?.state === 'READY' ? 'success' : 'warning'
+                    }
+                    message={diagnostics?.state ?? 'LOADING'}
+                    description={`Host: ${diagnostics?.host_os ?? '—'} / ${
+                      diagnostics?.architecture ?? '—'
+                    } · 可用空间: ${bytes(
+                      diagnostics?.available_disk_bytes ?? undefined,
+                    )}`}
+                  />
+                  <p>
+                    {diagnostics?.tools?.map((x: any) => (
+                      <Tag
+                        color={x.available ? 'green' : 'orange'}
+                        key={x.name}
+                      >
+                        {x.name}: {x.available ? 'available' : 'missing'}
+                      </Tag>
+                    ))}
+                  </p>
+                  <p>
+                    Runtime 可写:{' '}
+                    {String(diagnostics?.runtime_root_writable ?? false)} ·
+                    Cache 可写: {String(diagnostics?.cache_writable ?? false)}
+                  </p>
+                  {diagnostics?.missing_requirements?.length > 0 && (
+                    <Alert
+                      type="warning"
+                      message={diagnostics.missing_requirements.join(', ')}
+                    />
+                  )}
+                  {diagnostics?.filesystem?.orphans?.length > 0 && (
+                    <Alert
+                      type="warning"
+                      message="发现未登记目录；需要人工核对，平台未接管。"
+                      description={diagnostics.filesystem.orphans
+                        .map((x: any) => x.version ?? 'unknown entry')
+                        .join(', ')}
+                    />
+                  )}
+                  <Typography.Paragraph type="secondary">
+                    编译需要本机工具和开发库；具体缺失项请查看构建日志。平台不会自动安装系统软件包。
+                  </Typography.Paragraph>
+                </Card>
+              </>
+            ),
           },
-          { title: 'Health', dataIndex: 'health' },
-          { title: 'Provider', render: () => 'pyenv' },
-          { title: 'Installed At', dataIndex: 'installed_at' },
           {
-            title: 'Disk Usage',
-            render: (_, row) => bytes(row.metadata?.disk_usage_bytes),
-          },
-          {
-            title: '操作',
-            render: (_, row) => (
-              <Space wrap>
-                <Button
-                  disabled={busy}
-                  onClick={() => perform(`installations/${row.id}/verify`)}
-                >
-                  验证 / Test
-                </Button>
-                <Button
-                  onClick={async () => {
-                    const r = await request.get(
-                      `${base}/installations/${row.id}/references`,
-                    );
-                    if (r.code === 200)
-                      setDetail({ ...row, references: r.data });
-                  }}
-                >
-                  详情
-                </Button>
-                <Popconfirm
-                  title={`修复 Python ${row.version}？当前目录会保留到隔离区，再重新安装。`}
-                  onConfirm={() => perform(`installations/${row.id}/repair`)}
-                >
-                  <Button disabled={busy || provider?.state !== 'READY'}>
-                    修复
-                  </Button>
-                </Popconfirm>
-                <Popconfirm
-                  title={`删除 Python ${row.version}？该安装目录将被删除；有引用时会拒绝。`}
-                  onConfirm={() => perform(`installations/${row.id}`, {}, true)}
-                >
-                  <Button danger disabled={busy}>
-                    删除
-                  </Button>
-                </Popconfirm>
-              </Space>
+            key: 'environments',
+            label: 'Environments',
+            children: (
+              <PythonEnvironments
+                runtimes={rows}
+                busy={busy}
+                onOperation={setSelected}
+              />
             ),
           },
         ]}
       />
-      <Card title="Runtime Operations" style={{ marginTop: 16 }}>
-        <Table
-          rowKey="id"
-          size="small"
-          dataSource={operations}
-          pagination={{ pageSize: 8 }}
-          scroll={{ x: 750 }}
-          columns={[
-            { title: 'ID', dataIndex: 'id' },
-            { title: 'Operation', dataIndex: 'operation_type' },
-            { title: 'Status', dataIndex: 'status' },
-            { title: 'Stage', dataIndex: 'stage' },
-            { title: 'Error', dataIndex: 'error_code' },
-            {
-              title: '操作',
-              render: (_, row) => (
-                <Space>
-                  <Button onClick={() => setSelected(row.id)}>日志</Button>
-                  {active(row) && (
-                    <Button
-                      disabled={row.cancel_requested}
-                      onClick={() => perform(`operations/${row.id}/cancel`)}
-                    >
-                      取消
-                    </Button>
-                  )}
-                </Space>
-              ),
-            },
-          ]}
-        />
-      </Card>
-      <Card title="Build Diagnostics" style={{ marginTop: 16 }}>
-        <Alert
-          type={diagnostics?.state === 'READY' ? 'success' : 'warning'}
-          message={diagnostics?.state ?? 'LOADING'}
-          description={`Host: ${diagnostics?.host_os ?? '—'} / ${
-            diagnostics?.architecture ?? '—'
-          } · 可用空间: ${bytes(
-            diagnostics?.available_disk_bytes ?? undefined,
-          )}`}
-        />
-        <p>
-          {diagnostics?.tools?.map((x: any) => (
-            <Tag color={x.available ? 'green' : 'orange'} key={x.name}>
-              {x.name}: {x.available ? 'available' : 'missing'}
-            </Tag>
-          ))}
-        </p>
-        <p>
-          Runtime 可写: {String(diagnostics?.runtime_root_writable ?? false)} ·
-          Cache 可写: {String(diagnostics?.cache_writable ?? false)}
-        </p>
-        {diagnostics?.missing_requirements?.length > 0 && (
-          <Alert
-            type="warning"
-            message={diagnostics.missing_requirements.join(', ')}
-          />
-        )}
-        {diagnostics?.filesystem?.orphans?.length > 0 && (
-          <Alert
-            type="warning"
-            message="发现未登记目录；需要人工核对，平台未接管。"
-            description={diagnostics.filesystem.orphans
-              .map((x: any) => x.version ?? 'unknown entry')
-              .join(', ')}
-          />
-        )}
-        <Typography.Paragraph type="secondary">
-          编译需要本机工具和开发库；具体缺失项请查看构建日志。平台不会自动安装系统软件包。
-        </Typography.Paragraph>
-      </Card>
       <Modal
         title="安装 Python"
         open={install}

@@ -55,3 +55,13 @@ B05 已退出；B07 缩减为独立 Backend adapter；B03 仅为 scheduler 输�
 - B17、Config snapshot、Hook lifecycle、工作区与 materialization lease 不变；Runtime 不获取这些锁。
 - 未新增 Task bridge。Runtime Manager 的 `shell/runtime_lease.py` 是平台 FD/flock helper，唯一消费者 RuntimeLease；复用 `hook_process.py`/`process_group.py` 仅为通用进程组监督。当前 Node 缺少项目内 POSIX flock 接口，故由固定 `/usr/bin/python3 -I -S` 持锁；在 Phase 10 通用 process/lease supervisor 整合时评估退出，替代前必须通过跨进程、SIGKILL、PID reuse、cancel/timeout/drain gates。它不是 managed Runtime，也不改变 Backend/Task Python。
 - B09/B10 未删除、未新增 Runtime 消费者；B05 不恢复。现行证据见 [Phase 6 报告](PHASE6_REPORT.md)。
+
+## Phase 7 review — Python Environment
+
+- **Legacy Python Dependency Bridge: RETAINED**。新 Python Environment 已具备 isolated venv、Desired/Resolved、immutable Build、pip cache、operations 和真实引用，但当前 Task 仍通过 B02/B06/B09/B10 导入旧 package prefix/support paths。
+- 已确认消费者：`shell/start.sh` 的 Python prefix/PYTHONPATH/requests bootstrap；`shell/preload/sitecustomize.py` 的当前 Task 搜索路径；`back/config/util.ts` 与 DependenceService 的安装/卸载；`back/services/system.ts` 的旧 Python mirror 设置。Node/Linux 依赖继续保留。
+- 这些旧入口不被新 Environment 使用。第一版固定 PyPI 且 PIP_CONFIG_FILE=/dev/null，新 pip 环境不会继承旧 mirror/Task ENV/Config。
+- B09/B10 Python 退出条件调整为：Phase 9 显式 Task resource binding、Phase 10 execution snapshot/absolute executable + package/SDK import、取消/恢复/三语言 release gates 通过后移除。不能在 Phase 7 自动绑定默认 Environment 来换取删除。
+- B05 保持 REMOVED；其他活跃 bridge 保留既有责任。没有新增 Task Runtime bridge。
+- `runtime_lease.py` 继续作为 POSIX lease helper，新增 Environment/Build shared/exclusive 使用；Provider FD 仍由当前 supervisor 传递。最终整合由 Phase 10 通用监督器完成，不能提前删除。
+- **Shared Package Layer: DEFERRED**。只共享 pip artifact cache，不共享 mutable site-packages。

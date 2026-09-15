@@ -1,0 +1,4506 @@
+{
+  "summary": {
+    "changed_count": 566,
+    "affected_count": 30,
+    "changed_files": 225,
+    "risk_level": "critical"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:CLAUDE.md:L2:GitNexus — Code Intelligence",
+      "name": "GitNexus — Code Intelligence",
+      "type": "Section",
+      "filePath": "CLAUDE.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:CLAUDE.md:L8:Always Do",
+      "name": "Always Do",
+      "type": "Section",
+      "filePath": "CLAUDE.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:CLAUDE.md:L17:Never Do",
+      "name": "Never Do",
+      "type": "Section",
+      "filePath": "CLAUDE.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:CLAUDE.md:L24:Resources",
+      "name": "Resources",
+      "type": "Section",
+      "filePath": "CLAUDE.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:CLAUDE.md:L33:CLI",
+      "name": "CLI",
+      "type": "Section",
+      "filePath": "CLAUDE.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L1:Phase 7 Status: PARTIAL",
+      "name": "Phase 7 Status: PARTIAL",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L24:Phase 6 Preconditions / Checkpoint",
+      "name": "Phase 6 Preconditions / Checkpoint",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L28:Tests / Builds / Typecheck",
+      "name": "Tests / Builds / Typecheck",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L32:Database Changes",
+      "name": "Database Changes",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L38:Python Environment Model",
+      "name": "Python Environment Model",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L42:Runtime Relation",
+      "name": "Runtime Relation",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L46:Environment Revision Model",
+      "name": "Environment Revision Model",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L52:Environment Build Model",
+      "name": "Environment Build Model",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L58:venv Architecture",
+      "name": "venv Architecture",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L64:Dependency Specification",
+      "name": "Dependency Specification",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L68:pip Package Manager",
+      "name": "pip Package Manager",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L74:Resolved Package Model",
+      "name": "Resolved Package Model",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L78:Build Lifecycle",
+      "name": "Build Lifecycle",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L84:Rebuild / Rollback",
+      "name": "Rebuild / Rollback",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L88:Environment Resolver",
+      "name": "Environment Resolver",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L92:Filesystem",
+      "name": "Filesystem",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L101:Cache",
+      "name": "Cache",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L105:Locks",
+      "name": "Locks",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L111:Runtime References",
+      "name": "Runtime References",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L115:Crash Recovery / Deletion",
+      "name": "Crash Recovery / Deletion",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L121:Security",
+      "name": "Security",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L127:API",
+      "name": "API",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L133:UI / Browser",
+      "name": "UI / Browser",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L139:Legacy Python Dependency Bridge",
+      "name": "Legacy Python Dependency Bridge",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L143:Shared Package Layer Decision",
+      "name": "Shared Package Layer Decision",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L147:Platform Regression",
+      "name": "Platform Regression",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L151:Temporary Bridges",
+      "name": "Temporary Bridges",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L155:Important Findings",
+      "name": "Important Findings",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L164:Known Limitations",
+      "name": "Known Limitations",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE7_REPORT.md:L175:Phase 8 Preconditions",
+      "name": "Phase 8 Preconditions",
+      "type": "Section",
+      "filePath": "PHASE7_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L1:Temporary Bridges — 退出条件登记",
+      "name": "Temporary Bridges — 退出条件登记",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L52:Phase 6 复核",
+      "name": "Phase 6 复核",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L59:Phase 7 review — Python Environment",
+      "name": "Phase 7 review — Python Environment",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/pythonEnvironment.ts:name",
+      "name": "name",
+      "type": "Const",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/pythonEnvironment.ts:description",
+      "name": "description",
+      "type": "Const",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/pythonEnvironment.ts:requirements",
+      "name": "requirements",
+      "type": "Const",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/pythonEnvironment.ts:id",
+      "name": "id",
+      "type": "Const",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/pythonEnvironment.ts:expected_version",
+      "name": "expected_version",
+      "type": "Const",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/pythonEnvironment.ts:payload",
+      "name": "payload",
+      "type": "Function",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/pythonEnvironment.ts:pythonEnvironmentRoutes",
+      "name": "pythonEnvironmentRoutes",
+      "type": "Function",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/pythonEnvironment.ts:pythonEnvironmentRoutes.base@33:2",
+      "name": "base",
+      "type": "Const",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/runtime.ts:operationDto",
+      "name": "operationDto",
+      "type": "Function",
+      "filePath": "back/api/runtime.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/api/runtime.ts:operationDto.environment_id@26:4",
+      "name": "environment_id",
+      "type": "Property",
+      "filePath": "back/api/runtime.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/api/runtime.ts:operationDto.build_id@27:4",
+      "name": "build_id",
+      "type": "Property",
+      "filePath": "back/api/runtime.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/runtime.ts:endpoint",
+      "name": "endpoint",
+      "type": "Function",
+      "filePath": "back/api/runtime.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/runtime.ts:runtimeRoutes",
+      "name": "runtimeRoutes",
+      "type": "Function",
+      "filePath": "back/api/runtime.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/data/pythonEnvironment.ts:DesiredPackage",
+      "name": "DesiredPackage",
+      "type": "Interface",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:DesiredPackage.normalized_name",
+      "name": "normalized_name",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:DesiredPackage.requirement",
+      "name": "requirement",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/data/pythonEnvironment.ts:ResolvedPackage",
+      "name": "ResolvedPackage",
+      "type": "Interface",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:ResolvedPackage.name",
+      "name": "name",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:ResolvedPackage.version",
+      "name": "version",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:ResolvedPackage.direct",
+      "name": "direct",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:ResolvedPackage.source_index",
+      "name": "source_index",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/data/pythonEnvironment.ts:PythonEnvironment",
+      "name": "PythonEnvironment",
+      "type": "Interface",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.id",
+      "name": "id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.name",
+      "name": "name",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.description",
+      "name": "description",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.runtime_id",
+      "name": "runtime_id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.state",
+      "name": "state",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.current_revision_id",
+      "name": "current_revision_id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.current_build_id",
+      "name": "current_build_id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.version",
+      "name": "version",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironment.last_error",
+      "name": "last_error",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/data/pythonEnvironment.ts:PythonEnvironmentRevision",
+      "name": "PythonEnvironmentRevision",
+      "type": "Interface",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentRevision.id",
+      "name": "id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentRevision.environment_id",
+      "name": "environment_id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentRevision.runtime_id",
+      "name": "runtime_id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentRevision.dependencies",
+      "name": "dependencies",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentRevision.spec_hash",
+      "name": "spec_hash",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/data/pythonEnvironment.ts:PythonEnvironmentBuild",
+      "name": "PythonEnvironmentBuild",
+      "type": "Interface",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.id",
+      "name": "id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.environment_id",
+      "name": "environment_id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.revision_id",
+      "name": "revision_id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.runtime_id",
+      "name": "runtime_id",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.state",
+      "name": "state",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.health",
+      "name": "health",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.resolved",
+      "name": "resolved",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.resolved_hash",
+      "name": "resolved_hash",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.freeze",
+      "name": "freeze",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.metadata",
+      "name": "metadata",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.last_error",
+      "name": "last_error",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/data/pythonEnvironment.ts:PythonEnvironmentBuild.verified_at",
+      "name": "verified_at",
+      "type": "Property",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/data/pythonEnvironment.ts:pk",
+      "name": "pk",
+      "type": "Function",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/data/pythonEnvironment.ts:text",
+      "name": "text",
+      "type": "Function",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/data/pythonEnvironment.ts:number",
+      "name": "number",
+      "type": "Function",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/data/pythonEnvironment.ts:json",
+      "name": "json",
+      "type": "Function",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/data/pythonEnvironment.ts:PythonEnvironmentModel",
+      "name": "PythonEnvironmentModel",
+      "type": "Const",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/data/pythonEnvironment.ts:PythonEnvironmentRevisionModel",
+      "name": "PythonEnvironmentRevisionModel",
+      "type": "Const",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/data/pythonEnvironment.ts:PythonEnvironmentBuildModel",
+      "name": "PythonEnvironmentBuildModel",
+      "type": "Const",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/data/pythonEnvironment.ts:pythonEnvironmentModels",
+      "name": "pythonEnvironmentModels",
+      "type": "Const",
+      "filePath": "back/data/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/data/runtime.ts:OperationType",
+      "name": "OperationType",
+      "type": "TypeAlias",
+      "filePath": "back/data/runtime.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/schema/pythonEnvironmentSchema.ts:statements",
+      "name": "statements",
+      "type": "Const",
+      "filePath": "back/schema/pythonEnvironmentSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/schema/pythonEnvironmentSchema.ts:createPythonEnvironmentSchema",
+      "name": "createPythonEnvironmentSchema",
+      "type": "Function",
+      "filePath": "back/schema/pythonEnvironmentSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pipPackageManager.ts:PipPackageManager",
+      "name": "PipPackageManager",
+      "type": "Class",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pipPackageManager.ts:PipPackageManager.constructor#2",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pipPackageManager.ts:PipPackageManager.run#4",
+      "name": "run",
+      "type": "Method",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.run.PIP_CONFIG_FILE@19:6",
+      "name": "PIP_CONFIG_FILE",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.run.PIP_DISABLE_PIP_VERSION_CHECK@20:6",
+      "name": "PIP_DISABLE_PIP_VERSION_CHECK",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.run.PIP_NO_INPUT@21:6",
+      "name": "PIP_NO_INPUT",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.run.PIP_REQUIRE_VIRTUALENV@22:6",
+      "name": "PIP_REQUIRE_VIRTUALENV",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.run.PIP_CACHE_DIR@23:6",
+      "name": "PIP_CACHE_DIR",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.run.PYTHONDONTWRITEBYTECODE@24:6",
+      "name": "PYTHONDONTWRITEBYTECODE",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pipPackageManager.ts:PipPackageManager.install#3",
+      "name": "install",
+      "type": "Method",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pipPackageManager.ts:PipPackageManager.snapshot#3",
+      "name": "snapshot",
+      "type": "Method",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.snapshot.fn@80:11.name@90:10",
+      "name": "name",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.snapshot.fn@80:11.version@91:10",
+      "name": "version",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.snapshot.fn@80:11.direct@92:10",
+      "name": "direct",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.snapshot.fn@80:11.source_index@93:10",
+      "name": "source_index",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.snapshot.resolved@100:6",
+      "name": "resolved",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.snapshot.freeze@101:6",
+      "name": "freeze",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pipPackageManager.ts:PipPackageManager.snapshot.resolved_hash@102:6",
+      "name": "resolved_hash",
+      "type": "Property",
+      "filePath": "back/services/pipPackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonDependency.ts:parseScript",
+      "name": "parseScript",
+      "type": "Const",
+      "filePath": "back/services/pythonDependency.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonDependency.ts:PythonDependencyService",
+      "name": "PythonDependencyService",
+      "type": "Class",
+      "filePath": "back/services/pythonDependency.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonDependency.ts:PythonDependencyService.validateInput#1",
+      "name": "validateInput",
+      "type": "Method",
+      "filePath": "back/services/pythonDependency.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonDependency.ts:PythonDependencyService.parse#3",
+      "name": "parse",
+      "type": "Method",
+      "filePath": "back/services/pythonDependency.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonDependency.ts:PythonDependencyService.hash#3",
+      "name": "hash",
+      "type": "Method",
+      "filePath": "back/services/pythonDependency.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonEnvironment.ts:PythonEnvironmentService",
+      "name": "PythonEnvironmentService",
+      "type": "Class",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.dependencies",
+      "name": "dependencies",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.environment#1",
+      "name": "environment",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.build#2",
+      "name": "build",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.builds#1",
+      "name": "builds",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.revisions#1",
+      "name": "revisions",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.list#0",
+      "name": "list",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.list.fn@54:15.revision@55:8",
+      "name": "revision",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.list.fn@54:15.state@85:10",
+      "name": "state",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.list.fn@54:15.health@89:10",
+      "name": "health",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.list.fn@54:15.runtime_version@90:10",
+      "name": "runtime_version",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.list.fn@54:15.direct_packages@91:10",
+      "name": "direct_packages",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.list.fn@54:15.resolved_packages@93:10",
+      "name": "resolved_packages",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.list.fn@54:15.current_build@94:10",
+      "name": "current_build",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation#2",
+      "name": "withMutation",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.lease@104:4",
+      "name": "lease",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.directory@106:4",
+      "name": "directory",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.id@121:8",
+      "name": "id",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.providerId@122:8",
+      "name": "providerId",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.directory@123:8",
+      "name": "directory",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.environment@124:8",
+      "name": "environment",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.command@133:8",
+      "name": "command",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.stage@134:8",
+      "name": "stage",
+      "type": "Function",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.healthyRuntime#1",
+      "name": "healthyRuntime",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.healthyRuntime.location@155:4",
+      "name": "location",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.create#1",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.revise#2",
+      "name": "revise",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.revise.fn@226:33.dependencies@232:6",
+      "name": "dependencies",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.metadata#2",
+      "name": "metadata",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.clone#2",
+      "name": "clone",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.clone.revision@291:4",
+      "name": "revision",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.diff#3",
+      "name": "diff",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.diff.b@303:4",
+      "name": "b",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.diff.after@305:4",
+      "name": "after",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diff.from@308:6",
+      "name": "from",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diff.to@309:6",
+      "name": "to",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diff.added@310:6",
+      "name": "added",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diff.removed@311:6",
+      "name": "removed",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diff.changed@312:6",
+      "name": "changed",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.diagnostics#0",
+      "name": "diagnostics",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.diagnostics.orphans@322:4",
+      "name": "orphans",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diagnostics.orphans@360:6",
+      "name": "orphans",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diagnostics.cache@361:6",
+      "name": "cache",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diagnostics.shared_package_layer@362:6",
+      "name": "shared_package_layer",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diagnostics.package_index@363:6",
+      "name": "package_index",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironment.ts:PythonEnvironmentService.diagnostics.authenticated_registry@364:6",
+      "name": "authenticated_registry",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService",
+      "name": "PythonEnvironmentBuildService",
+      "type": "Class",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.paths",
+      "name": "paths",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.venv",
+      "name": "venv",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.pip",
+      "name": "pip",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.constructor#2",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.prepare#4",
+      "name": "prepare",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.prepare.runtime_id@119:6",
+      "name": "runtime_id",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.prepare.metadata@120:6",
+      "name": "metadata",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.execute#2",
+      "name": "execute",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.execute.buildId@135:4",
+      "name": "buildId",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.execute.statfs@186:10#1",
+      "name": "statfs",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.cleanupCancelled#1",
+      "name": "cleanupCancelled",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.failed#4",
+      "name": "failed",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.failed.buildId@270:4",
+      "name": "buildId",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonEnvironmentPaths.ts:EnvironmentLockPaths",
+      "name": "EnvironmentLockPaths",
+      "type": "Class",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:EnvironmentLockPaths.constructor#2",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentPaths.ts:EnvironmentLockPaths.kind",
+      "name": "kind",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:EnvironmentLockPaths.lock#1",
+      "name": "lock",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver",
+      "name": "PythonEnvironmentPathResolver",
+      "type": "Class",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.relative#1",
+      "name": "relative",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.lock#3",
+      "name": "lock",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.environment#2",
+      "name": "environment",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.environment.marker@49:4",
+      "name": "marker",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.environment.stat@73:4",
+      "name": "stat",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.build#2",
+      "name": "build",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.build.stat@122:4",
+      "name": "stat",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.build.marker@133:19",
+      "name": "marker",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.build.root@133:13",
+      "name": "root",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.build.venv@133:27",
+      "name": "venv",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.executable#2",
+      "name": "executable",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.executable.base@139:4",
+      "name": "base",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.executable.stat@152:4",
+      "name": "stat",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.executable.base@162:38",
+      "name": "base",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.executable.configHash@162:44",
+      "name": "configHash",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.executable.executable@162:26",
+      "name": "executable",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.removeBuild#1",
+      "name": "removeBuild",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.removeEnvironment#1",
+      "name": "removeEnvironment",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.cache#0",
+      "name": "cache",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonEnvironmentReferences.ts:PythonRuntimeReferenceSource",
+      "name": "PythonRuntimeReferenceSource",
+      "type": "Class",
+      "filePath": "back/services/pythonEnvironmentReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentReferences.ts:PythonRuntimeReferenceSource.inspect#1",
+      "name": "inspect",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonEnvironmentReferences.ts:PythonEnvironmentReferenceService",
+      "name": "PythonEnvironmentReferenceService",
+      "type": "Class",
+      "filePath": "back/services/pythonEnvironmentReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentReferences.ts:PythonEnvironmentReferenceService.build#1",
+      "name": "build",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentReferences.ts:PythonEnvironmentReferenceService.build.count@40:6",
+      "name": "count",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentReferences.ts:PythonEnvironmentReferenceService.build.references@41:6",
+      "name": "references",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentReferences.ts:PythonEnvironmentReferenceService.requireUnusedBuild#1",
+      "name": "requireUnusedBuild",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonEnvironmentResolver.ts:PythonEnvironmentResolver",
+      "name": "PythonEnvironmentResolver",
+      "type": "Class",
+      "filePath": "back/services/pythonEnvironmentResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentResolver.ts:PythonEnvironmentResolver.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironmentResolver.ts:PythonEnvironmentResolver.resolve#1",
+      "name": "resolve",
+      "type": "Method",
+      "filePath": "back/services/pythonEnvironmentResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentResolver.ts:PythonEnvironmentResolver.resolve.providerLease@14:4",
+      "name": "providerLease",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironmentResolver.ts:PythonEnvironmentResolver.resolve.buildLease@19:4",
+      "name": "buildLease",
+      "type": "Const",
+      "filePath": "back/services/pythonEnvironmentResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentResolver.ts:PythonEnvironmentResolver.resolve.snapshot@66:8",
+      "name": "snapshot",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonEnvironmentResolver.ts:PythonEnvironmentResolver.resolve.lease@76:8",
+      "name": "lease",
+      "type": "Property",
+      "filePath": "back/services/pythonEnvironmentResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/pythonVenv.ts:diagnostic",
+      "name": "diagnostic",
+      "type": "Const",
+      "filePath": "back/services/pythonVenv.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/pythonVenv.ts:PythonVenvManager",
+      "name": "PythonVenvManager",
+      "type": "Class",
+      "filePath": "back/services/pythonVenv.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonVenv.ts:PythonVenvManager.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/pythonVenv.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonVenv.ts:PythonVenvManager.create#3",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/services/pythonVenv.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/pythonVenv.ts:PythonVenvManager.verify#3",
+      "name": "verify",
+      "type": "Method",
+      "filePath": "back/services/pythonVenv.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonVenv.ts:PythonVenvManager.verify.config_hash@81:6",
+      "name": "config_hash",
+      "type": "Property",
+      "filePath": "back/services/pythonVenv.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonVenv.ts:PythonVenvManager.verify.disk_bytes@82:6",
+      "name": "disk_bytes",
+      "type": "Property",
+      "filePath": "back/services/pythonVenv.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/pythonVenv.ts:PythonVenvManager.verify.verified_at@83:6",
+      "name": "verified_at",
+      "type": "Property",
+      "filePath": "back/services/pythonVenv.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/runtimeOperations.ts:kinds",
+      "name": "kinds",
+      "type": "Const",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/services/runtimeOperations.ts:Active",
+      "name": "Active",
+      "type": "TypeAlias",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/runtimeOperations.ts:Active.resourceLeases",
+      "name": "resourceLeases",
+      "type": "Property",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/runtimeOperations.ts:RuntimeOperationService",
+      "name": "RuntimeOperationService",
+      "type": "Class",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/runtimeOperations.ts:RuntimeOperationService.environments",
+      "name": "environments",
+      "type": "Property",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.constructor#3",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.request#2",
+      "name": "request",
+      "type": "Method",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.requestEnvironmentLocked#5",
+      "name": "requestEnvironmentLocked",
+      "type": "Method",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/runtimeOperations.ts:RuntimeOperationService.requestEnvironmentLocked.lease@397:31",
+      "name": "lease",
+      "type": "Property",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/runtimeOperations.ts:RuntimeOperationService.requestEnvironmentLocked.resourceLeases@397:38",
+      "name": "resourceLeases",
+      "type": "Property",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.execute#4",
+      "name": "execute",
+      "type": "Method",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.recoverLocked#1",
+      "name": "recoverLocked",
+      "type": "Method",
+      "filePath": "back/services/runtimeOperations.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/runtimeProcess.ts:RuntimeLease",
+      "name": "RuntimeLease",
+      "type": "Class",
+      "filePath": "back/services/runtimeProcess.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runtimeProcess.ts:RuntimeLease.acquire#3",
+      "name": "acquire",
+      "type": "Method",
+      "filePath": "back/services/runtimeProcess.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/runtimeReferences.ts:RuntimeReferenceService",
+      "name": "RuntimeReferenceService",
+      "type": "Class",
+      "filePath": "back/services/runtimeReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runtimeReferences.ts:RuntimeReferenceService.inspect#1",
+      "name": "inspect",
+      "type": "Method",
+      "filePath": "back/services/runtimeReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runtimeReferences.ts:RuntimeReferenceService.requireUnused#1",
+      "name": "requireUnused",
+      "type": "Method",
+      "filePath": "back/services/runtimeReferences.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/shared/operationalSchema.ts:PLATFORM_SCHEMA_VERSION",
+      "name": "PLATFORM_SCHEMA_VERSION",
+      "type": "Const",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/operationalSchema.ts:initializeOperationalSchema",
+      "name": "initializeOperationalSchema",
+      "type": "Function",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/shared/pythonEnvironment.ts:pythonEnvironmentOperationTypes",
+      "name": "pythonEnvironmentOperationTypes",
+      "type": "Const",
+      "filePath": "back/shared/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/shared/pythonEnvironment.ts:PythonEnvironmentOperationType",
+      "name": "PythonEnvironmentOperationType",
+      "type": "TypeAlias",
+      "filePath": "back/shared/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/shared/pythonEnvironment.ts:PythonEnvironmentOperationInput",
+      "name": "PythonEnvironmentOperationInput",
+      "type": "Interface",
+      "filePath": "back/shared/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/shared/pythonEnvironment.ts:PythonEnvironmentOperationInput.environment_id",
+      "name": "environment_id",
+      "type": "Property",
+      "filePath": "back/shared/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/shared/pythonEnvironment.ts:PythonEnvironmentOperationInput.build_id",
+      "name": "build_id",
+      "type": "Property",
+      "filePath": "back/shared/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/shared/pythonEnvironment.ts:PythonEnvironmentOperationInput.expected_version",
+      "name": "expected_version",
+      "type": "Property",
+      "filePath": "back/shared/pythonEnvironment.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase7/GRAPH_REVIEW.md:L1:Phase 7 graph review",
+      "name": "Phase 7 graph review",
+      "type": "Section",
+      "filePath": "diagnostics/phase7/GRAPH_REVIEW.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase7/GRAPH_REVIEW.md:L9:工具输出限制",
+      "name": "工具输出限制",
+      "type": "Section",
+      "filePath": "diagnostics/phase7/GRAPH_REVIEW.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:baseline",
+      "name": "baseline",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:result",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:output",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:current",
+      "name": "current",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:key",
+      "name": "key",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:added",
+      "name": "added",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:remaining",
+      "name": "remaining",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:unexpectedFailure",
+      "name": "unexpectedFailure",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/check-typecheck.cjs:report",
+      "name": "report",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/check-typecheck.cjs:report.status",
+      "name": "status",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/check-typecheck.cjs:report.new",
+      "name": "new",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/check-typecheck.cjs:report.original",
+      "name": "original",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/check-typecheck.cjs:report.raw_exit_code",
+      "name": "raw_exit_code",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/check-typecheck.cjs:report.remaining",
+      "name": "remaining",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/check-typecheck.cjs:report.regression_gate",
+      "name": "regression_gate",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/cleanup-test-environments.cjs:result",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/cleanup-test-environments.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/freeze-v3.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/freeze-v3.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase7/freeze-v3.cjs:fn@2:1.after@2:202#1",
+      "name": "after",
+      "type": "Method",
+      "filePath": "diagnostics/phase7/freeze-v3.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/freeze-v3.cjs:fn@2:1.metadata@2:579",
+      "name": "metadata",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/freeze-v3.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/freeze-v3.cjs:fn@2:1.objects@2:588",
+      "name": "objects",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/freeze-v3.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/freeze-v3.cjs:fn@2:1.source_commit@2:558",
+      "name": "source_commit",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/freeze-v3.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review-full.cjs:crypto",
+      "name": "crypto",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review-full.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review-full.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review-full.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review-full.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review-full.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review-full.cjs:needle",
+      "name": "needle",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review-full.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review-full.cjs:original",
+      "name": "original",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review-full.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review-full.cjs:source",
+      "name": "source",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review-full.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review-full.cjs:temporary",
+      "name": "temporary",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review-full.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/graph-review.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:net",
+      "name": "net",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:runtime",
+      "name": "runtime",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:tmp",
+      "name": "tmp",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:delay",
+      "name": "delay",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:evidence",
+      "name": "evidence",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:evidence.linux",
+      "name": "linux",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:evidence.status",
+      "name": "status",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:evidence.steps",
+      "name": "steps",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:backend",
+      "name": "backend",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:browser",
+      "name": "browser",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:connections",
+      "name": "connections",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:output",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:packageIndex",
+      "name": "packageIndex",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:page",
+      "name": "page",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:ssh",
+      "name": "ssh",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:mark",
+      "name": "mark",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:port",
+      "name": "port",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:stop",
+      "name": "stop",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:until",
+      "name": "until",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.git@22:1",
+      "name": "git",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.js@25:1",
+      "name": "js",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.py@26:1",
+      "name": "py",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.sh@27:1",
+      "name": "sh",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:fn@12:1.hostPublic@32:1",
+      "name": "hostPublic",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:fn@12:1.base@40:51",
+      "name": "base",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:fn@12:1.grpc@40:51",
+      "name": "grpc",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:fn@12:1.http@40:51",
+      "name": "http",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.BACK_PORT@41:189",
+      "name": "BACK_PORT",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.BIND_HOST@41:235",
+      "name": "BIND_HOST",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.BIND_HOST_GRPC@41:257",
+      "name": "BIND_HOST_GRPC",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.GRPC_PORT@41:212",
+      "name": "GRPC_PORT",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.HOME@41:72",
+      "name": "HOME",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.JWT_SECRET@41:146",
+      "name": "JWT_SECRET",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.NODE_ENV@41:304",
+      "name": "NODE_ENV",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.PATH@41:99",
+      "name": "PATH",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.QL_DATA_DIR@41:38",
+      "name": "QL_DATA_DIR",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.QL_DIR@41:27",
+      "name": "QL_DIR",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/platform-e2e.cjs:fn@12:1.QL_SCHEDULER@41:284",
+      "name": "QL_SCHEDULER",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.start@42:1",
+      "name": "start",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.login@49:1",
+      "name": "login",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.api@51:1",
+      "name": "api",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.choose@52:1",
+      "name": "choose",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.confirm@53:1",
+      "name": "confirm",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.repositoryAction@59:1",
+      "name": "repositoryAction",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.repositoryAction@59:1.response@64:3",
+      "name": "response",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.variable@79:1",
+      "name": "variable",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:fn@12:1.saveDialog@86:1.element@86:29",
+      "name": "element",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.saveDialog@86:1",
+      "name": "saveDialog",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.asset@87:1",
+      "name": "asset",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:fn@12:1.configAsset@90:1",
+      "name": "configAsset",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/platform-e2e.cjs:fn@12:1.secretAsset@90:1",
+      "name": "secretAsset",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.bind@92:1",
+      "name": "bind",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.editTask@94:1",
+      "name": "editTask",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.latest@116:1",
+      "name": "latest",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.runtimeDone@117:1",
+      "name": "runtimeDone",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.closeRuntimeLog@118:1",
+      "name": "closeRuntimeLog",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.installPython@120:1",
+      "name": "installPython",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.pythonRow@122:1",
+      "name": "pythonRow",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/platform-e2e.cjs:fn@12:1.buildRow@148:1",
+      "name": "buildRow",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/prepare-managed-runtime.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/prepare-managed-runtime.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/prepare-managed-runtime.cjs:fn@3:1.h@4:1",
+      "name": "h",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/prepare-managed-runtime.cjs:fn@3:1.after@4:44",
+      "name": "after",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/prepare-managed-runtime.cjs:fn@3:1.fixture_provider@5:40",
+      "name": "fixture_provider",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/prepare-managed-runtime.cjs:fn@3:1.managed@5:27",
+      "name": "managed",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/prepare-managed-runtime.cjs:fn@3:1.root@5:15",
+      "name": "root",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/prepare-managed-runtime.cjs:fn@3:1.started_at@5:81",
+      "name": "started_at",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/prepare-managed-runtime.cjs:fn@3:1.version@5:63",
+      "name": "version",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase7/prepare-managed-runtime.cjs:fn@3:1.run@9:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase7/prepare-managed-runtime.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/refresh-fixture-schema.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/refresh-fixture-schema.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/refresh-fixture-schema.cjs:manifest",
+      "name": "manifest",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/refresh-fixture-schema.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/refresh-fixture-schema.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/refresh-fixture-schema.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:files",
+      "name": "files",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:forbidden",
+      "name": "forbidden",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:broad",
+      "name": "broad",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:failures",
+      "name": "failures",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:findings",
+      "name": "findings",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:source",
+      "name": "source",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:oldHook",
+      "name": "oldHook",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:classification",
+      "name": "classification",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:runtimeFiles",
+      "name": "runtimeFiles",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:violations",
+      "name": "violations",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:protectedFiles",
+      "name": "protectedFiles",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:diff",
+      "name": "diff",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:environmentFiles",
+      "name": "environmentFiles",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:dependencyFindings",
+      "name": "dependencyFindings",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase7/static-audit.cjs:report",
+      "name": "report",
+      "type": "Const",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.dependency_references",
+      "name": "dependency_references",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.environment_files",
+      "name": "environment_files",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.production_files",
+      "name": "production_files",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.protected_phase5_files",
+      "name": "protected_phase5_files",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.runtime_files",
+      "name": "runtime_files",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.status",
+      "name": "status",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.classified_remaining_hits",
+      "name": "classified_remaining_hits",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.forbidden_hits",
+      "name": "forbidden_hits",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase7/static-audit.cjs:report.scope",
+      "name": "scope",
+      "type": "Property",
+      "filePath": "diagnostics/phase7/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/00-platform-overview.md:L1:Git-native Script Automation / Scheduling Platform",
+      "name": "Git-native Script Automation / Scheduling Platform",
+      "type": "Section",
+      "filePath": "docs/architecture/00-platform-overview.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/00-platform-overview.md:L30:后续边界",
+      "name": "后续边界",
+      "type": "Section",
+      "filePath": "docs/architecture/00-platform-overview.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/00-platform-overview.md:L38:Phase 7 current Runtime layer",
+      "name": "Phase 7 current Runtime layer",
+      "type": "Section",
+      "filePath": "docs/architecture/00-platform-overview.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/01-domain-model.md:L1:Domain Model（目标）",
+      "name": "Domain Model（目标）",
+      "type": "Section",
+      "filePath": "docs/architecture/01-domain-model.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/01-domain-model.md:L18:Phase 6 已实现 Runtime Domain",
+      "name": "Phase 6 已实现 Runtime Domain",
+      "type": "Section",
+      "filePath": "docs/architecture/01-domain-model.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/01-domain-model.md:L22:Python Environment (Phase 7)",
+      "name": "Python Environment (Phase 7)",
+      "type": "Section",
+      "filePath": "docs/architecture/01-domain-model.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/05-filesystem-layout.md:L1:Filesystem — 当前布局与后续目标",
+      "name": "Filesystem — 当前布局与后续目标",
+      "type": "Section",
+      "filePath": "docs/architecture/05-filesystem-layout.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/05-filesystem-layout.md:L36:Phase 6",
+      "name": "Phase 6",
+      "type": "Section",
+      "filePath": "docs/architecture/05-filesystem-layout.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/05-filesystem-layout.md:L40:Phase 7 Python environments",
+      "name": "Phase 7 Python environments",
+      "type": "Section",
+      "filePath": "docs/architecture/05-filesystem-layout.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/06-database-target.md:L1:Operational Schema v3 / 最终 Domain Schema",
+      "name": "Operational Schema v3 / 最终 Domain Schema",
+      "type": "Section",
+      "filePath": "docs/architecture/06-database-target.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/06-database-target.md:L79:Phase 6 Operational v3",
+      "name": "Phase 6 Operational v3",
+      "type": "Section",
+      "filePath": "docs/architecture/06-database-target.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/06-database-target.md:L83:Phase 7 current schema: v4",
+      "name": "Phase 7 current schema: v4",
+      "type": "Section",
+      "filePath": "docs/architecture/06-database-target.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/07-service-boundaries.md:L1:Service Boundaries",
+      "name": "Service Boundaries",
+      "type": "Section",
+      "filePath": "docs/architecture/07-service-boundaries.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/07-service-boundaries.md:L29:Phase 6 Runtime boundary",
+      "name": "Phase 6 Runtime boundary",
+      "type": "Section",
+      "filePath": "docs/architecture/07-service-boundaries.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/07-service-boundaries.md:L35:Phase 7 Python Environment services",
+      "name": "Phase 7 Python Environment services",
+      "type": "Section",
+      "filePath": "docs/architecture/07-service-boundaries.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/08-temporary-bridges.md:L1:Temporary Bridges / 当前与目标之间的约束",
+      "name": "Temporary Bridges / 当前与目标之间的约束",
+      "type": "Section",
+      "filePath": "docs/architecture/08-temporary-bridges.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/08-temporary-bridges.md:L9:Phase 5",
+      "name": "Phase 5",
+      "type": "Section",
+      "filePath": "docs/architecture/08-temporary-bridges.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/08-temporary-bridges.md:L15:Phase 7 bridge outcome",
+      "name": "Phase 7 bridge outcome",
+      "type": "Section",
+      "filePath": "docs/architecture/08-temporary-bridges.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/10-python-runtime.md:L1:Python Runtime Manager — Phase 6",
+      "name": "Python Runtime Manager — Phase 6",
+      "type": "Section",
+      "filePath": "docs/architecture/10-python-runtime.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/10-python-runtime.md:L29:Phase 7 extension",
+      "name": "Phase 7 extension",
+      "type": "Section",
+      "filePath": "docs/architecture/10-python-runtime.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/11-python-environments.md:L1:Python Environments — current architecture (Phase 7)",
+      "name": "Python Environments — current architecture (Phase 7)",
+      "type": "Section",
+      "filePath": "docs/architecture/11-python-environments.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/11-python-environments.md:L39:Resource and filesystem contracts",
+      "name": "Resource and filesystem contracts",
+      "type": "Section",
+      "filePath": "docs/architecture/11-python-environments.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/01-python-environment-domain.md:L1:Python Environment domain",
+      "name": "Python Environment domain",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/01-python-environment-domain.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/02-venv-materialization.md:L1:venv materialization",
+      "name": "venv materialization",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/02-venv-materialization.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/03-dependency-specification.md:L1:Desired specification",
+      "name": "Desired specification",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/03-dependency-specification.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/04-environment-revisions-and-builds.md:L1:Immutable revisions and builds",
+      "name": "Immutable revisions and builds",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/04-environment-revisions-and-builds.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/05-pip-package-manager.md:L1:pip adapter and cache",
+      "name": "pip adapter and cache",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/05-pip-package-manager.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/06-locking-and-recovery.md:L1:Locks, cancellation and recovery",
+      "name": "Locks, cancellation and recovery",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/06-locking-and-recovery.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/07-python-environment-resolver.md:L1:Resolver contract",
+      "name": "Resolver contract",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/07-python-environment-resolver.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/08-security.md:L1:Security boundaries",
+      "name": "Security boundaries",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/08-security.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/09-schema-evolution.md:L1:Schema v4",
+      "name": "Schema v4",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/09-schema-evolution.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/10-phase7-test-report.md:L1:Phase 7 validation",
+      "name": "Phase 7 validation",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/10-phase7-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/10-phase7-test-report.md:L3:Gates",
+      "name": "Gates",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/10-phase7-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/10-phase7-test-report.md:L14:Coverage",
+      "name": "Coverage",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/10-phase7-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/10-phase7-test-report.md:L20:Linux",
+      "name": "Linux",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/10-phase7-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase7/10-phase7-test-report.md:L24:Retained test fixture",
+      "name": "Retained test fixture",
+      "type": "Section",
+      "filePath": "docs/refactor/phase7/10-phase7-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/components/PythonEnvironments/index.tsx:base",
+      "name": "base",
+      "type": "Const",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:src/components/PythonEnvironments/index.tsx:Props",
+      "name": "Props",
+      "type": "Interface",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/components/PythonEnvironments/index.tsx:Props.runtimes",
+      "name": "runtimes",
+      "type": "Property",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/components/PythonEnvironments/index.tsx:Props.busy",
+      "name": "busy",
+      "type": "Property",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/components/PythonEnvironments/index.tsx:Props.onOperation",
+      "name": "onOperation",
+      "type": "Property",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments",
+      "name": "PythonEnvironments",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.call@45:2",
+      "name": "call",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.load@65:2",
+      "name": "load",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.fn@80:12.timer@82:4",
+      "name": "timer",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.act@85:2",
+      "name": "act",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.edit@99:2",
+      "name": "edit",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.save@115:2",
+      "name": "save",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/components/PythonEnvironments/index.tsx:PythonEnvironments.save@115:15.runtime_id@131:12",
+      "name": "runtime_id",
+      "type": "Property",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/components/PythonEnvironments/index.tsx:PythonEnvironments.save@115:15.requirements@132:12",
+      "name": "requirements",
+      "type": "Property",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/components/PythonEnvironments/index.tsx:PythonEnvironments.desired@169:2",
+      "name": "desired",
+      "type": "Const",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/components/PythonEnvironments/index.tsx:PythonEnvironments.disabled@169:2",
+      "name": "disabled",
+      "type": "Const",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@213:14",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@228:14",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@237:14",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@241:14",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@387:26",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@476:26",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@489:26",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@495:26",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@500:26",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/PythonEnvironments/index.tsx:PythonEnvironments.render@565:24",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/PythonEnvironments/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/runtime-python.tsx:PythonRuntimePage",
+      "name": "PythonRuntimePage",
+      "type": "Function",
+      "filePath": "src/pages/runtime-python.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/runtime-python.tsx:PythonRuntimePage.render@210:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/runtime-python.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/runtime-python.tsx:PythonRuntimePage.render@213:41",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/runtime-python.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/runtime-python.tsx:PythonRuntimePage.render@217:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/runtime-python.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/runtime-python.tsx:PythonRuntimePage.render@221:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/runtime-python.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/runtime-python.tsx:PythonRuntimePage.render@284:24",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/runtime-python.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase5/helpers.cjs:fixture",
+      "name": "fixture",
+      "type": "Function",
+      "filePath": "tests/phase5/helpers.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/api.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase7/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/api.test.cjs:express",
+      "name": "express",
+      "type": "Const",
+      "filePath": "tests/phase7/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/api.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase7/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/api.test.cjs:fn@2:125.base@6:1",
+      "name": "base",
+      "type": "Const",
+      "filePath": "tests/phase7/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/api.test.cjs:fn@2:125.root@6:1",
+      "name": "root",
+      "type": "Const",
+      "filePath": "tests/phase7/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/api.test.cjs:fn@2:125.api@7:11.data@7:42",
+      "name": "data",
+      "type": "Const",
+      "filePath": "tests/phase7/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/api.test.cjs:fn@2:125.api@7:1",
+      "name": "api",
+      "type": "Function",
+      "filePath": "tests/phase7/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/api.test.cjs:fn@2:125.api@7:11.status@7:243",
+      "name": "status",
+      "type": "Property",
+      "filePath": "tests/phase7/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/browser-provider.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/browser-provider.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/browser-provider.cjs:Provider",
+      "name": "Provider",
+      "type": "Const",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/browser-provider.cjs:install",
+      "name": "install",
+      "type": "Const",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:tests/phase7/browser-provider.cjs:catalog",
+      "name": "catalog",
+      "type": "Method",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:tests/phase7/browser-provider.cjs:install",
+      "name": "install",
+      "type": "Method",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/browser-provider.cjs:fn@5:27.source@8:1",
+      "name": "source",
+      "type": "Const",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/browser-provider.cjs:Base",
+      "name": "Base",
+      "type": "Const",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/browser-provider.cjs:modulePath",
+      "name": "modulePath",
+      "type": "Const",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:tests/phase7/browser-provider.cjs:BrowserOperations.constructor#2",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "tests/phase7/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/crash-worker.cjs:fn@1:1.env@1:11",
+      "name": "env",
+      "type": "Const",
+      "filePath": "tests/phase7/crash-worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/crash-worker.cjs:fn@1:1.id@1:11",
+      "name": "id",
+      "type": "Const",
+      "filePath": "tests/phase7/crash-worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:fn@2:102.env@4:1",
+      "name": "env",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:fn@2:102.service@4:1",
+      "name": "service",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/failures.test.cjs:fn@2:102.environment@5:14",
+      "name": "environment",
+      "type": "Property",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:fn@14:110.env@16:1",
+      "name": "env",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:fn@14:110.service@16:1",
+      "name": "service",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/failures.test.cjs:fn@14:110.environment@18:14",
+      "name": "environment",
+      "type": "Property",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/failures.test.cjs:fn@14:110.original@19:1",
+      "name": "original",
+      "type": "Const",
+      "filePath": "tests/phase7/failures.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:load",
+      "name": "load",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/managed-helper.cjs:attach",
+      "name": "attach",
+      "type": "Function",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.all@4:1",
+      "name": "all",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.cache@4:1",
+      "name": "cache",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.mocks@4:1",
+      "name": "mocks",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.dataPath@4:29",
+      "name": "dataPath",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.dbPath@4:43",
+      "name": "dbPath",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.rootPath@4:15",
+      "name": "rootPath",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.scriptPath@4:55",
+      "name": "scriptPath",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.Operations@6:1",
+      "name": "Operations",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.Paths@6:1",
+      "name": "Paths",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.Provider@6:1",
+      "name": "Provider",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.Service@6:1",
+      "name": "Service",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/managed-helper.cjs:attach.module@6:1",
+      "name": "module",
+      "type": "Function",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.operations@7:1",
+      "name": "operations",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:attach.service@7:1",
+      "name": "service",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/managed-helper.cjs:attach.close@8:78",
+      "name": "close",
+      "type": "Function",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.db@8:31",
+      "name": "db",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.load@8:66",
+      "name": "load",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.operations@8:40",
+      "name": "operations",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.paths@8:34",
+      "name": "paths",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.root@8:26",
+      "name": "root",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/managed-helper.cjs:attach.service@8:51",
+      "name": "service",
+      "type": "Property",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/managed-helper.cjs:treeDigest.walk@10:100.stat@10:175",
+      "name": "stat",
+      "type": "Const",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/managed-helper.cjs:treeDigest",
+      "name": "treeDigest",
+      "type": "Function",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/managed-helper.cjs:treeDigest.walk@10:100",
+      "name": "walk",
+      "type": "Function",
+      "filePath": "tests/phase7/managed-helper.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:source",
+      "name": "source",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/offline.test.cjs:sleep",
+      "name": "sleep",
+      "type": "Function",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/offline.test.cjs:until",
+      "name": "until",
+      "type": "Function",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:fn@5:153.run@9:11.op@9:62",
+      "name": "op",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/offline.test.cjs:fn@5:153.run@9:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/offline.test.cjs:fn@5:153.revise@10:1",
+      "name": "revise",
+      "type": "Function",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:fn@5:153.fn@15:33.parsed@15:45",
+      "name": "parsed",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:fn@5:153.pinned@17:1",
+      "name": "pinned",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/offline.test.cjs:fn@5:153.gone@31:1",
+      "name": "gone",
+      "type": "Function",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/offline.test.cjs:fn@5:153.lastResolved@42:1",
+      "name": "lastResolved",
+      "type": "Const",
+      "filePath": "tests/phase7/offline.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/paths.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/paths.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/paths.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/paths.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/paths.test.cjs:fn@2:111.Paths@3:1",
+      "name": "Paths",
+      "type": "Const",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/paths.test.cjs:fn@2:111.paths@3:1",
+      "name": "paths",
+      "type": "Const",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/paths.test.cjs:fn@2:111.environment_id@4:19",
+      "name": "environment_id",
+      "type": "Property",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/paths.test.cjs:fn@2:111.id@4:14",
+      "name": "id",
+      "type": "Property",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/paths.test.cjs:fn@2:111.metadata@4:64",
+      "name": "metadata",
+      "type": "Property",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/paths.test.cjs:fn@2:111.runtime_id@4:36",
+      "name": "runtime_id",
+      "type": "Property",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/paths.test.cjs:fn@2:111.state@4:49",
+      "name": "state",
+      "type": "Property",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/paths.test.cjs:fn@2:111.b@8:1",
+      "name": "b",
+      "type": "Const",
+      "filePath": "tests/phase7/paths.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/schema.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase7/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/schema.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase7/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/schema.test.cjs:frozen",
+      "name": "frozen",
+      "type": "Const",
+      "filePath": "tests/phase7/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/schema.test.cjs:objects",
+      "name": "objects",
+      "type": "Function",
+      "filePath": "tests/phase7/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/schema.test.cjs:seed",
+      "name": "seed",
+      "type": "Function",
+      "filePath": "tests/phase7/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/schema.test.cjs:fn@5:94.b@6:1",
+      "name": "b",
+      "type": "Const",
+      "filePath": "tests/phase7/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/schema.test.cjs:fn@5:94.query@10:1",
+      "name": "query",
+      "type": "Const",
+      "filePath": "tests/phase7/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/wheelhouse.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/wheelhouse.cjs:http",
+      "name": "http",
+      "type": "Const",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/wheelhouse.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/wheelhouse.cjs:wheelhouse",
+      "name": "wheelhouse",
+      "type": "Function",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase7/wheelhouse.cjs:wheelhouse.requests@28:1",
+      "name": "requests",
+      "type": "Const",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/wheelhouse.cjs:wheelhouse.server@29:1",
+      "name": "server",
+      "type": "Function",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase7/wheelhouse.cjs:wheelhouse.close@34:75",
+      "name": "close",
+      "type": "Function",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/wheelhouse.cjs:wheelhouse.index@34:9",
+      "name": "index",
+      "type": "Property",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase7/wheelhouse.cjs:wheelhouse.requests@34:66",
+      "name": "requests",
+      "type": "Property",
+      "filePath": "tests/phase7/wheelhouse.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/platform/fresh-schema.test.cjs:fixture",
+      "name": "fixture",
+      "type": "Function",
+      "filePath": "tests/platform/fresh-schema.test.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": [
+    {
+      "id": "proc_6_revise",
+      "name": "Revise → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "revise",
+          "step": 1
+        },
+        {
+          "symbol": "withMutation",
+          "step": 2
+        },
+        {
+          "symbol": "acquire",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_8_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        },
+        {
+          "symbol": "act",
+          "step": 2
+        },
+        {
+          "symbol": "load",
+          "step": 3
+        },
+        {
+          "symbol": "call",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_49_revise",
+      "name": "Revise → RuntimeLease",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "RuntimeLease",
+          "step": 4
+        },
+        {
+          "symbol": "revise",
+          "step": 1
+        },
+        {
+          "symbol": "withMutation",
+          "step": 2
+        },
+        {
+          "symbol": "acquire",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_68_initializeoperationa",
+      "name": "InitializeOperationalSchema → Hash",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "initializeOperationalSchema",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_88_pythonruntimepage",
+      "name": "PythonRuntimePage → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "PythonRuntimePage",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_107_revise",
+      "name": "Revise → Release",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "revise",
+          "step": 1
+        },
+        {
+          "symbol": "withMutation",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_108_prepare",
+      "name": "Prepare → EnvironmentLockPaths",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "EnvironmentLockPaths",
+          "step": 3
+        },
+        {
+          "symbol": "lock",
+          "step": 2
+        },
+        {
+          "symbol": "prepare",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_112_execute",
+      "name": "Execute → RuntimeOperationLog",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_113_request",
+      "name": "Request → Failed",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "recoverLocked",
+          "step": 2
+        },
+        {
+          "symbol": "request",
+          "step": 1
+        },
+        {
+          "symbol": "failed",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_130_prepare",
+      "name": "Prepare → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "lock",
+          "step": 2
+        },
+        {
+          "symbol": "acquire",
+          "step": 3
+        },
+        {
+          "symbol": "prepare",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_132_pythonenvironments",
+      "name": "PythonEnvironments → Request",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "load",
+          "step": 2
+        },
+        {
+          "symbol": "call",
+          "step": 3
+        },
+        {
+          "symbol": "PythonEnvironments",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_167_prepare",
+      "name": "Prepare → RuntimeLease",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "RuntimeLease",
+          "step": 4
+        },
+        {
+          "symbol": "lock",
+          "step": 2
+        },
+        {
+          "symbol": "acquire",
+          "step": 3
+        },
+        {
+          "symbol": "prepare",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_190_render",
+      "name": "Render → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_211_runtimeroutes",
+      "name": "RuntimeRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "runtimeRoutes",
+          "step": 1
+        },
+        {
+          "symbol": "endpoint",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_226_resolve",
+      "name": "Resolve → RuntimeLease",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "RuntimeLease",
+          "step": 3
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        },
+        {
+          "symbol": "resolve",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_235_runtimeroutes",
+      "name": "RuntimeRoutes → Status",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "runtimeRoutes",
+          "step": 1
+        },
+        {
+          "symbol": "endpoint",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_243_render",
+      "name": "Render → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_247_pythonenvironmentrou",
+      "name": "PythonEnvironmentRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "list",
+          "step": 2
+        },
+        {
+          "symbol": "pythonEnvironmentRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_274_request",
+      "name": "Request → RuntimeLease",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "RuntimeLease",
+          "step": 3
+        },
+        {
+          "symbol": "request",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_293_resolve",
+      "name": "Resolve → AsError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 2
+        },
+        {
+          "symbol": "resolve",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_295_save",
+      "name": "Save → Request",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        },
+        {
+          "symbol": "call",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_326_request",
+      "name": "Request → AsError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "request",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_421_request",
+      "name": "Request → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "requestEnvironmentLocked",
+          "step": 2
+        },
+        {
+          "symbol": "request",
+          "step": 1
+        },
+        {
+          "symbol": "lock",
+          "step": 4
+        },
+        {
+          "symbol": "acquire",
+          "step": 5
+        },
+        {
+          "symbol": "prepare",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_424_create",
+      "name": "Create → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "create",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_430_revise",
+      "name": "Revise → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "revise",
+          "step": 1
+        },
+        {
+          "symbol": "withMutation",
+          "step": 2
+        },
+        {
+          "symbol": "acquire",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_433_execute",
+      "name": "Execute → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "removeBuild",
+          "step": 2
+        },
+        {
+          "symbol": "build",
+          "step": 3
+        },
+        {
+          "symbol": "environment",
+          "step": 4
+        },
+        {
+          "symbol": "relative",
+          "step": 5
+        },
+        {
+          "symbol": "execute",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_441_runtimeroutes",
+      "name": "RuntimeRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "runtimeRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_443_prepare",
+      "name": "Prepare → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "lock",
+          "step": 2
+        },
+        {
+          "symbol": "acquire",
+          "step": 3
+        },
+        {
+          "symbol": "prepare",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_444_resolve",
+      "name": "Resolve → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 2
+        },
+        {
+          "symbol": "resolve",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_445_execute",
+      "name": "Execute → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        }
+      ]
+    }
+  ]
+}

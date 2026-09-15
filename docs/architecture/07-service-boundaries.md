@@ -31,3 +31,7 @@ ConfigAssetService 持有不可变存储；TaskConfigService 合并绑定与预�
 RuntimeOperationService 持有资源状态机、DB 事务、租约、取消与恢复；PyenvProvider 持有 pinned source/definitions/build/verify；RuntimePathResolver 持有所有权/路径；RuntimeDiagnosticsService 检查工具/空间，RuntimeReferenceService 提供未来引用扩展点。API 注册恢复，不在 Backend 启动执行 Python/build/network。
 
 仅 RuntimeCommand 复用通用 childProcess + hook_process.py/process_group.py。它不调用 HookExecutor、TaskEnvironmentResolver、TaskExecutionPreparation、Config lease、Repository Credential 或 DependenceService。
+
+## Phase 7 Python Environment services
+
+PythonEnvironmentService 负责定义/乐观版本；PythonEnvironmentBuildService 作为 RuntimeOperation 的资源执行扩展；PythonDependencyService 调标准 parser；PythonVenvManager/PipPackageManager 处理绝对 executable argv；PathResolver 负责所有权；Resolver 返回 snapshot + lease；RuntimeReferenceSource 保护解释器。均不依赖当前 Task staging/全局依赖/Config 注入。
