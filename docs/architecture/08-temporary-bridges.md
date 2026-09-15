@@ -9,3 +9,5 @@
 ## Phase 5
 
 B06 的 Hook 部分已移除；B11 缩为内部 Settings；新增 B17 source workspace 映射和配置执行租约。完整消费者与退出条件以 [登记表](../../TEMPORARY_BRIDGES.md) 为准。
+
+Phase 6 已复核 B02/B06/B09/B10/B17 并保留。Runtime 自身 lease/supervisor helper 的原因、消费者与退出条件见根目录 [桥登记](../../TEMPORARY_BRIDGES.md#phase-6-复核)。

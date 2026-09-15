@@ -1,0 +1,6 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+Frozen platform v2 {
+  platform_schema_version: 2,
+  model_signature: '968fdebb6e9029c5d826f1acc2db02e8b1b1c8d16615533e2ba6975daf20fa72',
+  schema_signature: '92abfeca0aa4531abc65bb51171db0620d8ee2c3b4d161f0f2e531896525264f'
+}

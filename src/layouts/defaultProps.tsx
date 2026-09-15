@@ -67,6 +67,12 @@ export default {
         component: '@/pages/script/index',
       },
       {
+        path: '/runtime-python',
+        name: 'Runtime · Python',
+        icon: <SettingOutlined />,
+        component: '@/pages/runtime-python',
+      },
+      {
         path: '/dependence',
         name: intl.get('依赖管理'),
         icon: <IconFont type="ql-icon-dependence" />,

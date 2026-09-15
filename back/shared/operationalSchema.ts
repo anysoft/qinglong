@@ -1,8 +1,10 @@
 import { createHash } from 'crypto';
 import { ModelStatic, Model, QueryTypes, Sequelize, Transaction } from 'sequelize';
 import platformV1 from '../schema/platformV1';
+import platformV2 from '../schema/platformV2';
+import { createRuntimeSchema } from '../schema/runtimeSchema';
 
-export const PLATFORM_SCHEMA_VERSION = 2;
+export const PLATFORM_SCHEMA_VERSION = 3;
 export class UnsupportedDatabaseSchemaError extends Error {
   readonly code = 'UNSUPPORTED_DATABASE_SCHEMA';
   constructor() { super('UNSUPPORTED_DATABASE_SCHEMA: Expected a valid platform database or an empty database.'); }
@@ -20,7 +22,7 @@ export const modelSignature = (models: ModelStatic<Model>[]) => hash([...models]
   })), indexes: model.options.indexes,
 })));
 
-/** Only the frozen platform v1 can upgrade. Unknown/QingLong/checkpoint DBs remain untouched. */
+/** Only frozen platform versions may upgrade. Unknown databases remain untouched. */
 export async function initializeOperationalSchema(database: Sequelize, models: ModelStatic<Model>[]): Promise<void> {
   const signature = modelSignature(models);
   await database.transaction({ type: Transaction.TYPES.IMMEDIATE }, async transaction => {
@@ -33,7 +35,7 @@ export async function initializeOperationalSchema(database: Sequelize, models: M
       const metadata = await database.query<{platform_schema_version: number; model_signature: string; schema_signature: string}>(
         'SELECT * FROM PlatformMetadata', { type: QueryTypes.SELECT, transaction });
       if (metadata.length !== 1) throw new UnsupportedDatabaseSchemaError();
-      const record = metadata[0];
+      let record = metadata[0];
       const violations = await database.query('PRAGMA foreign_key_check', { type: QueryTypes.SELECT, transaction });
       if (violations.length) throw new UnsupportedDatabaseSchemaError();
       if (record.platform_schema_version === 1) {
@@ -41,7 +43,9 @@ export async function initializeOperationalSchema(database: Sequelize, models: M
             record.schema_signature !== platformV1.metadata.schema_signature || hash(current) !== platformV1.metadata.schema_signature) throw new UnsupportedDatabaseSchemaError();
         // New tables first. Preserve old commands verbatim; old failures were non-fatal,
         // and task_after ran after either normal success or failure, hence FINALLY.
-        for (const model of models) if (!current.some(x => x.name === model.tableName)) await model.sync(Object.assign({force:false},{transaction}));
+        for (const object of [...platformV2.objects].sort((a,b) => Number(!a.sql.startsWith('CREATE TABLE')) - Number(!b.sql.startsWith('CREATE TABLE')))) {
+          if (!current.some(x => x.name === object.name)) await database.query(object.sql, {transaction});
+        }
         const hooks = await database.query<{id: number; task_before: string | null; task_after: string | null}>(
           'SELECT id, task_before, task_after FROM Crontabs', { type: QueryTypes.SELECT, transaction });
         for (const row of hooks) for (const [field, phase] of [['task_before','BEFORE'], ['task_after','FINALLY']] as const) {
@@ -54,15 +58,24 @@ export async function initializeOperationalSchema(database: Sequelize, models: M
           for (const field of fields) await database.query(`ALTER TABLE ${table} DROP COLUMN ${field}`, { transaction });
         }
         await database.query('DROP TABLE PlatformMetadata', { transaction });
+        await database.query(platformV2.objects.find(x => x.name === 'PlatformMetadata')!.sql, {transaction});
+        await database.query('INSERT INTO PlatformMetadata VALUES (:platform_schema_version,:model_signature,:schema_signature)', {replacements:platformV2.metadata,transaction});
+        record = platformV2.metadata;
+      }
+      if (record.platform_schema_version === 2) {
+        if (record.model_signature !== platformV2.metadata.model_signature || record.schema_signature !== platformV2.metadata.schema_signature || schemaSignature(await objects()) !== platformV2.metadata.schema_signature) throw new UnsupportedDatabaseSchemaError();
+        await createRuntimeSchema(database, transaction);
+        await database.query('DROP TABLE PlatformMetadata', {transaction});
         createMetadata = true;
       } else if (record.platform_schema_version !== PLATFORM_SCHEMA_VERSION || record.model_signature !== signature || record.schema_signature !== schemaSignature(current)) {
         throw new UnsupportedDatabaseSchemaError();
       }
     } else {
-      for (const model of models) await model.sync(Object.assign({force:false},{transaction}));
+      for (const model of models) if (!['RuntimeProviders','RuntimeInstallations','RuntimeOperations'].includes(String(model.tableName))) await model.sync(Object.assign({force:false},{transaction}));
+      await createRuntimeSchema(database, transaction);
     }
     if (createMetadata) {
-      await database.query('CREATE TABLE PlatformMetadata (platform_schema_version INTEGER NOT NULL PRIMARY KEY CHECK(platform_schema_version = 2), model_signature TEXT NOT NULL, schema_signature TEXT NOT NULL)', { transaction });
+      await database.query('CREATE TABLE PlatformMetadata (platform_schema_version INTEGER NOT NULL PRIMARY KEY CHECK(platform_schema_version = 3), model_signature TEXT NOT NULL, schema_signature TEXT NOT NULL)', { transaction });
       await database.query('INSERT INTO PlatformMetadata VALUES (:version, :signature, :schemaSignature)', {
         replacements: { version: PLATFORM_SCHEMA_VERSION, signature, schemaSignature: schemaSignature(await objects()) }, transaction,
       });

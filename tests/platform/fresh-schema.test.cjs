@@ -16,20 +16,20 @@ async function fixture(t) {
   t.after(()=>database.close());
   const cache = new Map(), mocks = {'.':{sequelize:database},'../data':{sequelize:database}};
   const models = [];
-  for (const file of ['gitCredential','repository','worktree','scopedEnv','subscription','cron','env','dependence','open','system','cronView','cronStats','runningInstance','configAsset']) {
+  for (const file of ['gitCredential','repository','worktree','scopedEnv','subscription','cron','env','dependence','open','system','cronView','cronStats','runningInstance','configAsset','runtime']) {
     const module = load(path.resolve(`back/data/${file}.ts`),mocks,cache);
     for(const [key,value] of Object.entries(module)) if(key.endsWith('Model')) models.push(value);
   }
   return {root,data,database,models};
 }
 const schema = database => database.query("SELECT name,sql FROM sqlite_master WHERE name NOT LIKE 'sqlite_%' ORDER BY name",{type:QueryTypes.SELECT});
-test('empty data root creates v2, all bridge/core tables, and restarts without schema writes',async t=>{
+test('empty data root creates v3, all bridge/core tables, and restarts without schema writes',async t=>{
   const {data,database,models}=await fixture(t);
   await initializeOperationalSchema(database,models);
   const before=await schema(database);
   assert.equal(before.some(x=>x.name==='SchemaMigrations'),false);
   const [metadata]=await database.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});
-  assert.equal(metadata.platform_schema_version,2);
+  assert.equal(metadata.platform_schema_version,3);
   await initializeOperationalSchema(database,models);
   assert.deepEqual(await schema(database),before);
   assert.deepEqual(await database.query('PRAGMA foreign_key_check',{type:QueryTypes.SELECT}),[]);

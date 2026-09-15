@@ -7,7 +7,7 @@ data/
 ├── db/
 ├── git/
 ├── worktrees/
-├── runtime/          # future
+├── runtime/          # Phase 6 implemented
 ├── config-assets/    # Phase 5 implemented
 ├── logs/
 ├── cache/
@@ -32,3 +32,7 @@ data/
 ## Phase 5
 
 新增 `data/config-assets/asset-ID/revisions/N/content` 与 `data/tmp/config-materialization/<workspace-key>/run-UUID/`。ENV/Hook 私有计划沿用 `.tmp/task-env/run-*`。稳定 `.locks/config-<key>.lock` 协调共享执行工作区；publication lease 继续保护发布目录。旧用户 hook 文件不再创建或读取，但不会自动删除已有用户文件。
+
+## Phase 6
+
+新增 platform-owned runtime/python/pyenv、cache/runtime/python/downloads、tmp/runtime/python、log/runtime，以及 .locks/runtime-provider-ID.lock。Provider code、versions、ownership 分开；Repair 隔离区不自动删除。文件系统与删除规则见 [Runtime filesystem](../refactor/phase6/06-runtime-filesystem.md)。未新增 scripts/deps/dep_cache 消费者；现有 Backup bridge 不承诺完整包含这些资源。

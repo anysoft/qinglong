@@ -5,7 +5,8 @@ import { Request, Response, NextFunction } from 'express';
 export function scopedEnvironmentHttpError(error: Error & { status?: number }, req: Request, res: Response, next: NextFunction) {
   const environment = /\/scoped-env(?:\/|$)/.test(req.path);
   const execution = /\/(?:config-assets|config-bindings|config-preview|config-context|hooks)(?:\/|$)/.test(req.path);
-  if (!environment && !execution) return next(error);
+  const runtime = /\/runtime(?:\/|$)/.test(req.path);
+  if (!environment && !execution && !runtime) return next(error);
   const status = error.status && error.status >= 400 && error.status < 600 ? error.status : 400;
-  return res.status(status).json({ code: status, message: environment ? 'ENV_REQUEST_INVALID' : 'CONFIG_REQUEST_INVALID' });
+  return res.status(status).json({ code: status, message: runtime ? 'RUNTIME_REQUEST_INVALID' : environment ? 'ENV_REQUEST_INVALID' : 'CONFIG_REQUEST_INVALID' });
 }

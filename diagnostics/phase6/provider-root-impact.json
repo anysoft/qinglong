@@ -1,0 +1,133 @@
+{
+  "target": {
+    "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.getProvider#0",
+    "name": "getProvider",
+    "type": "Method",
+    "filePath": "back/services/runtimeOperations.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 3,
+  "risk": "HIGH",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "lower-bound",
+  "boundaries": [
+    "2 call sites invoking `getProvider` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+  ],
+  "causes": {
+    "scopeExtractionFiles": 0,
+    "receiverTyping": 2,
+    "dispatchBoundary": 0,
+    "externalBoundary": 0,
+    "undecidedSatisfaction": 0,
+    "callableValueReferences": 0
+  },
+  "summary": {
+    "direct": 3,
+    "processes_affected": 3,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 3
+  },
+  "affected_processes": [
+    {
+      "name": "request",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "filesystemDiagnostics",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "providerHealth",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 3,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.filesystemDiagnostics#0",
+        "name": "filesystemDiagnostics",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_452_filesystemdiagnostic",
+            "label": "FilesystemDiagnostics → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.providerHealth#0",
+        "name": "providerHealth",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_441_providerhealth",
+            "label": "ProviderHealth → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.request#2",
+        "name": "request",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_118_request",
+            "label": "Request → RuntimeLease",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_443_request",
+            "label": "Request → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_207_request",
+            "label": "Request → AsError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      }
+    ]
+  }
+}

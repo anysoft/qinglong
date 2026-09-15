@@ -1,0 +1,223 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Query (1.6.12)
+{
+  "processes": [
+    {
+      "id": "proc_136_prepare",
+      "summary": "Prepare → SyncDirectory",
+      "priority": 0.099,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 5
+    },
+    {
+      "id": "proc_137_prepare",
+      "summary": "Prepare → AssertHeld",
+      "priority": 0.099,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 5
+    },
+    {
+      "id": "proc_202_prepare",
+      "summary": "Prepare → ConfigAssetError",
+      "priority": 0.099,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 6
+    },
+    {
+      "id": "proc_320_dependence",
+      "summary": "Dependence → WebSocketManager",
+      "priority": 0.083,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_321_dependence",
+      "summary": "Dependence → Send",
+      "priority": 0.083,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Method:back/services/configMaterialization.ts:ConfigMaterializationService.prepare#3",
+      "name": "prepare",
+      "filePath": "back/services/configMaterialization.ts",
+      "startLine": 108,
+      "endLine": 248,
+      "module": "Services",
+      "process_id": "proc_136_prepare",
+      "step_index": 1
+    },
+    {
+      "id": "Function:src/pages/setting/dependence.tsx:Dependence",
+      "name": "Dependence",
+      "filePath": "src/pages/setting/dependence.tsx",
+      "startLine": 18,
+      "endLine": 286,
+      "module": "Setting",
+      "process_id": "proc_320_dependence",
+      "step_index": 1
+    }
+  ],
+  "definitions": [
+    {
+      "id": "Const:back/config/const.ts:PYTHON_INSTALL_DIR",
+      "name": "PYTHON_INSTALL_DIR",
+      "filePath": "back/config/const.ts",
+      "startLine": 29,
+      "endLine": 29
+    },
+    {
+      "id": "Property:back/config/const.ts:LINUX_DEPENDENCE_COMMAND.Debian",
+      "name": "Debian",
+      "filePath": "back/config/const.ts",
+      "startLine": 66,
+      "endLine": 73
+    },
+    {
+      "id": "File:back/config/const.ts",
+      "name": "const.ts",
+      "filePath": "back/config/const.ts"
+    },
+    {
+      "id": "Class:back/services/dependence.ts:DependenceService",
+      "name": "DependenceService",
+      "filePath": "back/services/dependence.ts",
+      "startLine": 31,
+      "endLine": 512
+    },
+    {
+      "id": "Method:back/services/dependence.ts:DependenceService.dependencies#3",
+      "name": "dependencies",
+      "filePath": "back/services/dependence.ts",
+      "startLine": 100,
+      "endLine": 139,
+      "module": "Services"
+    },
+    {
+      "id": "File:back/services/dependence.ts",
+      "name": "dependence.ts",
+      "filePath": "back/services/dependence.ts"
+    },
+    {
+      "id": "Property:test/back/dependence-cache-status.test.cjs:fn@3:79.installing@19:4",
+      "name": "installing",
+      "filePath": "test/back/dependence-cache-status.test.cjs",
+      "startLine": 20,
+      "endLine": 20
+    },
+    {
+      "id": "Property:test/back/dependence-cache-status.test.cjs:fn@3:79.installed@20:4",
+      "name": "installed",
+      "filePath": "test/back/dependence-cache-status.test.cjs",
+      "startLine": 21,
+      "endLine": 21
+    },
+    {
+      "id": "Property:test/back/dependence-cache-status.test.cjs:fn@3:79.python3@23:39",
+      "name": "python3",
+      "filePath": "test/back/dependence-cache-status.test.cjs",
+      "startLine": 24,
+      "endLine": 24
+    },
+    {
+      "id": "Property:diagnostics/phase4.5b/platform-e2e.cjs:fn@12:1.js@24:16",
+      "name": "js",
+      "filePath": "diagnostics/phase4.5b/platform-e2e.cjs",
+      "startLine": 25,
+      "endLine": 25
+    },
+    {
+      "id": "Property:diagnostics/phase4.5b/platform-e2e.cjs:fn@12:1.py@24:129",
+      "name": "py",
+      "filePath": "diagnostics/phase4.5b/platform-e2e.cjs",
+      "startLine": 25,
+      "endLine": 25
+    },
+    {
+      "id": "Property:diagnostics/phase4.5b/platform-e2e.cjs:fn@12:1.sh@24:254",
+      "name": "sh",
+      "filePath": "diagnostics/phase4.5b/platform-e2e.cjs",
+      "startLine": 25,
+      "endLine": 25
+    },
+    {
+      "id": "Class:back/data/dependence.ts:Dependence",
+      "name": "Dependence",
+      "filePath": "back/data/dependence.ts",
+      "startLine": 4,
+      "endLine": 25,
+      "module": "Services"
+    },
+    {
+      "id": "Interface:back/data/dependence.ts:DependenceInstance",
+      "name": "DependenceInstance",
+      "filePath": "back/data/dependence.ts",
+      "startLine": 50,
+      "endLine": 52,
+      "module": "Services"
+    },
+    {
+      "id": "File:back/data/dependence.ts",
+      "name": "dependence.ts",
+      "filePath": "back/data/dependence.ts"
+    },
+    {
+      "id": "Property:back/services/configMaterialization.ts:Entry.installed",
+      "name": "installed",
+      "filePath": "back/services/configMaterialization.ts",
+      "startLine": 36,
+      "endLine": 36
+    },
+    {
+      "id": "Class:back/services/configMaterialization.ts:ConfigMaterializationService",
+      "name": "ConfigMaterializationService",
+      "filePath": "back/services/configMaterialization.ts",
+      "startLine": 53,
+      "endLine": 348,
+      "module": "Services"
+    },
+    {
+      "id": "Property:test/back/system-dependence-cache.test.cjs:fn@6:74.installFailed@27:43",
+      "name": "installFailed",
+      "filePath": "test/back/system-dependence-cache.test.cjs",
+      "startLine": 28,
+      "endLine": 28
+    },
+    {
+      "id": "Property:test/back/system-dependence-cache.test.cjs:fn@6:74.installed@27:29",
+      "name": "installed",
+      "filePath": "test/back/system-dependence-cache.test.cjs",
+      "startLine": 28,
+      "endLine": 28
+    },
+    {
+      "id": "Property:test/back/system-dependence-cache.test.cjs:fn@6:74.python3@28:39",
+      "name": "python3",
+      "filePath": "test/back/system-dependence-cache.test.cjs",
+      "startLine": 29,
+      "endLine": 29
+    }
+  ],
+  "timing": {
+    "vector": 6.5,
+    "bm25": 202.5,
+    "merge": 0.1,
+    "symbol_lookup": 17.1,
+    "ranking": 0.1,
+    "formatting": 0.1,
+    "wall": 220.3
+  },
+  "staleness": {
+    "status": "behind",
+    "commitsBehind": 1,
+    "hint": "⚠️ Index is 1 commit behind HEAD. Run analyze tool to update."
+  }
+}

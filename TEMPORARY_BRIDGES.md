@@ -48,3 +48,10 @@ B05 已退出；B07 缩减为独立 Backend adapter；B03 仅为 scheduler 输�
 | B17 TaskWorkspaceResolver / ConfigMaterializationLease | 映射当前 scripts source、逻辑根/cwd/锁键；租约覆盖配置完整生命周期；阻止 Script API 读取执行副本 | ExecutionPreparation、ConfigMaterialization、current Task bridge | Phase 9/10 ExecutionContext + Worktree direct execution 通过全部触发、隔离、恢复 gates 后替换 |
 
 旧 Config UI/API、Task before/after 字段、Subscription before/after、preload hook 与 `/tmp/env_PID` 回传已由新模型替代并删除。保留 B01/B02/B03/B04/B06 SDK+依赖+账号+信号/B08–B10/B11 内部选项/B12–B16；B05 不恢复。现行证据见 [Phase 5 报告](PHASE5_REPORT.md)，4.5B 报告保持历史记录。
+
+## Phase 6 复核
+
+- B02、B06 当前 Python 查找/preload、B09 dependency subsystem、B10 deps/dep_cache 继续 **TEMPORARY**；解释器资源不能替代包环境或 Task Binding。退出仍依赖 Phase 7/8/9/10 对应 gates。
+- B17、Config snapshot、Hook lifecycle、工作区与 materialization lease 不变；Runtime 不获取这些锁。
+- 未新增 Task bridge。Runtime Manager 的 `shell/runtime_lease.py` 是平台 FD/flock helper，唯一消费者 RuntimeLease；复用 `hook_process.py`/`process_group.py` 仅为通用进程组监督。当前 Node 缺少项目内 POSIX flock 接口，故由固定 `/usr/bin/python3 -I -S` 持锁；在 Phase 10 通用 process/lease supervisor 整合时评估退出，替代前必须通过跨进程、SIGKILL、PID reuse、cancel/timeout/drain gates。它不是 managed Runtime，也不改变 Backend/Task Python。
+- B09/B10 未删除、未新增 Runtime 消费者；B05 不恢复。现行证据见 [Phase 6 报告](PHASE6_REPORT.md)。

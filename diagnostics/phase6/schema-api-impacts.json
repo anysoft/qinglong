@@ -1,0 +1,58 @@
+[
+  {
+    "file": "back/shared/operationalSchema.ts",
+    "name": "back/shared/operationalSchema.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/operationalSchema.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/operationalSchema.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/operationalSchema.ts",
+    "name": "UnsupportedDatabaseSchemaError",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:back/shared/operationalSchema.ts:UnsupportedDatabaseSchemaError\",\n    \"name\": \"UnsupportedDatabaseSchemaError\",\n    \"type\": \"Class\",\n    \"filePath\": \"back/shared/operationalSchema.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 3,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 1,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 2,\n    \"2\": 1\n  },\n  \"affected_processes\": [\n    {\n      \"name\": \"initializeOperationalSchema\",\n      \"type\": \"Function\",\n      \"filePath\": \"back/shared/operationalSchema.ts\",\n      \"affected_process_count\": 1,\n      \"total_hits\": 1,\n      \"earliest_broken_step\": 1\n    }\n  ],\n  \"affected_modules\": [\n    {\n      \"name\": \"Cluster_24\",\n      \"hits\": 1,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/loaders/db.ts\",\n        \"name\": \"db.ts\",\n        \"filePath\": \"back/loaders/db.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"Function:back/shared/operationalSchema.ts:initializeOperationalSchema\",\n        \"name\": \"initializeOperationalSchema\",\n        \"filePath\": \"back/shared/operationalSchema.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": [\n          {\n            \"id\": \"proc_65_initializeoperationa\",\n            \"label\": \"InitializeOperationalSchema → Hash\",\n            \"processType\": \"intra_community\",\n            \"step\": 1\n          }\n        ]\n      }\n    ],\n    \"2\": [\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/app.ts\",\n        \"name\": \"app.ts\",\n        \"filePath\": \"back/app.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  },\n  \"staleness\": {\n    \"status\": \"behind\",\n    \"commitsBehind\": 1,\n    \"hint\": \"⚠️ Index is 1 commit behind HEAD. Run analyze tool to update.\"\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/operationalSchema.ts",
+    "name": "initializeOperationalSchema",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/shared/operationalSchema.ts:initializeOperationalSchema\",\n    \"name\": \"initializeOperationalSchema\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/shared/operationalSchema.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 2,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 0,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 1,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 1,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 1,\n    \"2\": 1\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/loaders/db.ts\",\n        \"name\": \"db.ts\",\n        \"filePath\": \"back/loaders/db.ts\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": []\n      }\n    ],\n    \"2\": [\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/app.ts\",\n        \"name\": \"app.ts\",\n        \"filePath\": \"back/app.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  },\n  \"staleness\": {\n    \"status\": \"behind\",\n    \"commitsBehind\": 1,\n    \"hint\": \"⚠️ Index is 1 commit behind HEAD. Run analyze tool to update.\"\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/loaders/db.ts",
+    "name": "back/loaders/db.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/loaders/db.ts' not found\",\n  \"target\": {\n    \"name\": \"back/loaders/db.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/index.ts",
+    "name": "back/api/index.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/index.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/index.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/scopedEnvHttp.ts",
+    "name": "back/shared/scopedEnvHttp.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/scopedEnvHttp.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/scopedEnvHttp.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/scopedEnvHttp.ts",
+    "name": "scopedEnvironmentHttpError",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:back/shared/scopedEnvHttp.ts:scopedEnvironmentHttpError\",\n    \"name\": \"scopedEnvironmentHttpError\",\n    \"type\": \"Function\",\n    \"filePath\": \"back/shared/scopedEnvHttp.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {},\n  \"staleness\": {\n    \"status\": \"behind\",\n    \"commitsBehind\": 1,\n    \"hint\": \"⚠️ Index is 1 commit behind HEAD. Run analyze tool to update.\"\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/layouts/defaultProps.tsx",
+    "name": "src/layouts/defaultProps.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/layouts/defaultProps.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/layouts/defaultProps.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

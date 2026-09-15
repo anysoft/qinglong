@@ -1,0 +1,37 @@
+[
+  {
+    "file": "back/api/runtime.ts",
+    "name": "back/api/runtime.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/runtime.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/runtime.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "payload",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'payload' not found\",\n  \"target\": {\n    \"name\": \"payload\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "operationDto",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'operationDto' not found\",\n  \"target\": {\n    \"name\": \"operationDto\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "endpoint",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'endpoint' not found\",\n  \"target\": {\n    \"name\": \"endpoint\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "runtimeRoutes",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runtimeRoutes' not found\",\n  \"target\": {\n    \"name\": \"runtimeRoutes\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

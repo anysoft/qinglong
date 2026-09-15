@@ -14,3 +14,7 @@
 | Runtime | Phase 6–8 未来资源；此时不建表或伪造实现 |
 
 Task/Schedule/TaskRun 分离能避免 Crontab 的状态、当前pid、多个schedule、source identity混杂。4.5B operational baseline仍留旧桥表，Phase9/10再实施领域拆分。Worktree purpose可作为created_by metadata保留，但删除权依赖引用+lease，不看USER/SUBSCRIPTION标签。
+
+## Phase 6 已实现 Runtime Domain
+
+RuntimeProvider(PYTHON/PYENV) → RuntimeInstallation(CPYTHON + exact version)；RuntimeOperation 独立于 TaskRun/SyncRun。Phase 6 无 RuntimeEnvironment、venv/package、Task/Hook Runtime FK。后续连接见 [Runtime 架构](10-python-runtime.md)。

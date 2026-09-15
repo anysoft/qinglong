@@ -455,5 +455,25 @@
   {
     "path": "tests/phase5/process-group.test.cjs",
     "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/phase6/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase6/runtime.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase6/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase6/failures.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase6/provider.test.cjs",
+    "classification": "PLATFORM_CORE"
   }
 ]

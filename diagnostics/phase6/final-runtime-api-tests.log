@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: Runtime API returns tracked async IDs, denies arbitrary commands/paths and sanitizes every error
+ok 1 - Runtime API returns tracked async IDs, denies arbitrary commands/paths and sanitizes every error
+  ---
+  duration_ms: 2163.832291
+  type: 'test'
+  ...
+# Subtest: exact catalog filters implementations, prereleases and injection
+ok 2 - exact catalog filters implementations, prereleases and injection
+  ---
+  duration_ms: 589.570416
+  type: 'test'
+  ...
+# Subtest: provider setup, two runtimes, explicit verify/repair/remove preserve sibling and snapshots
+ok 3 - provider setup, two runtimes, explicit verify/repair/remove preserve sibling and snapshots
+  ---
+  duration_ms: 4107.506
+  type: 'test'
+  ...
+# Subtest: cross-service lock, cancel and timeout keep operation ownership and descendants bounded
+ok 4 - cross-service lock, cancel and timeout keep operation ownership and descendants bounded
+  ---
+  duration_ms: 1906.486208
+  type: 'test'
+  ...
+# Subtest: paths reject unknown roots, version symlink, parent symlink and executable escape
+ok 5 - paths reject unknown roots, version symlink, parent symlink and executable escape
+  ---
+  duration_ms: 367.877166
+  type: 'test'
+  ...
+# Subtest: recovery never kills stored PID or adopts unknown versions; reference checks block removal
+ok 6 - recovery never kills stored PID or adopts unknown versions; reference checks block removal
+  ---
+  duration_ms: 1645.969333
+  type: 'test'
+  ...
+# Subtest: build environment excludes backend/user secrets and logs redact split UTF-8 secrets
+ok 7 - build environment excludes backend/user secrets and logs redact split UTF-8 secrets
+  ---
+  duration_ms: 293.607541
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9180.5645

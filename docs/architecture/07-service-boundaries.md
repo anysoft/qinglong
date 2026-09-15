@@ -25,3 +25,9 @@ SubscriptionSync 由唯一 `ManagedSubscriptionService` 承担；Discovery 是 `
 ## Phase 5 实际服务映射
 
 ConfigAssetService 持有不可变存储；TaskConfigService 合并绑定与预览；TaskHookService 管理结构化计划；TaskExecutionPreparationService 在同一 DB 事务解析计划；TaskWorkspaceResolver 持有 B17 映射；ConfigMaterializationService 负责租约内注入/恢复；TaskHookLifecycle 与 HookExecutor 监督 Hook 并调用当前 MAIN bridge。Config API 不再拥有通用系统文件编辑权。
+
+## Phase 6 Runtime boundary
+
+RuntimeOperationService 持有资源状态机、DB 事务、租约、取消与恢复；PyenvProvider 持有 pinned source/definitions/build/verify；RuntimePathResolver 持有所有权/路径；RuntimeDiagnosticsService 检查工具/空间，RuntimeReferenceService 提供未来引用扩展点。API 注册恢复，不在 Backend 启动执行 Python/build/network。
+
+仅 RuntimeCommand 复用通用 childProcess + hook_process.py/process_group.py。它不调用 HookExecutor、TaskEnvironmentResolver、TaskExecutionPreparation、Config lease、Repository Credential 或 DependenceService。

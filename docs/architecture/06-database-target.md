@@ -1,6 +1,6 @@
-# Operational Schema v2 / 最终 Domain Schema
+# Operational Schema v3 / 最终 Domain Schema
 
-**当前为 Operational v2；v1 冻结内容用于签名验证迁移。下图含后续 Domain 目标。** 4.5B 使用 platform_schema_version=1，空库直接创建最终当前模型，非空未知签名拒绝启动；不支持 QingLong 升级导入。保留当前执行必需的桥表，Task/Schedule/TaskRun最终拆分在9/10。此图是最终目标，不是4.5B必须一次实现的schema。
+**当前为 Operational v3；v1/v2 冻结内容用于签名验证迁移。下图含后续 Domain 目标。** 4.5B 使用 platform_schema_version=1，空库直接创建最终当前模型，非空未知签名拒绝启动；不支持 QingLong 升级导入。保留当前执行必需的桥表，Task/Schedule/TaskRun最终拆分在9/10。此图是最终目标，不是4.5B必须一次实现的schema。
 
 ```mermaid
 erDiagram
@@ -75,3 +75,7 @@ Auth/settings/API clients保持安全引导，未来独立admin_users/platform_s
 ## Phase 5 Operational v2
 
 Fresh 与已验证 v1 通过显式事务迁移得到相同 v2 签名。新增 ConfigAssets、ConfigAssetRevisions、RepositoryConfigBindings、TaskConfigBindings、TaskHooks，移除旧 Task/Subscription Hook 字段。冻结 v1 记录保持不变。见 [Schema v2](../refactor/phase5/09-schema-v2.md)。
+
+## Phase 6 Operational v3
+
+新增 RuntimeProviders、RuntimeInstallations、RuntimeOperations。Fresh、有效 v2→v3 与有效 v1→v2→v3 最终签名相同；Runtime SQL 使用实际 CHECK/FK/唯一约束。冻结 v2 来源 platform-phase5，不能覆盖。详见 [Schema v3](../refactor/phase6/09-schema-v3.md)。
