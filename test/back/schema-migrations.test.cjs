@@ -43,7 +43,8 @@ test('legacy database upgrades without losing rows and repeated migration is ide
   const applied = await database.query('SELECT id FROM "SchemaMigrations"', {
     type: QueryTypes.SELECT,
   });
-  assert.equal(applied.length, 18); // 15 legacy + resources + 2 nullable references
+  assert.equal(applied.length, 19); // Phase 1's 18 + atomic Phase 2 workspace migration
+  assert.equal(applied.filter(row => row.id === 'phase2-workspace').length, 1);
   assert.equal(applied.filter(row => row.id === 'phase1-git-resources').length, 1);
 });
 

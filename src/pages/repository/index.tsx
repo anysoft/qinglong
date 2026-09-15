@@ -130,6 +130,7 @@ export default function RepositoryPage() {
   ];
   const actions = (kind: 'repositories' | 'git-credentials', row: any) => (
     <Space wrap>
+      {kind === 'repositories' && <Button size="small" href={`${config.baseUrl}repository-workspace?id=${row.id}`}>工作区</Button>}
       <Button size="small" onClick={() => open(kind, row)}>
         编辑
       </Button>

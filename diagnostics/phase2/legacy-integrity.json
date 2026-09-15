@@ -1,0 +1,95 @@
+{
+  "baseline": "53ac03c8",
+  "files": [
+    {
+      "path": "back/services/subscription.ts",
+      "sha256": "6b30bef66ee845142e9c787ce2ea0cc1e2fb9bea6e4fa51eafae851180ab8e9b",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/subscriptionGit.ts",
+      "sha256": "527568d19c8e4fcdb6b30ba1c65b5d0f0d12985fdbf9ebd41bbf9c5f666de443",
+      "unchanged": true
+    },
+    {
+      "path": "back/gitSubscription.ts",
+      "sha256": "897d346ddd3a1753ab2dc6efc0c929355a3de55a8e1e751bb2fb2cf82dced6d3",
+      "unchanged": true
+    },
+    {
+      "path": "back/shared/subscriptionGitCommand.ts",
+      "sha256": "3e8a0e3f0da258ace353b36e7e85a1de95a0f2381b725f4c731a2e3169f64ceb",
+      "unchanged": true
+    },
+    {
+      "path": "back/config/subscription.ts",
+      "sha256": "492bda4779dc3dec5b151f106b7e0009b90a428023cf464de76d10b247d4f162",
+      "unchanged": true
+    },
+    {
+      "path": "shell/update.sh",
+      "sha256": "81703ec0645c79a61ce350c2cd18c72482519a70e9f6cf13b32ecacaab9cd1b8",
+      "unchanged": true
+    },
+    {
+      "path": "shell/share.sh",
+      "sha256": "3dbedc5f7d487790618d7407da98e200b6f5a7d45a6aa27ebdeb7bf38cf605ea",
+      "unchanged": true
+    },
+    {
+      "path": "shell/task.sh",
+      "sha256": "78997653348c777678b67d2135e9641389e4191deb7e26ad4d301a1cb2fc57f4",
+      "unchanged": true
+    },
+    {
+      "path": "shell/otask.sh",
+      "sha256": "314f5aa4e965a0f2f36be98a112679afa4d0260547084677de6151e00eeabc08",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/cron.ts",
+      "sha256": "ae181a0fef4ad4d2140a5d98e21e8f149bbf31eecaeb0869095feab2907ba371",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/schedule.ts",
+      "sha256": "d09c55f72387adb8d160b726fefccc9eefd56539e878656f5c41d68ae19852b7",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/env.ts",
+      "sha256": "f5d456cc0083f475ce47334487b27fbfece8d2cbe432f0465d7bfd42c472730a",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/dependence.ts",
+      "sha256": "64d033df3838a4ef3233e402f2b86d4cd0faca4c7e793c8a8bb1080dd8a7541b",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/gitCredentialResolver.ts",
+      "sha256": "2464dee26c05e73892c66f3e77af7e64942f78411ef27dc900a12c00e5807114",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/credentialSecret.ts",
+      "sha256": "8f24b2ad151b58a558849ec54d545484092b20440c9d7a851a4f6500da9ec9fb",
+      "unchanged": true
+    },
+    {
+      "path": "back/services/sshKey.ts",
+      "sha256": "8ab88ce4a7bf26eba12e04eeb15a03357a40603b8de717f702d30092e5a75f45",
+      "unchanged": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "09ab183205a24ac7100989dc8c6abc75556c20610ecf52c2fcaf2ad356cdf14c",
+      "unchanged": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "e53b7042db0740d8728b9d92e7b8123348d261731cc54db7d8b8509e6a9995dc",
+      "unchanged": true
+    }
+  ]
+}

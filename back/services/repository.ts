@@ -81,7 +81,8 @@ export default class RepositoryService {
   }
   async remove(id: number) {
     return sequelize.transaction(async (transaction) => {
-      await this.get(id, transaction);
+      const resource = await this.get(id, transaction);
+      if(resource.storage_path || (resource.storage_state && resource.storage_state !== 'UNINITIALIZED')) throw new GitResourceError('Repository storage must be deleted through the workspace lifecycle',409);
       if (
         await SubscriptionModel.count({
           where: { repository_id: id },

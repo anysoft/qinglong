@@ -15,6 +15,7 @@ import health from './health';
 import clientIp from './clientIp';
 import retention from './retention';
 import gitResources from './gitResources';
+import workspaceRoutes from './workspace';
 
 export default () => {
   const app = Router();
@@ -27,6 +28,7 @@ export default () => {
   open(app);
   dependence(app);
   system(app);
+  workspaceRoutes(app);
   gitResources(app);
   subscription(app);
   update(app);

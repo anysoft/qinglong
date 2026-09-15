@@ -81,3 +81,7 @@ HOME/bin/{ql,task}             # loaders/deps建立symlink
 - `deploy/kubernetes/*` 是额外部署配置；不能把单Pod已有文件锁扩展为跨主机共享runtime锁。
 
 完整逐行匹配见 12 清单。未启动容器、native 服务、Kubernetes，也未验证所有镜像 ABI，标为 NEED RUNTIME VERIFICATION。
+
+## Phase 2 additive update
+
+The Phase 0 layout above is historical. Persistent git/ and worktrees/ now coexist with unchanged repo/ and scripts/. See [Phase 2 filesystem and backup classification](phase2/06-filesystem-layout.md), including unique local commit/dirty data requirements; the Backup implementation has not changed.

@@ -6,6 +6,9 @@ export interface Repository extends RepositoryIdentity {
   name: string;
   default_credential_id?: number | null;
   status?: 'unknown' | 'available' | 'auth_failed' | 'unreachable';
+  storage_state?: 'UNINITIALIZED'|'INITIALIZING'|'READY'|'FETCHING'|'ERROR'|'MISSING'|'DELETING';
+  storage_path?: string|null;last_fetch_at?:Date|null;last_fetch_status?:string|null;last_error?:string|null;
+  default_branch?:string|null;last_known_remote_head?:string|null;remote_refs_count?:number;tags_count?:number;
 }
 export interface RepositoryInstance
   extends Model<Repository, Repository>,
@@ -28,5 +31,8 @@ export const RepositoryModel = sequelize.define<RepositoryInstance>(
       onDelete: 'RESTRICT',
     },
     status: { type: DataTypes.STRING, defaultValue: 'unknown' },
+    storage_state:{type:DataTypes.STRING,defaultValue:'UNINITIALIZED',allowNull:false},storage_path:DataTypes.TEXT,
+    last_fetch_at:DataTypes.DATE,last_fetch_status:DataTypes.STRING,last_error:DataTypes.TEXT,default_branch:DataTypes.STRING,
+    last_known_remote_head:DataTypes.STRING,remote_refs_count:{type:DataTypes.INTEGER,defaultValue:0},tags_count:{type:DataTypes.INTEGER,defaultValue:0},
   },
 );

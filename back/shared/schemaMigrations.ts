@@ -1,5 +1,6 @@
 import { QueryTypes, Sequelize } from 'sequelize';
 import { migrateGitResources } from './gitResourceMigration';
+import { migrateWorkspace } from './workspaceMigration';
 
 // Append new entries; IDs are persisted and must not be renumbered or reused.
 const columns = [
@@ -37,6 +38,7 @@ export async function migrateSchema(database: Sequelize): Promise<void> {
       { transaction },
     );
     await migrateGitResources(database, transaction);
+    await migrateWorkspace(database, transaction);
     const applied = await database.query<{ id: string }>(
       'SELECT "id" FROM "SchemaMigrations"',
       { type: QueryTypes.SELECT, transaction },
