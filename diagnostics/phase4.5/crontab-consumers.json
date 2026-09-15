@@ -1,0 +1,377 @@
+[
+  {
+    "file": "back/api/cron.ts",
+    "line": 436,
+    "text": "const data = await cronService.importCrontab();"
+  },
+  {
+    "file": "back/api/system.ts",
+    "line": 261,
+    "text": "const idStr = `cat ${config.crontabFile} | grep -E \"${command}\" | perl -pe \"s|.*ID=(.*) ${command}.*|\\\\1|\" | head -1 | awk -F \" \" '{print $1}' | xargs echo -n`;"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 114,
+    "text": "const crontabFile = path.join(configPath, 'crontab.list');"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 146,
+    "text": "crontabFile,"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 165,
+    "text": "'crontab.list',"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 227,
+    "text": "// 初始化语言（必须在 autosave_crontab 之前）"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 240,
+    "text": "cronClient.readiness.configure(() => cronService.autosave_crontab(true));"
+  },
+  {
+    "file": "back/schedule/delCron.ts",
+    "line": 18,
+    "text": "// 进而导致 HTTP 端的 remove() 跳过 setCrontab()，造成 crontab.list 残留。"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 126,
+    "text": "// （DB 和 crontab.list 有记录但调度器永远不会执行）"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 139,
+    "text": "await this.setCrontab();"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 212,
+    "text": "await this.setCrontab(undefined, true);"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 229,
+    "text": "await this.setCrontab(undefined, true);"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 318,
+    "text": "await this.setCrontab();"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 411,
+    "text": "await this.setCrontab();"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 952,
+    "text": "await this.setCrontab();"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 988,
+    "text": "await this.setCrontab();"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1107,
+    "text": "private async setCrontab(data?: { data: Crontab[]; total: number }, strict = false) {"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1129,
+    "text": "await writeFileWithLock(config.crontabFile, crontab_string);"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1133,
+    "text": "execSync(`crontab ${config.crontabFile}`);"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1144,
+    "text": "public importCrontab() {"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1183,
+    "text": "public async autosave_crontab(requireScheduler = false) {"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1201,
+    "text": "await writeFileWithLock(config.crontabFile, '');"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1205,
+    "text": "// 先同步 crontab.list 与系统 crontab，确保其始终反映数据库真实状态。"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1207,
+    "text": "// 这避免了因调度器短暂不可用导致 crontab.list 与数据库脱节（订阅更新误判任务已存在）。"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1208,
+    "text": "await this.setCrontab(tabs);"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 230,
+    "text": "path.join(root, 'config', 'crontab.list'),"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 247,
+    "text": "await fs.copyFile(config.crontabFile, path.join(stage, 'crontab.list'));"
+  },
+  {
+    "file": "back/shared/schedulerMutationLock.ts",
+    "line": 13,
+    "text": "// this identity separate from nested writeFileWithLock(crontabFile)."
+  },
+  {
+    "file": "back/shared/schedulerMutationLock.ts",
+    "line": 14,
+    "text": "release = await lockfile.lock(`${config.crontabFile}.scheduler`, {"
+  },
+  {
+    "file": "back/shared/schedulerMutationLock.ts",
+    "line": 16,
+    "text": "lockfilePath: `${config.crontabFile}.scheduler.lock`,"
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 28,
+    "text": "# The caller supplies private copies of crontab.list and the scripts destination."
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 33,
+    "text": "list_crontab_user=\"$stage_dir/crontab.list\""
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 55,
+    "text": "list_crontab_user=$dir_config/crontab.list"
+  },
+  {
+    "file": "shell/task.sh",
+    "line": 44,
+    "text": "ID=$(cat $list_crontab_user | grep -E \"$cmd_task.* $file_param\" | perl -pe \"s|.*ID=(.*) $cmd_task.* $file_param\\.*|\\1|\" | head -1 | awk -F \" \" '{print $1}')"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 52,
+    "text": "local id=$(cat $list_crontab_user | grep -E \"$cmd_task.* $cron\" | perl -pe \"s|.*ID=(.*) $cmd_task.* $cron\\.*|\\1|\" | head -1 | awk -F \" \" '{print $1}')"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 76,
+    "text": "## 自动增加定时任务，需要：1.AutoAddCron 设置为 true；2.正常更新js脚本，没有报错；3.存在新任务；4.crontab.list存在并且不为空"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 177,
+    "text": "local cron_id=$(cat $list_crontab_user | grep -E \"$cmd_task.* $filename\" | perl -pe \"s|.*ID=(.*) $cmd_task.* $filename\\.*|\\1|\" | head -1 | awk -F \" \" '{print $1}')"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 485,
+    "text": "# cron_id=$(cat $list_crontab_user | grep -E \"$cmd_task.* ${uniq_path}_${filename}\" | perl -pe \"s|.*ID=(.*) $cmd_task.* ${uniq_path}_${filename}\\.*|\\1|\" | head -1 | awk -F \" \" '{print $1}')"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 490,
+    "text": "grep -E \"${cmd_task}.* ${uniq_path}\" ${list_crontab_user} | perl -pe \"s|.*ID=(.*) ${cmd_task}.* (${uniq_path}.*)\\.*|\\2|\" | awk -F \" \" '{print $1}' | sort -u >\"$dir_list_tmp/${uniq_path}_user.list\""
+  },
+  {
+    "file": "test/back/scheduler-file-lock.test.cjs",
+    "line": 17,
+    "text": "const config = { crontabFile: path.join(root, 'crontab.list') };"
+  },
+  {
+    "file": "test/back/scheduler-file-lock.test.cjs",
+    "line": 18,
+    "text": "await fs.writeFile(config.crontabFile, '');"
+  },
+  {
+    "file": "test/back/scheduler-file-lock.test.cjs",
+    "line": 36,
+    "text": "await writeFileWithLock(config.crontabFile, 'first');"
+  },
+  {
+    "file": "test/back/scheduler-file-lock.test.cjs",
+    "line": 37,
+    "text": "await writeFileWithLock(config.crontabFile, 'second');"
+  },
+  {
+    "file": "test/back/scheduler-file-lock.test.cjs",
+    "line": 43,
+    "text": "await assert.rejects(fs.stat(`${config.crontabFile}.scheduler.lock`), {"
+  },
+  {
+    "file": "test/back/scheduler-file-lock.test.cjs",
+    "line": 47,
+    "text": "writeFileWithLock(config.crontabFile, 'recovered'),"
+  },
+  {
+    "file": "test/back/scheduler-file-lock.test.cjs",
+    "line": 49,
+    "text": "assert.equal(await fs.readFile(config.crontabFile, 'utf8'), 'recovered');"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 53,
+    "text": "crontabFile: path.join(root, 'crontab.list'),"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 79,
+    "text": "service.setCrontab = async () => {};"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 95,
+    "text": "service.setCrontab = async () => {"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 102,
+    "text": "const recovery = service.autosave_crontab(true);"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 150,
+    "text": "const recovery = service.autosave_crontab(true);"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 190,
+    "text": "await service.autosave_crontab(true);"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 202,
+    "text": "const config = { crontabFile: path.join(root, 'crontab.list') };"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 245,
+    "text": "await assert.rejects(fs.stat(`${config.crontabFile}.scheduler.lock`), {"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 270,
+    "text": "service.setCrontab = async () => assert.fail('must not publish after failed deletion');"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 280,
+    "text": "service.setCrontab = async () => {};"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 281,
+    "text": "await service.autosave_crontab(true);"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "line": 56,
+    "text": "const source=fs.readFileSync('back/services/cron.ts','utf8');const a=source.indexOf('  public async autosave_crontab('),z=source.indexOf('  public async bootTask',a);"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "line": 60,
+    "text": "const fixture=new module.exports();fixture.crontabs=async()=>({data:[]});fixture.setCrontab=async()=>{files++;};fixture.logger={warn(){}};"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "line": 61,
+    "text": "await fixture.autosave_crontab();assert.equal(files,1);"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "line": 62,
+    "text": "await assert.rejects(fixture.autosave_crontab(true),/registration unavailable/);assert.equal(files,2);"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "line": 11,
+    "text": "const a = source.indexOf('  public async autosave_crontab(');"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "line": 25,
+    "text": "service.setCrontab = async () => {};"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "line": 67,
+    "text": "state.configure(() => service.autosave_crontab(true));"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 38,
+    "text": "dir_dep=\"$TEST_DIR/deps\"; list_crontab_user=\"$TEST_DIR/crontab.list\""
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 49,
+    "text": "for(const f of ['notify.js','notify.py','crontab.list']) fs.writeFileSync(path.join(dir,f),'');"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 99,
+    "text": "for(const f of ['config.sh','crontab.list','task_before.sh','task_after.sh','task_before.js','task_before.py']) fs.writeFileSync(path.join(dir,'data/config',f),'');"
+  },
+  {
+    "file": "tests/phase1/pipeline.test.cjs",
+    "line": 27,
+    "text": "for (const f of ['config.sh', 'crontab.list'])"
+  },
+  {
+    "file": "tests/phase3/cron-publication.test.cjs",
+    "line": 6,
+    "text": "'../data/cron':{CrontabModel:{update:async()=>{}},Crontab:class {}},'../data/runningInstance':{},'../config':{crontabFile:path.join(dir,'crontab.list')},'../config/util':{},'../config/const':{TASK_PREFIX:'task ',QL_PREFIX:'ql '},'../schedule/client':{},'../shared/pLimit':{},'../shared/utils':{writeFileWithLock:fs.writeFile},'../shared/i18n':{t:x=>x},'../shared/logStreamManager':{},'../shared/schedulerMutationLock':{},'child_process':{...require('node:child_process'),execSync:()=>{throw new Error('fixture install failure');}}"
+  },
+  {
+    "file": "tests/phase3/cron-publication.test.cjs",
+    "line": 7,
+    "text": "}).default;const cron=new Cron({error(){}});await cron.setCrontab({data:[],total:0});await assert.rejects(cron.setCrontab({data:[],total:0},true),/fixture install failure/);"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 28,
+    "text": "fs.writeFileSync(path.join(dir, 'stage/crontab.list'), '');"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 136,
+    "text": "path.join(dir, 'stage/crontab.list'),"
+  },
+  {
+    "file": "tests/phase3/helpers.cjs",
+    "line": 45,
+    "text": "crontabFile: path.join(dir, 'config/crontab.list'),"
+  },
+  {
+    "file": "tests/phase3/helpers.cjs",
+    "line": 94,
+    "text": "await fs.writeFile(path.join(dir, 'config/crontab.list'), '');"
+  },
+  {
+    "file": "tests/phase4/helpers.cjs",
+    "line": 20,
+    "text": "for (const f of ['config.sh', 'crontab.list', 'task_before.sh', 'task_after.sh', 'task_before.js', 'task_before.py']) fs.writeFileSync(path.join(dir, 'data/config', f), '');"
+  }
+]

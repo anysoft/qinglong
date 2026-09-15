@@ -1,0 +1,1382 @@
+[
+  {
+    "file": "back/api/subscription.ts",
+    "line": 15,
+    "text": "'/:id/managed/preflight',"
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "line": 38,
+    "text": "git_mode: Joi.string().valid('LEGACY', 'MANAGED').required(),"
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "line": 47,
+    "text": "req.body.git_mode,"
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "line": 90,
+    "text": "git_mode: Joi.string().valid('LEGACY', 'MANAGED').optional(),"
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "line": 245,
+    "text": "git_mode: Joi.string().valid('LEGACY', 'MANAGED').optional(),"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 11,
+    "text": "git_mode?: 'LEGACY' | 'MANAGED';"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 50,
+    "text": "this.git_mode = options.git_mode || 'LEGACY';"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 112,
+    "text": "git_mode: {"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 115,
+    "text": "defaultValue: 'LEGACY',"
+  },
+  {
+    "file": "back/data/worktree.ts",
+    "line": 22,
+    "text": "managed?: boolean;"
+  },
+  {
+    "file": "back/data/worktree.ts",
+    "line": 47,
+    "text": "managed: { type: DataTypes.BOOLEAN, defaultValue: true },"
+  },
+  {
+    "file": "back/gitSubscription.ts",
+    "line": 18,
+    "text": "if (sub.git_mode === 'MANAGED') {"
+  },
+  {
+    "file": "back/services/credentialSecret.ts",
+    "line": 12,
+    "text": "// Explicit plaintext-at-rest adapter. Replace here when a managed encryption key exists."
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 144,
+    "text": "// Managed discovery is computed under the existing scheduler mutation lock."
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 145,
+    "text": "// Existing commands, IDs and metadata remain unchanged unless the old scanner"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 216,
+    "text": "this.logger.warn('Managed subscription notification failed');"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 233,
+    "text": "'Managed subscription publication rollback requires recovery',"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 248,
+    "text": "this.logger.warn('Managed subscription staging cleanup failed'),"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 302,
+    "text": "'[crontab] Failed to restore old cron job in scheduler after rollback:',"
+  },
+  {
+    "file": "back/services/executionEnvironmentTransport.ts",
+    "line": 47,
+    "text": "// Preserve the generated legacy language semantics while freezing this execution's base."
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 55,
+    "text": "const old = input.id"
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 58,
+    "text": "const data = { ...old, ...input };"
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 74,
+    "text": "let secret: CredentialSecret = old"
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 75,
+    "text": "? await this.secrets.getCredentialSecret(old.id!, transaction)"
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 79,
+    "text": "!old ||"
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 81,
+    "text": "old.auth_type !== data.auth_type"
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 126,
+    "text": "const row = old"
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 127,
+    "text": "? await GitCredentialModel.findByPk(old.id, { transaction })"
+  },
+  {
+    "file": "back/services/gitCredential.ts",
+    "line": 129,
+    "text": "if (old) await row!.update(fields, { transaction });"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 35,
+    "text": "'订阅 proxy 仅用于 Legacy；Managed 使用 Git 网络配置',"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 94,
+    "text": "async mode(id: number, mode: 'LEGACY' | 'MANAGED') {"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 98,
+    "text": "if (mode === 'LEGACY') {"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 99,
+    "text": "await sub.update({ git_mode: mode }); // Retain binding and all Git objects."
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 102,
+    "text": "sub.update({ git_mode: mode, worktree_id: id }),"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 112,
+    "text": "if (!sub || sub.git_mode !== 'MANAGED')"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 118,
+    "text": "process.stdout.write(`[Managed] ${phase} subscription=${id}\\n`);"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 135,
+    "text": "`[Managed] worktree=${tree.id} commit=${before} -> ${after}\\n`,"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 194,
+    "text": "process.stderr.write(`[Managed] ${phase}: ${code}\\n`);"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 238,
+    "text": "const stage = await fs.mkdtemp(path.join(scriptsRoot, '.managed-'));"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 292,
+    "text": "`[Managed] discovery add=${adds.length} drop=${drops.length}\\n`,"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 37,
+    "text": "const old = input.id"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 41,
+    "text": "input.remote_url || old?.remote_url || '',"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 43,
+    "text": "if (old && old.normalized_url !== identity.normalized_url)"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 48,
+    "text": "if (old && input.remote_url && input.remote_url !== old.remote_url)"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 52,
+    "text": "? old?.default_credential_id || null"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 61,
+    "text": "name: (input.name || old?.name || identity.repository_name).trim(),"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 64,
+    "text": "if (old) {"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 66,
+    "text": "where: { id: old.id },"
+  },
+  {
+    "file": "back/services/repository.ts",
+    "line": 69,
+    "text": "return old.id!;"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 46,
+    "text": "const old = input.id ? await this.get(input.id, transaction) : undefined;"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 47,
+    "text": "const repository_id = old?.repository_id ?? input.repository_id;"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 51,
+    "text": "if (old && input.repository_id && old.repository_id !== input.repository_id) throw new ScopedEnvironmentError('ENV_PROFILE_REPOSITORY_MISMATCH');"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 52,
+    "text": "const name = (input.name ?? old?.name ?? '').trim();"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 54,
+    "text": "const fields = { repository_id, name, description: input.description ?? old?.description ?? '', status: input.status ?? old?.status ?? 'enabled' };"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 56,
+    "text": "const row = old ? await EnvironmentProfileModel.findByPk(old.id, { transaction }) : await EnvironmentProfileModel.create(fields, { transaction });"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 57,
+    "text": "if (old) await row!.update(fields, { transaction });"
+  },
+  {
+    "file": "back/services/repositoryStorage.ts",
+    "line": 136,
+    "text": "'PATH_CONFLICT: storage is not this managed bare repository',"
+  },
+  {
+    "file": "back/services/repositoryStorage.ts",
+    "line": 441,
+    "text": "'Remote spelling cannot change while legacy subscriptions reference this repository',"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 45,
+    "text": "const old = existing.get(patch.name);"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 47,
+    "text": "const operation = patch.operation ?? old?.operation ?? 'SET';"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 48,
+    "text": "const status = patch.status ?? old?.status ?? 'enabled';"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 49,
+    "text": "const is_secret = patch.is_secret ?? old?.is_secret ?? false;"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 51,
+    "text": "if (old?.is_secret && !is_secret) throw new ScopedEnvironmentError('ENV_SECRET_UPDATE_INVALID');"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 52,
+    "text": "if (patch.value !== undefined && old?.is_secret && patch.replace_secret !== true) throw new ScopedEnvironmentError('ENV_SECRET_UPDATE_INVALID');"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 54,
+    "text": "const value = operation === 'UNSET' ? null : patch.value === undefined ? old?.value : patch.value;"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 56,
+    "text": "const fields = { [key]: id, name: patch.name, value, operation, status, is_secret, position: patch.position ?? old?.position ?? 0, labels: patch.labels ?? old?.labels ?? [] };"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 57,
+    "text": "if (old) await model.update(fields, { where: { id: old.id }, transaction });"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 240,
+    "text": "tab.git_mode === 'MANAGED'"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 291,
+    "text": "tab.git_mode === 'MANAGED'"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 370,
+    "text": "if (doc.worktree_id || doc.git_mode === 'MANAGED') continue;"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 413,
+    "text": "{ where: { id: ids, git_mode: 'MANAGED', last_sync_state: 'RUNNING' } },"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 35,
+    "text": "'Branch is not supported by the legacy clone adapter',"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 50,
+    "text": "'Remote is not supported by the legacy checkout layout',"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 124,
+    "text": "'Subscriptions share a legacy checkout directory and can overwrite each other',"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 157,
+    "text": "'An equivalent repository uses a different remote spelling; review clone-path compatibility before linking',"
+  },
+  {
+    "file": "back/services/user.ts",
+    "line": 573,
+    "text": "// Legacy format: convert string token to TokenInfo array"
+  },
+  {
+    "file": "back/shared/auth.ts",
+    "line": 10,
+    "text": "* Supports both legacy string tokens and new TokenInfo array format."
+  },
+  {
+    "file": "back/shared/auth.ts",
+    "line": 38,
+    "text": "// Check legacy token field"
+  },
+  {
+    "file": "back/shared/auth.ts",
+    "line": 43,
+    "text": "// Check platform-specific tokens (support both legacy string and new TokenInfo[] format)"
+  },
+  {
+    "file": "back/shared/auth.ts",
+    "line": 52,
+    "text": "// Legacy format: single string token"
+  },
+  {
+    "file": "back/shared/authMutation.ts",
+    "line": 2,
+    "text": "// a login that read old credentials must finish before a password reset revokes"
+  },
+  {
+    "file": "back/shared/gitResourceMigration.ts",
+    "line": 2,
+    "text": "// Executed inside the existing schema migration transaction. Never imports app models."
+  },
+  {
+    "file": "back/shared/managedSubscriptionMigration.ts",
+    "line": 17,
+    "text": "git_mode: \"VARCHAR(32) NOT NULL DEFAULT 'LEGACY'\","
+  },
+  {
+    "file": "back/shared/managedSubscriptionMigration.ts",
+    "line": 30,
+    "text": "throw new Error('Migration table is missing: Subscriptions');"
+  },
+  {
+    "file": "back/shared/managedSubscriptionMigration.ts",
+    "line": 43,
+    "text": "\"INSERT OR IGNORE INTO SchemaMigrations(id,applied_at) VALUES('phase3-managed-subscriptions',:at)\","
+  },
+  {
+    "file": "back/shared/runCron.ts",
+    "line": 20,
+    "text": "// Default to single instance mode (0) for backward compatibility"
+  },
+  {
+    "file": "back/shared/runCron.ts",
+    "line": 35,
+    "text": "// Mark old running instances as stopped"
+  },
+  {
+    "file": "back/shared/schemaMigrations.ts",
+    "line": 61,
+    "text": "throw new Error(`Migration table is missing: ${table}`);"
+  },
+  {
+    "file": "back/shared/schemaMigrations.ts",
+    "line": 63,
+    "text": "// table/column/type come only from the static migration manifest above."
+  },
+  {
+    "file": "back/shared/scopedEnvHttp.ts",
+    "line": 4,
+    "text": "// fragments. Catch only the new namespace before the legacy generic error handlers."
+  },
+  {
+    "file": "back/shared/scopedEnvMigration.ts",
+    "line": 23,
+    "text": "if (!fields.length) throw new Error(`Migration table is missing: ${table}`);"
+  },
+  {
+    "file": "back/shared/workspaceMigration.ts",
+    "line": 32,
+    "text": "managed TINYINT(1) DEFAULT 1,status_snapshot JSON,last_update_at DATETIME,last_error TEXT,createdAt DATETIME NOT NULL,updatedAt DATETIME NOT NULL)`,"
+  },
+  {
+    "file": "back/shared/workspacePaths.ts",
+    "line": 70,
+    "text": "'PATH_CONFLICT: managed path contains a symlink',"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 30,
+    "text": "# legacy code/message variables used by the shell API callers."
+  },
+  {
+    "file": "shell/lang/en.sh",
+    "line": 101,
+    "text": "['查找旧日志文件中...\\n']='Looking for old log files...\\n'"
+  },
+  {
+    "file": "shell/lang/en.sh",
+    "line": 102,
+    "text": "['删除旧日志执行完毕\\n']='Old log cleanup complete\\n'"
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 22,
+    "text": "# Existing config is executable by design. Do not change its legacy option semantics."
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 38,
+    "text": "# Legacy functions intentionally use grep's status 1 and split validated file names."
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 41,
+    "text": "# An empty deps directory produces this literal glob in the old scanner."
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 68,
+    "text": "# Clear benign grep ERR markers before the legacy routine. Only explicit cp/mkdir failures set it below."
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 371,
+    "text": "# Preserve the legacy export-line/second-field rules without evaluating values."
+  },
+  {
+    "file": "shell/task_env.sh",
+    "line": 9,
+    "text": "# Standalone legacy CLI installations without a database retain the legacy path."
+  },
+  {
+    "file": "src/.umi-production/core/pluginConfig.ts",
+    "line": 265,
+    "text": "legacy: {"
+  },
+  {
+    "file": "src/.umi-production/plugin-locale/localeExports.ts",
+    "line": 277,
+    "text": "* @deprecated 使用此 api 会造成切换语言的时候无法自动刷新，请使用 useIntl 或 injectIntl"
+  },
+  {
+    "file": "src/locales/en-US.json",
+    "line": 158,
+    "text": "\"单实例模式：定时启动新任务前会自动停止旧任务；多实例模式：允许同时运行多个任务实例\": \"Single instance mode: automatically stop old task before starting new scheduled task; Multi-instance mode: allow multiple task instances to run simultaneously\","
+  },
+  {
+    "file": "src/locales/en-US.json",
+    "line": 620,
+    "text": "\"当前由环境变量 QL_TRUST_PROXY 管理\": \"Managed by QL_TRUST_PROXY\","
+  },
+  {
+    "file": "src/pages/repository-workspace.tsx",
+    "line": 29,
+    "text": "'工作区仍被订阅引用，请先修改或删除订阅绑定；切回 Legacy 会保留绑定。',"
+  },
+  {
+    "file": "src/pages/repository-workspace.tsx",
+    "line": 519,
+    "text": "路径由系统生成。每个远端分支默认只有一个 managed"
+  },
+  {
+    "file": "src/pages/subscription/index.tsx",
+    "line": 76,
+    "text": "key: 'git_mode',"
+  },
+  {
+    "file": "src/pages/subscription/index.tsx",
+    "line": 80,
+    "text": "<Tag color={row.git_mode === 'MANAGED' ? 'blue' : undefined}>"
+  },
+  {
+    "file": "src/pages/subscription/index.tsx",
+    "line": 81,
+    "text": "{row.git_mode || 'LEGACY'}"
+  },
+  {
+    "file": "src/pages/subscription/index.tsx",
+    "line": 393,
+    "text": "{record.worktree_id || record.git_mode === 'MANAGED' ? '同时删除关联任务（保留 scripts 和工作区）' : intl.get('同时删除关联任务和脚本')}"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 34,
+    "text": "const [sourceMode, setSourceMode] = useState(subscription?.repository_id ? 'repository' : 'legacy');"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 81,
+    "text": "git_mode:"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 82,
+    "text": "sourceMode === 'repository' ? values.git_mode || 'LEGACY' : 'LEGACY',"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 363,
+    "text": "git_mode: 'LEGACY',"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 383,
+    "text": "if (e.target.value === 'legacy')"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 391,
+    "text": "<Radio value=\"legacy\">Manual URL (Legacy)</Radio>"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 418,
+    "text": "`${config.apiPrefix}subscriptions/${subscription.id}/managed/preflight`,"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 431,
+    "text": "检查已保存配置的 Managed 就绪状态"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 435,
+    "text": "name=\"git_mode\""
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 437,
+    "text": "extra=\"Managed 保存前会 Fetch 并检查 Worktree；脚本仍复制到 scripts 执行。切回 Legacy 保留工作区。\""
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 440,
+    "text": "<Radio value=\"LEGACY\">Legacy（重新克隆）</Radio>"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 441,
+    "text": "<Radio value=\"MANAGED\">Managed（持久工作区）</Radio>"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 479,
+    "text": "{sourceMode === 'legacy' &&"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 525,
+    "text": "...(sourceMode === 'legacy'"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 562,
+    "text": "{sourceMode === 'legacy' && type === 'private-repo' && ("
+  },
+  {
+    "file": "src/utils/index.ts",
+    "line": 86,
+    "text": "} else if (testUa(/trident|compatible|msie/g)) {"
+  },
+  {
+    "file": "test/back/auth-security.test.cjs",
+    "line": 21,
+    "text": "test('valid legacy and platform sessions retain compatibility', () => {"
+  },
+  {
+    "file": "test/back/auth-security.test.cjs",
+    "line": 65,
+    "text": "test('passwords are salted and legacy plaintext can migrate without changing the password', async () => {"
+  },
+  {
+    "file": "test/back/auth-security.test.cjs",
+    "line": 72,
+    "text": "assert.equal(await verifyPassword('old-password', 'old-password'), true);"
+  },
+  {
+    "file": "test/back/auth-security.test.cjs",
+    "line": 73,
+    "text": "assert.equal(await verifyPassword('wrong', 'old-password'), false);"
+  },
+  {
+    "file": "test/back/cron-log-name.test.cjs",
+    "line": 64,
+    "text": "'legacy/path/',"
+  },
+  {
+    "file": "test/back/cron-validation.test.cjs",
+    "line": 19,
+    "text": "test('cron validation accepts leading-zero schedules and legacy null labels', () => {"
+  },
+  {
+    "file": "test/back/cron-validation.test.cjs",
+    "line": 21,
+    "text": "name: 'legacy cron',"
+  },
+  {
+    "file": "test/back/cron-validation.test.cjs",
+    "line": 22,
+    "text": "command: 'task legacy.js',"
+  },
+  {
+    "file": "test/back/env-name-parsing.test.cjs",
+    "line": 42,
+    "text": "test('matches legacy pipeline for whitespace, malformed lines, CRLF and final unterminated line', (t) => {"
+  },
+  {
+    "file": "test/back/env-name-parsing.test.cjs",
+    "line": 58,
+    "text": "'exported_variables=(OLD); get_env_array; echo \"${#exported_variables[@]}\"',"
+  },
+  {
+    "file": "test/back/env-name-parsing.test.cjs",
+    "line": 78,
+    "text": "'USER_ONE=old; USER_TWO=old; UNRELATED=kept; get_env_array; clear_env; [[ ! ${USER_ONE+x} && ! ${USER_TWO+x} && \"$UNRELATED\" == kept ]]',"
+  },
+  {
+    "file": "test/back/grpc-cron-response.test.cjs",
+    "line": 49,
+    "text": "test('legacy plain cron rows normalize absent repeated fields', () => {"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 152,
+    "text": "path.join(tmp, 'upload/legacy.html'),"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 156,
+    "text": "`http://127.0.0.1:${server.address().port}/api/static/legacy.html`,"
+  },
+  {
+    "file": "test/back/node-path-cache.test.cjs",
+    "line": 165,
+    "text": "dir_dep: '/legacy/deps',"
+  },
+  {
+    "file": "test/back/node-path-cache.test.cjs",
+    "line": 171,
+    "text": "assert.equal(r.stdout, 'continued:/existing:/legacy/deps');"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 88,
+    "text": "command: 'old',"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 164,
+    "text": "command: 'old',"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 186,
+    "text": "assert.equal(row.command, 'old');"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 257,
+    "text": "id: 1, command: 'old', schedule: '* * * * *', isDisabled: 0,"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 259,
+    "text": "jobs.set('1', 'old');"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 282,
+    "text": "assert.deepEqual([...jobs.entries()], [['1', 'old']]);"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 292,
+    "text": "command: 'old',"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 295,
+    "text": "queued_token: 'old-token',"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "line": 310,
+    "text": "assert.equal(row.command, 'old');"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "line": 82,
+    "text": "'old',"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "line": 111,
+    "text": "assert.deepEqual([...stacks.keys()], ['old']);"
+  },
+  {
+    "file": "test/back/schema-migrations.test.cjs",
+    "line": 32,
+    "text": "test('legacy database upgrades without losing rows and repeated migration is idempotent', async (t) => {"
+  },
+  {
+    "file": "test/back/schema-migrations.test.cjs",
+    "line": 46,
+    "text": "assert.equal(applied.length, 21); // Additive Phase 4 scoped ENV migration."
+  },
+  {
+    "file": "test/back/schema-migrations.test.cjs",
+    "line": 52,
+    "text": "test('migration failure rolls back added columns and can be retried after repair', async (t) => {"
+  },
+  {
+    "file": "test/back/schema-migrations.test.cjs",
+    "line": 70,
+    "text": "test('offline pre-upgrade backup restores the legacy schema and data', async (t) => {"
+  },
+  {
+    "file": "test/back/schema-migrations.test.cjs",
+    "line": 71,
+    "text": "const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'ql-migration-'));"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 80,
+    "text": "JSON.stringify({ value: 'old', expiration: 1 }),"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 81,
+    "text": "JSON.stringify({ value: 'old', expiration: '4102444800' }),"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 118,
+    "text": "test('non-JSON errors fall back to raw text and absent messages retain legacy null', (t) => {"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 140,
+    "text": "'code=500; message=old; ql_parse_status_response \"$(cat \"$RESPONSE_FILE\")\"; printf \"%s|%s\" \"$code\" \"$message\"; record_cron_stat 1 0 1',"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 170,
+    "text": "test('success-shaped invalid documents retain the raw-response error fallback', (t) => {"
+  },
+  {
+    "file": "test/back/task-time.test.cjs",
+    "line": 102,
+    "text": "test(`${mode} keeps legacy time conversion helpers`, (t) => {"
+  },
+  {
+    "file": "test/back/task-time.test.cjs",
+    "line": 107,
+    "text": "format_log_time() { echo legacy-log; }"
+  },
+  {
+    "file": "test/back/task-time.test.cjs",
+    "line": 108,
+    "text": "format_time() { echo legacy-time; }"
+  },
+  {
+    "file": "test/back/task-time.test.cjs",
+    "line": 112,
+    "text": "[[ \"$log_time\" == legacy-log && \"$begin_time\" == legacy-time && \"$begin_timestamp\" == 100 ]]"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 82,
+    "text": "password: 'old-password',"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 131,
+    "text": "(await f.user.login({ username: 'owner', password: 'old-password' }, req))"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 143,
+    "text": "test('a concurrent old-password login cannot restore a session after reset', async () => {"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 146,
+    "text": "f.user.login({ username: 'owner', password: 'old-password' }, req),"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 155,
+    "text": "test('legacy plaintext migrates after a successful login', async () => {"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 158,
+    "text": "(await f.user.login({ username: 'owner', password: 'old-password' }, req))"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 163,
+    "text": "assert.equal(await verifyPassword('old-password', f.auth.password), true);"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 174,
+    "text": "(await f.user.login({ username: 'owner', password: 'old-password' }, req))"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 183,
+    "text": "{ username: 'owner', password: 'old-password', code: badCode },"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 200,
+    "text": "await f.user.login({ username: 'owner', password: 'old-password' }, req);"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 204,
+    "text": "password: 'old-password',"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 208,
+    "text": "await f.user.login({ username: 'owner', password: 'old-password' }, req);"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 210,
+    "text": "await f.user.login({ username: 'owner', password: 'old-password' }, req);"
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "line": 232,
+    "text": "token: 'old-default-session',"
+  },
+  {
+    "file": "test/back/worker-apm.test.cjs",
+    "line": 45,
+    "text": "test('PM2-managed primary disables only inherited worker APM and keeps worker metadata', () => {"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 49,
+    "text": "test('Subscription command preserves legacy argument order, embedded credentials and flags',()=>{"
+  },
+  {
+    "file": "tests/phase1/migration.test.cjs",
+    "line": 8,
+    "text": "async function legacy() {"
+  },
+  {
+    "file": "tests/phase1/migration.test.cjs",
+    "line": 19,
+    "text": "test('Phase1 migration is additive, preserves rows and nullable legacy references, idempotent', async (t) => {"
+  },
+  {
+    "file": "tests/phase1/migration.test.cjs",
+    "line": 20,
+    "text": "const db = await legacy();"
+  },
+  {
+    "file": "tests/phase1/migration.test.cjs",
+    "line": 36,
+    "text": "const db = await legacy();"
+  },
+  {
+    "file": "tests/phase1/migration.test.cjs",
+    "line": 41,
+    "text": "throw new Error('injected migration failure');"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 115,
+    "text": "test('resolution priority, nullable legacy fallback, disabled and missing credentials', async (t) => {"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 143,
+    "text": "(await x.subs.resolveSubscriptionGitContext({ url: 'legacy://unchanged' }))"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 145,
+    "text": "'legacy://unchanged',"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 165,
+    "text": "test('manual conversion deduplicates equivalent URLs and preserves legacy fields; warns collisions', async (t) => {"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 167,
+    "text": "const legacy = {"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 175,
+    "text": "const a = await x.SubscriptionModel.create(legacy),"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 177,
+    "text": "...legacy,"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 183,
+    "text": "...legacy,"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 194,
+    "text": "assert.equal(ca.alias, legacy.alias);"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 197,
+    "text": "assert.deepEqual(ca.pull_option, legacy.pull_option);"
+  },
+  {
+    "file": "tests/phase2/domain.test.cjs",
+    "line": 8,
+    "text": "test('managed paths use IDs, reject traversal, symlink escape and case collisions', async (t) => {"
+  },
+  {
+    "file": "tests/phase2/domain.test.cjs",
+    "line": 31,
+    "text": "test('Phase1 database upgrades atomically and idempotently without changing legacy rows', async (t) => {"
+  },
+  {
+    "file": "tests/phase2/recovery.test.cjs",
+    "line": 104,
+    "text": "test('remote spelling changes preserve identity and storage while protecting legacy subscriptions', async (t) => {"
+  },
+  {
+    "file": "tests/phase2/recovery.test.cjs",
+    "line": 122,
+    "text": "name: 'legacy',"
+  },
+  {
+    "file": "tests/phase2/recovery.test.cjs",
+    "line": 123,
+    "text": "alias: 'legacy',"
+  },
+  {
+    "file": "tests/phase2/recovery.test.cjs",
+    "line": 133,
+    "text": "test('Git core.worktree override cannot redirect status or mutations outside managed checkout', async (t) => {"
+  },
+  {
+    "file": "tests/phase2/workspace.test.cjs",
+    "line": 211,
+    "text": "test('non-git storage and managed-path symlink replacements never trigger recursive deletion', async (t) => {"
+  },
+  {
+    "file": "tests/phase3/cron-publication.test.cjs",
+    "line": 3,
+    "text": "test('strict Managed crontab install reports errors while original default behavior is preserved',async t=>{"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 99,
+    "text": "test('extensions, include/exclude, dependency copy and nested TypeScript keep old scanner semantics', (t) => {"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 132,
+    "text": "const old = path.join(dir, 'stage/scripts/team_project_main/old.py');"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 133,
+    "text": "fs.mkdirSync(path.dirname(old), { recursive: true });"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 134,
+    "text": "fs.writeFileSync(old, '# new Env(\"old\")\\n');"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 137,
+    "text": "'0 0 * * * real_time=false no_tee=true ID=7 task team_project_main/old.py\\n',"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 141,
+    "text": "assert.equal(fs.existsSync(old), autoDel === 'false');"
+  },
+  {
+    "file": "tests/phase3/helpers.cjs",
+    "line": 57,
+    "text": "getUniqPath: async (_command, id) => id || 'managed',"
+  },
+  {
+    "file": "tests/phase3/lease.test.cjs",
+    "line": 4,
+    "text": "const h=await setup(t);await h.storage.initialize(h.repo.id);const tree=await h.worktrees.create({repository_id:h.repo.id,name:'leased',ref_type:'branch',ref_name:'main'});const sub=await h.SubscriptionModel.create({repository_id:h.repo.id,name:'preflight',alias:'preflight',type:'public-repo',branch:'main',git_mode:'LEGACY'});"
+  },
+  {
+    "file": "tests/phase3/lease.test.cjs",
+    "line": 5,
+    "text": "const Managed=h.get('services/managedSubscription').default,Resolver=h.get('services/subscriptionGit').default,managed=new Managed(h.storage,h.worktrees,new Resolver());const lease=await h.worktrees.acquireExecutionLease(tree.id,{owner_type:'test',owner_id:'preflight'});try{await assert.rejects(managed.preflight(sub.id),{error_code:'WORKTREE_BUSY'});assert.equal((await sub.reload()).git_mode,'LEGACY');}finally{await lease.release();}"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 24,
+    "text": "test('Phase3 migration is additive and idempotent; both existing subscription types remain Legacy', async (t) => {"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 33,
+    "text": "rows.map((r) => [r.id, r.git_mode, r.worktree_id]),"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 35,
+    "text": "[1, 'LEGACY', null],"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 36,
+    "text": "[2, 'LEGACY', null],"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 58,
+    "text": "(await db.getQueryInterface().describeTable('Subscriptions')).git_mode,"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 63,
+    "text": "(await db.getQueryInterface().describeTable('Subscriptions')).git_mode,"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 9,
+    "text": "const Managed = h.get('services/managedSubscription').default,"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 15,
+    "text": "const managed = new Managed(h.storage, h.worktrees, new Resolver());"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 24,
+    "text": "name: 'Managed',"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 30,
+    "text": "git_mode: 'LEGACY',"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 36,
+    "text": "managed,"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 42,
+    "text": "test('explicit mode switch, first sync, retry without duplicate Tasks, FF update and rollback to Legacy', async (t) => {"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 44,
+    "text": "assert.equal(h.sub.git_mode, 'LEGACY');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 45,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 46,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 53,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 61,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 68,
+    "text": "await h.managed.mode(h.sub.id, 'LEGACY');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 75,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 76,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 99,
+    "text": "await assert.rejects(h.managed.run(h.sub.id));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 111,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 112,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 115,
+    "text": "await assert.rejects(h.managed.run(h.sub.id));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 118,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 123,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 132,
+    "text": "await h.managed.mode(second.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 144,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 145,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 155,
+    "text": "await assert.rejects(h.managed.run(h.sub.id));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 179,
+    "text": "await assert.rejects(h.managed.run(h.sub.id));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 189,
+    "text": "'retry at already updated commit applies old scanner add/drop',"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 191,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 204,
+    "text": "await assert.rejects(h.managed.run(h.sub.id));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 213,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 216,
+    "text": "test('Managed leases block overlapping sync, update and binding changes', async (t) => {"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 218,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 220,
+    "text": "await h.managed.exclusive(h.sub.id, async () => {"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 221,
+    "text": "await assert.rejects(h.managed.run(h.sub.id));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 222,
+    "text": "await assert.rejects(h.managed.mode(h.sub.id, 'LEGACY'));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 228,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 232,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 233,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 238,
+    "text": "await assert.rejects(h.managed.run(h.sub.id));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 245,
+    "text": "test('branch selection creates a new binding and preserves the old Worktree', async (t) => {"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 247,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 248,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 249,
+    "text": "const old = (await h.sub.reload()).worktree_id;"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 251,
+    "text": "await h.managed.withBinding("
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 255,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 256,
+    "text": "assert.notEqual(h.sub.worktree_id, old);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 257,
+    "text": "assert.ok(await h.WorktreeModel.findByPk(old));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 274,
+    "text": "await h.managed.mode(h.sub.id, 'MANAGED');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 275,
+    "text": "await h.managed.run(h.sub.id);"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 304,
+    "text": "await assert.rejects(h.managed.run(h.sub.id));"
+  },
+  {
+    "file": "tests/phase4/domain.test.cjs",
+    "line": 5,
+    "text": "const sub = await h.SubscriptionModel.create({ alias: 'sub', repository_id: repo.id, git_mode: 'LEGACY' });"
+  },
+  {
+    "file": "tests/phase4/legacy-characterization.test.cjs",
+    "line": 4,
+    "text": "for (const language of ['sh', 'js', 'py']) test(`pre-integration characterization: actual task.sh ${language} duplicates, disabled host fallback, spaces, templates`, async t => {"
+  },
+  {
+    "file": "tests/phase4/transport.test.cjs",
+    "line": 9,
+    "text": "const old = new Date(Date.now() - 2 * 3600000); fs.utimesSync(snapshot.directory, old, old);"
+  },
+  {
+    "file": "tests/phase4/transport.test.cjs",
+    "line": 11,
+    "text": "fs.writeFileSync(path.join(snapshot.directory, 'owner.json'), JSON.stringify({ pid: 2147483647 })); fs.utimesSync(snapshot.directory, old, old);"
+  }
+]

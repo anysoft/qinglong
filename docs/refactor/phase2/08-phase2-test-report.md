@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Phase 2 test report
 
 Baseline: `53ac03c8` on develop. Validation date: 2026-09-15. Tests use Node 22.23.2, local Git fixture repositories, temporary SQLite databases/directories, Python 3 POSIX locks and Google Chrome. No live database, external repository or deployed service was mutated.

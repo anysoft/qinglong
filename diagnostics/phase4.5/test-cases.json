@@ -1,0 +1,632 @@
+[
+  {
+    "file": "test/back/auth-security.test.cjs",
+    "titles": [
+      "valid legacy and platform sessions retain compatibility",
+      "session membership never bypasses JWT signature, expiry, algorithm or nbf",
+      "platform token metadata can shorten but cannot extend JWT expiration",
+      "passwords are salted and legacy plaintext can migrate without changing the password"
+    ]
+  },
+  {
+    "file": "test/back/build-provenance.test.cjs",
+    "titles": [
+      "build verification accepts matching source and rejects stale or dirty artifacts",
+      "release images receive the same-run artifact and verify it before use",
+      "complete artifact manifests reject changed, missing, extra files and untracked build inputs"
+    ]
+  },
+  {
+    "file": "test/back/cron-log-name.test.cjs",
+    "titles": [
+      "form and API accept Chinese log names and existing supported names",
+      "form and API still reject unsafe relative names and excessive length",
+      "API restricts absolute log paths to the configured directory or /dev/null"
+    ]
+  },
+  {
+    "file": "test/back/cron-validation.test.cjs",
+    "titles": [
+      "cron validation accepts leading-zero schedules and legacy null labels",
+      "cron validation identifies invalid fields"
+    ]
+  },
+  {
+    "file": "test/back/dashboard-failures.test.cjs",
+    "titles": [
+      "today failures includes recovered and deleted tasks, excluding previous days and successes"
+    ]
+  },
+  {
+    "file": "test/back/dependence-cache-status.test.cjs",
+    "titles": [
+      "dependency listing marks cache entries missing from disk for reinstall"
+    ]
+  },
+  {
+    "file": "test/back/deprecated-file-routes.test.cjs",
+    "titles": [
+      "${moduleName} filename route points callers to its detail API"
+    ]
+  },
+  {
+    "file": "test/back/ecosystem.test.cjs",
+    "titles": [
+      "container logging discards stdout and forwards startup errors without persistent copies",
+      "non-container installs keep the PM2 logging defaults"
+    ]
+  },
+  {
+    "file": "test/back/env-name-parsing.test.cjs",
+    "titles": [
+      "matches legacy pipeline for whitespace, malformed lines, CRLF and final unterminated line",
+      "resets prior names for an empty file",
+      "extracting names never evaluates command substitutions or shell syntax in values",
+      "clear_env removes listed exports and preserves unrelated values",
+      "large configuration preserves order and duplicate names"
+    ]
+  },
+  {
+    "file": "test/back/execution-lifecycle.test.cjs",
+    "titles": [
+      "spawn failure settles without exit, and the next scheduled run can proceed",
+      "completion waits for slow log consumers and preserves the final output",
+      "exit is not completion, and UTF-8 split across writes remains intact",
+      "failed log sink drains large output instead of blocking the child",
+      "PID response keeps queue capacity occupied until cleanup completes",
+      "before/error/end callback failures settle and release capacity",
+      "concurrent writes and closes preserve all bytes, and failed files can be closed"
+    ]
+  },
+  {
+    "file": "test/back/file-access-security.test.cjs",
+    "titles": [
+      "file access enforces directory boundaries, blacklist descendants and symlinks"
+    ]
+  },
+  {
+    "file": "test/back/fileTreeListing.test.cjs",
+    "titles": [
+      "readDirs preserves the recursive tree contract and ignores blocked entries"
+    ]
+  },
+  {
+    "file": "test/back/grpc-cron-response.test.cjs",
+    "titles": [
+      "gRPC cron response preserves Sequelize model fields through protobuf serialization",
+      "legacy plain cron rows normalize absent repeated fields"
+    ]
+  },
+  {
+    "file": "test/back/http-exclusive-listen.test.cjs",
+    "titles": [
+      "HTTP listener preserves private binding and releases its port after shutdown",
+      "custom cluster deployments can restore shared listening"
+    ]
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "titles": [
+      "HTTP authentication protects init, scopes, expired sessions and config secrets"
+    ]
+  },
+  {
+    "file": "test/back/listen-security.test.cjs",
+    "titles": [
+      "HTTP binding ${host} never broadens an explicit private address",
+      "gRPC binding ${host} never broadens an explicit private address"
+    ]
+  },
+  {
+    "file": "test/back/log-path-security.test.cjs",
+    "titles": [
+      "log streams reject traversal, sibling prefixes and escaping symlinks before writing",
+      "log initialization rejects unsafe paths before mkdir or file writes",
+      "manual execution rejects escaping log names before creating directories or spawning"
+    ]
+  },
+  {
+    "file": "test/back/logReader.test.cjs",
+    "titles": [
+      "log reader defaults to a bounded tail and supports incremental reads",
+      "log reader enforces the maximum chunk size",
+      "log reader preserves UTF-8 characters across byte boundaries",
+      "missing logs return an empty chunk"
+    ]
+  },
+  {
+    "file": "test/back/manual-execution.test.cjs",
+    "titles": [
+      "manual execution captures a short child before slow status storage and flushes before release"
+    ]
+  },
+  {
+    "file": "test/back/manual-stop-claim.test.cjs",
+    "titles": [
+      "manual startup loses its conditional claim after ${conflict} and terminates the late child",
+      "verified termination waits for a SIGTERM-resistant target to exit",
+      "a runner waiting for a concurrency slot cannot adopt a newer queued generation"
+    ]
+  },
+  {
+    "file": "test/back/metrics.test.cjs",
+    "titles": [
+      "metrics keep only the newest bounded samples",
+      "empty metric queries return finite aggregates"
+    ]
+  },
+  {
+    "file": "test/back/monitoring.test.cjs",
+    "titles": [
+      "health probes bypass request metric retention with or without base URL",
+      "non-health requests keep bounded service metrics",
+      "ordinary request metrics are sampled instead of retained per request"
+    ]
+  },
+  {
+    "file": "test/back/node-path-cache.test.cjs",
+    "titles": [
+      "warm cache avoids pnpm, preserves spaces, and never evaluates cached text",
+      "config, environment, cwd, and executable changes invalidate discovery",
+      "expired or malformed records refresh and failed lookups are not cached",
+      "disabled or unavailable cache falls back without changing discovery output",
+      "concurrent refreshes publish complete records and do not overwrite symlink targets",
+      "task entry tolerates discovery failure with errexit enabled"
+    ]
+  },
+  {
+    "file": "test/back/node-path-lock.test.cjs",
+    "titles": [
+      "simultaneous cold and expired lookups share one successful refresh",
+      "waiters with different configuration do not reuse another key",
+      "lock timeout falls back while a holder is still alive",
+      "absent or unsupported flock and unsafe lock paths preserve discovery",
+      "failed refresh releases lock and does not publish a success",
+      "refresh leaves the caller file descriptor and umask unchanged"
+    ]
+  },
+  {
+    "file": "test/back/primary-apm.test.cjs",
+    "titles": [
+      "container APM policy keeps worker isolation and can restore all inherited probes",
+      "standalone PM2 monitoring stays enabled"
+    ]
+  },
+  {
+    "file": "test/back/process-exit-state.test.cjs",
+    "titles": [
+      "termination accepts Linux exited state ${state} before PID reaping",
+      "termination keeps waiting while the process is running",
+      "a process disappearing during the procfs read is accepted",
+      "permission failures are not reported as successful termination"
+    ]
+  },
+  {
+    "file": "test/back/protected-path-case.test.cjs",
+    "titles": [
+      "rejects case variations under protected API namespaces",
+      "allows normalized protected paths and unrelated paths"
+    ]
+  },
+  {
+    "file": "test/back/qlServiceLogCommand.test.cjs",
+    "titles": [
+      "ql log reads the requested system log history without PM2",
+      "ql log follows the current Winston system log without PM2",
+      "ql log reports when no persisted system log exists"
+    ]
+  },
+  {
+    "file": "test/back/retention.test.cjs",
+    "titles": [
+      "retention policy defaults to disabled and clamps invalid values",
+      "directory preview counts files recursively and ignores symlinks",
+      "cleanup previews first, protects running instances, and uses explicit options"
+    ]
+  },
+  {
+    "file": "test/back/schedule-health.test.cjs",
+    "titles": [
+      "schedule health check uses the HTTP health endpoint and system logs",
+      "returns serving for a healthy prefixed HTTP service",
+      "reports recent system logs when HTTP startup fails"
+    ]
+  },
+  {
+    "file": "test/back/scheduler-file-lock.test.cjs",
+    "titles": [
+      "scheduler lock survives nested file writes and releases after ${\n    failOperation ? 'failure' : 'success'\n  }"
+    ]
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "titles": [
+      "recovery snapshot cannot overwrite concurrent ${operation}",
+      "recovery waits for an admitted mutation to finish registration before reading the DB",
+      "${operation} preserves scheduler 503 after rollback and releases its lock",
+      "scheduler lock excludes a second OS process and leaves no lock after completion",
+      "${operation} aborts on RPC ${code} with deletion applied=${applied} and reconciles the original DB",
+      "configuration rollback cannot restore an obsolete manual queue token"
+    ]
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "titles": [
+      "readiness stays false through failed restoration and retries without idle polling",
+      "single-flight recovery cannot mark an invalidated generation ready",
+      "mutation waiting is bounded, a later recovery can succeed",
+      "probe failure immediately invalidates a previously ready scheduler",
+      "health uses actual readiness and returns HTTP 503 until recovery",
+      "recovery registration errors propagate while ordinary autosave retains file synchronization",
+      "scheduler probe uses the cron channel and failed writes are not replayed",
+      "scheduler health probe never calls back into HTTP health"
+    ]
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "titles": [
+      "recovery reconciles a surviving scheduler after missed deletes and disables, including an empty DB",
+      "invalid replacement leaves the previous schedule intact",
+      "pre-RPC channel failures invalidate readiness and return 503 without executing or replaying writes"
+    ]
+  },
+  {
+    "file": "test/back/scheduler-rpc-timeout.test.cjs",
+    "titles": [
+      "${method} invalidates an uncertain timed-out write without replaying it"
+    ]
+  },
+  {
+    "file": "test/back/schema-migrations.test.cjs",
+    "titles": [
+      "legacy database upgrades without losing rows and repeated migration is idempotent",
+      "migration failure rolls back added columns and can be retried after repair",
+      "offline pre-upgrade backup restores the legacy schema and data",
+      "database loader rejects initialization failure rather than allowing workers to start"
+    ]
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "titles": [
+      "valid token cache is read with one jq and reused without generation",
+      "expired, corrupt, missing or header-unsafe token cache refreshes under errexit",
+      "success with a message still parses once and stays silent",
+      "status and statistics errors preserve multiline Unicode messages",
+      "non-JSON errors fall back to raw text and absent messages retain legacy null",
+      "statistics without a task id perform no JSON parsing",
+      "canonical success resets prior errors and matches jq missing-message semantics",
+      "noncanonical JSON always uses jq, including whitespace, duplicate keys and embedded success text",
+      "success-shaped invalid documents retain the raw-response error fallback"
+    ]
+  },
+  {
+    "file": "test/back/sock-security.test.cjs",
+    "titles": [
+      "WebSocket connections reject expired tokens and close when sessions are revoked"
+    ]
+  },
+  {
+    "file": "test/back/stop-race.test.cjs",
+    "titles": [
+      "stop wins when shell exit writes error or success during termination, preserving exit codes",
+      "late shell completion cannot overwrite stopped instances",
+      "rows created after the stop snapshot are not relabelled",
+      "repeated stop does not rewrite historical rows or their finished timestamps",
+      "batch stop captures running instances from every requested cron",
+      "stop signals every snapshotted PID exactly once and preserves a later running instance",
+      "failed termination is not finalized as stopped"
+    ]
+  },
+  {
+    "file": "test/back/subscription-cleanup.test.cjs",
+    "titles": [
+      "subscription becomes idle and closes its log even when completion logging fails"
+    ]
+  },
+  {
+    "file": "test/back/system-dependence-cache.test.cjs",
+    "titles": [
+      "clearing a dependency cache marks installed entries for reinstall"
+    ]
+  },
+  {
+    "file": "test/back/task-time.test.cjs",
+    "titles": [
+      "Linux task timestamps share a snapshot and retain millisecond log names across midnight",
+      "explicit log paths and output mode remain intact",
+      "task failure keeps exit code and minimum one-second runtime",
+      "manual stop retains stopped message and exit status reporting",
+      "${mode} keeps legacy time conversion helpers"
+    ]
+  },
+  {
+    "file": "test/back/user-api.test.cjs",
+    "titles": [
+      "initialization returns the username and password validation result"
+    ]
+  },
+  {
+    "file": "test/back/user-security.test.cjs",
+    "titles": [
+      "initialization checks state inside a serialized mutation",
+      "password change revokes sessions and closes connected clients",
+      "a concurrent old-password login cannot restore a session after reset",
+      "legacy plaintext migrates after a successful login",
+      "TOTP failures are counted serially and further attempts are throttled",
+      "TOTP challenge expires and valid codes cannot be reused in the same step",
+      "active two-factor secret cannot be silently replaced and disabling revokes sessions",
+      "default credentials with historical metadata still require initialization"
+    ]
+  },
+  {
+    "file": "test/back/worker-apm.test.cjs",
+    "titles": [
+      "PM2-managed primary disables only inherited worker APM and keeps worker metadata",
+      "worker APM opt-in restores inherited PM2 settings, including explicit disable",
+      "standalone startup does not introduce a PM2-specific override",
+      "replacement workers receive the same monitoring policy"
+    ]
+  },
+  {
+    "file": "test/back/wpush-grpc.test.cjs",
+    "titles": [
+      "WPUSH survives protobuf and JSON round trips without changing existing modes",
+      "decoded SystemNotify requests reach WPUSH with explicit or saved configuration"
+    ]
+  },
+  {
+    "file": "test/front/http-error.test.cjs",
+    "titles": [
+      "validation errors include the failing field names",
+      "existing API error details remain visible"
+    ]
+  },
+  {
+    "file": "tests/phase0/database-baseline.test.cjs",
+    "titles": [
+      "actual ORM tables, automatic and manual tasks, and execution exit code in isolated SQLite"
+    ]
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "titles": [
+      "production ENV generator merges enabled duplicates, omits disabled and invalid names across three languages",
+      "characterization: JavaScript ENV evaluates template expressions; Shell preserves literal",
+      "characterization: shell trims combined ENV; JS preserves surrounding whitespace",
+      "Subscription command preserves legacy argument order, embedded credentials and flags",
+      "dependency command generation retains global Node and optional Python prefix without installing packages",
+      "real node-schedule trigger reaches production runTask and drains stdout/stderr"
+    ]
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "titles": [
+      "real local clone, nested discovery, metadata and auto-create API payloads",
+      "update deletes ${dirty} workspace and reclones upstream",
+      "different branches use separate clones; same URL and branch reuse destructive destination",
+      "actual task.sh executes ${runtime}, injects ENV, captures output and reports status"
+    ]
+  },
+  {
+    "file": "tests/phase1/api.test.cjs",
+    "titles": [
+      "Git resource HTTP boundary never reflects submitted secrets or internal errors; routes are read/write specific"
+    ]
+  },
+  {
+    "file": "tests/phase1/helper.test.cjs",
+    "titles": [
+      "internal helper resolves resources at execution and passes unchanged positional repo contract",
+      "internal helper cleans credentials on subprocess failure and initialization-time cancellation"
+    ]
+  },
+  {
+    "file": "tests/phase1/migration.test.cjs",
+    "titles": [
+      "Phase1 migration is additive, preserves rows and nullable legacy references, idempotent",
+      "Phase1 schema and columns roll back together after an injected failure"
+    ]
+  },
+  {
+    "file": "tests/phase1/normalization.test.cjs",
+    "titles": [
+      "same GitHub identity: ${remote}",
+      "provider neutral nested identity: ${host}",
+      "generic paths remain case sensitive and nondefault ports distinct",
+      "reject unsafe or credentialized URL without reflecting input"
+    ]
+  },
+  {
+    "file": "tests/phase1/pipeline.test.cjs",
+    "titles": [
+      "F/G/J: authenticated HTTPS-like fixture uses unchanged update.sh, shallow destructive branch clones, copy and task discovery"
+    ]
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "titles": [
+      "A/B/D/H/I: stable identity, reusable credentials, secret replacement and deletion protection",
+      "resolution priority, nullable legacy fallback, disabled and missing credentials",
+      "manual conversion deduplicates equivalent URLs and preserves legacy fields; warns collisions",
+      "C: encrypted SSH key validation derives public key, preserves secret privacy and supports reuse",
+      "access tests use only ls-remote, update status, hide remote errors and clean contexts",
+      "credential update does not mutate the snapshot of a running invocation"
+    ]
+  },
+  {
+    "file": "tests/phase1/security.test.cjs",
+    "titles": [
+      "redacts split output, authorization, URL, private material and encoded secrets",
+      "concurrent HTTPS contexts have private immutable snapshots and idempotent cleanup",
+      "SSH contexts isolate keys and require verified known_hosts",
+      "disabled, missing, wrong transport and READ push fail closed",
+      "bounded output cannot leak a partial secret at truncation boundary; timeout terminates",
+      "timeout terminates a child process group before credential cleanup"
+    ]
+  },
+  {
+    "file": "tests/phase2/api.test.cjs",
+    "titles": [
+      "workspace HTTP API rejects paths/force/ref injection and preserves operation error codes"
+    ]
+  },
+  {
+    "file": "tests/phase2/domain.test.cjs",
+    "titles": [
+      "managed paths use IDs, reject traversal, symlink escape and case collisions",
+      "Phase1 database upgrades atomically and idempotently without changing legacy rows",
+      "an existing Phase1 DB rolls back partial Phase2 DDL and preserves resources on retry"
+    ]
+  },
+  {
+    "file": "tests/phase2/locks.test.cjs",
+    "titles": [
+      "cross-process POSIX locks release after owner crash, success and errors",
+      "repository mutation matrix and execution lease exclusivity",
+      "real Git timeout and controller crash during Git release locks after child termination"
+    ]
+  },
+  {
+    "file": "tests/phase2/recovery.test.cjs",
+    "titles": [
+      "worktree deletion DB failure is recoverable by reconstruction without resetting local history",
+      "repository delete can retry after filesystem success and DB failure",
+      "operation timeout persists ERROR and releases mutation lease",
+      "ignored files and symlink replacement protect user data; orphan worktrees are diagnosed",
+      "remote spelling changes preserve identity and storage while protecting legacy subscriptions",
+      "Git core.worktree override cannot redirect status or mutations outside managed checkout"
+    ]
+  },
+  {
+    "file": "tests/phase2/workspace.test.cjs",
+    "titles": [
+      "bare initialization is persistent; fetch updates/prunes remote refs and uses current credentials",
+      "branch worktrees share objects; fetch never moves a worktree; update is explicit FF only",
+      "dirty, staged, ignored/untracked and conflicts are visible and protected",
+      "local commits are retained; diverged and detached worktrees cannot be reset by update/delete",
+      "execution leases block mutation and prune; missing worktrees remain records and repair preserves branch",
+      "non-git storage and managed-path symlink replacements never trigger recursive deletion"
+    ]
+  },
+  {
+    "file": "tests/phase3/cron-publication.test.cjs",
+    "titles": [
+      "strict Managed crontab install reports errors while original default behavior is preserved"
+    ]
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "titles": [
+      "staging uses original discovery metadata and leaves live scripts unchanged",
+      "invalid regular expression fails before publishing",
+      "autoAddCron=false still copies scripts",
+      "extensions, include/exclude, dependency copy and nested TypeScript keep old scanner semantics",
+      "autoDelCron=${autoDel} retains original removal semantics"
+    ]
+  },
+  {
+    "file": "tests/phase3/lease.test.cjs",
+    "titles": [
+      "staging Bash timeout kills its process group and releases the existing POSIX lease",
+      "preflight refuses an execution lease instead of accepting cached clean status"
+    ]
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "titles": [
+      "Phase3 migration is additive and idempotent; both existing subscription types remain Legacy",
+      "failed Phase3 DDL rolls back all added columns and can retry"
+    ]
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "titles": [
+      "explicit mode switch, first sync, retry without duplicate Tasks, FF update and rollback to Legacy",
+      "${state} Worktree preserves last scripts and Tasks",
+      "discovery failure preserves last good state and retry at same commit succeeds",
+      "shared repository/branch binding is retained and blocks worktree deletion",
+      "fetch, scanner, copy and Cron failures preserve Tasks; every failure can retry",
+      "network failure never reaches discovery",
+      "partial Cron registration failure restores original ID and scripts",
+      "retry at already updated commit applies old scanner add/drop",
+      "copy failure leaves current scripts intact",
+      "Managed leases block overlapping sync, update and binding changes",
+      "symlink source is refused without reading or copying outside data root",
+      "branch selection creates a new binding and preserves the old Worktree",
+      "${failure} stops before scripts and Task diff"
+    ]
+  },
+  {
+    "file": "tests/phase4/account-mode.test.cjs",
+    "titles": [
+      "scoped ${language} account concurrency keeps split secrets in private temporary logs"
+    ]
+  },
+  {
+    "file": "tests/phase4/api.test.cjs",
+    "titles": [
+      "real HTTP APIs mask secrets and validation errors, enforce scope and block open access"
+    ]
+  },
+  {
+    "file": "tests/phase4/domain.test.cjs",
+    "titles": [
+      "profile CRUD, uniqueness, default, clone secrets, and reference protection",
+      "secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors",
+      "profile precedence, manual task, disabled and wrong repository fail closed",
+      "SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation"
+    ]
+  },
+  {
+    "file": "tests/phase4/entrypoint.test.cjs",
+    "titles": [
+      "real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles"
+    ]
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "titles": [
+      "actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs",
+      "50 parallel isolated executions and frozen values after configuration update"
+    ]
+  },
+  {
+    "file": "tests/phase4/isolation.test.cjs",
+    "titles": [
+      "cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue",
+      "malformed scoped request JSON is never echoed by the HTTP error boundary"
+    ]
+  },
+  {
+    "file": "tests/phase4/legacy-characterization.test.cjs",
+    "titles": [
+      "pre-integration characterization: actual task.sh ${language} duplicates, disabled host fallback, spaces, templates"
+    ]
+  },
+  {
+    "file": "tests/phase4/migration.test.cjs",
+    "titles": [
+      "Phase 3 upgrade is additive, idempotent and indexed, with nullable bindings and unchanged globals",
+      "failed DDL rolls back tables, references and ledger, then safely retries"
+    ]
+  },
+  {
+    "file": "tests/phase4/redaction.test.cjs",
+    "titles": [
+      "streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values"
+    ]
+  },
+  {
+    "file": "tests/phase4/repository-deletion.test.cjs",
+    "titles": [
+      "profile references block repository filesystem deletion before mutation"
+    ]
+  },
+  {
+    "file": "tests/phase4/transport.test.cjs",
+    "titles": [
+      "snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment",
+      "unconfigured task never allocates a snapshot or changes global generated files"
+    ]
+  }
+]

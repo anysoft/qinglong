@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # 订阅与工作区绑定
 
 - 同 Repository、同 branch 复用 Phase 2 的唯一 `branch_key` 工作区；不同分支使用不同工作区，共享 bare 对象。

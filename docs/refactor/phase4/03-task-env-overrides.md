@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Task ENV Overrides
 
 Task 继续使用 Crontabs。Repository 身份只来自 `Crontab.sub_id → Subscription.repository_id`。自动发现不复制变量或 Profile ID；下次运行读取最新继承关系。Managed 与 Legacy 订阅都可继承，Git 模式不参与 ENV 选择。

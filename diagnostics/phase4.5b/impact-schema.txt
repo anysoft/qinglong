@@ -1,0 +1,95 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus List (1.6.12)
+
+  Indexed Repositories (1)
+
+  qinglong
+    Path:    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+    Indexed: 9/15/2026, 5:43:29 PM
+    Commit:  e3d3f17
+    Branch:  develop
+    Stats:   476 files, 7320 symbols, 18172 edges
+    Clusters:   309
+    Processes:  431
+
+
+  GitNexus Impact (1.6.12)
+{
+  "status": "ambiguous",
+  "message": "Found 2 symbols matching 'migrateSchema'. Blast radius differs per candidate (max 2 impacted at risk UNKNOWN; LOW among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "migrateSchema"
+  },
+  "direction": "upstream",
+  "totalCandidates": 2,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 2,
+  "maxRisk": "UNKNOWN",
+  "knownMaxRisk": "LOW",
+  "candidates": [
+    {
+      "uid": "Function:back/shared/schemaMigrations.ts:migrateSchema",
+      "name": "migrateSchema",
+      "kind": "Function",
+      "filePath": "back/shared/schemaMigrations.ts",
+      "line": 36,
+      "score": 0.56,
+      "impactedCount": 2,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 1
+    },
+    {
+      "uid": "Function:test/back/schema-migrations.test.cjs:fn@107:93.migrateSchema@123:4",
+      "name": "migrateSchema",
+      "kind": "Function",
+      "filePath": "test/back/schema-migrations.test.cjs",
+      "line": 124,
+      "score": 0.56,
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 0,
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+    }
+  ]
+}
+
+  GitNexus Impact (1.6.12)
+{
+  "error": "Target 'initData' not found",
+  "target": {
+    "name": "initData"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

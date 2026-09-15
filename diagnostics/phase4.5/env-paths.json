@@ -1,0 +1,632 @@
+[
+  {
+    "file": "back/api/scopedEnvironment.ts",
+    "line": 36,
+    "text": "router.get('/repositories', endpoint(async () => sequelize.query('SELECT r.id,r.name,r.default_env_profile_id,COUNT(p.id) AS profiles_count FROM Repositories r LEFT JOIN EnvironmentProfiles p ON p.repository_id=r.id GROUP BY r.id ORDER BY r.name', { type: QueryTypes.SELECT })));"
+  },
+  {
+    "file": "back/api/scopedEnvironment.ts",
+    "line": 37,
+    "text": "router.get('/tasks', endpoint(async () => sequelize.query('SELECT c.id,c.name,c.env_profile_id,c.sub_id,COUNT(v.id) AS variables_count FROM Crontabs c LEFT JOIN TaskEnvVariables v ON v.cron_id=c.id GROUP BY c.id ORDER BY c.id DESC', { type: QueryTypes.SELECT })));"
+  },
+  {
+    "file": "back/api/scopedEnvironment.ts",
+    "line": 49,
+    "text": "router.put(`/${scope}s/:id/profile`, endpoint(async req => Container.get(ScopedEnvVariableService).bind(scope, id(req), validate(Joi.object({ env_profile_id: Joi.number().integer().positive().allow(null).required() }), req.body).env_profile_id)));"
+  },
+  {
+    "file": "back/api/scopedEnvironment.ts",
+    "line": 55,
+    "text": "return { id: owner.id, env_profile_id: owner.env_profile_id, repository_id, profiles: repository_id ? await Container.get(RepositoryEnvProfileService).list(repository_id) : [] };"
+  },
+  {
+    "file": "back/config/const.ts",
+    "line": 29,
+    "text": "export const PYTHON_INSTALL_DIR = process.env.PYTHON_HOME;"
+  },
+  {
+    "file": "back/config/container.ts",
+    "line": 2,
+    "text": "return process.env.QL_CONTAINER === 'true';"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 38,
+    "text": "isDevelopment: process.env.NODE_ENV === 'development',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 39,
+    "text": "isProduction: process.env.NODE_ENV === 'production',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 58,
+    "text": "process.env.NODE_ENV = process.env.NODE_ENV || 'development';"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 65,
+    "text": "process.env.QL_DIR = qlHomePath.replace(/\\/$/g, '');"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 107,
+    "text": "const envFile = path.join(preloadPath, 'env.sh');"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 108,
+    "text": "const jsEnvFile = path.join(preloadPath, 'env.js');"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 109,
+    "text": "const pyEnvFile = path.join(preloadPath, 'env.py');"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 112,
+    "text": "const langEnvFile = path.join(preloadPath, 'lang_env.sh');"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 167,
+    "text": "'env.sh',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 168,
+    "text": "'env.js',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 169,
+    "text": "'env.py',"
+  },
+  {
+    "file": "back/config/util.ts",
+    "line": 747,
+    "text": "return process.env.DeployEnv === 'demo';"
+  },
+  {
+    "file": "back/data/cron.ts",
+    "line": 22,
+    "text": "env_profile_id?: number | null;"
+  },
+  {
+    "file": "back/data/cron.ts",
+    "line": 50,
+    "text": "this.env_profile_id = options.env_profile_id;"
+  },
+  {
+    "file": "back/data/cron.ts",
+    "line": 94,
+    "text": "env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 8,
+    "text": "default_env_profile_id?: number | null;"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 34,
+    "text": "default_env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 9,
+    "text": "env_profile_id?: number | null;"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 48,
+    "text": "this.env_profile_id = options.env_profile_id;"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 99,
+    "text": "env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 51,
+    "text": "app.get(`${config.api.prefix}/env.js`, serveEnv);"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 231,
+    "text": "// 确保 lang_env.sh 存在"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 243,
+    "text": "await envService.set_envs();"
+  },
+  {
+    "file": "back/schedule/health.ts",
+    "line": 88,
+    "text": "process.env.QL_CONTAINER === 'true'"
+  },
+  {
+    "file": "back/services/env.ts",
+    "line": 38,
+    "text": "await this.set_envs();"
+  },
+  {
+    "file": "back/services/env.ts",
+    "line": 56,
+    "text": "await this.set_envs();"
+  },
+  {
+    "file": "back/services/env.ts",
+    "line": 67,
+    "text": "await this.set_envs();"
+  },
+  {
+    "file": "back/services/env.ts",
+    "line": 181,
+    "text": "await this.set_envs();"
+  },
+  {
+    "file": "back/services/env.ts",
+    "line": 186,
+    "text": "await this.set_envs();"
+  },
+  {
+    "file": "back/services/env.ts",
+    "line": 191,
+    "text": "await this.set_envs();"
+  },
+  {
+    "file": "back/services/env.ts",
+    "line": 240,
+    "text": "public async set_envs() {"
+  },
+  {
+    "file": "back/services/env.ts",
+    "line": 269,
+    "text": "py_env_string += `os.environ['${key}']='''${_env_value.replace("
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 28,
+    "text": "SubscriptionModel.count({ where: { env_profile_id: id } }),"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 29,
+    "text": "CrontabModel.count({ where: { env_profile_id: id } }),"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 32,
+    "text": "return { ...profile, is_default: repository?.default_env_profile_id === id, variables_count: count, used_by: { subscriptions, tasks, repository_default: repository?.default_env_profile_id === id } };"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 35,
+    "text": "const rows = await sequelize.query<any>(`SELECT p.*, r.default_env_profile_id=p.id AS is_default,"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 37,
+    "text": "(SELECT COUNT(*) FROM Subscriptions s WHERE s.env_profile_id=p.id) AS subscriptions_count,"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 38,
+    "text": "(SELECT COUNT(*) FROM Crontabs c WHERE c.env_profile_id=p.id) AS tasks_count"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 58,
+    "text": "if (input.is_default === true) await RepositoryModel.update({ default_env_profile_id: row!.id }, { where: { id: repository_id }, transaction });"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 59,
+    "text": "if (input.is_default === false) await RepositoryModel.update({ default_env_profile_id: null }, { where: { id: repository_id, default_env_profile_id: row!.id }, transaction });"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 86,
+    "text": "for (const [model, key] of [[RepositoryModel, 'default_env_profile_id'], [SubscriptionModel, 'env_profile_id'], [CrontabModel, 'env_profile_id']] as const) {"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 71,
+    "text": "await sub.update({ env_profile_id: profileId }, { transaction });"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 77,
+    "text": "await task.update({ env_profile_id: profileId }, { transaction });"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 81,
+    "text": "return { env_profile_id: profileId };"
+  },
+  {
+    "file": "back/services/system.ts",
+    "line": 564,
+    "text": "// Write to standalone lang_env.sh, sourced by shell scripts"
+  },
+  {
+    "file": "back/services/system.ts",
+    "line": 571,
+    "text": "this.logger.error(`Failed to write lang_env.sh: ${error}`);"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 54,
+    "text": "const profileId = task.env_profile_id ?? sub?.env_profile_id ?? repo?.default_env_profile_id;"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 62,
+    "text": "selected_by: task.env_profile_id != null ? 'TASK' : sub?.env_profile_id != null ? 'SUBSCRIPTION' : repo?.default_env_profile_id != null ? 'REPOSITORY' : 'NONE', version: 1,"
+  },
+  {
+    "file": "back/shared/scopedEnvMigration.ts",
+    "line": 21,
+    "text": "for (const [table, column] of [['Repositories', 'default_env_profile_id'], ['Subscriptions', 'env_profile_id'], ['Crontabs', 'env_profile_id']]) {"
+  },
+  {
+    "file": "docker/docker-entrypoint.sh",
+    "line": 110,
+    "text": ". $dir_shell/env.sh"
+  },
+  {
+    "file": "sample/notify.js",
+    "line": 173,
+    "text": "const v = process.env[key];"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 320,
+    "text": "export PREV_NODE_OPTIONS=\"${NODE_OPTIONS:=}\""
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 321,
+    "text": "export PREV_PYTHONPATH=\"${PYTHONPATH:=}\""
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 396,
+    "text": "export NODE_OPTIONS=\"${PREV_NODE_OPTIONS}\""
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 397,
+    "text": "export PYTHONPATH=\"${PREV_PYTHONPATH}\""
+  },
+  {
+    "file": "shell/preload/scoped-env.js",
+    "line": 8,
+    "text": "for (const name of snapshot.unset) delete process.env[name];"
+  },
+  {
+    "file": "shell/preload/scoped-env.js",
+    "line": 9,
+    "text": "for (const [name, value] of Object.entries(snapshot.overlay)) process.env[name] = value;"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 5,
+    "text": "const scopedEnvironment = require('./scoped-env.js');"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 6,
+    "text": "require(scopedEnvironment.directory ? path.join(scopedEnvironment.directory, 'global.js') : './env.js');"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 69,
+    "text": "PREV_NODE_OPTIONS,"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 73,
+    "text": "process.env.NODE_OPTIONS = PREV_NODE_OPTIONS;"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 111,
+    "text": "process.env[key] = newEnvObject[key];"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 146,
+    "text": "const array = (process.env[envParam] || '').split('&');"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 150,
+    "text": "process.env[envParam] = envStr;"
+  },
+  {
+    "file": "shell/preload/sitecustomize.py",
+    "line": 47,
+    "text": "prev_pythonpath = os.getenv(\"PREV_PYTHONPATH\", \"\")"
+  },
+  {
+    "file": "shell/preload/sitecustomize.py",
+    "line": 48,
+    "text": "os.environ[\"PYTHONPATH\"] = prev_pythonpath"
+  },
+  {
+    "file": "shell/preload/sitecustomize.py",
+    "line": 87,
+    "text": "os.environ[key] = value"
+  },
+  {
+    "file": "shell/preload/sitecustomize.py",
+    "line": 129,
+    "text": "os.environ[env_param] = env_str"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 29,
+    "text": "export file_env=$dir_preload/env.sh"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 81,
+    "text": "[[ -f $dir_preload/lang_env.sh ]] && . $dir_preload/lang_env.sh"
+  },
+  {
+    "file": "shell/start.sh",
+    "line": 99,
+    "text": ". ${QL_DIR}/shell/env.sh"
+  },
+  {
+    "file": "shell/task.sh",
+    "line": 163,
+    "text": "if [[ -f \"$dir_shell/task_env.sh\" ]]; then"
+  },
+  {
+    "file": "shell/task.sh",
+    "line": 164,
+    "text": ". \"$dir_shell/task_env.sh\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 8,
+    "text": ". $dir_shell/env.sh"
+  },
+  {
+    "file": "src/.umi-production/core/plugin.ts",
+    "line": 19,
+    "text": "path: process.env.NODE_ENV === 'production' ? void 0 : '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/src/app.ts',"
+  },
+  {
+    "file": "src/.umi-production/core/plugin.ts",
+    "line": 23,
+    "text": "path: process.env.NODE_ENV === 'production' ? void 0 : '@@/core/helmet.ts',"
+  },
+  {
+    "file": "src/.umi-production/core/plugin.ts",
+    "line": 27,
+    "text": "path: process.env.NODE_ENV === 'production' ? void 0 : '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/src/.umi-production/plugin-locale/runtime.tsx',"
+  },
+  {
+    "file": "src/.umi-production/core/route.tsx",
+    "line": 6,
+    "text": "if (process.env.NODE_ENV === 'development') {"
+  },
+  {
+    "file": "src/.umi-production/core/terminal.ts",
+    "line": 7,
+    "text": "if(process.env.NODE_ENV==='production'){"
+  },
+  {
+    "file": "src/components/scoped-environment.tsx",
+    "line": 54,
+    "text": "{context && <><span>Repository Profile</span><Select aria-label=\"Repository Profile\" style={{ width: '100%' }} disabled={!context.repository_id} value={context.env_profile_id ?? null} options={[{ value: null, label: context.repository_id ? 'Inherit — Subscription / Repository Default' : 'Unavailable — 无仓库上下文' }, ...context.profiles.map((p: any) => ({ value: p.id, label: `${p.name}${p.is_default ? ' (Default)' : ''}${p.status === 'disabled' ? ' (Disabled)' : ''}` }))]} onChange={async value => { const r = await request.put(`${api}${resource}/${id}/profile`, { env_profile_id: value }); if (r.code === 200) { await load(); setPreview(undefined); message.success('Profile 绑定已保存'); } }} /></>}"
+  },
+  {
+    "file": "src/pages/env/index.tsx",
+    "line": 578,
+    "text": "exportJson('env.json', JSON.stringify(envs));"
+  },
+  {
+    "file": "test/back/ecosystem.test.cjs",
+    "line": 10,
+    "text": "process.env.QL_CONTAINER = containerValue;"
+  },
+  {
+    "file": "test/back/http-exclusive-listen.test.cjs",
+    "line": 24,
+    "text": "t.after(()=>{if(previous===undefined)delete process.env.QL_HTTP_SHARED_LISTEN;else process.env.QL_HTTP_SHARED_LISTEN=previous;});"
+  },
+  {
+    "file": "test/back/http-exclusive-listen.test.cjs",
+    "line": 26,
+    "text": "if(value===undefined)delete process.env.QL_HTTP_SHARED_LISTEN;else process.env.QL_HTTP_SHARED_LISTEN=value;"
+  },
+  {
+    "file": "test/back/qlServiceLogCommand.test.cjs",
+    "line": 40,
+    "text": "fs.writeFileSync(path.join(shellDir, 'env.sh'), '');"
+  },
+  {
+    "file": "test/back/schedule-health.test.cjs",
+    "line": 32,
+    "text": "process.env.QL_CONTAINER = originalContainer;"
+  },
+  {
+    "file": "test/back/schedule-health.test.cjs",
+    "line": 71,
+    "text": "process.env.QL_CONTAINER = 'true';"
+  },
+  {
+    "file": "tests/phase0/database-baseline.test.cjs",
+    "line": 41,
+    "text": "const fk=await sequelize.query('PRAGMA foreign_key_list(\"Crontabs\")', {type:Sequelize.QueryTypes.SELECT});assert.equal(fk.length,1);assert.equal(fk[0].from,'env_profile_id');assert.equal(fk[0].table,'EnvironmentProfiles');"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 14,
+    "text": "'../config':{envFile:'env.sh',jsEnvFile:'env.js',pyEnvFile:'env.py'},"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 28,
+    "text": "await service.set_envs();"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 29,
+    "text": "const context={process:{env:{}}};vm.runInNewContext(generated['env.js'],context);"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 33,
+    "text": "fs.writeFileSync(path.join(dir,'env.py'),generated['env.py']);"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 36,
+    "text": "const sh=spawnSync('/bin/bash',['-c',generated['env.sh']+'printf \"%s\\\\n%s\\\\n\" \"$BASELINE_ENV\" \"${DISABLED_ENV-missing}\"'],{encoding:'utf8',env:{PATH:process.env.PATH}});"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 40,
+    "text": "const {service,generated}=envService([{name:'MARKER',value:'${6*7}',status:0}]);await service.set_envs();"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 41,
+    "text": "const context={process:{env:{}}};vm.runInNewContext(generated['env.js'],context);"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 42,
+    "text": "assert.equal(context.process.env.MARKER,'42');assert.match(generated['env.sh'],/\\$\\{6\\*7\\}/);"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 45,
+    "text": "const {service,generated}=envService([{name:'MARKER',value:' A ',status:0}]);await service.set_envs();"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 46,
+    "text": "assert.equal(generated['env.sh'],\"export MARKER='A'\\n\");"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 47,
+    "text": "const context={process:{env:{}}};vm.runInNewContext(generated['env.js'],context);assert.equal(context.process.env.MARKER,' A ');"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 101,
+    "text": "fs.writeFileSync(path.join(dir,'shell/preload/env.sh'),\"export BASELINE_ENV='A&B'\\n\");"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 102,
+    "text": "fs.writeFileSync(path.join(dir,'shell/preload/env.js'),\"process.env.BASELINE_ENV='A&B';\\n\");"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 103,
+    "text": "fs.writeFileSync(path.join(dir,'shell/preload/env.py'),\"import os\\nos.environ['BASELINE_ENV']='A&B'\\n\");"
+  },
+  {
+    "file": "tests/phase3/cron-publication.test.cjs",
+    "line": 4,
+    "text": "const dir=await fs.mkdtemp(path.join(os.tmpdir(),'ql-cron3-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));const previous=process.env.QL_SCHEDULER;process.env.QL_SCHEDULER='system';t.after(()=>{if(previous===undefined)delete process.env.QL_SCHEDULER;else process.env.QL_SCHEDULER=previous;});"
+  },
+  {
+    "file": "tests/phase4/account-mode.test.cjs",
+    "line": 5,
+    "text": "const h = await setup(t); await h.globals.set_envs();"
+  },
+  {
+    "file": "tests/phase4/account-mode.test.cjs",
+    "line": 9,
+    "text": "const scripts = { sh: 'printf \"ACCOUNT:%s\\\\n\" \"$ACCOUNTS\"', js: 'console.log(\"ACCOUNT:\"+process.env.ACCOUNTS)', py: 'import os\\nprint(\"ACCOUNT:\"+os.environ[\"ACCOUNTS\"])' };"
+  },
+  {
+    "file": "tests/phase4/api.test.cjs",
+    "line": 21,
+    "text": "assert.equal((await call(`/scoped-env/tasks/${task.id}/profile`, 'PUT', { env_profile_id: id })).body.message, 'ENV_PROFILE_REPOSITORY_MISMATCH');"
+  },
+  {
+    "file": "tests/phase4/entrypoint.test.cjs",
+    "line": 10,
+    "text": "await h.variables.save('repository', p.id, [{ name: 'BRIDGE_TOKEN', value: 'bridge-private', is_secret: true }]); await h.globals.set_envs();"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 12,
+    "text": "await h.EnvModel.bulkCreate([{ name: 'TOKEN', value: 'global', status: 0 }, { name: 'REMOVE', value: 'global', status: 0 }]); await h.globals.set_envs();"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 17,
+    "text": "fs.writeFileSync(path.join(h.dir, 'data/scripts/check.js'), `require('fs').writeFileSync(process.env.OUT,JSON.stringify(Object.fromEntries(${JSON.stringify(names)}.filter(k=>k in process.env).map(k=>[k,process.env[k]])))); console.log(process.env.TOKEN);`);"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 18,
+    "text": "fs.writeFileSync(path.join(h.dir, 'data/scripts/check.py'), `import os,json\\nwith open(os.environ['OUT'],'w') as f: json.dump({k:os.environ[k] for k in ${JSON.stringify(names)} if k in os.environ},f)\\nprint(os.environ['TOKEN'])\\n`);"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 19,
+    "text": "fs.writeFileSync(path.join(h.dir, 'data/scripts/check.sh'), 'node -e \\'require(\"fs\").writeFileSync(process.env.OUT,JSON.stringify(Object.fromEntries(' + JSON.stringify(names) + '.filter(k=>k in process.env).map(k=>[k,process.env[k]]))))\\'\\nprintf \"%s\\\\n\" \"$TOKEN\"\\n');"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 34,
+    "text": "const h = await setup(t); await h.globals.set_envs();"
+  },
+  {
+    "file": "tests/phase4/helpers.cjs",
+    "line": 9,
+    "text": "const config = { rootPath: dir, dataPath: path.join(dir, 'data'), envFile: path.join(dir, 'shell/preload/env.sh'), jsEnvFile: path.join(dir, 'shell/preload/env.js'), pyEnvFile: path.join(dir, 'shell/preload/env.py') };"
+  },
+  {
+    "file": "tests/phase4/isolation.test.cjs",
+    "line": 5,
+    "text": "const h = await setup(t); await h.globals.set_envs();"
+  },
+  {
+    "file": "tests/phase4/legacy-characterization.test.cjs",
+    "line": 11,
+    "text": "await h.globals.set_envs();"
+  },
+  {
+    "file": "tests/phase4/legacy-characterization.test.cjs",
+    "line": 12,
+    "text": "const source = { sh: 'printf \"RESULT:%s|%s|%s|%s\\\\n\" \"$DUP\" \"$DISABLED\" \"$SPACES\" \"$TEMPLATE\"', js: 'console.log(\"RESULT:\"+[\"DUP\",\"DISABLED\",\"SPACES\",\"TEMPLATE\"].map(k=>process.env[k]).join(\"|\"))', py: 'import os\\nprint(\"RESULT:\"+\"|\".join(os.environ[k] for k in [\"DUP\",\"DISABLED\",\"SPACES\",\"TEMPLATE\"]))' };"
+  },
+  {
+    "file": "tests/phase4/migration.test.cjs",
+    "line": 12,
+    "text": "for (const [table, key] of [['Repositories', 'default_env_profile_id'], ['Subscriptions', 'env_profile_id'], ['Crontabs', 'env_profile_id']]) {"
+  },
+  {
+    "file": "tests/phase4/migration.test.cjs",
+    "line": 21,
+    "text": "await assert.rejects(db.query('UPDATE Crontabs SET env_profile_id=999'));"
+  },
+  {
+    "file": "tests/phase4/transport.test.cjs",
+    "line": 4,
+    "text": "const h = await setup(t); await h.globals.set_envs();"
+  },
+  {
+    "file": "tests/phase4/transport.test.cjs",
+    "line": 21,
+    "text": "const h = await setup(t), task = await h.CrontabModel.create({ command: 'task a.sh' }); await h.globals.set_envs();"
+  }
+]

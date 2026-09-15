@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](docs/architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Phase 3 Status
 
 **PASS** — 已实现显式启用的 Subscription Git Pipeline v2。Managed 使用持久 Repository fetch + Worktree FF-only 更新，随后继续原发现、scripts copy 和 Task 执行模型。

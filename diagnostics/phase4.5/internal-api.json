@@ -1,0 +1,567 @@
+[
+  {
+    "file": "back/api/gitResources.ts",
+    "line": 47,
+    "text": "if (/^\\/open\\//i.test(req.originalUrl))"
+  },
+  {
+    "file": "back/api/index.ts",
+    "line": 8,
+    "text": "import open from './open';"
+  },
+  {
+    "file": "back/api/open.ts",
+    "line": 3,
+    "text": "import OpenService from '../services/open';"
+  },
+  {
+    "file": "back/api/workspace.ts",
+    "line": 22,
+    "text": "if (/^\\/open\\//i.test(req.originalUrl))"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 179,
+    "text": "'/open/auth/token',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 184,
+    "text": "'/open/user/login',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 185,
+    "text": "'/open/user/two-factor/login',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 186,
+    "text": "'/open/system',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 187,
+    "text": "'/open/user/init',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 188,
+    "text": "'/open/user/notification/init',"
+  },
+  {
+    "file": "back/config/util.ts",
+    "line": 111,
+    "text": "} else if (testUa(/openharmony/g)) {"
+  },
+  {
+    "file": "back/loaders/db.ts",
+    "line": 5,
+    "text": "import { AppModel } from '../data/open';"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 16,
+    "text": "import { AppScope } from '../data/open';"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 62,
+    "text": "const credentialPaths = ['/api', '/open'].flatMap((prefix) =>"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 100,
+    "text": "if (!['/open/', '/api/'].some((x) => pathLower.startsWith(x))) {"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 105,
+    "text": "if (pathLower.startsWith('/open/')) {"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 112,
+    "text": "const keyMatch = pathLower.match(/\\/open\\/([a-z]+)\\/*/);"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 162,
+    "text": "'/open/user/init',"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 163,
+    "text": "'/open/user/notification/init',"
+  },
+  {
+    "file": "back/loaders/express.ts",
+    "line": 179,
+    "text": "app.use(rewrite('/open/*', '/api/$1'));"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 17,
+    "text": "import OpenService from '../services/open';"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 21,
+    "text": "import { AppModel } from '../data/open';"
+  },
+  {
+    "file": "back/middlewares/monitoring.ts",
+    "line": 6,
+    "text": "const UNMONITORED_PATH_SUFFIXES = ['/api/health', '/open/health'];"
+  },
+  {
+    "file": "back/middlewares/protectedPathCase.ts",
+    "line": 14,
+    "text": "normalizedPath.startsWith('/open/'))"
+  },
+  {
+    "file": "back/services/notify.ts",
+    "line": 431,
+    "text": "url = 'https://api-bot.aibotk.com/openapi/v1/chat/room';"
+  },
+  {
+    "file": "back/services/notify.ts",
+    "line": 442,
+    "text": "url = 'https://api-bot.aibotk.com/openapi/v1/chat/contact';"
+  },
+  {
+    "file": "back/services/notify.ts",
+    "line": 568,
+    "text": "larkKey = `https://open.feishu.cn/open-apis/bot/v2/hook/${larkKey}`;"
+  },
+  {
+    "file": "back/services/open.ts",
+    "line": 4,
+    "text": "import { App, AppModel } from '../data/open';"
+  },
+  {
+    "file": "back/shared/store.ts",
+    "line": 2,
+    "text": "import { App } from '../data/open';"
+  },
+  {
+    "file": "back/token.ts",
+    "line": 2,
+    "text": "import OpenService from './services/open';"
+  },
+  {
+    "file": "sample/config.sample.sh",
+    "line": 270,
+    "text": "## 官方文档: https://openilink.com/docs/hub/apps"
+  },
+  {
+    "file": "sample/notify.js",
+    "line": 161,
+    "text": "// 官方文档: https://openilink.com/docs/hub/apps"
+  },
+  {
+    "file": "sample/notify.js",
+    "line": 958,
+    "text": "url = 'https://api-bot.aibotk.com/openapi/v1/chat/room';"
+  },
+  {
+    "file": "sample/notify.js",
+    "line": 969,
+    "text": "url = 'https://api-bot.aibotk.com/openapi/v1/chat/contact';"
+  },
+  {
+    "file": "sample/notify.js",
+    "line": 1034,
+    "text": "url: `https://open.feishu.cn/open-apis/bot/v2/hook/${FSKEY}`,"
+  },
+  {
+    "file": "sample/notify.py",
+    "line": 147,
+    "text": "'OPENILINK_APP_TOKEN': '',          # OpeniLink 的 app_token，在 OpeniLink Hub 后台安装 App 后获取 官方文档: https://openilink.com/docs/hub/apps"
+  },
+  {
+    "file": "sample/notify.py",
+    "line": 252,
+    "text": "url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{push_config.get(\"FSKEY\")}'"
+  },
+  {
+    "file": "sample/notify.py",
+    "line": 673,
+    "text": "url = \"https://api-bot.aibotk.com/openapi/v1/chat/room\""
+  },
+  {
+    "file": "sample/notify.py",
+    "line": 680,
+    "text": "url = \"https://api-bot.aibotk.com/openapi/v1/chat/contact\""
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 48,
+    "text": "add_cron_api() {"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 67,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/crons?t=$currentTimeStamp\" \\"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 82,
+    "text": "update_cron_api() {"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 97,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/crons?t=$currentTimeStamp\" \\"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 113,
+    "text": "update_cron_command_api() {"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 124,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/crons?t=$currentTimeStamp\" \\"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 140,
+    "text": "del_cron_api() {"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 144,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/crons?t=$currentTimeStamp\" \\"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 160,
+    "text": "update_cron() {"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 175,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/crons/status?t=$currentTimeStamp\" \\"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 191,
+    "text": "notify_api() {"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 196,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/system/notify?t=$currentTimeStamp\" \\"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 216,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/crons/detail?$params&t=$currentTimeStamp\" \\"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 235,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/system/auth/reset?t=$currentTimeStamp\" \\"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 251,
+    "text": "record_cron_stat() {"
+  },
+  {
+    "file": "shell/api.sh",
+    "line": 258,
+    "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port:-5700}/open/dashboard/record\" \\"
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 49,
+    "text": "add_cron_api() {"
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 58,
+    "text": "del_cron_api() { printf '[%s]\\n' \"$1\" | jq -c . >> \"$stage_dir/drop.jsonl\" || printf '%s\\n' DISCOVERY_FAILED > \"$failure_marker\"; }"
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 59,
+    "text": "notify_api() { jq -cn --arg title \"$1\" --arg content \"$2\" '{title:$title,content:$content}' >> \"$stage_dir/notifications.jsonl\" || printf '%s\\n' DISCOVERY_FAILED > \"$failure_marker\"; }"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 392,
+    "text": "local error=$(update_cron \"\\\"$ID\\\"\" \"0\" \"$$\" \"$log_path\" \"$begin_timestamp\")"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 434,
+    "text": "local error=$(update_cron \"\\\"$ID\\\"\" \"1\" \"$$\" \"$log_path\" \"$begin_timestamp\" \"$diff_time\" \"$exit_code\")"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 440,
+    "text": "record_cron_stat \"$ID\" \"${exit_code:-0}\" \"$diff_time\""
+  },
+  {
+    "file": "shell/task.sh",
+    "line": 5,
+    "text": ". $dir_shell/api.sh"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 6,
+    "text": ". $dir_shell/api.sh"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 71,
+    "text": "result=$(del_cron_api \"$ids\")"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 72,
+    "text": "notify_api \"$path 删除任务${result}\" \"$detail\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 104,
+    "text": "result=$(add_cron_api \"${cron_line}:${cmd_task} ${file}:${cron_name}:${SUB_ID}\")"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 113,
+    "text": "notify_api \"$path 新增任务\" \"$detail\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 195,
+    "text": "result=$(add_cron_api \"${cron_line}:${cmd_task} ${filename}:${cron_name}:${SUB_ID}\")"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 197,
+    "text": "notify_api \"新增任务通知\" \"\\n$result\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 198,
+    "text": "# update_cron_api \"$cron_line:$cmd_task $filename:$cron_name:$cron_id\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 487,
+    "text": "#   result=$(update_cron_command_api \"$cmd_task ${uniq_path}/${filename}:$cron_id\")"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 561,
+    "text": "[[ $ID ]] && update_cron \"\\\"$ID\\\"\" \"0\" \"$$\" \"$log_path\" \"$begin_timestamp\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 624,
+    "text": "[[ $ID ]] && update_cron \"\\\"$ID\\\"\" \"1\" \"$$\" \"$log_path\" \"$begin_timestamp\" \"$diff_time\""
+  },
+  {
+    "file": "src/utils/config.ts",
+    "line": 407,
+    "text": "'OpeniLink的app_token，在OpeniLink Hub后台安装App后获取，参考 https://openilink.com/docs/hub/apps',"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 78,
+    "text": "'../data/open': {},"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 131,
+    "text": "'/open/user/init',"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 133,
+    "text": "'/panel/open/user/init',"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 163,
+    "text": "for (const prefix of ['/api', '/open', '/panel/api', '/panel/open']) {"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 176,
+    "text": "assert.equal((await request('/open/envs', 'env-app')).body.code, 200);"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 178,
+    "text": "(await request('/open/configs/detail?path=normal.txt', 'env-app')).status,"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 182,
+    "text": "(await request('/open/configs/detail?path=normal.txt', 'config-app')).body"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 187,
+    "text": "(await request('/open/configs/detail?path=grpc/client.key', 'config-app'))"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 193,
+    "text": "await request('/open/configs/save', 'config-app', 'POST', {"
+  },
+  {
+    "file": "test/back/protected-path-case.test.cjs",
+    "line": 34,
+    "text": "'/OPEN/scripts/detail',"
+  },
+  {
+    "file": "test/back/protected-path-case.test.cjs",
+    "line": 35,
+    "text": "'/open/scripts/Detail',"
+  },
+  {
+    "file": "test/back/protected-path-case.test.cjs",
+    "line": 48,
+    "text": "'/open/scripts/detail',"
+  },
+  {
+    "file": "test/back/protected-path-case.test.cjs",
+    "line": 49,
+    "text": "'/OpenApi/status',"
+  },
+  {
+    "file": "test/back/qlServiceLogCommand.test.cjs",
+    "line": 39,
+    "text": "fs.writeFileSync(path.join(shellDir, 'api.sh'), '');"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 8,
+    "text": ".readFileSync(path.resolve('shell/api.sh'), 'utf8')"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 97,
+    "text": "const r = f.run('update_cron 1 0 123 log 1');"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 109,
+    "text": "'update_cron 1 1 123 log 1 2 7',"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 110,
+    "text": "'record_cron_stat 1 7 2',"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 121,
+    "text": "let r = f.run('update_cron 1 0 123 log 1');"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 125,
+    "text": "r = f.run('record_cron_stat 1 7 2');"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 131,
+    "text": "const r = f.run('record_cron_stat \"\" 0 1 || true');"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 140,
+    "text": "'code=500; message=old; ql_parse_status_response \"$(cat \"$RESPONSE_FILE\")\"; printf \"%s|%s\" \"$code\" \"$message\"; record_cron_stat 1 0 1',"
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 179,
+    "text": "const r = f.run('update_cron 1 0 123 log 1');"
+  },
+  {
+    "file": "test/back/task-time.test.cjs",
+    "line": 36,
+    "text": "update_cron() { printf '%s\\\\n' \"$*\" >> \"$TEST_DIR/status\"; }"
+  },
+  {
+    "file": "test/back/task-time.test.cjs",
+    "line": 37,
+    "text": "record_cron_stat() { printf '%s\\\\n' \"$*\" >> \"$TEST_DIR/stats\"; }"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 33,
+    "text": "notify_api() { :; }"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 34,
+    "text": "add_cron_api() { printf '%s\\\\n' \"$1\" >> \"$TEST_DIR/created\"; }"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 35,
+    "text": "del_cron_api() { printf '%s\\\\n' \"$1\" >> \"$TEST_DIR/deleted\"; }"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 100,
+    "text": "fs.writeFileSync(path.join(dir,'shell/api.sh'),`update_cron() { printf '%s\\\\n' \"$*\" >> \"$QL_DIR/status\"; }\\nrecord_cron_stat() { printf '%s\\\\n' \"$*\" >> \"$QL_DIR/stats\"; }\\n`);"
+  },
+  {
+    "file": "tests/phase1/api.test.cjs",
+    "line": 53,
+    "text": "'/open',"
+  },
+  {
+    "file": "tests/phase1/api.test.cjs",
+    "line": 77,
+    "text": "assert.equal((await request('/open/git-credentials')).status, 403);"
+  },
+  {
+    "file": "tests/phase1/pipeline.test.cjs",
+    "line": 30,
+    "text": "path.join(dir, 'shell/api.sh'),"
+  },
+  {
+    "file": "tests/phase1/pipeline.test.cjs",
+    "line": 31,
+    "text": "`add_cron_api() { printf '%s\\\\n' \"$1\" >> \"$QL_DIR/created\"; }\\ndel_cron_api() { :; }\\nnotify_api() { :; }\\nupdate_cron() { :; }\\n`,"
+  },
+  {
+    "file": "tests/phase2/api.test.cjs",
+    "line": 17,
+    "text": "'/open',"
+  },
+  {
+    "file": "tests/phase2/api.test.cjs",
+    "line": 70,
+    "text": "assert.equal((await request(`/open/worktrees/${id}`)).status, 403);"
+  },
+  {
+    "file": "tests/phase4/api.test.cjs",
+    "line": 11,
+    "text": "const open = express.Router(); h.get('api/scopedEnvironment').default(open); app.use('/open', open); app.use('/panel/open', open);"
+  },
+  {
+    "file": "tests/phase4/api.test.cjs",
+    "line": 23,
+    "text": "assert.equal((await call(`/open/scoped-env/profiles/${id}`)).status, 403);"
+  },
+  {
+    "file": "tests/phase4/api.test.cjs",
+    "line": 24,
+    "text": "assert.equal((await call(`/panel/open/scoped-env/profiles/${id}`)).status, 403);"
+  },
+  {
+    "file": "tests/phase4/helpers.cjs",
+    "line": 21,
+    "text": "fs.writeFileSync(path.join(dir, 'shell/api.sh'), 'update_cron() { :; }\\nrecord_cron_stat() { :; }\\n');"
+  }
+]

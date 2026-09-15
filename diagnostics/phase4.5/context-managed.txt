@@ -1,0 +1,138 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Context (1.6.12)
+{
+  "status": "found",
+  "symbol": {
+    "uid": "Class:back/services/managedSubscription.ts:ManagedSubscriptionService",
+    "name": "ManagedSubscriptionService",
+    "kind": "Class",
+    "filePath": "back/services/managedSubscription.ts",
+    "startLine": 14,
+    "endLine": 334
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "imports": [
+      {
+        "uid": "File:back/api/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/api/subscription.ts"
+      },
+      {
+        "uid": "File:back/gitSubscription.ts",
+        "name": "gitSubscription.ts",
+        "filePath": "back/gitSubscription.ts"
+      },
+      {
+        "uid": "File:back/services/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/services/subscription.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "has_property": [
+      {
+        "name": "storage",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "name": "worktrees",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "name": "resolver",
+        "filePath": "back/services/managedSubscription.ts"
+      }
+    ],
+    "has_method": [
+      {
+        "uid": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.run.fn@109:30.mark@114:6",
+        "name": "mark",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.stage.checkpoint@298:8",
+        "name": "checkpoint",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.stage.cleanup@324:8",
+        "name": "cleanup",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.stage.lines@274:6",
+        "name": "lines",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.stage.notify@301:8",
+        "name": "notify",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.stage.publish@310:8",
+        "name": "publish",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.stage.rollback@320:8",
+        "name": "rollback",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.validateFiles.walk@201:4",
+        "name": "walk",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.constructor#3",
+        "name": "constructor",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.exclusive#2",
+        "name": "exclusive",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.mode#2",
+        "name": "mode",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.preflight#1",
+        "name": "preflight",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.prepare#2",
+        "name": "prepare",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.run#1",
+        "name": "run",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.stage#4",
+        "name": "stage",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.validateFiles#1",
+        "name": "validateFiles",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.withBinding#2",
+        "name": "withBinding",
+        "filePath": "back/services/managedSubscription.ts"
+      }
+    ]
+  },
+  "processes": []
+}

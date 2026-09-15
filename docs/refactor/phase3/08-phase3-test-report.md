@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Phase 3 测试报告
 
 最终数字及构建、浏览器结果见根目录 [PHASE3_REPORT.md](../../../PHASE3_REPORT.md)。全部测试使用 Node 22，避免宿主 Node 26 与现有依赖兼容问题；均使用临时数据库、临时 Git 仓库，没有升级运行中的数据目录。

@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Secret Handling
 
 Secret 必须显式 is_secret=true，不根据 TOKEN/PASSWORD 等变量名猜测。SQLite 和备份仍是明文存储：**At-rest encryption remains a future security improvement.** 没有引入自制加密。

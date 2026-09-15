@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Legacy Compatibility
 
 改 Task execution 之前新增并通过三语言实际 task.sh characterization；原 Phase 0 基线也先运行通过。真实确认：enabled 重复值 A&B、disabled 不生成但宿主同名仍可见、Shell trim/Node-Python 保留空格、Node `${6*7}` 产生 42 而其他语言保持字面值。

@@ -1,0 +1,99 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Query (1.6.12)
+{
+  "processes": [
+    {
+      "id": "proc_411_stage",
+      "summary": "Stage → Root",
+      "priority": 0.107,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 5
+    },
+    {
+      "id": "proc_412_stage",
+      "summary": "Stage → WorkspaceError",
+      "priority": 0.107,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 5
+    },
+    {
+      "id": "proc_214_publishsubscription",
+      "summary": "PublishSubscription → GetUniqPath",
+      "priority": 0.104,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_215_publishsubscription",
+      "summary": "PublishSubscription → MakeCommand",
+      "priority": 0.104,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_216_publishsubscription",
+      "summary": "PublishSubscription → FormatViewSort",
+      "priority": 0.104,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 4
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.stage#4",
+      "name": "stage",
+      "filePath": "back/services/managedSubscription.ts",
+      "startLine": 216,
+      "endLine": 333,
+      "module": "Services",
+      "process_id": "proc_411_stage",
+      "step_index": 1
+    },
+    {
+      "id": "Method:back/services/cron.ts:CronService.publishSubscription#2",
+      "name": "publishSubscription",
+      "filePath": "back/services/cron.ts",
+      "startLine": 147,
+      "endLine": 252,
+      "module": "Services",
+      "process_id": "proc_214_publishsubscription",
+      "step_index": 1
+    }
+  ],
+  "definitions": [
+    {
+      "id": "Interface:back/shared/worktreeStatus.ts:WorktreeGitStatus",
+      "name": "WorktreeGitStatus",
+      "filePath": "back/shared/worktreeStatus.ts",
+      "startLine": 1,
+      "endLine": 16
+    },
+    {
+      "id": "Class:back/services/managedSubscription.ts:ManagedSubscriptionService",
+      "name": "ManagedSubscriptionService",
+      "filePath": "back/services/managedSubscription.ts",
+      "startLine": 14,
+      "endLine": 334
+    },
+    {
+      "id": "File:PHASE2_REPORT.md",
+      "name": "PHASE2_REPORT.md",
+      "filePath": "PHASE2_REPORT.md"
+    }
+  ],
+  "timing": {
+    "vector": 6.6,
+    "bm25": 68.7,
+    "merge": 0,
+    "symbol_lookup": 16.8,
+    "ranking": 0.1,
+    "formatting": 0.1,
+    "wall": 86.2
+  }
+}

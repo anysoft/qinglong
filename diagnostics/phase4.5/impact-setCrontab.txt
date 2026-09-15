@@ -1,0 +1,449 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Impact (1.6.12)
+{
+  "target": {
+    "id": "Method:back/services/cron.ts:CronService.setCrontab#2",
+    "name": "setCrontab",
+    "type": "Method",
+    "filePath": "back/services/cron.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 8,
+  "risk": "CRITICAL",
+  "riskSharedAxes": "MEDIUM",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 7,
+    "processes_affected": 7,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 7,
+    "2": 1
+  },
+  "affected_processes": [
+    {
+      "name": "publishSubscription",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 9,
+      "total_hits": 9,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "disabled",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 8,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "remove",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 8,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "autosave_crontab",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 7,
+      "total_hits": 7,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "enabled",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 7,
+      "total_hits": 7,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "create",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "update",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 8,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CronService.autosave_crontab#1",
+        "name": "autosave_crontab",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_35_autosave_crontab",
+            "label": "Autosave_crontab → FormatSearchText",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_36_autosave_crontab",
+            "label": "Autosave_crontab → FormatViewQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_301_autosave_crontab",
+            "label": "Autosave_crontab → FormatViewSort",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_34_autosave_crontab",
+            "label": "Autosave_crontab → FormatFilterQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_37_autosave_crontab",
+            "label": "Autosave_crontab → IsBootSchedule",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_94_autosave_crontab",
+            "label": "Autosave_crontab → IsNodeCron",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_38_autosave_crontab",
+            "label": "Autosave_crontab → IsOnceSchedule",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CronService.create#1",
+        "name": "create",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_179_create",
+            "label": "Create → IsNodeCron",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_154_create",
+            "label": "Create → GetUniqPath",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_152_create",
+            "label": "Create → IsBootSchedule",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_153_create",
+            "label": "Create → IsOnceSchedule",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CronService.disabled#1",
+        "name": "disabled",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_149_disabled",
+            "label": "Disabled → FormatFilterQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_151_disabled",
+            "label": "Disabled → FormatViewQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_231_disabled",
+            "label": "Disabled → IsNodeCron",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_155_disabled",
+            "label": "Disabled → MakeCommand",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_213_disabled",
+            "label": "Disabled → IsOnceSchedule",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_42_disabled",
+            "label": "Disabled → FormatViewSort",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_212_disabled",
+            "label": "Disabled → IsBootSchedule",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_150_disabled",
+            "label": "Disabled → FormatSearchText",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CronService.enabled#1",
+        "name": "enabled",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_209_enabled",
+            "label": "Enabled → FormatFilterQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_210_enabled",
+            "label": "Enabled → FormatSearchText",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_259_enabled",
+            "label": "Enabled → IsBootSchedule",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_274_enabled",
+            "label": "Enabled → IsNodeCron",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_156_enabled",
+            "label": "Enabled → FormatViewSort",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_211_enabled",
+            "label": "Enabled → FormatViewQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_260_enabled",
+            "label": "Enabled → IsOnceSchedule",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CronService.publishSubscription#2",
+        "name": "publishSubscription",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_257_publishsubscription",
+            "label": "PublishSubscription → FormatSearchText",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_214_publishsubscription",
+            "label": "PublishSubscription → GetUniqPath",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_216_publishsubscription",
+            "label": "PublishSubscription → FormatViewSort",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_258_publishsubscription",
+            "label": "PublishSubscription → FormatViewQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_311_publishsubscription",
+            "label": "PublishSubscription → IsNodeCron",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_256_publishsubscription",
+            "label": "PublishSubscription → FormatFilterQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_299_publishsubscription",
+            "label": "PublishSubscription → IsBootSchedule",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_215_publishsubscription",
+            "label": "PublishSubscription → MakeCommand",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_300_publishsubscription",
+            "label": "PublishSubscription → IsOnceSchedule",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CronService.remove#1",
+        "name": "remove",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_335_remove",
+            "label": "Remove → IsOnceSchedule",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_263_remove",
+            "label": "Remove → FormatViewSort",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_296_remove",
+            "label": "Remove → FormatFilterQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_297_remove",
+            "label": "Remove → FormatSearchText",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_345_remove",
+            "label": "Remove → IsNodeCron",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_262_remove",
+            "label": "Remove → MakeCommand",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_298_remove",
+            "label": "Remove → FormatViewQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_334_remove",
+            "label": "Remove → IsBootSchedule",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CronService.update#1",
+        "name": "update",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_261_update",
+            "label": "Update → GetUniqPath",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_357_update",
+            "label": "Update → GetDb",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "depth": 2,
+        "id": "Method:back/services/cron.ts:CronService.importCrontab#0",
+        "name": "importCrontab",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ]
+  }
+}

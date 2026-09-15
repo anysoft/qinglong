@@ -1,0 +1,1386 @@
+[
+  {
+    "file": "back/api/clientIp.ts",
+    "mounts": [
+      "/system/client-ip"
+    ],
+    "endpoints": [
+      {
+        "line": 12,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/system/client-ip"
+      },
+      {
+        "line": 14,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/config"
+      },
+      {
+        "line": 25,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config"
+      },
+      {
+        "line": 45,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/diagnose"
+      }
+    ]
+  },
+  {
+    "file": "back/api/config.ts",
+    "mounts": [
+      "/configs"
+    ],
+    "endpoints": [
+      {
+        "line": 16,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/configs"
+      },
+      {
+        "line": 18,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/samples"
+      },
+      {
+        "line": 32,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/files"
+      },
+      {
+        "line": 52,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/detail"
+      },
+      {
+        "line": 64,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/save"
+      },
+      {
+        "line": 98,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:file"
+      }
+    ]
+  },
+  {
+    "file": "back/api/cron.ts",
+    "mounts": [
+      "/crons"
+    ],
+    "endpoints": [
+      {
+        "line": 18,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/crons"
+      },
+      {
+        "line": 33,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/views"
+      },
+      {
+        "line": 46,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/views"
+      },
+      {
+        "line": 67,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/views"
+      },
+      {
+        "line": 93,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/views"
+      },
+      {
+        "line": 109,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/views/move"
+      },
+      {
+        "line": 129,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/views/disable"
+      },
+      {
+        "line": 146,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/views/enable"
+      },
+      {
+        "line": 163,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 175,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/detail"
+      },
+      {
+        "line": 190,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/"
+      },
+      {
+        "line": 207,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/run"
+      },
+      {
+        "line": 224,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/stop"
+      },
+      {
+        "line": 241,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/labels"
+      },
+      {
+        "line": 264,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/labels"
+      },
+      {
+        "line": 284,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/disable"
+      },
+      {
+        "line": 301,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/enable"
+      },
+      {
+        "line": 318,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id/log"
+      },
+      {
+        "line": 359,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/"
+      },
+      {
+        "line": 379,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/"
+      },
+      {
+        "line": 396,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/pin"
+      },
+      {
+        "line": 413,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/unpin"
+      },
+      {
+        "line": 430,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/import"
+      },
+      {
+        "line": 444,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id"
+      },
+      {
+        "line": 463,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/status"
+      },
+      {
+        "line": 491,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id/instances"
+      },
+      {
+        "line": 514,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/:id/instances/:instanceId/stop"
+      },
+      {
+        "line": 533,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id/logs"
+      }
+    ]
+  },
+  {
+    "file": "back/api/dashboard.ts",
+    "mounts": [
+      "/dashboard"
+    ],
+    "endpoints": [
+      {
+        "line": 18,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/dashboard"
+      },
+      {
+        "line": 20,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/record"
+      },
+      {
+        "line": 63,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/overview"
+      },
+      {
+        "line": 110,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/failures"
+      },
+      {
+        "line": 147,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/trend"
+      },
+      {
+        "line": 193,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/top-time"
+      },
+      {
+        "line": 235,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/top-count"
+      },
+      {
+        "line": 281,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/runtime"
+      },
+      {
+        "line": 358,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/labels"
+      },
+      {
+        "line": 410,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/system"
+      }
+    ]
+  },
+  {
+    "file": "back/api/dependence.ts",
+    "mounts": [
+      "/dependencies"
+    ],
+    "endpoints": [
+      {
+        "line": 9,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/dependencies"
+      },
+      {
+        "line": 11,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 34,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/"
+      },
+      {
+        "line": 56,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/"
+      },
+      {
+        "line": 77,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/"
+      },
+      {
+        "line": 93,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/force"
+      },
+      {
+        "line": 109,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id"
+      },
+      {
+        "line": 127,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/reinstall"
+      },
+      {
+        "line": 143,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/cancel"
+      }
+    ]
+  },
+  {
+    "file": "back/api/env.ts",
+    "mounts": [
+      "/envs"
+    ],
+    "endpoints": [
+      {
+        "line": 28,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/envs"
+      },
+      {
+        "line": 30,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 42,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/"
+      },
+      {
+        "line": 71,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/"
+      },
+      {
+        "line": 94,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/"
+      },
+      {
+        "line": 111,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/:id/move"
+      },
+      {
+        "line": 133,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/disable"
+      },
+      {
+        "line": 150,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/enable"
+      },
+      {
+        "line": 167,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/name"
+      },
+      {
+        "line": 187,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id"
+      },
+      {
+        "line": 206,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/pin"
+      },
+      {
+        "line": 223,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/unpin"
+      },
+      {
+        "line": 240,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/labels"
+      },
+      {
+        "line": 259,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/labels"
+      },
+      {
+        "line": 278,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/upload"
+      }
+    ]
+  },
+  {
+    "file": "back/api/gitResources.ts",
+    "mounts": [
+      "/git-credentials",
+      "/repositories"
+    ],
+    "endpoints": [
+      {
+        "line": 71,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/git-credentials"
+      },
+      {
+        "line": 72,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/repositories"
+      },
+      {
+        "line": 73,
+        "receiver": "credentials",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 77,
+        "receiver": "credentials",
+        "method": "GET",
+        "path": "/:id"
+      },
+      {
+        "line": 85,
+        "receiver": "credentials",
+        "method": "POST",
+        "path": "/"
+      },
+      {
+        "line": 93,
+        "receiver": "credentials",
+        "method": "PUT",
+        "path": "/"
+      },
+      {
+        "line": 101,
+        "receiver": "credentials",
+        "method": "DELETE",
+        "path": "/:id"
+      },
+      {
+        "line": 110,
+        "receiver": "credentials",
+        "method": "POST",
+        "path": "/:id/test"
+      },
+      {
+        "line": 122,
+        "receiver": "repositories",
+        "method": "POST",
+        "path": "/normalize"
+      },
+      {
+        "line": 133,
+        "receiver": "repositories",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 137,
+        "receiver": "repositories",
+        "method": "GET",
+        "path": "/:id"
+      },
+      {
+        "line": 145,
+        "receiver": "repositories",
+        "method": "POST",
+        "path": "/"
+      },
+      {
+        "line": 153,
+        "receiver": "repositories",
+        "method": "PUT",
+        "path": "/"
+      },
+      {
+        "line": 161,
+        "receiver": "repositories",
+        "method": "DELETE",
+        "path": "/:id"
+      },
+      {
+        "line": 170,
+        "receiver": "repositories",
+        "method": "POST",
+        "path": "/:id/test"
+      },
+      {
+        "line": 178,
+        "receiver": "app",
+        "method": "POST",
+        "path": "/subscriptions/:id/convert"
+      }
+    ]
+  },
+  {
+    "file": "back/api/health.ts",
+    "mounts": [
+      "/"
+    ],
+    "endpoints": [
+      {
+        "line": 8,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/"
+      },
+      {
+        "line": 10,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/health"
+      }
+    ]
+  },
+  {
+    "file": "back/api/index.ts",
+    "mounts": [],
+    "endpoints": []
+  },
+  {
+    "file": "back/api/log.ts",
+    "mounts": [
+      "/logs"
+    ],
+    "endpoints": [
+      {
+        "line": 19,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/logs"
+      },
+      {
+        "line": 21,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 35,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/detail"
+      },
+      {
+        "line": 89,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:file"
+      },
+      {
+        "line": 99,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/"
+      },
+      {
+        "line": 130,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/download"
+      }
+    ]
+  },
+  {
+    "file": "back/api/open.ts",
+    "mounts": [
+      "/"
+    ],
+    "endpoints": [
+      {
+        "line": 9,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/"
+      },
+      {
+        "line": 10,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/apps"
+      },
+      {
+        "line": 24,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/apps"
+      },
+      {
+        "line": 44,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/apps"
+      },
+      {
+        "line": 65,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/apps"
+      },
+      {
+        "line": 82,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/apps/:id/reset-secret"
+      },
+      {
+        "line": 101,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/auth/token"
+      }
+    ]
+  },
+  {
+    "file": "back/api/retention.ts",
+    "mounts": [
+      "/system/storage-retention"
+    ],
+    "endpoints": [
+      {
+        "line": 30,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/system/storage-retention"
+      },
+      {
+        "line": 32,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config"
+      },
+      {
+        "line": 46,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/preview"
+      },
+      {
+        "line": 60,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/cleanup"
+      }
+    ]
+  },
+  {
+    "file": "back/api/scopedEnvironment.ts",
+    "mounts": [
+      "/scoped-env"
+    ],
+    "endpoints": [
+      {
+        "line": 34,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/scoped-env"
+      },
+      {
+        "line": 36,
+        "receiver": "router",
+        "method": "GET",
+        "path": "/repositories"
+      },
+      {
+        "line": 37,
+        "receiver": "router",
+        "method": "GET",
+        "path": "/tasks"
+      },
+      {
+        "line": 38,
+        "receiver": "router",
+        "method": "GET",
+        "path": "/repositories/:id/profiles"
+      },
+      {
+        "line": 39,
+        "receiver": "router",
+        "method": "GET",
+        "path": "/profiles/:id"
+      },
+      {
+        "line": 40,
+        "receiver": "router",
+        "method": "POST",
+        "path": "/profiles"
+      },
+      {
+        "line": 41,
+        "receiver": "router",
+        "method": "PUT",
+        "path": "/profiles"
+      },
+      {
+        "line": 42,
+        "receiver": "router",
+        "method": "DELETE",
+        "path": "/profiles/:id"
+      },
+      {
+        "line": 43,
+        "receiver": "router",
+        "method": "POST",
+        "path": "/profiles/:id/clone"
+      },
+      {
+        "line": 45,
+        "receiver": "router",
+        "method": "GET",
+        "path": "/${resource}/:id/variables"
+      },
+      {
+        "line": 46,
+        "receiver": "router",
+        "method": "PUT",
+        "path": "/${resource}/:id/variables"
+      },
+      {
+        "line": 49,
+        "receiver": "router",
+        "method": "PUT",
+        "path": "/${scope}s/:id/profile"
+      },
+      {
+        "line": 50,
+        "receiver": "router",
+        "method": "GET",
+        "path": "/${scope}s/:id/context"
+      },
+      {
+        "line": 58,
+        "receiver": "router",
+        "method": "GET",
+        "path": "/tasks/:id/preview"
+      }
+    ]
+  },
+  {
+    "file": "back/api/script.ts",
+    "mounts": [
+      "/scripts"
+    ],
+    "endpoints": [
+      {
+        "line": 35,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/scripts"
+      },
+      {
+        "line": 37,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 96,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/detail"
+      },
+      {
+        "line": 118,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:file"
+      },
+      {
+        "line": 125,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/"
+      },
+      {
+        "line": 217,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/"
+      },
+      {
+        "line": 249,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/"
+      },
+      {
+        "line": 283,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/download"
+      },
+      {
+        "line": 319,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/run"
+      },
+      {
+        "line": 351,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/stop"
+      },
+      {
+        "line": 385,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/rename"
+      }
+    ]
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "mounts": [
+      "/subscriptions"
+    ],
+    "endpoints": [
+      {
+        "line": 12,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/subscriptions"
+      },
+      {
+        "line": 14,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/:id/managed/preflight"
+      },
+      {
+        "line": 33,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/:id/git-mode"
+      },
+      {
+        "line": 56,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 71,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/"
+      },
+      {
+        "line": 131,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/run"
+      },
+      {
+        "line": 148,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/stop"
+      },
+      {
+        "line": 165,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/disable"
+      },
+      {
+        "line": 182,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/enable"
+      },
+      {
+        "line": 199,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id/log"
+      },
+      {
+        "line": 232,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/"
+      },
+      {
+        "line": 288,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/"
+      },
+      {
+        "line": 309,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id"
+      },
+      {
+        "line": 328,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/status"
+      },
+      {
+        "line": 354,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/:id/logs"
+      }
+    ]
+  },
+  {
+    "file": "back/api/system.ts",
+    "mounts": [
+      "/system"
+    ],
+    "endpoints": [
+      {
+        "line": 33,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/system"
+      },
+      {
+        "line": 35,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 61,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/config"
+      },
+      {
+        "line": 75,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/log-remove-frequency"
+      },
+      {
+        "line": 93,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/cron-concurrency"
+      },
+      {
+        "line": 111,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/dependence-proxy"
+      },
+      {
+        "line": 129,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/node-mirror"
+      },
+      {
+        "line": 147,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/python-mirror"
+      },
+      {
+        "line": 165,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/linux-mirror"
+      },
+      {
+        "line": 183,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/update-check"
+      },
+      {
+        "line": 197,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/update"
+      },
+      {
+        "line": 211,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/reload"
+      },
+      {
+        "line": 230,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/notify"
+      },
+      {
+        "line": 250,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/command-run"
+      },
+      {
+        "line": 300,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/command-stop"
+      },
+      {
+        "line": 319,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/data/export"
+      },
+      {
+        "line": 336,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/data/import"
+      },
+      {
+        "line": 350,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/log"
+      },
+      {
+        "line": 381,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/log"
+      },
+      {
+        "line": 394,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/auth/reset"
+      },
+      {
+        "line": 418,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/timezone"
+      },
+      {
+        "line": 436,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/lang"
+      },
+      {
+        "line": 454,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/panel-title"
+      },
+      {
+        "line": 472,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/global-ssh-key"
+      },
+      {
+        "line": 490,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/config/dependence-clean"
+      }
+    ]
+  },
+  {
+    "file": "back/api/update.ts",
+    "mounts": [
+      "/update"
+    ],
+    "endpoints": [
+      {
+        "line": 8,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/update"
+      },
+      {
+        "line": 10,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/reload"
+      },
+      {
+        "line": 24,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/system"
+      },
+      {
+        "line": 38,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/data"
+      }
+    ]
+  },
+  {
+    "file": "back/api/user.ts",
+    "mounts": [
+      "/user"
+    ],
+    "endpoints": [
+      {
+        "line": 46,
+        "receiver": "app",
+        "method": "USE",
+        "path": "/user"
+      },
+      {
+        "line": 48,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/login"
+      },
+      {
+        "line": 72,
+        "receiver": "route",
+        "method": "POST",
+        "path": "/logout"
+      },
+      {
+        "line": 87,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/"
+      },
+      {
+        "line": 109,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "line": 128,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/two-factor/init"
+      },
+      {
+        "line": 142,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/two-factor/active"
+      },
+      {
+        "line": 161,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/two-factor/deactivate"
+      },
+      {
+        "line": 175,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/two-factor/login"
+      },
+      {
+        "line": 197,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/login-log"
+      },
+      {
+        "line": 211,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/ip-blacklist"
+      },
+      {
+        "line": 224,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/ip-blacklist"
+      },
+      {
+        "line": 244,
+        "receiver": "route",
+        "method": "DELETE",
+        "path": "/ip-blacklist"
+      },
+      {
+        "line": 264,
+        "receiver": "route",
+        "method": "GET",
+        "path": "/notification"
+      },
+      {
+        "line": 278,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/notification"
+      },
+      {
+        "line": 292,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/init"
+      },
+      {
+        "line": 313,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/notification/init"
+      },
+      {
+        "line": 327,
+        "receiver": "route",
+        "method": "PUT",
+        "path": "/avatar"
+      }
+    ]
+  },
+  {
+    "file": "back/api/workspace.ts",
+    "mounts": [],
+    "endpoints": [
+      {
+        "line": 45,
+        "receiver": "app",
+        "method": "POST",
+        "path": "/repositories/:id/${operation}"
+      },
+      {
+        "line": 52,
+        "receiver": "app",
+        "method": "GET",
+        "path": "/repositories/:id/refs"
+      },
+      {
+        "line": 58,
+        "receiver": "app",
+        "method": "GET",
+        "path": "/repositories/:id/status"
+      },
+      {
+        "line": 64,
+        "receiver": "app",
+        "method": "GET",
+        "path": "/repositories/:id/worktrees"
+      },
+      {
+        "line": 70,
+        "receiver": "app",
+        "method": "POST",
+        "path": "/repositories/:id/remote"
+      },
+      {
+        "line": 83,
+        "receiver": "app",
+        "method": "DELETE",
+        "path": "/repositories/:id"
+      },
+      {
+        "line": 89,
+        "receiver": "app",
+        "method": "GET",
+        "path": "/worktrees"
+      },
+      {
+        "line": 99,
+        "receiver": "app",
+        "method": "GET",
+        "path": "/worktrees/:id"
+      },
+      {
+        "line": 105,
+        "receiver": "app",
+        "method": "POST",
+        "path": "/worktrees"
+      },
+      {
+        "line": 121,
+        "receiver": "app",
+        "method": "PUT",
+        "path": "/worktrees/:id"
+      },
+      {
+        "line": 131,
+        "receiver": "app",
+        "method": "DELETE",
+        "path": "/worktrees/:id"
+      },
+      {
+        "line": 144,
+        "receiver": "app",
+        "method": "POST",
+        "path": "/worktrees/:id/${route}"
+      }
+    ]
+  }
+]

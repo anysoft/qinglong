@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Repository Environment Profiles
 
 `RepositoryEnvProfileService` 提供 create/update/detail/list/clone/remove。一个 Repository 可以有 prod/test/多个账号 Profile；名字在同仓库内唯一，跨仓库可以重复。Profile 的 repository_id 不可编辑。

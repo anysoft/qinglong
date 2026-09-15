@@ -41,3 +41,17 @@ This project is indexed by GitNexus as **qinglong** (2778 symbols, 6698 relation
 | Index, status, clean, wiki CLI commands | `.claude/skills/gitnexus/gitnexus-cli/SKILL.md` |
 
 <!-- gitnexus:end -->
+
+
+## Greenfield platform direction — Phase 4.5A
+
+This project is now a greenfield-only Git-native script automation / scheduling platform.
+
+- Support fresh installation, fresh database, fresh configuration, repository and task setup.
+- Do not add QingLong backward compatibility or legacy migration paths unless explicitly requested.
+- Prefer the target platform architecture over old implementation semantics.
+- Phase 0–4 reports and docs/refactor/phase1..4 are Historical Refactor Records, not current compatibility requirements.
+- Preserve security, data integrity, locks/leases, recovery and active runtime responsibilities. Fresh-only never authorizes deleting existing user data.
+- New modules must not add dependencies on legacy path naming, scripts staging internals, generated language ENV, global dependency layouts or Shell→Open API contracts.
+- Keep temporary bridges until their consumers have replacements and their exit gates pass. Review [TEMPORARY_BRIDGES.md](TEMPORARY_BRIDGES.md), [GREENFIELD_REMOVAL_PLAN.md](GREENFIELD_REMOVAL_PLAN.md) and [architecture ADRs](docs/architecture/adr/ADR-001-fresh-install-only.md).
+- Phase 4.5A authorizes documentation/diagnostics only. Execute cleanup only under a subsequent explicit task. GitNexus requirements above remain in force.

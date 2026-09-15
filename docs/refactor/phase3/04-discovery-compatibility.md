@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Discovery 兼容性
 
 `managed_discovery.sh` 通过 library-only 入口加载原 `update.sh` 函数。没有重新实现 JS/Python/TS/Shell 注释解析器。暂存区提供原目录变量、原 crontab.list 副本，并拦截原添加/删除 API 调用，生成计划后由 CronService 批量应用。

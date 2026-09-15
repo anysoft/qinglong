@@ -1,0 +1,587 @@
+[
+  {
+    "file": "back/api/config.ts",
+    "line": 78,
+    "text": "if (name.startsWith('data/scripts/')) {"
+  },
+  {
+    "file": "back/api/config.ts",
+    "line": 79,
+    "text": "basePath = join(config.rootPath, 'data/scripts');"
+  },
+  {
+    "file": "back/api/env.ts",
+    "line": 15,
+    "text": "cb(null, config.scriptPath);"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 59,
+    "text": "config.scriptPath,"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 68,
+    "text": "config.scriptPath,"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 73,
+    "text": "config.scriptPath,"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 74,
+    "text": "config.scriptPath,"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 121,
+    "text": "message: t('接口已下线，请使用 /scripts/detail 接口'),"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 156,
+    "text": "path = config.scriptPath;"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 162,
+    "text": "path = join(config.scriptPath, path);"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 336,
+    "text": "const filePath = join(config.scriptPath, path, `${name}.swap${ext}`);"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 367,
+    "text": "const filePath = join(config.scriptPath, path, `${name}.swap${ext}`);"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 404,
+    "text": "const filePath = join(config.scriptPath, path, filename);"
+  },
+  {
+    "file": "back/api/script.ts",
+    "line": 405,
+    "text": "const newPath = join(config.scriptPath, path, newFilename);"
+  },
+  {
+    "file": "back/config/const.ts",
+    "line": 20,
+    "text": "target: 'data/scripts/sendNotify.js',"
+  },
+  {
+    "file": "back/config/const.ts",
+    "line": 25,
+    "text": "target: 'data/scripts/notify.py',"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 97,
+    "text": "const scriptPath = path.join(dataPath, 'scripts/');"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 158,
+    "text": "scriptPath,"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 174,
+    "text": "writePathList: [configPath, scriptPath],"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 184,
+    "text": "if (doc.command.includes(`${config.rootPath}/scripts/`)) {"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 186,
+    "text": "{ command: doc.command.replace(`${config.rootPath}/scripts/`, '') },"
+  },
+  {
+    "file": "back/loaders/initFile.ts",
+    "line": 17,
+    "text": "const scriptPath = path.join(dataPath, 'scripts/');"
+  },
+  {
+    "file": "back/loaders/initFile.ts",
+    "line": 29,
+    "text": "const scriptNotifyJsFile = path.join(scriptPath, 'sendNotify.js');"
+  },
+  {
+    "file": "back/loaders/initFile.ts",
+    "line": 30,
+    "text": "const scriptNotifyPyFile = path.join(scriptPath, 'notify.py');"
+  },
+  {
+    "file": "back/loaders/initFile.ts",
+    "line": 44,
+    "text": "scriptPath,"
+  },
+  {
+    "file": "back/services/config.ts",
+    "line": 18,
+    "text": "const scriptFile = filePath.startsWith('data/scripts/');"
+  },
+  {
+    "file": "back/services/config.ts",
+    "line": 20,
+    "text": "scriptFile ? config.scriptPath : config.configPath,"
+  },
+  {
+    "file": "back/services/config.ts",
+    "line": 21,
+    "text": "[scriptFile ? filePath.slice('data/scripts/'.length) : filePath],"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 225,
+    "text": "const scriptsRoot = path.join(root, 'scripts');"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 226,
+    "text": "const destination = path.join(scriptsRoot, prefix);"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 228,
+    "text": "await this.storage.paths.assertSafe(path.join(scriptsRoot, file));"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 237,
+    "text": "await fs.mkdir(scriptsRoot, { recursive: true });"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 238,
+    "text": "const stage = await fs.mkdtemp(path.join(scriptsRoot, '.managed-'));"
+  },
+  {
+    "file": "back/services/script.ts",
+    "line": 43,
+    "text": "const relativePath = path.relative(config.scriptPath, filePath);"
+  },
+  {
+    "file": "back/services/script.ts",
+    "line": 57,
+    "text": "const relativePath = path.relative(config.scriptPath, filePath);"
+  },
+  {
+    "file": "back/services/script.ts",
+    "line": 70,
+    "text": "config.scriptPath,"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 371,
+    "text": "const filePath = join(config.scriptPath, doc.alias);"
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 31,
+    "text": "dir_scripts=\"$stage_dir/scripts\""
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 34,
+    "text": "mkdir -p \"$dir_scripts/$uniq_path\" \"$dir_list_tmp/$(dirname \"$uniq_path\")\""
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 42,
+    "text": "cd $dir_scripts"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 46,
+    "text": "array_scripts[i]=$(echo \"$file\" | perl -pe \"s|$dir_scripts/||g\")"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 57,
+    "text": "echo -e \"task命令运行本程序自动添加进crontab的脚本，需要输入脚本的绝对路径或去掉 “$dir_scripts/” 目录后的相对路径（定时任务中请写作相对路径），用法为：\""
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 114,
+    "text": "enter_script_workdir() {"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 123,
+    "text": "_target_dir=\"${dir_scripts}/${work_dir}\""
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 140,
+    "text": "cd $dir_scripts"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 163,
+    "text": "enter_script_workdir"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 196,
+    "text": "enter_script_workdir"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 251,
+    "text": "enter_script_workdir"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 283,
+    "text": "enter_script_workdir true"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 299,
+    "text": "enter_script_workdir true"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 303,
+    "text": "# file_param 本身就是脚本，直接用 enter_script_workdir 处理"
+  },
+  {
+    "file": "shell/otask.sh",
+    "line": 304,
+    "text": "enter_script_workdir true"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 67,
+    "text": "dir_scripts,"
+  },
+  {
+    "file": "shell/preload/sitecustomize.js",
+    "line": 76,
+    "text": "const fileName = process.argv[1].replace(`${dir_scripts}/`, '');"
+  },
+  {
+    "file": "shell/preload/sitecustomize.py",
+    "line": 51,
+    "text": "file_name = sys.argv[0].replace(f\"{os.getenv('dir_scripts')}/\", \"\")"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 17,
+    "text": "export dir_scripts=$dir_data/scripts"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 47,
+    "text": "export file_notify_py=$dir_scripts/notify.py"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 48,
+    "text": "export file_notify_js=$dir_scripts/sendNotify.js"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 49,
+    "text": "export file_test_js=$dir_scripts/ql_sample.js"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 50,
+    "text": "export file_test_py=$dir_scripts/ql_sample.py"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 185,
+    "text": "make_dir $dir_scripts"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 58,
+    "text": "cron_file=\"$dir_scripts/${cron}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 83,
+    "text": "cd $dir_scripts"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 134,
+    "text": "make_dir \"${dir_scripts}/${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 178,
+    "text": "cp -f $raw_file_name $dir_scripts/${filename}"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 458,
+    "text": "cp -f $file_notify_js \"${dir_scripts}/${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 459,
+    "text": "cp -f $file_notify_py \"${dir_scripts}/${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 466,
+    "text": "make_dir \"${dir_scripts}/${uniq_path}/${file_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 467,
+    "text": "cp -f $_file \"${dir_scripts}/${uniq_path}/${file_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 472,
+    "text": "cp -rf $dir_dep/* \"${dir_scripts}/${uniq_path}\" &>/dev/null"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 480,
+    "text": "mkdir -p \"${dir_scripts}/${uniq_path}/${dirPath}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 483,
+    "text": "cp -f $file \"${dir_scripts}/$filePath\""
+  },
+  {
+    "file": "src/pages/crontab/detail.tsx",
+    "line": 267,
+    "text": ".get(`${config.apiPrefix}scripts/detail?file=${s}&path=${p || ''}`)"
+  },
+  {
+    "file": "src/pages/script/editModal.tsx",
+    "line": 69,
+    "text": "`${config.apiPrefix}scripts/detail?file=${node.title}&path=${"
+  },
+  {
+    "file": "src/pages/script/editModal.tsx",
+    "line": 84,
+    "text": ".put(`${config.apiPrefix}scripts/run`, {"
+  },
+  {
+    "file": "src/pages/script/editModal.tsx",
+    "line": 102,
+    "text": ".put(`${config.apiPrefix}scripts/stop`, {"
+  },
+  {
+    "file": "src/pages/script/index.tsx",
+    "line": 90,
+    "text": "`${config.apiPrefix}scripts/detail?file=${encodeURIComponent("
+  },
+  {
+    "file": "src/pages/script/index.tsx",
+    "line": 107,
+    "text": "`${config.apiPrefix}scripts/download`,"
+  },
+  {
+    "file": "src/pages/script/renameModal.tsx",
+    "line": 21,
+    "text": "`${config.apiPrefix}scripts/rename`,"
+  },
+  {
+    "file": "src/utils/index.ts",
+    "line": 317,
+    "text": "const scriptDir = `${window.__ENV__QL_DIR}/data/scripts`;"
+  },
+  {
+    "file": "test/back/build-provenance.test.cjs",
+    "line": 24,
+    "text": "const write = path.resolve('scripts/write-build-info.cjs');"
+  },
+  {
+    "file": "test/back/build-provenance.test.cjs",
+    "line": 107,
+    "text": "const write = path.resolve('scripts/write-build-info.cjs');"
+  },
+  {
+    "file": "test/back/deprecated-file-routes.test.cjs",
+    "line": 26,
+    "text": "scriptPath: '/tmp',"
+  },
+  {
+    "file": "test/back/deprecated-file-routes.test.cjs",
+    "line": 57,
+    "text": "['script', '/scripts/detail'],"
+  },
+  {
+    "file": "test/back/http-security.test.cjs",
+    "line": 40,
+    "text": "scriptPath: path.join(tmp, 'scripts/'),"
+  },
+  {
+    "file": "test/back/node-path-cache.test.cjs",
+    "line": 156,
+    "text": "const end = source.indexOf('\\nenter_script_workdir()', start);"
+  },
+  {
+    "file": "test/back/protected-path-case.test.cjs",
+    "line": 34,
+    "text": "'/OPEN/scripts/detail',"
+  },
+  {
+    "file": "test/back/protected-path-case.test.cjs",
+    "line": 35,
+    "text": "'/open/scripts/Detail',"
+  },
+  {
+    "file": "test/back/protected-path-case.test.cjs",
+    "line": 48,
+    "text": "'/open/scripts/detail',"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 36,
+    "text": "dir_repo=\"$TEST_DIR/repos\"; dir_scripts=\"$TEST_DIR/scripts\"; dir_list_tmp=\"$TEST_DIR/lists\""
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 97,
+    "text": "fs.cpSync(path.join(root,'fixtures/test-repo'),path.join(dir,'data/scripts'),{recursive:true});"
+  },
+  {
+    "file": "tests/phase1/pipeline.test.cjs",
+    "line": 147,
+    "text": "path.join(dir, 'data/scripts/team_project_main/python/example.py'),"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 13,
+    "text": "'data/scripts',"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 27,
+    "text": "fs.writeFileSync(path.join(dir, 'data/scripts', f), '');"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 79,
+    "text": "assert.deepEqual(fs.readdirSync(path.join(dir, 'data/scripts')).sort(), ["
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 95,
+    "text": "path.join(dir, 'stage/scripts/team_project_main/python/example.py'),"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 122,
+    "text": "fs.existsSync(path.join(dir, 'stage/scripts/team_project_main/support.py')),"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 125,
+    "text": "fs.existsSync(path.join(dir, 'stage/scripts/team_project_main/skip.ts')),"
+  },
+  {
+    "file": "tests/phase3/discovery.test.cjs",
+    "line": 132,
+    "text": "const old = path.join(dir, 'stage/scripts/team_project_main/old.py');"
+  },
+  {
+    "file": "tests/phase3/helpers.cjs",
+    "line": 43,
+    "text": "scriptPath: path.join(dir, 'scripts'),"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 39,
+    "text": "script: path.join(h.dir, 'scripts/team_project_main/job.js'),"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 199,
+    "text": "await fs.rm(path.join(h.dir, 'scripts/sendNotify.js'));"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 201,
+    "text": "path.join(h.dir, 'scripts/team_project_main/new.js'),"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 207,
+    "text": "path.join(h.dir, 'scripts/team_project_main/new.js'),"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 212,
+    "text": "await fs.writeFile(path.join(h.dir, 'scripts/sendNotify.js'), '');"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 241,
+    "text": "fs.stat(path.join(h.dir, 'scripts/team_project_main/outside.js')),"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 260,
+    "text": "path.join(h.dir, 'scripts/team_project_feature/new/job.js'),"
+  },
+  {
+    "file": "tests/phase4/account-mode.test.cjs",
+    "line": 10,
+    "text": "fs.writeFileSync(path.join(h.dir, `data/scripts/accounts.${language}`), scripts[language]);"
+  },
+  {
+    "file": "tests/phase4/entrypoint.test.cjs",
+    "line": 16,
+    "text": "fs.writeFileSync(path.join(h.dir, 'data/scripts/bridge.sh'), '[[ \"$BRIDGE_TOKEN\" == \"bridge-private\" ]] || exit 7\\nprintf \"BRIDGE_PASS\\\\n%s\\\\n\" \"$BRIDGE_TOKEN\"');"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 17,
+    "text": "fs.writeFileSync(path.join(h.dir, 'data/scripts/check.js'), `require('fs').writeFileSync(process.env.OUT,JSON.stringify(Object.fromEntries(${JSON.stringify(names)}.filter(k=>k in process.env).map(k=>[k,process.env[k]])))); console.log(process.env.TOKEN);`);"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 18,
+    "text": "fs.writeFileSync(path.join(h.dir, 'data/scripts/check.py'), `import os,json\\nwith open(os.environ['OUT'],'w') as f: json.dump({k:os.environ[k] for k in ${JSON.stringify(names)} if k in os.environ},f)\\nprint(os.environ['TOKEN'])\\n`);"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 19,
+    "text": "fs.writeFileSync(path.join(h.dir, 'data/scripts/check.sh'), 'node -e \\'require(\"fs\").writeFileSync(process.env.OUT,JSON.stringify(Object.fromEntries(' + JSON.stringify(names) + '.filter(k=>k in process.env).map(k=>[k,process.env[k]]))))\\'\\nprintf \"%s\\\\n\" \"$TOKEN\"\\n');"
+  },
+  {
+    "file": "tests/phase4/execution.test.cjs",
+    "line": 44,
+    "text": "fs.writeFileSync(path.join(h.dir, 'data/scripts/check.sh'), 'printf \"VALUE:%s\\\\n\" \"$TEST_SCOPED_ENV\"');"
+  },
+  {
+    "file": "tests/phase4/isolation.test.cjs",
+    "line": 19,
+    "text": "const script = path.join(h.dir, 'data/scripts/isolation.sh'); fs.writeFileSync(script, 'printf \"VALUE:%s:%s\\\\n\" \"${PROFILE_VALUE-missing}\" \"${ACCOUNT_VALUE-missing}\"');"
+  },
+  {
+    "file": "tests/phase4/legacy-characterization.test.cjs",
+    "line": 13,
+    "text": "fs.writeFileSync(path.join(h.dir, `data/scripts/check.${language}`), source[language]);"
+  },
+  {
+    "file": "tests/phase4/transport.test.cjs",
+    "line": 16,
+    "text": "fs.rmSync(path.join(h.dir, '.tmp/task-env'), { recursive: true }); fs.symlinkSync(path.join(h.dir, 'data/scripts'), path.join(h.dir, '.tmp/task-env'));"
+  },
+  {
+    "file": "tests/phase4/transport.test.cjs",
+    "line": 18,
+    "text": "assert.equal(fs.readdirSync(path.join(h.dir, 'data/scripts')).length, 0);"
+  }
+]

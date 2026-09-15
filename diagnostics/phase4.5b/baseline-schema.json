@@ -1,0 +1,140 @@
+[
+  {
+    "type": "index",
+    "name": "Crontabs_env_profile",
+    "tbl_name": "Crontabs",
+    "sql": "CREATE INDEX Crontabs_env_profile ON Crontabs(env_profile_id)"
+  },
+  {
+    "type": "index",
+    "name": "Repositories_env_profile",
+    "tbl_name": "Repositories",
+    "sql": "CREATE INDEX Repositories_env_profile ON Repositories(default_env_profile_id)"
+  },
+  {
+    "type": "index",
+    "name": "Subscriptions_env_profile",
+    "tbl_name": "Subscriptions",
+    "sql": "CREATE INDEX Subscriptions_env_profile ON Subscriptions(env_profile_id)"
+  },
+  {
+    "type": "index",
+    "name": "crontab_stats_date",
+    "tbl_name": "CrontabStats",
+    "sql": "CREATE INDEX `crontab_stats_date` ON `CrontabStats` (`date`)"
+  },
+  {
+    "type": "index",
+    "name": "crontab_stats_ref_id_date",
+    "tbl_name": "CrontabStats",
+    "sql": "CREATE UNIQUE INDEX `crontab_stats_ref_id_date` ON `CrontabStats` (`ref_id`, `date`)"
+  },
+  {
+    "type": "index",
+    "name": "subscriptions_worktree",
+    "tbl_name": "Subscriptions",
+    "sql": "CREATE INDEX subscriptions_worktree ON Subscriptions(worktree_id)"
+  },
+  {
+    "type": "index",
+    "name": "worktrees_repository",
+    "tbl_name": "Worktrees",
+    "sql": "CREATE INDEX worktrees_repository ON Worktrees(repository_id)"
+  },
+  {
+    "type": "table",
+    "name": "Apps",
+    "tbl_name": "Apps",
+    "sql": "CREATE TABLE `Apps` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255), `scopes` JSON, `client_id` VARCHAR(255), `client_secret` VARCHAR(255), `tokens` JSON, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`name`))"
+  },
+  {
+    "type": "table",
+    "name": "Auths",
+    "tbl_name": "Auths",
+    "sql": "CREATE TABLE `Auths` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `ip` VARCHAR(255), `type` VARCHAR(255), `info` JSON, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)"
+  },
+  {
+    "type": "table",
+    "name": "CrontabStats",
+    "tbl_name": "CrontabStats",
+    "sql": "CREATE TABLE `CrontabStats` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `ref_id` NUMBER NOT NULL, `date` VARCHAR(255) NOT NULL, `run_count` NUMBER DEFAULT 0, `success_count` NUMBER DEFAULT 0, `fail_count` NUMBER DEFAULT 0, `total_time` NUMBER DEFAULT 0, `max_time` NUMBER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)"
+  },
+  {
+    "type": "table",
+    "name": "CrontabViews",
+    "tbl_name": "CrontabViews",
+    "sql": "CREATE TABLE `CrontabViews` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255), `position` NUMBER, `isDisabled` NUMBER, `filters` JSON, `sorts` JSON, `filterRelation` VARCHAR(255), `type` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`name`))"
+  },
+  {
+    "type": "table",
+    "name": "Crontabs",
+    "tbl_name": "Crontabs",
+    "sql": "CREATE TABLE `Crontabs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255), `command` VARCHAR(255), `schedule` VARCHAR(255), `timestamp` VARCHAR(255), `saved` TINYINT(1), `status` NUMBER, `isSystem` NUMBER, `pid` NUMBER, `isDisabled` NUMBER, `isPinned` NUMBER, `log_path` VARCHAR(255), `queued_token` VARCHAR(255), `labels` JSON, `last_running_time` NUMBER, `last_execution_time` NUMBER, `sub_id` NUMBER, `env_profile_id` INTEGER REFERENCES `EnvironmentProfiles` (`id`) ON DELETE RESTRICT, `extra_schedules` JSON, `task_before` VARCHAR(255), `task_after` VARCHAR(255), `log_name` VARCHAR(255), `allow_multiple_instances` NUMBER, `work_dir` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`name`, `command`, `schedule`))"
+  },
+  {
+    "type": "table",
+    "name": "Dependences",
+    "tbl_name": "Dependences",
+    "sql": "CREATE TABLE `Dependences` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255), `type` NUMBER, `timestamp` VARCHAR(255), `status` NUMBER, `log` JSON, `remark` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)"
+  },
+  {
+    "type": "table",
+    "name": "EnvironmentProfiles",
+    "tbl_name": "EnvironmentProfiles",
+    "sql": "CREATE TABLE EnvironmentProfiles (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    repository_id INTEGER NOT NULL REFERENCES Repositories(id) ON DELETE RESTRICT,\n    name VARCHAR(255) NOT NULL, description TEXT DEFAULT '', status VARCHAR(32) NOT NULL DEFAULT 'enabled',\n    createdAt DATETIME NOT NULL, updatedAt DATETIME NOT NULL,\n    UNIQUE(repository_id,name))"
+  },
+  {
+    "type": "table",
+    "name": "Envs",
+    "tbl_name": "Envs",
+    "sql": "CREATE TABLE `Envs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `value` VARCHAR(255), `timestamp` VARCHAR(255), `status` NUMBER, `position` NUMBER, `name` VARCHAR(255), `remarks` VARCHAR(255), `isPinned` NUMBER, `labels` JSON, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`value`, `name`))"
+  },
+  {
+    "type": "table",
+    "name": "GitCredentials",
+    "tbl_name": "GitCredentials",
+    "sql": "CREATE TABLE \"GitCredentials\" (\n    \"id\" INTEGER PRIMARY KEY AUTOINCREMENT, \"name\" VARCHAR(255) NOT NULL UNIQUE,\n    \"provider\" VARCHAR(255) NOT NULL, \"auth_type\" VARCHAR(255) NOT NULL,\n    \"username\" VARCHAR(255), \"secret\" TEXT, \"public_key\" TEXT, \"known_hosts\" TEXT,\n    \"capability\" VARCHAR(255) NOT NULL DEFAULT 'READ', \"status\" VARCHAR(255) NOT NULL DEFAULT 'enabled',\n    \"last_test_at\" DATETIME, \"last_test_result\" VARCHAR(255),\n    \"createdAt\" DATETIME NOT NULL, \"updatedAt\" DATETIME NOT NULL)"
+  },
+  {
+    "type": "table",
+    "name": "Repositories",
+    "tbl_name": "Repositories",
+    "sql": "CREATE TABLE \"Repositories\" (\n    \"id\" INTEGER PRIMARY KEY AUTOINCREMENT, \"name\" VARCHAR(255) NOT NULL,\n    \"provider\" VARCHAR(255) NOT NULL, \"remote_url\" TEXT NOT NULL,\n    \"normalized_url\" VARCHAR(255) NOT NULL UNIQUE, \"host\" VARCHAR(255), \"path\" TEXT,\n    \"owner\" VARCHAR(255), \"repository_name\" VARCHAR(255),\n    \"default_credential_id\" INTEGER REFERENCES \"GitCredentials\"(\"id\") ON DELETE RESTRICT,\n    \"status\" VARCHAR(255) DEFAULT 'unknown', \"createdAt\" DATETIME NOT NULL, \"updatedAt\" DATETIME NOT NULL, \"storage_state\" VARCHAR(255) NOT NULL DEFAULT 'UNINITIALIZED', \"storage_path\" TEXT, \"last_fetch_at\" DATETIME, \"last_fetch_status\" VARCHAR(255), \"last_error\" TEXT, \"default_branch\" VARCHAR(255), \"last_known_remote_head\" VARCHAR(255), \"remote_refs_count\" INTEGER DEFAULT 0, \"tags_count\" INTEGER DEFAULT 0, default_env_profile_id INTEGER REFERENCES EnvironmentProfiles(id) ON DELETE RESTRICT)"
+  },
+  {
+    "type": "table",
+    "name": "RepositoryEnvVariables",
+    "tbl_name": "RepositoryEnvVariables",
+    "sql": "CREATE TABLE RepositoryEnvVariables (\n      id INTEGER PRIMARY KEY AUTOINCREMENT, profile_id INTEGER NOT NULL REFERENCES EnvironmentProfiles(id) ON DELETE CASCADE,\n      name VARCHAR(255) NOT NULL, value TEXT, status VARCHAR(32) NOT NULL DEFAULT 'enabled',\n      operation VARCHAR(16) NOT NULL DEFAULT 'SET', is_secret BOOLEAN NOT NULL DEFAULT 0,\n      position FLOAT DEFAULT 0, labels JSON DEFAULT '[]', createdAt DATETIME NOT NULL, updatedAt DATETIME NOT NULL,\n      UNIQUE(profile_id,name))"
+  },
+  {
+    "type": "table",
+    "name": "RunningInstances",
+    "tbl_name": "RunningInstances",
+    "sql": "CREATE TABLE `RunningInstances` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `cron_id` NUMBER NOT NULL, `pid` NUMBER, `log_path` VARCHAR(255), `started_at` NUMBER NOT NULL, `finished_at` NUMBER, `status` NUMBER NOT NULL DEFAULT 0, `exit_code` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)"
+  },
+  {
+    "type": "table",
+    "name": "SchemaMigrations",
+    "tbl_name": "SchemaMigrations",
+    "sql": "CREATE TABLE \"SchemaMigrations\" (\"id\" TEXT PRIMARY KEY, \"applied_at\" TEXT NOT NULL)"
+  },
+  {
+    "type": "table",
+    "name": "Subscriptions",
+    "tbl_name": "Subscriptions",
+    "sql": "CREATE TABLE `Subscriptions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `env_profile_id` INTEGER REFERENCES `EnvironmentProfiles` (`id`) ON DELETE RESTRICT, `repository_id` INTEGER REFERENCES `Repositories` (`id`) ON DELETE RESTRICT, `credential_id` INTEGER REFERENCES `GitCredentials` (`id`) ON DELETE RESTRICT, `git_mode` VARCHAR(255) NOT NULL DEFAULT 'LEGACY', `worktree_id` INTEGER REFERENCES `Worktrees` (`id`) ON DELETE RESTRICT, `last_synced_commit` VARCHAR(255), `last_sync_at` DATETIME, `last_sync_state` VARCHAR(255), `last_sync_phase` VARCHAR(255), `last_sync_error` TEXT, `name` VARCHAR(255), `url` VARCHAR(255), `schedule` VARCHAR(255), `interval_schedule` JSON, `type` VARCHAR(255), `whitelist` VARCHAR(255), `blacklist` VARCHAR(255), `status` NUMBER, `dependences` VARCHAR(255), `extensions` VARCHAR(255), `sub_before` VARCHAR(255), `sub_after` VARCHAR(255), `branch` VARCHAR(255), `pull_type` VARCHAR(255), `pull_option` JSON, `pid` NUMBER, `is_disabled` NUMBER, `log_path` VARCHAR(255), `schedule_type` VARCHAR(255), `alias` VARCHAR(255), `proxy` VARCHAR(255), `autoAddCron` NUMBER, `autoDelCron` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`name`, `url`, `schedule`, `interval_schedule`), UNIQUE (`alias`))"
+  },
+  {
+    "type": "table",
+    "name": "TaskEnvVariables",
+    "tbl_name": "TaskEnvVariables",
+    "sql": "CREATE TABLE TaskEnvVariables (\n      id INTEGER PRIMARY KEY AUTOINCREMENT, cron_id INTEGER NOT NULL REFERENCES Crontabs(id) ON DELETE CASCADE,\n      name VARCHAR(255) NOT NULL, value TEXT, status VARCHAR(32) NOT NULL DEFAULT 'enabled',\n      operation VARCHAR(16) NOT NULL DEFAULT 'SET', is_secret BOOLEAN NOT NULL DEFAULT 0,\n      position FLOAT DEFAULT 0, labels JSON DEFAULT '[]', createdAt DATETIME NOT NULL, updatedAt DATETIME NOT NULL,\n      UNIQUE(cron_id,name))"
+  },
+  {
+    "type": "table",
+    "name": "Worktrees",
+    "tbl_name": "Worktrees",
+    "sql": "CREATE TABLE Worktrees (\n id INTEGER PRIMARY KEY AUTOINCREMENT,repository_id INTEGER NOT NULL REFERENCES Repositories(id) ON DELETE RESTRICT,\n name VARCHAR(255) NOT NULL,ref_type VARCHAR(255) NOT NULL,ref_name VARCHAR(255) NOT NULL,branch VARCHAR(255),branch_key VARCHAR(255) UNIQUE,\n \"commit\" VARCHAR(255),target_commit VARCHAR(255),local_path TEXT,lifecycle_state VARCHAR(255) DEFAULT 'CREATING',dirty_state VARCHAR(255) DEFAULT 'UNKNOWN',\n managed TINYINT(1) DEFAULT 1,status_snapshot JSON,last_update_at DATETIME,last_error TEXT,createdAt DATETIME NOT NULL,updatedAt DATETIME NOT NULL, purpose VARCHAR(32) NOT NULL DEFAULT 'USER')"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "phase": "4.5A",
+  "scope": "documentation / guidance / static diagnostics only",
+  "head": "e3d3f17f66b1df8dde9c13299eef63fe4588a259",
+  "protected_files": 380,
+  "changed_production_or_test_files": [],
+  "added_production_or_test_files": [],
+  "broken_links": [],
+  "required_documents": 27,
+  "production_code_changed": false,
+  "runtime_tests_rerun": false,
+  "deployment_performed": false,
+  "prior_phase4_result": {
+    "passed": 298,
+    "failed": 0,
+    "skipped": 3
+  },
+  "static_analysis": {
+    "api_files": 19,
+    "expanded_endpoint_declarations_including_duplicate": 198,
+    "test_files": 78,
+    "gitnexus_impact_setCrontab": "CRITICAL"
+  },
+  "python_syntax": "PASS",
+  "missing_source_files": [],
+  "git_diff_check": "PASS"
+}

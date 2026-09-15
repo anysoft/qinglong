@@ -1,0 +1,517 @@
+[
+  {
+    "file": "back/config/index.ts",
+    "line": 98,
+    "text": "const repoPath = path.join(dataPath, 'repo/');"
+  },
+  {
+    "file": "back/config/index.ts",
+    "line": 159,
+    "text": "repoPath,"
+  },
+  {
+    "file": "back/gitSubscription.ts",
+    "line": 59,
+    "text": "// Same positional ql repo contract; clone/copy/scanner logic stays in update.sh."
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 151,
+    "text": "// 初始化时执行一次所有的 ql repo 任务"
+  },
+  {
+    "file": "back/loaders/initData.ts",
+    "line": 156,
+    "text": "[Op.or]: [{ [Op.like]: `%ql repo%` }, { [Op.like]: `%ql raw%` }],"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 6,
+    "text": "import SubscriptionGitResolver, { legacyCheckoutName } from './subscriptionGit';"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 223,
+    "text": "const prefix = legacyCheckoutName(remote, sub.branch);"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 372,
+    "text": "const repoPath = join(config.repoPath, doc.alias);"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 374,
+    "text": "await rmPath(repoPath);"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 9,
+    "text": "// Exact string operations used by update.sh:get_uniq_path, not Repository identity."
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 10,
+    "text": "export function legacyCheckoutName(url: string, branch = '') {"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 41,
+    "text": "const directory = legacyCheckoutName(remote, sub.branch);"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 105,
+    "text": "const target = legacyCheckoutName(effective.remoteUrl, sub.branch);"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 115,
+    "text": "if (legacyCheckoutName(remote, row.branch) === target)"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 153,
+    "text": "legacyCheckoutName(repo.remote_url, sub.branch) !=="
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 154,
+    "text": "legacyCheckoutName(sub.url!, sub.branch)"
+  },
+  {
+    "file": "back/shared/gitProvider.ts",
+    "line": 48,
+    "text": "const repoPath = url.pathname"
+  },
+  {
+    "file": "back/shared/gitProvider.ts",
+    "line": 53,
+    "text": "!repoPath ||"
+  },
+  {
+    "file": "back/shared/gitProvider.ts",
+    "line": 54,
+    "text": "!repoPath"
+  },
+  {
+    "file": "back/shared/gitProvider.ts",
+    "line": 65,
+    "text": "provider === 'github' ? repoPath.toLowerCase() : repoPath;"
+  },
+  {
+    "file": "back/shared/gitProvider.ts",
+    "line": 71,
+    "text": "path: repoPath,"
+  },
+  {
+    "file": "back/shared/gitProvider.ts",
+    "line": 72,
+    "text": "owner: repoPath.includes('/')"
+  },
+  {
+    "file": "back/shared/gitProvider.ts",
+    "line": 73,
+    "text": "? repoPath.slice(0, repoPath.lastIndexOf('/'))"
+  },
+  {
+    "file": "back/shared/gitProvider.ts",
+    "line": 75,
+    "text": "repository_name: repoPath.split('/').pop()!,"
+  },
+  {
+    "file": "docker/Dockerfile",
+    "line": 77,
+    "text": "RUN git clone --depth=1 -b ${QL_BRANCH} ${QL_URL} ${QL_DIR} \\"
+  },
+  {
+    "file": "docker/Dockerfile",
+    "line": 79,
+    "text": "&& if [ -n \"${SOURCE_COMMIT}\" ]; then git fetch --depth=1 origin \"${SOURCE_COMMIT}\" && git reset --hard FETCH_HEAD; fi \\"
+  },
+  {
+    "file": "docker/Dockerfile.310",
+    "line": 77,
+    "text": "RUN git clone --depth=1 -b ${QL_BRANCH} ${QL_URL} ${QL_DIR} \\"
+  },
+  {
+    "file": "docker/Dockerfile.310",
+    "line": 79,
+    "text": "&& if [ -n \"${SOURCE_COMMIT}\" ]; then git fetch --depth=1 origin \"${SOURCE_COMMIT}\" && git reset --hard FETCH_HEAD; fi \\"
+  },
+  {
+    "file": "docker/Dockerfile.debian",
+    "line": 86,
+    "text": "RUN git clone --depth=1 -b ${QL_BRANCH} ${QL_URL} ${QL_DIR} \\"
+  },
+  {
+    "file": "docker/Dockerfile.debian",
+    "line": 88,
+    "text": "&& if [ -n \"${SOURCE_COMMIT}\" ]; then git fetch --depth=1 origin \"${SOURCE_COMMIT}\" && git reset --hard FETCH_HEAD; fi \\"
+  },
+  {
+    "file": "docker/Dockerfile.debian310",
+    "line": 86,
+    "text": "RUN git clone --depth=1 -b ${QL_BRANCH} ${QL_URL} ${QL_DIR} \\"
+  },
+  {
+    "file": "docker/Dockerfile.debian310",
+    "line": 88,
+    "text": "&& if [ -n \"${SOURCE_COMMIT}\" ]; then git fetch --depth=1 origin \"${SOURCE_COMMIT}\" && git reset --hard FETCH_HEAD; fi \\"
+  },
+  {
+    "file": "sample/config.sample.sh",
+    "line": 1,
+    "text": "## 在运行 ql repo 命令时，是否自动删除失效的脚本与定时任务"
+  },
+  {
+    "file": "sample/config.sample.sh",
+    "line": 4,
+    "text": "## 在运行 ql repo 命令时，是否自动增加新的本地定时任务"
+  },
+  {
+    "file": "sample/config.sample.sh",
+    "line": 10,
+    "text": "## ql repo命令拉取脚本时需要拉取的文件后缀，直接写文件后缀名即可"
+  },
+  {
+    "file": "sample/extra.sample.sh",
+    "line": 3,
+    "text": "## 添加你需要重启自动执行的任意命令，比如 ql repo"
+  },
+  {
+    "file": "shell/bot.sh",
+    "line": 5,
+    "text": "repo_path=\"${dir_repo}/dockerbot\""
+  },
+  {
+    "file": "shell/bot.sh",
+    "line": 8,
+    "text": "repo_path=\"${dir_repo}/diybot\""
+  },
+  {
+    "file": "shell/bot.sh",
+    "line": 38,
+    "text": "if [[ ! -d ${repo_path}/.git ]]; then"
+  },
+  {
+    "file": "shell/bot.sh",
+    "line": 39,
+    "text": "rm -rf ${repo_path}"
+  },
+  {
+    "file": "shell/bot.sh",
+    "line": 40,
+    "text": "git_clone_scripts ${url} ${repo_path} \"main\""
+  },
+  {
+    "file": "shell/bot.sh",
+    "line": 43,
+    "text": "cp -rf \"$repo_path/jbot\" $dir_data"
+  },
+  {
+    "file": "shell/bot.sh",
+    "line": 45,
+    "text": "cp -f \"$repo_path/config/bot.json\" \"$dir_config\""
+  },
+  {
+    "file": "shell/bot.sh",
+    "line": 50,
+    "text": "cp -f \"$repo_path/jbot/requirements.txt\" \"$dir_data\""
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 9,
+    "text": "uniq_path=$3"
+  },
+  {
+    "file": "shell/managed_discovery.sh",
+    "line": 34,
+    "text": "mkdir -p \"$dir_scripts/$uniq_path\" \"$dir_list_tmp/$(dirname \"$uniq_path\")\""
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 18,
+    "text": "export dir_repo=$dir_data/repo"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 25,
+    "text": "export ql_static_repo=$dir_repo/static"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 187,
+    "text": "make_dir $dir_repo"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 263,
+    "text": "git_clone_scripts() {"
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 269,
+    "text": "t '开始拉取仓库 %s 到 %s\\n' \"${uniq_path}\" \"$dir\""
+  },
+  {
+    "file": "shell/share.sh",
+    "line": 273,
+    "text": "git clone -q --depth=1 $part_cmd $url $dir"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 117,
+    "text": "update_repo() {"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 132,
+    "text": "local repo_path=\"${dir_repo}/${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 134,
+    "text": "make_dir \"${dir_scripts}/${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 137,
+    "text": "rm -rf ${repo_path} &>/dev/null"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 138,
+    "text": "git_clone_scripts \"${formatUrl}\" ${repo_path} \"${branch}\" \"${proxy}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 141,
+    "text": "t '拉取 %s 成功...\\n' \"${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 142,
+    "text": "diff_scripts \"$repo_path\" \"$author\" \"$path\" \"$blackword\" \"$dependence\" \"$extensions\" \"$autoAddCron\" \"$autoDelCron\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 144,
+    "text": "t '拉取 %s 失败，请检查日志...\\n' \"${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 164,
+    "text": "local raw_file_name=\"${uniq_path}.${suffix}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 384,
+    "text": "local repo_path=\"$1\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 400,
+    "text": "gen_list_repo \"$repo_path\" \"$author\" \"$path\" \"$blackword\" \"$dependence\" \"$extensions\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 402,
+    "text": "local list_add=\"$dir_list_tmp/${uniq_path}_add.list\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 403,
+    "text": "local list_drop=\"$dir_list_tmp/${uniq_path}_drop.list\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 404,
+    "text": "diff_cron \"$dir_list_tmp/${uniq_path}_scripts.list\" \"$dir_list_tmp/${uniq_path}_user.list\" $list_add $list_drop"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 409,
+    "text": "del_cron $list_drop $uniq_path"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 415,
+    "text": "add_cron $list_add $uniq_path"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 424,
+    "text": "local repo_path=\"$1\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 430,
+    "text": "rm -f $dir_list_tmp/${uniq_path}*.list &>/dev/null"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 432,
+    "text": "cd ${repo_path}"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 458,
+    "text": "cp -f $file_notify_js \"${dir_scripts}/${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 459,
+    "text": "cp -f $file_notify_py \"${dir_scripts}/${uniq_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 462,
+    "text": "cd ${repo_path}"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 466,
+    "text": "make_dir \"${dir_scripts}/${uniq_path}/${file_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 467,
+    "text": "cp -f $_file \"${dir_scripts}/${uniq_path}/${file_path}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 472,
+    "text": "cp -rf $dir_dep/* \"${dir_scripts}/${uniq_path}\" &>/dev/null"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 478,
+    "text": "filePath=\"${uniq_path}/${filename}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 480,
+    "text": "mkdir -p \"${dir_scripts}/${uniq_path}/${dirPath}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 481,
+    "text": "filePath=\"${uniq_path}/${dirPath}/${filename}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 484,
+    "text": "echo \"$filePath\" >>\"$dir_list_tmp/${uniq_path}_scripts.list\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 485,
+    "text": "# cron_id=$(cat $list_crontab_user | grep -E \"$cmd_task.* ${uniq_path}_${filename}\" | perl -pe \"s|.*ID=(.*) $cmd_task.* ${uniq_path}_${filename}\\.*|\\1|\" | head -1 | awk -F \" \" '{print $1}')"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 487,
+    "text": "#   result=$(update_cron_command_api \"$cmd_task ${uniq_path}/${filename}:$cron_id\")"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 490,
+    "text": "grep -E \"${cmd_task}.* ${uniq_path}\" ${list_crontab_user} | perl -pe \"s|.*ID=(.*) ${cmd_task}.* (${uniq_path}.*)\\.*|\\2|\" | awk -F \" \" '{print $1}' | sort -u >\"$dir_list_tmp/${uniq_path}_user.list\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 494,
+    "text": "get_uniq_path() {"
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 505,
+    "text": "uniq_path=\"${author}_${repo}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 506,
+    "text": "[[ $branch ]] && uniq_path=\"${uniq_path}_${branch}\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 576,
+    "text": "get_uniq_path \"$p2\" \"$p6\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 578,
+    "text": "update_repo \"$p2\" \"$p3\" \"$p4\" \"$p5\" \"$p6\" \"$p7\" \"$p8\" \"$p9\" \"$p10\""
+  },
+  {
+    "file": "shell/update.sh",
+    "line": 585,
+    "text": "get_uniq_path \"$p2\""
+  },
+  {
+    "file": "src/locales/en-US.json",
+    "line": 292,
+    "text": "\"支持拷贝 ql repo/raw 命令，粘贴导入\": \"Supports copying ql repo/raw command for import\","
+  },
+  {
+    "file": "src/locales/zh-CN.json",
+    "line": 291,
+    "text": "\"支持拷贝 ql repo/raw 命令，粘贴导入\": \"支持拷贝 ql repo/raw 命令，粘贴导入\","
+  },
+  {
+    "file": "src/pages/repository-workspace.tsx",
+    "line": 285,
+    "text": "message=\"发现未登记到数据库的 Git Worktree\""
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 319,
+    "text": "if (text.includes('ql repo') || text.includes('ql raw')) {"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 374,
+    "text": "placeholder={intl.get('支持拷贝 ql repo/raw 命令，粘贴导入')}"
+  },
+  {
+    "file": "test/back/build-provenance.test.cjs",
+    "line": 72,
+    "text": "assert.doesNotMatch(dockerfile, /git clone.*qinglong-static/);"
+  },
+  {
+    "file": "test/back/build-provenance.test.cjs",
+    "line": 75,
+    "text": "/git fetch --depth=1 origin \"\\$\\{SOURCE_COMMIT\\}\"/,"
+  },
+  {
+    "file": "tests/phase0/service-baseline.test.cjs",
+    "line": 53,
+    "text": "assert.equal(formatCommand(doc),'SUB_ID=42 ql repo \"https://user:dummy@example.invalid/owner/repo.git\" \"python\" \"skip\" \"helper\" \"feature\" \"py\" \"\" \"true\" \"false\"');"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 26,
+    "text": "const gitFunctions = ['get_uniq_path','update_repo','gen_list_repo','diff_scripts','diff_cron','add_cron','del_cron','output_list_add_drop'].map(n => extract('shell/update.sh',n)).join('\\n') + '\\n' + extract('shell/share.sh','git_clone_scripts');"
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 36,
+    "text": "dir_repo=\"$TEST_DIR/repos\"; dir_scripts=\"$TEST_DIR/scripts\"; dir_list_tmp=\"$TEST_DIR/lists\""
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 40,
+    "text": "get_uniq_path \"file://$TEST_DIR/origin\" \"$BRANCH\""
+  },
+  {
+    "file": "tests/phase0/shell-baseline.test.cjs",
+    "line": 41,
+    "text": "update_repo \"file://$TEST_DIR/origin\" '' '' '' \"$BRANCH\" 'js|py|sh' '' true true"
+  },
+  {
+    "file": "tests/phase1/pipeline.test.cjs",
+    "line": 48,
+    "text": "// Transport boundary only is mocked: actual git clone, update.sh, scanner and copies run."
+  }
+]

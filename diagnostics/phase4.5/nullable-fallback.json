@@ -1,0 +1,1482 @@
+[
+  {
+    "file": "back/api/scopedEnvironment.ts",
+    "line": 54,
+    "text": "const repository_id = (sub as any)?.repository_id ?? null;"
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "line": 38,
+    "text": "git_mode: Joi.string().valid('LEGACY', 'MANAGED').required(),"
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "line": 47,
+    "text": "req.body.git_mode,"
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "line": 90,
+    "text": "git_mode: Joi.string().valid('LEGACY', 'MANAGED').optional(),"
+  },
+  {
+    "file": "back/api/subscription.ts",
+    "line": 245,
+    "text": "git_mode: Joi.string().valid('LEGACY', 'MANAGED').optional(),"
+  },
+  {
+    "file": "back/data/cron.ts",
+    "line": 93,
+    "text": "sub_id: { type: DataTypes.NUMBER, allowNull: true },"
+  },
+  {
+    "file": "back/data/cron.ts",
+    "line": 94,
+    "text": "env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },"
+  },
+  {
+    "file": "back/data/cronStats.ts",
+    "line": 38,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/cronStats.ts",
+    "line": 42,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/cronView.ts",
+    "line": 58,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/gitCredential.ts",
+    "line": 24,
+    "text": "name: { type: DataTypes.STRING, allowNull: false, unique: true },"
+  },
+  {
+    "file": "back/data/gitCredential.ts",
+    "line": 25,
+    "text": "provider: { type: DataTypes.STRING, allowNull: false },"
+  },
+  {
+    "file": "back/data/gitCredential.ts",
+    "line": 26,
+    "text": "auth_type: { type: DataTypes.STRING, allowNull: false },"
+  },
+  {
+    "file": "back/data/gitCredential.ts",
+    "line": 34,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/gitCredential.ts",
+    "line": 39,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 20,
+    "text": "name: { type: DataTypes.STRING, allowNull: false },"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 21,
+    "text": "provider: { type: DataTypes.STRING, allowNull: false },"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 22,
+    "text": "remote_url: { type: DataTypes.TEXT, allowNull: false },"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 23,
+    "text": "normalized_url: { type: DataTypes.STRING, allowNull: false, unique: true },"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 30,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 34,
+    "text": "default_env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },"
+  },
+  {
+    "file": "back/data/repository.ts",
+    "line": 36,
+    "text": "storage_state:{type:DataTypes.STRING,defaultValue:'UNINITIALIZED',allowNull:false},storage_path:DataTypes.TEXT,"
+  },
+  {
+    "file": "back/data/runningInstance.ts",
+    "line": 53,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/runningInstance.ts",
+    "line": 57,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/runningInstance.ts",
+    "line": 61,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/runningInstance.ts",
+    "line": 65,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/runningInstance.ts",
+    "line": 69,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/runningInstance.ts",
+    "line": 73,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/runningInstance.ts",
+    "line": 78,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 24,
+    "text": "repository_id: { type: DataTypes.INTEGER, allowNull: false, references: { model: 'Repositories', key: 'id' }, onDelete: 'RESTRICT', unique: 'repository_profile_name' },"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 25,
+    "text": "name: { type: DataTypes.STRING, allowNull: false, unique: 'repository_profile_name' },"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 27,
+    "text": "status: { type: DataTypes.STRING, allowNull: false, defaultValue: 'enabled' },"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 30,
+    "text": "name: { type: DataTypes.STRING, allowNull: false },"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 32,
+    "text": "status: { type: DataTypes.STRING, allowNull: false, defaultValue: 'enabled' },"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 33,
+    "text": "operation: { type: DataTypes.STRING, allowNull: false, defaultValue: 'SET' },"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 34,
+    "text": "is_secret: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 41,
+    "text": "profile_id: { type: DataTypes.INTEGER, allowNull: false, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'CASCADE' },"
+  },
+  {
+    "file": "back/data/scopedEnv.ts",
+    "line": 45,
+    "text": "cron_id: { type: DataTypes.INTEGER, allowNull: false, references: { model: 'Crontabs', key: 'id' }, onDelete: 'CASCADE' },"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 11,
+    "text": "git_mode?: 'LEGACY' | 'MANAGED';"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 50,
+    "text": "this.git_mode = options.git_mode || 'LEGACY';"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 99,
+    "text": "env_profile_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'EnvironmentProfiles', key: 'id' }, onDelete: 'RESTRICT' },"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 102,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 108,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 112,
+    "text": "git_mode: {"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 114,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 119,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 160,
+    "text": "proxy: { type: DataTypes.STRING, allowNull: true },"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 161,
+    "text": "autoAddCron: { type: DataTypes.NUMBER, allowNull: true },"
+  },
+  {
+    "file": "back/data/subscription.ts",
+    "line": 162,
+    "text": "autoDelCron: { type: DataTypes.NUMBER, allowNull: true },"
+  },
+  {
+    "file": "back/data/system.ts",
+    "line": 101,
+    "text": "allowNull: true,"
+  },
+  {
+    "file": "back/data/worktree.ts",
+    "line": 32,
+    "text": "allowNull: false,"
+  },
+  {
+    "file": "back/data/worktree.ts",
+    "line": 36,
+    "text": "name: { type: DataTypes.STRING, allowNull: false },"
+  },
+  {
+    "file": "back/data/worktree.ts",
+    "line": 37,
+    "text": "ref_type: { type: DataTypes.STRING, allowNull: false },"
+  },
+  {
+    "file": "back/data/worktree.ts",
+    "line": 38,
+    "text": "ref_name: { type: DataTypes.STRING, allowNull: false },"
+  },
+  {
+    "file": "back/data/worktree.ts",
+    "line": 46,
+    "text": "purpose: { type: DataTypes.STRING, allowNull: false, defaultValue: 'USER' },"
+  },
+  {
+    "file": "back/gitSubscription.ts",
+    "line": 18,
+    "text": "if (sub.git_mode === 'MANAGED') {"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 553,
+    "text": "return EnvItem.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 557,
+    "text": "message.id = object.id ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 558,
+    "text": "message.name = object.name ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 559,
+    "text": "message.value = object.value ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 560,
+    "text": "message.remarks = object.remarks ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 561,
+    "text": "message.status = object.status ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 562,
+    "text": "message.position = object.position ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 616,
+    "text": "return GetEnvsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 620,
+    "text": "message.searchValue = object.searchValue ?? \"\";"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 674,
+    "text": "return CreateEnvRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 732,
+    "text": "return UpdateEnvRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 802,
+    "text": "return DeleteEnvsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 892,
+    "text": "return MoveEnvRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 896,
+    "text": "message.id = object.id ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 897,
+    "text": "message.fromIndex = object.fromIndex ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 898,
+    "text": "message.toIndex = object.toIndex ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 964,
+    "text": "return DisableEnvsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1034,
+    "text": "return EnableEnvsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1121,
+    "text": "return UpdateEnvNamesRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1126,
+    "text": "message.name = object.name ?? \"\";"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1180,
+    "text": "return GetEnvByIdRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1184,
+    "text": "message.id = object.id ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1270,
+    "text": "return EnvsResponse.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1274,
+    "text": "message.code = object.code ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1276,
+    "text": "message.message = object.message ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1362,
+    "text": "return EnvResponse.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1366,
+    "text": "message.code = object.code ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1368,
+    "text": "message.message = object.message ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1439,
+    "text": "return Response.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1443,
+    "text": "message.code = object.code ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1444,
+    "text": "message.message = object.message ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1498,
+    "text": "return ExtraScheduleItem.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1502,
+    "text": "message.schedule = object.schedule ?? \"\";"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1772,
+    "text": "return CronItem.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1776,
+    "text": "message.id = object.id ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1777,
+    "text": "message.command = object.command ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1778,
+    "text": "message.schedule = object.schedule ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1779,
+    "text": "message.name = object.name ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1781,
+    "text": "message.sub_id = object.sub_id ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1783,
+    "text": "message.task_before = object.task_before ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1784,
+    "text": "message.task_after = object.task_after ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1785,
+    "text": "message.status = object.status ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1786,
+    "text": "message.log_path = object.log_path ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1787,
+    "text": "message.pid = object.pid ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1788,
+    "text": "message.last_running_time = object.last_running_time ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1789,
+    "text": "message.last_execution_time = object.last_execution_time ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1961,
+    "text": "return CreateCronRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1965,
+    "text": "message.command = object.command ?? \"\";"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1966,
+    "text": "message.schedule = object.schedule ?? \"\";"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1967,
+    "text": "message.name = object.name ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1969,
+    "text": "message.sub_id = object.sub_id ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1971,
+    "text": "message.task_before = object.task_before ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 1972,
+    "text": "message.task_after = object.task_after ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2160,
+    "text": "return UpdateCronRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2164,
+    "text": "message.id = object.id ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2165,
+    "text": "message.command = object.command ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2166,
+    "text": "message.schedule = object.schedule ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2167,
+    "text": "message.name = object.name ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2169,
+    "text": "message.sub_id = object.sub_id ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2171,
+    "text": "message.task_before = object.task_before ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2172,
+    "text": "message.task_after = object.task_after ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2238,
+    "text": "return DeleteCronsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2296,
+    "text": "return GetCronsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2300,
+    "text": "message.searchValue = object.searchValue ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2354,
+    "text": "return GetCronByIdRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2358,
+    "text": "message.id = object.id ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2424,
+    "text": "return EnableCronsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2494,
+    "text": "return DisableCronsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2564,
+    "text": "return RunCronsRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2654,
+    "text": "return CronsResponse.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2658,
+    "text": "message.code = object.code ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2660,
+    "text": "message.message = object.message ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2746,
+    "text": "return CronResponse.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2750,
+    "text": "message.code = object.code ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2752,
+    "text": "message.message = object.message ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2806,
+    "text": "return CronDetailRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2810,
+    "text": "message.log_path = object.log_path ?? \"\";"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2896,
+    "text": "return CronDetailResponse.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2900,
+    "text": "message.code = object.code ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 2902,
+    "text": "message.message = object.message ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4124,
+    "text": "return NotificationInfo.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4128,
+    "text": "message.type = object.type ?? 0;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4129,
+    "text": "message.gotifyUrl = object.gotifyUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4130,
+    "text": "message.gotifyToken = object.gotifyToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4131,
+    "text": "message.gotifyPriority = object.gotifyPriority ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4132,
+    "text": "message.goCqHttpBotUrl = object.goCqHttpBotUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4133,
+    "text": "message.goCqHttpBotToken = object.goCqHttpBotToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4134,
+    "text": "message.goCqHttpBotQq = object.goCqHttpBotQq ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4135,
+    "text": "message.serverChanKey = object.serverChanKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4136,
+    "text": "message.pushDeerKey = object.pushDeerKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4137,
+    "text": "message.pushDeerUrl = object.pushDeerUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4138,
+    "text": "message.synologyChatUrl = object.synologyChatUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4139,
+    "text": "message.barkPush = object.barkPush ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4140,
+    "text": "message.barkIcon = object.barkIcon ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4141,
+    "text": "message.barkSound = object.barkSound ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4142,
+    "text": "message.barkGroup = object.barkGroup ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4143,
+    "text": "message.barkLevel = object.barkLevel ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4144,
+    "text": "message.barkUrl = object.barkUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4145,
+    "text": "message.barkArchive = object.barkArchive ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4146,
+    "text": "message.telegramBotToken = object.telegramBotToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4147,
+    "text": "message.telegramBotUserId = object.telegramBotUserId ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4148,
+    "text": "message.telegramBotProxyHost = object.telegramBotProxyHost ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4149,
+    "text": "message.telegramBotProxyPort = object.telegramBotProxyPort ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4150,
+    "text": "message.telegramBotProxyAuth = object.telegramBotProxyAuth ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4151,
+    "text": "message.telegramBotApiHost = object.telegramBotApiHost ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4152,
+    "text": "message.dingtalkBotToken = object.dingtalkBotToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4153,
+    "text": "message.dingtalkBotSecret = object.dingtalkBotSecret ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4154,
+    "text": "message.weWorkBotKey = object.weWorkBotKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4155,
+    "text": "message.weWorkOrigin = object.weWorkOrigin ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4156,
+    "text": "message.weWorkAppKey = object.weWorkAppKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4157,
+    "text": "message.aibotkKey = object.aibotkKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4158,
+    "text": "message.aibotkType = object.aibotkType ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4159,
+    "text": "message.aibotkName = object.aibotkName ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4160,
+    "text": "message.iGotPushKey = object.iGotPushKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4161,
+    "text": "message.pushPlusToken = object.pushPlusToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4162,
+    "text": "message.pushPlusUser = object.pushPlusUser ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4163,
+    "text": "message.pushPlusTemplate = object.pushPlusTemplate ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4164,
+    "text": "message.pushplusChannel = object.pushplusChannel ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4165,
+    "text": "message.pushplusWebhook = object.pushplusWebhook ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4166,
+    "text": "message.pushplusCallbackUrl = object.pushplusCallbackUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4167,
+    "text": "message.pushplusTo = object.pushplusTo ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4168,
+    "text": "message.wePlusBotToken = object.wePlusBotToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4169,
+    "text": "message.wePlusBotReceiver = object.wePlusBotReceiver ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4170,
+    "text": "message.wePlusBotVersion = object.wePlusBotVersion ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4171,
+    "text": "message.emailService = object.emailService ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4172,
+    "text": "message.emailUser = object.emailUser ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4173,
+    "text": "message.emailPass = object.emailPass ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4174,
+    "text": "message.emailTo = object.emailTo ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4175,
+    "text": "message.pushMeKey = object.pushMeKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4176,
+    "text": "message.pushMeUrl = object.pushMeUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4177,
+    "text": "message.chronocatURL = object.chronocatURL ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4178,
+    "text": "message.chronocatQQ = object.chronocatQQ ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4179,
+    "text": "message.chronocatToken = object.chronocatToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4180,
+    "text": "message.webhookHeaders = object.webhookHeaders ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4181,
+    "text": "message.webhookBody = object.webhookBody ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4182,
+    "text": "message.webhookUrl = object.webhookUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4183,
+    "text": "message.webhookMethod = object.webhookMethod ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4184,
+    "text": "message.webhookContentType = object.webhookContentType ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4185,
+    "text": "message.larkKey = object.larkKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4186,
+    "text": "message.larkSecret = object.larkSecret ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4187,
+    "text": "message.ntfyUrl = object.ntfyUrl ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4188,
+    "text": "message.ntfyTopic = object.ntfyTopic ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4189,
+    "text": "message.ntfyPriority = object.ntfyPriority ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4190,
+    "text": "message.ntfyToken = object.ntfyToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4191,
+    "text": "message.ntfyUsername = object.ntfyUsername ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4192,
+    "text": "message.ntfyPassword = object.ntfyPassword ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4193,
+    "text": "message.ntfyActions = object.ntfyActions ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4194,
+    "text": "message.wxPusherBotAppToken = object.wxPusherBotAppToken ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4195,
+    "text": "message.wxPusherBotTopicIds = object.wxPusherBotTopicIds ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4196,
+    "text": "message.wxPusherBotUids = object.wxPusherBotUids ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4197,
+    "text": "message.wxPusherSptList = object.wxPusherSptList ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4198,
+    "text": "message.wpushApiKey = object.wpushApiKey ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4199,
+    "text": "message.wpushChannel = object.wpushChannel ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4200,
+    "text": "message.wpushTopicCode = object.wpushTopicCode ?? undefined;"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4286,
+    "text": "return SystemNotifyRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4290,
+    "text": "message.title = object.title ?? \"\";"
+  },
+  {
+    "file": "back/protos/api.ts",
+    "line": 4291,
+    "text": "message.content = object.content ?? \"\";"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 100,
+    "text": "return ISchedule.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 104,
+    "text": "message.schedule = object.schedule ?? \"\";"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 222,
+    "text": "return ICron.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 226,
+    "text": "message.id = object.id ?? \"\";"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 227,
+    "text": "message.schedule = object.schedule ?? \"\";"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 228,
+    "text": "message.command = object.command ?? \"\";"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 230,
+    "text": "message.name = object.name ?? \"\";"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 301,
+    "text": "return AddCronRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 306,
+    "text": "message.replace = object.replace ?? false;"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 346,
+    "text": "return AddCronResponse.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 403,
+    "text": "return DeleteCronRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/cron.ts",
+    "line": 447,
+    "text": "return DeleteCronResponse.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/health.ts",
+    "line": 128,
+    "text": "return HealthCheckRequest.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/health.ts",
+    "line": 132,
+    "text": "message.service = object.service ?? \"\";"
+  },
+  {
+    "file": "back/protos/health.ts",
+    "line": 186,
+    "text": "return HealthCheckResponse.fromPartial(base ?? ({} as any));"
+  },
+  {
+    "file": "back/protos/health.ts",
+    "line": 190,
+    "text": "message.status = object.status ?? 0;"
+  },
+  {
+    "file": "back/schedule/api.ts",
+    "line": 255,
+    "text": "labels: cron.labels ?? [],"
+  },
+  {
+    "file": "back/schedule/api.ts",
+    "line": 256,
+    "text": "sub_id: cron.sub_id ?? undefined,"
+  },
+  {
+    "file": "back/schedule/api.ts",
+    "line": 257,
+    "text": "extra_schedules: cron.extra_schedules ?? [],"
+  },
+  {
+    "file": "back/schedule/api.ts",
+    "line": 258,
+    "text": "pid: cron.pid ?? undefined,"
+  },
+  {
+    "file": "back/schedule/api.ts",
+    "line": 259,
+    "text": "task_before: cron.task_before ?? undefined,"
+  },
+  {
+    "file": "back/schedule/api.ts",
+    "line": 260,
+    "text": "task_after: cron.task_after ?? undefined,"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 388,
+    "text": "exit_code: exit_code ?? undefined,"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 705,
+    "text": "where(colFn('log_path'), { [Op.eq]: doc.log_path ?? null }),"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 707,
+    "text": "[Op.eq]: doc.queued_token ?? null,"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 768,
+    "text": "where(colFn('queued_token'), { [Op.eq]: doc.queued_token ?? null }),"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 769,
+    "text": "where(colFn('pid'), { [Op.eq]: doc.pid ?? null }),"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 770,
+    "text": "where(colFn('log_path'), { [Op.eq]: doc.log_path ?? null }),"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 828,
+    "text": "queuedToken = cron.queued_token ?? null;"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 829,
+    "text": "queuedLogPath = cron.log_path ?? null;"
+  },
+  {
+    "file": "back/services/cron.ts",
+    "line": 1108,
+    "text": "const tabs = data ?? (await this.crontabs());"
+  },
+  {
+    "file": "back/services/gitCredentialResolver.ts",
+    "line": 163,
+    "text": "code: timedOut ? 124 : code ?? 1,"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 99,
+    "text": "await sub.update({ git_mode: mode }); // Retain binding and all Git objects."
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 102,
+    "text": "sub.update({ git_mode: mode, worktree_id: id }),"
+  },
+  {
+    "file": "back/services/managedSubscription.ts",
+    "line": 112,
+    "text": "if (!sub || sub.git_mode !== 'MANAGED')"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 47,
+    "text": "const repository_id = old?.repository_id ?? input.repository_id;"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 52,
+    "text": "const name = (input.name ?? old?.name ?? '').trim();"
+  },
+  {
+    "file": "back/services/repositoryEnvProfile.ts",
+    "line": 54,
+    "text": "const fields = { repository_id, name, description: input.description ?? old?.description ?? '', status: input.status ?? old?.status ?? 'enabled' };"
+  },
+  {
+    "file": "back/services/schedule.ts",
+    "line": 124,
+    "text": "result.error ??= asError(error);"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 47,
+    "text": "const operation = patch.operation ?? old?.operation ?? 'SET';"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 48,
+    "text": "const status = patch.status ?? old?.status ?? 'enabled';"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 49,
+    "text": "const is_secret = patch.is_secret ?? old?.is_secret ?? false;"
+  },
+  {
+    "file": "back/services/scopedEnvVariable.ts",
+    "line": 56,
+    "text": "const fields = { [key]: id, name: patch.name, value, operation, status, is_secret, position: patch.position ?? old?.position ?? 0, labels: patch.labels ?? old?.labels ?? [] };"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 240,
+    "text": "tab.git_mode === 'MANAGED'"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 291,
+    "text": "tab.git_mode === 'MANAGED'"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 370,
+    "text": "if (doc.worktree_id || doc.git_mode === 'MANAGED') continue;"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "line": 413,
+    "text": "{ where: { id: ids, git_mode: 'MANAGED', last_sync_state: 'RUNNING' } },"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "line": 76,
+    "text": "const credentialId = sub.credential_id ?? repository.default_credential_id;"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 31,
+    "text": "for (const row of globals) if (row.name && ENV_NAME.test(row.name)) groups.set(row.name, [...(groups.get(row.name) || []), row.value ?? '']);"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 39,
+    "text": "else { variables[row.name] = row.value ?? ''; overlay[row.name] = row.value ?? ''; unset.delete(row.name); }"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 54,
+    "text": "const profileId = task.env_profile_id ?? sub?.env_profile_id ?? repo?.default_env_profile_id;"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 55,
+    "text": "const profile = profileId == null ? null : await this.profiles.validateBinding(profileId, repo?.id, transaction) ?? null;"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 61,
+    "text": "scoped: !!profile || taskVariables.length > 0, task_id: task.id, repository_id: repo?.id ?? null,"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 72,
+    "text": "value: resolved.secretNames.includes(name) || origin === 'SYSTEM' ? null : resolved.variables[name] ?? null,"
+  },
+  {
+    "file": "back/services/taskEnvironmentResolver.ts",
+    "line": 73,
+    "text": "display: resolved.secretNames.includes(name) || origin === 'SYSTEM' ? '********' : resolved.variables[name] ?? null,"
+  },
+  {
+    "file": "back/shared/childProcess.ts",
+    "line": 25,
+    "text": "failure ??= asError(error);"
+  },
+  {
+    "file": "back/shared/gitSecurity.ts",
+    "line": 11,
+    "text": "let text = String(value ?? '');"
+  },
+  {
+    "file": "back/shared/managedSubscriptionMigration.ts",
+    "line": 17,
+    "text": "git_mode: \"VARCHAR(32) NOT NULL DEFAULT 'LEGACY'\","
+  },
+  {
+    "file": "src/components/scoped-environment.tsx",
+    "line": 54,
+    "text": "{context && <><span>Repository Profile</span><Select aria-label=\"Repository Profile\" style={{ width: '100%' }} disabled={!context.repository_id} value={context.env_profile_id ?? null} options={[{ value: null, label: context.repository_id ? 'Inherit — Subscription / Repository Default' : 'Unavailable — 无仓库上下文' }, ...context.profiles.map((p: any) => ({ value: p.id, label: `${p.name}${p.is_default ? ' (Default)' : ''}${p.status === 'disabled' ? ' (Disabled)' : ''}` }))]} onChange={async value => { const r = await request.put(`${api}${resource}/${id}/profile`, { env_profile_id: value }); if (r.code === 200) { await load(); setPreview(undefined); message.success('Profile 绑定已保存'); } }} /></>}"
+  },
+  {
+    "file": "src/pages/repository/index.tsx",
+    "line": 55,
+    "text": "default_credential_id: row.default_credential_id ?? null,"
+  },
+  {
+    "file": "src/pages/repository-workspace.tsx",
+    "line": 395,
+    "text": "`${r.status_snapshot?.ahead ?? '—'} / ${"
+  },
+  {
+    "file": "src/pages/repository-workspace.tsx",
+    "line": 396,
+    "text": "r.status_snapshot?.behind ?? '—'"
+  },
+  {
+    "file": "src/pages/repository-workspace.tsx",
+    "line": 579,
+    "text": "{git?.ahead ?? '—'} / {git?.behind ?? '—'}"
+  },
+  {
+    "file": "src/pages/subscription/index.tsx",
+    "line": 76,
+    "text": "key: 'git_mode',"
+  },
+  {
+    "file": "src/pages/subscription/index.tsx",
+    "line": 80,
+    "text": "<Tag color={row.git_mode === 'MANAGED' ? 'blue' : undefined}>"
+  },
+  {
+    "file": "src/pages/subscription/index.tsx",
+    "line": 81,
+    "text": "{row.git_mode || 'LEGACY'}"
+  },
+  {
+    "file": "src/pages/subscription/index.tsx",
+    "line": 393,
+    "text": "{record.worktree_id || record.git_mode === 'MANAGED' ? '同时删除关联任务（保留 scripts 和工作区）' : intl.get('同时删除关联任务和脚本')}"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 81,
+    "text": "git_mode:"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 82,
+    "text": "sourceMode === 'repository' ? values.git_mode || 'LEGACY' : 'LEGACY',"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 363,
+    "text": "git_mode: 'LEGACY',"
+  },
+  {
+    "file": "src/pages/subscription/modal.tsx",
+    "line": 435,
+    "text": "name=\"git_mode\""
+  },
+  {
+    "file": "test/back/shell-api-parsing.test.cjs",
+    "line": 170,
+    "text": "test('success-shaped invalid documents retain the raw-response error fallback', (t) => {"
+  },
+  {
+    "file": "tests/phase1/pipeline.test.cjs",
+    "line": 56,
+    "text": ")},mapped,{env:{...process.env,GIT_ALLOW_PROTOCOL:'file'},stdio:'inherit'});process.exit(r.status??1);\\n`,"
+  },
+  {
+    "file": "tests/phase1/resources.test.cjs",
+    "line": 115,
+    "text": "test('resolution priority, nullable legacy fallback, disabled and missing credentials', async (t) => {"
+  },
+  {
+    "file": "tests/phase3/lease.test.cjs",
+    "line": 4,
+    "text": "const h=await setup(t);await h.storage.initialize(h.repo.id);const tree=await h.worktrees.create({repository_id:h.repo.id,name:'leased',ref_type:'branch',ref_name:'main'});const sub=await h.SubscriptionModel.create({repository_id:h.repo.id,name:'preflight',alias:'preflight',type:'public-repo',branch:'main',git_mode:'LEGACY'});"
+  },
+  {
+    "file": "tests/phase3/lease.test.cjs",
+    "line": 5,
+    "text": "const Managed=h.get('services/managedSubscription').default,Resolver=h.get('services/subscriptionGit').default,managed=new Managed(h.storage,h.worktrees,new Resolver());const lease=await h.worktrees.acquireExecutionLease(tree.id,{owner_type:'test',owner_id:'preflight'});try{await assert.rejects(managed.preflight(sub.id),{error_code:'WORKTREE_BUSY'});assert.equal((await sub.reload()).git_mode,'LEGACY');}finally{await lease.release();}"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 33,
+    "text": "rows.map((r) => [r.id, r.git_mode, r.worktree_id]),"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 58,
+    "text": "(await db.getQueryInterface().describeTable('Subscriptions')).git_mode,"
+  },
+  {
+    "file": "tests/phase3/migration.test.cjs",
+    "line": 63,
+    "text": "(await db.getQueryInterface().describeTable('Subscriptions')).git_mode,"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 30,
+    "text": "git_mode: 'LEGACY',"
+  },
+  {
+    "file": "tests/phase3/pipeline.test.cjs",
+    "line": 44,
+    "text": "assert.equal(h.sub.git_mode, 'LEGACY');"
+  },
+  {
+    "file": "tests/phase4/domain.test.cjs",
+    "line": 5,
+    "text": "const sub = await h.SubscriptionModel.create({ alias: 'sub', repository_id: repo.id, git_mode: 'LEGACY' });"
+  },
+  {
+    "file": "tests/phase4/legacy-characterization.test.cjs",
+    "line": 4,
+    "text": "for (const language of ['sh', 'js', 'py']) test(`pre-integration characterization: actual task.sh ${language} duplicates, disabled host fallback, spaces, templates`, async t => {"
+  }
+]

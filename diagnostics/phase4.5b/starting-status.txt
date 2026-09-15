@@ -1,0 +1,78 @@
+e3d3f17f66b1df8dde9c13299eef63fe4588a259
+ M AGENTS.md
+ M PHASE0_REPORT.md
+ M PHASE1_REPORT.md
+ M PHASE2_REPORT.md
+ M PHASE3_REPORT.md
+ M PHASE4_REPORT.md
+ M docs/refactor/00-phase0-current-architecture.md
+ M docs/refactor/01-current-data-model.md
+ M docs/refactor/02-current-git-subscription-flow.md
+ M docs/refactor/03-current-task-execution-flow.md
+ M docs/refactor/04-current-env-model.md
+ M docs/refactor/05-current-dependency-model.md
+ M docs/refactor/06-current-filesystem-layout.md
+ M docs/refactor/07-current-risks.md
+ M docs/refactor/08-refactor-impact-map.md
+ M docs/refactor/09-repository-worktree-coupling.md
+ M docs/refactor/10-legacy-compatibility-contract.md
+ M docs/refactor/11-test-baseline.md
+ M docs/refactor/12-source-inventory.md
+ M docs/refactor/13-delivery-manifest.md
+ M docs/refactor/phase1/01-git-credential-model.md
+ M docs/refactor/phase1/02-repository-model.md
+ M docs/refactor/phase1/03-repository-normalization.md
+ M docs/refactor/phase1/04-subscription-compatibility.md
+ M docs/refactor/phase1/05-credential-security.md
+ M docs/refactor/phase1/06-phase1-test-report.md
+ M docs/refactor/phase1/07-phase1-migration.md
+ M docs/refactor/phase2/01-repository-storage.md
+ M docs/refactor/phase2/02-worktree-model.md
+ M docs/refactor/phase2/03-worktree-lifecycle.md
+ M docs/refactor/phase2/04-lock-and-lease.md
+ M docs/refactor/phase2/05-git-status-model.md
+ M docs/refactor/phase2/06-filesystem-layout.md
+ M docs/refactor/phase2/07-failure-recovery.md
+ M docs/refactor/phase2/08-phase2-test-report.md
+ M docs/refactor/phase3/01-managed-subscription-model.md
+ M docs/refactor/phase3/02-managed-git-pipeline.md
+ M docs/refactor/phase3/03-subscription-worktree-binding.md
+ M docs/refactor/phase3/04-discovery-compatibility.md
+ M docs/refactor/phase3/05-lock-and-consistency.md
+ M docs/refactor/phase3/06-failure-preservation.md
+ M docs/refactor/phase3/07-legacy-migration.md
+ M docs/refactor/phase3/08-phase3-test-report.md
+ M docs/refactor/phase4/01-scoped-env-model.md
+ M docs/refactor/phase4/02-repository-env-profiles.md
+ M docs/refactor/phase4/03-task-env-overrides.md
+ M docs/refactor/phase4/04-environment-resolution.md
+ M docs/refactor/phase4/05-execution-env-transport.md
+ M docs/refactor/phase4/06-secret-handling.md
+ M docs/refactor/phase4/07-legacy-env-compatibility.md
+ M docs/refactor/phase4/08-phase4-test-report.md
+ M refactor/1.roadmaps.md
+?? GREENFIELD_REMOVAL_PLAN.md
+?? TEMPORARY_BRIDGES.md
+?? diagnostics/phase4.5/README.md
+?? diagnostics/phase4.5/api-inventory.md
+?? diagnostics/phase4.5/api-routes.json
+?? diagnostics/phase4.5/compatibility.json
+?? diagnostics/phase4.5/context-managed.txt
+?? diagnostics/phase4.5/crontab-consumers.json
+?? diagnostics/phase4.5/dead-code-candidates.md
+?? diagnostics/phase4.5/dependency-graph.md
+?? diagnostics/phase4.5/env-paths.json
+?? diagnostics/phase4.5/git-paths.json
+?? diagnostics/phase4.5/gitnexus-index.txt
+?? diagnostics/phase4.5/impact-setCrontab.txt
+?? diagnostics/phase4.5/internal-api.json
+?? diagnostics/phase4.5/inventory.py
+?? diagnostics/phase4.5/nullable-fallback.json
+?? diagnostics/phase4.5/query-publication.txt
+?? diagnostics/phase4.5/scripts-consumers.json
+?? diagnostics/phase4.5/source-files.json
+?? diagnostics/phase4.5/test-cases.json
+?? diagnostics/phase4.5/test-inventory.md
+?? diagnostics/phase4.5/verification.json
+?? docs/architecture/
+?? docs/refactor/phase4.5/

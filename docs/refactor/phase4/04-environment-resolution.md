@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Environment Resolution
 
 入口 `TaskEnvironmentResolver.resolve(taskId | task, baseEnv)`。单次数据库事务批量获取 Task、Subscription、Repository、选中 Profile、Global rows、Profile variables 和 Task variables。`mergeTaskEnvironment` 为纯函数，返回冻结的原始字符串 map；不会 spawn、source、写日志、修改 process.env。

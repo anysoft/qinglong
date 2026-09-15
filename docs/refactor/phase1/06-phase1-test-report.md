@@ -1,3 +1,6 @@
+> **Historical Refactor Records — Greenfield Direction (Phase 4.5A)**
+> 本文保留历史实现与验证证据；其中 QingLong compatibility / migration / legacy behavior preservation 不再是现行设计要求。新方向仅支持 Fresh Install，见[平台架构](../../architecture/00-platform-overview.md)。当前仍被使用的桥接层按删除计划与退出 gate 保留，不能依据此标记直接删代码。
+
 # Phase 1 verification
 
 Verified on macOS with Node 22.23.2, existing lockfile dependencies, Git and OpenSSH. No production server or live database was started. Core tests use in-memory SQLite, temporary directories and local Git fixtures; no provider account or public GitHub remote is required.
