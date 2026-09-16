@@ -1,5 +1,6 @@
 import { nodeEnvironmentModels } from '../data/nodeEnvironment';
 import { taskModels } from '../data/task';
+import { taskRunModels } from '../data/taskRun';
 import { pythonEnvironmentModels } from '../data/pythonEnvironment';
 import Logger from './logger';
 import { runtimeModels } from '../data/runtime';
@@ -20,17 +21,38 @@ import config from '../config';
 import { GitCredentialModel } from '../data/gitCredential';
 import { RepositoryModel } from '../data/repository';
 import { WorktreeModel } from '../data/worktree';
-import { EnvironmentProfileModel, RepositoryEnvVariableModel, TaskEnvVariableModel } from '../data/scopedEnv';
+import {
+  EnvironmentProfileModel,
+  RepositoryEnvVariableModel,
+  TaskEnvVariableModel,
+} from '../data/scopedEnv';
 import ExecutionEnvironmentTransport from '../services/executionEnvironmentTransport';
 
 export default async () => {
   try {
     await bootstrapDirectories(config.dataPath);
     await initializeOperationalSchema(sequelize, [
-      GitCredentialModel, RepositoryModel, WorktreeModel, EnvironmentProfileModel,
-      SubscriptionModel, SchedulerProjectionModel, RepositoryEnvVariableModel, TaskEnvVariableModel,
-      EnvModel, DependenceModel, AppModel, SystemModel, TaskViewModel,
-      TaskStatModel, RunningInstanceModel, ...configAssetModels, ...runtimeModels, ...pythonEnvironmentModels, ...nodeEnvironmentModels, ...taskModels,
+      GitCredentialModel,
+      RepositoryModel,
+      WorktreeModel,
+      EnvironmentProfileModel,
+      SubscriptionModel,
+      SchedulerProjectionModel,
+      RepositoryEnvVariableModel,
+      TaskEnvVariableModel,
+      EnvModel,
+      DependenceModel,
+      AppModel,
+      SystemModel,
+      TaskViewModel,
+      TaskStatModel,
+      RunningInstanceModel,
+      ...configAssetModels,
+      ...runtimeModels,
+      ...pythonEnvironmentModels,
+      ...nodeEnvironmentModels,
+      ...taskModels,
+      ...taskRunModels,
     ]);
     await new ExecutionEnvironmentTransport().cleanupStale().catch(() => {
       Logger.warn('[environment] stale snapshot cleanup deferred');

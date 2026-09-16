@@ -476,6 +476,7 @@ export default class NodePackageManager {
       row: any,
       depth: number,
       type: string,
+      optional = new Set<string>(),
     ): Promise<void> => {
       if (depth > 100 || ++count > 20000)
         throw new RuntimeError('NODE_GRAPH_LIMIT');
@@ -487,6 +488,16 @@ export default class NodePackageManager {
         for (const [key, value] of Object.entries(row[group] ?? {})) {
           const item = value as any,
             name = item.name ?? key;
+          // npm ls represents omitted platform-specific optional dependencies as {}.
+          // Accept only an empty placeholder declared optional by the parent lock entry.
+          if (
+            tool.manager_type === 'NPM' &&
+            item &&
+            typeof item === 'object' &&
+            Object.keys(item).length === 0 &&
+            optional.has(key)
+          )
+            continue;
           if (
             typeof name !== 'string' ||
             typeof item.version !== 'string' ||
@@ -515,7 +526,23 @@ export default class NodePackageManager {
               ? old.dependency_type
               : dependency_type,
           });
-          await visit(item, depth + 1, dependency_type);
+          const optionalChildren = new Set<string>();
+          if (tool.manager_type === 'NPM')
+            for (const [location, entry] of Object.entries(
+              (parsed as any).packages ?? {},
+            )) {
+              const locked = entry as any;
+              if (
+                (location === `node_modules/${name}` ||
+                  location.endsWith(`/node_modules/${name}`)) &&
+                locked.version === item.version
+              )
+                for (const child of Object.keys(
+                  locked.optionalDependencies ?? {},
+                ))
+                  optionalChildren.add(child);
+            }
+          await visit(item, depth + 1, dependency_type, optionalChildren);
         }
     };
     await visit(Array.isArray(graph) ? graph[0] : graph, 0, 'DEPENDENCY');

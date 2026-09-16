@@ -4,6 +4,7 @@ import { TaskModel, TaskSourceModel } from '../data/task';
 import { SubscriptionModel } from '../data/subscription';
 import { SchedulerProjectionModel } from '../data/cron';
 import config from '../config';
+import { executionLauncher } from '../shared/executionLauncher';
 import { Transaction } from 'sequelize';
 import {
   TaskDefinitionError,
@@ -12,8 +13,8 @@ import {
 } from '../shared/taskDefinition';
 
 const quote = (value: string) => "'" + value.replace(/'/g, "'\\''") + "'";
-/** B01/B15: the only translation from canonical Task Source to existing scripts
- * publication. No Worktree direct execution and no managed Runtime activation. */
+/** Scheduler projection writes only a protected Task-ID launcher.
+ * source() remains solely for the disabled B17 recovery bridge. */
 export default class TaskExecutionSourceBridge {
   async source(id: number, transaction?: Transaction) {
     const task = await TaskModel.findByPk(id, { transaction }),
@@ -46,31 +47,15 @@ export default class TaskExecutionSourceBridge {
   async refresh(id: number, transaction?: Transaction) {
     const task = await TaskModel.findByPk(id, { transaction });
     if (!task) throw new TaskDefinitionError('TASK_NOT_FOUND', 404);
-    let data: Awaited<ReturnType<TaskExecutionSourceBridge['source']>>;
-    try {
-      data = await this.source(id, transaction);
-    } catch (error) {
-      // Keep historical log/status identity and the command-only migration audit.
+    const source = await TaskSourceModel.findByPk(id, { transaction });
+    if (!source) {
       await SchedulerProjectionModel.update(
         { isDisabled: 1 },
         { where: { id }, transaction },
       );
-      return {
-        available: false,
-        reason: (error as TaskDefinitionError).error_code,
-      };
+      return { available: false, reason: 'TASK_SOURCE_REQUIRED' };
     }
-    const source = data.source;
-    const entry = `${data.prefix}/${relativeTaskPath(
-      source.relative_entrypoint,
-    )}`;
-    const command = 'task ' + (/^[A-Za-z0-9_./-]+$/.test(entry) ? entry : quote(entry));
-    const work_dir =
-      source.cwd_mode === 'WORKTREE_ROOT'
-        ? data.prefix
-        : source.cwd_mode === 'CUSTOM_RELATIVE'
-        ? `${data.prefix}/${relativeTaskPath(source.cwd_relative_path)}`
-        : undefined;
+    const command = executionLauncher(id);
     const values = {
       id,
       name: task.name,
@@ -87,7 +72,7 @@ export default class TaskExecutionSourceBridge {
           }
         : undefined,
       env_profile_id: task.env_profile_id,
-      work_dir,
+      work_dir: undefined,
     };
     const existing = await SchedulerProjectionModel.findByPk(id, {
       transaction,

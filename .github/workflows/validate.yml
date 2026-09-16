@@ -27,45 +27,37 @@ jobs:
       - run: pnpm build:back
       - run: pnpm test
       - run: pnpm build:front
-      - run: node diagnostics/phase9/static-audit.cjs
+      - run: node diagnostics/phase10/static-audit.cjs
       - name: Typecheck with recorded pre-existing diagnostic budget
-        run: node diagnostics/phase9/check-typecheck.cjs
+        run: node diagnostics/phase10/check-typecheck.cjs
       # Provision a real managed CPython once; package acceptance below uses only local artifacts.
       - run: sudo apt-get install -y build-essential curl tar libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libffi-dev liblzma-dev
       - name: Provision official managed CPython for Python Environment gates
-        run: node diagnostics/phase8/prepare-managed-python.cjs
-      - name: Mandatory offline real venv and dependency environment gate
-        run: |
-          QL_PHASE7_MANAGED_ROOT="$(node -p 'require("./diagnostics/phase8/managed-runtime/result.json").root')" node --test tests/phase7/offline.test.cjs
-          cp diagnostics/phase7/offline-result.json diagnostics/phase8/python-offline-result.json
+        run: node diagnostics/phase10/prepare-managed-python.cjs
       - name: Official managed Node binary and exact npm/pnpm toolchains
-        run: node diagnostics/phase8/prepare-managed-node.cjs
-      - name: Mandatory real npm/pnpm local registry and process lifecycle gates
-        run: node --test --test-concurrency=1 tests/phase8/offline.test.cjs tests/phase8/lifecycle.test.cjs
+        run: node diagnostics/phase10/prepare-managed-node.cjs
+      - name: Phase 10 real Python, CJS, ESM and TypeScript pinned execution
+        run: node --test --test-concurrency=1 tests/phase10/managed-python.test.cjs tests/phase10/managed-node.test.cjs
+      - name: Previous managed Environment lifecycle regressions
+        run: |
+          node diagnostics/phase10/cleanup-execution-definitions.cjs
+          node diagnostics/phase10/run-managed-regression.cjs
       - name: Install isolated browser acceptance runtime
         run: |
           npm install --prefix "$RUNNER_TEMP/platform-browser" --no-audit --no-fund ssh2@1.17.0 playwright@1.58.2
           node "$RUNNER_TEMP/platform-browser/node_modules/playwright/cli.js" install --with-deps chromium
-      - name: Reuse verified official distributions for Phase 9 acceptance
-        run: |
-          mkdir -p diagnostics/phase9/managed-runtime diagnostics/phase9/managed-node
-          cp diagnostics/phase8/managed-runtime/result.json diagnostics/phase9/managed-runtime/result.json
-          cp diagnostics/phase8/managed-node/result.json diagnostics/phase9/managed-node/result.json
-      - name: Phase 9 fresh Task resource binding browser and restart acceptance
+      - name: Phase 10 fresh browser and restart execution acceptance
         env:
           QL_BROWSER_RUNTIME: ${{ runner.temp }}/platform-browser/node_modules
-        run: |
-          pnpm test:platform:e2e
-          node diagnostics/phase9/browser-restart-editor.cjs
+        run: pnpm test:platform:e2e
       - name: Verify and remove owned managed fixtures
-        run: node diagnostics/phase8/cleanup-managed-fixtures.cjs
-      - run: pnpm benchmark:execution -- --runs=10 --output=execution-baseline.json
+        run: node diagnostics/phase10/cleanup-managed-fixtures.cjs
       - uses: actions/upload-artifact@v6
         if: always()
         with:
-          name: execution-baseline
+          name: phase10-execution-gates
           path: |
-            execution-baseline.json
+            diagnostics/phase10/
             diagnostics/phase9/
             diagnostics/phase8/platform-e2e.json
             diagnostics/phase8/platform-e2e-backend.log

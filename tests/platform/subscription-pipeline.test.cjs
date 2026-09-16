@@ -44,7 +44,8 @@ test('repository-only prepare, first sync, no-change retry and FF update retain 
     x.get({ plain: true }),
   );
   assert.equal(original.length, 1);
-  assert.equal(original[0].command, 'task subscription-1/job.js');
+  assert.match(original[0].command, /taskRunSubmit\.js/);
+  assert.ok(!original[0].command.includes('job.js'));
   await h.managed.run(h.sub.id);
   assert.equal(await h.SchedulerProjectionModel.count(), 1);
   await fs.writeFile(
@@ -186,7 +187,7 @@ test('fetch, scanner, copy and Cron failures preserve Tasks; every failure can r
       await assert.rejects(fs.stat(h.script), { code: 'ENOENT' });
       const rows = await h.SchedulerProjectionModel.findAll();
       assert.equal(rows.length, 1);
-      assert.equal(rows[0].command, 'task subscription-1/new.js');
+      assert.match(rows[0].command, /taskRunSubmit\.js/); assert.doesNotMatch(rows[0].command, /subscription-1\/new\.js/);
     },
   );
   await t.test('copy failure leaves current scripts intact', async () => {

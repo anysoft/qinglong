@@ -1,0 +1,4661 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Impact (1.6.12)
+{
+  "target": {
+    "name": "stopInstance",
+    "type": "",
+    "filePath": "back/services/cron.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 217,
+  "risk": "CRITICAL",
+  "riskSharedAxes": "CRITICAL",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 127,
+    "processes_affected": 57,
+    "modules_affected": 12
+  },
+  "byDepthCounts": {
+    "1": 127,
+    "2": 62,
+    "3": 28
+  },
+  "affected_processes": [
+    {
+      "name": "env",
+      "type": "Function",
+      "filePath": "back/services/executionService.ts",
+      "affected_process_count": 24,
+      "total_hits": 39,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "remove",
+      "type": "Function",
+      "filePath": "back/services/worktree.ts",
+      "affected_process_count": 21,
+      "total_hits": 26,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "removeRecord",
+      "type": "Function",
+      "filePath": "back/services/worktree.ts",
+      "affected_process_count": 11,
+      "total_hits": 23,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "withSync",
+      "type": "Function",
+      "filePath": "back/services/worktree.ts",
+      "affected_process_count": 10,
+      "total_hits": 22,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "ChangeRemote → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "Diagnostics → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 2
+    },
+    {
+      "name": "Fetch → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "Preflight → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "Prune → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "Refs → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "Remove → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "Repair → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "Run → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 11,
+      "total_hits": 20,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "updateLogRemoveFrequency",
+      "type": "Function",
+      "filePath": "back/services/system.ts",
+      "affected_process_count": 18,
+      "total_hits": 18,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "acquireExecutionLease",
+      "type": "Function",
+      "filePath": "back/services/worktree.ts",
+      "affected_process_count": 8,
+      "total_hits": 17,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "repair",
+      "type": "Function",
+      "filePath": "back/services/worktree.ts",
+      "affected_process_count": 8,
+      "total_hits": 17,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "Prepare → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 7,
+      "total_hits": 16,
+      "earliest_broken_step": 4
+    },
+    {
+      "name": "taskRoutes",
+      "type": "Function",
+      "filePath": "back/api/tasks.ts",
+      "affected_process_count": 7,
+      "total_hits": 16,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "run",
+      "type": "Function",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "affected_process_count": 15,
+      "total_hits": 15,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "sendNotify",
+      "type": "Function",
+      "filePath": "sample/notify.js",
+      "affected_process_count": 10,
+      "total_hits": 12,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "Initialize → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 7,
+      "total_hits": 9,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "gitResources",
+      "type": "Function",
+      "filePath": "back/api/gitResources.ts",
+      "affected_process_count": 8,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "workspaceRoutes",
+      "type": "Function",
+      "filePath": "back/api/workspace.ts",
+      "affected_process_count": 4,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "Stage → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 7,
+      "total_hits": 7,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "configAssetRoutes",
+      "type": "Function",
+      "filePath": "back/api/configAssets.ts",
+      "affected_process_count": 7,
+      "total_hits": 7,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "scopedEnvironmentRoutes",
+      "type": "Function",
+      "filePath": "back/api/scopedEnvironment.ts",
+      "affected_process_count": 7,
+      "total_hits": 7,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "runtimeRoutes",
+      "type": "Function",
+      "filePath": "back/api/runtime.ts",
+      "affected_process_count": 5,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "onEnd",
+      "type": "Function",
+      "filePath": "back/api/system.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "onError",
+      "type": "Function",
+      "filePath": "back/api/system.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "onLog",
+      "type": "Function",
+      "filePath": "back/api/system.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "testAccess",
+      "type": "Function",
+      "filePath": "back/services/gitCredential.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "catalog",
+      "type": "Function",
+      "filePath": "back/services/nodeDistributionProvider.ts",
+      "affected_process_count": 3,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "prepare",
+      "type": "Function",
+      "filePath": "back/services/nodeEnvironment.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "onError",
+      "type": "Function",
+      "filePath": "back/services/subscription.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "onLog",
+      "type": "Function",
+      "filePath": "back/services/subscription.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "Run → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 2,
+      "total_hits": 3,
+      "earliest_broken_step": 2
+    },
+    {
+      "name": "execute",
+      "type": "Function",
+      "filePath": "back/services/nodeEnvironment.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "weWorkApp",
+      "type": "Function",
+      "filePath": "back/services/notify.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "wxPusherBot",
+      "type": "Function",
+      "filePath": "back/services/notify.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "wxPusherSpt",
+      "type": "Function",
+      "filePath": "back/services/notify.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "install",
+      "type": "Function",
+      "filePath": "back/services/pyenvProvider.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "status",
+      "type": "Function",
+      "filePath": "back/services/pyenvProvider.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "onEnd",
+      "type": "Function",
+      "filePath": "back/services/system.ts",
+      "affected_process_count": 2,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "consumePrepared",
+      "type": "Function",
+      "filePath": "back/taskExecution.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "install",
+      "type": "Function",
+      "filePath": "back/services/nodePackageManager.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "installBuild",
+      "type": "Function",
+      "filePath": "back/services/nodePackageManager.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "snapshot",
+      "type": "Function",
+      "filePath": "back/services/nodePackageManager.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "execute",
+      "type": "Function",
+      "filePath": "back/services/pythonEnvironmentBuild.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "nodeFlow",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "nodeEnvironmentRoutes",
+      "type": "Function",
+      "filePath": "back/api/nodeEnvironment.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "pythonEnvironmentRoutes",
+      "type": "Function",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "protectedPathCase",
+      "type": "Function",
+      "filePath": "back/middlewares/protectedPathCase.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "remove",
+      "type": "Function",
+      "filePath": "back/services/gitCredential.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "install",
+      "type": "Function",
+      "filePath": "back/services/nodeDistributionProvider.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "aibotk",
+      "type": "Function",
+      "filePath": "back/services/notify.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "scopedEnvironmentHttpError",
+      "type": "Function",
+      "filePath": "back/shared/scopedEnvHttp.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "get",
+      "type": "Function",
+      "filePath": "sample/notify.js",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 133,
+      "impact": "direct"
+    },
+    {
+      "name": "Sample",
+      "hits": 27,
+      "impact": "direct"
+    },
+    {
+      "name": "Api",
+      "hits": 11,
+      "impact": "direct"
+    },
+    {
+      "name": "Protos",
+      "hits": 8,
+      "impact": "direct"
+    },
+    {
+      "name": "Back",
+      "hits": 2,
+      "impact": "direct"
+    },
+    {
+      "name": "Config",
+      "hits": 2,
+      "impact": "direct"
+    },
+    {
+      "name": "Layouts",
+      "hits": 2,
+      "impact": "direct"
+    },
+    {
+      "name": "Phase2",
+      "hits": 2,
+      "impact": "direct"
+    },
+    {
+      "name": "Phase4.5b",
+      "hits": 1,
+      "impact": "direct"
+    },
+    {
+      "name": "Phase8",
+      "hits": 1,
+      "impact": "direct"
+    },
+    {
+      "name": "Platform",
+      "hits": 1,
+      "impact": "direct"
+    },
+    {
+      "name": "Schedule",
+      "hits": 1,
+      "impact": "indirect"
+    }
+  ],
+  "pagination": {
+    "limit": 100,
+    "offset": 0,
+    "truncated": true
+  },
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Class:back/schedule/client.ts:Client",
+        "name": "Client",
+        "filePath": "back/schedule/client.ts",
+        "relationType": "CALLS",
+        "confidence": 0.63,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Class:back/shared/workspaceError.ts:WorkspaceError",
+        "name": "WorkspaceError",
+        "filePath": "back/shared/workspaceError.ts",
+        "relationType": "METHOD_OVERRIDES",
+        "confidence": 0.9,
+        "processes": [
+          {
+            "id": "proc_301_changeremote",
+            "label": "ChangeRemote → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_357_prune",
+            "label": "Prune → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_411_stage",
+            "label": "Stage → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_414_acquireexecutionleas",
+            "label": "AcquireExecutionLease → WorkspaceError",
+            "processType": "intra_community",
+            "step": 5
+          },
+          {
+            "id": "proc_334_fetch",
+            "label": "Fetch → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_394_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_426_withsync",
+            "label": "WithSync → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_432_workspaceroutes",
+            "label": "WorkspaceRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_372_refs",
+            "label": "Refs → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_385_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_417_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_420_removerecord",
+            "label": "RemoveRecord → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_423_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_129_taskroutes",
+            "label": "TaskRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_259_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_407_initialize",
+            "label": "Initialize → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_429_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_1_prepare",
+            "label": "Prepare → WorkspaceError",
+            "processType": "cross_community",
+            "step": 9
+          },
+          {
+            "id": "proc_202_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_402_diagnostics",
+            "label": "Diagnostics → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/api/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/health.ts",
+        "name": "health.ts",
+        "filePath": "back/api/health.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/script.ts",
+        "name": "script.ts",
+        "filePath": "back/api/script.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/api/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/loaders/express.ts",
+        "name": "express.ts",
+        "filePath": "back/loaders/express.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase3/ui-smoke.cjs",
+        "name": "ui-smoke.cjs",
+        "filePath": "diagnostics/phase3/ui-smoke.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase4/ui-smoke.cjs",
+        "name": "ui-smoke.cjs",
+        "filePath": "diagnostics/phase4/ui-smoke.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:shell/preload/client.js",
+        "name": "client.js",
+        "filePath": "shell/preload/client.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:shell/preload/sitecustomize.js",
+        "name": "sitecustomize.js",
+        "filePath": "shell/preload/sitecustomize.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/configAssets.ts:endpoint",
+        "name": "endpoint",
+        "filePath": "back/api/configAssets.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_388_configassetroutes",
+            "label": "ConfigAssetRoutes → ConfigAssetError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_26_configassetroutes",
+            "label": "ConfigAssetRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_63_configassetroutes",
+            "label": "ConfigAssetRoutes → Status",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/gitResources.ts:endpoint",
+        "name": "endpoint",
+        "filePath": "back/api/gitResources.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_180_gitresources",
+            "label": "GitResources → Status",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_219_gitresources",
+            "label": "GitResources → GitResourceError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_153_gitresources",
+            "label": "GitResources → GetDb",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/nodeEnvironment.ts:nodeEnvironmentRoutes",
+        "name": "nodeEnvironmentRoutes",
+        "filePath": "back/api/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_416_nodeenvironmentroute",
+            "label": "NodeEnvironmentRoutes → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/nodeEnvironment.ts:nodeEnvironmentRoutes.operation@56:2",
+        "name": "operation",
+        "filePath": "back/api/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/pythonEnvironment.ts:pythonEnvironmentRoutes",
+        "name": "pythonEnvironmentRoutes",
+        "filePath": "back/api/pythonEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_128_pythonenvironmentrou",
+            "label": "PythonEnvironmentRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/runtime.ts:endpoint",
+        "name": "endpoint",
+        "filePath": "back/api/runtime.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_243_runtimeroutes",
+            "label": "RuntimeRoutes → Status",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_224_runtimeroutes",
+            "label": "RuntimeRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/scopedEnvironment.ts:endpoint",
+        "name": "endpoint",
+        "filePath": "back/api/scopedEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_277_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_292_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → Status",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_360_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → ScopedEnvironmentError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/system.ts:fn@31:15.fn@256:4.onEnd@273:12",
+        "name": "onEnd",
+        "filePath": "back/api/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_12_onend",
+            "label": "OnEnd → FileExist",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_13_onend",
+            "label": "OnEnd → GetUniqueLockPath",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_28_onend",
+            "label": "OnEnd → IsBlocked",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_27_onend",
+            "label": "OnEnd → IsWithin",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/system.ts:fn@31:15.fn@256:4.onError@281:12",
+        "name": "onError",
+        "filePath": "back/api/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_140_onerror",
+            "label": "OnError → FileExist",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_155_onerror",
+            "label": "OnError → IsBlocked",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_141_onerror",
+            "label": "OnError → GetUniqueLockPath",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_154_onerror",
+            "label": "OnError → IsWithin",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/system.ts:fn@31:15.fn@256:4.onLog@286:12",
+        "name": "onLog",
+        "filePath": "back/api/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_213_onlog",
+            "label": "OnLog → FileExist",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_225_onlog",
+            "label": "OnLog → IsWithin",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_226_onlog",
+            "label": "OnLog → IsBlocked",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_214_onlog",
+            "label": "OnLog → GetUniqueLockPath",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/tasks.ts:endpoint",
+        "name": "endpoint",
+        "filePath": "back/api/tasks.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/workspace.ts:endpoint",
+        "name": "endpoint",
+        "filePath": "back/api/workspace.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_317_workspaceroutes",
+            "label": "WorkspaceRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_330_workspaceroutes",
+            "label": "WorkspaceRoutes → Status",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_432_workspaceroutes",
+            "label": "WorkspaceRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/workspace.ts:workspaceRoutes",
+        "name": "workspaceRoutes",
+        "filePath": "back/api/workspace.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_432_workspaceroutes",
+            "label": "WorkspaceRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_317_workspaceroutes",
+            "label": "WorkspaceRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_330_workspaceroutes",
+            "label": "WorkspaceRoutes → Status",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_398_workspaceroutes",
+            "label": "WorkspaceRoutes → Request",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/middlewares/protectedPathCase.ts:protectedPathCase",
+        "name": "protectedPathCase",
+        "filePath": "back/middlewares/protectedPathCase.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_350_protectedpathcase",
+            "label": "ProtectedPathCase → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/protos/health.ts:requestDeserialize",
+        "name": "requestDeserialize",
+        "filePath": "back/protos/health.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/protos/health.ts:requestSerialize",
+        "name": "requestSerialize",
+        "filePath": "back/protos/health.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/protos/health.ts:responseDeserialize",
+        "name": "responseDeserialize",
+        "filePath": "back/protos/health.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/protos/health.ts:responseSerialize",
+        "name": "responseSerialize",
+        "filePath": "back/protos/health.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/cron.ts:CurrentTaskBridgeService.mutateTaskDefinitions.fn@51:33.register@54:6",
+        "name": "register",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/cron.ts:CurrentTaskBridgeService.publishSubscription.fn@209:33.register@226:6",
+        "name": "register",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/cron.ts:CurrentTaskBridgeService.runSingle.fn@798:44.onStderr@863:10",
+        "name": "onStderr",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/cron.ts:CurrentTaskBridgeService.runSingle.fn@798:44.onStdout@862:10",
+        "name": "onStdout",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/runtimeOperations.ts:RuntimeOperationService.execute.checkCancel@504:6",
+        "name": "checkCancel",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_441_catalog",
+            "label": "Catalog → RuntimeError",
+            "processType": "intra_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/runtimeProcess.ts:RuntimeCommand.run.append@106:4",
+        "name": "append",
+        "filePath": "back/services/runtimeProcess.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/schedule.ts:ScheduleService.runTask.fn@76:6.onStart@86:12",
+        "name": "onStart",
+        "filePath": "back/services/schedule.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/script.ts:ScriptService.taskCallbacks.onError@26:6",
+        "name": "onError",
+        "filePath": "back/services/script.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/script.ts:ScriptService.taskCallbacks.onLog@32:6",
+        "name": "onLog",
+        "filePath": "back/services/script.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/subscription.ts:SubscriptionService.taskCallbacks.onEnd@141:6",
+        "name": "onEnd",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/subscription.ts:SubscriptionService.taskCallbacks.onError@173:6",
+        "name": "onError",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_318_onerror",
+            "label": "OnError → IsWithin",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_309_onerror",
+            "label": "OnError → FileExist",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_310_onerror",
+            "label": "OnError → GetUniqueLockPath",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_319_onerror",
+            "label": "OnError → IsBlocked",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/subscription.ts:SubscriptionService.taskCallbacks.onLog@178:6",
+        "name": "onLog",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_351_onlog",
+            "label": "OnLog → IsWithin",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_352_onlog",
+            "label": "OnLog → IsBlocked",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_342_onlog",
+            "label": "OnLog → FileExist",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_343_onlog",
+            "label": "OnLog → GetUniqueLockPath",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/system.ts:SystemService.updateLinuxMirror.onEnd@230:8",
+        "name": "onEnd",
+        "filePath": "back/services/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_236_onend",
+            "label": "OnEnd → SendMessage",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_68_onend",
+            "label": "OnEnd → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/system.ts:SystemService.updateLinuxMirror.onError@244:8",
+        "name": "onError",
+        "filePath": "back/services/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/system.ts:SystemService.updateLinuxMirror.onLog@248:8",
+        "name": "onLog",
+        "filePath": "back/services/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/system.ts:SystemService.updateNodeMirror.onEnd@176:8",
+        "name": "onEnd",
+        "filePath": "back/services/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_236_onend",
+            "label": "OnEnd → SendMessage",
+            "processType": "intra_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/system.ts:SystemService.updateNodeMirror.onError@183:8",
+        "name": "onError",
+        "filePath": "back/services/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/system.ts:SystemService.updateNodeMirror.onLog@186:8",
+        "name": "onLog",
+        "filePath": "back/services/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/shared/scopedEnvHttp.ts:scopedEnvironmentHttpError",
+        "name": "scopedEnvironmentHttpError",
+        "filePath": "back/shared/scopedEnvHttp.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_370_scopedenvironmenthtt",
+            "label": "ScopedEnvironmentHttpError → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/shared/scriptConfigAccess.ts:protectScriptConfigAccess",
+        "name": "protectScriptConfigAccess",
+        "filePath": "back/shared/scriptConfigAccess.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/taskExecution.ts:startExecution",
+        "name": "startExecution",
+        "filePath": "back/taskExecution.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:diagnostics/phase2/ui-smoke.cjs:fn@8:1.operation@66:4",
+        "name": "operation",
+        "filePath": "",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:diagnostics/phase8/browser-node-flow.cjs:nodeFlow",
+        "name": "nodeFlow",
+        "filePath": "",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_30_nodeflow",
+            "label": "NodeFlow → OperationModal",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:$.get",
+        "name": "get",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_144_get",
+            "label": "Get → Request",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:$.post",
+        "name": "post",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_31_sendnotify",
+            "label": "SendNotify → Post",
+            "processType": "intra_community",
+            "step": 3
+          },
+          {
+            "id": "proc_16_sendnotify",
+            "label": "SendNotify → Request",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:aibotkNotify",
+        "name": "aibotkNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:barkNotify",
+        "name": "barkNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:chatNotify",
+        "name": "chatNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:chronocatNotify",
+        "name": "chronocatNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:ddBotNotify",
+        "name": "ddBotNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:do_qywxamNotify",
+        "name": "do_qywxamNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:fsBotNotify",
+        "name": "fsBotNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:gobotNotify",
+        "name": "gobotNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:gotifyNotify",
+        "name": "gotifyNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:iGotNotify",
+        "name": "iGotNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:ntfyNotify",
+        "name": "ntfyNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:one",
+        "name": "one",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_70_sendnotify",
+            "label": "SendNotify → Request",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_69_sendnotify",
+            "label": "SendNotify → Body",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:openiLinkNotify",
+        "name": "openiLinkNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:pushDeerNotify",
+        "name": "pushDeerNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:pushMeNotify",
+        "name": "pushMeNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:pushPlusNotify",
+        "name": "pushPlusNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_31_sendnotify",
+            "label": "SendNotify → Post",
+            "processType": "intra_community",
+            "step": 2
+          },
+          {
+            "id": "proc_71_sendnotify",
+            "label": "SendNotify → LogErr",
+            "processType": "intra_community",
+            "step": 2
+          },
+          {
+            "id": "proc_16_sendnotify",
+            "label": "SendNotify → Request",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:qmsgNotify",
+        "name": "qmsgNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:qywxBotNotify",
+        "name": "qywxBotNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:serverNotify",
+        "name": "serverNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:tgBotNotify",
+        "name": "tgBotNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:wePlusBotNotify",
+        "name": "wePlusBotNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:webhookNotify",
+        "name": "webhookNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:wpushNotify",
+        "name": "wpushNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:wxPusherNotify",
+        "name": "wxPusherNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:sample/notify.js:wxPusherSptNotify",
+        "name": "wxPusherSptNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:src/layouts/index.tsx:fn@42:15.getSystemInfo@69:2",
+        "name": "getSystemInfo",
+        "filePath": "src/layouts/index.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/executionRedactor.ts:ExecutionRedactor.flush#1",
+        "name": "flush",
+        "filePath": "back/services/executionRedactor.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/gitCredential.ts:GitCredentialService.remove#1",
+        "name": "remove",
+        "filePath": "back/services/gitCredential.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_347_remove",
+            "label": "Remove → GitResourceError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/gitCredential.ts:GitCredentialService.testAccess#2",
+        "name": "testAccess",
+        "filePath": "back/services/gitCredential.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_227_testaccess",
+            "label": "TestAccess → Invalid",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_367_testaccess",
+            "label": "TestAccess → GitResourceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_245_testaccess",
+            "label": "TestAccess → QuoteGitShell",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_244_testaccess",
+            "label": "TestAccess → Cleanup",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeDistributionProvider.ts:NodeDistributionProvider.catalog#1",
+        "name": "catalog",
+        "filePath": "back/services/nodeDistributionProvider.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_441_catalog",
+            "label": "Catalog → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeDistributionProvider.ts:NodeDistributionProvider.install#3",
+        "name": "install",
+        "filePath": "back/services/nodeDistributionProvider.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_451_install",
+            "label": "Install → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeDistributionProvider.ts:NodeDistributionProvider.verify#2",
+        "name": "verify",
+        "filePath": "back/services/nodeDistributionProvider.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.execute#3",
+        "name": "execute",
+        "filePath": "back/services/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_442_execute",
+            "label": "Execute → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_48_execute",
+            "label": "Execute → NodeRuntimeReferenceSource",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_49_execute",
+            "label": "Execute → PythonRuntimeReferenceSource",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.prepare#5",
+        "name": "prepare",
+        "filePath": "back/services/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_223_prepare",
+            "label": "Prepare → ResourceLock",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_212_prepare",
+            "label": "Prepare → RuntimeLease",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_261_prepare",
+            "label": "Prepare → AsError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_422_prepare",
+            "label": "Prepare → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodePackageManager.ts:NodePackageManager.install#3",
+        "name": "install",
+        "filePath": "back/services/nodePackageManager.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_24_install",
+            "label": "Install → NodeFileHash",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_443_install",
+            "label": "Install → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodePackageManager.ts:NodePackageManager.installBuild#6",
+        "name": "installBuild",
+        "filePath": "back/services/nodePackageManager.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_444_installbuild",
+            "label": "InstallBuild → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_151_installbuild",
+            "label": "InstallBuild → NodeFileHash",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodePackageManager.ts:NodePackageManager.snapshot#5",
+        "name": "snapshot",
+        "filePath": "back/services/nodePackageManager.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_222_snapshot",
+            "label": "Snapshot → NodeFileHash",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_445_snapshot",
+            "label": "Snapshot → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.aibotk#0",
+        "name": "aibotk",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_430_aibotk",
+            "label": "Aibotk → Request",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.bark#0",
+        "name": "bark",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.chat#0",
+        "name": "chat",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.chronocat#0",
+        "name": "chronocat",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.dingtalkBot#0",
+        "name": "dingtalkBot",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.goCqHttpBot#0",
+        "name": "goCqHttpBot",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.gotify#0",
+        "name": "gotify",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.iGot#0",
+        "name": "iGot",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/notify.ts:NotificationService.lark#0",
+        "name": "lark",
+        "filePath": "back/services/notify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ],
+    "2": [
+      {
+        "depth": 2,
+        "id": "File:PHASE4_REPORT.md",
+        "name": "PHASE4_REPORT.md",
+        "filePath": "PHASE4_REPORT.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/index.ts",
+        "name": "index.ts",
+        "filePath": "back/api/index.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/loaders/app.ts",
+        "name": "app.ts",
+        "filePath": "back/loaders/app.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/schedule/client.ts",
+        "name": "client.ts",
+        "filePath": "back/schedule/client.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/taskExecution.ts",
+        "name": "taskExecution.ts",
+        "filePath": "back/taskExecution.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:diagnostics/phase2/ui-smoke.cjs",
+        "name": "ui-smoke.cjs",
+        "filePath": "diagnostics/phase2/ui-smoke.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/api/configAssets.ts:configAssetRoutes",
+        "name": "configAssetRoutes",
+        "filePath": "back/api/configAssets.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_376_configassetroutes",
+            "label": "ConfigAssetRoutes → TaskDefinitionError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_26_configassetroutes",
+            "label": "ConfigAssetRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_63_configassetroutes",
+            "label": "ConfigAssetRoutes → Status",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_388_configassetroutes",
+            "label": "ConfigAssetRoutes → ConfigAssetError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/api/gitResources.ts:gitResources",
+        "name": "gitResources",
+        "filePath": "back/api/gitResources.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_320_gitresources",
+            "label": "GitResources → Invalid",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_389_gitresources",
+            "label": "GitResources → Request",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_153_gitresources",
+            "label": "GitResources → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_180_gitresources",
+            "label": "GitResources → Status",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_219_gitresources",
+            "label": "GitResources → GitResourceError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/api/runtime.ts:runtimeRoutes",
+        "name": "runtimeRoutes",
+        "filePath": "back/api/runtime.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_224_runtimeroutes",
+            "label": "RuntimeRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_438_runtimeroutes",
+            "label": "RuntimeRoutes → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_243_runtimeroutes",
+            "label": "RuntimeRoutes → Status",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/api/scopedEnvironment.ts:scopedEnvironmentRoutes",
+        "name": "scopedEnvironmentRoutes",
+        "filePath": "back/api/scopedEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_360_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → ScopedEnvironmentError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_277_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_292_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → Status",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_387_scopedenvironmentrou",
+            "label": "ScopedEnvironmentRoutes → TaskDefinitionError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/api/tasks.ts:taskRoutes",
+        "name": "taskRoutes",
+        "filePath": "back/api/tasks.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_129_taskroutes",
+            "label": "TaskRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_130_taskroutes",
+            "label": "TaskRoutes → Root",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_201_taskroutes",
+            "label": "TaskRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/api/workspace.ts:validate",
+        "name": "validate",
+        "filePath": "back/api/workspace.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.validateFiles.walk@180:4",
+        "name": "walk",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/services/runtimeOperations.ts:RuntimeOperationService.execute.stage@519:8",
+        "name": "stage",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": [
+          {
+            "id": "proc_441_catalog",
+            "label": "Catalog → RuntimeError",
+            "processType": "intra_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/services/runtimeProcess.ts:RuntimeCommand.run.onStderr@124:8",
+        "name": "onStderr",
+        "filePath": "back/services/runtimeProcess.ts",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/services/runtimeProcess.ts:RuntimeCommand.run.onStdout@123:8",
+        "name": "onStdout",
+        "filePath": "back/services/runtimeProcess.ts",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/services/subscriptionDiscovery.ts:SubscriptionDiscoveryAdapter.discover.regex@14:4",
+        "name": "regex",
+        "filePath": "back/services/subscriptionDiscovery.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/services/subscriptionDiscovery.ts:SubscriptionDiscoveryAdapter.discover.walk@21:4",
+        "name": "walk",
+        "filePath": "back/services/subscriptionDiscovery.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/shared/workspacePaths.ts:workspaceId",
+        "name": "workspaceId",
+        "filePath": "back/shared/workspacePaths.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_417_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_420_removerecord",
+            "label": "RemoveRecord → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_407_initialize",
+            "label": "Initialize → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_423_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_426_withsync",
+            "label": "WithSync → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/taskExecution.ts:consumePrepared",
+        "name": "consumePrepared",
+        "filePath": "back/taskExecution.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_7_consumeprepared",
+            "label": "ConsumePrepared → ConfigAssetError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_14_consumeprepared",
+            "label": "ConsumePrepared → SyncDirectory",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_15_consumeprepared",
+            "label": "ConsumePrepared → AssertHeld",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:diagnostics/phase2/ui-smoke.cjs:fn@8:1.remove@162:4",
+        "name": "remove",
+        "filePath": "",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:sample/notify.js:qywxamNotify",
+        "name": "qywxamNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:sample/notify.js:sendNotify",
+        "name": "sendNotify",
+        "filePath": "sample/notify.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_31_sendnotify",
+            "label": "SendNotify → Post",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_69_sendnotify",
+            "label": "SendNotify → Body",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_16_sendnotify",
+            "label": "SendNotify → Request",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_70_sendnotify",
+            "label": "SendNotify → Request",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_71_sendnotify",
+            "label": "SendNotify → LogErr",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Function:src/layouts/index.tsx:fn@42:15.getHealthStatus@106:2",
+        "name": "getHealthStatus",
+        "filePath": "src/layouts/index.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Interface:back/protos/api.ts:ApiClient",
+        "name": "ApiClient",
+        "filePath": "back/protos/api.ts",
+        "relationType": "EXTENDS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Interface:back/protos/cron.ts:CronClient",
+        "name": "CronClient",
+        "filePath": "back/protos/cron.ts",
+        "relationType": "EXTENDS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Interface:back/protos/health.ts:HealthClient",
+        "name": "HealthClient",
+        "filePath": "back/protos/health.ts",
+        "relationType": "EXTENDS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator.run#5",
+        "name": "run",
+        "filePath": "back/services/executionAttemptCoordinator.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_20_execute",
+            "label": "Execute → Journal",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_131_execute",
+            "label": "Execute → AsError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_216_execute",
+            "label": "Execute → AssertHeld",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_217_execute",
+            "label": "Execute → ExecutionError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_215_execute",
+            "label": "Execute → SyncDirectory",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/executionRedactor.ts:ExecutionRedactor.write#1",
+        "name": "write",
+        "filePath": "back/services/executionRedactor.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/executionService.ts:ExecutionService.execute#5",
+        "name": "execute",
+        "filePath": "back/services/executionService.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_20_execute",
+            "label": "Execute → Journal",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_131_execute",
+            "label": "Execute → AsError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_107_execute",
+            "label": "Execute → Wake",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_216_execute",
+            "label": "Execute → AssertHeld",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_217_execute",
+            "label": "Execute → ExecutionError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_215_execute",
+            "label": "Execute → SyncDirectory",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_108_execute",
+            "label": "Execute → ExecutionLog",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_106_execute",
+            "label": "Execute → Cancel",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/nodePackageManager.ts:NodePackageManager.verifyBuild#5",
+        "name": "verifyBuild",
+        "filePath": "back/services/nodePackageManager.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/pyenvProvider.ts:PyenvProvider.repair#3",
+        "name": "repair",
+        "filePath": "back/services/pyenvProvider.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/runtimeLog.ts:RuntimeOperationLog.close#0",
+        "name": "close",
+        "filePath": "back/services/runtimeLog.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.create#1",
+        "name": "create",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.disabled#1",
+        "name": "disabled",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.enabled#1",
+        "name": "enabled",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.removeUnlocked#2",
+        "name": "removeUnlocked",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.run#1",
+        "name": "run",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.updateUnlocked#1",
+        "name": "updateUnlocked",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/subscriptionDiscovery.ts:SubscriptionDiscoveryAdapter.discover#4",
+        "name": "discover",
+        "filePath": "back/services/subscriptionDiscovery.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/system.ts:SystemService.notify#1",
+        "name": "notify",
+        "filePath": "back/services/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/workspaceLocks.ts:WorkspaceGuard.constructor#1",
+        "name": "constructor",
+        "filePath": "back/services/workspaceLocks.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/workspaceLocks.ts:WorkspaceGuard.receive#0",
+        "name": "receive",
+        "filePath": "back/services/workspaceLocks.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_429_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/workspaceLocks.ts:WorkspaceGuard.run#5",
+        "name": "run",
+        "filePath": "back/services/workspaceLocks.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_429_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/workspaceLocks.ts:WorkspaceLocks.acquire#3",
+        "name": "acquire",
+        "filePath": "back/services/workspaceLocks.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_220_changeremote",
+            "label": "ChangeRemote → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_348_prune",
+            "label": "Prune → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_372_refs",
+            "label": "Refs → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_381_remove",
+            "label": "Remove → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_382_remove",
+            "label": "Remove → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_385_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_1_prepare",
+            "label": "Prepare → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_202_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_302_changeremote",
+            "label": "ChangeRemote → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_349_prune",
+            "label": "Prune → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_368_refs",
+            "label": "Refs → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_386_remove",
+            "label": "Remove → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_395_repair",
+            "label": "Repair → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_399_diagnostics",
+            "label": "Diagnostics → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_413_diagnostics",
+            "label": "Diagnostics → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_22_preflight",
+            "label": "Preflight → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_259_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_276_fetch",
+            "label": "Fetch → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_316_initialize",
+            "label": "Initialize → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_334_fetch",
+            "label": "Fetch → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_335_fetch",
+            "label": "Fetch → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_358_prune",
+            "label": "Prune → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_394_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_401_remove",
+            "label": "Remove → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_407_initialize",
+            "label": "Initialize → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_275_fetch",
+            "label": "Fetch → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_300_run",
+            "label": "Run → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_315_initialize",
+            "label": "Initialize → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_393_refs",
+            "label": "Refs → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_400_diagnostics",
+            "label": "Diagnostics → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_402_diagnostics",
+            "label": "Diagnostics → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_0_prepare",
+            "label": "Prepare → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_258_preflight",
+            "label": "Preflight → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_373_refs",
+            "label": "Refs → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_391_repair",
+            "label": "Repair → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_392_repair",
+            "label": "Repair → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_150_run",
+            "label": "Run → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_203_preflight",
+            "label": "Preflight → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_221_changeremote",
+            "label": "ChangeRemote → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_301_changeremote",
+            "label": "ChangeRemote → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_356_changeremote",
+            "label": "ChangeRemote → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_2_prepare",
+            "label": "Prepare → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_149_run",
+            "label": "Run → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_403_diagnostics",
+            "label": "Diagnostics → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_260_run",
+            "label": "Run → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_357_prune",
+            "label": "Prune → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_369_refs",
+            "label": "Refs → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_371_fetch",
+            "label": "Fetch → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_406_repair",
+            "label": "Repair → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_23_preflight",
+            "label": "Preflight → Release",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_384_prune",
+            "label": "Prune → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.acquireExecutionLease#2",
+        "name": "acquireExecutionLease",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_414_acquireexecutionleas",
+            "label": "AcquireExecutionLease → WorkspaceError",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_126_acquireexecutionleas",
+            "label": "AcquireExecutionLease → Exists",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.assertUnreferenced#1",
+        "name": "assertUnreferenced",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_127_remove",
+            "label": "Remove → Worktree",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_200_removerecord",
+            "label": "RemoveRecord → Worktree",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_256_removerecord",
+            "label": "RemoveRecord → TaskReferenceService",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_198_remove",
+            "label": "Remove → TaskReferenceService",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.clean#1",
+        "name": "clean",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.create#1",
+        "name": "create",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.get#1",
+        "name": "get",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_423_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_417_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_420_removerecord",
+            "label": "RemoveRecord → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_426_withsync",
+            "label": "WithSync → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.path#1",
+        "name": "path",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_414_acquireexecutionleas",
+            "label": "AcquireExecutionLease → WorkspaceError",
+            "processType": "intra_community",
+            "step": 4
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.removeRecord#1",
+        "name": "removeRecord",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_200_removerecord",
+            "label": "RemoveRecord → Worktree",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_256_removerecord",
+            "label": "RemoveRecord → TaskReferenceService",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_420_removerecord",
+            "label": "RemoveRecord → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.rename#2",
+        "name": "rename",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.repair#1",
+        "name": "repair",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_257_repair",
+            "label": "Repair → Exists",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_423_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.safeLocalCommits#2",
+        "name": "safeLocalCommits",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.snapshot#4",
+        "name": "snapshot",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_299_withsync",
+            "label": "WithSync → Exists",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_199_remove",
+            "label": "Remove → Exists",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_257_repair",
+            "label": "Repair → Exists",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_126_acquireexecutionleas",
+            "label": "AcquireExecutionLease → Exists",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_414_acquireexecutionleas",
+            "label": "AcquireExecutionLease → WorkspaceError",
+            "processType": "intra_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.updateLocked#4",
+        "name": "updateLocked",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.validateRef#2",
+        "name": "validateRef",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.verifyPath#2",
+        "name": "verifyPath",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/worktree.ts:WorktreeService.withSync#2",
+        "name": "withSync",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_426_withsync",
+            "label": "WithSync → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_299_withsync",
+            "label": "WithSync → Exists",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/shared/workspacePaths.ts:RepositoryPathResolver.assertSafe#1",
+        "name": "assertSafe",
+        "filePath": "back/shared/workspacePaths.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_201_taskroutes",
+            "label": "TaskRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_384_prune",
+            "label": "Prune → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_2_prepare",
+            "label": "Prepare → Root",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_403_diagnostics",
+            "label": "Diagnostics → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_408_stage",
+            "label": "Stage → Root",
+            "processType": "intra_community",
+            "step": 4
+          },
+          {
+            "id": "proc_300_run",
+            "label": "Run → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_393_refs",
+            "label": "Refs → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_402_diagnostics",
+            "label": "Diagnostics → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_129_taskroutes",
+            "label": "TaskRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_259_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_334_fetch",
+            "label": "Fetch → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_335_fetch",
+            "label": "Fetch → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_358_prune",
+            "label": "Prune → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_394_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_401_remove",
+            "label": "Remove → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_203_preflight",
+            "label": "Preflight → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_301_changeremote",
+            "label": "ChangeRemote → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_356_changeremote",
+            "label": "ChangeRemote → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_0_prepare",
+            "label": "Prepare → RuntimeError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_258_preflight",
+            "label": "Preflight → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_373_refs",
+            "label": "Refs → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_1_prepare",
+            "label": "Prepare → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_202_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_302_changeremote",
+            "label": "ChangeRemote → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_386_remove",
+            "label": "Remove → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_395_repair",
+            "label": "Repair → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_413_diagnostics",
+            "label": "Diagnostics → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_440_stage",
+            "label": "Stage → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_130_taskroutes",
+            "label": "TaskRoutes → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_260_run",
+            "label": "Run → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_357_prune",
+            "label": "Prune → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_371_fetch",
+            "label": "Fetch → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_406_repair",
+            "label": "Repair → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_411_stage",
+            "label": "Stage → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_372_refs",
+            "label": "Refs → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_385_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/shared/workspacePaths.ts:RepositoryPathResolver.repository#1",
+        "name": "repository",
+        "filePath": "back/shared/workspacePaths.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ],
+    "3": [
+      {
+        "depth": 3,
+        "id": "File:back/app.ts",
+        "name": "app.ts",
+        "filePath": "back/app.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/loaders/initData.ts",
+        "name": "initData.ts",
+        "filePath": "back/loaders/initData.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/protos/api.ts",
+        "name": "api.ts",
+        "filePath": "back/protos/api.ts",
+        "relationType": "USES",
+        "confidence": 0.55,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/protos/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/protos/cron.ts",
+        "relationType": "USES",
+        "confidence": 0.55,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/protos/health.ts",
+        "name": "health.ts",
+        "filePath": "back/protos/health.ts",
+        "relationType": "USES",
+        "confidence": 0.55,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/services/cron.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/health.ts",
+        "name": "health.ts",
+        "filePath": "back/services/health.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:docs/refactor/phase4/08-phase4-test-report.md",
+        "name": "08-phase4-test-report.md",
+        "filePath": "docs/refactor/phase4/08-phase4-test-report.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:sample/notify.js",
+        "name": "notify.js",
+        "filePath": "sample/notify.js",
+        "relationType": "USES",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:src/layouts/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/layouts/index.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Function:back/services/managedSubscription.ts:ManagedSubscriptionService.stage.publish@237:8",
+        "name": "publish",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Function:back/services/subscription.ts:SubscriptionService.remove.acquire@256:6",
+        "name": "acquire",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/executionService.ts:ExecutionService.tick#0",
+        "name": "tick",
+        "filePath": "back/services/executionService.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_130_taskroutes",
+            "label": "TaskRoutes → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_201_taskroutes",
+            "label": "TaskRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_129_taskroutes",
+            "label": "TaskRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/runtimeLog.ts:RuntimeOperationLog.write#1",
+        "name": "write",
+        "filePath": "back/services/runtimeLog.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.remove#2",
+        "name": "remove",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.update#1",
+        "name": "update",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/workspaceLocks.ts:WorkspaceLocks.probe#2",
+        "name": "probe",
+        "filePath": "back/services/workspaceLocks.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_400_diagnostics",
+            "label": "Diagnostics → Release",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_403_diagnostics",
+            "label": "Diagnostics → Root",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_399_diagnostics",
+            "label": "Diagnostics → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_402_diagnostics",
+            "label": "Diagnostics → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_413_diagnostics",
+            "label": "Diagnostics → RuntimeError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/workspaceLocks.ts:WorkspaceLocks.with#3",
+        "name": "with",
+        "filePath": "back/services/workspaceLocks.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_259_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_335_fetch",
+            "label": "Fetch → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_358_prune",
+            "label": "Prune → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_407_initialize",
+            "label": "Initialize → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_391_repair",
+            "label": "Repair → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_392_repair",
+            "label": "Repair → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_150_run",
+            "label": "Run → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_203_preflight",
+            "label": "Preflight → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_220_changeremote",
+            "label": "ChangeRemote → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_348_prune",
+            "label": "Prune → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_372_refs",
+            "label": "Refs → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_381_remove",
+            "label": "Remove → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_382_remove",
+            "label": "Remove → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_385_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_0_prepare",
+            "label": "Prepare → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_23_preflight",
+            "label": "Preflight → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_258_preflight",
+            "label": "Preflight → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_373_refs",
+            "label": "Refs → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_384_prune",
+            "label": "Prune → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_300_run",
+            "label": "Run → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_302_changeremote",
+            "label": "ChangeRemote → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_349_prune",
+            "label": "Prune → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_368_refs",
+            "label": "Refs → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_386_remove",
+            "label": "Remove → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_393_refs",
+            "label": "Refs → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_22_preflight",
+            "label": "Preflight → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_149_run",
+            "label": "Run → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_276_fetch",
+            "label": "Fetch → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_316_initialize",
+            "label": "Initialize → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_334_fetch",
+            "label": "Fetch → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_394_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_401_remove",
+            "label": "Remove → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_221_changeremote",
+            "label": "ChangeRemote → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_260_run",
+            "label": "Run → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_301_changeremote",
+            "label": "ChangeRemote → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_356_changeremote",
+            "label": "ChangeRemote → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_357_prune",
+            "label": "Prune → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_369_refs",
+            "label": "Refs → Release",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_371_fetch",
+            "label": "Fetch → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_406_repair",
+            "label": "Repair → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_1_prepare",
+            "label": "Prepare → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_202_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_395_repair",
+            "label": "Repair → Root",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_2_prepare",
+            "label": "Prepare → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_275_fetch",
+            "label": "Fetch → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_315_initialize",
+            "label": "Initialize → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/worktree.ts:WorktreeService.locked#3",
+        "name": "locked",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_426_withsync",
+            "label": "WithSync → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_420_removerecord",
+            "label": "RemoveRecord → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_423_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_417_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/worktree.ts:WorktreeService.registered#4",
+        "name": "registered",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_414_acquireexecutionleas",
+            "label": "AcquireExecutionLease → WorkspaceError",
+            "processType": "intra_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/worktree.ts:WorktreeService.remove#1",
+        "name": "remove",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_417_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_127_remove",
+            "label": "Remove → Worktree",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_199_remove",
+            "label": "Remove → Exists",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_198_remove",
+            "label": "Remove → TaskReferenceService",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/worktree.ts:WorktreeService.status#1",
+        "name": "status",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/worktree.ts:WorktreeService.update#1",
+        "name": "update",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/shared/workspacePaths.ts:RepositoryPathResolver.base#1",
+        "name": "base",
+        "filePath": "back/shared/workspacePaths.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_300_run",
+            "label": "Run → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_393_refs",
+            "label": "Refs → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_402_diagnostics",
+            "label": "Diagnostics → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_130_taskroutes",
+            "label": "TaskRoutes → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_260_run",
+            "label": "Run → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_301_changeremote",
+            "label": "ChangeRemote → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_356_changeremote",
+            "label": "ChangeRemote → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_357_prune",
+            "label": "Prune → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_371_fetch",
+            "label": "Fetch → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_406_repair",
+            "label": "Repair → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_0_prepare",
+            "label": "Prepare → RuntimeError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_201_taskroutes",
+            "label": "TaskRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_258_preflight",
+            "label": "Preflight → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_373_refs",
+            "label": "Refs → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_384_prune",
+            "label": "Prune → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_203_preflight",
+            "label": "Preflight → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_372_refs",
+            "label": "Refs → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_385_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_2_prepare",
+            "label": "Prepare → Root",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_129_taskroutes",
+            "label": "TaskRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_259_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_335_fetch",
+            "label": "Fetch → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_358_prune",
+            "label": "Prune → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_1_prepare",
+            "label": "Prepare → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_202_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_395_repair",
+            "label": "Repair → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_403_diagnostics",
+            "label": "Diagnostics → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_302_changeremote",
+            "label": "ChangeRemote → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_386_remove",
+            "label": "Remove → Root",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_413_diagnostics",
+            "label": "Diagnostics → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_334_fetch",
+            "label": "Fetch → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_394_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_401_remove",
+            "label": "Remove → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/shared/workspacePaths.ts:RepositoryPathResolver.lock#2",
+        "name": "lock",
+        "filePath": "back/shared/workspacePaths.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_1_prepare",
+            "label": "Prepare → WorkspaceError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_202_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_395_repair",
+            "label": "Repair → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_203_preflight",
+            "label": "Preflight → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_372_refs",
+            "label": "Refs → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_385_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_260_run",
+            "label": "Run → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_301_changeremote",
+            "label": "ChangeRemote → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_356_changeremote",
+            "label": "ChangeRemote → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_357_prune",
+            "label": "Prune → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_371_fetch",
+            "label": "Fetch → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_406_repair",
+            "label": "Repair → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_334_fetch",
+            "label": "Fetch → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_394_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_401_remove",
+            "label": "Remove → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_403_diagnostics",
+            "label": "Diagnostics → Root",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_300_run",
+            "label": "Run → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_302_changeremote",
+            "label": "ChangeRemote → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_386_remove",
+            "label": "Remove → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_393_refs",
+            "label": "Refs → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_402_diagnostics",
+            "label": "Diagnostics → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_413_diagnostics",
+            "label": "Diagnostics → RuntimeError",
+            "processType": "cross_community",
+            "step": 4
+          },
+          {
+            "id": "proc_0_prepare",
+            "label": "Prepare → RuntimeError",
+            "processType": "cross_community",
+            "step": 6
+          },
+          {
+            "id": "proc_258_preflight",
+            "label": "Preflight → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_373_refs",
+            "label": "Refs → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_384_prune",
+            "label": "Prune → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_259_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_335_fetch",
+            "label": "Fetch → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_358_prune",
+            "label": "Prune → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_407_initialize",
+            "label": "Initialize → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_2_prepare",
+            "label": "Prepare → Root",
+            "processType": "cross_community",
+            "step": 6
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/shared/workspacePaths.ts:RepositoryPathResolver.noSymlinks#1",
+        "name": "noSymlinks",
+        "filePath": "back/shared/workspacePaths.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_440_stage",
+            "label": "Stage → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_408_stage",
+            "label": "Stage → Root",
+            "processType": "intra_community",
+            "step": 3
+          },
+          {
+            "id": "proc_411_stage",
+            "label": "Stage → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/shared/workspacePaths.ts:RepositoryPathResolver.parents#1",
+        "name": "parents",
+        "filePath": "back/shared/workspacePaths.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/shared/workspacePaths.ts:RepositoryPathResolver.worktree#2",
+        "name": "worktree",
+        "filePath": "back/shared/workspacePaths.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_129_taskroutes",
+            "label": "TaskRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_130_taskroutes",
+            "label": "TaskRoutes → Root",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_201_taskroutes",
+            "label": "TaskRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 5
+          }
+        ]
+      }
+    ]
+  }
+}

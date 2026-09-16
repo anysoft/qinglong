@@ -13,7 +13,7 @@ test('v4 → v5 preserves real Python environment references; fresh matches migr
  await assert.rejects(h.initializeOperationalSchema(h.db,h.models),/late fault/);h.db.query=original;
  assert.equal((await h.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0].platform_schema_version,4);
  assert.equal((await h.PythonEnvironmentModel.findByPk(e.get('id'))).get('current_revision_id'),rev.get('id'));
- await h.initializeOperationalSchema(h.db,h.models);const migrated=(await h.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0];assert.equal(migrated.platform_schema_version,6);
+ await h.initializeOperationalSchema(h.db,h.models);const migrated=(await h.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0];assert.equal(migrated.platform_schema_version,7);
  assert.deepEqual(await h.db.query('PRAGMA foreign_key_check',{type:QueryTypes.SELECT}),[]);assert.equal(await h.PythonEnvironmentRevisionModel.count(),1);
  const fresh=await fixture(t);assert.deepEqual((await fresh.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0],migrated);await h.initializeOperationalSchema(h.db,h.models);
 });

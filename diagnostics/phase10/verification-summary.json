@@ -1,0 +1,86 @@
+{
+  "status": "PARTIAL",
+  "reason": "BLOCKED_BY_LINUX_GATE",
+  "platform": {
+    "tests": 377,
+    "pass": 374,
+    "fail": 0,
+    "skipped": 3
+  },
+  "supplemental_policy_gates": {
+    "tests": 2,
+    "pass": 2,
+    "fail": 0,
+    "skipped": 0
+  },
+  "managed_execution": {
+    "tests": 2,
+    "pass": 2,
+    "fail": 0,
+    "skipped": 0
+  },
+  "previous_managed_regression": {
+    "tests": 3,
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0
+  },
+  "backend_build": {
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "frontend_build": {
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "typecheck": {
+    "status": "PARTIAL",
+    "original": 34,
+    "remaining": 34,
+    "new": [],
+    "raw_exit_code": 2,
+    "regression_gate": "PASS"
+  },
+  "browser": {
+    "status": "PASS",
+    "response_payloads": 820,
+    "websocket_frames": 28
+  },
+  "static_audit": {
+    "status": "PASS",
+    "production_files": 349,
+    "forbidden": 0
+  },
+  "shell_syntax": "PASS",
+  "python_supervisor_syntax": "PASS",
+  "shellcheck": "NOT_INSTALLED",
+  "linux": {
+    "host": "Darwin",
+    "tools": {
+      "docker": null,
+      "podman": null,
+      "limactl": null,
+      "colima": null,
+      "gh": null
+    },
+    "status": "PARTIAL",
+    "reason": "No Linux container/VM/CI command found; current host Darwin. No remote runner configured for this task."
+  },
+  "gitnexus": {
+    "HEAD": {
+      "changed_count": 266,
+      "affected_count": 129,
+      "changed_files": 293,
+      "risk_level": "critical",
+      "truncated": false
+    },
+    "develop": {
+      "changed_count": 896,
+      "affected_count": 201,
+      "changed_files": 1218,
+      "risk_level": "critical",
+      "truncated": false
+    }
+  },
+  "completed_at": "2026-09-16T01:21:25.384Z"
+}

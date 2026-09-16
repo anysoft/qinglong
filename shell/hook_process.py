@@ -4,6 +4,7 @@ stdout/stderr stay streaming pipes consumed by observeChildProcess. The parent
 keeps stdin open; EOF terminates/reaps the process group before releasing lease FDs.
 """
 import os
+import json
 import select
 import signal
 import subprocess
@@ -23,6 +24,8 @@ def stop(*_):
 signal.signal(signal.SIGTERM, stop)
 signal.signal(signal.SIGINT, stop)
 child = None
+result_fd = os.environ.pop('PLATFORM_PROCESS_RESULT_FD', None)
+report = {'reason': 'SPAWN_FAILED', 'exitCode': None, 'signal': None}
 try:
     timeout = float(sys.argv[1])
     fds = tuple(int(x) for x in os.environ.get('PLATFORM_LEASE_FDS', '').split(',') if x)
@@ -50,6 +53,8 @@ try:
     except ProcessLookupError:
         pass
     code = child.wait()
+    report = {'reason': 'CANCELLED' if result == 143 else 'TIMEOUT' if result == 124 else 'SUCCESS' if code == 0 else 'EXIT_NONZERO',
+              'exitCode': code if code >= 0 else None, 'signal': signal.Signals(-code).name if code < 0 else None}
     sys.exit(result if result is not None else code if code >= 0 else 128 - code)
 except Exception:
     sys.stderr.write('TASK_PROCESS_FAILED\n')
@@ -61,3 +66,9 @@ finally:
         except ProcessLookupError:
             pass
         child.wait()
+
+    if result_fd is not None:
+        try:
+            os.write(int(result_fd), json.dumps(report).encode('utf-8'))
+        except (OSError, ValueError):
+            pass

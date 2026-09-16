@@ -73,7 +73,8 @@
   },
   {
     "path": "test/back/manual-stop-claim.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 10: old PID/token runner contract replaced by durable TaskRun claim/cancel/recovery tests; retained as historical evidence."
   },
   {
     "path": "test/back/metrics.test.cjs",
@@ -145,7 +146,8 @@
   },
   {
     "path": "test/back/stop-race.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 10: old PID/token runner contract replaced by durable TaskRun claim/cancel/recovery tests; retained as historical evidence."
   },
   {
     "path": "test/back/subscription-cleanup.test.cjs",
@@ -538,6 +540,30 @@
   },
   {
     "path": "tests/phase9/subscription-delete.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/execution.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/recovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/entrypoints.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/hardening.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/policies.test.cjs",
     "classification": "PLATFORM_CORE"
   }
 ]

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "node": "24.21.0",
+  "tsx": "4.20.6",
+  "cjs": true,
+  "esm": true,
+  "typescript": true,
+  "nested_conflict": true,
+  "scheduled_cjs_esm_ts": true,
+  "timeout": true,
+  "cancel": true,
+  "pinned_build": 23,
+  "promoted_build": 24
+}

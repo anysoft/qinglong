@@ -1,0 +1,9 @@
+{
+  "error": "Target 'fixture' not found",
+  "target": {
+    "name": "fixture"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

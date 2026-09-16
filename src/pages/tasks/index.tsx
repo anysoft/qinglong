@@ -151,7 +151,9 @@ export default function TasksPage() {
     [busy, setBusy] = useState(false),
     [tab, setTab] = useState('general'),
     [preview, setPreview] = useState<any>(),
-    [log, setLog] = useState<string>();
+    [log, setLog] = useState<string>(),
+    [runs, setRuns] = useState<any[]>(),
+    [runTask, setRunTask] = useState<number>();
   const [form] = Form.useForm();
   const worktreeId = Form.useWatch('worktree_id', form),
     language = Form.useWatch('language', form) ?? 'SHELL',
@@ -339,7 +341,7 @@ export default function TasksPage() {
           type="info"
           showIcon
           message="Configured Resources"
-          description="Runtime binding execution activation is Phase 10. 当前 Run 使用 Current Temporary Execution Bridge，未使用绑定的 Python/Node Environment。Structured Arguments 在 Phase 10 激活，当前桥接拒绝执行带 Arguments 的定义。没有已发布来源的 Manual Task 可配置和校验，直接执行将在 Phase 10 提供。"
+          description="任务直接执行 Worktree 中的文件。每次运行固定所选 Environment Build、环境变量、Config 和 Hooks；Arguments 按独立参数传入。"
         />
         <Table
           rowKey="id"
@@ -375,13 +377,11 @@ export default function TasksPage() {
             },
             { title: 'Schedule', dataIndex: 'schedule' },
             {
-              title: 'Last run bridge status',
+              title: 'Last run',
               render: (_: unknown, task: any) =>
                 task.last_run
-                  ? ['RUNNING', 'IDLE', 'DISABLED', 'QUEUED'][
-                      task.last_run.status
-                    ] ?? 'UNKNOWN'
-                  : 'Not published',
+                  ? `${task.last_run.status} · #${task.last_run.id} · ${task.last_run.attempt_count} attempt(s)`
+                  : 'No runs',
             },
             {
               title: 'Readiness',
@@ -432,12 +432,26 @@ export default function TasksPage() {
                     Clone
                   </Button>
                   <Button
-                    onClick={() => request.post(api + `tasks/${task.id}/run`)}
+                    onClick={async () => {
+                      await request.post(api + `tasks/${task.id}/run`);
+                      await load();
+                    }}
                   >
-                    Run bridge
+                    Run
                   </Button>
                   <Button
-                    onClick={() => request.post(api + `tasks/${task.id}/stop`)}
+                    onClick={async () => {
+                      setRunTask(task.id);
+                      setRuns(await get(`tasks/${task.id}/runs`));
+                    }}
+                  >
+                    Runs
+                  </Button>
+                  <Button
+                    onClick={async () => {
+                      await request.post(api + `tasks/${task.id}/stop`);
+                      await load();
+                    }}
                   >
                     Stop
                   </Button>
@@ -603,7 +617,7 @@ export default function TasksPage() {
                     <Space direction="vertical" style={{ width: '100%' }}>
                       <Alert
                         message={`${kind} · Configured Resources`}
-                        description="Environment 是逻辑绑定；Current Build 仅用于展示，不固定到 Task。TypeScript 执行工具在 Phase 10 决定。"
+                        description="Environment 是逻辑绑定；每次运行固定当时的 Current Build。TypeScript 需要该 Build 安装 tsx 4.x。"
                       />
                       {kind !== 'SHELL' && (
                         <Form.Item
@@ -654,7 +668,7 @@ export default function TasksPage() {
                   forceRender: true,
                   children: (
                     <>
-                      <Alert message="Current schedule bridge — cron expression" />
+                      <Alert message="Schedule — cron expression" />
                       <Form.Item name="schedule" label="Schedule">
                         <Input placeholder="0 8 * * *" />
                       </Form.Item>
@@ -667,7 +681,7 @@ export default function TasksPage() {
                   forceRender: true,
                   children: (
                     <>
-                      <Alert message="Policies only. Retry, concurrency and notification execution start in Phase 10+. Failure notifications mean final failure after retries." />
+                      <Alert message="Retry and concurrency policies apply to each run. Failure notifications are sent after the final failed attempt." />
                       <Form.Item
                         name="timeout_seconds"
                         label="Timeout seconds (empty = platform default)"
@@ -731,8 +745,58 @@ export default function TasksPage() {
           </Form>
         </Modal>
         <Modal
+          open={runs !== undefined}
+          title="Task runs"
+          width={850}
+          footer={null}
+          onCancel={() => setRuns(undefined)}
+        >
+          <Button
+            onClick={async () => setRuns(await get(`tasks/${runTask}/runs`))}
+          >
+            Refresh runs
+          </Button>
+          <Table
+            rowKey="id"
+            dataSource={runs}
+            pagination={{ pageSize: 10 }}
+            columns={[
+              { title: 'Run', dataIndex: 'id' },
+              { title: 'Status', dataIndex: 'status' },
+              { title: 'Attempts', dataIndex: 'attempt_count' },
+              { title: 'Result', dataIndex: 'error_code' },
+              {
+                title: 'Actions',
+                render: (_: unknown, run: any) => (
+                  <Space>
+                    <Button
+                      onClick={async () =>
+                        setLog((await get(`task-runs/${run.id}/log`)).content)
+                      }
+                    >
+                      Run log
+                    </Button>
+                    <Button
+                      disabled={
+                        !['QUEUED', 'RESOLVING', 'RUNNING'].includes(run.status)
+                      }
+                      onClick={async () => {
+                        await request.post(api + `task-runs/${run.id}/cancel`);
+                        setRuns(await get(`tasks/${runTask}/runs`));
+                        await load();
+                      }}
+                    >
+                      Cancel run
+                    </Button>
+                  </Space>
+                ),
+              },
+            ]}
+          />
+        </Modal>
+        <Modal
           open={log !== undefined}
-          title="Current bridge log"
+          title="Run log"
           width={900}
           onCancel={() => setLog(undefined)}
           footer={null}

@@ -13,44 +13,17 @@ const { LogStreamManager } = require('../../back/shared/logStreamManager');
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const logger = { info() {}, error() {} };
 
-test(
-  'spawn failure settles without exit, and the next scheduled run can proceed',
-  { timeout: 3000 },
-  async () => {
-    let releases = 0;
-    let active = 0;
-    const { runCron } = load(path.resolve('back/shared/runCron.ts'), {
-      'cross-spawn': {
-        spawn: () => spawn('true', { shell: '/nonexistent-ql-test-shell' }),
-      },
-      './pLimit': {
-        runWithCronLimit: async (_cron, fn) => {
-          active++;
-          try {
-            return await fn();
-          } finally {
-            active--;
-          }
-        },
-        removeQueuedCron: () => releases++,
-      },
-      '../loaders/logger': logger,
-      '../data/cron': {
-        SchedulerProjectionModel: { findOne: async () => null },
-        CrontabStatus: {},
-      },
-      '../data/runningInstance': {
-        RunningInstanceModel: {},
-        InstanceStatus: {},
-      },
-      '../config/util': { killTask: async () => {} },
-    });
-    await runCron('true', { id: '1' });
-    await runCron('true', { id: '2' });
-    assert.equal(active, 0);
-    assert.equal(releases, 2);
-  },
-);
+test('scheduler submission failure settles and next Task identity can be submitted', async () => {
+  const calls = [];
+  const { runCron } = load(path.resolve('back/shared/runCron.ts'), {
+    '../services/executionService': { executionService: { async submit(id, trigger) {
+      calls.push({ id, trigger }); if (id === 1) throw Error('QUEUE_UNAVAILABLE'); return { id: 22 };
+    } } },
+  });
+  await assert.rejects(runCron('must-not-spawn', { id: '1' }), /QUEUE_UNAVAILABLE/);
+  assert.equal(await runCron('must-not-spawn', { id: '2' }), 22);
+  assert.deepEqual(calls, [{ id: 1, trigger: 'SCHEDULE' }, { id: 2, trigger: 'SCHEDULE' }]);
+});
 
 test(
   'completion waits for slow log consumers and preserves the final output',

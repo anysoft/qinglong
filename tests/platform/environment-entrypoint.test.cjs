@@ -16,7 +16,7 @@ test('real ID-to-SQLite shell bridge resolves current config, cleans per-run fil
   fs.mkdirSync(path.join(h.dir, 'data/scripts/subscription-1'));
   fs.writeFileSync(path.join(h.dir, 'data/scripts/subscription-1/bridge.sh'), '[[ "$BRIDGE_TOKEN" == "bridge-private" ]] || exit 7\nprintf "BRIDGE_PASS\\n%s\\n" "$BRIDGE_TOKEN"');
   const run = (id = String(task.id), file = 'subscription-1/bridge.sh') => new Promise((resolve, reject) => {
-    const cp = spawn('/bin/bash', [path.join(h.dir, 'shell/task.sh'), file, 'now'], { env: { ...process.env, QL_DIR: h.dir, QL_DATA_DIR: path.join(h.dir, 'data'), ID: id, real_time: 'true' } });
+    const cp = spawn('/bin/bash', [path.join(h.dir, 'shell/task.sh'), file, 'now'], { env: { ...process.env, PLATFORM_RECOVERY_TEST_ONLY: '1', QL_DIR: h.dir, QL_DATA_DIR: path.join(h.dir, 'data'), ID: id, real_time: 'true' } });
     let output = ''; cp.stdout.on('data', x => output += x); cp.stderr.on('data', x => output += x); cp.on('error', reject); cp.on('close', code => resolve({ code, output }));
   });
   await h.variables.save('global', 0, [{ name: 'GLOBAL_ONLY', value: 'literal global' }]);

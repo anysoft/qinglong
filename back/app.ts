@@ -31,12 +31,18 @@ class Application {
   constructor() {
     this.app = express();
     // 创建一个全局中间件，删除查询参数中的t
-    this.app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
-      if (req.query.t) {
-        delete req.query.t;
-      }
-      next();
-    });
+    this.app.use(
+      (
+        req: express.Request,
+        res: express.Response,
+        next: express.NextFunction,
+      ) => {
+        if (req.query.t) {
+          delete req.query.t;
+        }
+        next();
+      },
+    );
   }
 
   async start() {
@@ -58,7 +64,7 @@ class Application {
   private startMasterProcess() {
     // Fork gRPC worker first and wait for it to be ready
     const grpcWorker = this.forkWorker('grpc');
-    
+
     // Wait for gRPC worker to signal it's ready before starting HTTP worker
     this.waitForWorkerReady(grpcWorker, 30000)
       .then(() => {
@@ -66,7 +72,9 @@ class Application {
         this.httpWorker = this.forkWorker('http');
       })
       .catch((error) => {
-        Logger.error(`[boot] Failed to wait for gRPC worker:\n${errStack(error)}`);
+        Logger.error(
+          `[boot] Failed to wait for gRPC worker:\n${errStack(error)}`,
+        );
         process.exit(1);
       });
 
@@ -75,7 +83,8 @@ class Application {
       if (metadata) {
         if (!this.isShuttingDown) {
           Logger.error(
-            `${metadata.serviceType} worker ${worker.process.pid} died (${signal || code
+            `${metadata.serviceType} worker ${worker.process.pid} died (${
+              signal || code
             }). Restarting...`,
           );
           // If gRPC worker died, restart it and wait for it to be ready
@@ -95,19 +104,27 @@ class Application {
                     this.httpWorker.send('reregister-crons');
                     Logger.info('Sent reregister-crons message to HTTP worker');
                   } catch (error) {
-                    Logger.error(`Failed to send reregister-crons message:\n${errStack(error)}`);
+                    Logger.error(
+                      `Failed to send reregister-crons message:\n${errStack(
+                        error,
+                      )}`,
+                    );
                   }
                 }
               })
               .catch((error) => {
-                Logger.error(`Failed to restart gRPC worker:\n${errStack(error)}`);
+                Logger.error(
+                  `Failed to restart gRPC worker:\n${errStack(error)}`,
+                );
                 process.exit(1);
               });
           } else {
             // For HTTP worker, just restart it
             const newWorker = this.forkWorker(metadata.serviceType);
             this.httpWorker = newWorker;
-            Logger.info(`Restarted ${metadata.serviceType} worker (PID: ${newWorker.process.pid})`);
+            Logger.info(
+              `Restarted ${metadata.serviceType} worker (PID: ${newWorker.process.pid})`,
+            );
           }
         }
 
@@ -128,11 +145,15 @@ class Application {
         }
       };
       worker.on('message', messageHandler);
-      
+
       // Timeout after specified milliseconds
       const timeoutId = setTimeout(() => {
         worker.removeListener('message', messageHandler);
-        reject(new Error(`Worker failed to start within ${timeoutMs / 1000} seconds`));
+        reject(
+          new Error(
+            `Worker failed to start within ${timeoutMs / 1000} seconds`,
+          ),
+        );
       }, timeoutMs);
     });
   }
@@ -142,7 +163,10 @@ class Application {
     // PM2's fork launcher is inherited by our own cluster workers. Their APM
     // messages go to this primary, not PM2, and duplicate its sampling work.
     // Keep primary monitoring and allow restoring the inherited worker APM.
-    if (process.env.pm_id !== undefined && process.env.QL_WORKER_APM !== 'true') {
+    if (
+      process.env.pm_id !== undefined &&
+      process.env.QL_WORKER_APM !== 'true'
+    ) {
       workerEnv.pmx = 'false';
     }
     const worker = cluster.fork(workerEnv);
@@ -163,9 +187,11 @@ class Application {
   }
 
   private setupMiddlewares() {
-    this.app.use(helmet({
-      contentSecurityPolicy: false,
-    }));
+    this.app.use(
+      helmet({
+        contentSecurityPolicy: false,
+      }),
+    );
     this.app.use(cors(config.cors));
     this.app.use(compression());
     this.app.use(monitoringMiddleware);
@@ -190,7 +216,11 @@ class Application {
             try {
               worker.send('shutdown');
             } catch (error) {
-              Logger.warn(`Failed to send shutdown to worker ${worker.process.pid}:\n${errStack(error)}`);
+              Logger.warn(
+                `Failed to send shutdown to worker ${
+                  worker.process.pid
+                }:\n${errStack(error)}`,
+              );
             }
           });
 
@@ -280,8 +310,10 @@ class Application {
     process.on('message', async (msg) => {
       if (msg === 'shutdown') {
         this.gracefulShutdown(serviceType);
-      } else if (serviceType === 'http' &&
-        (msg === 'reregister-crons' || msg === 'scheduler-unavailable')) {
+      } else if (
+        serviceType === 'http' &&
+        (msg === 'reregister-crons' || msg === 'scheduler-unavailable')
+      ) {
         cronClient.readiness.invalidate();
       }
     });
@@ -297,13 +329,23 @@ class Application {
 
     try {
       if (serviceType === 'http') {
+        const { executionSubmission } = await import(
+          './services/executionSubmission'
+        );
+        const { executionService } = await import(
+          './services/executionService'
+        );
+        await executionSubmission.stop();
+        await executionService.stop();
         await this.httpServerService?.shutdown();
       } else {
         await this.grpcServerService?.shutdown();
       }
       process.exit(0);
     } catch (error) {
-      Logger.error(`[${serviceType}] Error during shutdown:\n${errStack(error)}`);
+      Logger.error(
+        `[${serviceType}] Error during shutdown:\n${errStack(error)}`,
+      );
       process.exit(1);
     }
   }

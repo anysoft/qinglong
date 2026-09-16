@@ -1,0 +1,89 @@
+{
+  "status": "ambiguous",
+  "message": "Found 3 symbols matching 'db.ts'. Blast radius differs per candidate (max 1 impacted at risk LOW). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "db.ts"
+  },
+  "direction": "upstream",
+  "totalCandidates": 3,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 1,
+  "maxRisk": "LOW",
+  "candidates": [
+    {
+      "uid": "File:back/loaders/db.ts",
+      "name": "db.ts",
+      "kind": "",
+      "filePath": "back/loaders/db.ts",
+      "score": 0.9,
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          },
+          {
+            "axis": "modules",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          }
+        ]
+      },
+      "direct": 1
+    },
+    {
+      "uid": "File:back/loaders/db.ts",
+      "name": "db.ts",
+      "kind": "",
+      "filePath": "back/loaders/db.ts",
+      "line": 31,
+      "score": 0.9,
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          },
+          {
+            "axis": "modules",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          }
+        ]
+      },
+      "direct": 1
+    },
+    {
+      "uid": "File:back/loaders/db.ts",
+      "name": "db.ts",
+      "kind": "",
+      "filePath": "back/loaders/db.ts",
+      "line": 122,
+      "score": 0.9,
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          },
+          {
+            "axis": "modules",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          }
+        ]
+      },
+      "direct": 1
+    }
+  ]
+}

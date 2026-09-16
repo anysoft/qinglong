@@ -1,5 +1,7 @@
 # Temporary Bridges — 退出条件登记
 
+> 当前状态以本文末尾 **Phase 10 — Execution Engine** 为准；前面的 Phase 4.5–9 表保留为阶段记录。
+
 当前平台能力仍依赖以下桥。保留是对现有运行职责的承认，不是继续承诺 QingLong 兼容。新代码不得新增对桥内部文件、URL、命名规则的依赖。Phase 4.5B 已完成本阶段收敛；后续 phase 编号是计划，必须满足 gate 才能退场。
 
 | ID / Component | Why still needed | Consumer / source | Planned replacement | Removal phase / exit gate |
@@ -101,3 +103,26 @@ Python dependency bridge 同样保留既有当前 Runner consumer；Linux packag
 | B17 TaskWorkspaceResolver | REDUCED | Task 使用 canonical TaskSource 经 SourceBridge 映射当前 staging；ConfigMaterializationLease / 恢复继续保留；Phase 10 完成 workspace lease 后退出 |
 
 Runtime Binding 和 Settings 在 Phase 9 只声明、验证、展示。没有 managed Environment 实际 Task 执行，没有 ExecutionContext v2。非空 structured arguments 在当前桥执行时明确拒绝，Phase 10 使用原生 argv。未发布 Manual source 可保存与校验，当前桥无法直接执行。
+
+
+## Phase 10 — Execution Engine
+
+本节覆盖前面的旧执行消费者登记。详细拆分见 [Phase 10 bridge report](docs/refactor/phase10/11-bridge-removal.md)。
+
+| ID | 当前状态 | 仍保留的职责 / 下一退出 gate |
+|---|---|---|
+| B01 | REDUCED | Runner 不再 staging；订阅发布、编辑器和辅助文件仍消费 scripts，Phase 11/12 处理 |
+| B02 | DISABLED / BLOCKED_BY_LINUX_GATE | task.sh、otask.sh、旧 taskExecution 仅显式恢复诊断可运行；手工/API/node-schedule/crond 全部提交 Task ID |
+| B03 | REDUCED | 仅输出受保护本地 launcher，无 Task command/Secret，不是领域定义 |
+| B04 | REDUCED | 定时 transport 保留；SQLite dispatcher + owner lease 承担执行 claim/queue |
+| B06 | DISABLED FOR NORMAL TASKS | Runner v2 无 preload、SDK/账号/语言路径魔法；历史诊断/显式 SDK 源码保留，Linux gate 后删除最后 execution glue |
+| B08 | REMOVED FROM NORMAL EXECUTION | 结果由 supervisor result FD → TaskRun；旧 status/stat/token transport 不驱动新执行；stopInstance 不再按数据库 PID 发信号 |
+| B09/B10 | REDUCED | Python venv / Node Build 替代 Task 依赖；旧管理/平台 bootstrap/Linux 包/恢复材料保留，没有删除 deps 用户数据 |
+| B13 | RETAINED | 显式脚本通知 SDK 后续 Phase 13；Backend NotificationService 当前由最终 ExecutionResult 调用 |
+| B14 | REPLACED FOR TASK RUNS | data/log/task-runs/run-ID.log；历史/订阅日志继续保留 |
+| B15 | REDUCED | TaskRun/Attempt 取代活跃 RunningInstances；历史 dashboard/DTO/projection 表保留 |
+| B17 | REPLACED FOR TASK RUNS | ExecutionPaths + Worktree lease 取代 scripts workspace；ConfigMaterialization 与 Hook lifecycle 继续作为共享安全核心 |
+
+**KEEP**：Config journal、runtime_lease.py、hook_process.py、process_group.py、已有 Runtime/Build shared/exclusive lease、后台通知服务。新核心没有新增 Shell→Open API、generated ENV、global dependencies 或 scripts staging 消费者。
+
+**Linux**：本机 Darwin，Step 0 未发现容器/VM/远程 CI runner。最后 destructive removal 为 BLOCKED_BY_LINUX_GATE。已更新 Linux CI 验收步骤，但未把配置文件当作已运行证据。未删除既有用户数据。

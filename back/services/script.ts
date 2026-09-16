@@ -40,29 +40,19 @@ export default class ScriptService {
   }
 
   public async runScript(filePath: string) {
-    const relativePath = path.relative(config.scriptPath, filePath);
-    const command = `${TASK_COMMAND} ${relativePath} now`;
-    const pid = await this.scheduleService.runTask(
-      `real_time=true ${command}`,
-      this.taskCallbacks(filePath),
-      { command, id: relativePath.replace(/ /g, '-'), runOrigin: 'script' },
-      'start',
-    );
-
-    return { code: 200, data: pid };
+    return {
+      code: 409,
+      error_code: 'TASK_DEFINITION_REQUIRED',
+      message: '请在 Tasks 中选择 Worktree 文件后运行。',
+    };
   }
 
   public async stopScript(filePath: string, pid: number) {
-    if (!pid) {
-      const relativePath = path.relative(config.scriptPath, filePath);
-      taskLimit.removeQueuedCron(relativePath.replace(/ /g, '-'));
-      pid = (await getPid(`${TASK_COMMAND} ${relativePath} now`)) as number;
-    }
-    try {
-      await killTask(pid);
-    } catch (error) {}
-
-    return { code: 200 };
+    return {
+      code: 409,
+      error_code: 'TASK_RUN_REQUIRED',
+      message: '请在 Tasks 中取消对应的 Run。',
+    };
   }
 
   public checkFilePath(filePath: string, fileName: string) {

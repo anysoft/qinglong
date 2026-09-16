@@ -1,0 +1,53 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: retry resets BEFORE patches, freezes Config and Hooks, keeps run-wide secrets, removes private Hook files
+ok 1 - retry resets BEFORE patches, freezes Config and Hooks, keeps run-wide secrets, removes private Hook files
+  ---
+  duration_ms: 3017.269417
+  type: 'test'
+  ...
+# Subtest: invalid Hook output never retries; FINALLY executes and private files are removed
+ok 2 - invalid Hook output never retries; FINALLY executes and private files are removed
+  ---
+  duration_ms: 1160.181333
+  type: 'test'
+  ...
+# Subtest: pre-resolution, skipped and queued cancelled runs persist canonical results
+ok 3 - pre-resolution, skipped and queued cancelled runs persist canonical results
+  ---
+  duration_ms: 709.603917
+  type: 'test'
+  ...
+# Subtest: node binding rejects imported sibling module trees and preserves unknown replacement on recovery
+ok 4 - node binding rejects imported sibling module trees and preserves unknown replacement on recovery
+  ---
+  duration_ms: 776.218416
+  type: 'test'
+  ...
+# Subtest: private cleanup fails closed on unknown file and preserves that file
+ok 5 - private cleanup fails closed on unknown file and preserves that file
+  ---
+  duration_ms: 560.599209
+  type: 'test'
+  ...
+# Subtest: notification observes durable final result exactly once; delivery failure is secondary
+ok 6 - notification observes durable final result exactly once; delivery failure is secondary
+  ---
+  duration_ms: 1032.643459
+  type: 'test'
+  ...
+# Subtest: large UTF-8 per-run logs drain all bytes and tail without split-codepoint replacement
+ok 7 - large UTF-8 per-run logs drain all bytes and tail without split-codepoint replacement
+  ---
+  duration_ms: 678.233083
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8160.181375

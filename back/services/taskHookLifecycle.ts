@@ -7,30 +7,71 @@ import { applyHookOutput, ExecutionEnvironment } from './hookOutput';
 import { TaskExecutionPreparation } from './taskExecutionPreparation';
 import { TaskHook, HookPhase } from '../data/configAsset';
 import { ConfigAssetError, atomicPrivateWrite } from '../shared/configAssets';
+export interface LifecycleOptions {
+  main?: (
+    environment: NodeJS.ProcessEnv,
+    output: (text: string) => Promise<void>,
+  ) => Promise<{
+    code: number;
+    reason: string;
+    exitCode?: number | null;
+    signal?: string | null;
+  }>;
+  redactor?: ExecutionRedactor;
+  persistEnvironment?: boolean;
+}
+export type HookLifecyclePlan = Pick<
+  TaskExecutionPreparation,
+  | 'environment'
+  | 'secretValues'
+  | 'workspace'
+  | 'hooks'
+  | 'directory'
+  | 'args'
+  | 'mainTimeout'
+> & { task: { id?: number; work_dir?: string } | null };
 export interface LifecycleResult {
   code: number;
+  main?: {
+    code: number;
+    reason: string;
+    exitCode?: number | null;
+    signal?: string | null;
+  };
+  hookResults: {
+    hookId: number;
+    phase: string;
+    code: number;
+    reason: string;
+  }[];
   primary: string | null;
   failures: { phase: string; hook_id?: number; reason: string }[];
 }
 export default class TaskHookLifecycle {
-  private executor = new HookExecutor();
+  constructor(private executor = new HookExecutor()) {}
   private cancelled = false;
   cancel() {
     this.cancelled = true;
     this.executor.cancel();
   }
   async run(
-    plan: TaskExecutionPreparation,
+    plan: HookLifecyclePlan,
     sink: (text: string) => Promise<void>,
+    options: LifecycleOptions = {},
   ) {
     let environment: ExecutionEnvironment = {
       variables: { ...plan.environment.variables },
       secretNames: [...plan.environment.secretNames],
       secretValues: [...plan.secretValues],
     };
-    const redactor = new ExecutionRedactor([], sink);
+    const redactor = options.redactor ?? new ExecutionRedactor([], sink);
     redactor.add(environment.secretValues);
-    const result: LifecycleResult = { code: 0, primary: null, failures: [] };
+    const result: LifecycleResult = {
+      code: 0,
+      primary: null,
+      failures: [],
+      hookResults: [],
+    };
     const record = (
       phase: string,
       reason: string,
@@ -53,6 +94,7 @@ export default class TaskHookLifecycle {
       PLATFORM_TASK_DIR: plan.workspace.taskDir,
     });
     const writeDerived = async () => {
+      if (options.persistEnvironment === false) return;
       const unset = [
         ...new Set([
           ...plan.environment.unsetVariables,
@@ -114,6 +156,11 @@ export default class TaskHookLifecycle {
               } else await redactor.write(chunk);
             },
           );
+          result.hookResults.push({
+            hookId: hook.id,
+            phase: name,
+            ...execution,
+          });
           let outputValid = true;
           try {
             environment = await applyHookOutput(output, name, environment);
@@ -162,20 +209,29 @@ export default class TaskHookLifecycle {
       if (!result.primary) {
         await writeDerived();
         await redactor.write('[MAIN]\n');
-        const main = await this.executor.run(
-          '/bin/bash',
-          [path.join(config.rootPath, 'shell/task.sh'), ...plan.args],
-          plan.workspace.cwd,
-          {
-            ...context('MAIN'),
-            PLATFORM_MAIN_ONLY: '1',
-            QL_TASK_ENV_SNAPSHOT: plan.directory,
-            ...(plan.task?.id ? { ID: String(plan.task.id) } : {}),
-            ...(plan.task?.work_dir ? { work_dir: plan.task.work_dir } : {}),
-          },
-          plan.mainTimeout,
-          (chunk) => redactor.write(chunk),
-        );
+        const main = options.main
+          ? await options.main(context('MAIN'), (chunk) =>
+              redactor.write(chunk),
+            )
+          : await this.executor.run(
+              '/bin/bash',
+              [path.join(config.rootPath, 'shell/task.sh'), ...plan.args],
+              plan.workspace.cwd,
+              {
+                ...context('MAIN'),
+                PLATFORM_MAIN_ONLY: '1',
+                PLATFORM_RECOVERY_TEST_ONLY:
+                  process.env.PLATFORM_RECOVERY_TEST_ONLY === '1' ? '1' : '0',
+                QL_TASK_ENV_SNAPSHOT: plan.directory,
+                ...(plan.task?.id ? { ID: String(plan.task.id) } : {}),
+                ...(plan.task?.work_dir
+                  ? { work_dir: plan.task.work_dir }
+                  : {}),
+              },
+              plan.mainTimeout,
+              (chunk) => redactor.write(chunk),
+            );
+        result.main = main;
         if (this.cancelled) record('MAIN', 'CANCELLED', undefined, 143);
         else if (main.code !== 0)
           record('MAIN', main.reason, undefined, main.code);

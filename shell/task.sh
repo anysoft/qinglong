@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# BLOCKED_BY_LINUX_GATE: retained only for explicit recovery-protocol diagnostics.
+# Product entrypoints always submit Task IDs to Runner v2; this is not a selector.
+if [[ ${PLATFORM_RECOVERY_TEST_ONLY:-0} != 1 ]]; then
+  printf '%s\n' 'LEGACY_EXECUTION_DISABLED: run a configured Task through the platform.' >&2
+  exit 64
+fi
 
 dir_shell=$QL_DIR/shell
 . $dir_shell/share.sh

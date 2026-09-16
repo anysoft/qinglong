@@ -191,14 +191,20 @@ async function startExecution() {
     await prepared.cleanup();
   }
 }
-startExecution()
-  .catch(async (error) => {
-    process.exitCode = 1;
-    await output(
-      (error instanceof ConfigAssetError ||
-      error instanceof ScopedEnvironmentError
-        ? error.code
-        : 'EXECUTION_PREPARATION_FAILED') + '\n',
-    );
-  })
-  .finally(() => sequelize.close());
+// BLOCKED_BY_LINUX_GATE: diagnostic artifact, never selected by Task entrypoints.
+if (process.env.PLATFORM_RECOVERY_TEST_ONLY !== '1') {
+  process.stderr.write('LEGACY_EXECUTION_DISABLED\n');
+  process.exitCode = 64;
+  void sequelize.close();
+} else
+  startExecution()
+    .catch(async (error) => {
+      process.exitCode = 1;
+      await output(
+        (error instanceof ConfigAssetError ||
+        error instanceof ScopedEnvironmentError
+          ? error.code
+          : 'EXECUTION_PREPARATION_FAILED') + '\n',
+      );
+    })
+    .finally(() => sequelize.close());

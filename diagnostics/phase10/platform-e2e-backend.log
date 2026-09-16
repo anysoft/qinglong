@@ -1,0 +1,121 @@
+[[32minfo[39m 2026-09-16 09:11:00]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 09:11:00]:	[boot] grpc worker started (PID: 17797)
+[[32minfo[39m 2026-09-16 09:11:00]:	[boot] Generating gRPC mTLS certificates...
+[[32minfo[39m 2026-09-16 09:11:01]:	[boot] gRPC mTLS certificates generated successfully
+[[32minfo[39m 2026-09-16 09:11:01]:	[boot] gRPC mTLS certificates saved to /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/data/config/grpc
+[[34mdebug[39m 2026-09-16 09:11:01]:	[boot] gRPC service started successfully on 127.0.0.1:57664
+[[32minfo[39m 2026-09-16 09:11:01]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 09:11:01]:	[boot] http worker started (PID: 18012)
+[[32minfo[39m 2026-09-16 09:11:01]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 09:11:02]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 09:11:02]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 09:11:02]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 09:11:02]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 09:11:02]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 09:11:02]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 09:11:02]:	[panel][取消interval任务] 任务ID: NaN, 任务名: Generate token
+[[32minfo[39m 2026-09-16 09:11:02]:	[panel][创建interval任务] 任务ID: NaN, 任务名: Generate token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/token.js
+[[32minfo[39m 2026-09-16 09:11:02]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 09:11:02]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 09:11:02]:	[boot] HTTP service started successfully on 127.0.0.1:57663
+[[32minfo[39m 2026-09-16 09:11:02]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 09:11:02]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[32minfo[39m 2026-09-16 09:11:09]:	Git workspace operation=initialize repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:10]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:10]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:12]:	Git workspace operation=fetch repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:12]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:13]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:14]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 09:11:15]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:15]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:16]:	Git workspace operation=fetch repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:17]:	Git workspace operation=create-worktree repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:17]:	Git workspace operation=SUBSCRIPTION_BIND repository=1 result=OK
+[[33mwarn[39m 2026-09-16 09:11:17]:	Slow request detected: POST /1/prepare took 2610.82ms
+[[32minfo[39m 2026-09-16 09:11:18]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 09:11:22]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:11:23]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 09:11:24]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:24]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:11:25]:	[environment] variables changed scope=global owner=0 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 09:11:26]:	[environment] variables changed scope=global owner=0 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 09:11:26]:	[environment] profile saved id=1
+[[32minfo[39m 2026-09-16 09:11:27]:	[environment] profile saved id=1
+[[32minfo[39m 2026-09-16 09:11:27]:	[environment] variables changed scope=repository owner=1 count=1 secret_replacements=0
+[[33mwarn[39m 2026-09-16 09:11:52]:	Slow request detected: POST /runtime/python/environments took 2749.41ms
+[[32minfo[39m 2026-09-16 09:12:17]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:18]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:18]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:20]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:21]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:21]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:23]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:24]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:24]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:26]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:28]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:28]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:29]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:31]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:31]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:31]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:31]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:32]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:32]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:32]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:32]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:33]:	[environment] variables changed scope=task owner=3 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 09:12:34]:	[environment] variables changed scope=task owner=2 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 09:12:34]:	[environment] variables changed scope=task owner=1 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 09:12:36]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:39]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:41]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:43]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:44]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:44]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:45]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:45]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:45]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:45]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:47]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:47]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:47]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 09:12:48]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:48]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:48]:	[schedule][创建定时任务] 任务ID: 5, 名称: E2E py copy, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '5'
+[[32minfo[39m 2026-09-16 09:12:48]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:48]:	[schedule][取消定时任务] 任务ID: 5
+[[32minfo[39m 2026-09-16 09:12:48]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:55]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:55]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:12:55]:	[schedule][取消定时任务] 任务ID: 3
+[[32minfo[39m 2026-09-16 09:12:55]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[34mdebug[39m 2026-09-16 09:12:57]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 09:12:57]:	Worker 17797 exited
+[[32minfo[39m 2026-09-16 09:13:01]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 09:13:01]:	[boot] grpc worker started (PID: 61081)
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[34mdebug[39m 2026-09-16 09:13:02]:	[boot] gRPC service started successfully on 127.0.0.1:57664
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] http worker started (PID: 61193)
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 09:13:02]:	[schedule][创建定时任务] 任务ID: 3, 名称: E2E sh, cron: 0 0 1 1 *, 执行命令: '/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/taskRunSubmit.js' '/tmp/platform-execution-501-73cb7f8836e318419deb1751/submit.sock' '3'
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 09:13:02]:	[panel][取消interval任务] 任务ID: NaN, 任务名: 生成token
+[[32minfo[39m 2026-09-16 09:13:02]:	[panel][创建interval任务] 任务ID: NaN, 任务名: 生成token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-CP4Npl/static/build/token.js
+[[32minfo[39m 2026-09-16 09:13:02]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 09:13:02]:	[boot] HTTP service started successfully on 127.0.0.1:57663
+[[32minfo[39m 2026-09-16 09:13:02]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 09:13:02]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 09:13:02]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[34mdebug[39m 2026-09-16 09:13:03]:	HTTP service stopped
+[[32minfo[39m 2026-09-16 09:13:03]:	Worker 61193 exited
+[[34mdebug[39m 2026-09-16 09:13:03]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 09:13:03]:	Worker 61081 exited

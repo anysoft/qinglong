@@ -1,0 +1,97 @@
+{
+  "target": {
+    "id": "Method:back/services/cron.ts:CurrentTaskBridgeService.run#1",
+    "name": "run",
+    "type": "Method",
+    "filePath": "back/services/cron.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 1,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "lower-bound",
+  "boundaries": [
+    "84 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+  ],
+  "causes": {
+    "scopeExtractionFiles": 0,
+    "receiverTyping": 84,
+    "dispatchBoundary": 0,
+    "externalBoundary": 0,
+    "undecidedSatisfaction": 0,
+    "callableValueReferences": 0
+  },
+  "summary": {
+    "direct": 1,
+    "processes_affected": 1,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 1
+  },
+  "affected_processes": [
+    {
+      "name": "bootTask",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 5,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 1,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CurrentTaskBridgeService.bootTask#0",
+        "name": "bootTask",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_325_boottask",
+            "label": "BootTask → FormatViewQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_360_boottask",
+            "label": "BootTask → TaskDefinitionError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_324_boottask",
+            "label": "BootTask → FormatSearchText",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_323_boottask",
+            "label": "BootTask → FormatFilterQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_326_boottask",
+            "label": "BootTask → FormatViewSort",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -5,6 +5,7 @@ import path from 'path';
 import { createHash, randomUUID } from 'crypto';
 import config from '../config';
 import ConfigAssetService from './configAsset';
+import HookExecutor from './hookExecutor';
 import { ResolvedConfig } from './taskConfig';
 import {
   ConfigAssetError,
@@ -24,6 +25,7 @@ export interface TaskWorkspace {
 export interface MaterializationLease {
   resourceKey: string;
   exclusive: boolean;
+  processLeaseFds?: readonly number[];
   assertHeld(): Promise<void>;
 }
 interface Entry {
@@ -213,19 +215,30 @@ export default class ConfigMaterializationService {
         await safeParents(root, binding.target_path);
         if (await exists(target))
           throw new ConfigAssetError('CONFIG_TARGET_CONFLICT');
-        if (entry.mode === 'SYMLINK')
-          await promisify(execFile)(
-            'python3',
-            [
-              '-I',
-              '-S',
-              path.join(config.rootPath, 'shell/config_link.py'),
-              temporary,
-              target,
-            ],
-            { timeout: 5000 },
-          );
-        else await fs.link(temporary, target);
+        if (entry.mode === 'SYMLINK') {
+          const args = [
+            '-I',
+            '-S',
+            path.join(config.rootPath, 'shell/config_link.py'),
+            temporary,
+            target,
+          ];
+          if (lease.processLeaseFds) {
+            const result = await new HookExecutor(lease.processLeaseFds).run(
+              '/usr/bin/python3',
+              args,
+              root,
+              { PATH: '/usr/bin:/bin' },
+              5,
+              async () => {},
+            );
+            if (result.code !== 0)
+              throw new ConfigAssetError('CONFIG_MATERIALIZATION_FAILED');
+          } else
+            await promisify(execFile)('/usr/bin/python3', args, {
+              timeout: 5000,
+            });
+        } else await fs.link(temporary, target);
         await fs.unlink(temporary);
         await syncDirectory(path.dirname(target));
         entry.phase = 'INSTALLED';

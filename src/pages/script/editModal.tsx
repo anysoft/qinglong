@@ -172,12 +172,8 @@ const EditModal = ({
             <Option value="shell">shell</Option>
             <Option value="python">python</Option>
           </Select>
-          <Button
-            type="primary"
-            style={{ marginRight: 8 }}
-            onClick={isRunning ? stop : run}
-          >
-            {isRunning ? intl.get('停止') : intl.get('运行')}
+          <Button type="primary" style={{ marginRight: 8 }} href="/tasks">
+            前往 Tasks
           </Button>
           <Button
             type="primary"

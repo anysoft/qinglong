@@ -1,6 +1,6 @@
 # Task Domain — Phase 9
 
-Task 是定义的正式中心；SchedulerProjections、RunningInstances 与日志仍是临时执行桥。Task 定义没有绝对运行路径或 Build pin。
+Task 是定义的正式中心；SchedulerProjections 仅为调度输出，TaskRuns / TaskRunAttempts 承担执行。Task 定义没有绝对运行路径或 Build pin；这些属于运行快照。
 
 ```mermaid
 flowchart TD
@@ -35,11 +35,11 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-  Definition[Task + TaskResourceResolver] --> Future[Phase 10 Execution Resolver — 尚未实现]
-  Future --> Context[ExecutionContext — 尚未实现]
-  Context --> Runner[Runner v2 — 尚未实现]
+  Definition[Task + TaskResourceResolver] --> Future[ExecutionResolver]
+  Future --> Context[Immutable ExecutionContext]
+  Context --> Runner[Runner v2]
 ```
 
-Phase 9 不组合 executable、完整 ENV、Config revision、Hook snapshot 和 workspace lease。当前 `TaskExecutionBridge → CurrentTaskBridgeService → task.sh` 沿用现有执行方式；Python/Node Environment 绑定没有被当前进程消费。
+Phase 10 已实现 executable、ENV、Config revision、Hook snapshot 和 Worktree lease 的单次解析。当前 `TaskExecutionBridge → ExecutionService → Runner v2` 消费 managed Environment Build；正常执行不再调用 task.sh。详见 [Execution Engine](14-execution-engine.md)。
 
 API/UI、迁移、readiness 和桥接说明见 [Phase 9 文档](../refactor/phase9/01-task-domain.md)。

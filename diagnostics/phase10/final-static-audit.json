@@ -1,0 +1,510 @@
+{
+  "status": "PASS",
+  "production_files": 349,
+  "core_files": [
+    "back/services/executionService.ts",
+    "back/services/executionResolver.ts",
+    "back/services/executionAttemptCoordinator.ts",
+    "back/services/executionNodeBinding.ts",
+    "back/services/executionPaths.ts",
+    "back/services/executionLog.ts",
+    "back/services/runnerV2.ts"
+  ],
+  "forbidden_hits": [],
+  "remaining_references": [
+    {
+      "file": "src/pages/setting/other.tsx",
+      "line": 43,
+      "text": "{ value: 'dep_cache', label: intl.get('依赖缓存') },",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/services/nodePackageManager.ts",
+      "line": 517,
+      "text": "throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/nodePackageManager.ts",
+      "line": 558,
+      "text": "throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/nodePackageManager.ts",
+      "line": 560,
+      "text": "else if (!e.isFile()) throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/taskHookLifecycle.ts",
+      "line": 218,
+      "text": "[path.join(config.rootPath, 'shell/task.sh'), ...plan.args],",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 15,
+      "text": "import { RunningInstanceModel, InstanceStatus } from '../data/runningInstance';",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 561,
+      "text": "// Manage RunningInstance records for status transitions from shell scripts",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 564,
+      "text": "await RunningInstanceModel.create({",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 578,
+      "text": "await RunningInstanceModel.update(",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/services/nodePaths.ts",
+      "line": 59,
+      "text": "throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/nodePaths.ts",
+      "line": 96,
+      "text": "throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/nodePaths.ts",
+      "line": 113,
+      "text": "throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/nodePaths.ts",
+      "line": 141,
+      "text": "throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/nodePaths.ts",
+      "line": 144,
+      "text": "throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/nodePaths.ts",
+      "line": 153,
+      "text": "throw new RuntimeError('NODE_PATH_INVALID');",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "back/services/executionEnvironmentTransport.ts",
+      "line": 35,
+      "text": "// Conservative portable budget leaves room for task.sh's bookkeeping and argv.",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/services/executionResolver.ts",
+      "line": 221,
+      "text": "/^(?:NODE_PATH|NODE_OPTIONS|PYTHONPATH|PYTHONHOME|PYTHONSTARTUP|BASH_ENV|ENV|LD_.*|DYLD_.*|QL_.*|BACK_PORT|GRPC_PORT)$/.test(",
+      "classification": "RUNNER_V2_FILTER_OR_BOUNDARY"
+    },
+    {
+      "file": "back/services/retention.ts",
+      "line": 9,
+      "text": "import { InstanceStatus, RunningInstanceModel } from '../data/runningInstance';",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/services/retention.ts",
+      "line": 73,
+      "text": "? RunningInstanceModel.count({",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/services/retention.ts",
+      "line": 110,
+      "text": "? await RunningInstanceModel.destroy({",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/services/runnerV2.ts",
+      "line": 32,
+      "text": "/^(?:NODE_PATH|NODE_OPTIONS|PYTHONPATH|PYTHONHOME|PYTHONSTARTUP|BASH_ENV|ENV|LD_.*|DYLD_.*)$/.test(",
+      "classification": "RUNNER_V2_FILTER_OR_BOUNDARY"
+    },
+    {
+      "file": "back/config/index.ts",
+      "line": 103,
+      "text": "const dependenceCachePath = path.join(dataPath, 'dep_cache/');",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/loaders/db.ts",
+      "line": 16,
+      "text": "import { RunningInstanceModel } from '../data/runningInstance';",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/loaders/db.ts",
+      "line": 49,
+      "text": "RunningInstanceModel,",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/loaders/deps.ts",
+      "line": 27,
+      "text": "src: 'task.sh',",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/loaders/initData.ts",
+      "line": 17,
+      "text": "import { InstanceStatus, RunningInstanceModel } from '../data/runningInstance';",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/loaders/initData.ts",
+      "line": 83,
+      "text": "await RunningInstanceModel.update(",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/data/runningInstance.ts",
+      "line": 11,
+      "text": "export interface RunningInstanceAttributes {",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/data/runningInstance.ts",
+      "line": 22,
+      "text": "export class RunningInstance {",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/data/runningInstance.ts",
+      "line": 32,
+      "text": "constructor(options: RunningInstanceAttributes) {",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/data/runningInstance.ts",
+      "line": 44,
+      "text": "export interface RunningInstanceModel",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/data/runningInstance.ts",
+      "line": 45,
+      "text": "extends Model<RunningInstanceAttributes, RunningInstanceAttributes>,",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/data/runningInstance.ts",
+      "line": 46,
+      "text": "RunningInstanceAttributes {}",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/data/runningInstance.ts",
+      "line": 48,
+      "text": "export const RunningInstanceModel = sequelize.define<RunningInstanceModel>(",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/data/runningInstance.ts",
+      "line": 49,
+      "text": "'RunningInstance',",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/schema/platformV1.ts",
+      "line": 75,
+      "text": "\"name\": \"RunningInstances\",",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV1.ts",
+      "line": 76,
+      "text": "\"sql\": \"CREATE TABLE `RunningInstances` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `cron_id` NUMBER NOT NULL, `pid` NUMBER, `log_path` VARCHAR(255), `started_at` NUMBER NOT NULL, `finished_at` NUMBER, `status` NUMBER NOT NULL DEFAULT 0, `exit_code` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\"",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV5.ts",
+      "line": 153,
+      "text": "name: 'RunningInstances',",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV5.ts",
+      "line": 154,
+      "text": "sql: 'CREATE TABLE `RunningInstances` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `cron_id` NUMBER NOT NULL, `pid` NUMBER, `log_path` VARCHAR(255), `started_at` NUMBER NOT NULL, `finished_at` NUMBER, `status` NUMBER NOT NULL DEFAULT 0, `exit_code` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)',",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/taskSchema.ts",
+      "line": 33,
+      "text": "} else if (object.name === 'RunningInstances')",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/taskSchema.ts",
+      "line": 55,
+      "text": "'RunningInstances',",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/taskSchema.ts",
+      "line": 228,
+      "text": "'RunningInstances',",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/api/log.ts",
+      "line": 13,
+      "text": "import { InstanceStatus, RunningInstanceModel } from '../data/runningInstance';",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/api/log.ts",
+      "line": 65,
+      "text": "const runningInstance = await RunningInstanceModel.findOne({",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/api/cron.ts",
+      "line": 7,
+      "text": "RunningInstanceModel,",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/api/cron.ts",
+      "line": 128,
+      "text": "const instances = await RunningInstanceModel.findAll({",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/api/dashboard.ts",
+      "line": 7,
+      "text": "RunningInstanceModel,",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/api/dashboard.ts",
+      "line": 285,
+      "text": "const runningInstances = await RunningInstanceModel.findAll({",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/shared/bootstrapDirectories.ts",
+      "line": 9,
+      "text": "for (const name of ['db', 'config', 'scripts', 'deps', 'dep_cache', 'log', 'syslog', 'bak', 'upload', 'git', 'worktrees', '.locks', 'tmp']) {",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "back/schema/platformV3.ts",
+      "line": 115,
+      "text": "\"name\": \"RunningInstances\",",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV3.ts",
+      "line": 116,
+      "text": "\"sql\": \"CREATE TABLE `RunningInstances` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `cron_id` NUMBER NOT NULL, `pid` NUMBER, `log_path` VARCHAR(255), `started_at` NUMBER NOT NULL, `finished_at` NUMBER, `status` NUMBER NOT NULL DEFAULT 0, `exit_code` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\"",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV4.ts",
+      "line": 135,
+      "text": "\"name\": \"RunningInstances\",",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV4.ts",
+      "line": 136,
+      "text": "\"sql\": \"CREATE TABLE `RunningInstances` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `cron_id` NUMBER NOT NULL, `pid` NUMBER, `log_path` VARCHAR(255), `started_at` NUMBER NOT NULL, `finished_at` NUMBER, `status` NUMBER NOT NULL DEFAULT 0, `exit_code` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\"",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV6.ts",
+      "line": 157,
+      "text": "name: 'RunningInstances',",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV6.ts",
+      "line": 158,
+      "text": "sql: 'CREATE TABLE \"RunningInstances\" (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `task_id` NUMBER NOT NULL, `pid` NUMBER, `log_path` VARCHAR(255), `started_at` NUMBER NOT NULL, `finished_at` NUMBER, `status` NUMBER NOT NULL DEFAULT 0, `exit_code` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)',",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV2.ts",
+      "line": 105,
+      "text": "name: 'RunningInstances',",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "back/schema/platformV2.ts",
+      "line": 106,
+      "text": "sql: 'CREATE TABLE `RunningInstances` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `cron_id` NUMBER NOT NULL, `pid` NUMBER, `log_path` VARCHAR(255), `started_at` NUMBER NOT NULL, `finished_at` NUMBER, `status` NUMBER NOT NULL DEFAULT 0, `exit_code` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)',",
+      "classification": "REVIEWED_NON_RUNNER_REFERENCE"
+    },
+    {
+      "file": "shell/share.sh",
+      "line": 58,
+      "text": "export NODE_PATH=\"/usr/local/bin:/usr/local/lib/node_modules\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/share.sh",
+      "line": 150,
+      "text": "if [[ -f \"$dir_shell/task.sh\" ]]; then",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/share.sh",
+      "line": 157,
+      "text": "if [[ -f \"$dir_shell/task.sh\" ]]; then",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/api.sh",
+      "line": 67,
+      "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/crons/status?t=$currentTimeStamp\" \\",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/api.sh",
+      "line": 108,
+      "text": "curl -s --noproxy \"*\" \"http://localhost:${ql_port}/open/crons/detail?$params&t=$currentTimeStamp\" \\",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/git_workspace_lock.py",
+      "line": 7,
+      "text": "# Isolated Python ignores PYTHONPATH; only import our installed helper directory.",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/hook_process.py",
+      "line": 14,
+      "text": "# Isolated Python ignores PYTHONPATH; only import our installed helper directory.",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "shell/start.sh",
+      "line": 81,
+      "text": "export PNPM_HOME=${QL_DIR}/data/dep_cache/node",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/start.sh",
+      "line": 82,
+      "text": "export PYTHON_HOME=${QL_DIR}/data/dep_cache/python3",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/start.sh",
+      "line": 83,
+      "text": "export PYTHONUSERBASE=${QL_DIR}/data/dep_cache/python3",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/start.sh",
+      "line": 86,
+      "text": "export NODE_PATH=/usr/local/bin:/usr/local/lib/node_modules:${PNPM_HOME}/global/5/node_modules",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/start.sh",
+      "line": 88,
+      "text": "export PYTHONPATH=${PYTHON_HOME}:${PYTHON_HOME}/lib/python${PYTHON_SHORT_VERSION}:${PYTHON_HOME}/lib/python${PYTHON_SHORT_VERSION}/site-packages",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/task_env.sh",
+      "line": 3,
+      "text": "# Sourced only by task.sh. No changes to parent service environment or shared ENV files.",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/preload/sitecustomize.py",
+      "line": 39,
+      "text": "os.environ[\"PYTHONPATH\"] = os.getenv(\"PREV_PYTHONPATH\", \"\")",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/execution_lease.py",
+      "line": 15,
+      "text": "# Isolated Python ignores PYTHONPATH; only import our installed helper directory.",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 100,
+      "text": "export PREV_NODE_PATH=\"${NODE_PATH:=}\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 102,
+      "text": "# 用户依赖目录加入 NODE_PATH，替代 symlink 到 node_modules 的方式",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 103,
+      "text": "export NODE_PATH=\"${NODE_PATH:+${NODE_PATH}:}${dir_dep}\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 114,
+      "text": "export NODE_PATH=\"${NODE_PATH:+${NODE_PATH}:}${pnpm_global_path}\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 327,
+      "text": "export PREV_PYTHONPATH=\"${PYTHONPATH:=}\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 331,
+      "text": "export PYTHONPATH=\"${dir_preload}:${dir_config}:${PYTHONPATH}\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 395,
+      "text": "export NODE_PATH=\"${PREV_NODE_PATH}\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 399,
+      "text": "export PYTHONPATH=\"${PREV_PYTHONPATH}\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    },
+    {
+      "file": "shell/node_path_cache.sh",
+      "line": 116,
+      "text": "if [[ \"${QL_NODE_PATH_CACHE:-1}\" == 0 ]]; then",
+      "classification": "MANAGED_RUNTIME_OR_SHARED_SUPERVISOR"
+    },
+    {
+      "file": "shell/task.sh",
+      "line": 171,
+      "text": ". \"$dir_shell/otask.sh\"",
+      "classification": "RETAINED_BRIDGE_BOOTSTRAP_HISTORY_OR_EDITOR"
+    }
+  ],
+  "linux_removal": "BLOCKED_BY_LINUX_GATE",
+  "scope": "Normal Task execution boundaries plus retained bridge inventory; source matches are not proof of dynamic unreachability."
+}

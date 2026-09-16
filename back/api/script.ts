@@ -42,56 +42,58 @@ export default (app: Router) => {
         path: Joi.string().optional().allow(''),
       }).unknown(true),
     }),
-    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
-      const logger: Logger = Container.get('logger');
-      try {
-        let result: IFile[] = [];
-        const blacklist = [
-          'node_modules',
-          '.git',
-          '.pnpm',
-          'pnpm-lock.yaml',
-          'yarn.lock',
-          'package-lock.json',
-        ];
-        if (req.query.path) {
-          if (
-            !resolveFileAccess(
+    protectScriptConfigAccess(
+      async (req: Request, res: Response, next: NextFunction) => {
+        const logger: Logger = Container.get('logger');
+        try {
+          let result: IFile[] = [];
+          const blacklist = [
+            'node_modules',
+            '.git',
+            '.pnpm',
+            'pnpm-lock.yaml',
+            'yarn.lock',
+            'package-lock.json',
+          ];
+          if (req.query.path) {
+            if (
+              !resolveFileAccess(
+                config.scriptPath,
+                [req.query.path as string],
+                config.blackFileList,
+              )
+            ) {
+              return res.send({ code: 403, message: t('暂无权限') });
+            }
+            result = await readDir(
+              req.query.path as string,
               config.scriptPath,
-              [req.query.path as string],
-              config.blackFileList,
-            )
-          ) {
-            return res.send({ code: 403, message: t('暂无权限') });
+              blacklist,
+            );
+          } else {
+            result = await readDirs(
+              config.scriptPath,
+              config.scriptPath,
+              blacklist,
+              (a, b) => {
+                if (a.type === b.type) {
+                  return a.title.localeCompare(b.title);
+                } else {
+                  return a.type === 'directory' ? -1 : 1;
+                }
+              },
+            );
           }
-          result = await readDir(
-            req.query.path as string,
-            config.scriptPath,
-            blacklist,
-          );
-        } else {
-          result = await readDirs(
-            config.scriptPath,
-            config.scriptPath,
-            blacklist,
-            (a, b) => {
-              if (a.type === b.type) {
-                return a.title.localeCompare(b.title);
-              } else {
-                return a.type === 'directory' ? -1 : 1;
-              }
-            },
-          );
+          res.send({
+            code: 200,
+            data: result,
+          });
+        } catch (e) {
+          logger.error('🔥 error: %o', e);
+          return next(e);
         }
-        res.send({
-          code: 200,
-          data: result,
-        });
-      } catch (e) {
-        logger.error('🔥 error: %o', e);
-        return next(e);
-      }
-    }),
+      },
+    ),
   );
 
   route.get(
@@ -102,21 +104,21 @@ export default (app: Router) => {
         file: Joi.string().required(),
       }).unknown(true),
     }),
-    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const scriptService = Container.get(ScriptService);
-        const content = await scriptService.getFile(
-          (req.query?.path as string) || '',
-          req.query.file as string,
-        );
-        res.send({ code: 200, data: content });
-      } catch (e) {
-        return next(e);
-      }
-    }),
+    protectScriptConfigAccess(
+      async (req: Request, res: Response, next: NextFunction) => {
+        try {
+          const scriptService = Container.get(ScriptService);
+          const content = await scriptService.getFile(
+            (req.query?.path as string) || '',
+            req.query.file as string,
+          );
+          res.send({ code: 200, data: content });
+        } catch (e) {
+          return next(e);
+        }
+      },
+    ),
   );
-
-
 
   route.post(
     '/',
@@ -137,77 +139,79 @@ export default (app: Router) => {
         file: Joi.string().optional().allow(''),
       }).unknown(true),
     }),
-    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        let { filename, path, content, originFilename, directory } =
-          req.body as {
-            filename: string;
-            path: string;
-            content: string;
-            originFilename: string;
-            directory: string;
-          };
+    protectScriptConfigAccess(
+      async (req: Request, res: Response, next: NextFunction) => {
+        try {
+          let { filename, path, content, originFilename, directory } =
+            req.body as {
+              filename: string;
+              path: string;
+              content: string;
+              originFilename: string;
+              directory: string;
+            };
 
-        if (!path) {
-          path = config.scriptPath;
-        }
-        if (!path.endsWith('/')) {
-          path += '/';
-        }
-        if (!path.startsWith('/')) {
-          path = join(config.scriptPath, path);
-        }
-        if (config.writePathList.every((x) => !path.startsWith(x))) {
-          return res.send({
-            code: 403,
-            message: t('暂无权限'),
-          });
-        }
+          if (!path) {
+            path = config.scriptPath;
+          }
+          if (!path.endsWith('/')) {
+            path += '/';
+          }
+          if (!path.startsWith('/')) {
+            path = join(config.scriptPath, path);
+          }
+          if (config.writePathList.every((x) => !path.startsWith(x))) {
+            return res.send({
+              code: 403,
+              message: t('暂无权限'),
+            });
+          }
 
-        if (req.file) {
-          const uploadPath = join(path, filename);
-          if (!isPathAllowed(uploadPath)) {
+          if (req.file) {
+            const uploadPath = join(path, filename);
+            if (!isPathAllowed(uploadPath)) {
+              return res.send({ code: 403, message: t('暂无权限') });
+            }
+            await fs.copyFile(req.file.path, uploadPath);
+            await fs.unlink(req.file.path);
+            return res.send({ code: 200 });
+          }
+
+          if (directory) {
+            const dirPath = join(path, directory);
+            if (!isPathAllowed(dirPath)) {
+              return res.send({ code: 403, message: t('暂无权限') });
+            }
+            await fs.mkdir(dirPath, { recursive: true });
+            return res.send({ code: 200 });
+          }
+
+          if (!originFilename) {
+            originFilename = filename;
+          }
+          const originFilePath = join(path, originFilename);
+          const filePath = join(path, filename);
+          if (!isPathAllowed(filePath) || !isPathAllowed(originFilePath)) {
             return res.send({ code: 403, message: t('暂无权限') });
           }
-          await fs.copyFile(req.file.path, uploadPath);
-          await fs.unlink(req.file.path);
-          return res.send({ code: 200 });
-        }
-
-        if (directory) {
-          const dirPath = join(path, directory);
-          if (!isPathAllowed(dirPath)) {
-            return res.send({ code: 403, message: t('暂无权限') });
+          await fs.mkdir(path, { recursive: true });
+          const fileExists = await fileExist(filePath);
+          if (fileExists) {
+            await fs.copyFile(
+              originFilePath,
+              join(config.bakPath, originFilename.replace(/\//g, '')),
+            );
+            if (filename !== originFilename) {
+              await rmPath(originFilePath);
+            }
           }
-          await fs.mkdir(dirPath, { recursive: true });
+          await writeFileWithLock(filePath, content);
           return res.send({ code: 200 });
+        } catch (e) {
+          return next(e);
         }
-
-        if (!originFilename) {
-          originFilename = filename;
-        }
-        const originFilePath = join(path, originFilename);
-        const filePath = join(path, filename);
-        if (!isPathAllowed(filePath) || !isPathAllowed(originFilePath)) {
-          return res.send({ code: 403, message: t('暂无权限') });
-        }
-        await fs.mkdir(path, { recursive: true });
-        const fileExists = await fileExist(filePath);
-        if (fileExists) {
-          await fs.copyFile(
-            originFilePath,
-            join(config.bakPath, originFilename.replace(/\//g, '')),
-          );
-          if (filename !== originFilename) {
-            await rmPath(originFilePath);
-          }
-        }
-        await writeFileWithLock(filePath, content);
-        return res.send({ code: 200 });
-      } catch (e) {
-        return next(e);
-      }
-    }),
+      },
+    ),
   );
 
   route.put(
@@ -219,27 +223,29 @@ export default (app: Router) => {
         content: Joi.string().required().allow(''),
       }),
     }),
-    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        let { filename, content, path } = req.body as {
-          filename: string;
-          content: string;
-          path: string;
-        };
-        const scriptService = Container.get(ScriptService);
-        const filePath = scriptService.checkFilePath(path, filename);
-        if (!filePath) {
-          return res.send({
-            code: 403,
-            message: t('暂无权限'),
-          });
+    protectScriptConfigAccess(
+      async (req: Request, res: Response, next: NextFunction) => {
+        try {
+          let { filename, content, path } = req.body as {
+            filename: string;
+            content: string;
+            path: string;
+          };
+          const scriptService = Container.get(ScriptService);
+          const filePath = scriptService.checkFilePath(path, filename);
+          if (!filePath) {
+            return res.send({
+              code: 403,
+              message: t('暂无权限'),
+            });
+          }
+          await writeFileWithLock(filePath, content);
+          return res.send({ code: 200 });
+        } catch (e) {
+          return next(e);
         }
-        await writeFileWithLock(filePath, content);
-        return res.send({ code: 200 });
-      } catch (e) {
-        return next(e);
-      }
-    }),
+      },
+    ),
   );
 
   route.delete(
@@ -251,29 +257,31 @@ export default (app: Router) => {
         type: Joi.string().optional(),
       }),
     }),
-    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        let { filename, path } = req.body as {
-          filename: string;
-          path: string;
-        };
-        if (!path) {
-          path = '';
+    protectScriptConfigAccess(
+      async (req: Request, res: Response, next: NextFunction) => {
+        try {
+          let { filename, path } = req.body as {
+            filename: string;
+            path: string;
+          };
+          if (!path) {
+            path = '';
+          }
+          const scriptService = Container.get(ScriptService);
+          const filePath = scriptService.checkFilePath(path, filename);
+          if (!filePath) {
+            return res.send({
+              code: 403,
+              message: t('暂无权限'),
+            });
+          }
+          await rmPath(filePath);
+          res.send({ code: 200 });
+        } catch (e) {
+          return next(e);
         }
-        const scriptService = Container.get(ScriptService);
-        const filePath = scriptService.checkFilePath(path, filename);
-        if (!filePath) {
-          return res.send({
-            code: 403,
-            message: t('暂无权限'),
-          });
-        }
-        await rmPath(filePath);
-        res.send({ code: 200 });
-      } catch (e) {
-        return next(e);
-      }
-    }),
+      },
+    ),
   );
 
   route.post(
@@ -284,32 +292,34 @@ export default (app: Router) => {
         path: Joi.string().optional().allow(''),
       }),
     }),
-    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        let { filename, path } = req.body as {
-          filename: string;
-          path: string;
-        };
-        if (!path) {
-          path = '';
-        }
-        const scriptService = Container.get(ScriptService);
-        const filePath = scriptService.checkFilePath(path, filename);
-        if (!filePath) {
-          return res.send({
-            code: 403,
-            message: t('暂无权限'),
-          });
-        }
-        return res.download(filePath, filename, (err) => {
-          if (err) {
-            return next(err);
+    protectScriptConfigAccess(
+      async (req: Request, res: Response, next: NextFunction) => {
+        try {
+          let { filename, path } = req.body as {
+            filename: string;
+            path: string;
+          };
+          if (!path) {
+            path = '';
           }
-        });
-      } catch (e) {
-        return next(e);
-      }
-    }),
+          const scriptService = Container.get(ScriptService);
+          const filePath = scriptService.checkFilePath(path, filename);
+          if (!filePath) {
+            return res.send({
+              code: 403,
+              message: t('暂无权限'),
+            });
+          }
+          return res.download(filePath, filename, (err) => {
+            if (err) {
+              return next(err);
+            }
+          });
+        } catch (e) {
+          return next(e);
+        }
+      },
+    ),
   );
 
   route.put(
@@ -321,27 +331,31 @@ export default (app: Router) => {
         path: Joi.string().optional().allow(''),
       }),
     }),
-    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
-      const logger: Logger = Container.get('logger');
-      try {
-        let { filename, content, path } = req.body;
-        if (!path) {
-          path = '';
+    protectScriptConfigAccess(
+      async (req: Request, res: Response, next: NextFunction) => {
+        const logger: Logger = Container.get('logger');
+        try {
+          let { filename, content, path } = req.body;
+          if (!path) {
+            path = '';
+          }
+          const { name, ext } = parse(filename);
+          const filePath = join(config.scriptPath, path, `${name}.swap${ext}`);
+          if (!isPathAllowed(filePath)) {
+            return res.send({ code: 403, message: t('暂无权限') });
+          }
+          return res
+            .status(409)
+            .send({
+              code: 409,
+              error_code: 'TASK_DEFINITION_REQUIRED',
+              message: '请在 Tasks 中选择 Worktree 文件后运行。',
+            });
+        } catch (e) {
+          return next(e);
         }
-        const { name, ext } = parse(filename);
-        const filePath = join(config.scriptPath, path, `${name}.swap${ext}`);
-        if (!isPathAllowed(filePath)) {
-          return res.send({ code: 403, message: t('暂无权限') });
-        }
-        await writeFileWithLock(filePath, content || '');
-
-        const scriptService = Container.get(ScriptService);
-        const result = await scriptService.runScript(filePath);
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    }),
+      },
+    ),
   );
 
   route.put(
@@ -364,14 +378,13 @@ export default (app: Router) => {
         if (!isPathAllowed(filePath)) {
           return res.send({ code: 403, message: t('暂无权限') });
         }
-        const logPath = join(config.logPath, path, `${name}.swap`);
-
-        const scriptService = Container.get(ScriptService);
-        const result = await scriptService.stopScript(filePath, pid);
-        setTimeout(() => {
-          rmPath(logPath);
-        }, 3000);
-        res.send(result);
+        return res
+          .status(409)
+          .send({
+            code: 409,
+            error_code: 'TASK_RUN_REQUIRED',
+            message: '请在 Tasks 中取消对应的 Run。',
+          });
       } catch (e) {
         return next(e);
       }
@@ -387,26 +400,28 @@ export default (app: Router) => {
         newFilename: Joi.string().required(),
       }),
     }),
-    protectScriptConfigAccess(async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        let { filename, path, newFilename } = req.body as {
-          filename: string;
-          path: string;
-          newFilename: string;
-        };
-        if (!path) {
-          path = '';
+    protectScriptConfigAccess(
+      async (req: Request, res: Response, next: NextFunction) => {
+        try {
+          let { filename, path, newFilename } = req.body as {
+            filename: string;
+            path: string;
+            newFilename: string;
+          };
+          if (!path) {
+            path = '';
+          }
+          const filePath = join(config.scriptPath, path, filename);
+          const newPath = join(config.scriptPath, path, newFilename);
+          if (!isPathAllowed(filePath) || !isPathAllowed(newPath)) {
+            return res.send({ code: 403, message: t('暂无权限') });
+          }
+          await fs.rename(filePath, newPath);
+          res.send({ code: 200 });
+        } catch (e) {
+          return next(e);
         }
-        const filePath = join(config.scriptPath, path, filename);
-        const newPath = join(config.scriptPath, path, newFilename);
-        if (!isPathAllowed(filePath) || !isPathAllowed(newPath)) {
-          return res.send({ code: 403, message: t('暂无权限') });
-        }
-        await fs.rename(filePath, newPath);
-        res.send({ code: 200 });
-      } catch (e) {
-        return next(e);
-      }
-    }),
+      },
+    ),
   );
 };

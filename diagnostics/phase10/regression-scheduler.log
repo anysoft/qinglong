@@ -1,0 +1,627 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: recovery snapshot cannot overwrite concurrent create
+not ok 1 - recovery snapshot cannot overwrite concurrent create
+  ---
+  duration_ms: 278.287875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent update
+not ok 2 - recovery snapshot cannot overwrite concurrent update
+  ---
+  duration_ms: 113.45225
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent remove
+not ok 3 - recovery snapshot cannot overwrite concurrent remove
+  ---
+  duration_ms: 80.712917
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent disabled
+not ok 4 - recovery snapshot cannot overwrite concurrent disabled
+  ---
+  duration_ms: 71.634875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent enabled
+not ok 5 - recovery snapshot cannot overwrite concurrent enabled
+  ---
+  duration_ms: 83.948917
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: recovery waits for an admitted mutation to finish registration before reading the DB
+not ok 6 - recovery waits for an admitted mutation to finish registration before reading the DB
+  ---
+  duration_ms: 64.449625
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:131:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: create preserves scheduler 503 after rollback and releases its lock
+not ok 7 - create preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 61.520541
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:160:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: update preserves scheduler 503 after rollback and releases its lock
+not ok 8 - update preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 60.650459
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:160:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: enabled preserves scheduler 503 after rollback and releases its lock
+not ok 9 - enabled preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 69.601
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:160:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: scheduler lock excludes a second OS process and leaves no lock after completion
+ok 10 - scheduler lock excludes a second OS process and leaves no lock after completion
+  ---
+  duration_ms: 396.170625
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+not ok 11 - update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 58.363291
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+not ok 12 - update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 51.575
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+not ok 13 - update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 50.2235
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+not ok 14 - update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 47.459792
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+not ok 15 - remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 49.507583
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+not ok 16 - remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 44.494291
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+not ok 17 - remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 46.0505
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+not ok 18 - remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 48.517208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+not ok 19 - disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 44.260125
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+not ok 20 - disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 50.104708
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+not ok 21 - disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 43.357083
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+not ok 22 - disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 48.772334
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:7'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# Subtest: configuration rollback cannot restore an obsolete manual queue token
+not ok 23 - configuration rollback cannot restore an obsolete manual queue token
+  ---
+  duration_ms: 47.624458
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:289:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cannot find module '../data'
+    Require stack:
+    - /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/services/cron.ts
+  code: 'MODULE_NOT_FOUND'
+  stack: |-
+    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    Function._load (node:internal/modules/cjs/loader:1216:25)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:24:12)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:51:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=38145f038b6e9728ed6573fd69497f1c4a409cd6 -> 38145f038b6e9728ed6573fd69497f1c4a409cd6
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=38145f038b6e9728ed6573fd69497f1c4a409cd6 -> f1160f3cca6294ce64135483a9935eec10a28cdd
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=f1160f3cca6294ce64135483a9935eec10a28cdd -> 07480dca0778f87f25c732c43eaf086066f27798
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=07480dca0778f87f25c732c43eaf086066f27798 -> b66e42f11d45a7454f6bac0e5358ed925566f15d
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: real Git discovery retains canonical user resources and renames create new stable identities
+ok 24 - real Git discovery retains canonical user resources and renames create new stable identities
+  ---
+  duration_ms: 11789.647542
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=66056b3a21139f23fb3839338768904cc0153f0f -> 66056b3a21139f23fb3839338768904cc0153f0f
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: UNSAFE_DISCOVERY_PATH
+# Subtest: unsafe discovery fails closed; manual bridge quotes source and escapes crontab percent
+not ok 25 - unsafe discovery fails closed; manual bridge quotes source and escapes crontab percent
+  ---
+  duration_ms: 4368.337792
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/discovery.test.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + "'/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/taskRunSubmit.js' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/ql-managed3-VW10O4/tmp/execution/submission.sock' '1'"
+    - "task 'subscription-1/odd;touch INJECTED%job.sh'"
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: "task 'subscription-1/odd;touch INJECTED%job.sh'"
+  actual: "'/Users/jonhy/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node' '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/taskRunSubmit.js' '/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/ql-managed3-VW10O4/tmp/execution/submission.sock' '1'"
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/discovery.test.cjs:6:1665)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns
+ok 26 - repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns
+  ---
+  duration_ms: 1042.052125
+  type: 'test'
+  ...
+# Subtest: CRUD, cron/interval registration, manual dispatch, stop and ID log identity use one pipeline
+ok 27 - CRUD, cron/interval registration, manual dispatch, stop and ID log identity use one pipeline
+  ---
+  duration_ms: 947.609833
+  type: 'test'
+  ...
+# Subtest: only repository credential is resolved; disabled credential fails instead of anonymous fallback
+ok 28 - only repository credential is resolved; disabled credential fails instead of anonymous fallback
+  ---
+  duration_ms: 529.641125
+  type: 'test'
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 5
+# fail 23
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16398.028875

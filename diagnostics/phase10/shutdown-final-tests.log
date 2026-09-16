@@ -1,0 +1,83 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: retry resets BEFORE patches, freezes Config and Hooks, keeps run-wide secrets, removes private Hook files
+ok 1 - retry resets BEFORE patches, freezes Config and Hooks, keeps run-wide secrets, removes private Hook files
+  ---
+  duration_ms: 3263.216125
+  type: 'test'
+  ...
+# Subtest: invalid Hook output never retries; FINALLY executes and private files are removed
+ok 2 - invalid Hook output never retries; FINALLY executes and private files are removed
+  ---
+  duration_ms: 1261.149958
+  type: 'test'
+  ...
+# Subtest: pre-resolution, skipped and queued cancelled runs persist canonical results
+ok 3 - pre-resolution, skipped and queued cancelled runs persist canonical results
+  ---
+  duration_ms: 701.566208
+  type: 'test'
+  ...
+# Subtest: node binding rejects imported sibling module trees and preserves unknown replacement on recovery
+ok 4 - node binding rejects imported sibling module trees and preserves unknown replacement on recovery
+  ---
+  duration_ms: 830.362084
+  type: 'test'
+  ...
+# Subtest: private cleanup fails closed on unknown file and preserves that file
+ok 5 - private cleanup fails closed on unknown file and preserves that file
+  ---
+  duration_ms: 564.033209
+  type: 'test'
+  ...
+# Subtest: notification observes durable final result exactly once; delivery failure is secondary
+ok 6 - notification observes durable final result exactly once; delivery failure is secondary
+  ---
+  duration_ms: 1110.948833
+  type: 'test'
+  ...
+# Subtest: large UTF-8 per-run logs drain all bytes and tail without split-codepoint replacement
+ok 7 - large UTF-8 per-run logs drain all bytes and tail without split-codepoint replacement
+  ---
+  duration_ms: 749.434625
+  type: 'test'
+  ...
+# Subtest: graceful shutdown waits for an in-flight claim and cancels its new owner
+ok 8 - graceful shutdown waits for an in-flight claim and cancels its new owner
+  ---
+  duration_ms: 872.784208
+  type: 'test'
+  ...
+# Subtest: SIGKILL recovery waits for inherited ownership, reaps descendants and restores Config; queued run survives
+ok 9 - SIGKILL recovery waits for inherited ownership, reaps descendants and restores Config; queued run survives
+  ---
+  duration_ms: 2843.896166
+  type: 'test'
+  ...
+# Subtest: two independent dispatchers atomically claim one queued run
+ok 10 - two independent dispatchers atomically claim one queued run
+  ---
+  duration_ms: 2801.470208
+  type: 'test'
+  ...
+# Subtest: cleanup conflict preserves unexpected file and backup, preventing SUCCESS
+ok 11 - cleanup conflict preserves unexpected file and backup, preventing SUCCESS
+  ---
+  duration_ms: 1135.34125
+  type: 'test'
+  ...
+# Subtest: backoff cancellation is prompt and keeps original workspace locked until cleanup
+ok 12 - backoff cancellation is prompt and keeps original workspace locked until cleanup
+  ---
+  duration_ms: 987.156666
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9587.577167

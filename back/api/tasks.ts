@@ -1,3 +1,5 @@
+import { executionService } from '../services/executionService';
+import { executionSubmission } from '../services/executionSubmission';
 import { Router, Request, Response } from 'express';
 import { Container } from 'typedi';
 import fs from 'fs/promises';
@@ -29,18 +31,37 @@ function endpoint(action: (request: Request) => Promise<unknown>) {
       response.send({ code: 200, data: await action(request) });
     } catch (error: any) {
       const status = Number.isInteger(error.status) ? error.status : 500;
-      response
-        .status(status)
-        .send({
-          code: status,
-          error_code: error.error_code ?? 'TASK_OPERATION_FAILED',
-          message:
-            error.error_code ?? 'Task operation failed; refresh and retry',
-        });
+      response.status(status).send({
+        code: status,
+        error_code: error.error_code ?? 'TASK_OPERATION_FAILED',
+        message: error.error_code ?? 'Task operation failed; refresh and retry',
+      });
     }
   };
 }
 export default function taskRoutes(app: Router) {
+  executionService.start();
+  void executionSubmission.start().catch(() => {
+    console.error('EXECUTION_SUBMISSION_START_FAILED');
+  });
+  app.get(
+    '/tasks/:id/runs',
+    endpoint((req) => executionService.list(identifier(req.params.id))),
+  );
+  app.get(
+    '/task-runs/:id',
+    endpoint((req) => executionService.get(identifier(req.params.id))),
+  );
+  app.get(
+    '/task-runs/:id/log',
+    endpoint(async (req) => ({
+      content: await executionService.log(identifier(req.params.id)),
+    })),
+  );
+  app.post(
+    '/task-runs/:id/cancel',
+    endpoint((req) => executionService.cancel(identifier(req.params.id))),
+  );
   const tasks = () => Container.get(TaskService),
     scheduler = () => Container.get(SchedulerBridgeService);
   app.get(
@@ -130,8 +151,7 @@ export default function taskRoutes(app: Router) {
     app.post(
       `/tasks/:id/${operation}`,
       endpoint(async (req) => {
-        await new TaskExecutionBridge()[operation](identifier(req.params.id));
-        return null;
+        return new TaskExecutionBridge()[operation](identifier(req.params.id));
       }),
     );
   for (const operation of ['log', 'logs'] as const)
