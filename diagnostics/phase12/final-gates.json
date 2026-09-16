@@ -1,0 +1,114 @@
+{
+  "status": "PARTIAL",
+  "functional_status": "PASS",
+  "only_pending": "Linux qualification — Phase15",
+  "finished_at": "2026-09-16T07:39:48.860212+00:00",
+  "matrix": {
+    "Workspace Domain": "PASS",
+    "File Tree": "PASS",
+    "File Read": "PASS",
+    "File Edit": "PASS",
+    "Atomic Save": "PASS",
+    "Optimistic Conflict": "PASS",
+    "Create / Rename / Delete": "PASS",
+    "Path Security": "PASS",
+    "Worktree Lease Integration": "PASS",
+    "Backup Barrier Integration": "PASS",
+    "Git Status": "PASS",
+    "Git Diff": "PASS",
+    "Git Stage / Unstage": "PASS",
+    "Git Commit": "PASS",
+    "Git Push": "PASS",
+    "Search": "PASS",
+    "Task / Discovery Integration": "PASS",
+    "Backup / Restore Regression": "PASS",
+    "Legacy Editor Removal": "PASS",
+    "API / UI": "PASS",
+    "Browser E2E": "PASS",
+    "Scale": "PASS",
+    "Platform Regression": "PASS",
+    "Linux Validation": "PARTIAL — Phase15"
+  },
+  "platform_tests": {
+    "tests": 458,
+    "pass": 455,
+    "fail": 0,
+    "skipped": 3
+  },
+  "managed_environment_tests": {
+    "tests": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "managed_execution_tests": {
+    "tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "python": "3.13.15",
+    "node": "24.21.0",
+    "tsx": "4.20.6"
+  },
+  "backend_build": {
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "frontend_build": {
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "typecheck": {
+    "status": "PARTIAL",
+    "original": 32,
+    "remaining": 22,
+    "new": [],
+    "raw_exit_code": 2,
+    "regression_gate": "PASS"
+  },
+  "browser": {
+    "status": "PASS",
+    "steps": [
+      "empty-root-bootstrap",
+      "browser-fresh-initialize-login",
+      "browser-repository-worktree-open-workspace",
+      "browser-open-edit-atomic-save",
+      "browser-working-diff",
+      "browser-create-untracked-file",
+      "browser-stage-explicit-commit-no-auto-push",
+      "browser-explicit-real-ssh-push",
+      "editor-commit-push-no-task-submission",
+      "real-ssh-push-authentication-and-network-failures",
+      "official-sync-new-remote-commit-produces-git-event-and-run",
+      "browser-dirty-tab-close-and-navigation-confirmation",
+      "browser-external-process-conflict-cancel-reload",
+      "browser-real-long-task-busy-then-save",
+      "browser-backup-includes-editor-state",
+      "different-root-restore-preserves-editor-local-commit-dirty-untracked"
+    ],
+    "linux": false,
+    "security": {
+      "api_responses": 228,
+      "websocket_frames": 8,
+      "leaks": 0
+    }
+  },
+  "static_audit": "PASS",
+  "gitnexus": {
+    "HEAD": {
+      "changed_count": 334,
+      "affected_count": 121,
+      "changed_files": 112,
+      "risk_level": "critical"
+    },
+    "develop": {
+      "changed_count": 4294,
+      "affected_count": 356,
+      "changed_files": 2100,
+      "risk_level": "critical"
+    }
+  },
+  "gitnexus_develop_truncated": true,
+  "managed_fixture_cleanup": "PASS",
+  "historical_test_manifest_preserved": true,
+  "schema": 9,
+  "next_phase": "16A → 15 → 16B"
+}

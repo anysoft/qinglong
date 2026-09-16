@@ -1,0 +1,102 @@
+TAP version 13
+# Subtest: Panel workspace routes reject Open access, unknown fields, absent concurrency tokens and unsafe error output
+ok 1 - Panel workspace routes reject Open access, unknown fields, absent concurrency tokens and unsafe error output
+  ---
+  duration_ms: 97.369125
+  type: 'test'
+  ...
+# Subtest: Workspace file create/save/rename flows through official Discovery with stable IDs and retirement
+ok 2 - Workspace file create/save/rename flows through official Discovery with stable IDs and retirement
+  ---
+  duration_ms: 3210.214375
+  type: 'test'
+  ...
+# Subtest: workspace rejects traversal, Windows/control paths, .git and reserved execution artifacts
+ok 3 - workspace rejects traversal, Windows/control paths, .git and reserved execution artifacts
+  ---
+  duration_ms: 36.076292
+  type: 'test'
+  ...
+# Subtest: UTF8 BOM CRLF empty executable and literal unusual filenames survive atomic saves
+ok 4 - UTF8 BOM CRLF empty executable and literal unusual filenames survive atomic saves
+  ---
+  duration_ms: 134.141791
+  type: 'test'
+  ...
+# Subtest: external changes conflict; stale delete/rename and existing destinations preserve originals
+ok 5 - external changes conflict; stale delete/rename and existing destinations preserve originals
+  ---
+  duration_ms: 85.3475
+  type: 'test'
+  ...
+# Subtest: file and directory rename never overwrite; delete directories only when empty
+ok 6 - file and directory rename never overwrite; delete directories only when empty
+  ---
+  duration_ms: 204.195333
+  type: 'test'
+  ...
+# Subtest: symlinks are metadata only, external link hides target; FIFO/hardlink rejected
+ok 7 - symlinks are metadata only, external link hides target; FIFO/hardlink rejected
+  ---
+  duration_ms: 22.452292
+  type: 'test'
+  ...
+# Subtest: binary invalid UTF8 and file size boundaries are explicit
+ok 8 - binary invalid UTF8 and file size boundaries are explicit
+  ---
+  duration_ms: 19.01025
+  type: 'test'
+  ...
+# Subtest: failed atomic publish leaves original and cleans only owned temporary
+ok 9 - failed atomic publish leaves original and cleans only owned temporary
+  ---
+  duration_ms: 26.485791
+  type: 'test'
+  ...
+# {"phase12":"filesystem-scale","files":20000,"elapsed_ms":2632,"rss":191266816,"search":{"count":200,"scanned":418,"truncated":true}}
+# Subtest: 20k files lazy pagination and 10k-file content search stay bounded
+ok 10 - 20k files lazy pagination and 10k-file content search stay bounded
+  ---
+  duration_ms: 3628.382042
+  type: 'test'
+  ...
+# Subtest: real Git literal paths, status, bounded diff, stage/unstage and explicit author commit
+ok 11 - real Git literal paths, status, bounded diff, stage/unstage and explicit author commit
+  ---
+  duration_ms: 11403.685041
+  type: 'test'
+  ...
+# Subtest: real local origin push success, non-fast-forward and credential write capability
+ok 12 - real local origin push success, non-fast-forward and credential write capability
+  ---
+  duration_ms: 7030.171208
+  type: 'test'
+  ...
+# Subtest: actual execution lock and recovery journals block reads and mutations
+ok 13 - actual execution lock and recovery journals block reads and mutations
+  ---
+  duration_ms: 3089.923917
+  type: 'test'
+  ...
+# {"phase12":"git-scale","changes":5000,"response_bytes":5094,"rss":253902848}
+# Subtest: 5k Git changes paginate without full response
+ok 14 - 5k Git changes paginate without full response
+  ---
+  duration_ms: 2316.297875
+  type: 'test'
+  ...
+# Subtest: separate process Execution, GitSync, editor and Backup ownership block editor writes
+ok 15 - separate process Execution, GitSync, editor and Backup ownership block editor writes
+  ---
+  duration_ms: 4388.543666
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 28520.33925

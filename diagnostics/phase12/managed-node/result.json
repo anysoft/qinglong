@@ -1,0 +1,229 @@
+{
+  "root": "/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-xC1Rlv",
+  "source": "official Node.js distribution",
+  "started_at": "2026-09-16T07:09:08.339Z",
+  "operations": [
+    {
+      "id": 1,
+      "provider_id": 1,
+      "runtime_id": null,
+      "operation_type": "NODE_CATALOG_REFRESH",
+      "status": "SUCCESS",
+      "stage": "COMPLETE",
+      "owner_token": "83ca359a-65ab-4786-8e52-0e583621b48b",
+      "owner_pid": 62471,
+      "cancel_requested": false,
+      "started_at": "2026-09-16T07:09:08.599Z",
+      "finished_at": "2026-09-16T07:09:10.175Z",
+      "exit_code": 0,
+      "log_identity": "runtime-operation-1",
+      "error_code": null,
+      "error_summary": null,
+      "metadata": {
+        "timeout_seconds": 600,
+        "jobs": 4
+      },
+      "createdAt": "2026-09-16T07:09:08.484Z",
+      "updatedAt": "2026-09-16T07:09:10.175Z"
+    },
+    {
+      "id": 2,
+      "provider_id": 1,
+      "runtime_id": 1,
+      "operation_type": "NODE_RUNTIME_INSTALL",
+      "status": "SUCCESS",
+      "stage": "COMPLETE",
+      "owner_token": "18324e1b-c805-49e0-950d-a2a053e28511",
+      "owner_pid": 62471,
+      "cancel_requested": false,
+      "started_at": "2026-09-16T07:09:10.473Z",
+      "finished_at": "2026-09-16T07:09:33.817Z",
+      "exit_code": 0,
+      "log_identity": "runtime-operation-2",
+      "error_code": null,
+      "error_summary": null,
+      "metadata": {
+        "timeout_seconds": 600,
+        "jobs": 4
+      },
+      "createdAt": "2026-09-16T07:09:10.356Z",
+      "updatedAt": "2026-09-16T07:09:33.817Z"
+    },
+    {
+      "id": 3,
+      "provider_id": 1,
+      "runtime_id": 1,
+      "operation_type": "NODE_RUNTIME_VERIFY",
+      "status": "SUCCESS",
+      "stage": "COMPLETE",
+      "owner_token": "41478df2-4ef3-46ed-9a06-4594798fe23c",
+      "owner_pid": 62471,
+      "cancel_requested": false,
+      "started_at": "2026-09-16T07:09:34.058Z",
+      "finished_at": "2026-09-16T07:09:34.656Z",
+      "exit_code": 0,
+      "log_identity": "runtime-operation-3",
+      "error_code": null,
+      "error_summary": null,
+      "metadata": {
+        "timeout_seconds": 600,
+        "jobs": 4
+      },
+      "createdAt": "2026-09-16T07:09:33.946Z",
+      "updatedAt": "2026-09-16T07:09:34.657Z"
+    },
+    {
+      "id": 4,
+      "provider_id": 1,
+      "runtime_id": 1,
+      "operation_type": "NODE_PACKAGE_MANAGER_INSTALL",
+      "status": "SUCCESS",
+      "stage": "COMPLETE",
+      "owner_token": "b2c721db-52a5-4f8e-a014-c61b400ddf98",
+      "owner_pid": 62471,
+      "cancel_requested": false,
+      "started_at": "2026-09-16T07:09:34.948Z",
+      "finished_at": "2026-09-16T07:09:35.585Z",
+      "exit_code": 0,
+      "log_identity": "runtime-operation-4",
+      "error_code": null,
+      "error_summary": null,
+      "metadata": {
+        "toolchain_id": 1,
+        "timeout_seconds": 600,
+        "jobs": 4
+      },
+      "createdAt": "2026-09-16T07:09:34.834Z",
+      "updatedAt": "2026-09-16T07:09:35.585Z"
+    },
+    {
+      "id": 5,
+      "provider_id": 1,
+      "runtime_id": 1,
+      "operation_type": "NODE_PACKAGE_MANAGER_INSTALL",
+      "status": "SUCCESS",
+      "stage": "COMPLETE",
+      "owner_token": "6dd65655-0c31-4d04-aeee-4fbdd90aea0b",
+      "owner_pid": 62471,
+      "cancel_requested": false,
+      "started_at": "2026-09-16T07:09:35.894Z",
+      "finished_at": "2026-09-16T07:09:41.687Z",
+      "exit_code": 0,
+      "log_identity": "runtime-operation-5",
+      "error_code": null,
+      "error_summary": null,
+      "metadata": {
+        "toolchain_id": 2,
+        "timeout_seconds": 600,
+        "jobs": 4
+      },
+      "createdAt": "2026-09-16T07:09:35.782Z",
+      "updatedAt": "2026-09-16T07:09:41.687Z"
+    }
+  ],
+  "runtime": {
+    "id": 1,
+    "provider_id": 1,
+    "language": "NODE",
+    "implementation": "NODEJS",
+    "version": "24.21.0",
+    "state": "READY",
+    "executable_relative_path": "bin/node",
+    "installed_at": "2026-09-16T07:09:33.814Z",
+    "verified_at": "2026-09-16T07:09:33.814Z",
+    "metadata": {
+      "executable_sha256": "e4b5a3af0e05c75de2eae013904145f40fe7fc2a6e6f17510128bf45cca4e79b",
+      "node_version": "24.21.0",
+      "platform": "darwin",
+      "architecture": "arm64",
+      "versions": {
+        "node": "24.21.0",
+        "acorn": "8.18.0",
+        "ada": "4.0.0",
+        "amaro": "1.1.11",
+        "ares": "1.34.8",
+        "brotli": "1.2.0",
+        "cldr": "48.0",
+        "icu": "78.3",
+        "llhttp": "9.4.3",
+        "merve": "1.2.2",
+        "modules": "137",
+        "napi": "10",
+        "nbytes": "0.1.4",
+        "ncrypto": "0.0.1",
+        "nghttp2": "1.70.0",
+        "nghttp3": "",
+        "ngtcp2": "",
+        "openssl": "3.5.8",
+        "simdjson": "4.6.7",
+        "simdutf": "6.4.0",
+        "sqlite": "3.53.4",
+        "tz": "2026c",
+        "undici": "7.29.1",
+        "unicode": "17.0",
+        "uv": "1.52.1",
+        "uvwasi": "0.0.23",
+        "v8": "13.6.233.17-node.53",
+        "zlib": "1.3.2.1-motley-8002e91",
+        "zstd": "1.5.7"
+      },
+      "npm_version": "11.19.0",
+      "npm_cli_sha256": "8e5f6f3429f8cdbe693cdc29904e9d5a7b127a494bd15c804bd54c7403bfcbe7",
+      "corepack": true,
+      "artifact": "node-v24.21.0-darwin-arm64.tar.xz",
+      "artifact_sha256": "6239d4cf92d864487ec8cd3615038f7b67e7f58b77b21cd2f09ea9fbd68065fe",
+      "checksum_source": "https://nodejs.org/dist/v24.21.0/SHASUMS256.txt",
+      "signature_verified": false,
+      "distribution_source": "https://nodejs.org/dist",
+      "installed_at": "2026-09-16T07:09:33.802Z"
+    },
+    "last_error": null,
+    "createdAt": "2026-09-16T07:09:10.300Z",
+    "updatedAt": "2026-09-16T07:09:33.814Z",
+    "health": "HEALTHY"
+  },
+  "toolchains": [
+    {
+      "id": 2,
+      "runtime_id": 1,
+      "manager_type": "PNPM",
+      "version": "10.17.1",
+      "state": "READY",
+      "metadata": {
+        "version": "10.17.1",
+        "engines": {
+          "node": ">=18.12"
+        },
+        "cli_sha256": "b276da51dc8ca5b0d3ee3371695b50fc8b3244b281b091c63a3f082a88dadeb9",
+        "runtime_executable_sha256": "e4b5a3af0e05c75de2eae013904145f40fe7fc2a6e6f17510128bf45cca4e79b"
+      },
+      "verified_at": "2026-09-16T07:09:41.685Z",
+      "last_error": null,
+      "createdAt": "2026-09-16T07:09:35.717Z",
+      "updatedAt": "2026-09-16T07:09:41.685Z"
+    },
+    {
+      "id": 1,
+      "runtime_id": 1,
+      "manager_type": "NPM",
+      "version": "11.19.0",
+      "state": "READY",
+      "metadata": {
+        "version": "11.19.0",
+        "engines": {
+          "node": "^20.17.0 || >=22.9.0"
+        },
+        "cli_sha256": "8e5f6f3429f8cdbe693cdc29904e9d5a7b127a494bd15c804bd54c7403bfcbe7",
+        "runtime_executable_sha256": "e4b5a3af0e05c75de2eae013904145f40fe7fc2a6e6f17510128bf45cca4e79b"
+      },
+      "verified_at": "2026-09-16T07:09:35.582Z",
+      "last_error": null,
+      "createdAt": "2026-09-16T07:09:34.781Z",
+      "updatedAt": "2026-09-16T07:09:35.582Z"
+    }
+  ],
+  "status": "PASS",
+  "finished_at": "2026-09-16T07:09:41.715Z",
+  "fixture_removed": true,
+  "cleaned_at": "2026-09-16T07:37:55.274Z"
+}

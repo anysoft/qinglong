@@ -63,10 +63,10 @@ export default {
         component: '@/pages/config/index',
       },
       {
-        path: '/script',
-        name: intl.get('脚本管理'),
+        path: '/workspace',
+        name: 'Code Workspace',
         icon: <IconFont type="ql-icon-script" />,
-        component: '@/pages/script/index',
+        component: '@/pages/workspace',
       },
       {
         path: '/runtime-python',

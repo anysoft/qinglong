@@ -1,5 +1,7 @@
 # Git Workspace
 
+> **当前基线：Phase14 + Phase12 / schema v9。** Code Workspace 直接消费 Worktree，与 Execution/GitSync 复用 EX lease，与 Backup 复用平台 mutation barrier。当前结构见 [Code Workspace](19-code-workspace.md) 与 [Backup/Restore](18-backup-restore.md)；下列早期阶段段落为历史记录。后续顺序 Phase16A → Phase15 → Phase16B。
+
 保留 RepositoryStorageService、WorktreeService、GitCommandService、GitCredentialResolver、RepositoryPathResolver、WorkspaceLocks 与 POSIX supervisor。远端访问只经 argv runner/私有凭据上下文；不在 URL/command/log 传密码。新平台没有 legacy clone/raw 路径。
 
 Repository 的 git/ 存共享对象，worktrees/ 是独立代码工作区，ID生成路径。fetch不移动已检出分支；update只FF；dirty/ignored/ahead/diverged/detached/local commit/缺失注册/lease均按已有安全规则处理。错误恢复和ownership检查不是compatibility。

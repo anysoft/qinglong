@@ -1,6 +1,6 @@
 # Temporary Bridges — 退出条件登记
 
-> 当前状态以本文末尾 **Phase 13 — Observability / Notifications** 为准；前面的 Phase 4.5–9 表保留为阶段记录。
+> 当前状态以本文末尾 **Phase 12 — Code Workspace** 及其明确沿用的 Phase 13/14 职责为准；前面的表保留为阶段记录。
 
 当前平台能力仍依赖以下桥。保留是对现有运行职责的承认，不是继续承诺 QingLong 兼容。新代码不得新增对桥内部文件、URL、命名规则的依赖。Phase 4.5B 已完成本阶段收敛；后续 phase 编号是计划，必须满足 gate 才能退场。
 
@@ -165,3 +165,14 @@ B03/B04/B07沿用Phase11状态；本阶段未重构Trigger/Scheduler。B01/B02/B
 B13/B14 沿用 Phase 13 状态与责任。B01/B02/B03/B04/B06/B07/B08/B09/B10/B11/B12/B17 沿用既有责任；B05 保持 REMOVED。没有新建兼容桥，没有删除用户唯一数据。
 
 当前完整备份的用户入口只指向新 Backup domain。具体 production entrypoints、锁/日志/秘密/物理资源政策、测试与 Linux Phase 15 待验项见 [Phase14 最终报告](PHASE14_REPORT.md) 与 [Backup/Restore 架构](docs/architecture/18-backup-restore.md)。
+
+## Phase 12 — Code Workspace
+
+| Bridge | 当前职责 / 处置 | 保留边界 |
+|---|---|---|
+| B01 Editor / scripts staging | **EDITOR REMOVED FROM NORMAL PATH**；Code Workspace 直接使用 canonical Worktree；旧 Script UI/API/ScriptService 文件访问退出 | ManagedSubscription.stage/publication 已在Phase11删除；B17 disabled recovery映射、B13 SDK/bootstrap材料仍保留其独立诊断职责。不是新的编辑器依赖，不删除用户scripts目录 |
+| B16 internal file-edit bak | **EDITOR CONSUMER REMOVED**；保存不再生成 data/bak 副本 | 原有bak文件继续由Phase14完整快照保存，不删除用户数据 |
+| B14 logs | **UNCHANGED / RETAINED**；旧系统/订阅日志API和留存 | 不作为文件编辑器，不移除现有日志保护 |
+| Phase14 platform barrier | **REUSED**；所有Workspace mutations持shared FD，snapshot排他等待 | RESTORE_PENDING阻止Save/Create/Delete/Commit/Push，Git/rename子进程继承租约 |
+
+旧 `/scripts` 路由统一410 CODE_WORKSPACE_REQUIRED；旧 `/script` 页面只指向新入口。Workspace不依赖api/script、generated ENV、global dependencies或Shell→Open API。独立Linux残余材料清理仍归Phase15。验收见[Phase12报告](PHASE12_REPORT.md)。

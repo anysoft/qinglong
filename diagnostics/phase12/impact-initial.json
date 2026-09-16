@@ -1,0 +1,1526 @@
+[
+  {
+    "target": "run",
+    "file_path": "back/services/gitCommand.ts",
+    "result": {
+      "target": {
+        "id": "Method:back/services/gitCommand.ts:GitCommandService.run#6",
+        "name": "run",
+        "type": "Method",
+        "filePath": "back/services/gitCommand.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 2,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "98 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 98,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 1
+      },
+      "affected_processes": [
+        {
+          "name": "run",
+          "type": "Function",
+          "filePath": "back/services/managedSubscription.ts",
+          "affected_process_count": 5,
+          "total_hits": 5,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 2,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/gitUpdateTrigger.ts:GitUpdateTriggerService.evaluate#3",
+            "name": "evaluate",
+            "filePath": "back/services/gitUpdateTrigger.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.run#1",
+            "name": "run",
+            "filePath": "back/services/managedSubscription.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_303_run",
+                "label": "Run → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_269_run",
+                "label": "Run → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_165_run",
+                "label": "Run → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_268_run",
+                "label": "Run → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_166_run",
+                "label": "Run → Release",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "run",
+    "file_path": "back/services/workspaceLocks.ts",
+    "result": {
+      "target": {
+        "id": "Method:back/services/workspaceLocks.ts:WorkspaceGuard.run#5",
+        "name": "run",
+        "type": "Method",
+        "filePath": "back/services/workspaceLocks.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "98 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 98,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 2,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "affected_processes": [
+        {
+          "name": "run",
+          "type": "Function",
+          "filePath": "back/services/gitCommand.ts",
+          "affected_process_count": 5,
+          "total_hits": 5,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "run",
+          "type": "Function",
+          "filePath": "back/services/managedSubscription.ts",
+          "affected_process_count": 5,
+          "total_hits": 5,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 3,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/gitCommand.ts:GitCommandService.run#6",
+            "name": "run",
+            "filePath": "back/services/gitCommand.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_319_run",
+                "label": "Run → GitResourceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_172_run",
+                "label": "Run → Invalid",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_197_run",
+                "label": "Run → QuoteGitShell",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_196_run",
+                "label": "Run → Cleanup",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_436_run",
+                "label": "Run → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Method:back/services/gitUpdateTrigger.ts:GitUpdateTriggerService.evaluate#3",
+            "name": "evaluate",
+            "filePath": "back/services/gitUpdateTrigger.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.run#1",
+            "name": "run",
+            "filePath": "back/services/managedSubscription.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_303_run",
+                "label": "Run → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_269_run",
+                "label": "Run → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_165_run",
+                "label": "Run → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_268_run",
+                "label": "Run → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_166_run",
+                "label": "Run → Release",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "acquire",
+    "file_path": "back/services/workspaceLocks.ts",
+    "result": {
+      "target": {
+        "id": "Method:back/services/workspaceLocks.ts:WorkspaceLocks.acquire#3",
+        "name": "acquire",
+        "type": "Method",
+        "filePath": "back/services/workspaceLocks.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 27,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `acquire` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 1,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 2,
+        "processes_affected": 9,
+        "modules_affected": 3
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 10,
+        "3": 15
+      },
+      "affected_processes": [
+        {
+          "name": "preflight",
+          "type": "Function",
+          "filePath": "back/services/managedSubscription.ts",
+          "affected_process_count": 5,
+          "total_hits": 15,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "run",
+          "type": "Function",
+          "filePath": "back/services/managedSubscription.ts",
+          "affected_process_count": 5,
+          "total_hits": 15,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "changeRemote",
+          "type": "Function",
+          "filePath": "back/services/repositoryStorage.ts",
+          "affected_process_count": 5,
+          "total_hits": 15,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "prune",
+          "type": "Function",
+          "filePath": "back/services/repositoryStorage.ts",
+          "affected_process_count": 5,
+          "total_hits": 15,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "remove",
+          "type": "Function",
+          "filePath": "back/services/repositoryStorage.ts",
+          "affected_process_count": 5,
+          "total_hits": 15,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "repair",
+          "type": "Function",
+          "filePath": "back/services/repositoryStorage.ts",
+          "affected_process_count": 5,
+          "total_hits": 15,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "diagnostics",
+          "type": "Function",
+          "filePath": "back/services/repositoryStorage.ts",
+          "affected_process_count": 5,
+          "total_hits": 10,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "prepare",
+          "type": "Function",
+          "filePath": "back/services/managedSubscription.ts",
+          "affected_process_count": 3,
+          "total_hits": 9,
+          "earliest_broken_step": 2
+        },
+        {
+          "name": "initialize",
+          "type": "Function",
+          "filePath": "back/services/repositoryStorage.ts",
+          "affected_process_count": 3,
+          "total_hits": 9,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 15,
+          "impact": "direct"
+        },
+        {
+          "name": "Schedule",
+          "hits": 7,
+          "impact": "direct"
+        },
+        {
+          "name": "Protos",
+          "hits": 4,
+          "impact": "indirect"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/workspaceLocks.ts:WorkspaceLocks.probe#2",
+            "name": "probe",
+            "filePath": "back/services/workspaceLocks.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_386_diagnostics",
+                "label": "Diagnostics → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_391_diagnostics",
+                "label": "Diagnostics → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_387_diagnostics",
+                "label": "Diagnostics → Release",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_412_diagnostics",
+                "label": "Diagnostics → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_392_diagnostics",
+                "label": "Diagnostics → Root",
+                "processType": "cross_community",
+                "step": 2
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Method:back/services/workspaceLocks.ts:WorkspaceLocks.with#3",
+            "name": "with",
+            "filePath": "back/services/workspaceLocks.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_238_changeremote",
+                "label": "ChangeRemote → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_320_prune",
+                "label": "Prune → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_349_remove",
+                "label": "Remove → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_0_prepare",
+                "label": "Prepare → RuntimeError",
+                "processType": "cross_community",
+                "step": 4
+              },
+              {
+                "id": "proc_165_run",
+                "label": "Run → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_214_preflight",
+                "label": "Preflight → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_268_run",
+                "label": "Run → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_335_prune",
+                "label": "Prune → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_350_remove",
+                "label": "Remove → Release",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_401_initialize",
+                "label": "Initialize → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_303_run",
+                "label": "Run → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_305_changeremote",
+                "label": "ChangeRemote → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_3_prepare",
+                "label": "Prepare → Root",
+                "processType": "cross_community",
+                "step": 4
+              },
+              {
+                "id": "proc_215_preflight",
+                "label": "Preflight → Root",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_266_preflight",
+                "label": "Preflight → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_288_initialize",
+                "label": "Initialize → Release",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_355_changeremote",
+                "label": "ChangeRemote → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_358_remove",
+                "label": "Remove → Root",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_375_repair",
+                "label": "Repair → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_399_repair",
+                "label": "Repair → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_370_repair",
+                "label": "Repair → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_287_initialize",
+                "label": "Initialize → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_321_prune",
+                "label": "Prune → Release",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_371_repair",
+                "label": "Repair → Release",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_376_repair",
+                "label": "Repair → Root",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_32_preflight",
+                "label": "Preflight → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_33_preflight",
+                "label": "Preflight → Release",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_269_run",
+                "label": "Run → Root",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_336_prune",
+                "label": "Prune → Root",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_166_run",
+                "label": "Run → Release",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_239_changeremote",
+                "label": "ChangeRemote → Release",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_306_changeremote",
+                "label": "ChangeRemote → Root",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_373_prune",
+                "label": "Prune → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_389_remove",
+                "label": "Remove → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_357_remove",
+                "label": "Remove → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_2_prepare",
+                "label": "Prepare → WorkspaceError",
+                "processType": "cross_community",
+                "step": 4
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Class:back/schedule/client.ts:Client",
+            "name": "Client",
+            "filePath": "back/schedule/client.ts",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/schedule/client.ts:Client.transportHealthy#0",
+            "name": "transportHealthy",
+            "filePath": "back/schedule/client.ts",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.exclusive#2",
+            "name": "exclusive",
+            "filePath": "back/services/managedSubscription.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_32_preflight",
+                "label": "Preflight → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_33_preflight",
+                "label": "Preflight → Release",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_269_run",
+                "label": "Run → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_166_run",
+                "label": "Run → Release",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_215_preflight",
+                "label": "Preflight → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_303_run",
+                "label": "Run → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_165_run",
+                "label": "Run → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_214_preflight",
+                "label": "Preflight → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_268_run",
+                "label": "Run → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_266_preflight",
+                "label": "Preflight → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              }
+            ]
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.diagnostics#1",
+            "name": "diagnostics",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_391_diagnostics",
+                "label": "Diagnostics → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_387_diagnostics",
+                "label": "Diagnostics → Release",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_392_diagnostics",
+                "label": "Diagnostics → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_412_diagnostics",
+                "label": "Diagnostics → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_386_diagnostics",
+                "label": "Diagnostics → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.prune#1",
+            "name": "prune",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_373_prune",
+                "label": "Prune → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_336_prune",
+                "label": "Prune → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_320_prune",
+                "label": "Prune → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_335_prune",
+                "label": "Prune → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_321_prune",
+                "label": "Prune → Release",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.withRepository#4",
+            "name": "withRepository",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_238_changeremote",
+                "label": "ChangeRemote → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_320_prune",
+                "label": "Prune → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_349_remove",
+                "label": "Remove → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_0_prepare",
+                "label": "Prepare → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_335_prune",
+                "label": "Prune → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_350_remove",
+                "label": "Remove → Release",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_401_initialize",
+                "label": "Initialize → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_305_changeremote",
+                "label": "ChangeRemote → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_3_prepare",
+                "label": "Prepare → Root",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_288_initialize",
+                "label": "Initialize → Release",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_355_changeremote",
+                "label": "ChangeRemote → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_358_remove",
+                "label": "Remove → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_375_repair",
+                "label": "Repair → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_399_repair",
+                "label": "Repair → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_370_repair",
+                "label": "Repair → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_287_initialize",
+                "label": "Initialize → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_321_prune",
+                "label": "Prune → Release",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_371_repair",
+                "label": "Repair → Release",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_376_repair",
+                "label": "Repair → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_336_prune",
+                "label": "Prune → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_239_changeremote",
+                "label": "ChangeRemote → Release",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_306_changeremote",
+                "label": "ChangeRemote → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_373_prune",
+                "label": "Prune → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_389_remove",
+                "label": "Remove → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_357_remove",
+                "label": "Remove → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_2_prepare",
+                "label": "Prepare → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              }
+            ]
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/services/worktree.ts:WorktreeService.list#1",
+            "name": "list",
+            "filePath": "back/services/worktree.ts",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/services/worktree.ts:WorktreeService.status#1",
+            "name": "status",
+            "filePath": "back/services/worktree.ts",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/shared/schedulerReadiness.ts:SchedulerReadiness.check#0",
+            "name": "check",
+            "filePath": "back/shared/schedulerReadiness.ts",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/shared/schedulerReadiness.ts:SchedulerReadiness.recover#0",
+            "name": "recover",
+            "filePath": "back/shared/schedulerReadiness.ts",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "File:back/schedule/client.ts",
+            "name": "client.ts",
+            "filePath": "back/schedule/client.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Interface:back/protos/api.ts:ApiClient",
+            "name": "ApiClient",
+            "filePath": "back/protos/api.ts",
+            "relationType": "EXTENDS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Interface:back/protos/cron.ts:CronClient",
+            "name": "CronClient",
+            "filePath": "back/protos/cron.ts",
+            "relationType": "EXTENDS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Interface:back/protos/health.ts:HealthClient",
+            "name": "HealthClient",
+            "filePath": "back/protos/health.ts",
+            "relationType": "EXTENDS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.preflight#1",
+            "name": "preflight",
+            "filePath": "back/services/managedSubscription.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_215_preflight",
+                "label": "Preflight → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_266_preflight",
+                "label": "Preflight → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_214_preflight",
+                "label": "Preflight → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_32_preflight",
+                "label": "Preflight → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_33_preflight",
+                "label": "Preflight → Release",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.run#1",
+            "name": "run",
+            "filePath": "back/services/managedSubscription.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_303_run",
+                "label": "Run → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_269_run",
+                "label": "Run → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_165_run",
+                "label": "Run → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_268_run",
+                "label": "Run → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_166_run",
+                "label": "Run → Release",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.changeRemote#2",
+            "name": "changeRemote",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_239_changeremote",
+                "label": "ChangeRemote → Release",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_306_changeremote",
+                "label": "ChangeRemote → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_355_changeremote",
+                "label": "ChangeRemote → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_238_changeremote",
+                "label": "ChangeRemote → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_305_changeremote",
+                "label": "ChangeRemote → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.fetch#1",
+            "name": "fetch",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.initialize#1",
+            "name": "initialize",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_0_prepare",
+                "label": "Prepare → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_401_initialize",
+                "label": "Initialize → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_3_prepare",
+                "label": "Prepare → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_288_initialize",
+                "label": "Initialize → Release",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_287_initialize",
+                "label": "Initialize → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_2_prepare",
+                "label": "Prepare → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              }
+            ]
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.refs#1",
+            "name": "refs",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.remove#1",
+            "name": "remove",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_349_remove",
+                "label": "Remove → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_358_remove",
+                "label": "Remove → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_350_remove",
+                "label": "Remove → Release",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_389_remove",
+                "label": "Remove → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_357_remove",
+                "label": "Remove → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.repair#1",
+            "name": "repair",
+            "filePath": "back/services/repositoryStorage.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_371_repair",
+                "label": "Repair → Release",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_375_repair",
+                "label": "Repair → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_370_repair",
+                "label": "Repair → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_376_repair",
+                "label": "Repair → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_399_repair",
+                "label": "Repair → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/services/worktree.ts:WorktreeService.ensure#1",
+            "name": "ensure",
+            "filePath": "back/services/worktree.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/shared/schedulerReadiness.ts:SchedulerReadiness.ensureReady#1",
+            "name": "ensureReady",
+            "filePath": "back/shared/schedulerReadiness.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Method:back/shared/schedulerReadiness.ts:SchedulerReadiness.invalidate#0",
+            "name": "invalidate",
+            "filePath": "back/shared/schedulerReadiness.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "run",
+    "file_path": "shell/git_workspace_lock.py",
+    "result": {
+      "target": {
+        "id": "Function:shell/git_workspace_lock.py:run",
+        "name": "run",
+        "type": "Function",
+        "filePath": "shell/git_workspace_lock.py"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "98 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 98,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:shell/git_workspace_lock.py",
+            "name": "git_workspace_lock.py",
+            "filePath": "shell/git_workspace_lock.py",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "RepositoryWorkspacePage",
+    "file_path": "src/pages/repository-workspace.tsx",
+    "result": {
+      "target": {
+        "id": "Function:src/pages/repository-workspace.tsx:RepositoryWorkspacePage",
+        "name": "RepositoryWorkspacePage",
+        "type": "Function",
+        "filePath": "src/pages/repository-workspace.tsx"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "target": "workspaceRoutes",
+    "file_path": "back/api/workspace.ts",
+    "result": {
+      "target": {
+        "id": "Function:back/api/workspace.ts:workspaceRoutes",
+        "name": "workspaceRoutes",
+        "type": "Function",
+        "filePath": "back/api/workspace.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "target": "CodeWorkspaceService",
+    "file_path": "back/services/codeWorkspace.ts",
+    "result": {
+      "error": "Target 'CodeWorkspaceService' not found",
+      "target": {
+        "name": "CodeWorkspaceService"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "target": "WorkspaceFiles",
+    "file_path": "back/services/workspaceFiles.ts",
+    "result": {
+      "error": "Target 'WorkspaceFiles' not found",
+      "target": {
+        "name": "WorkspaceFiles"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  }
+]

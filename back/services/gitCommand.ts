@@ -19,6 +19,7 @@ export default class GitCommandService {
     cwd: string,
     network = false,
     allowFailure = false,
+    options: { push?: boolean; outputLimit?: number } = {},
   ) {
     const credential =
       network && repo.default_credential_id
@@ -31,13 +32,24 @@ export default class GitCommandService {
       credential?.get({ plain: true }) || null,
       credential ? await this.secrets.getCredentialSecret(credential.id!) : {},
       network ? repo.remote_url : 'https://workspace-local.invalid/local',
+      options.push ? 'push' : 'read',
     );
     try {
       const result = await guard.run(
-        ['-c', 'core.hooksPath=/dev/null', ...args],
+        [
+          '--no-optional-locks',
+          '--literal-pathspecs',
+          '-c',
+          'core.hooksPath=/dev/null',
+          '-c',
+          'core.fsmonitor=false',
+          ...args,
+        ],
         cwd,
         context.env,
         network ? 300000 : 30000,
+        'git',
+        options.outputLimit,
       );
       const safe = {
         ...result,

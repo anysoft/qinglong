@@ -1,0 +1,78 @@
+TAP version 13
+# Subtest: Workspace file create/save/rename flows through official Discovery with stable IDs and retirement
+ok 1 - Workspace file create/save/rename flows through official Discovery with stable IDs and retirement
+  ---
+  duration_ms: 2279.817333
+  type: 'test'
+  ...
+# Subtest: real Git literal paths, status, bounded diff, stage/unstage and explicit author commit
+ok 2 - real Git literal paths, status, bounded diff, stage/unstage and explicit author commit
+  ---
+  duration_ms: 9226.53475
+  type: 'test'
+  ...
+# Subtest: real local origin push success, non-fast-forward and credential write capability
+ok 3 - real local origin push success, non-fast-forward and credential write capability
+  ---
+  duration_ms: 5931.674875
+  type: 'test'
+  ...
+# Subtest: actual execution lock and recovery journals block reads and mutations
+ok 4 - actual execution lock and recovery journals block reads and mutations
+  ---
+  duration_ms: 3133.948791
+  type: 'test'
+  ...
+# {"phase12":"git-scale","changes":5000,"response_bytes":5094,"rss":245612544}
+# Subtest: 5k Git changes paginate without full response
+ok 5 - 5k Git changes paginate without full response
+  ---
+  duration_ms: 2309.385667
+  type: 'test'
+  ...
+# Subtest: separate process Execution, GitSync, editor and Backup ownership block editor writes
+not ok 6 - separate process Execution, GitSync, editor and Backup ownership block editor writes
+  ---
+  duration_ms: 1564.094083
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase12/git.test.cjs:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    worker 1Error: ENOENT: no such file or directory, lstat '/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/ql-workspace2-LiCldx.platform-control'
+        at async Object.lstat (node:internal/fs/promises:1028:18)
+        at async privateDirectory (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/backup/files.js:68:22)
+        at async BarrierPaths.lock (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/backup/barrier.js:19:36)
+        at async RuntimeLease.acquire (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/runtimeProcess.js:21:54)
+        at async PlatformBackupBarrier.acquire (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/backup/barrier.js:51:20)
+        at async PlatformBackupBarrier.mutation (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/backup/barrier.js:62:23)
+        at async /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase12/lease-worker.cjs:11:3 {
+      errno: -2,
+      code: 'ENOENT',
+      syscall: 'lstat',
+      path: '/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/ql-workspace2-LiCldx.platform-control'
+    }
+    
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    async Object.lstat (node:internal/fs/promises:1028:18)
+    async privateDirectory (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/backup/files.js:68:22)
+    async BarrierPaths.lock (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/backup/barrier.js:19:36)
+    async RuntimeLease.acquire (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/runtimeProcess.js:21:54)
+    async PlatformBackupBarrier.acquire (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/backup/barrier.js:51:20)
+    async PlatformBackupBarrier.mutation (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/static/build/services/backup/barrier.js:62:23)
+    async /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase12/lease-worker.cjs:11:3 {
+    ChildProcess.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase12/git.test.cjs:11:380)
+    Object.onceWrapper (node:events:634:26)
+    ChildProcess.emit (node:events:519:28)
+    ChildProcess._handle.onexit (node:internal/child_process:293:12)
+    Process.callbackTrampoline (node:internal/async_hooks:130:17)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 22436.033916

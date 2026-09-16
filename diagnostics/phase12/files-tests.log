@@ -1,0 +1,65 @@
+TAP version 13
+# Subtest: workspace rejects traversal, Windows/control paths, .git and reserved execution artifacts
+ok 1 - workspace rejects traversal, Windows/control paths, .git and reserved execution artifacts
+  ---
+  duration_ms: 34.425459
+  type: 'test'
+  ...
+# Subtest: UTF8 BOM CRLF empty executable and literal unusual filenames survive atomic saves
+ok 2 - UTF8 BOM CRLF empty executable and literal unusual filenames survive atomic saves
+  ---
+  duration_ms: 128.682958
+  type: 'test'
+  ...
+# Subtest: external changes conflict; stale delete/rename and existing destinations preserve originals
+ok 3 - external changes conflict; stale delete/rename and existing destinations preserve originals
+  ---
+  duration_ms: 73.835875
+  type: 'test'
+  ...
+# Subtest: file and directory rename never overwrite; delete directories only when empty
+ok 4 - file and directory rename never overwrite; delete directories only when empty
+  ---
+  duration_ms: 188.9805
+  type: 'test'
+  ...
+# Subtest: symlinks are metadata only, external link hides target; FIFO/hardlink rejected
+ok 5 - symlinks are metadata only, external link hides target; FIFO/hardlink rejected
+  ---
+  duration_ms: 21.027666
+  type: 'test'
+  ...
+# Subtest: binary invalid UTF8 and file size boundaries are explicit
+ok 6 - binary invalid UTF8 and file size boundaries are explicit
+  ---
+  duration_ms: 16.123875
+  type: 'test'
+  ...
+# Subtest: failed atomic publish leaves original and cleans only owned temporary
+ok 7 - failed atomic publish leaves original and cleans only owned temporary
+  ---
+  duration_ms: 25.643333
+  type: 'test'
+  ...
+# {"phase12":"filesystem-scale","files":20000,"elapsed_ms":2167,"rss":188760064,"search":{"count":200,"scanned":418,"truncated":true}}
+# Subtest: 20k files lazy pagination and 10k-file content search stay bounded
+ok 8 - 20k files lazy pagination and 10k-file content search stay bounded
+  ---
+  duration_ms: 2992.467708
+  type: 'test'
+  ...
+# Subtest: disk write and post-publish directory fsync failures preserve the original bytes and mode
+ok 9 - disk write and post-publish directory fsync failures preserve the original bytes and mode
+  ---
+  duration_ms: 70.192333
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3886.471541

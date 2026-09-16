@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "runtime": "24.21.0",
+  "pnpm": "10.17.1",
+  "npm": "11.19.0",
+  "operations": [
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_REBUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_RESOLVE",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_PROMOTE",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_VERIFY",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_VERIFY",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_VERIFY",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_REBUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_VERIFY",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_REBUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "FAILED",
+      "error": "NODE_DEPENDENCY_BUILD_FAILED"
+    },
+    {
+      "type": "NODE_PACKAGE_MANAGER_INSTALL",
+      "status": "FAILED",
+      "error": "PACKAGE_MANAGER_RUNTIME_INCOMPATIBLE"
+    },
+    {
+      "type": "NODE_ENV_BUILD",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_VERIFY",
+      "status": "FAILED",
+      "error": "NODE_BUILD_INVALID"
+    },
+    {
+      "type": "NODE_ENV_VERIFY",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_DELETE",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_DELETE",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_DELETE",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_DELETE",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_DELETE",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_DELETE",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "type": "NODE_ENV_DELETE",
+      "status": "SUCCESS",
+      "error": null
+    }
+  ],
+  "registry_requests": 34,
+  "runtime_unchanged": true,
+  "toolchain_unchanged": true
+}

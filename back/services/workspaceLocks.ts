@@ -2,6 +2,7 @@ import { spawn, ChildProcessWithoutNullStreams } from 'child_process';
 import readline from 'readline';
 import path from 'path';
 import config from '../config';
+import { inheritedLeaseFds } from './backup/inheritedLeases';
 import { RepositoryPathResolver } from '../shared/workspacePaths';
 import { WorkspaceError } from '../shared/workspaceError';
 export interface LockOwner {
@@ -59,15 +60,21 @@ export class WorkspaceGuard {
     cwd: string,
     env: NodeJS.ProcessEnv,
     timeout: number,
-    program: 'git' | 'bash' = 'git',
+    program: 'git' | 'bash' | 'workspace-rename' = 'git',
+    outputLimit?: number,
   ) {
     const response = this.receive();
     this.child.stdin.write(
-      JSON.stringify({ args, cwd, env, timeout, program }) + '\n',
+      JSON.stringify({ args, cwd, env, timeout, program, outputLimit }) + '\n',
     );
     const result = await response;
     if (result.error) throw new WorkspaceError('WORKSPACE_HELPER_FAILED');
-    return result as { code: number; stdout: string; stderr: string };
+    return result as {
+      code: number;
+      stdout: string;
+      stderr: string;
+      truncated?: boolean;
+    };
   }
   async release() {
     if (!this.ended) this.child.stdin.end();
@@ -90,6 +97,7 @@ export class WorkspaceLocks {
     const files = await Promise.all(
       resources.map((r) => this.paths.lock(r.kind, r.id)),
     );
+    const inherited = inheritedLeaseFds();
     const guard = new WorkspaceGuard(
       spawn(
         'python3',
@@ -98,10 +106,14 @@ export class WorkspaceLocks {
           '-S',
           this.helper,
           JSON.stringify(files),
-          JSON.stringify({ ...owner, probe }),
+          JSON.stringify({
+            ...owner,
+            probe,
+            inherited: inherited.map((_, i) => i + 3),
+          }),
         ],
-        { stdio: ['pipe', 'pipe', 'pipe'] },
-      ),
+        { stdio: ['pipe', 'pipe', 'pipe', ...inherited] },
+      ) as ChildProcessWithoutNullStreams,
     );
     const result = await guard.receive();
     if (result.busy || probe || result.error) {

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "steps": [
+    "empty-root-bootstrap",
+    "browser-fresh-initialize-login",
+    "browser-repository-worktree-open-workspace",
+    "browser-open-edit-atomic-save",
+    "browser-working-diff",
+    "browser-create-untracked-file",
+    "browser-stage-explicit-commit-no-auto-push",
+    "browser-explicit-real-ssh-push",
+    "editor-commit-push-no-task-submission",
+    "real-ssh-push-authentication-and-network-failures",
+    "official-sync-new-remote-commit-produces-git-event-and-run",
+    "browser-dirty-tab-close-and-navigation-confirmation",
+    "browser-external-process-conflict-cancel-reload",
+    "browser-real-long-task-busy-then-save",
+    "browser-backup-includes-editor-state",
+    "different-root-restore-preserves-editor-local-commit-dirty-untracked"
+  ],
+  "linux": false,
+  "security": {
+    "api_responses": 228,
+    "websocket_frames": 8,
+    "leaks": 0
+  }
+}
