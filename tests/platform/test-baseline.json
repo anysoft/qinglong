@@ -624,5 +624,17 @@
   {
     "path": "tests/phase13/providers.test.cjs",
     "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase14/barrier.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase14/portable.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase14/sqlite.test.cjs",
+    "classification": "PLATFORM_CORE"
   }
 ]

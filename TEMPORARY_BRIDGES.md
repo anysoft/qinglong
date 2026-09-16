@@ -154,3 +154,11 @@ B02/B06/B08/B11/B12/B13/B16/B17 的既有保留责任和 Linux gate 沿用 Phase
 | B16 Backup | 既有System export/import | **RETAINED**；不承诺覆盖新观测与通知域 | Phase14正式一致备份/恢复通过；本阶段未实现 |
 
 B03/B04/B07沿用Phase11状态；本阶段未重构Trigger/Scheduler。B01/B02/B06/B08/B09/B10/B11/B12/B17沿用各自活跃责任。B05保持REMOVED。Linux final qualification统一Phase15，不以Darwin通过冒充Linux通过。
+
+## Phase 14 — 实施中（未完成）
+
+| Bridge | Consumer | Replacement / Status | Exit condition |
+|---|---|---|---|
+| B16 Backup / Restore | SystemService exportData/importData/reloadSystem、Settings、旧上传入口 | **RETAINED — replacement incomplete**；新加密/归档/SQLite/屏障基础模块尚未接入产品 | 全平台 quiesce Snapshot、manifest、offline crash-safe restore、跨根 Git/Secret/Runtime 重建及 Browser/Fresh E2E 全部通过后移除正常入口 |
+
+当前仍不能称旧 tar 为新平台完整备份。没有提前删除桥或用户数据。详见 [Phase14 未完成报告](PHASE14_REPORT.md)。

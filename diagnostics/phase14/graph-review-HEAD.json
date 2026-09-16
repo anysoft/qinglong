@@ -1,0 +1,1681 @@
+{
+  "summary": {
+    "changed_count": 187,
+    "affected_count": 17,
+    "changed_files": 28,
+    "risk_level": "critical"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:PHASE14_REPORT.md:L1:Phase 14 Status: PARTIAL",
+      "name": "Phase 14 Status: PARTIAL",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L30:已实现范围",
+      "name": "已实现范围",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L40:Backup Format / Manifest / Local Security",
+      "name": "Backup Format / Manifest / Local Security",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L47:Barrier / SQLite / Git / Config / Logs / Notifications",
+      "name": "Barrier / SQLite / Git / Config / Logs / Notifications",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L53:Restore / CLI / UI / Bootstrap / Journal / Atomic Switch",
+      "name": "Restore / CLI / UI / Bootstrap / Journal / Atomic Switch",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L59:Runtime / Rebuild / Trigger / Notification Semantics",
+      "name": "Runtime / Rebuild / Trigger / Notification Semantics",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L66:Tests / Builds / Typecheck",
+      "name": "Tests / Builds / Typecheck",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L76:Performance / Security / Important Findings",
+      "name": "Performance / Security / Important Findings",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L83:Bridges / Linux / Known Limitations",
+      "name": "Bridges / Linux / Known Limitations",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE14_REPORT.md:L89:下一步",
+      "name": "下一步",
+      "type": "Section",
+      "filePath": "PHASE14_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L1:Temporary Bridges — 退出条件登记",
+      "name": "Temporary Bridges — 退出条件登记",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L145:Phase 13 — Observability / Notifications",
+      "name": "Phase 13 — Observability / Notifications",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/backup/archive.ts:ArchiveLimits",
+      "name": "ArchiveLimits",
+      "type": "Interface",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:ArchiveLimits.entries",
+      "name": "entries",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:ArchiveLimits.bytes",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:ArchiveLimits.entryBytes",
+      "name": "entryBytes",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:DEFAULT_LIMITS",
+      "name": "DEFAULT_LIMITS",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:DEFAULT_LIMITS.entries",
+      "name": "entries",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:DEFAULT_LIMITS.bytes",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:DEFAULT_LIMITS.entryBytes",
+      "name": "entryBytes",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:MAGIC",
+      "name": "MAGIC",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/backup/archive.ts:ArchiveEntry",
+      "name": "ArchiveEntry",
+      "type": "Interface",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:ArchiveEntry.path",
+      "name": "path",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:ArchiveEntry.kind",
+      "name": "kind",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:ArchiveEntry.size",
+      "name": "size",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:ArchiveEntry.mode",
+      "name": "mode",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:ArchiveEntry.link",
+      "name": "link",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/archive.ts:entry",
+      "name": "entry",
+      "type": "Function",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/archive.ts:validateLink",
+      "name": "validateLink",
+      "type": "Function",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/archive.ts:walk",
+      "name": "walk",
+      "type": "Function",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:walk.handle@90:2",
+      "name": "handle",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:walk.name@92:4",
+      "name": "name",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:walk.source@94:4",
+      "name": "source",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:walk.stat@94:4",
+      "name": "stat",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:walk.link@110:6",
+      "name": "link",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/archive.ts:packArchive",
+      "name": "packArchive",
+      "type": "Function",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:packArchive.bytes@136:2",
+      "name": "bytes",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:packArchive.length@147:6",
+      "name": "length",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:packArchive.bytes@174:29",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:packArchive.entries@174:13",
+      "name": "entries",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/backup/archive.ts:Reader",
+      "name": "Reader",
+      "type": "Class",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:Reader.position",
+      "name": "position",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/archive.ts:Reader.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:Reader.handle",
+      "name": "handle",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/archive.ts:Reader.read#1",
+      "name": "read",
+      "type": "Method",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/archive.ts:Reader.ended#0",
+      "name": "ended",
+      "type": "Method",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/archive.ts:unpackArchive",
+      "name": "unpackArchive",
+      "type": "Function",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:unpackArchive.reader@213:2",
+      "name": "reader",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:unpackArchive.bytes@215:2",
+      "name": "bytes",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/archive.ts:unpackArchive.hash@245:8",
+      "name": "hash",
+      "type": "Const",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:unpackArchive.bytes@269:29",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/archive.ts:unpackArchive.entries@269:13",
+      "name": "entries",
+      "type": "Property",
+      "filePath": "back/services/backup/archive.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/backup/barrier.ts:BarrierPaths",
+      "name": "BarrierPaths",
+      "type": "Class",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/barrier.ts:BarrierPaths.lock#1",
+      "name": "lock",
+      "type": "Method",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/services/backup/barrier.ts:BarrierPhase",
+      "name": "BarrierPhase",
+      "type": "TypeAlias",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/backup/barrier.ts:BarrierState",
+      "name": "BarrierState",
+      "type": "Interface",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/barrier.ts:BarrierState.version",
+      "name": "version",
+      "type": "Property",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/barrier.ts:BarrierState.id",
+      "name": "id",
+      "type": "Property",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/barrier.ts:BarrierState.phase",
+      "name": "phase",
+      "type": "Property",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/backup/barrier.ts:PlatformBackupBarrier",
+      "name": "PlatformBackupBarrier",
+      "type": "Class",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/barrier.ts:PlatformBackupBarrier.context",
+      "name": "context",
+      "type": "Property",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/barrier.ts:PlatformBackupBarrier.paths",
+      "name": "paths",
+      "type": "Property",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.marker#0",
+      "name": "marker",
+      "type": "Method",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.state#0",
+      "name": "state",
+      "type": "Method",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.acquire#2",
+      "name": "acquire",
+      "type": "Method",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.mutation#2",
+      "name": "mutation",
+      "type": "Method",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.snapshot#3",
+      "name": "snapshot",
+      "type": "Method",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/barrier.ts:PlatformBackupBarrier.snapshot.published@87:4",
+      "name": "published",
+      "type": "Const",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/barrier.ts:PlatformBackupBarrier.snapshot.deadline@89:4",
+      "name": "deadline",
+      "type": "Const",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.recoverAbandonedSnapshot#0",
+      "name": "recoverAbandonedSnapshot",
+      "type": "Method",
+      "filePath": "back/services/backup/barrier.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/envelope.ts:MAGIC",
+      "name": "MAGIC",
+      "type": "Const",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/envelope.ts:HEADER_SIZE",
+      "name": "HEADER_SIZE",
+      "type": "Const",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/envelope.ts:TAG_SIZE",
+      "name": "TAG_SIZE",
+      "type": "Const",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/envelope.ts:MAX_PORTABLE_BYTES",
+      "name": "MAX_PORTABLE_BYTES",
+      "type": "Const",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/envelope.ts:header",
+      "name": "header",
+      "type": "Function",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/envelope.ts:validateHeader",
+      "name": "validateHeader",
+      "type": "Function",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/envelope.ts:key",
+      "name": "key",
+      "type": "Function",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/envelope.ts:counter",
+      "name": "counter",
+      "type": "Function",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/envelope.ts:counter.transform@68:4#3",
+      "name": "transform",
+      "type": "Method",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/envelope.ts:encryptPortable",
+      "name": "encryptPortable",
+      "type": "Function",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/envelope.ts:encryptPortable.derived@83:2",
+      "name": "derived",
+      "type": "Const",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/envelope.ts:decryptPortable",
+      "name": "decryptPortable",
+      "type": "Function",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/envelope.ts:decryptPortable.derived@126:2",
+      "name": "derived",
+      "type": "Const",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/envelope.ts:decryptPortable.tag@135:4",
+      "name": "tag",
+      "type": "Const",
+      "filePath": "back/services/backup/envelope.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/backup/files.ts:BackupError",
+      "name": "BackupError",
+      "type": "Class",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/backup/files.ts:BackupError.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:fail",
+      "name": "fail",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:sha256",
+      "name": "sha256",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:relativeName",
+      "name": "relativeName",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:safeLink",
+      "name": "safeLink",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:privateDirectory",
+      "name": "privateDirectory",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:openRegular",
+      "name": "openRegular",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:syncDirectory",
+      "name": "syncDirectory",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:privateJson",
+      "name": "privateJson",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:readJson",
+      "name": "readJson",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:hashFile",
+      "name": "hashFile",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/files.ts:hashFile.hash@124:2",
+      "name": "hash",
+      "type": "Const",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/files.ts:hashFile.sha256@135:17",
+      "name": "sha256",
+      "type": "Property",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/files.ts:hashFile.size@135:11",
+      "name": "size",
+      "type": "Property",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/files.ts:writeAll",
+      "name": "writeAll",
+      "type": "Function",
+      "filePath": "back/services/backup/files.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/sqlite.ts:backupDatabase",
+      "name": "backupDatabase",
+      "type": "Function",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/sqlite.ts:backupDatabase.all@19:4",
+      "name": "all",
+      "type": "Function",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/sqlite.ts:backupDatabase.close@27:4",
+      "name": "close",
+      "type": "Function",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/sqlite.ts:validateDatabase",
+      "name": "validateDatabase",
+      "type": "Function",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/sqlite.ts:validateDatabase.foreignKeys@38:4",
+      "name": "foreignKeys",
+      "type": "Const",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/sqlite.ts:validateDatabase.foreign_keys@46:30",
+      "name": "foreign_keys",
+      "type": "Property",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/backup/sqlite.ts:validateDatabase.integrity@46:13",
+      "name": "integrity",
+      "type": "Property",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/backup/sqlite.ts:snapshotDatabase",
+      "name": "snapshotDatabase",
+      "type": "Function",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/backup/sqlite.ts:snapshotDatabase.handle@67:2",
+      "name": "handle",
+      "type": "Const",
+      "filePath": "back/services/backup/sqlite.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:baseline",
+      "name": "baseline",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:result",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:output",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:current",
+      "name": "current",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:key",
+      "name": "key",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:added",
+      "name": "added",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:remaining",
+      "name": "remaining",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:unexpectedFailure",
+      "name": "unexpectedFailure",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/check-typecheck.cjs:report",
+      "name": "report",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/check-typecheck.cjs:report.status",
+      "name": "status",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/check-typecheck.cjs:report.new",
+      "name": "new",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/check-typecheck.cjs:report.original",
+      "name": "original",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/check-typecheck.cjs:report.raw_exit_code",
+      "name": "raw_exit_code",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/check-typecheck.cjs:report.remaining",
+      "name": "remaining",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/check-typecheck.cjs:report.regression_gate",
+      "name": "regression_gate",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/01-data-classification.md:L1:Phase 14 — Data Classification",
+      "name": "Phase 14 — Data Classification",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/01-data-classification.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/01-data-classification.md:L5:权威路径",
+      "name": "权威路径",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/01-data-classification.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/01-data-classification.md:L32:安全与恢复约束",
+      "name": "安全与恢复约束",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/01-data-classification.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/01-data-classification.md:L43:B16 实际审计",
+      "name": "B16 实际审计",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/01-data-classification.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/02-foundation-contracts.md:L1:Phase 14 — 已实现基础模块与待接入契约",
+      "name": "Phase 14 — 已实现基础模块与待接入契约",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/02-foundation-contracts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/02-foundation-contracts.md:L5:Portable envelope / passphrase",
+      "name": "Portable envelope / passphrase",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/02-foundation-contracts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/02-foundation-contracts.md:L17:Archive",
+      "name": "Archive",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/02-foundation-contracts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/02-foundation-contracts.md:L33:SQLite",
+      "name": "SQLite",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/02-foundation-contracts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/02-foundation-contracts.md:L41:Barrier",
+      "name": "Barrier",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/02-foundation-contracts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase14/02-foundation-contracts.md:L54:必须继续的实现顺序",
+      "name": "必须继续的实现顺序",
+      "type": "Section",
+      "filePath": "docs/refactor/phase14/02-foundation-contracts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier-worker.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier-worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier-worker.cjs:configFile",
+      "name": "configFile",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier-worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier-worker.cjs:gate",
+      "name": "gate",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier-worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier.test.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier.test.cjs:configFile",
+      "name": "configFile",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/barrier.test.cjs:setup",
+      "name": "setup",
+      "type": "Function",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/barrier.test.cjs:delay",
+      "name": "delay",
+      "type": "Function",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier.test.cjs:fn@28:110.peer@29:2",
+      "name": "peer",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier.test.cjs:fn@28:110.entered@31:2",
+      "name": "entered",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/barrier.test.cjs:fn@28:110.hold@32:2",
+      "name": "hold",
+      "type": "Const",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/barrier.test.cjs:fn@28:110.writer@34:2",
+      "name": "writer",
+      "type": "Function",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/barrier.test.cjs:fn@28:110.snapshot@39:2",
+      "name": "snapshot",
+      "type": "Function",
+      "filePath": "tests/phase14/barrier.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/portable.test.cjs:fixture",
+      "name": "fixture",
+      "type": "Function",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/portable.test.cjs:directory",
+      "name": "directory",
+      "type": "Function",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/portable.test.cjs:framed",
+      "name": "framed",
+      "type": "Function",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:framed.size@34:2",
+      "name": "size",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@51:103.source@52:2",
+      "name": "source",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@51:103.clear@60:2",
+      "name": "clear",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@51:103.encrypted@60:2",
+      "name": "encrypted",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@83:97.encrypted@84:2",
+      "name": "encrypted",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@83:97.source@84:2",
+      "name": "source",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@83:97.output@103:4",
+      "name": "output",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@114:89.out@137:4",
+      "name": "out",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@158:106.source@159:2",
+      "name": "source",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@185:113.source@186:2",
+      "name": "source",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@185:113.second@196:2",
+      "name": "second",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/portable.test.cjs:fn@185:113.size@208:2",
+      "name": "size",
+      "type": "Function",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@231:88.file@232:2",
+      "name": "file",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@231:88.source@232:2",
+      "name": "source",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@231:88.clear@237:2",
+      "name": "clear",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@231:88.encrypted@237:2",
+      "name": "encrypted",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@231:88.password@237:2",
+      "name": "password",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/portable.test.cjs:fn@231:88.sample@243:2",
+      "name": "sample",
+      "type": "Function",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@272:85.source@273:2",
+      "name": "source",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/portable.test.cjs:fn@272:85.output@279:2",
+      "name": "output",
+      "type": "Const",
+      "filePath": "tests/phase14/portable.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/sqlite.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase14/sqlite.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/sqlite.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase14/sqlite.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/sqlite.test.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "tests/phase14/sqlite.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/sqlite.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase14/sqlite.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/sqlite.test.cjs:sqlite",
+      "name": "sqlite",
+      "type": "Const",
+      "filePath": "tests/phase14/sqlite.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase14/sqlite.test.cjs:fn@13:74.target@18:2",
+      "name": "target",
+      "type": "Const",
+      "filePath": "tests/phase14/sqlite.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase14/sqlite.test.cjs:fn@13:74.exec@24:2",
+      "name": "exec",
+      "type": "Function",
+      "filePath": "tests/phase14/sqlite.test.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": [
+    {
+      "id": "proc_5_packarchive",
+      "name": "PackArchive → BackupError",
+      "process_type": "intra_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "safeLink",
+          "step": 4
+        },
+        {
+          "symbol": "relativeName",
+          "step": 5
+        },
+        {
+          "symbol": "fail",
+          "step": 6
+        },
+        {
+          "symbol": "packArchive",
+          "step": 1
+        },
+        {
+          "symbol": "walk",
+          "step": 2
+        },
+        {
+          "symbol": "validateLink",
+          "step": 3
+        },
+        {
+          "symbol": "BackupError",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_133_snapshotdatabase",
+      "name": "SnapshotDatabase → BackupError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "openRegular",
+          "step": 4
+        },
+        {
+          "symbol": "fail",
+          "step": 5
+        },
+        {
+          "symbol": "snapshotDatabase",
+          "step": 1
+        },
+        {
+          "symbol": "validateDatabase",
+          "step": 2
+        },
+        {
+          "symbol": "backupDatabase",
+          "step": 3
+        },
+        {
+          "symbol": "BackupError",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_144_mutation",
+      "name": "Mutation → RuntimeLease",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "mutation",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_204_mutation",
+      "name": "Mutation → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "mutation",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_206_mutation",
+      "name": "Mutation → BackupError",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "privateDirectory",
+          "step": 3
+        },
+        {
+          "symbol": "fail",
+          "step": 4
+        },
+        {
+          "symbol": "mutation",
+          "step": 1
+        },
+        {
+          "symbol": "state",
+          "step": 2
+        },
+        {
+          "symbol": "BackupError",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_217_recoverabandonedsnap",
+      "name": "RecoverAbandonedSnapshot → RuntimeLease",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "recoverAbandonedSnapshot",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_256_recoverabandonedsnap",
+      "name": "RecoverAbandonedSnapshot → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "recoverAbandonedSnapshot",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_257_snapshot",
+      "name": "Snapshot → BackupError",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "privateDirectory",
+          "step": 3
+        },
+        {
+          "symbol": "fail",
+          "step": 4
+        },
+        {
+          "symbol": "snapshot",
+          "step": 1
+        },
+        {
+          "symbol": "state",
+          "step": 2
+        },
+        {
+          "symbol": "BackupError",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_267_snapshot",
+      "name": "Snapshot → RuntimeLease",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "snapshot",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_293_snapshot",
+      "name": "Snapshot → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "snapshot",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_294_unpackarchive",
+      "name": "UnpackArchive → BackupError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "fail",
+          "step": 3
+        },
+        {
+          "symbol": "unpackArchive",
+          "step": 1
+        },
+        {
+          "symbol": "read",
+          "step": 2
+        },
+        {
+          "symbol": "BackupError",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_324_decryptportable",
+      "name": "DecryptPortable → BackupError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "fail",
+          "step": 3
+        },
+        {
+          "symbol": "decryptPortable",
+          "step": 1
+        },
+        {
+          "symbol": "validateHeader",
+          "step": 2
+        },
+        {
+          "symbol": "BackupError",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_346_encryptportable",
+      "name": "EncryptPortable → BackupError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "openRegular",
+          "step": 2
+        },
+        {
+          "symbol": "fail",
+          "step": 3
+        },
+        {
+          "symbol": "encryptPortable",
+          "step": 1
+        },
+        {
+          "symbol": "BackupError",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_364_recoverabandonedsnap",
+      "name": "RecoverAbandonedSnapshot → BackupError",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "recoverAbandonedSnapshot",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        },
+        {
+          "symbol": "BackupError",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_398_mutation",
+      "name": "Mutation → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "mutation",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_401_recoverabandonedsnap",
+      "name": "RecoverAbandonedSnapshot → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "recoverAbandonedSnapshot",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_404_snapshot",
+      "name": "Snapshot → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "snapshot",
+          "step": 1
+        },
+        {
+          "symbol": "acquire",
+          "step": 2
+        }
+      ]
+    }
+  ]
+}
