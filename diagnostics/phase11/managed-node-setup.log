@@ -1,0 +1,7 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+NODE_CATALOG_REFRESH SUCCESS 
+NODE_RUNTIME_INSTALL SUCCESS 
+NODE_RUNTIME_VERIFY SUCCESS 
+NODE_PACKAGE_MANAGER_INSTALL SUCCESS 
+NODE_PACKAGE_MANAGER_INSTALL SUCCESS 
+Retained owned fixture: /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-L4lbfp

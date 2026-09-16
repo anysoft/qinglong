@@ -1,0 +1,276 @@
+TAP version 13
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=735ec43aa2a09038c649321ed32e109fefc83554 -> 735ec43aa2a09038c649321ed32e109fefc83554
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=735ec43aa2a09038c649321ed32e109fefc83554 -> 735ec43aa2a09038c649321ed32e109fefc83554
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=735ec43aa2a09038c649321ed32e109fefc83554 -> 57f91d98df663f3d18b705d420480458a843dc92
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=57f91d98df663f3d18b705d420480458a843dc92 -> 57f91d98df663f3d18b705d420480458a843dc92
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=57f91d98df663f3d18b705d420480458a843dc92 -> 57a584426034ebb1bd385f064b1285f3f407a61e
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# Committing transaction 908c0bbd-a6a1-4351-a749-5d3431e73d59 failed with error "SQLITE_ERROR: cannot commit - no transaction is active". We are killing its connection as it is now in an undetermined state.
+# Subtest: Real Git fetch/update -> discovery -> typed Git events, dedup and source filters
+not ok 1 - Real Git fetch/update -> discovery -> typed Git events, dedup and source filters
+  ---
+  duration_ms: 15185.155916
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:18:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"id":2,"task_id":1,"worktree_id":null,"result":{"status":"FAILED","taskRunId":2,"attempt":0,"startedAt":"2026-09-16T02:01:40.379Z","finishedAt":"2026-09-16T02:01:40.453Z","duration":74,"exitCode":null,"signal":null,"timedOut":false,"cancelled":false,"primaryError":{"phase":"RESOLVE","code":"EXECUTION_FAILED"},"secondaryErrors":[],"hookResults":[],"cleanupResult":"SUCCESS"},"task_definition_version":null,"trigger_type":"GIT_UPDATE","trigger_id":2,"event_id":4,"submission_key":"event:4","status":"FAILED","submitted_at":"2026-09-16T02:01:39.896Z","started_at":"2026-09-16T02:01:40.379Z","finished_at":"2026-09-16T02:01:40.453Z","attempt_count":0,"cancel_requested":false,"log_identity":"189bef00-fdfd-412a-8a70-8a6d082b9e3d","result_code":"FAILED","exit_code":null,"signal":null,"error_code":"EXECUTION_FAILED","error_summary":"EXECUTION_FAILED","snapshot_metadata":null,"concurrency_policy":"ALLOW","owner_token":null,"createdAt":"2026-09-16T02:01:39.896Z","updatedAt":"2026-09-16T02:01:40.453Z"}
+    + actual - expected
+    
+    + 'FAILED'
+    - 'SUCCESS'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'SUCCESS'
+  actual: 'FAILED'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:25:243)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=f975760f491548863cfbc81cfd958916e53aac37 -> f975760f491548863cfbc81cfd958916e53aac37
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_DIRTY
+# Subtest: Real Git dirty refuses sync and preserves Task definition
+ok 2 - Real Git dirty refuses sync and preserves Task definition
+  ---
+  duration_ms: 6000.71325
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=5260105729380997380e175b68175a017652bddb -> 5260105729380997380e175b68175a017652bddb
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_DIRTY
+# Subtest: Real Git untracked refuses sync and preserves Task definition
+ok 3 - Real Git untracked refuses sync and preserves Task definition
+  ---
+  duration_ms: 5846.38375
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=578e5be6cbe28f406534425536c09e602f4dd59a -> 578e5be6cbe28f406534425536c09e602f4dd59a
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_LOCAL_COMMITS
+# Subtest: Real Git ahead refuses sync and preserves Task definition
+ok 4 - Real Git ahead refuses sync and preserves Task definition
+  ---
+  duration_ms: 6138.908375
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=27c2f14b5a6010d821039e0b877426c1c8d2f825 -> 27c2f14b5a6010d821039e0b877426c1c8d2f825
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_MISSING
+# Subtest: Real Git missing refuses sync and preserves Task definition
+ok 5 - Real Git missing refuses sync and preserves Task definition
+  ---
+  duration_ms: 6035.902541
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=534166bb82bcf54c468109649bdb9c6cae24bece -> 534166bb82bcf54c468109649bdb9c6cae24bece
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_STALE
+# Subtest: Real Git detached refuses sync and preserves Task definition
+ok 6 - Real Git detached refuses sync and preserves Task definition
+  ---
+  duration_ms: 6113.661083
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=2fba4735b52d06a8a247c6794545d8cf8f852b4c -> 2fba4735b52d06a8a247c6794545d8cf8f852b4c
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=2fba4735b52d06a8a247c6794545d8cf8f852b4c -> 7c6bacf9dd3a9930c7d536506f766083f602b18d
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=7c6bacf9dd3a9930c7d536506f766083f602b18d -> 7c6bacf9dd3a9930c7d536506f766083f602b18d
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# Subtest: Discovery failure leaves successful Git update recoverable at same commit
+ok 7 - Discovery failure leaves successful Git update recoverable at same commit
+  ---
+  duration_ms: 9392.4555
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=812ae3d49f12ba2f56149e5343c93a95089a81c0 -> 812ae3d49f12ba2f56149e5343c93a95089a81c0
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: REF_NOT_FOUND
+# Subtest: branch deleted stops before Discovery and Git triggers
+ok 8 - branch deleted stops before Discovery and Git triggers
+  ---
+  duration_ms: 6643.517708
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=ca53e29032cfed7a45799bf0128b427f1c868aac -> ca53e29032cfed7a45799bf0128b427f1c868aac
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_ENSURE: WORKTREE_DIVERGED
+# Subtest: force push stops before Discovery and Git triggers
+ok 9 - force push stops before Discovery and Git triggers
+  ---
+  duration_ms: 6612.083625
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=4a52665eaec6be19424d1d1c6b40d9d7248a7576 -> 4a52665eaec6be19424d1d1c6b40d9d7248a7576
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] REPOSITORY_FETCH: REPOSITORY_NOT_INITIALIZED
+# Subtest: storage missing stops before Discovery and Git triggers
+ok 10 - storage missing stops before Discovery and Git triggers
+  ---
+  duration_ms: 5562.492542
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=2b65f17a308571713f17d8680e64f4d3d899afcd -> 2b65f17a308571713f17d8680e64f4d3d899afcd
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] REPOSITORY_FETCH: SUBSCRIPTION_SYNC_FAILED
+# Subtest: disabled credential stops before Discovery and Git triggers
+ok 11 - disabled credential stops before Discovery and Git triggers
+  ---
+  duration_ms: 7592.139417
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=4f7f62f261b65b36984f9aa7106b3d5f6d2e0c09 -> 4f7f62f261b65b36984f9aa7106b3d5f6d2e0c09
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=4f7f62f261b65b36984f9aa7106b3d5f6d2e0c09 -> 1f54614ae46dc51c7535c9d40468dcf6f8fe877f
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# Subtest: Managed leases block overlapping sync, update and binding; symlink is ignored
+ok 12 - Managed leases block overlapping sync, update and binding; symlink is ignored
+  ---
+  duration_ms: 9184.286959
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=4dabf47291c4f639223a2371876b299eaf9e3dcf -> 4dabf47291c4f639223a2371876b299eaf9e3dcf
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Branch rebinding updates discovered source while retaining old Worktree
+not ok 13 - Branch rebinding updates discovered source while retaining old Worktree
+  ---
+  duration_ms: 4876.032416
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:129:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:58:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Discovery transaction failure preserves resource bindings; retirement preserves history and explicit deletion cascades definitions
+ok 14 - Discovery transaction failure preserves resource bindings; retirement preserves history and explicit deletion cascades definitions
+  ---
+  duration_ms: 1680.923166
+  type: 'test'
+  ...
+# Subtest: Task HTTP definitions stay independent of legacy scheduler; API/MANUAL sources explicit
+ok 15 - Task HTTP definitions stay independent of legacy scheduler; API/MANUAL sources explicit
+  ---
+  duration_ms: 1846.449959
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 13
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 95686.782709

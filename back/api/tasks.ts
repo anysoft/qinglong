@@ -1,11 +1,14 @@
+import discoveryRoutes from './discovery';
+import taskTriggerRoutes from './taskTriggers';
+import { triggerScheduler } from '../services/triggerScheduler';
 import { executionService } from '../services/executionService';
-import { executionSubmission } from '../services/executionSubmission';
 import { Router, Request, Response } from 'express';
 import { Container } from 'typedi';
 import fs from 'fs/promises';
 import path from 'path';
 import TaskService from '../services/task';
-import SchedulerBridgeService from '../services/schedulerBridge';
+import { sequelize } from '../data';
+import { Transaction } from 'sequelize';
 import TaskExecutionBridge from '../services/taskExecutionBridge';
 import WorktreeService from '../services/worktree';
 import TaskReferenceService from '../services/taskReferences';
@@ -41,9 +44,9 @@ function endpoint(action: (request: Request) => Promise<unknown>) {
 }
 export default function taskRoutes(app: Router) {
   executionService.start();
-  void executionSubmission.start().catch(() => {
-    console.error('EXECUTION_SUBMISSION_START_FAILED');
-  });
+  taskTriggerRoutes(app);
+  discoveryRoutes(app);
+  triggerScheduler.start();
   app.get(
     '/tasks/:id/runs',
     endpoint((req) => executionService.list(identifier(req.params.id))),
@@ -62,8 +65,7 @@ export default function taskRoutes(app: Router) {
     '/task-runs/:id/cancel',
     endpoint((req) => executionService.cancel(identifier(req.params.id))),
   );
-  const tasks = () => Container.get(TaskService),
-    scheduler = () => Container.get(SchedulerBridgeService);
+  const tasks = () => Container.get(TaskService);
   app.get(
     '/tasks',
     endpoint(async (req) => {
@@ -86,8 +88,9 @@ export default function taskRoutes(app: Router) {
   app.post(
     '/tasks',
     endpoint((req) =>
-      scheduler().mutateTaskDefinitions((transaction) =>
-        tasks().save(req.body, undefined, transaction),
+      sequelize.transaction(
+        { type: Transaction.TYPES.IMMEDIATE },
+        (transaction) => tasks().save(req.body, undefined, transaction),
       ),
     ),
   );
@@ -98,42 +101,51 @@ export default function taskRoutes(app: Router) {
   app.put(
     '/tasks/:id',
     endpoint((req) =>
-      scheduler().mutateTaskDefinitions((transaction) =>
-        tasks().save(req.body, identifier(req.params.id), transaction),
+      sequelize.transaction(
+        { type: Transaction.TYPES.IMMEDIATE },
+        (transaction) =>
+          tasks().save(req.body, identifier(req.params.id), transaction),
       ),
     ),
   );
   app.delete(
     '/tasks/:id',
     endpoint((req) =>
-      scheduler().mutateTaskDefinitions(async (transaction) => {
-        await tasks().remove(
-          identifier(req.params.id),
-          req.body.expected_version,
-          transaction,
-        );
-        return null;
-      }),
+      sequelize.transaction(
+        { type: Transaction.TYPES.IMMEDIATE },
+        async (transaction) => {
+          await tasks().remove(
+            identifier(req.params.id),
+            req.body.expected_version,
+            transaction,
+          );
+          return null;
+        },
+      ),
     ),
   );
   app.post(
     '/tasks/:id/clone',
     endpoint((req) =>
-      scheduler().mutateTaskDefinitions((transaction) =>
-        tasks().clone(identifier(req.params.id), req.body.name, transaction),
+      sequelize.transaction(
+        { type: Transaction.TYPES.IMMEDIATE },
+        (transaction) =>
+          tasks().clone(identifier(req.params.id), req.body.name, transaction),
       ),
     ),
   );
   app.put(
     '/tasks/:id/enabled',
     endpoint((req) =>
-      scheduler().mutateTaskDefinitions((transaction) =>
-        tasks().setEnabled(
-          identifier(req.params.id),
-          req.body.enabled,
-          req.body.expected_version,
-          transaction,
-        ),
+      sequelize.transaction(
+        { type: Transaction.TYPES.IMMEDIATE },
+        (transaction) =>
+          tasks().setEnabled(
+            identifier(req.params.id),
+            req.body.enabled,
+            req.body.expected_version,
+            transaction,
+          ),
       ),
     ),
   );
@@ -151,7 +163,18 @@ export default function taskRoutes(app: Router) {
     app.post(
       `/tasks/:id/${operation}`,
       endpoint(async (req) => {
-        return new TaskExecutionBridge()[operation](identifier(req.params.id));
+        if (operation === 'run') {
+          if (
+            Object.keys(req.body ?? {}).some((key) => key !== 'source') ||
+            (req.body?.source !== undefined && req.body.source !== 'MANUAL')
+          )
+            throw new TaskDefinitionError('TASK_RUN_SOURCE_INVALID');
+          return executionService.submit(
+            identifier(req.params.id),
+            req.body?.source === 'MANUAL' ? 'MANUAL' : 'API',
+          );
+        }
+        return new TaskExecutionBridge().stop(identifier(req.params.id));
       }),
     );
   for (const operation of ['log', 'logs'] as const)

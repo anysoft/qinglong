@@ -37,6 +37,6 @@ test('fresh seed is local, idempotent and creates no usable password or legacy s
   await initialize();await initialize();
   assert.equal(rows.size,3);assert.equal(apps.length,1);
   assert.deepEqual(rows.get('authConfig').info,{initialized:false,username:'',password:'',token:'',tokens:{}});
-  assert.equal(calls.filter(x=>x==='scheduler recovery').length,2);
+  assert.equal(calls.filter(x=>x==='scheduler recovery').length,0);
   assert.equal(calls.filter(x=>x==='cancel interrupted dependency jobs').length,2);
 });

@@ -1,0 +1,9 @@
+{
+  "error": "Target 'matchesGlob' not found",
+  "target": {
+    "name": "matchesGlob"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

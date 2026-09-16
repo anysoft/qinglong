@@ -81,6 +81,7 @@ test('HTTP authentication protects init, scopes, expired sessions and config sec
       writeFileWithLock: (p, content) => fs.promises.writeFile(p, content),
     },
   };
+  mocks['../api/triggerWebhook'] = () => {}; // Public trigger security has its own Phase 11 HTTP gate.
   mocks.typedi = { Container: { get: () => user } };
   mocks['../api'] = () => {
     const router = express.Router();

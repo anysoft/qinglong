@@ -20,7 +20,6 @@ export interface Task {
   discovery_definition: { name: string; schedule: string } | null;
   env_profile_id: number | null;
   arguments: string[];
-  schedule: string | null;
   version: number;
 }
 export interface TaskSource {
@@ -81,7 +80,6 @@ export const TaskModel = sequelize.define<Model<Task, Partial<Task>> & Task>(
     discovery_definition: { type: DataTypes.JSON, allowNull: true },
     env_profile_id: fk('EnvironmentProfiles', true),
     arguments: { type: DataTypes.JSON, allowNull: false, defaultValue: [] },
-    schedule: text(true),
     version,
   },
   { indexes: [{ unique: true, fields: ['subscription_id', 'discovery_key'] }] },

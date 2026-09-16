@@ -1,3 +1,5 @@
+import { discoveryModels } from '../data/discoveryPolicy';
+import { triggerModels } from '../data/taskTrigger';
 import { nodeEnvironmentModels } from '../data/nodeEnvironment';
 import { taskModels } from '../data/task';
 import { taskRunModels } from '../data/taskRun';
@@ -53,6 +55,8 @@ export default async () => {
       ...nodeEnvironmentModels,
       ...taskModels,
       ...taskRunModels,
+      ...triggerModels,
+      ...discoveryModels,
     ]);
     await new ExecutionEnvironmentTransport().cleanupStale().catch(() => {
       Logger.warn('[environment] stale snapshot cleanup deferred');

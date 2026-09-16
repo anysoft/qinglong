@@ -12,7 +12,7 @@ test('frozen v3 to v4 is transactional, preserves runtime/history and equals fre
  b.db.query=function(sql,...args){if(sql.includes('CREATE TRIGGER python_environment_build_ready_immutable'))throw Error('INJECTED_LATE_V4');return query.call(this,sql,...args);};
  await assert.rejects(b.initializeOperationalSchema(b.db,b.models),/INJECTED_LATE_V4/);b.db.query=query;assert.deepEqual(await objects(b),before);
  await b.initializeOperationalSchema(b.db,b.models);assert.equal(a.schemaSignature(await objects(a)),b.schemaSignature(await objects(b)));
- assert.equal((await b.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0].platform_schema_version,7);
+ assert.equal((await b.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0].platform_schema_version,8);
  assert.equal((await b.RuntimeOperationModel.findOne()).get('metadata').preserved,true);assert.equal(await b.RuntimeInstallationModel.count(),1);
  await b.initializeOperationalSchema(b.db,b.models);
 });

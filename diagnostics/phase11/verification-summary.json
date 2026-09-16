@@ -1,0 +1,257 @@
+{
+  "status": "PARTIAL",
+  "local_functional_gates": "PASS",
+  "linux": {
+    "host": "Darwin",
+    "tools": {
+      "docker": null,
+      "podman": null,
+      "limactl": null,
+      "colima": null,
+      "gh": null
+    },
+    "status": "PARTIAL",
+    "reason": "No configured Linux container/VM/CI runner; inherited physical cleanup remains BLOCKED_BY_LINUX_GATE."
+  },
+  "platform": {
+    "tests": 385,
+    "pass": 382,
+    "fail": 0,
+    "skipped": 3
+  },
+  "managed_execution": {
+    "pass": 2,
+    "fail": 0
+  },
+  "prior_managed_environments": {
+    "pass": 3,
+    "fail": 0
+  },
+  "backend_build": "PASS",
+  "frontend_build": "PASS",
+  "typecheck": {
+    "status": "PARTIAL",
+    "original": 34,
+    "remaining": 34,
+    "new": [],
+    "raw_exit_code": 2,
+    "regression_gate": "PASS"
+  },
+  "browser": {
+    "status": "PASS",
+    "steps": [
+      "empty-root-bootstrap",
+      "browser-fresh-initialize-login",
+      "browser-credential-create",
+      "browser-repository-create",
+      "browser-initialize-fetch",
+      "browser-subscription-create-branch",
+      "browser-prepare-sync-discovery",
+      "browser-worktree-view",
+      "browser-global-create",
+      "browser-profile-create-default",
+      "task-domain-discovery-three-languages",
+      "real-python-venv-and-node-dependency-environments",
+      "browser-discovered-task-runtime-settings-validation",
+      "browser-manual-worktree-entrypoint-create",
+      "browser-arguments-concurrency-and-negative-resource-gates",
+      "browser-task-env-config-hooks",
+      "browser-runtime-default-inherit-override-reset",
+      "browser-clone-disable-enable",
+      "browser-environment-reference-protection",
+      "browser-managed-python-node-shell-and-manual-clone-runs",
+      "browser-run-list-cancel-and-result",
+      "browser-multiple-cron-and-real-scheduled-run",
+      "browser-webhook-show-once-real-http-and-dedup",
+      "real-ssh-git-sync-discovery-event-runner",
+      "browser-discovery-preview-read-only-and-apply",
+      "restart-validate-all-task-resources",
+      "restart-webhook-trigger-definition-and-execution",
+      "restart-cron-and-real-git-trigger-execution",
+      "fresh-v8-restart-fk-secret-audit"
+    ],
+    "linux": false,
+    "response_payloads_inspected": 1034,
+    "websocket_frames_inspected": 36,
+    "runtime_execution_activation": "RUNNER_V2"
+  },
+  "cleanup": {
+    "status": "PASS",
+    "fixtures": [
+      {
+        "kind": "managed-node",
+        "root": "/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-L4lbfp",
+        "operations": [
+          {
+            "id": 87,
+            "provider_id": 1,
+            "runtime_id": 1,
+            "operation_type": "NODE_PACKAGE_MANAGER_REMOVE",
+            "status": "SUCCESS",
+            "stage": "COMPLETE",
+            "owner_token": "394bbda1-7051-42f9-a73e-3a5bf1565489",
+            "owner_pid": 94335,
+            "cancel_requested": false,
+            "started_at": "2026-09-16T02:27:23.267Z",
+            "finished_at": "2026-09-16T02:27:23.368Z",
+            "exit_code": 0,
+            "log_identity": "runtime-operation-87",
+            "error_code": null,
+            "error_summary": null,
+            "metadata": {
+              "toolchain_id": 2,
+              "timeout_seconds": 3600,
+              "jobs": 4
+            },
+            "createdAt": "2026-09-16T02:27:23.214Z",
+            "updatedAt": "2026-09-16T02:27:23.368Z"
+          },
+          {
+            "id": 88,
+            "provider_id": 1,
+            "runtime_id": 1,
+            "operation_type": "NODE_PACKAGE_MANAGER_REMOVE",
+            "status": "SUCCESS",
+            "stage": "COMPLETE",
+            "owner_token": "d2dca469-9f71-4d8c-89f8-f2e054771b35",
+            "owner_pid": 94335,
+            "cancel_requested": false,
+            "started_at": "2026-09-16T02:27:23.525Z",
+            "finished_at": "2026-09-16T02:27:23.540Z",
+            "exit_code": 0,
+            "log_identity": "runtime-operation-88",
+            "error_code": null,
+            "error_summary": null,
+            "metadata": {
+              "toolchain_id": 1,
+              "timeout_seconds": 3600,
+              "jobs": 4
+            },
+            "createdAt": "2026-09-16T02:27:23.473Z",
+            "updatedAt": "2026-09-16T02:27:23.540Z"
+          },
+          {
+            "id": 89,
+            "provider_id": 1,
+            "runtime_id": 1,
+            "operation_type": "NODE_RUNTIME_VERIFY",
+            "status": "SUCCESS",
+            "stage": "COMPLETE",
+            "owner_token": "3912b9bf-8165-4a14-a481-f90228f01f45",
+            "owner_pid": 94335,
+            "cancel_requested": false,
+            "started_at": "2026-09-16T02:27:23.670Z",
+            "finished_at": "2026-09-16T02:27:24.314Z",
+            "exit_code": 0,
+            "log_identity": "runtime-operation-89",
+            "error_code": null,
+            "error_summary": null,
+            "metadata": {
+              "timeout_seconds": 3600,
+              "jobs": 4
+            },
+            "createdAt": "2026-09-16T02:27:23.599Z",
+            "updatedAt": "2026-09-16T02:27:24.314Z"
+          },
+          {
+            "id": 90,
+            "provider_id": 1,
+            "runtime_id": 1,
+            "operation_type": "NODE_RUNTIME_REMOVE",
+            "status": "SUCCESS",
+            "stage": "COMPLETE",
+            "owner_token": "32d9294c-426f-47b2-9d97-efedae3826d2",
+            "owner_pid": 94335,
+            "cancel_requested": false,
+            "started_at": "2026-09-16T02:27:24.425Z",
+            "finished_at": "2026-09-16T02:27:24.833Z",
+            "exit_code": 0,
+            "log_identity": "runtime-operation-90",
+            "error_code": null,
+            "error_summary": null,
+            "metadata": {
+              "timeout_seconds": 3600,
+              "jobs": 4
+            },
+            "createdAt": "2026-09-16T02:27:24.376Z",
+            "updatedAt": "2026-09-16T02:27:24.833Z"
+          }
+        ],
+        "removed": true
+      },
+      {
+        "kind": "managed-runtime",
+        "root": "/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-MGYjnt",
+        "operations": [
+          {
+            "id": 32,
+            "provider_id": 1,
+            "runtime_id": 1,
+            "operation_type": "RUNTIME_VERIFY",
+            "status": "SUCCESS",
+            "stage": "COMPLETE",
+            "owner_token": "76c52581-3590-4d24-aa7a-e94e93a746fa",
+            "owner_pid": 94335,
+            "cancel_requested": false,
+            "started_at": "2026-09-16T02:27:25.396Z",
+            "finished_at": "2026-09-16T02:27:25.801Z",
+            "exit_code": 0,
+            "log_identity": "runtime-operation-32",
+            "error_code": null,
+            "error_summary": null,
+            "metadata": {
+              "jobs": 4,
+              "timeout_seconds": 3600,
+              "requested_version": "3.13.15",
+              "target_revision": "c293de3650a2d08ea36c5f6f0d55c5a3841b0c72"
+            },
+            "createdAt": "2026-09-16T02:27:25.393Z",
+            "updatedAt": "2026-09-16T02:27:25.801Z"
+          },
+          {
+            "id": 33,
+            "provider_id": 1,
+            "runtime_id": 1,
+            "operation_type": "RUNTIME_REMOVE",
+            "status": "SUCCESS",
+            "stage": "COMPLETE",
+            "owner_token": "990108e1-ebf8-42ef-a3b3-ec5fdd2cfd81",
+            "owner_pid": 94335,
+            "cancel_requested": false,
+            "started_at": "2026-09-16T02:27:25.859Z",
+            "finished_at": "2026-09-16T02:27:26.476Z",
+            "exit_code": 0,
+            "log_identity": "runtime-operation-33",
+            "error_code": null,
+            "error_summary": null,
+            "metadata": {
+              "jobs": 4,
+              "timeout_seconds": 3600,
+              "requested_version": "3.13.15",
+              "target_revision": "c293de3650a2d08ea36c5f6f0d55c5a3841b0c72"
+            },
+            "createdAt": "2026-09-16T02:27:25.857Z",
+            "updatedAt": "2026-09-16T02:27:26.476Z"
+          }
+        ],
+        "removed": true
+      }
+    ]
+  },
+  "static_audit": "PASS",
+  "graph": {
+    "HEAD": {
+      "changed_count": 156,
+      "affected_count": 436,
+      "changed_files": 332,
+      "risk_level": "critical"
+    },
+    "develop": {
+      "changed_count": 528,
+      "affected_count": 439,
+      "changed_files": 1511,
+      "risk_level": "critical"
+    }
+  },
+  "scope": "Phase 11 only; no commit/push/deployment; stop before Phase 12"
+}

@@ -14,7 +14,7 @@ export const taskRunStatuses = [
   'RECOVERY_REQUIRED',
 ] as const;
 export type TaskRunStatus = (typeof taskRunStatuses)[number];
-export type TaskRunTrigger = 'MANUAL' | 'SCHEDULE' | 'API' | 'INTERNAL';
+export type TaskRunTrigger = 'MANUAL' | 'SCHEDULE' | 'API' | 'INTERNAL' | 'CRON' | 'WEBHOOK' | 'GIT_UPDATE';
 export interface TaskRun {
   id: number;
   task_id: number | null;
@@ -22,6 +22,9 @@ export interface TaskRun {
   result: Record<string, unknown> | null;
   task_definition_version: number | null;
   trigger_type: TaskRunTrigger;
+  trigger_id: number | null;
+  event_id: number | null;
+  submission_key: string | null;
   status: TaskRunStatus;
   submitted_at: Date;
   started_at: Date | null;
@@ -79,6 +82,9 @@ export const TaskRunModel = sequelize.define<
     result: { type: DataTypes.JSON, allowNull: true },
     task_definition_version: integer(),
     trigger_type: text(false),
+    trigger_id: { ...integer(), references: { model: 'TaskTriggers', key: 'id' }, onDelete: 'SET NULL' },
+    event_id: { ...integer(), references: { model: 'TriggerEvents', key: 'id' }, onDelete: 'SET NULL' },
+    submission_key: text(),
     status: { ...text(false), defaultValue: 'QUEUED' },
     submitted_at: date(false),
     started_at: date(),
@@ -98,6 +104,7 @@ export const TaskRunModel = sequelize.define<
   },
   {
     indexes: [
+      { unique: true, fields: ['submission_key'] },
       { fields: ['status', 'id'] },
       { fields: ['task_id', 'status', 'id'] },
     ],

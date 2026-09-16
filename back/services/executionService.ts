@@ -1,3 +1,5 @@
+import { TriggerEventModel, TaskTriggerModel } from '../data/taskTrigger';
+import TaskResourceResolver from './taskResourceResolver';
 import { randomUUID } from 'crypto';
 import { Op, Transaction } from 'sequelize';
 import { Container } from 'typedi';
@@ -40,16 +42,59 @@ export default class ExecutionService {
     readonly paths = new ExecutionPaths(),
     readonly resolver = new ExecutionResolver(undefined, paths),
   ) {}
-  async submit(taskId: number, trigger: TaskRunTrigger = 'MANUAL') {
+  async submit(
+    taskId: number,
+    trigger: TaskRunTrigger = 'MANUAL',
+    eventId?: number,
+  ) {
     if (
       !Number.isSafeInteger(taskId) ||
       taskId < 1 ||
-      !['MANUAL', 'SCHEDULE', 'API', 'INTERNAL'].includes(trigger)
+      ![
+        'MANUAL',
+        'SCHEDULE',
+        'API',
+        'INTERNAL',
+        'CRON',
+        'WEBHOOK',
+        'GIT_UPDATE',
+      ].includes(trigger) ||
+      ['CRON', 'WEBHOOK', 'GIT_UPDATE'].includes(trigger) !==
+        (eventId !== undefined)
     )
       throw new ExecutionError('EXECUTION_SUBMISSION_INVALID', 400);
     const run = await sequelize.transaction(
       { type: Transaction.TYPES.IMMEDIATE },
       async (transaction) => {
+        const event =
+          eventId === undefined
+            ? null
+            : await TriggerEventModel.findByPk(eventId, { transaction });
+        const submissionKey = event ? `event:${event.id}` : null;
+        if (
+          eventId !== undefined &&
+          (!event || event.task_id !== taskId || event.trigger_type !== trigger)
+        )
+          throw new ExecutionError('TRIGGER_EVENT_INVALID', 400);
+        if (submissionKey) {
+          const previous = await TaskRunModel.findOne({
+            where: { submission_key: submissionKey },
+            transaction,
+          });
+          if (previous) {
+            await event!.update(
+              {
+                task_run_id: previous.id,
+                status: previous.status === 'SKIPPED' ? 'SKIPPED' : 'SUBMITTED',
+              },
+              { transaction },
+            );
+            return previous;
+          }
+        }
+        const definition = event?.trigger_id
+          ? await TaskTriggerModel.findByPk(event.trigger_id, { transaction })
+          : null;
         const task = await TaskModel.findByPk(taskId, { transaction });
         const settings = await TaskExecutionSettingsModel.findByPk(taskId, {
           transaction,
@@ -59,22 +104,43 @@ export default class ExecutionService {
           where: { task_id: taskId, status: pendingStates },
           transaction,
         });
-        const skipped =
-          (trigger === 'SCHEDULE' && !task.enabled) ||
-          (settings.concurrency === 'FORBID' && existing > 0);
+        let skipCode: string | null = null;
+        if ((event || trigger === 'SCHEDULE') && !task.enabled)
+          skipCode = 'TASK_DISABLED';
+        else if (event && (!definition || !definition.enabled))
+          skipCode = 'TRIGGER_DISABLED';
+        else if (event && !['RECEIVED', 'PROCESSING'].includes(event.status))
+          skipCode = 'TRIGGER_EVENT_TERMINAL';
+        else if (event) {
+          const [resources] = await new TaskResourceResolver().resolve(
+            [taskId],
+            transaction,
+            true,
+          );
+          if (resources?.readiness.status !== 'READY')
+            skipCode = 'TASK_NOT_READY';
+          else if (
+            event.trigger_type === 'GIT_UPDATE' &&
+            (event.metadata.worktree_id !== resources.source?.worktree_id ||
+              event.metadata.repository_id !== resources.source?.repository_id)
+          )
+            skipCode = 'GIT_SOURCE_BINDING_CHANGED';
+        }
+        if (!skipCode && settings.concurrency === 'FORBID' && existing > 0)
+          skipCode = 'TASK_CONCURRENCY_FORBID';
+        const skipped = !!skipCode;
         const row = await TaskRunModel.create(
           {
             task_id: taskId,
             trigger_type: trigger,
+            trigger_id: event?.trigger_id ?? null,
+            event_id: event?.id ?? null,
+            submission_key: submissionKey,
             submitted_at: new Date(),
             status: skipped ? 'SKIPPED' : 'QUEUED',
             finished_at: skipped ? new Date() : null,
             result_code: skipped ? 'SKIPPED' : null,
-            error_code: skipped
-              ? !task.enabled && trigger === 'SCHEDULE'
-                ? 'TASK_DISABLED'
-                : 'TASK_CONCURRENCY_FORBID'
-              : null,
+            error_code: skipCode,
             concurrency_policy: settings.concurrency,
             log_identity: randomUUID(),
           },
@@ -89,6 +155,15 @@ export default class ExecutionService {
                 row.error_code!,
                 'SUBMIT',
               ) as unknown as Record<string, unknown>,
+            },
+            { transaction },
+          );
+        if (event)
+          await event.update(
+            {
+              task_run_id: row.id,
+              status: skipped ? 'SKIPPED' : 'SUBMITTED',
+              error_code: skipCode,
             },
             { transaction },
           );

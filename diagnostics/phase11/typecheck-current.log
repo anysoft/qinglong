@@ -1,0 +1,26 @@
+[96mback/services/discovery.ts[0m:[93m88[0m:[93m142[0m - [91merror[0m[90m TS2322: [0mType '"updatedAt"' is not assignable to type 'keyof Task'.
+
+[7m88[0m       if(updates.length)await TaskModel.bulkCreate(updates,{transaction,updateOnDuplicate:['name','enabled','discovery_definition','version','updatedAt']});
+[7m  [0m [91m                                                                                                                                             ~~~~~~~~~~~[0m
+
+[96mback/services/discovery.ts[0m:[93m93[0m:[93m173[0m - [91merror[0m[90m TS2322: [0mType '"updatedAt"' is not assignable to type 'keyof CronTrigger'.
+
+[7m93[0m       if(configs.length||triggerUpdates.length)await CronTriggerModel.bulkCreate([...configs,...triggerUpdates],{transaction,updateOnDuplicate:['expression','next_fire_at','updatedAt']});
+[7m  [0m [91m                                                                                                                                                                            ~~~~~~~~~~~[0m
+
+[96mback/services/task.ts[0m:[93m186[0m:[93m7[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'source'. Either declare one or provide an initializer.
+
+[7m186[0m       source,
+[7m   [0m [91m      ~~~~~~[0m
+
+[96mback/services/task.ts[0m:[93m187[0m:[93m7[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'runtime'. Either declare one or provide an initializer.
+
+[7m187[0m       runtime,
+[7m   [0m [91m      ~~~~~~~[0m
+
+
+Found 4 errors in 2 files.
+
+Errors  Files
+     2  back/services/discovery.ts[90m:88[0m
+     2  back/services/task.ts[90m:186[0m

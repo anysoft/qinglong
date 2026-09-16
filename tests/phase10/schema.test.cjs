@@ -7,13 +7,13 @@ async function seed(h){
  await h.db.query('INSERT INTO PlatformMetadata VALUES (:platform_schema_version,:model_signature,:schema_signature)',{replacements:v6.metadata});
 }
 const objects=h=>h.db.query("SELECT name,sql FROM sqlite_master WHERE name NOT LIKE 'sqlite_%' ORDER BY type,name",{type:QueryTypes.SELECT});
-test('actual frozen v6 upgrades to identical fresh v7 and restarts without schema mutation',async t=>{
+test('actual frozen v6 upgrades to identical fresh latest schema and restarts without schema mutation',async t=>{
  const fresh=await fixture(t),old=await fixture(t,{initialize:false});await seed(old);
  assert.equal(old.schemaSignature(await objects(old)),v6.metadata.schema_signature);
  await old.initializeOperationalSchema(old.db,old.models);
  assert.deepEqual(await objects(old),await objects(fresh));
  const metadata=await old.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});
- assert.equal(metadata[0].platform_schema_version,7);
+ assert.equal(metadata[0].platform_schema_version,8);
  assert.deepEqual(metadata,await fresh.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}));
  await old.initializeOperationalSchema(old.db,old.models);
  assert.deepEqual(await objects(old),await objects(fresh));

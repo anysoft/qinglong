@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: Installed parser accepts five/six fields and aliases, validates zones, deterministic DST
+ok 1 - Installed parser accepts five/six fields and aliases, validates zones, deterministic DST
+  ---
+  duration_ms: 72.307125
+  type: 'test'
+  ...
+# Subtest: Relative glob rejects escaping and matches nested paths without regex injection
+ok 2 - Relative glob rejects escaping and matches nested paths without regex injection
+  ---
+  duration_ms: 0.366333
+  type: 'test'
+  ...
+# Subtest: Actual SIGKILL before-link recovers one TaskRun
+ok 3 - Actual SIGKILL before-link recovers one TaskRun
+  ---
+  duration_ms: 2693.407041
+  type: 'test'
+  ...
+# Subtest: Actual SIGKILL after-commit recovers one TaskRun
+ok 4 - Actual SIGKILL after-commit recovers one TaskRun
+  ---
+  duration_ms: 2022.870792
+  type: 'test'
+  ...
+# Subtest: Real HTTP webhook authentication, limits, JSON rejection and idempotency
+ok 5 - Real HTTP webhook authentication, limits, JSON rejection and idempotency
+  ---
+  duration_ms: 1509.181
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5225.503417

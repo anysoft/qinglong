@@ -23,7 +23,7 @@ import {
   rmPath,
 } from '../config/util';
 import fs from 'fs/promises';
-import { FindOptions, Op } from 'sequelize';
+import { FindOptions, Op, Transaction } from 'sequelize';
 import path, { join } from 'path';
 import ScheduleService, { TaskCallbacks } from './schedule';
 import { SimpleIntervalSchedule } from 'toad-scheduler';
@@ -273,7 +273,7 @@ export default class SubscriptionService {
       await this.handleTask(doc.get({ plain: true }), false);
     }
     try {
-      if (owned) await this.crontabService.mutateTaskDefinitions(async transaction => {
+      if (owned) await sequelize.transaction({ type: Transaction.TYPES.IMMEDIATE }, async transaction => {
         await TaskModel.destroy({ where: { subscription_id: ids, origin: 'DISCOVERED' }, transaction });
         await SubscriptionModel.destroy({ where: { id: ids }, transaction });
         return null;

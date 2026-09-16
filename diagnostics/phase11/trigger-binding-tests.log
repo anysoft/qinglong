@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: Trigger schema fresh, typed configurations, webhook hash and rotation
+ok 1 - Trigger schema fresh, typed configurations, webhook hash and rotation
+  ---
+  duration_ms: 1026.951459
+  type: 'test'
+  ...
+# Subtest: Event durable dedup, atomic submit/link, disabled skip, real execution
+ok 2 - Event durable dedup, atomic submit/link, disabled skip, real execution
+  ---
+  duration_ms: 1037.990167
+  type: 'test'
+  ...
+# Subtest: Clock scheduler misfire SKIP and FIRE_ONCE, restart identity
+ok 3 - Clock scheduler misfire SKIP and FIRE_ONCE, restart identity
+  ---
+  duration_ms: 596.226875
+  type: 'test'
+  ...
+# Subtest: Clone regenerates webhook credentials; deleted trigger and Task preserve event history
+ok 4 - Clone regenerates webhook credentials; deleted trigger and Task preserve event history
+  ---
+  duration_ms: 598.931625
+  type: 'test'
+  ...
+# Subtest: Git event cannot execute a Task rebound to another repository before submission
+ok 5 - Git event cannot execute a Task rebound to another repository before submission
+  ---
+  duration_ms: 577.269833
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4148.446875

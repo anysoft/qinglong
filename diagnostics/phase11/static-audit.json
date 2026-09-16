@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "trigger_boundary_violations": [],
+  "task_schedule_removed": true,
+  "normal_task_projection_removed": true,
+  "discovery_staging_adapter_removed": true,
+  "retained_reference_classification": {
+    "B01": "existing script editor / staging / recovery sources",
+    "B02_B03": "historical Shell and protected launcher; physical cleanup BLOCKED_BY_LINUX_GATE",
+    "B04": "Subscription and system maintenance scheduling; historical Task RPC / recovery adapters outside normal path",
+    "B09_B10": "bootstrap / platform dependencies, Linux packages",
+    "B14_B15": "historical logs, statistics and projection APIs"
+  },
+  "retained_reference_inventory": [
+    "back/validation/schedule.ts:15:  // 检测裸 /N 模式：cron-parser 会接受，但 node-schedule 会返回 null",
+    "back/validation/schedule.ts:20:  // 检测 ? 字符：Quartz cron 语法，node-schedule 在大多数字段上返回 null",
+    "back/config/index.ts:109:const crontabFile = path.join(configPath, 'crontab.list');",
+    "back/config/index.ts:151:    'crontab.list',",
+    "back/schedule/delCron.ts:18:      // 进而导致 HTTP 端的 remove() 跳过 setCrontab()，造成 crontab.list 残留。",
+    "back/app.ts:332:        const { executionSubmission } = await import(",
+    "back/app.ts:333:          './services/executionSubmission'",
+    "back/app.ts:340:        await executionSubmission.stop();",
+    "back/schedule/addCron.ts:3:import nodeSchedule from 'node-schedule';",
+    "back/schedule/addCron.ts:10: * 预校验 cron 表达式，检测 node-schedule 会拒绝但 cron-parser 会接受的 pattern。",
+    "back/schedule/addCron.ts:11: * node-schedule 对 bare /N（字段以 / 开头，如前无星号/数字前缀的 /6）返回 null，",
+    "back/schedule/addCron.ts:16:  // node-schedule 会对这种字段返回 null",
+    "back/schedule/addCron.ts:20:  // 检测 ? 字符：Quartz cron 语法，node-schedule 在大多数位置返回 null",
+    "back/schedule/addCron.ts:21:  // cron-parser 接受但 node-schedule 拒绝，提前拦截",
+    "back/schedule/data.ts:1:import nodeSchedule from 'node-schedule';",
+    "back/shared/executionLauncher.ts:11:    path.join(config.rootPath, 'static/build/taskRunSubmit.js'),",
+    "back/services/cron.ts:239:          // （DB 和 crontab.list 有记录但调度器永远不会执行）",
+    "back/services/cron.ts:1271:      // 先同步 crontab.list 与系统 crontab，确保其始终反映数据库真实状态。",
+    "back/services/cron.ts:1273:      // 这避免了因调度器短暂不可用导致 crontab.list 与数据库脱节。",
+    "back/services/schedule.ts:3:import nodeSchedule from 'node-schedule';",
+    "back/services/executionSubmission.ts:120:export const executionSubmission = new ExecutionSubmissionServer("
+  ]
+}

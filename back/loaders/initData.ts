@@ -1,6 +1,5 @@
 import { Container } from 'typedi';
 import { SchedulerProjection, SchedulerProjectionModel, CrontabStatus } from '../data/cron';
-import CurrentTaskBridgeService from '../services/cron';
 import { DependenceModel, DependenceStatus } from '../data/dependence';
 import config from '../config';
 import { TaskViewModel, CronViewType } from '../data/cronView';
@@ -12,13 +11,11 @@ import { createRandomString, fileExist } from '../config/util';
 import OpenService from '../services/open';
 import { shareStore } from '../shared/store';
 import Logger from './logger';
-import cronClient from '../schedule/client';
 import { AppModel } from '../data/open';
 import { InstanceStatus, RunningInstanceModel } from '../data/runningInstance';
 import { setLang, systemLang } from '../shared/i18n';
 
 export default async () => {
-  const cronService = Container.get(CurrentTaskBridgeService);
   const userService = Container.get(UserService);
   const openService = Container.get(OpenService);
 
@@ -85,7 +82,7 @@ export default async () => {
     { where: { status: InstanceStatus.running } },
   );
 
-  // 初始化语言（必须在 autosave_crontab 之前）
+  // Initialize the platform language independently of Task scheduling.
   const lang = systemConfig.info?.lang || systemLang();
   setLang(lang);
 
@@ -98,8 +95,7 @@ export default async () => {
   } catch { }
 
   // 初始化保存一次ck和定时任务数据
-  cronClient.readiness.configure(() => cronService.autosave_crontab(true));
-  await cronClient.readiness.recover();
+  // Task triggers recover through the durable trigger scheduler after HTTP startup.
 
 
   const authInfo = await userService.getAuthInfo();

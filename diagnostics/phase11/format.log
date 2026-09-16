@@ -1,0 +1,17 @@
+back/data/taskTrigger.ts 112ms
+back/data/discoveryPolicy.ts 5ms
+back/shared/triggerDefinition.ts 19ms
+back/shared/triggerTimezone.ts 4ms
+back/schema/triggerSchema.ts 14ms
+back/services/taskTrigger.ts 18ms
+back/services/triggerEvents.ts 6ms
+back/services/triggerScheduler.ts 7ms
+back/services/discoveryScanner.ts 23ms
+back/services/discovery.ts 62ms
+back/services/gitUpdateTrigger.ts 6ms
+back/services/cloneTaskTriggers.ts 3ms
+back/api/taskTriggers.ts 11ms
+back/api/triggerWebhook.ts 4ms
+back/api/discovery.ts 3ms
+src/pages/tasks/triggers.tsx 24ms
+src/pages/subscription/discovery.tsx 6ms

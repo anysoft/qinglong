@@ -1,3 +1,4 @@
+import platformV7 from './platformV7';
 import { Model, ModelStatic, Sequelize, Transaction } from 'sequelize';
 
 /** Both migration and fresh installation use the same ORM tables and SQL guards. */
@@ -7,9 +8,20 @@ export async function createExecutionSchema(
   models: ModelStatic<Model>[],
 ) {
   for (const name of ['TaskRuns', 'TaskRunAttempts']) {
-    const model = models.find((item) => item.tableName === name);
-    if (!model) throw new Error('EXECUTION_SCHEMA_MODEL_MISSING:' + name);
-    await model.sync(Object.assign({ force: false }, { transaction }));
+    for (const object of [...platformV7.objects]
+      .sort(
+        (a, b) =>
+          Number(!a.sql.startsWith('CREATE TABLE')) -
+          Number(!b.sql.startsWith('CREATE TABLE')),
+      )
+      .filter(
+        (o) =>
+          o.name === name ||
+          (o.sql.startsWith('CREATE') &&
+            o.sql.includes('INDEX') &&
+            o.sql.includes('ON `' + name + '`')),
+      ))
+      await database.query(object.sql, { transaction });
   }
   const statuses =
     "'QUEUED','RESOLVING','RUNNING','SUCCESS','FAILED','TIMEOUT','CANCELLED','INTERRUPTED','SKIPPED','RECOVERY_REQUIRED'";

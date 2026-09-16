@@ -1,0 +1,21 @@
+const test=require('node:test'),assert=require('node:assert/strict'),express=require('express');
+const {fixture,task}=require('../phase10/helpers.cjs');
+test('Real HTTP webhook authentication, limits, JSON rejection and idempotency',async t=>{
+ const h=await fixture(t),{definition}=await task(h),service=new(h.load('back/services/taskTrigger.ts').default)();
+ const hook=await service.save(definition.id,{type:'WEBHOOK',config:{}});
+ h.mocks['./executionService']={executionService:h.execution};
+ const app=express();h.load('back/api/triggerWebhook.ts').default(app);
+ const server=app.listen(0,'127.0.0.1');await new Promise(r=>server.once('listening',r));t.after(()=>new Promise(r=>server.close(r)));
+ const url=`http://127.0.0.1:${server.address().port}/hooks/${hook.config.public_id}`;
+ const post=(body='',extra={},suffix='')=>fetch(url+suffix,{method:'POST',headers:{authorization:'Bearer '+hook.secret,'content-type':'application/json',...extra},body});
+ assert.equal((await post('',{authorization:'Bearer wrong'})).status,401);
+ assert.equal((await post('',{},'?secret='+hook.secret)).status,401);
+ assert.equal((await post('{bad')).status,400);
+ assert.equal((await post(JSON.stringify({large:'x'.repeat(65536)}))).status,413);
+ assert.equal(await h.TriggerEventModel.count(),0);
+ const first=await post(JSON.stringify({command:'touch /tmp/forbidden',env:{TOKEN:'payload-secret'},args:['unsafe']}),{'idempotency-key':'safe-request'});assert.equal(first.status,202);const identity=await first.json();
+ const replay=await post('{}',{'idempotency-key':'safe-request'});assert.deepEqual(await replay.json(),identity);
+ assert.equal(await h.TaskRunModel.count(),1);assert.equal(await h.TriggerEventModel.count(),1);
+ const stored=JSON.stringify((await h.TriggerEventModel.findAll()).map(x=>x.get({plain:true})));assert.ok(!stored.includes('payload-secret'));assert.ok(!stored.includes('safe-request'));assert.ok(!stored.includes(hook.secret));
+ assert.equal((await post()).status,202);assert.equal(await h.TriggerEventModel.count(),2);
+});

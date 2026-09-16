@@ -12,6 +12,8 @@ import platformV3 from '../schema/platformV3';
 import platformV4 from '../schema/platformV4';
 import platformV5 from '../schema/platformV5';
 import platformV6 from '../schema/platformV6';
+import platformV7 from '../schema/platformV7';
+import { createTriggerSchema } from '../schema/triggerSchema';
 import { createExecutionSchema } from '../schema/executionSchema';
 import {
   createFreshTaskPlatform,
@@ -21,7 +23,7 @@ import { createNodeEnvironmentSchema } from '../schema/nodeEnvironmentSchema';
 import { createPythonEnvironmentSchema } from '../schema/pythonEnvironmentSchema';
 import { createRuntimeSchema } from '../schema/runtimeSchema';
 
-export const PLATFORM_SCHEMA_VERSION = 7;
+export const PLATFORM_SCHEMA_VERSION = 8;
 export class UnsupportedDatabaseSchemaError extends Error {
   readonly code = 'UNSUPPORTED_DATABASE_SCHEMA';
   constructor() {
@@ -256,7 +258,34 @@ export async function initializeOperationalSchema(
               platformV6.metadata.schema_signature
           )
             throw new UnsupportedDatabaseSchemaError();
-          await createExecutionSchema(database, transaction, models);
+          for (const object of [...platformV7.objects].sort(
+            (a, b) =>
+              Number(!a.sql.startsWith('CREATE TABLE')) -
+              Number(!b.sql.startsWith('CREATE TABLE')),
+          )) {
+            if (!platformV6.objects.some((old) => old.name === object.name))
+              await database.query(object.sql, { transaction });
+          }
+          await database.query('DROP TABLE PlatformMetadata', { transaction });
+          await database.query(
+            platformV7.objects.find((o) => o.name === 'PlatformMetadata')!.sql,
+            { transaction },
+          );
+          await database.query(
+            'INSERT INTO PlatformMetadata VALUES (:platform_schema_version,:model_signature,:schema_signature)',
+            { replacements: platformV7.metadata, transaction },
+          );
+          record = platformV7.metadata;
+        }
+        if (record.platform_schema_version === 7) {
+          if (
+            record.model_signature !== platformV7.metadata.model_signature ||
+            record.schema_signature !== platformV7.metadata.schema_signature ||
+            schemaSignature(await objects()) !==
+              platformV7.metadata.schema_signature
+          )
+            throw new UnsupportedDatabaseSchemaError();
+          await createTriggerSchema(database, transaction, models);
           await database.query('DROP TABLE PlatformMetadata', { transaction });
           createMetadata = true;
         } else if (
@@ -269,10 +298,11 @@ export async function initializeOperationalSchema(
       } else {
         await createFreshTaskPlatform(database, transaction, models);
         await createExecutionSchema(database, transaction, models);
+        await createTriggerSchema(database, transaction, models);
       }
       if (createMetadata) {
         await database.query(
-          'CREATE TABLE PlatformMetadata (platform_schema_version INTEGER NOT NULL PRIMARY KEY CHECK(platform_schema_version = 7), model_signature TEXT NOT NULL, schema_signature TEXT NOT NULL)',
+          'CREATE TABLE PlatformMetadata (platform_schema_version INTEGER NOT NULL PRIMARY KEY CHECK(platform_schema_version = 8), model_signature TEXT NOT NULL, schema_signature TEXT NOT NULL)',
           { transaction },
         );
         await database.query(

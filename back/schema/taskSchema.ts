@@ -1,3 +1,4 @@
+import platformV6 from './platformV6';
 import {
   Sequelize,
   Transaction,
@@ -105,9 +106,20 @@ export async function createTaskDomainSchema(
     'TaskExecutionSettings',
     'RuntimeDefaults',
   ]) {
-    const model = models.find((m) => m.tableName === name);
-    if (!model) throw new Error('TASK_SCHEMA_MODEL_MISSING:' + name);
-    await model.sync(Object.assign({ force: false }, { transaction }));
+    for (const object of [...platformV6.objects]
+      .sort(
+        (a, b) =>
+          Number(!a.sql.startsWith('CREATE TABLE')) -
+          Number(!b.sql.startsWith('CREATE TABLE')),
+      )
+      .filter(
+        (o) =>
+          o.name === name ||
+          (o.sql.startsWith('CREATE') &&
+            o.sql.includes('INDEX') &&
+            o.sql.includes('ON `' + name + '`')),
+      ))
+      await database.query(object.sql, { transaction });
   }
   for (const statement of constraints)
     await database.query(statement, { transaction });

@@ -5,7 +5,9 @@ TaskRun / TaskRunAttempt 是唯一正常执行记录。TaskSource 直接指向 W
 ```mermaid
 flowchart TD
  Manual[Manual / API] --> Run[(TaskRuns)]
- Schedule[node-schedule / protected crond launcher] --> Run
+ Trigger[CRON / WEBHOOK / GIT_UPDATE] --> Event[Durable TriggerEvent]
+ Event --> Submit[ExecutionService.submit]
+ Submit --> Run
  Run --> Owner[Atomic claim + owner EX lease]
  Owner --> Resolver[TaskResourceResolver + ExecutionResolver]
  Resolver --> Pins[Worktree EX + managed Build shared leases]
@@ -31,3 +33,5 @@ flowchart TD
 - 旧 Runner 的产品入口默认拒绝；物理删除最后一批进程/FD 恢复材料等待 Linux 实机 gate。Bootstrap、编辑器、显式 SDK 不由 Phase 10 误删。
 
 实现与验收：[Phase 10 文档](../refactor/phase10/01-execution-engine.md)、[最终报告](../../PHASE10_REPORT.md)、[桥接登记](../../TEMPORARY_BRIDGES.md)。
+
+Phase 11：submit 接收事件身份，检查 Task/Trigger enabled 和 readiness，以唯一 submission_key 在同一事务创建 Run 并关联事件。Runner、Context 与重试/并发职责不变。

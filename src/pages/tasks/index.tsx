@@ -1,3 +1,4 @@
+import TaskTriggers from './triggers';
 import React, { useEffect, useState } from 'react';
 import {
   Alert,
@@ -211,7 +212,6 @@ export default function TasksPage() {
         task?.runtime?.node_environment_id ??
         null,
       arguments_json: JSON.stringify(task?.arguments ?? [], null, 2),
-      schedule: task?.schedule ?? '',
       timeout_seconds: task?.settings?.timeout_seconds ?? null,
       max_attempts: task?.settings?.max_attempts ?? 1,
       initial_delay_seconds: task?.settings?.initial_delay_seconds ?? 0,
@@ -242,7 +242,6 @@ export default function TasksPage() {
         description: value.description,
         enabled: value.enabled,
         arguments: args,
-        schedule: value.schedule || null,
         expected_version: selected?.version,
         source: {
           type: 'WORKTREE_ENTRYPOINT',
@@ -375,7 +374,6 @@ export default function TasksPage() {
                 </span>
               ),
             },
-            { title: 'Schedule', dataIndex: 'schedule' },
             {
               title: 'Last run',
               render: (_: unknown, task: any) =>
@@ -426,6 +424,7 @@ export default function TasksPage() {
                       if (response.code === 200) {
                         await load();
                         await edit(response.data.id);
+                        if (response.data.webhook_secrets?.length) Modal.info({ title: 'Copy cloned webhook secrets now', content: <pre>{JSON.stringify(response.data.webhook_secrets, null, 2)}</pre>, width: 700 });
                       }
                     }}
                   >
@@ -433,7 +432,7 @@ export default function TasksPage() {
                   </Button>
                   <Button
                     onClick={async () => {
-                      await request.post(api + `tasks/${task.id}/run`);
+                      await request.post(api + `tasks/${task.id}/run`, { source: 'MANUAL' });
                       await load();
                     }}
                   >
@@ -663,17 +662,9 @@ export default function TasksPage() {
                 },
                 ...resourceTabs,
                 {
-                  key: 'schedule',
-                  label: 'Schedule',
-                  forceRender: true,
-                  children: (
-                    <>
-                      <Alert message="Schedule — cron expression" />
-                      <Form.Item name="schedule" label="Schedule">
-                        <Input placeholder="0 8 * * *" />
-                      </Form.Item>
-                    </>
-                  ),
+                  key: 'triggers',
+                  label: 'Triggers',
+                  children: <TaskTriggers taskId={selected?.id} />,
                 },
                 {
                   key: 'settings',

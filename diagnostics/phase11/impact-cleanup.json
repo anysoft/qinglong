@@ -1,0 +1,135 @@
+[
+  {
+    "file": "back/services/subscriptionDiscovery.ts",
+    "name": "back/services/subscriptionDiscovery.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/subscriptionDiscovery.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/subscriptionDiscovery.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscriptionDiscovery.ts",
+    "name": "SubscriptionDiscoveryAdapter",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:back/services/subscriptionDiscovery.ts:SubscriptionDiscoveryAdapter\",\n    \"name\": \"SubscriptionDiscoveryAdapter\",\n    \"type\": \"Class\",\n    \"filePath\": \"back/services/subscriptionDiscovery.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 8,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 2,\n    \"modules_affected\": 1\n  },\n  \"byDepthCounts\": {\n    \"1\": 2,\n    \"2\": 4,\n    \"3\": 2\n  },\n  \"affected_processes\": [\n    {\n      \"name\": \"run\",\n      \"type\": \"Function\",\n      \"filePath\": \"\",\n      \"affected_process_count\": 5,\n      \"total_hits\": 5,\n      \"earliest_broken_step\": 1\n    },\n    {\n      \"name\": \"stage\",\n      \"type\": \"Function\",\n      \"filePath\": \"\",\n      \"affected_process_count\": 3,\n      \"total_hits\": 3,\n      \"earliest_broken_step\": 1\n    }\n  ],\n  \"affected_modules\": [\n    {\n      \"name\": \"Services\",\n      \"hits\": 2,\n      \"impact\": \"direct\"\n    }\n  ],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/services/managedSubscription.ts\",\n        \"name\": \"managedSubscription.ts\",\n        \"filePath\": \"back/services/managedSubscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"Method:back/services/managedSubscription.ts:ManagedSubscriptionService.stage#3\",\n        \"name\": \"stage\",\n        \"filePath\": \"\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": [\n          {\n            \"id\": \"proc_442_stage\",\n            \"label\": \"Stage → RuntimeError\",\n            \"processType\": \"cross_community\",\n            \"step\": 1\n          },\n          {\n            \"id\": \"proc_413_stage\",\n            \"label\": \"Stage → WorkspaceError\",\n            \"processType\": \"cross_community\",\n            \"step\": 1\n          },\n          {\n            \"id\": \"proc_410_stage\",\n            \"label\": \"Stage → Root\",\n            \"processType\": \"intra_community\",\n            \"step\": 1\n          }\n        ]\n      }\n    ],\n    \"2\": [\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/api/subscription.ts\",\n        \"name\": \"subscription.ts\",\n        \"filePath\": \"back/api/subscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/gitSubscription.ts\",\n        \"name\": \"gitSubscription.ts\",\n        \"filePath\": \"back/gitSubscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/services/subscription.ts\",\n        \"name\": \"subscription.ts\",\n        \"filePath\": \"back/services/subscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 2,\n        \"id\": \"Method:back/services/managedSubscription.ts:ManagedSubscriptionService.run#1\",\n        \"name\": \"run\",\n        \"filePath\": \"\",\n        \"relationType\": \"CALLS\",\n        \"confidence\": 0.85,\n        \"processes\": [\n          {\n            \"id\": \"proc_260_run\",\n            \"label\": \"Run → WorkspaceError\",\n            \"processType\": \"cross_community\",\n            \"step\": 1\n          },\n          {\n            \"id\": \"proc_261_run\",\n            \"label\": \"Run → Root\",\n            \"processType\": \"cross_community\",\n            \"step\": 1\n          },\n          {\n            \"id\": \"proc_150_run\",\n            \"label\": \"Run → WorkspaceGuard\",\n            \"processType\": \"cross_community\",\n            \"step\": 1\n          },\n          {\n            \"id\": \"proc_301_run\",\n            \"label\": \"Run → RuntimeError\",\n            \"processType\": \"cross_community\",\n            \"step\": 1\n          },\n          {\n            \"id\": \"proc_151_run\",\n            \"label\": \"Run → Release\",\n            \"processType\": \"cross_community\",\n            \"step\": 1\n          }\n        ]\n      }\n    ],\n    \"3\": [\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/api/index.ts\",\n        \"name\": \"index.ts\",\n        \"filePath\": \"back/api/index.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/loaders/initTask.ts\",\n        \"name\": \"initTask.ts\",\n        \"filePath\": \"back/loaders/initTask.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscriptionDiscovery.ts",
+    "name": "discover",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'discover' not found\",\n  \"target\": {\n    \"name\": \"discover\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "name": "back/services/subscriptionGit.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/subscriptionGit.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/subscriptionGit.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "name": "SubscriptionGitResolver",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:back/services/subscriptionGit.ts:SubscriptionGitResolver\",\n    \"name\": \"SubscriptionGitResolver\",\n    \"type\": \"Class\",\n    \"filePath\": \"back/services/subscriptionGit.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 7,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 2,\n    \"2\": 3,\n    \"3\": 2\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/services/managedSubscription.ts\",\n        \"name\": \"managedSubscription.ts\",\n        \"filePath\": \"back/services/managedSubscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/services/subscription.ts\",\n        \"name\": \"subscription.ts\",\n        \"filePath\": \"back/services/subscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ],\n    \"2\": [\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/api/subscription.ts\",\n        \"name\": \"subscription.ts\",\n        \"filePath\": \"back/api/subscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/gitSubscription.ts\",\n        \"name\": \"gitSubscription.ts\",\n        \"filePath\": \"back/gitSubscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/loaders/initTask.ts\",\n        \"name\": \"initTask.ts\",\n        \"filePath\": \"back/loaders/initTask.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ],\n    \"3\": [\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/api/index.ts\",\n        \"name\": \"index.ts\",\n        \"filePath\": \"back/api/index.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/loaders/app.ts\",\n        \"name\": \"app.ts\",\n        \"filePath\": \"back/loaders/app.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscriptionGit.ts",
+    "name": "resolveSubscriptionGitContext",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'resolveSubscriptionGitContext' not found\",\n  \"target\": {\n    \"name\": \"resolveSubscriptionGitContext\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase5/publication-integrity.test.cjs",
+    "name": "tests/phase5/publication-integrity.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase5/publication-integrity.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase5/publication-integrity.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase5/publication-integrity.test.cjs",
+    "name": "error",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'error' not found\",\n  \"target\": {\n    \"name\": \"error\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase5/publication-integrity.test.cjs",
+    "name": "warn",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'warn' not found\",\n  \"target\": {\n    \"name\": \"warn\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/tasks/triggers.tsx",
+    "name": "src/pages/tasks/triggers.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/tasks/triggers.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/tasks/triggers.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/tasks/triggers.tsx",
+    "name": "TaskTriggers",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskTriggers' not found\",\n  \"target\": {\n    \"name\": \"TaskTriggers\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "name": "back/services/discovery.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/discovery.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/discovery.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "name": "DiscoveryService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'DiscoveryService' not found\",\n  \"target\": {\n    \"name\": \"DiscoveryService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "name": "policy",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'policy' not found\",\n  \"target\": {\n    \"name\": \"policy\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "name": "savePolicy",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'savePolicy' not found\",\n  \"target\": {\n    \"name\": \"savePolicy\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "name": "prepare",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'prepare' not found\",\n  \"target\": {\n    \"name\": \"prepare\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "name": "plan",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'plan' not found\",\n  \"target\": {\n    \"name\": \"plan\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "name": "preview",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'preview' not found\",\n  \"target\": {\n    \"name\": \"preview\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "name": "reconcile",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'reconcile' not found\",\n  \"target\": {\n    \"name\": \"reconcile\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

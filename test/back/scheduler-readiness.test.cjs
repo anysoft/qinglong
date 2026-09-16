@@ -35,11 +35,11 @@ test('probe failure immediately invalidates a previously ready scheduler',async(
  fail=true;assert.equal(await state.check(),false);
  fail=false;await sleep(40);assert.equal(await state.check(),true);
 });
-test('health uses actual readiness and returns HTTP 503 until recovery',async(t)=>{
+test('health checks actual gRPC transport without requiring Task projection restoration',async(t)=>{
  let ready=false;const express=require('express');
  const {HealthService}=load('back/services/health.ts',{
   typedi:{Service:()=>x=>x},'../loaders/logger':{error(){}},'./http':{},
-  '../schedule/client':{readiness:{check:async()=>ready}},
+  '../schedule/client':{transportHealthy:async()=>ready},
  });
  const service=new HealthService({getServer:()=>({})});
  const app=express();load('back/api/health.ts',{

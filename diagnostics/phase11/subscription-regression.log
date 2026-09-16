@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: subscription becomes idle and closes its log even when completion logging fails
+ok 1 - subscription becomes idle and closes its log even when completion logging fails
+  ---
+  duration_ms: 572.244792
+  type: 'test'
+  ...
+# Subtest: subscription deletion protects discovered Tasks; explicit cascade is atomic and leaves manual Tasks intact
+ok 2 - subscription deletion protects discovered Tasks; explicit cascade is atomic and leaves manual Tasks intact
+  ---
+  duration_ms: 1564.852375
+  type: 'test'
+  ...
+# Subtest: repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns
+ok 3 - repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns
+  ---
+  duration_ms: 1317.227
+  type: 'test'
+  ...
+# Subtest: CRUD, cron/interval registration, manual dispatch, stop and ID log identity use one pipeline
+ok 4 - CRUD, cron/interval registration, manual dispatch, stop and ID log identity use one pipeline
+  ---
+  duration_ms: 1155.483583
+  type: 'test'
+  ...
+# Subtest: only repository credential is resolved; disabled credential fails instead of anonymous fallback
+ok 5 - only repository credential is resolved; disabled credential fails instead of anonymous fallback
+  ---
+  duration_ms: 543.267333
+  type: 'test'
+  ...
+# Subtest: staging Bash timeout kills its process group and releases the existing POSIX lease
+ok 6 - staging Bash timeout kills its process group and releases the existing POSIX lease
+  ---
+  duration_ms: 1774.231667
+  type: 'test'
+  ...
+# Subtest: preflight refuses an execution lease instead of accepting cached clean status
+ok 7 - preflight refuses an execution lease instead of accepting cached clean status
+  ---
+  duration_ms: 3191.497459
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5392.294417

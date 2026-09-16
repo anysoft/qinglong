@@ -7,11 +7,11 @@ async function fixture(t,{initialize=true}={}) {
  const config={rootPath:root,dataPath:root,dbPath:root,scriptPath:path.join(root,'scripts')};
  const cache=new Map(),mocks={'.':{sequelize:db},'../data':{sequelize:db},'../config':{default:config,__esModule:true}};
  const modules={},all={};
- for(const name of ['gitCredential','repository','worktree','scopedEnv','subscription','cron','env','dependence','open','system','cronView','cronStats','runningInstance','configAsset','runtime','pythonEnvironment','nodeEnvironment','task','taskRun']) {
+ for(const name of ['gitCredential','repository','worktree','scopedEnv','subscription','cron','env','dependence','open','system','cronView','cronStats','runningInstance','configAsset','runtime','pythonEnvironment','nodeEnvironment','task','taskRun','taskTrigger','discoveryPolicy']) {
   const m=load(path.resolve(`back/data/${name}.ts`),mocks,cache);modules[name]=m;Object.assign(all,m);mocks['../data/'+name]=m;
  }
  const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','SchedulerProjectionModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','TaskViewModel','TaskStatModel','RunningInstanceModel'];
- const models=[...names.map(n=>all[n]),...all.configAssetModels,...all.runtimeModels,...all.pythonEnvironmentModels,...all.nodeEnvironmentModels,...all.taskModels,...all.taskRunModels];
+ const models=[...names.map(n=>all[n]),...all.configAssetModels,...all.runtimeModels,...all.pythonEnvironmentModels,...all.nodeEnvironmentModels,...all.taskModels,...all.taskRunModels,...all.triggerModels,...all.discoveryModels];
  const schema=load(path.resolve('back/shared/operationalSchema.ts'),mocks,cache);
  if(initialize)await schema.initializeOperationalSchema(db,models);
  require('../phase9/task-fixture.cjs')(all,db,()=>({scriptRoot:path.join(root,'scripts'),namespace:config.fixturePublicationNamespace}));

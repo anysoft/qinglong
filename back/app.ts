@@ -335,6 +335,8 @@ class Application {
         const { executionService } = await import(
           './services/executionService'
         );
+        const { triggerScheduler } = await import('./services/triggerScheduler');
+        await triggerScheduler.stop();
         await executionSubmission.stop();
         await executionService.stop();
         await this.httpServerService?.shutdown();

@@ -1,0 +1,8 @@
+empty-root-bootstrap
+locator.click: Timeout 20000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '开始安装', exact: true })[22m
+
+    at /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/diagnostics/phase11/platform-e2e.cjs:52:80 {
+  name: 'TimeoutError'
+}

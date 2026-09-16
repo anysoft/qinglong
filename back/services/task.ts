@@ -1,6 +1,6 @@
+import { cloneTaskTriggers } from './cloneTaskTriggers';
 import { Service } from 'typedi';
 import { Transaction, ModelStatic, Model } from 'sequelize';
-import { CronExpressionParser } from 'cron-parser';
 import { sequelize } from '../data';
 import {
   TaskModel,
@@ -27,8 +27,6 @@ import {
   taskArguments,
   taskSettings,
   runtimeKind,
-  taskLanguage,
-  relativeTaskPath,
 } from '../shared/taskDefinition';
 
 export interface TaskDefinitionInput {
@@ -37,7 +35,6 @@ export interface TaskDefinitionInput {
   enabled?: boolean;
   env_profile_id?: number | null;
   arguments: string[];
-  schedule?: string | null;
   source: Omit<TaskSource, 'task_id'>;
   runtime?: Omit<TaskRuntimeBinding, 'task_id'>;
   settings?: Partial<Omit<TaskExecutionSettings, 'task_id'>>;
@@ -136,7 +133,6 @@ export default class TaskService {
       'enabled',
       'env_profile_id',
       'arguments',
-      'schedule',
       'source',
       'runtime',
       'settings',
@@ -176,20 +172,12 @@ export default class TaskService {
     )
       throw new TaskDefinitionError('TASK_DEFINITION_INVALID');
     if (input.env_profile_id != null) positiveId(input.env_profile_id);
-    if (input.schedule != null) {
-      if (typeof input.schedule !== 'string' || input.schedule.length > 255)
-        throw new TaskDefinitionError('TASK_SCHEDULE_INVALID');
-      try {
-        CronExpressionParser.parse(input.schedule);
-      } catch {
-        throw new TaskDefinitionError('TASK_SCHEDULE_INVALID');
-      }
-    }
     const source = taskSource(input.source),
       runtime = taskRuntime(
         input.runtime ?? { kind: runtimeKind(source.language) },
         source.language,
       );
+
     return {
       task: {
         name: input.name.trim(),
@@ -197,7 +185,6 @@ export default class TaskService {
         enabled: input.enabled ?? false,
         env_profile_id: input.env_profile_id ?? null,
         arguments: taskArguments(input.arguments),
-        schedule: input.schedule ?? null,
       },
       source,
       runtime,
@@ -422,10 +409,18 @@ export default class TaskService {
           `INSERT INTO TaskEnvVariables (task_id,name,value,status,operation,is_secret,position,labels,createdAt,updatedAt) SELECT :newId,name,value,status,operation,is_secret,position,labels,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP FROM TaskEnvVariables WHERE task_id=:oldId`,
           { replacements: { newId: task.id, oldId: id }, transaction },
         );
-        return task.id;
+        const webhook_secrets = await cloneTaskTriggers(
+          id,
+          task.id,
+          transaction,
+        );
+        return { id: task.id, webhook_secrets };
       },
     );
-    return this.detail(created, existingTransaction);
+    return {
+      ...(await this.detail(created.id, existingTransaction)),
+      webhook_secrets: created.webhook_secrets,
+    };
   }
   async saveRuntimeDefault(
     scope: 'repository' | 'subscription',
@@ -486,145 +481,5 @@ export default class TaskService {
         ).get({ plain: true });
       },
     );
-  }
-  /** B07 translates the existing discovery plan at this boundary. Definitions
-   * participate in the publisher's compensating transaction; dropped Tasks are
-   * retained until publication and both schedulers have accepted the plan. */
-  async reconcileDiscoveredTasks(
-    publisher: {
-      publishSubscription: (
-        discover: any,
-        publishing: () => Promise<void>,
-      ) => Promise<unknown>;
-    },
-    discover: () => Promise<any>,
-    publishing: () => Promise<void>,
-  ) {
-    return publisher.publishSubscription(async () => {
-      const plan = await discover();
-      const original = await TaskModel.findAll({
-        where: { id: plan.updates.map((u: any) => u.id) },
-      });
-      const snapshots = original.map((row) => row.get({ plain: true }));
-      const created: number[] = [];
-      return {
-        ...plan,
-        definitions: {
-          add: async (draft: any) =>
-            sequelize.transaction(
-              { type: Transaction.TYPES.IMMEDIATE },
-              async (transaction) => {
-                const subscription = await SubscriptionModel.findByPk(
-                  plan.subscriptionId,
-                  { transaction },
-                );
-                if (
-                  !subscription?.worktree_id ||
-                  draft.sub_id !== plan.subscriptionId ||
-                  !draft.discovery_key
-                )
-                  throw new TaskDefinitionError('TASK_DISCOVERY_PLAN_INVALID');
-                const entry = relativeTaskPath(draft.source_relative_path),
-                  language = taskLanguage(entry);
-                const row = await TaskModel.create(
-                  {
-                    name: draft.name ?? entry,
-                    origin: 'DISCOVERED',
-                    enabled: false,
-                    subscription_id: plan.subscriptionId,
-                    discovery_key: draft.discovery_key,
-                    discovery_definition: {
-                      name: draft.name,
-                      schedule: draft.schedule,
-                    },
-                    schedule: draft.schedule,
-                    arguments: [],
-                    version: 1,
-                  },
-                  { transaction },
-                );
-                await TaskSourceModel.create(
-                  {
-                    task_id: row.id,
-                    type: 'WORKTREE_ENTRYPOINT',
-                    worktree_id: subscription.worktree_id,
-                    relative_entrypoint: entry,
-                    language,
-                    cwd_mode: 'ENTRYPOINT_DIR',
-                    cwd_relative_path: null,
-                  },
-                  { transaction },
-                );
-                await TaskRuntimeBindingModel.create(
-                  { task_id: row.id, kind: runtimeKind(language) },
-                  { transaction },
-                );
-                await TaskExecutionSettingsModel.create(
-                  { task_id: row.id },
-                  { transaction },
-                );
-                const ready =
-                  (await this.resources.resolve([row.id], transaction))[0]
-                    .readiness.status === 'READY';
-                if (ready) await row.update({ enabled: true }, { transaction });
-                created.push(row.id);
-                return { id: row.id, isDisabled: ready ? 0 : 1 };
-              },
-            ),
-          update: async (draft: any) => {
-            const row = await this.get(draft.id);
-            if (
-              row.subscription_id !== plan.subscriptionId ||
-              row.origin !== 'DISCOVERED'
-            )
-              throw new TaskDefinitionError('TASK_DISCOVERY_OWNER_MISMATCH');
-            await row.update({
-              ...(draft.name === undefined ? {} : { name: draft.name }),
-              ...(draft.schedule === undefined
-                ? {}
-                : { schedule: draft.schedule }),
-              discovery_definition: {
-                name: draft.discovery_definition.name,
-                schedule: draft.discovery_definition.schedule,
-              },
-              version: row.version + 1,
-            });
-          },
-          remove: async (ids: number[]) =>
-            sequelize.transaction(
-              { type: Transaction.TYPES.IMMEDIATE },
-              (transaction) =>
-                TaskModel.destroy({
-                  where: {
-                    id: ids,
-                    subscription_id: plan.subscriptionId,
-                    origin: 'DISCOVERED',
-                  },
-                  transaction,
-                }),
-            ),
-          rollback: async () =>
-            sequelize.transaction(
-              { type: Transaction.TYPES.IMMEDIATE },
-              async (transaction) => {
-                await TaskModel.destroy({
-                  where: { id: created },
-                  transaction,
-                });
-                for (const row of snapshots)
-                  await TaskModel.update(
-                    {
-                      name: row.name,
-                      schedule: row.schedule,
-                      discovery_definition: row.discovery_definition,
-                      version: row.version,
-                    },
-                    { where: { id: row.id }, transaction },
-                  );
-              },
-            ),
-        },
-      };
-    }, publishing);
   }
 }

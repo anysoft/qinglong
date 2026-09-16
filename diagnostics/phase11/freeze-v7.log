@@ -1,0 +1,6 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+{
+  platform_schema_version: 7,
+  model_signature: 'ee4c749817e5ecf76008cc82ca26a33b8aeae3665d4c8fe369d77e54466ce5f2',
+  schema_signature: 'a3bebfe86f7c285aef4f9a09e4b09aca6f77b5a640760bb3a4fee1643f1f2174'
+}

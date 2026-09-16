@@ -1,0 +1,149 @@
+[
+  {
+    "file": "back/services/subscription.ts",
+    "name": "back/services/subscription.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/subscription.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/subscription.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "SubscriptionService",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Class:back/services/subscription.ts:SubscriptionService\",\n    \"name\": \"SubscriptionService\",\n    \"type\": \"Class\",\n    \"filePath\": \"back/services/subscription.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 6,\n  \"risk\": \"LOW\",\n  \"riskSharedAxes\": \"LOW\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 2,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {\n    \"1\": 2,\n    \"2\": 2,\n    \"3\": 2\n  },\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {\n    \"1\": [\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/api/subscription.ts\",\n        \"name\": \"subscription.ts\",\n        \"filePath\": \"back/api/subscription.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 1,\n        \"id\": \"File:back/loaders/initTask.ts\",\n        \"name\": \"initTask.ts\",\n        \"filePath\": \"back/loaders/initTask.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ],\n    \"2\": [\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/api/index.ts\",\n        \"name\": \"index.ts\",\n        \"filePath\": \"back/api/index.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 2,\n        \"id\": \"File:back/loaders/app.ts\",\n        \"name\": \"app.ts\",\n        \"filePath\": \"back/loaders/app.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ],\n    \"3\": [\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/app.ts\",\n        \"name\": \"app.ts\",\n        \"filePath\": \"back/app.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      },\n      {\n        \"depth\": 3,\n        \"id\": \"File:back/loaders/express.ts\",\n        \"name\": \"express.ts\",\n        \"filePath\": \"back/loaders/express.ts\",\n        \"relationType\": \"IMPORTS\",\n        \"confidence\": 1,\n        \"processes\": []\n      }\n    ]\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "list",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'list' not found\",\n  \"target\": {\n    \"name\": \"list\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "handleTask",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'handleTask' not found\",\n  \"target\": {\n    \"name\": \"handleTask\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "taskCallbacks",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'taskCallbacks' not found\",\n  \"target\": {\n    \"name\": \"taskCallbacks\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "create",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'create' not found\",\n  \"target\": {\n    \"name\": \"create\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "insert",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'insert' not found\",\n  \"target\": {\n    \"name\": \"insert\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "update",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'update' not found\",\n  \"target\": {\n    \"name\": \"update\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "updateUnlocked",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'updateUnlocked' not found\",\n  \"target\": {\n    \"name\": \"updateUnlocked\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "updateDb",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'updateDb' not found\",\n  \"target\": {\n    \"name\": \"updateDb\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "status",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'status' not found\",\n  \"target\": {\n    \"name\": \"status\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "remove",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'remove' not found\",\n  \"target\": {\n    \"name\": \"remove\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "removeUnlocked",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'removeUnlocked' not found\",\n  \"target\": {\n    \"name\": \"removeUnlocked\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "getDb",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'getDb' not found\",\n  \"target\": {\n    \"name\": \"getDb\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "stop",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'stop' not found\",\n  \"target\": {\n    \"name\": \"stop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "runSingle",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runSingle' not found\",\n  \"target\": {\n    \"name\": \"runSingle\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "disabled",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'disabled' not found\",\n  \"target\": {\n    \"name\": \"disabled\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "enabled",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'enabled' not found\",\n  \"target\": {\n    \"name\": \"enabled\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "log",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'log' not found\",\n  \"target\": {\n    \"name\": \"log\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/subscription.ts",
+    "name": "logs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'logs' not found\",\n  \"target\": {\n    \"name\": \"logs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

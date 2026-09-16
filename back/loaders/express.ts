@@ -1,3 +1,4 @@
+import triggerWebhook from '../api/triggerWebhook';
 import express, { Request, Response, NextFunction, Application } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -48,6 +49,7 @@ export default ({ app }: { app: Application }) => {
     app.use(rewrite(`${config.baseUrl}/*`, '/$1'));
   }
 
+  triggerWebhook(app);
   app.get(`${config.api.prefix}/env.js`, serveEnv);
   app.use(
     `${config.api.prefix}/static`,

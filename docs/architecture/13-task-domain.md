@@ -1,6 +1,6 @@
-# Task Domain — Phase 9
+# Task Domain — Phase 11
 
-Task 是定义的正式中心；SchedulerProjections 仅为调度输出，TaskRuns / TaskRunAttempts 承担执行。Task 定义没有绝对运行路径或 Build pin；这些属于运行快照。
+Task 是定义的正式中心；TaskTriggers 为独立触发定义，TriggerEvents 保存接收事实，TaskRuns / TaskRunAttempts 承担执行。Task 不含 schedule 字段，SchedulerProjections 退出正常任务路径。Task 定义没有绝对运行路径或 Build pin；这些属于运行快照。
 
 ```mermaid
 flowchart TD
@@ -14,8 +14,9 @@ flowchart TD
   Task --> Config[Repository / Task Config Bindings]
   Task --> Hooks[Task Hooks]
   Task --> Settings[TaskExecutionSettings]
-  Task --> Schedule[SchedulerBridgeService]
-  Schedule --> Projection[SchedulerProjections]
+  Task --> Triggers[TaskTriggers]
+  Triggers --> Events[TriggerEvents]
+  Events --> Submit[ExecutionService.submit]
 ```
 
 ## 逻辑资源解析
@@ -43,3 +44,5 @@ flowchart TD
 Phase 10 已实现 executable、ENV、Config revision、Hook snapshot 和 Worktree lease 的单次解析。当前 `TaskExecutionBridge → ExecutionService → Runner v2` 消费 managed Environment Build；正常执行不再调用 task.sh。详见 [Execution Engine](14-execution-engine.md)。
 
 API/UI、迁移、readiness 和桥接说明见 [Phase 9 文档](../refactor/phase9/01-task-domain.md)。
+
+当前 Trigger/Discovery 契约见 [Phase 11](15-discovery-triggers.md)。

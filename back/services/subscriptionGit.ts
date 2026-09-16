@@ -24,7 +24,6 @@ export default class SubscriptionGitResolver {
     if (credential?.status === 'disabled')
       throw new GitResourceError('Credential is disabled');
     const remoteUrl = repository.remote_url;
-    if (sub.extensions && !/^[A-Za-z0-9| ]+$/.test(sub.extensions)) throw new GitResourceError('Invalid script extensions');
     const ssh = /^(ssh:\/\/|[^/]+@[^/]+:)/.test(remoteUrl);
     if (
       (credential?.auth_type === 'ssh_key' && !ssh) ||

@@ -16,7 +16,7 @@ async function fixture(t) {
   t.after(()=>database.close());
   const cache = new Map(), mocks = {'.':{sequelize:database},'../data':{sequelize:database}};
   const models = [];
-  for (const file of ['gitCredential','repository','worktree','scopedEnv','subscription','cron','env','dependence','open','system','cronView','cronStats','runningInstance','configAsset','runtime','pythonEnvironment','nodeEnvironment','task','taskRun']) {
+  for (const file of ['gitCredential','repository','worktree','scopedEnv','subscription','cron','env','dependence','open','system','cronView','cronStats','runningInstance','configAsset','runtime','pythonEnvironment','nodeEnvironment','task','taskRun','taskTrigger','discoveryPolicy']) {
     const module = load(path.resolve(`back/data/${file}.ts`),mocks,cache);
     for(const [key,value] of Object.entries(module)) if(key.endsWith('Model')) models.push(value);
   }
@@ -29,7 +29,7 @@ test('empty data root creates v4, all bridge/core tables, and restarts without s
   const before=await schema(database);
   assert.equal(before.some(x=>x.name==='SchemaMigrations'),false);
   const [metadata]=await database.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});
-  assert.equal(metadata.platform_schema_version,7);
+  assert.equal(metadata.platform_schema_version,8);
   await initializeOperationalSchema(database,models);
   assert.deepEqual(await schema(database),before);
   assert.deepEqual(await database.query('PRAGMA foreign_key_check',{type:QueryTypes.SELECT}),[]);
@@ -47,7 +47,7 @@ test('unknown nonempty database fails closed and preserves rows and schema',asyn
 });
 test('partial DDL failure rolls back all objects and allows a clean retry',async t=>{
   const {database,models}=await fixture(t);
-  const bad=models.find(model=>model.tableName==='TaskSources');
+  const bad=models.find(model=>model.tableName==='TaskTriggers');
   const original=bad.sync;
   bad.sync=async()=>{throw new Error('INJECTED_DDL_FAILURE')};
   await assert.rejects(initializeOperationalSchema(database,models),/INJECTED_DDL_FAILURE/);

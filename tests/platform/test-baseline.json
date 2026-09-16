@@ -231,7 +231,8 @@
   },
   {
     "path": "tests/platform/discovery.test.cjs",
-    "classification": "PLATFORM_CORE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 11 removed B07 staging/projection publication; equivalent active coverage: tests/phase11/discovery.test.cjs, git-pipeline.test.cjs, scale.test.cjs and tests/phase5/publication-integrity.test.cjs."
   },
   {
     "path": "tests/platform/environment-account-mode.test.cjs",
@@ -287,7 +288,8 @@
   },
   {
     "path": "tests/platform/subscription-pipeline.test.cjs",
-    "classification": "PLATFORM_CORE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 11 removed B07 staging/projection publication; equivalent active coverage: tests/phase11/discovery.test.cjs, git-pipeline.test.cjs, scale.test.cjs and tests/phase5/publication-integrity.test.cjs."
   },
   {
     "path": "tests/platform/task-model-bridge.test.cjs",
@@ -536,7 +538,8 @@
   },
   {
     "path": "tests/phase9/discovery.test.cjs",
-    "classification": "PLATFORM_CORE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 11 removed B07 staging/projection publication; equivalent active coverage: tests/phase11/discovery.test.cjs, git-pipeline.test.cjs, scale.test.cjs and tests/phase5/publication-integrity.test.cjs."
   },
   {
     "path": "tests/phase9/subscription-delete.test.cjs",
@@ -564,6 +567,38 @@
   },
   {
     "path": "tests/phase10/policies.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/triggers.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/discovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/scale.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/webhook.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/cron.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/recovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/git-pipeline.test.cjs",
     "classification": "PLATFORM_CORE"
   }
 ]

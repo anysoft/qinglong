@@ -1,0 +1,2 @@
+require('reflect-metadata');
+(async()=>{const h=await require('../phase10/attach.cjs').attach(process.argv[2]);try{const Events=h.load('back/services/triggerEvents.ts').default,Scheduler=h.load('back/services/triggerScheduler.ts').default;await new Scheduler({now:()=>new Date(process.argv[3])},new Events(h.execution)).tick();}finally{await h.close();}})().catch(e=>{console.error(e);process.exitCode=1});

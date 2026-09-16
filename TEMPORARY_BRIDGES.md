@@ -1,6 +1,6 @@
 # Temporary Bridges — 退出条件登记
 
-> 当前状态以本文末尾 **Phase 10 — Execution Engine** 为准；前面的 Phase 4.5–9 表保留为阶段记录。
+> 当前状态以本文末尾 **Phase 11 — Discovery / Triggers** 为准；前面的 Phase 4.5–9 表保留为阶段记录。
 
 当前平台能力仍依赖以下桥。保留是对现有运行职责的承认，不是继续承诺 QingLong 兼容。新代码不得新增对桥内部文件、URL、命名规则的依赖。Phase 4.5B 已完成本阶段收敛；后续 phase 编号是计划，必须满足 gate 才能退场。
 
@@ -126,3 +126,17 @@ Runtime Binding 和 Settings 在 Phase 9 只声明、验证、展示。没有 ma
 **KEEP**：Config journal、runtime_lease.py、hook_process.py、process_group.py、已有 Runtime/Build shared/exclusive lease、后台通知服务。新核心没有新增 Shell→Open API、generated ENV、global dependencies 或 scripts staging 消费者。
 
 **Linux**：本机 Darwin，Step 0 未发现容器/VM/远程 CI runner。最后 destructive removal 为 BLOCKED_BY_LINUX_GATE。已更新 Linux CI 验收步骤，但未把配置文件当作已运行证据。未删除既有用户数据。
+
+## Phase 11 — Discovery / Triggers
+
+| Bridge | 状态 | 当前消费者 / 退出条件 |
+| --- | --- | --- |
+| B03 crontab.list | NORMAL TASK PATH REMOVED；物理清理 BLOCKED_BY_LINUX_GATE | Task CRUD、启动、Discovery、Cron Trigger 不再读写或安装系统 crontab。历史适配代码留待 Linux 验证后删除 |
+| B04 node-schedule / gRPC | REDUCED | Task TriggerScheduler 使用数据库与单循环。Subscription 周期同步、系统 token/log 运维仍由 ScheduleService 承担；健康检查只探测真实 transport |
+| B07 staging discovery adapter | REMOVED | 删除 SubscriptionDiscoveryAdapter 与 ManagedSubscription.stage、TaskService.reconcileDiscoveredTasks。DiscoveryService 直接 Worktree → Task + CronTrigger 单事务 |
+| B15 SchedulerProjection | NORMAL TASK PATH REMOVED；历史表 RETAINED | Task save/clone/sync 不生成投影。保留旧 API、统计、恢复记录，不从其反向恢复 Task |
+| B01 scripts/editor | RETAINED | 当前脚本编辑器与非 Worktree 历史源；没有新增 Discovery 消费者，不删除用户目录 |
+| B09 / B10 dependencies/bootstrap | RETAINED | Linux/bootstrap/package 遗留职责，不属于本阶段物理删除授权 |
+| B14 logs | REDUCED / RETAINED | 新结果使用 TaskRun；旧日志查询和留存仍有消费者 |
+
+B02/B06/B08/B11/B12/B13/B16/B17 的既有保留责任和 Linux gate 沿用 Phase 10，不因 Trigger 上线误删。Fresh Cron / Webhook / Git Trigger 不需要 system crond。没有启动 Phase 12 编辑器工作。
