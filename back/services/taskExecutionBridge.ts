@@ -1,12 +1,10 @@
+import {selectRows} from './runObservability';
 import { TaskRunModel } from '../data/taskRun';
 import { executionService } from './executionService';
 /** Thin API adapter. Every execution is a durable Runner v2 submission. */
 export default class TaskExecutionBridge {
   async statuses(ids: number[]) {
-    const rows = await TaskRunModel.findAll({
-      where: { task_id: ids },
-      order: [['id', 'DESC']],
-    });
+    const rows = ids.length ? await selectRows('SELECT r.id,r.task_id,r.status,r.attempt_count FROM TaskRuns r JOIN (SELECT MAX(id) id FROM TaskRuns WHERE task_id IN (:ids) GROUP BY task_id) latest ON latest.id=r.id', {ids}) : [];
     const result = new Map<
       number,
       { id: number; status: string; attempt_count: number }

@@ -48,7 +48,7 @@ export default class NotificationService {
     retry: 1,
   };
 
-  constructor() {}
+  constructor(private transport: Pick<typeof httpClient, 'post' | 'request'> = httpClient) {}
 
   public async notify(
     title: string,
@@ -72,7 +72,7 @@ export default class NotificationService {
       try {
         return await notificationModeAction?.call(this);
       } catch (error: any) {
-        console.error(error);
+        console.error('NOTIFICATION_PROVIDER_FAILED');
       }
     }
     return false;
@@ -105,7 +105,7 @@ export default class NotificationService {
   private async gotify() {
     const { gotifyUrl, gotifyToken, gotifyPriority = 1 } = this.params;
     try {
-      const res = await httpClient.post(
+      const res = await this.transport.post(
         `${gotifyUrl}/message?token=${gotifyToken}`,
         {
           ...this.gotOption,
@@ -132,7 +132,7 @@ export default class NotificationService {
   private async goCqHttpBot() {
     const { goCqHttpBotQq, goCqHttpBotToken, goCqHttpBotUrl } = this.params;
     try {
-      const res = await httpClient.post(`${goCqHttpBotUrl}?${goCqHttpBotQq}`, {
+      const res = await this.transport.post(`${goCqHttpBotUrl}?${goCqHttpBotQq}`, {
         ...this.gotOption,
         json: { message: `${this.title}\n${this.content}` },
         headers: { Authorization: 'Bearer ' + goCqHttpBotToken },
@@ -156,7 +156,7 @@ export default class NotificationService {
         : `https://sctapi.ftqq.com/${serverChanKey}.send`;
 
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         body: `title=${encodeURIComponent(
           this.title,
@@ -177,7 +177,7 @@ export default class NotificationService {
     const { pushDeerKey, pushDeerUrl } = this.params;
     const url = pushDeerUrl || `https://api2.pushdeer.com/message/push`;
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         body: `pushkey=${pushDeerKey}&text=${encodeURIComponent(
           this.title,
@@ -200,7 +200,7 @@ export default class NotificationService {
   private async chat() {
     const { synologyChatUrl } = this.params;
     try {
-      const res = await httpClient.post(synologyChatUrl, {
+      const res = await this.transport.post(synologyChatUrl, {
         ...this.gotOption,
         body: `payload={"text":"${this.title}\n${this.content}"}`,
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -240,7 +240,7 @@ export default class NotificationService {
       url: barkUrl,
     };
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json: body,
         headers: { 'Content-Type': 'application/json' },
@@ -275,7 +275,7 @@ export default class NotificationService {
       });
     }
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         body: `chat_id=${telegramBotUserId}&text=${this.title}\n\n${this.content}&disable_web_page_preview=true`,
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -303,7 +303,7 @@ export default class NotificationService {
     }
     const url = `https://oapi.dingtalk.com/robot/send?access_token=${dingtalkBotToken}${secretParam}`;
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json: {
           msgtype: 'text',
@@ -327,7 +327,7 @@ export default class NotificationService {
       this.params;
     const url = `${weWorkOrigin}/cgi-bin/webhook/send?key=${weWorkBotKey}`;
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json: {
           msgtype: 'text',
@@ -352,7 +352,7 @@ export default class NotificationService {
     const [corpid, corpsecret, touser, agentid, thumb_media_id = '1'] =
       weWorkAppKey.split(',');
     const url = `${weWorkOrigin}/cgi-bin/gettoken`;
-    const tokenRes = await httpClient.post(url, {
+    const tokenRes = await this.transport.post(url, {
       ...this.gotOption,
       json: {
         corpid,
@@ -399,7 +399,7 @@ export default class NotificationService {
     }
 
     try {
-      const res = await httpClient.post(
+      const res = await this.transport.post(
         `${weWorkOrigin}/cgi-bin/message/send?access_token=${tokenRes.access_token}`,
         {
           ...this.gotOption,
@@ -452,7 +452,7 @@ export default class NotificationService {
     }
 
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json: {
           ...json,
@@ -472,7 +472,7 @@ export default class NotificationService {
     const { iGotPushKey } = this.params;
     const url = `https://push.hellyw.com/${iGotPushKey.toLowerCase()}`;
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         body: `title=${this.title}&content=${this.content}`,
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -515,7 +515,7 @@ export default class NotificationService {
         },
       };
 
-      const res = await httpClient.post(url, body);
+      const res = await this.transport.post(url, body);
 
       if (res.code === 200) {
         return true;
@@ -539,7 +539,7 @@ export default class NotificationService {
 
     const url = `https://www.weplusbot.com/send`;
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json: {
           token: `${wePlusBotToken}`,
@@ -586,7 +586,7 @@ export default class NotificationService {
     }
 
     try {
-      const res = await httpClient.post(larkKey, {
+      const res = await this.transport.post(larkKey, {
         ...this.gotOption,
         json: body,
         headers: { 'Content-Type': 'application/json' },
@@ -602,12 +602,13 @@ export default class NotificationService {
   }
 
   private async email() {
-    const { emailPass, emailService, emailUser, emailTo } = this.params;
+    const { emailPass, emailService, emailUser, emailTo, emailHost, emailPort, emailSecure } = this.params as typeof this.params & {emailHost?:string;emailPort?:number;emailSecure?:boolean};
     const recipients = this.parseMailRecipients(emailTo) || emailUser;
 
     try {
       const transporter = nodemailer.createTransport({
-        service: emailService,
+        ...(emailHost ? {host:emailHost,port:emailPort??587,secure:emailSecure??false} : {service:emailService}),
+        connectionTimeout: 10000, greetingTimeout: 10000, socketTimeout: 10000,
         auth: {
           user: emailUser,
           pass: emailPass,
@@ -619,9 +620,7 @@ export default class NotificationService {
         to: recipients,
         subject: `${this.title}`,
         html: `${this.content.replace(/\n/g, '<br/>')}`,
-      });
-
-      transporter.close();
+      }).finally(() => transporter.close());
 
       if (info.messageId) {
         return true;
@@ -636,7 +635,7 @@ export default class NotificationService {
   private async pushMe() {
     const { pushMeKey, pushMeUrl } = this.params;
     try {
-      const res = await httpClient.post<'text'>(
+      const res = await this.transport.post<'text'>(
         pushMeUrl || 'https://push.i-i.me/',
         {
           ...this.gotOption,
@@ -689,7 +688,7 @@ export default class NotificationService {
       if (ntfyActions) {
         headers['Actions'] = encodeRfc2047(ntfyActions);
       }
-      const res = await httpClient.request(
+      const res = await this.transport.request(
         `${ntfyUrl || 'https://ntfy.sh'}/${ntfyTopic}`,
         {
           ...this.gotOption,
@@ -735,7 +734,7 @@ export default class NotificationService {
 
     const url = `https://wxpusher.zjiecode.com/api/send/message`;
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json: {
           appToken: wxPusherBotAppToken,
@@ -789,7 +788,7 @@ export default class NotificationService {
     }
 
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json,
       });
@@ -843,7 +842,7 @@ export default class NotificationService {
               },
             ],
           };
-          const res = await httpClient.request(url, {
+          const res = await this.transport.request(url, {
             ...this.gotOption,
             json: data,
             headers,
@@ -892,7 +891,7 @@ export default class NotificationService {
       const formatUrl = webhookUrl
         ?.replaceAll('$title', encodeURIComponent(this.title))
         ?.replaceAll('$content', encodeURIComponent(this.content));
-      const res = await httpClient.request(formatUrl, options);
+      const res = await this.transport.request(formatUrl, options);
       const text = await res.body.text();
       if (String(res.statusCode).startsWith('20')) {
         return true;
@@ -931,7 +930,7 @@ export default class NotificationService {
       body.context_token = openiLinkContextToken;
     }
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json: body,
         headers: {
@@ -961,7 +960,7 @@ export default class NotificationService {
       json.topic_code = `${wpushTopicCode}`;
     }
     try {
-      const res = await httpClient.post(url, {
+      const res = await this.transport.post(url, {
         ...this.gotOption,
         json,
       });

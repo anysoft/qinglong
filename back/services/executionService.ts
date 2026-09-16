@@ -1,3 +1,5 @@
+import { runEvent } from './runObservability';
+import RunLogService from './runLog';
 import { TriggerEventModel, TaskTriggerModel } from '../data/taskTrigger';
 import TaskResourceResolver from './taskResourceResolver';
 import { randomUUID } from 'crypto';
@@ -421,7 +423,9 @@ export default class ExecutionService {
           },
           { where: { task_run_id: id, attempt_number: attempt } },
         );
-        if (!coordinator.retry(final, context)) break;
+        const retry = coordinator.retry(final, context);
+        await sequelize.query('UPDATE TaskRunAttempts SET result=:result,retry_decision=:retry WHERE task_run_id=:id AND attempt_number=:attempt', { replacements: { id, attempt, result: JSON.stringify(final), retry } });
+        if (!retry) break;
         const delay = Math.min(
           3600,
           context.settings.initial_delay_seconds *
@@ -429,6 +433,8 @@ export default class ExecutionService {
               ? 2 ** (attempt - 1)
               : 1),
         );
+        await runEvent(id, 'RETRY_SCHEDULED', {attempt, retry_delay: delay});
+        await sequelize.query('UPDATE TaskRunAttempts SET retry_delay=:delay WHERE task_run_id=:id AND attempt_number=:attempt', {replacements:{id,attempt,delay}});
         await redactor.write(`[RETRY ${attempt + 1} IN ${delay}s]\n`);
         await redactor.flush();
         await coordinator.backoff(delay);
@@ -442,6 +448,7 @@ export default class ExecutionService {
       await redactor.flush();
       await log.close();
       log = undefined;
+      await new RunLogService(this.paths).metadata(id);
       if (!final) throw new ExecutionError('EXECUTION_RESULT_MISSING');
       await TaskRunModel.update(
         {
@@ -461,33 +468,7 @@ export default class ExecutionService {
         },
         { where: { id, owner_token: token } },
       );
-      const policy = context.settings.notification;
-      const notify =
-        policy === 'ALWAYS' ||
-        (policy === 'SUCCESS' && final.status === 'SUCCESS') ||
-        (policy === 'FAILURE' && final.status !== 'SUCCESS');
-      if (notify) {
-        try {
-          const { default: NotificationService } = await import('./notify');
-          const delivered = await Container.get(NotificationService).notify(
-            `Task ${taskId}: ${final.status}`,
-            `Run ${id}; attempts ${final.attempt}; result ${
-              final.primaryError?.code ?? 'SUCCESS'
-            }`,
-          );
-          if (delivered === false)
-            throw new ExecutionError('NOTIFICATION_FAILED');
-        } catch {
-          final.secondaryErrors.push({
-            phase: 'NOTIFICATION',
-            code: 'NOTIFICATION_FAILED',
-          });
-          await TaskRunModel.update(
-            { result: final as unknown as Record<string, unknown> },
-            { where: { id, owner_token: null, status: final.status } },
-          );
-        }
-      }
+
     } catch (error) {
       const code = safeExecutionError(error);
       const busy =
@@ -568,6 +549,7 @@ export default class ExecutionService {
           current.owner_token !== row.owner_token
         )
           continue;
+        await runEvent(row.id, 'RECOVERY_STARTED');
         if (current.worktree_id) {
           workspaceLease = await this.paths.worktree(current.worktree_id);
           const worktree = await WorktreeModel.findByPk(current.worktree_id);
@@ -598,6 +580,7 @@ export default class ExecutionService {
           );
         }
         await this.paths.cleanupRunDirectory(row.id);
+        await runEvent(row.id, 'RECOVERY_FINISHED');
         await sequelize.transaction(
           { type: Transaction.TYPES.IMMEDIATE },
           async (transaction) => {

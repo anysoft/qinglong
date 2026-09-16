@@ -1,3 +1,5 @@
+import TaskPolicy, {TaskHealth} from '@/components/observability/taskPolicy';
+import {RunsTable,RunDetail} from '@/components/observability';
 import TaskTriggers from './triggers';
 import React, { useEffect, useState } from 'react';
 import {
@@ -53,6 +55,7 @@ function RuntimeDefaults({
   environments: any[];
   onChange: () => void;
 }) {
+  const [detailRun, setDetailRun] = useState<number>();
   const [rows, setRows] = useState<Record<string, any>>({}),
     [values, setValues] = useState<Record<string, number | null>>({});
   const scopes = [
@@ -142,6 +145,7 @@ function RuntimeDefaults({
   );
 }
 export default function TasksPage() {
+  const [detailRun, setDetailRun] = useState<number>();
   const [rows, setRows] = useState<any[]>([]),
     [worktrees, setWorktrees] = useState<any[]>([]),
     [python, setPython] = useState<any[]>([]),
@@ -303,6 +307,9 @@ export default function TasksPage() {
     selected && get(`tasks/${selected.id}/resources`).then(setPreview);
   const resourceTabs = selected
     ? [
+        {key: 'runs', label: 'Runs', children: <RunsTable taskId={selected.id}/>},
+        {key: 'health', label: 'Health', children: <TaskHealth id={selected.id}/>},
+        {key: 'notifications', label: 'Notifications', children: <TaskPolicy id={selected.id}/>},
         {
           key: 'environment',
           label: 'ENV',
@@ -456,10 +463,8 @@ export default function TasksPage() {
                   </Button>
                   <Button
                     onClick={async () => {
-                      const response = await request.get(
-                        api + `tasks/${task.id}/log`,
-                      );
-                      if (response.code === 200) setLog(response.data.content);
+                      const latest = await get(`task-runs?task_id=${task.id}&limit=1`);
+                      if (latest.data[0]) setDetailRun(latest.data[0].id);
                     }}
                   >
                     Log
@@ -672,7 +677,7 @@ export default function TasksPage() {
                   forceRender: true,
                   children: (
                     <>
-                      <Alert message="Retry and concurrency policies apply to each run. Failure notifications are sent after the final failed attempt." />
+                      <Alert message="Retry and concurrency apply to each run. Configure delivery separately in Notifications." />
                       <Form.Item
                         name="timeout_seconds"
                         label="Timeout seconds (empty = platform default)"
@@ -694,11 +699,6 @@ export default function TasksPage() {
                           'concurrency',
                           'Concurrency',
                           ['FORBID', 'QUEUE', 'ALLOW'],
-                        ],
-                        [
-                          'notification',
-                          'Notification',
-                          ['NONE', 'FAILURE', 'SUCCESS', 'ALWAYS'],
                         ],
                       ].map(([name, label, values]) => (
                         <Form.Item
@@ -762,7 +762,7 @@ export default function TasksPage() {
                   <Space>
                     <Button
                       onClick={async () =>
-                        setLog((await get(`task-runs/${run.id}/log`)).content)
+                        setDetailRun(run.id)
                       }
                     >
                       Run log
@@ -785,6 +785,7 @@ export default function TasksPage() {
             ]}
           />
         </Modal>
+        <RunDetail id={detailRun} onClose={()=>setDetailRun(undefined)}/>
         <Modal
           open={log !== undefined}
           title="Run log"

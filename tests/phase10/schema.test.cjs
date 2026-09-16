@@ -13,7 +13,7 @@ test('actual frozen v6 upgrades to identical fresh latest schema and restarts wi
  await old.initializeOperationalSchema(old.db,old.models);
  assert.deepEqual(await objects(old),await objects(fresh));
  const metadata=await old.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});
- assert.equal(metadata[0].platform_schema_version,8);
+ assert.equal(metadata[0].platform_schema_version,9);
  assert.deepEqual(metadata,await fresh.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}));
  await old.initializeOperationalSchema(old.db,old.models);
  assert.deepEqual(await objects(old),await objects(fresh));

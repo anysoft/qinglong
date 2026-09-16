@@ -1,0 +1,115 @@
+{
+  "status": "ambiguous",
+  "message": "Found 4 symbols matching 'clone'. Blast radius differs per candidate (max 154 impacted at risk CRITICAL). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "clone"
+  },
+  "direction": "upstream",
+  "totalCandidates": 4,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 154,
+  "maxRisk": "CRITICAL",
+  "candidates": [
+    {
+      "uid": "",
+      "name": "clone",
+      "kind": "",
+      "filePath": "",
+      "line": 373,
+      "score": 0.5,
+      "impactedCount": 154,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 129
+    },
+    {
+      "uid": "",
+      "name": "clone",
+      "kind": "",
+      "filePath": "",
+      "line": 291,
+      "score": 0.5,
+      "impactedCount": 153,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 129
+    },
+    {
+      "uid": "",
+      "name": "clone",
+      "kind": "",
+      "filePath": "",
+      "line": 69,
+      "score": 0.5,
+      "impactedCount": 142,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 125
+    },
+    {
+      "uid": "",
+      "name": "clone",
+      "kind": "",
+      "filePath": "",
+      "line": 349,
+      "score": 0.5,
+      "impactedCount": 113,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    }
+  ]
+}

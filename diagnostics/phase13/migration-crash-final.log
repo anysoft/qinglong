@@ -1,0 +1,34 @@
+TAP version 13
+# Subtest: two real processes cannot send one outbox concurrently; crash after external send recovers at-least-once
+ok 1 - two real processes cannot send one outbox concurrently; crash after external send recovers at-least-once
+  ---
+  duration_ms: 3371.880375
+  type: 'test'
+  ...
+# Subtest: SIGKILL before terminal commit rolls back; after commit preserves one logical alert for restart
+ok 2 - SIGKILL before terminal commit rolls back; after commit preserves one logical alert for restart
+  ---
+  duration_ms: 1937.011625
+  type: 'test'
+  ...
+# Subtest: threshold and recovery terminal commits survive SIGKILL with one logical alert and actual restart HTTP delivery
+ok 3 - threshold and recovery terminal commits survive SIGKILL with one logical alert and actual restart HTTP delivery
+  ---
+  duration_ms: 3386.27425
+  type: 'test'
+  ...
+# Subtest: actual frozen v8 migrates to identical fresh v9; rollback/retry/history and legacy policy preserved
+ok 4 - actual frozen v8 migrates to identical fresh v9; rollback/retry/history and legacy policy preserved
+  ---
+  duration_ms: 900.800167
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8915.992

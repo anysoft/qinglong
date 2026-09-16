@@ -1,0 +1,82 @@
+青龙
+v2.21.0
+仪表盘
+Runs
+Notifications
+Tasks
+订阅管理
+仓库管理
+环境变量
+配置资产
+脚本管理
+Runtime
+依赖管理
+日志管理
+对比工具
+系统设置
+platform-owner
+订阅管理
+创建订阅
+Git 同步	
+名称
+	分支	定时规则	
+状态
+	操作
+ 
+	
+ 
+	
+ 
+	
+ 
+	
+ 
+	
+ 
+
+
+E2E Repo #1
+Worktree #1
+SUCCESS
+	E2E Subscription	main		
+空闲中	
+运行
+日志
+第 1-1 条/总共 1 条
+1
+20 条/页
+编辑订阅
+名称
+Repository
+E2E Repo · ssh://git@127.0.0.1:50116/fixture.git
+管理仓库与凭据
+Branch
+仅支持分支；留空使用仓库默认分支。
+定时类型
+Cron
+Interval
+Cron
+留空时手动运行。
+禁用
+准备已保存的订阅
+Worktree #1 · SUCCESS
+Environment
+Repository Profile
+Inherit — Subscription / Repository Default
+Discovery policy
+Preview reads the saved policy. Apply discovers task sources and their cron metadata; user overrides are preserved.
+Discovery enabled
+Include globs (one per line)
+Exclude globs (one per line)
+Languages
+PYTHON
+JAVASCRIPT
+TYPESCRIPT
+SHELL
+Save discovery policy
+Preview discovery
+Apply discovery
+Last reconcile: 2026-09-16T03:40:55.407Z
+{"counts":{"CREATE":0,"UPDATE":0,"RETIRE":0,"UNCHANGED":3},"diagnostics":[]}
+取 消确 定
+Request failed with status code 500

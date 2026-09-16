@@ -1,0 +1,37 @@
+empty-root-bootstrap
+browser-fresh-initialize-login
+browser-credential-create
+browser-repository-create
+browser-initialize-fetch
+browser-subscription-create-branch
+browser-prepare-sync-discovery
+browser-worktree-view
+browser-global-create
+ENV_REPOSITORIES {"code":200,"data":[{"id":1,"name":"E2E Repo","default_env_profile_id":null,"profiles_count":0}]}
+browser-profile-create-default
+task-domain-discovery-three-languages
+real-python-venv-and-node-dependency-environments
+browser-discovered-task-runtime-settings-validation
+browser-manual-worktree-entrypoint-create
+browser-arguments-concurrency-and-negative-resource-gates
+browser-task-env-config-hooks
+browser-runtime-default-inherit-override-reset
+browser-clone-disable-enable
+browser-environment-reference-protection
+browser-managed-python-node-shell-and-manual-clone-runs
+browser-run-list-cancel-and-result
+browser-multiple-cron-and-real-scheduled-run
+browser-webhook-show-once-real-http-and-dedup
+real-ssh-git-sync-discovery-event-runner
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+500 !== 200
+
+    at /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/diagnostics/phase13/platform-e2e.cjs:173:224 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 500,
+  expected: 200,
+  operator: 'strictEqual',
+  diff: 'simple'
+}

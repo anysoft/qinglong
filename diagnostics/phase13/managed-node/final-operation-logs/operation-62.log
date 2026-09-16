@@ -1,0 +1,20 @@
+[PREPARING]
+[VERIFYING_BUILD]
+true
+10.17.1
+[
+  {
+    "name": "platform-environment",
+    "version": "0.0.0",
+    "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-MVQ0Xd/runtime/node/environments/env-18/builds/build-29",
+    "private": true,
+    "dependencies": {
+      "ql-phase8-script": {
+        "from": "ql-phase8-script",
+        "version": "1.0.0",
+        "resolved": "http://127.0.0.1:50078/artifacts/2795c9605f26f670795747ade17e368f3d3eae36d82c8bddf4d677e12fea4919.tgz",
+        "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-MVQ0Xd/runtime/node/environments/env-18/builds/build-29/node_modules/.pnpm/ql-phase8-script@1.0.0/node_modules/ql-phase8-script"
+      }
+    }
+  }
+]

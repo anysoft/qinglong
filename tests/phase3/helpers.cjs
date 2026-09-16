@@ -99,7 +99,7 @@ module.exports = async function setup(t, { persistent = false } = {}) {
     ...get('data/pythonEnvironment'),
     ...get('data/nodeEnvironment'),
   };
-  await sequelize.sync();
+  await get('shared/operationalSchema').initializeOperationalSchema(sequelize, Object.values(sequelize.models));
   require('../phase9/task-fixture.cjs')(Models, sequelize, () => ({ scriptRoot: path.join(dir, 'scripts') }));
   for (const folder of ['scripts', 'config', 'log', 'deps'])
     await fs.mkdir(path.join(dir, folder));

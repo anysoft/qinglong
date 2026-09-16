@@ -1,0 +1,54 @@
+TAP version 13
+# Subtest: all existing HTTP provider adapters retain protocol behavior with isolated concurrent state and real HTTP fixture
+ok 1 - all existing HTTP provider adapters retain protocol behavior with isolated concurrent state and real HTTP fixture
+  ---
+  duration_ms: 1762.483166
+  type: 'test'
+  ...
+# Subtest: existing email adapter sends through a real deterministic SMTP receiver
+ok 2 - existing email adapter sends through a real deterministic SMTP receiver
+  ---
+  duration_ms: 756.160834
+  type: 'test'
+  ...
+# Subtest: legacy webhook multipart transport preserves encoded fields and boundary
+ok 3 - legacy webhook multipart transport preserves encoded fields and boundary
+  ---
+  duration_ms: 686.845041
+  type: 'test'
+  ...
+# Subtest: 100,000 runs use SQL aggregates/keysets; 100MB log reads stay bounded; 10,000 outbox due query uses index
+ok 4 - 100,000 runs use SQL aggregates/keysets; 100MB log reads stay bounded; 10,000 outbox due query uses index
+  ---
+  duration_ms: 3411.335834
+  type: 'test'
+  ...
+# Subtest: actual frozen v8 migrates to identical fresh v9; rollback/retry/history and legacy policy preserved
+not ok 5 - actual frozen v8 migrates to identical fresh v9; rollback/retry/history and legacy policy preserved
+  ---
+  duration_ms: 1321.245375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/schema.test.cjs:4:1'
+  failureType: 'testCodeFailure'
+  error: 'Validation error'
+  code: 'ERR_TEST_FAILURE'
+  name: 'SequelizeUniqueConstraintError'
+  stack: |-
+    Database.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/lib/dialects/sqlite/query.js:185:27)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/lib/dialects/sqlite/query.js:183:50
+    new Promise (<anonymous>)
+    Query.run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/lib/dialects/sqlite/query.js:183:12)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/lib/sequelize.js:315:28
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/schema.test.cjs:10:85)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3690.466375

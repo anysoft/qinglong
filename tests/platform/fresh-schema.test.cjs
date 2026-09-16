@@ -29,7 +29,7 @@ test('empty data root creates v4, all bridge/core tables, and restarts without s
   const before=await schema(database);
   assert.equal(before.some(x=>x.name==='SchemaMigrations'),false);
   const [metadata]=await database.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});
-  assert.equal(metadata.platform_schema_version,8);
+  assert.equal(metadata.platform_schema_version,9);
   await initializeOperationalSchema(database,models);
   assert.deepEqual(await schema(database),before);
   assert.deepEqual(await database.query('PRAGMA foreign_key_check',{type:QueryTypes.SELECT}),[]);

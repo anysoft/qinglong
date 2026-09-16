@@ -1,0 +1,25 @@
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.peerDependencyRules", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+  GitNexus Analyzer (1.6.12)
+
+  GitNexus Analyzer (1.6.12)
+[2K  Skipped 18 large files (>512KB, likely generated/vendored)
+[2K  - diagnostics/phase10/impact-entrypoints.json
+[2K  - diagnostics/phase10/impact-test-updates.json
+[2K  - diagnostics/phase10/managed-runtime/final-operation-logs/operation-2.log
+[2K  - diagnostics/phase10/managed-runtime/operation-2.log
+[2K  - diagnostics/phase11/impact-core.json
+[2K  ...and 13 more (set GITNEXUS_VERBOSE=1 to list them all)
+[2K  Set GITNEXUS_MAX_FILE_SIZE=<KB> to include files above the default cap.
+{"level":40,"time":1789530430420,"name":"gitnexus","msg":"[scope-resolution] 2419 property read/write site(s) name a field that IS defined in this workspace, but only in another language, so per-language inference declined to link them. Queries for these fields return an empty result that does NOT mean \"unused\" — it means the definition anchor is in a different language. Affected: BACK_PORT (javascript), BIND_HOST (javascript), BIND_HOST_GRPC (javascript), GRPC_PORT (javascript), JSON (javascript), JWT_SECRET (javascript), NODE_ENV (javascript), QL_CONTAINER (javascript), QL_DATA_DIR (javascript), QL_DIR (javascript), …"}
+{"level":40,"time":1789530430654,"name":"gitnexus","truncation":{"truncated":true,"entryPointCandidatesDropped":1200,"entryPointsUnexplored":0,"walksCutByBudget":50,"tracesDepthCapped":0,"calleesDropped":1759,"processesDropped":0},"msg":"[processes] 445 flows reported, but whole flows are MISSING: 1200 of 1400 candidate entry point(s) never ranked in, 0 ranked entry point(s) never traced, 0 deduplicated flow(s) dropped at maxProcesses, 0 trace(s) cut at maxTraceDepth, 1759 callee(s) skipped at maxBranching, 50 walk(s) cut by the per-entry trace budget. An absent flow does NOT mean the code path does not exist."}
+[2KIncremental: changed=25, added=7, deleted=1 (skipping wipe + 2304 unchanged file rows preserved)
+[2KIncremental: +79 importer(s) added to writable set (BFS depth ≤ 4)
+{"level":30,"time":1789530437427,"name":"gitnexus","msg":"name-fallback resolution: 170 call sites (94 distinct caller-file/name pairs), 11 refused as impossible (guessed/refused by language: javascript 170/11)"}
+[2KParse cache: pruned 4 stale chunk entries
+
+  Repository indexed successfully (12.7s)
+
+  14,722 nodes | 38,933 edges | 501 clusters | 445 flows
+  /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+

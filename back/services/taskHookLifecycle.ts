@@ -8,6 +8,7 @@ import { TaskExecutionPreparation } from './taskExecutionPreparation';
 import { TaskHook, HookPhase } from '../data/configAsset';
 import { ConfigAssetError, atomicPrivateWrite } from '../shared/configAssets';
 export interface LifecycleOptions {
+  event?: (type: string, metadata: {phase?:string; hook_id?:number}) => Promise<void>;
   main?: (
     environment: NodeJS.ProcessEnv,
     output: (text: string) => Promise<void>,
@@ -124,6 +125,8 @@ export default class TaskHookLifecycle {
       );
     };
     const phase = async (name: HookPhase) => {
+      const eventPhase = name.startsWith('AFTER') ? 'AFTER' : name;
+      await options.event?.(eventPhase + '_STARTED', {phase:name});
       for (const hook of plan.hooks
         .filter((x) => x.phase === name)
         .sort((a, b) => a.position - b.position || a.id - b.id)) {
@@ -201,6 +204,7 @@ export default class TaskHookLifecycle {
             break;
         }
       }
+      await options.event?.(eventPhase + '_FINISHED', {phase:name});
     };
     try {
       await phase('BEFORE');
@@ -209,6 +213,7 @@ export default class TaskHookLifecycle {
       if (!result.primary) {
         await writeDerived();
         await redactor.write('[MAIN]\n');
+        await options.event?.('MAIN_STARTED', {});
         const main = options.main
           ? await options.main(context('MAIN'), (chunk) =>
               redactor.write(chunk),
@@ -231,6 +236,7 @@ export default class TaskHookLifecycle {
               plan.mainTimeout,
               (chunk) => redactor.write(chunk),
             );
+        await options.event?.('MAIN_FINISHED', {});
         result.main = main;
         if (this.cancelled) record('MAIN', 'CANCELLED', undefined, 143);
         else if (main.code !== 0)

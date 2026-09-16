@@ -31,11 +31,11 @@ test('node binding rejects imported sibling module trees and preserves unknown r
 test('private cleanup fails closed on unknown file and preserves that file',async t=>{
  const h=await fixture(t),f=await task(h,'exit 0'),run=await h.execution.submit(f.definition.id);const lease=await h.paths.owner(run.id);t.after(()=>lease.release());const directory=await h.paths.attemptDirectory(run.id,1);await fs.writeFile(path.join(directory,'user-file'),'preserve');await assert.rejects(h.paths.cleanupRunDirectory(run.id),/EXECUTION_TEMP_RECOVERY_REQUIRED/);assert.equal(await fs.readFile(path.join(directory,'user-file'),'utf8'),'preserve');await h.execution.cancel(run.id);
 });
-test('notification observes durable final result exactly once; delivery failure is secondary',async t=>{
- const h=await fixture(t),f=await task(h,'if [ ! -f once ]; then touch once; exit 7; fi',{max_attempts:2,notification:'ALWAYS'});let calls=0;
- h.mocks['./notify']={__esModule:true,default:class {async notify(){calls++;const row=await h.TaskRunModel.findOne();assert.equal(row.status,'SUCCESS');assert.equal(row.result.status,'SUCCESS');return false;}}};
- require('typedi').Container.set(h.mocks['./notify'].default,new h.mocks['./notify'].default());t.after(()=>require('typedi').Container.remove(h.mocks['./notify'].default));
- const run=await h.execution.submit(f.definition.id);await wait(h,run.id);await h.execution.stop();const result=await h.execution.get(run.id);assert.equal(calls,1);assert.equal(result.status,'SUCCESS');assert.deepEqual(result.result.secondaryErrors,[{phase:'NOTIFICATION',code:'NOTIFICATION_FAILED'}]);
+test('execution terminal result queues durable notification without synchronous provider calls',async t=>{
+ const h=await fixture(t),f=await task(h,'if [ ! -f once ]; then touch once; exit 7; fi',{max_attempts:2,notification:'ALWAYS'});
+ await h.db.query("INSERT INTO NotificationChannels(name,type,is_default,secret) VALUES('test','WEBHOOK',1,'{}')");
+ const run=await h.execution.submit(f.definition.id);await wait(h,run.id);await h.execution.stop();const result=await h.execution.get(run.id);assert.equal(result.status,'SUCCESS');assert.deepEqual(result.result.secondaryErrors,[]);
+ const [rows]=await h.db.query('SELECT status,task_run_id FROM NotificationOutbox');assert.equal(rows.length,1);assert.equal(rows[0].status,'PENDING');assert.equal(rows[0].task_run_id,run.id);
 });
 test('large UTF-8 per-run logs drain all bytes and tail without split-codepoint replacement',async t=>{
  const h=await fixture(t),Log=h.load('back/services/executionLog.ts').default,Redactor=h.load('back/services/executionRedactor.ts').default;const file=await Log.open(h.paths,99),redactor=new Redactor(['split-sensitive-value'],text=>file.write(text));

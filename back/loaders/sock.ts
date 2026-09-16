@@ -1,3 +1,4 @@
+import RunLogFollow from '../services/runLogFollow';
 import sockJs from 'sockjs';
 import { Server } from 'http';
 import { Container } from 'typedi';
@@ -40,11 +41,11 @@ export default async ({ server }: { server: Server }) => {
       }, 1000);
       checkSession.unref();
 
-      conn.on('data', (message) => {
-        conn.write(message);
-      });
+      const follow = new RunLogFollow(conn);
+      conn.on('data', (message) => { follow.handle(message); });
 
       conn.on('close', function () {
+        follow.close();
         clearInterval(checkSession);
         sockService.removeClient(conn);
       });

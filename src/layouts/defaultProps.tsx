@@ -30,6 +30,8 @@ export default {
         icon: <DashboardOutlined />,
         component: '@/pages/dashboard/index',
       },
+      { path: '/runs', name: 'Runs', icon: <DashboardOutlined />, component: '@/pages/runs/index' },
+      { path: '/notifications', name: 'Notifications', icon: <SettingOutlined />, component: '@/pages/notifications/index' },
       {
         path: '/tasks',
         name: 'Tasks',

@@ -1,0 +1,9 @@
+{
+  "error": "Target 'back/api/index.ts' not found",
+  "target": {
+    "name": "back/api/index.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

@@ -1,0 +1,46 @@
+TAP version 13
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=438c5c30666f4da1c8cb2ec9f963162dd8b85929 -> 438c5c30666f4da1c8cb2ec9f963162dd8b85929
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=438c5c30666f4da1c8cb2ec9f963162dd8b85929 -> 438c5c30666f4da1c8cb2ec9f963162dd8b85929
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=438c5c30666f4da1c8cb2ec9f963162dd8b85929 -> ec06bfe73c30334f2d6bc56e3ecd4584b71f0e15
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=ec06bfe73c30334f2d6bc56e3ecd4584b71f0e15 -> ec06bfe73c30334f2d6bc56e3ecd4584b71f0e15
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=ec06bfe73c30334f2d6bc56e3ecd4584b71f0e15 -> f7808660d9682c399a12d188ffcd57950dad1f14
+# [Managed] DISCOVERY subscription=1
+# [Managed] GIT_UPDATE_TRIGGERS subscription=1
+# Subtest: Real Git fetch/update -> discovery -> typed Git events, dedup and source filters
+ok 1 - Real Git fetch/update -> discovery -> typed Git events, dedup and source filters
+  ---
+  duration_ms: 12666.784708
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12896.572375

@@ -1,0 +1,9 @@
+{
+  "error": "Target 'src/pages/setting/index.tsx' not found",
+  "target": {
+    "name": "src/pages/setting/index.tsx"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

@@ -21,7 +21,7 @@ flowchart TD
  Cleanup --> Result[Canonical result / redacted run log]
  Result --> Retry{Retry?}
  Retry -->|same context and pins| Prepare
- Retry -->|finished| Persist[TaskRun result then notification]
+ Retry -->|finished| Persist[Atomic Run result + Health + Outbox]
 ```
 
 - 配置优先级保持 Phase 9 单一解析器；运行快照在事务读取、FD 租约获取、复核后冻结。
@@ -35,3 +35,5 @@ flowchart TD
 实现与验收：[Phase 10 文档](../refactor/phase10/01-execution-engine.md)、[最终报告](../../PHASE10_REPORT.md)、[桥接登记](../../TEMPORARY_BRIDGES.md)。
 
 Phase 11：submit 接收事件身份，检查 Task/Trigger enabled 和 readiness，以唯一 submission_key 在同一事务创建 Run 并关联事件。Runner、Context 与重试/并发职责不变。
+
+Phase13：终态事务原子更新健康状态与Outbox；NotificationDispatcher独立网络投递，失败不回写ExecutionResult。Runner v2未修改。见[通知架构](17-notification-platform.md)。

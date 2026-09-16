@@ -1,0 +1,115 @@
+{
+  "status": "ambiguous",
+  "message": "Found 4 symbols matching 'execute'. Blast radius differs per candidate (max 155 impacted at risk CRITICAL). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "execute"
+  },
+  "direction": "upstream",
+  "totalCandidates": 4,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 155,
+  "maxRisk": "CRITICAL",
+  "candidates": [
+    {
+      "uid": "",
+      "name": "execute",
+      "kind": "",
+      "filePath": "",
+      "line": 130,
+      "score": 0.5,
+      "impactedCount": 155,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 129
+    },
+    {
+      "uid": "",
+      "name": "execute",
+      "kind": "",
+      "filePath": "",
+      "line": 277,
+      "score": 0.5,
+      "impactedCount": 101,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "",
+      "name": "execute",
+      "kind": "",
+      "filePath": "",
+      "line": 629,
+      "score": 0.5,
+      "impactedCount": 93,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "",
+      "name": "execute",
+      "kind": "",
+      "filePath": "",
+      "line": 465,
+      "score": 0.5,
+      "impactedCount": 93,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    }
+  ]
+}

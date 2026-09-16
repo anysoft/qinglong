@@ -1,0 +1,45 @@
+{
+  "platform": {
+    "passed": 398,
+    "failed": 0,
+    "skipped": 3,
+    "exit_code": 0
+  },
+  "managed_execution": {
+    "passed": 2,
+    "failed": 0
+  },
+  "managed_environment": {
+    "passed": 3,
+    "failed": 0
+  },
+  "backend_build": {
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "frontend_build": {
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "typecheck": {
+    "status": "PARTIAL",
+    "original": 34,
+    "remaining": 32,
+    "new": [],
+    "raw_exit_code": 2,
+    "regression_gate": "PASS"
+  },
+  "browser": {
+    "status": "PASS",
+    "steps": 38,
+    "http_responses": 1530,
+    "websocket_frames": 110,
+    "run_log_frames": 65
+  },
+  "linux": "PARTIAL",
+  "cleanup": "PASS",
+  "static_audit": {
+    "status": "PASS",
+    "classified_references": 146
+  }
+}

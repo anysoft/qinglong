@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "runtime": "3.13.15",
+  "pinned_build": 1,
+  "promoted_build": 2,
+  "real_venv_import": true,
+  "scheduled": true,
+  "timeout": true,
+  "cancel": true,
+  "retry_snapshot": true,
+  "host_path_excluded": true
+}

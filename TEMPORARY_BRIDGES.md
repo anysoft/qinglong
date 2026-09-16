@@ -1,6 +1,6 @@
 # Temporary Bridges — 退出条件登记
 
-> 当前状态以本文末尾 **Phase 11 — Discovery / Triggers** 为准；前面的 Phase 4.5–9 表保留为阶段记录。
+> 当前状态以本文末尾 **Phase 13 — Observability / Notifications** 为准；前面的 Phase 4.5–9 表保留为阶段记录。
 
 当前平台能力仍依赖以下桥。保留是对现有运行职责的承认，不是继续承诺 QingLong 兼容。新代码不得新增对桥内部文件、URL、命名规则的依赖。Phase 4.5B 已完成本阶段收敛；后续 phase 编号是计划，必须满足 gate 才能退场。
 
@@ -140,3 +140,17 @@ Runtime Binding 和 Settings 在 Phase 9 只声明、验证、展示。没有 ma
 | B14 logs | REDUCED / RETAINED | 新结果使用 TaskRun；旧日志查询和留存仍有消费者 |
 
 B02/B06/B08/B11/B12/B13/B16/B17 的既有保留责任和 Linux gate 沿用 Phase 10，不因 Trigger 上线误删。Fresh Cron / Webhook / Git Trigger 不需要 system crond。没有启动 Phase 12 编辑器工作。
+
+
+## Phase 13 — Observability / Notifications
+
+| Bridge | Consumer | Replacement / Status | Exit condition |
+|---|---|---|---|
+| B14 Task日志身份 | Task行日志、Run History、Runs详情、Live follow | **REMOVED FROM NORMAL TASK PATH**；统一Run ID + RunLogService cursor，旧Task日志API不再是事实源 | 已通过正式Run读取/脱敏/大日志/断线/浏览器gate；不删除历史文件 |
+| B14 非Task旧日志与留存 | Subscription同步日志、系统日志、旧LogService/API、rmlog | **REDUCED / RETAINED**；旧API和清理器明确排除task-runs | Sync/System各自独立日志域与显式保留策略通过后才移除剩余旧接口 |
+| B13 最终执行通知 | 原ExecutionService→NotificationService | **REMOVED FROM EXECUTION PATH**；terminal SQL→Outbox→Dispatcher | 已由异步投递、失败不改结果、真实HTTP/崩溃恢复替代 |
+| B13 显式脚本SDK / 登录系统通知 | sample/notify、SystemService.notify、UserService登录通知、旧Auths内部配置 | **REDUCED / RETAINED**；保留显式SDK/system alert，无新Task消费者 | 系统/SDK事件契约替代后退出；旧初始化通知步骤与无消费者的旧通知表单已删除，旧配置公开编辑已关闭，Channel成为产品管理入口；不声称SDK已自动迁移 |
+| B15 统计/视图 | 旧TaskStats/TaskViews API及历史恢复数据 | **REDUCED**；Dashboard、Task最新状态、统计由TaskRuns SQL承担 | 历史consumer清点与Linux最终收敛后再删旧表/API，不删除用户历史 |
+| B16 Backup | 既有System export/import | **RETAINED**；不承诺覆盖新观测与通知域 | Phase14正式一致备份/恢复通过；本阶段未实现 |
+
+B03/B04/B07沿用Phase11状态；本阶段未重构Trigger/Scheduler。B01/B02/B06/B08/B09/B10/B11/B12/B17沿用各自活跃责任。B05保持REMOVED。Linux final qualification统一Phase15，不以Darwin通过冒充Linux通过。

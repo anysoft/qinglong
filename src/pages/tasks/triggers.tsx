@@ -202,18 +202,7 @@ export default function TaskTriggers({ taskId }: { taskId?: number }) {
               row.task_run_id ? (
                 <Button
                   type="link"
-                  onClick={async () => {
-                    const result = await request.get(
-                      `${config.apiPrefix}task-runs/${row.task_run_id}`,
-                    );
-                    Modal.info({
-                      title: `Run #${row.task_run_id}`,
-                      content: (
-                        <pre>{JSON.stringify(result.data, null, 2)}</pre>
-                      ),
-                      width: 700,
-                    });
-                  }}
+                  href={`${config.baseUrl}runs?run=${row.task_run_id}`}
                 >
                   #{row.task_run_id}
                 </Button>

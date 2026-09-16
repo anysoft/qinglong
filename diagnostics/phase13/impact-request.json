@@ -1,0 +1,168 @@
+{
+  "status": "ambiguous",
+  "message": "Found 10 symbols matching 'request' (showing 6 of 10). Blast radius differs per candidate (max 113 impacted at risk UNKNOWN; CRITICAL among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "request"
+  },
+  "direction": "upstream",
+  "totalCandidates": 10,
+  "candidatesTruncated": true,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 113,
+  "maxRisk": "UNKNOWN",
+  "knownMaxRisk": "CRITICAL",
+  "candidates": [
+    {
+      "uid": "",
+      "name": "request",
+      "kind": "",
+      "filePath": "",
+      "line": 104,
+      "score": 0.5,
+      "impactedCount": 113,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "",
+      "name": "request",
+      "kind": "",
+      "filePath": "",
+      "line": 27,
+      "score": 0.5,
+      "impactedCount": 93,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "",
+      "name": "request",
+      "kind": "",
+      "filePath": "",
+      "line": 63,
+      "score": 0.5,
+      "impactedCount": 93,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "Function:test/back/http-security.test.cjs:fn@9:87.request@104:2",
+      "name": "request",
+      "kind": "Function",
+      "filePath": "test/back/http-security.test.cjs",
+      "line": 105,
+      "score": 0.56,
+      "impactedCount": 91,
+      "risk": "MEDIUM",
+      "riskSharedAxes": "MEDIUM",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 1
+    },
+    {
+      "uid": "Function:diagnostics/phase4.5b/fresh-process.cjs:fn@7:1.request@16:1",
+      "name": "request",
+      "kind": "Function",
+      "filePath": "diagnostics/phase4.5b/fresh-process.cjs",
+      "line": 17,
+      "score": 0.56,
+      "impactedCount": 91,
+      "risk": "MEDIUM",
+      "riskSharedAxes": "MEDIUM",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 1
+    },
+    {
+      "uid": "Function:test/back/scheduler-readiness.test.cjs:fn@78:64.request@80:25",
+      "name": "request",
+      "kind": "Function",
+      "filePath": "test/back/scheduler-readiness.test.cjs",
+      "line": 81,
+      "score": 0.56,
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 0,
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+    }
+  ]
+}

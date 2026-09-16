@@ -409,6 +409,8 @@ export default class TaskService {
           `INSERT INTO TaskEnvVariables (task_id,name,value,status,operation,is_secret,position,labels,createdAt,updatedAt) SELECT :newId,name,value,status,operation,is_secret,position,labels,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP FROM TaskEnvVariables WHERE task_id=:oldId`,
           { replacements: { newId: task.id, oldId: id }, transaction },
         );
+        await sequelize.query(`UPDATE TaskNotificationPolicies SET ${['enabled','notify_success','notify_failure','notify_timeout','notify_interrupted','notify_cancelled','notify_recovery','failure_threshold','repeat_every_failures','channel_mode'].map(field => `${field}=(SELECT ${field} FROM TaskNotificationPolicies WHERE task_id=:oldId)`).join(',')} WHERE task_id=:newId`, {replacements:{oldId:id,newId:task.id},transaction});
+        await sequelize.query('INSERT INTO TaskNotificationChannelBindings(task_id,channel_id) SELECT :newId,channel_id FROM TaskNotificationChannelBindings WHERE task_id=:oldId', {replacements:{oldId:id,newId:task.id},transaction});
         const webhook_secrets = await cloneTaskTriggers(
           id,
           task.id,

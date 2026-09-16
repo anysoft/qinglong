@@ -339,6 +339,8 @@ class Application {
         await triggerScheduler.stop();
         await executionSubmission.stop();
         await executionService.stop();
+        const { notificationDispatcher } = await import('./services/notificationDispatcher');
+        await notificationDispatcher.stop();
         await this.httpServerService?.shutdown();
       } else {
         await this.grpcServerService?.shutdown();

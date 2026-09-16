@@ -1,0 +1,8 @@
+[PREPARING]
+[VERIFYING_ENVIRONMENT]
+{"executable": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-gNXupV/runtime/python/environments/env-2/builds/build-3/venv/bin/python", "prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-gNXupV/runtime/python/environments/env-2/builds/build-3/venv", "base_prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-gNXupV/runtime/python/pyenv/versions/3.13.15", "version": "3.13.15", "implementation": "CPython", "system": "Darwin", "arch": "arm64", "user_site": false, "site_packages": ["/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-gNXupV/runtime/python/environments/env-2/builds/build-3/venv/lib/python3.13/site-packages"], "purelib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-gNXupV/runtime/python/environments/env-2/builds/build-3/venv/lib/python3.13/site-packages", "platlib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-gNXupV/runtime/python/environments/env-2/builds/build-3/venv/lib/python3.13/site-packages", "pip_file": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-gNXupV/runtime/python/environments/env-2/builds/build-3/venv/lib/python3.13/site-packages/pip/__init__.py", "pip_version": "26.2.1"}
+[{"name": "pip", "version": "26.2.1"}, {"name": "ql-phase7-leaf", "version": "1.0.0"}, {"name": "ql-phase7-root", "version": "1.0.0"}]
+pip==26.2.1
+ql-phase7-leaf==1.0.0
+ql-phase7-root==1.0.0
+No broken requirements found.

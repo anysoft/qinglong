@@ -1,3 +1,4 @@
+import observabilityRoutes from './observability';
 import { Router } from 'express';
 import user from './user';
 import runtimeRoutes from './runtime';
@@ -22,6 +23,7 @@ export default () => {
   const app = Router();
   user(app);
   runtimeRoutes(app);
+  observabilityRoutes(app);
   taskRoutes(app);
   configAssets(app);
   log(app);

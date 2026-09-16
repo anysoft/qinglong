@@ -600,5 +600,29 @@
   {
     "path": "tests/phase11/git-pipeline.test.cjs",
     "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/domain.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/recovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/scale.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/providers.test.cjs",
+    "classification": "PLATFORM_CORE"
   }
 ]

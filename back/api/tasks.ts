@@ -51,16 +51,6 @@ export default function taskRoutes(app: Router) {
     '/tasks/:id/runs',
     endpoint((req) => executionService.list(identifier(req.params.id))),
   );
-  app.get(
-    '/task-runs/:id',
-    endpoint((req) => executionService.get(identifier(req.params.id))),
-  );
-  app.get(
-    '/task-runs/:id/log',
-    endpoint(async (req) => ({
-      content: await executionService.log(identifier(req.params.id)),
-    })),
-  );
   app.post(
     '/task-runs/:id/cancel',
     endpoint((req) => executionService.cancel(identifier(req.params.id))),

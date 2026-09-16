@@ -1,0 +1,79 @@
+TAP version 13
+# Subtest: threshold, recovery, per-status overrides, atomic outbox and real HTTP delivery
+not ok 1 - threshold, recovery, per-status overrides, atomic outbox and real HTTP delivery
+  ---
+  duration_ms: 1174.759416
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/domain.test.cjs:8:1'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:90:11)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:41:33)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:17:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:14:34)
+  ...
+# Subtest: delivery retry/dead/manual identity and channel archive preserve history; execution does not wait
+not ok 2 - delivery retry/dead/manual identity and channel archive preserve history; execution does not wait
+  ---
+  duration_ms: 677.271917
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/domain.test.cjs:17:1'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:90:11)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:41:33)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:17:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:14:34)
+  ...
+# Subtest: run events are ordered, attempts retain retry results, resource/log APIs omit secret values
+ok 3 - run events are ordered, attempts retain retry results, resource/log APIs omit secret values
+  ---
+  duration_ms: 1233.216125
+  type: 'test'
+  ...
+# Subtest: terminal transaction rollback includes health and outbox
+not ok 4 - terminal transaction rollback includes health and outbox
+  ---
+  duration_ms: 666.020583
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/domain.test.cjs:25:1'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:90:11)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:41:33)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:17:16)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:14:34)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 1
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3985.40775
