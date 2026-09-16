@@ -3,6 +3,7 @@ const {Sequelize,QueryTypes}=require('sequelize');
 const load=require('../../test/helpers/load-security-module.cjs');
 async function fixture(t,{initialize=true}={}) {
  const root=await fs.mkdtemp(path.join(os.tmpdir(),'platform-phase5-'));
+ await fs.mkdir(path.join(root,'shell'),{mode:0o700});await fs.copyFile(path.resolve('shell/runtime_lease.py'),path.join(root,'shell/runtime_lease.py'));
  const db=new Sequelize({dialect:'sqlite',storage:path.join(root,'database.sqlite'),logging:false});
  const config={rootPath:root,dataPath:root,dbPath:root,scriptPath:path.join(root,'scripts')};
  const cache=new Map(),mocks={'.':{sequelize:db},'../data':{sequelize:db},'../config':{default:config,__esModule:true}};
@@ -16,7 +17,7 @@ async function fixture(t,{initialize=true}={}) {
  if(initialize)await schema.initializeOperationalSchema(db,models);
  require('../phase9/task-fixture.cjs')(all,db,()=>({scriptRoot:path.join(root,'scripts'),namespace:config.fixturePublicationNamespace}));
  await fs.mkdir(config.scriptPath,{mode:0o700});
- t.after(async()=>{await db.close();await fs.rm(root,{recursive:true,force:true});});
+ t.after(async()=>{await db.close();await fs.rm(root,{recursive:true,force:true});await fs.rm(root+'.platform-control',{recursive:true,force:true});await fs.rm(root+'-backups',{recursive:true,force:true});});
  return {root,db,config,models,modules,...all,...schema,mocks,load:file=>load(path.resolve(file),mocks,cache)};
 }
 async function seedV1(h){

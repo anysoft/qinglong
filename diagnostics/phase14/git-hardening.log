@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: production snapshot, encrypted transfer and offline restore to an absent different DATA_DIR
+ok 1 - production snapshot, encrypted transfer and offline restore to an absent different DATA_DIR
+  ---
+  duration_ms: 1823.159625
+  type: 'test'
+  ...
+# Subtest: Git local-only refs, dirty, ignored and untracked worktree data survive source destruction
+ok 2 - Git local-only refs, dirty, ignored and untracked worktree data survive source destruction
+  ---
+  duration_ms: 4301.996542
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7210.299333

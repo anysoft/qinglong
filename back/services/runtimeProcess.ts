@@ -1,3 +1,4 @@
+import { inheritedLeaseFds } from './backup/inheritedLeases';
 import fs, { FileHandle } from 'fs/promises';
 import { constants } from 'fs';
 import { spawn, ChildProcessWithoutNullStreams } from 'child_process';
@@ -85,6 +86,7 @@ export class RuntimeCommand {
     if (this.cancelled) throw new RuntimeError('RUNTIME_CANCELLED');
     const remaining = (this.deadline - Date.now()) / 1000;
     if (remaining <= 0) throw new RuntimeError('RUNTIME_TIMEOUT');
+    const fds = [...new Set([this.lease.handle.fd, ...this.resourceLeases.map(x => x.handle.fd), ...inheritedLeaseFds()])];
     const child = spawn(
       '/usr/bin/python3',
       [
@@ -97,8 +99,8 @@ export class RuntimeCommand {
       ],
       {
         cwd,
-        env: { ...environment, PLATFORM_LEASE_FDS: [this.lease, ...this.resourceLeases].map((_, i) => String(i + 3)).join(',') },
-        stdio: ['pipe', 'pipe', 'pipe', this.lease.handle.fd, ...this.resourceLeases.map(x => x.handle.fd)],
+        env: { ...environment, PLATFORM_LEASE_FDS: fds.map((_, i) => String(i + 3)).join(',') },
+        stdio: ['pipe', 'pipe', 'pipe', ...fds],
       },
     ) as ChildProcessWithoutNullStreams;
     this.child = child;

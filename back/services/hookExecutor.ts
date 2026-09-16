@@ -4,6 +4,7 @@ import {
   SpawnOptionsWithoutStdio,
 } from 'child_process';
 import path from 'path';
+import { inheritedLeaseFds } from './backup/inheritedLeases';
 import config from '../config';
 import { observeChildProcess } from '../shared/childProcess';
 
@@ -28,6 +29,7 @@ export default class HookExecutor {
           .split(',')
           .filter(Boolean)
           .map(Number);
+    fds.push(...inheritedLeaseFds().filter(fd=>!fds.includes(fd)));
     const stdio: any[] = ['pipe', 'pipe', 'pipe'];
     for (const fd of fds) stdio.push(fd);
     const resultFd = stdio.length;

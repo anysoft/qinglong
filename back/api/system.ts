@@ -15,19 +15,9 @@ import {
   promiseExec,
 } from '../config/util';
 import dayjs from 'dayjs';
-import multer from 'multer';
 import { logStreamManager } from '../shared/logStreamManager';
 
 const route = Router();
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, config.tmpPath);
-  },
-  filename: function (req, file, cb) {
-    cb(null, 'data.tgz');
-  },
-});
-const upload = multer({ storage: storage });
 
 export default (app: Router) => {
   app.use('/system', route);
@@ -316,36 +306,7 @@ export default (app: Router) => {
     },
   );
 
-  route.put(
-    '/data/export',
-    celebrate({
-      body: Joi.object({
-        type: Joi.array().items(Joi.string()).optional(),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        await systemService.exportData(res, req.body.type);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/data/import',
-    upload.single('data'),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.importData();
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
+  route.put(['/data/export','/data/import'], (_req,res)=>res.status(410).json({code:410,message:'BACKUP_LEGACY_REMOVED'}));
 
   route.get(
     '/log',

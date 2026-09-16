@@ -1,0 +1,83 @@
+TAP version 13
+# Subtest: production snapshot, encrypted transfer and offline restore to an absent different DATA_DIR
+ok 1 - production snapshot, encrypted transfer and offline restore to an absent different DATA_DIR
+  ---
+  duration_ms: 1606.959584
+  type: 'test'
+  ...
+# Subtest: Git local-only refs, dirty, ignored and untracked worktree data survive source destruction
+ok 2 - Git local-only refs, dirty, ignored and untracked worktree data survive source destruction
+  ---
+  duration_ms: 3165.976875
+  type: 'test'
+  ...
+# Subtest: restore SIGKILL recovery: during-schema-migration
+ok 3 - restore SIGKILL recovery: during-schema-migration
+  ---
+  duration_ms: 2078.232417
+  type: 'test'
+  ...
+# Subtest: restore SIGKILL recovery: during-git-repair
+ok 4 - restore SIGKILL recovery: during-git-repair
+  ---
+  duration_ms: 2318.593625
+  type: 'test'
+  ...
+# Subtest: restore SIGKILL recovery: after-candidate-validation
+ok 5 - restore SIGKILL recovery: after-candidate-validation
+  ---
+  duration_ms: 2048.684125
+  type: 'test'
+  ...
+# Subtest: restore SIGKILL recovery: after-old-rename
+ok 6 - restore SIGKILL recovery: after-old-rename
+  ---
+  duration_ms: 2041.041292
+  type: 'test'
+  ...
+# Subtest: restore SIGKILL recovery: after-candidate-publish
+ok 7 - restore SIGKILL recovery: after-candidate-publish
+  ---
+  duration_ms: 2116.51875
+  type: 'test'
+  ...
+# Subtest: restore SIGKILL recovery: before-startup-validation
+ok 8 - restore SIGKILL recovery: before-startup-validation
+  ---
+  duration_ms: 2049.579583
+  type: 'test'
+  ...
+# Subtest: restore SIGKILL recovery: after-startup-validation
+ok 9 - restore SIGKILL recovery: after-startup-validation
+  ---
+  duration_ms: 2006.47525
+  type: 'test'
+  ...
+# Subtest: post-switch validation failure restores original directory and preserves failed candidate
+ok 10 - post-switch validation failure restores original directory and preserves failed candidate
+  ---
+  duration_ms: 1193.922208
+  type: 'test'
+  ...
+# Subtest: snapshot and restore reject tampering, unsafe roots and substituted ownership
+ok 11 - snapshot and restore reject tampering, unsafe roots and substituted ownership
+  ---
+  duration_ms: 1201.713375
+  type: 'test'
+  ...
+# Subtest: 100,000 historical Runs and 100 MiB logs snapshot, validate and restore with sampled RSS
+ok 12 - 100,000 historical Runs and 100 MiB logs snapshot, validate and restore with sampled RSS
+  ---
+  duration_ms: 126833.698625
+  type: 'test'
+  ...
+# {"runs":100000,"log_bytes":104857600,"git_files":2000,"elapsed_ms":125083,"rss_start":253149184,"rss_peak":362332160,"rss_end":142721024,"samples":2433}
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 149529.716083

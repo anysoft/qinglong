@@ -39,7 +39,24 @@ const consoleTransport = new winston.transports.Console({
   level: 'debug',
 });
 
-const fileTransport = new winston.transports.DailyRotateFile({
+
+const LoggerInstance = winston.createLogger({
+  level: 'debug',
+  levels: winston.config.npm.levels,
+  transports: [consoleTransport],
+  exceptionHandlers: [consoleTransport],
+  rejectionHandlers: [consoleTransport],
+});
+
+LoggerInstance.on('error', (error) => {
+  console.error('Logger error:', error);
+});
+
+let fileLoggingEnabled = false;
+/** Called only after offline restore and private data directory bootstrap. */
+export function enableFileLogging() {
+  if (fileLoggingEnabled) return;
+  const fileTransport = new winston.transports.DailyRotateFile({
   filename: path.join(config.systemLogPath, '%DATE%.log'),
   datePattern: 'YYYY-MM-DD',
   maxSize: '20m',
@@ -48,16 +65,10 @@ const fileTransport = new winston.transports.DailyRotateFile({
   level: config.logs.level || 'info',
 });
 
-const LoggerInstance = winston.createLogger({
-  level: 'debug',
-  levels: winston.config.npm.levels,
-  transports: [consoleTransport, fileTransport],
-  exceptionHandlers: [consoleTransport, fileTransport],
-  rejectionHandlers: [consoleTransport, fileTransport],
-});
-
-LoggerInstance.on('error', (error) => {
-  console.error('Logger error:', error);
-});
+  LoggerInstance.add(fileTransport);
+  LoggerInstance.exceptions.handle(fileTransport);
+  LoggerInstance.rejections.handle(fileTransport);
+  fileLoggingEnabled = true;
+}
 
 export default LoggerInstance;

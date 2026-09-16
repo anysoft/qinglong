@@ -1,3 +1,4 @@
+import { PlatformMutation } from './backup/platform';
 import fs from 'fs/promises';
 import path from 'path';
 import { randomUUID, createHash } from 'crypto';
@@ -97,6 +98,7 @@ export default class PythonEnvironmentService {
       }),
     );
   }
+  @PlatformMutation()
   async withMutation<T>(
     id: number | null,
     action: (ctx: ProviderContext) => Promise<T>,

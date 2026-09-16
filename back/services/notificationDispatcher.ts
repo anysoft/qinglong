@@ -1,3 +1,4 @@
+import { PlatformMutation } from './backup/platform';
 import path from 'path';
 import { randomUUID } from 'crypto';
 import { Transaction, QueryTypes } from 'sequelize';
@@ -60,6 +61,7 @@ export default class NotificationDispatcher {
       this.working = false;
     }
   }
+  @PlatformMutation()
   async deliver(id: number) {
     let lease: RuntimeLease;
     try {

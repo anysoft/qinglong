@@ -99,6 +99,10 @@ usage() {
 }
 
 reload_qinglong() {
+  if [[ "${1:-}" == 'data' ]]; then
+    printf '%s\n' 'RESTORE_LEGACY_REMOVED: use Backup & Restore or the offline backup CLI.' >&2
+    return 64
+  fi
   echo -e "[reload_qinglong] deleting Triggered at $(date)" >>${dir_log}/reload.log
   sleep 3
   delete_pm2
@@ -118,10 +122,7 @@ reload_qinglong() {
     cp -f $file_config_sample $dir_config/config.sample.sh
   fi
 
-  if [[ "$reload_target" == 'data' ]]; then
-    rm -rf ${dir_data}/*
-    mv -f ${dir_tmp}/data/* ${dir_data}/
-  fi
+
   echo -e "[reload_qinglong] starting Triggered at $(date)" >>${dir_log}/reload.log
   reload_pm2
   echo -e "[reload_qinglong] started Triggered at $(date)\n" >>${dir_log}/reload.log

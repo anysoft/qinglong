@@ -1,3 +1,4 @@
+import { PlatformMutation } from './backup/platform';
 import DiscoveryService from './discovery';
 import GitUpdateTriggerService from './gitUpdateTrigger';
 import { Service } from 'typedi';
@@ -15,6 +16,7 @@ export default class ManagedSubscriptionService {
     private resolver: SubscriptionGitResolver,
   ) {}
 
+  @PlatformMutation()
   async exclusive<T>(id: number, action: () => Promise<T>) {
     return this.storage.locks.with(
       [{ kind: 'subscription', id }],

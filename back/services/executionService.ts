@@ -1,3 +1,4 @@
+import { PlatformMutation } from './backup/platform';
 import { runEvent } from './runObservability';
 import RunLogService from './runLog';
 import { TriggerEventModel, TaskTriggerModel } from '../data/taskTrigger';
@@ -44,6 +45,7 @@ export default class ExecutionService {
     readonly paths = new ExecutionPaths(),
     readonly resolver = new ExecutionResolver(undefined, paths),
   ) {}
+  @PlatformMutation()
   async submit(
     taskId: number,
     trigger: TaskRunTrigger = 'MANUAL',
@@ -258,6 +260,7 @@ export default class ExecutionService {
     for (const value of this.active.values()) value.coordinator.cancel();
     await Promise.all([...this.active.values()].map((value) => value.done));
   }
+  @PlatformMutation(true)
   async tick() {
     if (this.ticking || this.closed) return;
     this.ticking = true;
@@ -351,6 +354,7 @@ export default class ExecutionService {
       this.ticking = false;
     }
   }
+  @PlatformMutation(true)
   private async execute(
     id: number,
     taskId: number,
@@ -526,6 +530,7 @@ export default class ExecutionService {
       }
     }
   }
+  @PlatformMutation(true)
   async recover() {
     const rows = await TaskRunModel.findAll({
       where: { status: activeStates },

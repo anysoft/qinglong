@@ -1,100 +1,151 @@
 # Phase 14 Status: PARTIAL
 
-**未完成 Phase 14。当前只交付未接入生产入口的基础模块，不是可用的平台 Backup / Restore。**
-不能创建 READY 平台快照，不能恢复用户 DATA_DIR；不能进入 Phase 12。
-分支 `codex/phase14-backup-restore`，基线 `88a059c8`，schema 仍为 v9。
+> **ALL PHASE14 FUNCTIONAL GATES PASS**
+> **ONLY LINUX VALIDATION DEFERRED TO PHASE15**
+
+日期：2026-09-16。平台：Darwin arm64；基线：`fd4270e1`。本报告覆盖 Phase 14 foundation 与 continuation，取代原 foundation-only 报告。没有实现 Phase 12/15/16，没有新增旧青龙格式兼容或 migration path。未提交、未推送。
+
+## Gate matrix
 
 | Item | Status |
 |---|---|
-| Data Classification | PARTIAL — 首轮分类与 B16 审计已记录，完整资源检查未实现 |
-| Consistent Snapshot | PARTIAL — 只有跨进程屏障原语，业务入口未接入 |
-| SQLite Backup | PARTIAL — VACUUM INTO / integrity / FK / WAL 单独测试通过 |
-| Git Backup | PARTIAL — 未实现 |
-| Worktree Backup | PARTIAL — 归档路径保护已实现，Git metadata / mode 恢复未实现 |
-| Config / Secret Backup | PARTIAL — 未实现平台内容清单/校验 |
-| Run / Log Backup | PARTIAL — 有大文件流式模块测试，无平台快照 |
-| Notification State Backup | PARTIAL — 未接入 |
-| Portable Encryption | PARTIAL — 容器模块测试通过，无平台 Export API/UI |
-| Backup Validation | PARTIAL — 只有基础文件/SQLite/归档校验 |
-| Restore Staging | PARTIAL — 有私有空目录解包，无 restore operation |
-| Offline Restore | PARTIAL — 未实现 |
-| Restore Crash Recovery | PARTIAL — 只测试屏障 owner 崩溃，非 DATA_DIR 切换 |
-| Git Repair | PARTIAL — 未实现 |
-| Runtime Reconciliation | PARTIAL — 未实现 |
-| Resource Rebuild | PARTIAL — 未实现 |
-| Browser E2E | PARTIAL — 未运行 |
-| Fresh Restore E2E | PARTIAL — 未运行 |
-| B16 Removal | PARTIAL — 旧入口仍保留，替代退出条件未满足 |
-| Linux Validation | PARTIAL — Phase15 |
+| Data Classification | PASS |
+| Backup Coordinator / Consistent Snapshot | PASS |
+| Manifest / Component Inventory / Atomic READY | PASS |
+| SQLite Backup / WAL independence | PASS |
+| Git / Worktree / local-only refs / dirty state | PASS |
+| Config / Secret Backup | PASS |
+| Run / Log Backup | PASS |
+| Notification State | PASS |
+| Portable Encryption / Import | PASS |
+| Backup Validation | PASS |
+| Restore Staging / Pending / Cancel | PASS |
+| Offline Restore / Startup Bootstrap | PASS |
+| Restore Journal / Safety Snapshot / Atomic Switch | PASS |
+| Seven Crash Points / Rollback | PASS |
+| Git Repair across roots | PASS |
+| Runtime Reconciliation / Explicit Resource Rebuild | PASS |
+| Browser Backup / Import / Restart Restore | PASS |
+| Fresh Disaster Recovery complete chain | PASS |
+| B16 Normal Platform Backup/Restore Path | PASS — REMOVED FROM NORMAL PATH |
+| Platform Regression | PASS — 438 tests / 435 passed / 0 failed / 3 skipped |
+| Backend / Frontend Build | PASS |
+| Typecheck regression | PASS — 32 historical / 0 new |
+| Static Audit | PASS |
+| Linux Validation | PARTIAL — Phase 15 |
 
-## 已实现范围
+## Production entry points
 
-- [数据分类](docs/refactor/phase14/01-data-classification.md)：实际路径、UNIQUE/REBUILDABLE/EPHEMERAL/CONDITIONAL、Git ignored 用户文件与 journal 原件保护。
-- [基础模块契约](docs/refactor/phase14/02-foundation-contracts.md)：格式、安全边界、尚未接入处、继续实施顺序。
-- `back/services/backup/files.ts`：私有目录与 regular/no-follow/owner/nlink 检查，私有 JSON、fsync、hash、完整写入。
-- `envelope.ts`：scrypt + AES-256-GCM、版本化固定 header AAD、随机 salt/nonce、流式导入导出、失败删除本次明文临时文件、派生 key 清零。
-- `archive.ts`：有界 framing，无压缩，严格路径/类型/大小/count、流式 SHA256、拒绝 hardlink/special、安全相对链接、拒绝源内输出。
-- `sqlite.ts`：VACUUM INTO，自包含副本，SQLite integrity/FK 验证，不依赖源 WAL。
-- `barrier.ts`：真实 FD shared/exclusive 门禁、QUIESCING/排空/冻结、timeout、SIGKILL 遗留状态恢复。尚未协调平台各服务，不能称一致备份。
+- Settings →「备份与恢复」：创建、列表、详情、验证、删除、加密导出/下载、加密导入、验证导入、输入 RESTORE 暂存、取消 pending、状态与显式重建。
+- Panel API：`POST/GET /api/backups`；`GET/DELETE /api/backups/:id`；`POST .../:id/validate`、`.../:id/export`；`GET /api/backups/exports/:id/download`、`/api/backups/operations/:id`。
+- Restore API：`POST /api/restores/import`、`/api/restores/:id/validate`、`/api/restores/:id/stage`；`DELETE /api/restores/:id/stage`；`GET /api/restore/status`；`POST /api/restore/rebuild`。
+- Offline CLI：`node static/build/backupCli.js list|create|validate|export|import|stage|apply|recover|cancel|status`。口令从 stdin 或私有 `--passphrase-file` 输入；不接受口令 argv。
+- Primary bootstrap：backend lifetime lease → RestoreService.apply → abandoned backup/operation recovery → private DB preparation → canonical DB bootstrap → workers/schedulers。坏 journal 不能绕过恢复进入普通启动。
 
-## Backup Format / Manifest / Local Security
+Schema 保持 **v9**。没有 schema 10，没有手写另一套 CREATE TABLE。快照校验冻结 schema identities；候选调用正式 `initializeOperationalSchema` 迁移链。
 
-容器与归档草案版本为 1，详见基础契约；无压缩，不引入外部加密 CLI。
-所有本次输出目录/文件私有，口令只由模块参数 Buffer 传入；没有公开下载入口。
-完整 immutable manifest、inventory、component summaries/checksums、READY 原子发布均未实现。
-Local Snapshot 敏感明文边界已定义，但正式 Snapshot 尚未建立。
+## Backup coordinator and barrier consumers
 
-## Barrier / SQLite / Git / Config / Logs / Notifications
+`BackupCoordinator` 在跨进程共享写租约排空后持排他快照租约。等待现有 TaskRuns、RuntimeOperations、Git/Worktree critical sections、Notification SENDING 完成；默认 600 秒，上限 3600 秒。超时返回 BACKUP_BUSY，保留业务工作并恢复 admission。
 
-屏障只在测试中调用；跨资源 idle callback 的正式实现与长操作生命周期接入尚缺。
-SQLite 单独 snapshot 正确不等于 DB↔Git↔Config↔Logs 一致。
-Git fsck/整对象库/dirty 工作区修复、Config revision 验证、日志缺失 contract、Outbox SENDING 等待均待实施。
+| Consumer | Covered lifetime |
+|---|---|
+| Panel / Open API / Webhook | HTTP admission；全部异步业务 route handler 独立保留至 Promise 结束，客户端断连不提前释放写租约 |
+| Execution submit / tick / execute / recover | 新 producer 暂停，已接收 queue drain，最终 Run/Log/Config 清理完成才释放 |
+| TriggerScheduler / TriggerEvents | 暂停新 Cron/Webhook/Git trigger admission；不改变既有 misfire / disabled Cron 语义 |
+| ManagedSubscription | fetch → worktree update → discovery → Git event critical section |
+| RuntimeOperation / Python & Node Environment | request admission、后台 execute/recover、环境定义 mutation |
+| NotificationDispatcher | claim → HTTP delivery → result/outbox 持久化 |
+| ScheduleService / token / Runtime / Hook children | 排队回调及最终 onEnd；子进程继承 FD 租约 |
 
-## Restore / CLI / UI / Bootstrap / Journal / Atomic Switch
+AsyncLocalStorage admission 不代替锁。嵌套后台操作持自己的 FD；primary、cluster workers、托管子进程继承 backend lifetime lease，离线 restore 不能越过仍活跃的 cooperating processes。
 
-未实现 offline CLI、Panel API/UI、restore request、startup bootstrap、版本化 checksum journal、
-pre-restore safety snapshot、old/candidate 原子切换、post-switch rollback 及七点 crash matrix。
-不提供在线覆盖路径。屏障 SIGKILL 测试不能替代 Restore crash recovery。
+## Snapshot components and exclusions
 
-## Runtime / Rebuild / Trigger / Notification Semantics
+包括自包含 SQLite、完整 bare Git objects/refs/reflogs、Worktree tracked/dirty/untracked/ignored 数据、安全相对 symlink、Config 所有 revision、ENV/Credential/Channel/Webhook 秘密、Hook/Task/Trigger 定义、历史 Run/Attempt/Event/Result、日志、TaskHealth、Outbox、Delivery，以及其他用户数据（含内部单文件 bak 副本）。
 
-当前 Runtime 定义已有 MISSING，环境已有 EMPTY/ERROR 和 Build health=MISSING；READY Build 的
-state 有 immutable trigger，不能直接随意改状态。正式 reconciliation 和 rebuild plan 仍须设计验证。
-未添加 schema v10，未改冻结历史 schema，未删除 definitions、Build history、锁文件或用户数据。
-Trigger identity/dedupe/next_fire、TaskHealth/incident 和通知历史恢复尚无 E2E 证据。
+排除经 ownership 审计的 Python/Node runtime/toolchain/environment 物理材料、平台锁、明确缓存/临时执行目录和 syslog。逻辑 Runtime/Environment/Revision/Build/lock 定义仍在数据库中。未知 runtime 内容、未解决 quarantine 或 materialization recovery journal 会阻止备份，不删除或静默跳过。排除按平台相对路径，不按任意 `venv`、`node_modules`、`.tmp` 文件名过滤 Worktree。
 
-## Tests / Builds / Typecheck
+SQLite 以 VACUUM INTO 创建副本，校验 integrity/FK 并 fsync；不复制 live DB/WAL。Config checksum 和 storage key 单独核验。Run/Config 按 500 行扫描；历史缺失日志统计并对预期存在的缺失日志给出警告。存在的 Run log 必须为私有普通文件。
 
-最终全量回归：**410 passed / 0 failed / 3 skipped**（413 tests），新增12项纳入平台manifest。
-后端/前端构建PASS；Typecheck 32 existing / 32 remaining / 0 new，raw exit2，预算gate PASS。
-最终结果见 `diagnostics/phase14/verification.json`；最终平台回归为 `platform-tests-final.log`。
-专项已覆盖正确/错误口令、header/cipher/tag tamper、truncation/trailing、path traversal、
-symlink parent、link/../escape、hardlink、特殊 archive entry、size/count、100MiB streaming、
-WAL snapshot、FK corruption、FD barrier timeout 与独立进程 SIGKILL。
+## Format / manifest / encryption
 
-首轮全量回归与 build 错误并行，static/build 被清空导致旧 launcher 测试失败；该日志保留，
-不作为最终验收。最终回归须等待后端构建完成再运行；未跳过或修改旧用例。
+- Snapshot v1：private owner marker、manifest.json、streaming inventory.ndjson、data、READY。目录 0700、快照文件 0600；原始 `0777` mode 位记录于 inventory，恢复时还原 executable/file/directory mode。
+- Manifest：UUID、时间、应用版本、OS/arch、schema、components、排除策略、DB/inventory hashes、domain counts、Git identity、总字节与条目数；不放秘密值或源绝对路径。公开 DTO 仅白名单字段，并显示校验和历史缺失日志警告。
+- READY 只在全部 inventory/DB/Config/Git 校验后 fsync + rename 发布。失败 staging 不作为 READY 显示。
+- Archive：PLATARC1，有界流式 framing，无压缩；100 万 entries、128 GiB 单文件、1 TiB 内容、深度 128、16 KiB 行/entry header、64 MiB path-set budget。超限拒绝，不截断。
+- Portable：PLATBKP1，scrypt N=32768/r=8/p=1，AES-256-GCM，随机 salt/nonce，固定 header AAD。认证成功前不解包；只下载完整密文。路径错误、错误口令、认证失败均清理私有临时产物与所持口令 Buffer。
 
-## Performance / Security / Important Findings
+本地 snapshot 本来就含敏感明文。SHA256 防意外篡改，不能代替同 UID 攻击者边界内的认证签名；便携文件通过 GCM 认证。JavaScript 字符串由运行时回收，不能声称可确定擦除。
 
-100MiB 流式往返有 RSS 采样；这不等于 100k TaskRuns + 多 Git 文件的完整平台性能门禁。
-解包保留私有权限，原始 file mode 尚须由 Snapshot manifest 记录并在 restore 验证后还原。
-Darwin 临时目录经 /var symlink；fixture 使用 realpath，生产目录仍严格拒绝 symlink。
-Node FileHandle write stream 的关闭等待曾造成测试 pending，改为 async pipeline sink + 完整 write 循环。
+## Restore bootstrap / journal / rollback
 
-## Bridges / Linux / Known Limitations
+Panel 只做 import/validate/stage/cancel。Stage 持 barrier 写外置 journal 与 RESTORE_PENDING，新的业务写入被拒绝。CLI apply 或重启 primary 必须先拿 backend.lock。
 
-B16 未移除。旧 tar 导出/导入不是当前平台可靠完整备份，不应据此声称灾难恢复能力已完成。
-其他桥维持 Phase13 状态；禁用 Cron 仍产生 SKIPPED 的已知问题 carry Phase15。
-没有 Docker/CI/Release/Code Editor 改动。Linux 未验证，既有 32 项类型债务另列。
+候选在外置 control/candidates 中准备：验证源 → 复制 → 正式 schema migration → Git repair → Runtime reconciliation → domain 验证 → 恢复 mode → 已有非空 DATA_DIR 的 safety snapshot。支持不存在或预创建为空的目标目录；空目录不制造虚假的 safety snapshot。
 
-## 下一步
+严格同文件系统 rename：live → quarantine，candidate → live。journal 路径由本机 resolver + UUID 确定，记录 checksum、manifest hash、old/candidate dev+ino，不能信任源绝对路径。原数据不自动永久删除。最终 Git/DB/Config 验证成功才 COMPLETE；失败保留 failed candidate 并回滚，未知身份冲突进入 RESTORE_RECOVERY_REQUIRED。
 
-继续 Phase 14 的业务接入、完整 Snapshot/Manifest、离线 Restore/Crash、API/UI/CLI、
-真实跨根灾难恢复和 B16 替代验收。**Phase 12 的前置条件当前未满足。**
+状态：PENDING → PREPARING → PREPARED → OLD_ROOT_MOVED → CANDIDATE_PUBLISHED → VALIDATING → COMPLETE；另有 CANCELLED / ROLLED_BACK。终态清理匹配 pending marker，取消状态先持久化再清理。恢复也处理两次 rollback rename 之间的中断。
 
-## GitNexus 范围检查
+| SIGKILL point | Result |
+|---|---|
+| during schema migration | PASS — resume, safety/original preserved |
+| during Git repair | PASS — resume |
+| after candidate validation | PASS — resume |
+| after old root rename | PASS — inode-proven resume |
+| after candidate publish | PASS — inode-proven resume |
+| before startup validation | PASS — resume |
+| after startup validation | PASS — resume to COMPLETE |
 
-HEAD：187 symbols / 17 flows / CRITICAL；develop 累计 3662 symbols / 239 flows，输出截断。
-新模块仅测试调用，未修改现有生产入口；UNKNOWN 已通过文本搜索补充，不等于图谱完整证明。
-见 [Graph Review](diagnostics/phase14/GRAPH_REVIEW.md)。未 commit / push。
+另通过：post-switch validation failure → ROLLED_BACK；candidate/quarantine substitution → fail closed；malformed/tampered journal → refuse startup；empty destination；原目录仍存在时 candidate Git repair 不修改原 registration。
+
+Git repair 仅处理复制后的 bare/admin 与 Worktree registration，重建自己的指针后才调用 `git worktree repair`。拒绝 config include、外部 filter/diff driver、core.worktree 等配置；不 fetch/reset/clean，不依赖 origin。
+
+## Runtime reconciliation / rebuild
+
+Python provider 物理安装缺失标 MISSING；Node provider 的逻辑 catalog 元数据保留。Python/Node installations MISSING；toolchains ERROR；Build health MISSING；Environment ERROR。历史 immutable Build/lock 保留，current reference 保留但不再可用，绝不 fallback 到系统解释器。
+
+显式重建复用 RuntimeOperationService：Python provider/runtime → Node runtime/toolchain → Python/Node environment build/rebuild。成功资源退出动态清单；失败资源继续显示，不能误报整体成功。安装器故障按正式 Runtime/Environment 管理界面诊断，不承诺自动重试所有故障。Restore 本身不访问 Git/PyPI/Node dist/npm，重建是之后独立动作。
+
+Notification 只 reconcile orphan ownership：SENDING delivery → INTERRUPTED；SENDING outbox → RETRY，清 claim。SENT/DEAD、历史 delivery、incident、TaskHealth、Trigger identity、Webhook secret 保留。
+
+## Fresh restore evidence
+
+完整证据：`diagnostics/phase14/platform-e2e.json` **PASS，53 个步骤**；浏览器检查 **1,525 个 API 响应、114 个 WebSocket 帧（含 63 个 Run log 帧）**，fixture secret 泄漏为 0。对应恢复 pending 和旧 Run log 截图保存在同目录。
+
+夹具从空 A 建账号、SSH Credential、Git Repository/Worktree、Subscription/Discovery、托管 Python/Node 环境、ENV/Config secret、Hook、三语言 Task、Cron/Webhook/Git Trigger、成功/失败/恢复 Run、日志与通知历史。真实浏览器创建/验证备份、加密导出、错误口令拒绝、正确导入、stage、停后端再启动应用恢复。
+
+之后真正删除 A，将 origin 移至不可用位置，通过 CLI 在不同绝对路径 B 导入/暂存，启动恢复并重新登录。验证 local-only branch/tag/commit、dirty/untracked/symlink、历史日志/健康/通知/Trigger，显式重建并执行任务，再复验 Cron、原 Webhook secret、Git 新提交、失败与恢复通知。
+
+Runtime 证据限定：CPython 3.13.15 与 Node 24.21.0 先由正式 manager 从官方来源安装/验证；浏览器用受控 adapter 复用这些已验证 artifact，venv/pip、Node dependency build、正式 operation/state/path ownership 与任务执行均真实。没有使用宿主 Python/Node 作为 Task fallback；不将浏览器阶段描述为重新联网编译 CPython。
+
+## Validation and scale
+
+最终正式回归：**438 tests / 435 passed / 0 failed / 3 skipped**，约 145.3 秒。日志：`diagnostics/phase14/continuation-platform.log`。新增测试已纳入 `tests/platform/test-baseline.json`，原有平台测试未删除或弱化。fixture 修复包括真实 lease helper、清理顺序、唯一 Worktree 名、onEnd 后异步租约释放等待，auth-only HTTP test 的独立 middleware mock，以及用实际 QUIESCING/idle 信号替代屏障测试固定 40ms 等待；生产 HTTP 路径另由实际浏览器与断连测试覆盖。
+
+规模：100,000 TaskRuns、100 MiB log、2,000 Git files，执行 create/validate/restore/safety snapshot，50ms RSS 采样。最终耗时 **49,840 ms**；RSS start **228,769,792 bytes**、peak **390,971,392 bytes（约 372.9 MiB）**、end **348,127,232 bytes**，**974 个采样**，见 continuation-platform.log；没有承诺硬 SLA，也不把 RSS 峰值直接等同算法常量内存。
+
+Backend/Frontend build 通过。Typecheck：32 条历史基线、0 条新增。静态 gate 检查 B16 实现/入口、shell syntax、fixture secret diagnostics、platform manifest、diff whitespace；不能将这六项检查夸大为通用安全证明。
+
+GitNexus 使用本地 backend；初次新增符号 UNKNOWN 有人工 caller review。最终 graph review 见 diagnostics/phase14/GRAPH_REVIEW.md。全量 develop 比较跨所有既有阶段并有截断，缺失图边不等于无调用方。关键 HIGH/CRITICAL 风险均在修改前报告。
+
+## B16 exit evidence
+
+SystemService exportData/importData 删除；Settings Other 旧上传/下载删除；旧 PUT system/data/import/export 返回 410；reloadSystem(data) 拒绝；Shell reload data 在停服务/删除操作前返回 64。新完整备份入口仅指向 Backup domain。
+
+`api/script` 编辑前的单文件 data/bak 副本保留内部数据保护责任，并被新完整快照保存。它不是旧 tar 平台备份，不借本阶段提前实现 Phase 12 编辑器或删除用户副本。B13/B14 的 Phase 13 责任保持。
+
+## Known limitations
+
+1. **Linux 尚未资格验证**，按 roadmap 留给 Phase 15；Darwin 测试不冒充 Linux。
+2. 3 个既有 GNU timeout/锁相关测试在 Darwin skip；Typecheck 保持既有 32 条错误基线。
+3. Local snapshot 是敏感明文；portable 无压缩。operator 必须保护存储和口令，并自行配置部署 HTTPS。
+4. BACKUP_DIR 为单实例专用目录，不支持多个运行中 DATA_DIR 共同管理同一存储。外部同 UID 编辑器必须遵守锁；平台不是 OS sandbox。
+5. runtime/dependency materialization 不 portable；重建可能需要网络/编译工具和原 registry。原唯一 Git/用户数据不能依赖远端重建。
+6. journal、quarantine、failed candidate、安全快照和未知文件不自动永久删除；需要管理员按 ownership 与保留策略处理。
+7. disabled Cron 仍可能生成 SKIPPED TriggerEvent/推进运行时间戳，沿用 Phase 15 收敛项；本阶段不改变其产品语义。
+
+## Next phase
+
+全部 Phase 14 业务 Gate 已通过。推荐下一阶段：**Phase 12 — Code Workspace + Git Editor**；之后 Phase 16A → Phase 15 → Phase 16B。本任务在此停止，没有实现这些阶段。

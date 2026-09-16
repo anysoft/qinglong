@@ -37,7 +37,7 @@ export async function validateDatabase(file: string) {
   const db = await backupDatabase(file);
   try {
     const integrity = await db.all('PRAGMA integrity_check'),
-      foreignKeys = await db.all('PRAGMA foreign_key_check');
+      foreignKeys = await db.all('SELECT * FROM pragma_foreign_key_check LIMIT 1');
     if (
       integrity.length !== 1 ||
       integrity[0].integrity_check !== 'ok' ||

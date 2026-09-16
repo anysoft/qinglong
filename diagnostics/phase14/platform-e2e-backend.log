@@ -1,0 +1,178 @@
+[[32minfo[39m 2026-09-16 14:12:08]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 14:12:09]:	[boot] grpc worker started (PID: 9438)
+[[32minfo[39m 2026-09-16 14:12:09]:	[boot] Generating gRPC mTLS certificates...
+[[32minfo[39m 2026-09-16 14:12:09]:	[boot] gRPC mTLS certificates generated successfully
+[[32minfo[39m 2026-09-16 14:12:09]:	[boot] gRPC mTLS certificates saved to /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-QIOiZ0/data/config/grpc
+[[34mdebug[39m 2026-09-16 14:12:09]:	[boot] gRPC service started successfully on 127.0.0.1:59087
+[[32minfo[39m 2026-09-16 14:12:09]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] http worker started (PID: 9455)
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 14:12:10]:	[panel][取消interval任务] 任务ID: NaN, 任务名: Generate token
+[[32minfo[39m 2026-09-16 14:12:10]:	[panel][创建interval任务] 任务ID: NaN, 任务名: Generate token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-QIOiZ0/static/build/token.js
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 14:12:10]:	[boot] HTTP service started successfully on 127.0.0.1:59086
+[[32minfo[39m 2026-09-16 14:12:10]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 14:12:10]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 14:12:10]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[32minfo[39m 2026-09-16 14:12:19]:	Git workspace operation=initialize repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:20]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:21]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:22]:	Git workspace operation=fetch repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:23]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:23]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:25]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 14:12:26]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:27]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:28]:	Git workspace operation=fetch repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:28]:	Git workspace operation=create-worktree repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:29]:	Git workspace operation=SUBSCRIPTION_BIND repository=1 result=OK
+[[33mwarn[39m 2026-09-16 14:12:29]:	Slow request detected: POST /1/prepare took 1891.53ms
+[[32minfo[39m 2026-09-16 14:12:29]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 14:12:32]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 14:12:33]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:12:34]:	[environment] variables changed scope=global owner=0 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 14:12:36]:	[environment] variables changed scope=global owner=0 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 14:12:37]:	[environment] profile saved id=1
+[[32minfo[39m 2026-09-16 14:12:38]:	[environment] profile saved id=1
+[[32minfo[39m 2026-09-16 14:12:38]:	[environment] variables changed scope=repository owner=1 count=1 secret_replacements=0
+[[33mwarn[39m 2026-09-16 14:12:51]:	Slow request detected: POST /runtime/python/environments took 3555.46ms
+[[33mwarn[39m 2026-09-16 14:13:18]:	Slow request detected: POST /runtime/node/environments took 1213.85ms
+[[32minfo[39m 2026-09-16 14:13:23]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:13:25]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:13:27]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:13:30]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:13:34]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:13:38]:	[environment] variables changed scope=task owner=3 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 14:13:40]:	[environment] variables changed scope=task owner=2 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 14:13:42]:	[environment] variables changed scope=task owner=1 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 14:13:46]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:13:49]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:13:52]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:13:55]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:14:01]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:14:22]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:14:29]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:14:32]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 14:14:35]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 14:14:36]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:14:37]:	Git workspace operation=DISCOVERY_RECONCILE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:14:37]:	Git workspace operation=DISCOVERY_RECONCILE repository=1 result=OK
+[[34mdebug[39m 2026-09-16 14:14:37]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 14:14:37]:	Worker 9438 exited
+[[32minfo[39m 2026-09-16 14:14:42]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] grpc worker started (PID: 16807)
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[34mdebug[39m 2026-09-16 14:14:43]:	[boot] gRPC service started successfully on 127.0.0.1:59087
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] http worker started (PID: 16808)
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 14:14:43]:	[panel][取消interval任务] 任务ID: NaN, 任务名: 生成token
+[[32minfo[39m 2026-09-16 14:14:43]:	[panel][创建interval任务] 任务ID: NaN, 任务名: 生成token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-QIOiZ0/static/build/token.js
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 14:14:43]:	[boot] HTTP service started successfully on 127.0.0.1:59086
+[[32minfo[39m 2026-09-16 14:14:43]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 14:14:43]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 14:14:44]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 14:14:44]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[32minfo[39m 2026-09-16 14:14:51]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 14:14:54]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 14:15:00]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 14:15:08]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[34mdebug[39m 2026-09-16 14:15:44]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 14:15:44]:	Worker 16807 exited
+[[32minfo[39m 2026-09-16 14:15:49]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 14:15:49]:	[boot] grpc worker started (PID: 18932)
+[[32minfo[39m 2026-09-16 14:15:49]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[34mdebug[39m 2026-09-16 14:15:49]:	[boot] gRPC service started successfully on 127.0.0.1:59087
+[[32minfo[39m 2026-09-16 14:15:49]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] http worker started (PID: 18933)
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 14:15:50]:	[panel][取消interval任务] 任务ID: NaN, 任务名: 生成token
+[[32minfo[39m 2026-09-16 14:15:50]:	[panel][创建interval任务] 任务ID: NaN, 任务名: 生成token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-QIOiZ0/static/build/token.js
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 14:15:50]:	[boot] HTTP service started successfully on 127.0.0.1:59086
+[[32minfo[39m 2026-09-16 14:15:50]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 14:15:50]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 14:15:50]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 14:15:50]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+PLATFORM_BACKUP_IN_PROGRESS
+PLATFORM_BACKUP_IN_PROGRESS
+PLATFORM_BACKUP_IN_PROGRESS
+TRIGGER_SCHEDULER_TICK_FAILED
+PLATFORM_BACKUP_IN_PROGRESS
+PLATFORM_BACKUP_IN_PROGRESS
+PLATFORM_BACKUP_IN_PROGRESS
+PLATFORM_BACKUP_IN_PROGRESS
+TRIGGER_SCHEDULER_TICK_FAILED
+RUNTIME_LOCK_FAILED
+[[34mdebug[39m 2026-09-16 14:16:59]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 14:16:59]:	Worker 18932 exited
+[[32minfo[39m 2026-09-16 14:17:07]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 14:17:07]:	[boot] grpc worker started (PID: 20814)
+[[32minfo[39m 2026-09-16 14:17:07]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[34mdebug[39m 2026-09-16 14:17:07]:	[boot] gRPC service started successfully on 127.0.0.1:59087
+[[32minfo[39m 2026-09-16 14:17:07]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] http worker started (PID: 20817)
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 14:17:08]:	[panel][取消interval任务] 任务ID: NaN, 任务名: 生成token
+[[32minfo[39m 2026-09-16 14:17:08]:	[panel][创建interval任务] 任务ID: NaN, 任务名: 生成token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-QIOiZ0/static/build/token.js
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 14:17:08]:	[boot] HTTP service started successfully on 127.0.0.1:59086
+[[32minfo[39m 2026-09-16 14:17:08]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 14:17:08]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 14:17:08]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 14:17:09]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+RUNTIME_LOCK_FAILED
+[[34mdebug[39m 2026-09-16 14:17:10]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 14:17:10]:	Worker 20814 exited
+[[32minfo[39m 2026-09-16 14:17:18]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 14:17:18]:	[boot] grpc worker started (PID: 20956)
+[[32minfo[39m 2026-09-16 14:17:18]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[34mdebug[39m 2026-09-16 14:17:18]:	[boot] gRPC service started successfully on 127.0.0.1:59087
+[[32minfo[39m 2026-09-16 14:17:18]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] http worker started (PID: 20957)
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 14:17:19]:	[panel][取消interval任务] 任务ID: NaN, 任务名: 生成token
+[[32minfo[39m 2026-09-16 14:17:19]:	[panel][创建interval任务] 任务ID: NaN, 任务名: 生成token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-QIOiZ0/static/build/token.js
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 14:17:19]:	[boot] HTTP service started successfully on 127.0.0.1:59086
+[[32minfo[39m 2026-09-16 14:17:19]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 14:17:19]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 14:17:19]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 14:17:20]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[32minfo[39m 2026-09-16 14:18:07]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 14:18:10]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[34mdebug[39m 2026-09-16 14:18:17]:	HTTP service stopped
+[[32minfo[39m 2026-09-16 14:18:17]:	Worker 20957 exited
+[[34mdebug[39m 2026-09-16 14:18:17]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 14:18:17]:	Worker 20956 exited

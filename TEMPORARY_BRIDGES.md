@@ -21,7 +21,7 @@
 | B13 script notification SDK | 脚本 notify、QLAPI 与 Global store SDK bridge | sample/notify.*、preload/client.*、EnvService、复制到 scripts | 显式SDK + Notification events | 10/13；Backend NotificationService继续KEEP |
 | B14 log identity | command/path/cron id 对应文件 | Cron/Subscription/task.sh/UI/retention | TaskRun / SyncRun ID | 10/13；保留drain、UTF8、边界与留存 |
 | B15 Crontabs/RunningInstances/Stats | 目前定义/调度/状态模型 | ORM/services/API/UI/protobuf | Task/Schedule/TaskRun + aggregates | 9–10；4.5B fresh baseline保留桥表 |
-| B16 backup/restore | 当前恢复入口及脚本文件备份 | SystemService export/import/reload、Settings、api/script | Backup v2 | 14；不能声称现有备份覆盖worktree独有数据 |
+| B16 backup/restore | 旧完整平台入口已退出；单文件编辑保护保留 | 新 Backup/Restore domain；api/script 内部 bak | Backup v2 已接入 | Phase14 末尾记录退出证据 |
 
 ## 必须特别避免的误删
 
@@ -155,10 +155,13 @@ B02/B06/B08/B11/B12/B13/B16/B17 的既有保留责任和 Linux gate 沿用 Phase
 
 B03/B04/B07沿用Phase11状态；本阶段未重构Trigger/Scheduler。B01/B02/B06/B08/B09/B10/B11/B12/B17沿用各自活跃责任。B05保持REMOVED。Linux final qualification统一Phase15，不以Darwin通过冒充Linux通过。
 
-## Phase 14 — 实施中（未完成）
+## Phase 14 — Backup / Restore Production Integration
 
-| Bridge | Consumer | Replacement / Status | Exit condition |
+| Bridge | Old consumers | Replacement / Status | Exit evidence |
 |---|---|---|---|
-| B16 Backup / Restore | SystemService exportData/importData/reloadSystem、Settings、旧上传入口 | **RETAINED — replacement incomplete**；新加密/归档/SQLite/屏障基础模块尚未接入产品 | 全平台 quiesce Snapshot、manifest、offline crash-safe restore、跨根 Git/Secret/Runtime 重建及 Browser/Fresh E2E 全部通过后移除正常入口 |
+| B16 Normal Platform Backup / Restore | SystemService exportData/importData/reloadSystem(data)、Settings Other 旧上传/下载、旧 system/data routes、Shell reload data | **REMOVED FROM NORMAL PATH**；BackupCoordinator / BackupValidator / BackupOperations、RestoreService / RuntimeRestoreReconciler / RestoreRebuildService、Panel Backup & Restore、offline CLI/startup bootstrap | 全组件一致 snapshot、加密导出/导入、七点 SIGKILL、跨根 Git repair、真实 A 删除后 B 恢复、显式 managed rebuild、Task/Trigger/Notification 全链 Browser E2E PASS；旧 API 410、Shell 64 在修改数据前拒绝 |
+| B16 internal file-edit safety copy | api/script → data/bak 单文件副本 | **RETAINED INTERNAL DATA PROTECTION**；不是完整平台 Backup，也不提供旧 tar restore | 新快照默认保留这些用户副本；编辑器替代归 Phase 12，不能以 Backup 清理为由提前删除 |
 
-当前仍不能称旧 tar 为新平台完整备份。没有提前删除桥或用户数据。详见 [Phase14 未完成报告](PHASE14_REPORT.md)。
+B13/B14 沿用 Phase 13 状态与责任。B01/B02/B03/B04/B06/B07/B08/B09/B10/B11/B12/B17 沿用既有责任；B05 保持 REMOVED。没有新建兼容桥，没有删除用户唯一数据。
+
+当前完整备份的用户入口只指向新 Backup domain。具体 production entrypoints、锁/日志/秘密/物理资源政策、测试与 Linux Phase 15 待验项见 [Phase14 最终报告](PHASE14_REPORT.md) 与 [Backup/Restore 架构](docs/architecture/18-backup-restore.md)。

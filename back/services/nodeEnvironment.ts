@@ -1,3 +1,4 @@
+import { PlatformMutation } from './backup/platform';
 import fs from 'fs/promises';
 import TaskReferenceService from './taskReferences';
 import path from 'path';
@@ -200,6 +201,7 @@ export default class NodeEnvironmentService {
     if (['BUILDING', 'DELETING'].includes(env.state))
       throw new RuntimeError('RUNTIME_BUSY');
   }
+  @PlatformMutation()
   async definition(input: NodeDefinitionInput, id?: number) {
     if (
       typeof input.name !== 'string' ||
@@ -343,6 +345,7 @@ export default class NodeEnvironmentService {
       }
     }
   }
+  @PlatformMutation()
   async metadata(
     id: number,
     input: { name: string; description: string; expected_version: number },
@@ -422,7 +425,7 @@ export default class NodeEnvironmentService {
         where: { provider_id: provider.id, implementation: 'NODEJS', version },
         transaction,
       });
-      if (previous && previous.get('state') !== 'REMOVED')
+      if (previous && !['REMOVED','MISSING'].includes(previous.get('state') as string))
         throw new RuntimeError('RUNTIME_ALREADY_INSTALLED');
       runtime =
         previous?.get({ plain: true }) ??
@@ -504,7 +507,7 @@ export default class NodeEnvironmentService {
           where: { runtime_id: runtime.id, manager_type: manager, version },
           transaction,
         });
-        if (previous && previous.get('state') !== 'REMOVED')
+        if (previous && previous.get('state') !== 'REMOVED' && previous.get('last_error') !== 'RESTORE_REBUILD_REQUIRED')
           throw new RuntimeError('NODE_TOOLCHAIN_ALREADY_EXISTS');
         const row =
           previous ??

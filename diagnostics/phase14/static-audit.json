@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "legacy System export/import implementations removed",
+      "status": "PASS"
+    },
+    {
+      "name": "Settings entry points use new Backup domain",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy shell data reload rejected before service changes",
+      "status": "PASS"
+    },
+    {
+      "name": "diagnostic output contains no fixture secrets",
+      "status": "PASS"
+    },
+    {
+      "name": "production tests belong to platform manifest",
+      "status": "PASS"
+    },
+    {
+      "name": "whitespace integrity",
+      "status": "PASS"
+    }
+  ]
+}

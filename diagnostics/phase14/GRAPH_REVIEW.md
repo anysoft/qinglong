@@ -1,20 +1,14 @@
-# Phase 14 foundation scope review
+# Phase 14 production integration scope review
 
 Repository/worktree: qinglong, `/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong`.
-Baseline HEAD: `88a059c8`; branch `codex/phase14-backup-restore`.
+Continuation baseline HEAD: `fd4270e1`. No commit/push.
 
-GitNexus MCP unavailable; used the installed LocalBackend and repository analyzer wrapper.
-The initial index was one commit behind and was refreshed. New symbols initially returned
-UNKNOWN/no callers; explicit source searches confirmed only Phase14 tests consume them.
-For the SQLite type correction, backupDatabase upstream returned LOW, two direct callers
-(snapshotDatabase/validateDatabase), one process. No existing production entrypoint edited.
+GitNexus MCP is unavailable; the installed LocalBackend and `.gitnexus/run.cjs analyze` provide the same indexed queries. The refreshed graph contains 15,664 nodes, 41,057 edges and 464 flows. New symbols initially returned UNKNOWN; manual caller review covered API/CLI/startup callers. Existing scheduler/runtime/execution/hook entrypoints were impact-checked before modification; HIGH/CRITICAL findings were reported.
 
-Final detect_changes used an isolated temporary Git index so untracked files were visible;
-real staging was not changed. HEAD summary: 187 changed symbols, 28 files, 17 affected flows,
-CRITICAL. This includes docs/tests and shared lease call chains; it is not 187 behavior edits.
-develop: 3662 symbols across prior phases, 239 flows, CRITICAL, output truncated.
-The analyzer also reported flow/callee search budgets; absent edges are not proof of no callers.
-Results are scope evidence, not complete static proof or a substitute for integration tests.
+After refresh, BackupValidator.domains has 3 direct callers, 13 indexed upstream symbols and 5 affected process groups: snapshot action, validation/stage, backup API, startup, barrier. Risk CRITICAL. One unresolved receiver was omitted by inference; this is a lower bound. The log-kind validation change is covered by a dedicated negative test and the production restore suite.
 
-No commit/push. The product backup/restore pipeline is incomplete and must not be released as
-Phase14 complete. See PHASE14_REPORT.md for explicit missing gates.
+`detect_changes` uses an isolated temporary Git index to include untracked additions without changing the user's staging area. HEAD comparison: 417 changed indexed symbols, 156 files, 64 affected flows, CRITICAL. This includes tests, diagnostics and documentation; it is not a count of behavior changes. Develop comparison spans previous phases: 3,954 symbols, 2,000 files, 273 flows, CRITICAL; the result is truncated. Full graph extraction also reports entrypoint/callee budgets. Missing edges or flows are not evidence that a caller is absent.
+
+Scope is the Backup/Restore production domain, mutation/lifetime admission, runtime restore transitions, Settings UI, legacy B16 removal and test fixture adaptations. Existing tests remain in the platform manifest. Graph evidence supplements build, regression, crash-injection and browser/fresh recovery checks; it does not replace them. See the final PHASE14_REPORT.md for gate results and limitations.
+
+Final additions include route-handler lifetime protection and bounded foreign-key violation reads. API handler abort test, full browser restore/rebuild/trigger/notification chain, and provider/rebuild state tests provide dynamic coverage. Final document/evidence updates after indexing do not change production call graphs.

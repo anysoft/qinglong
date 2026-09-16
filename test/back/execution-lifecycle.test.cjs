@@ -147,7 +147,8 @@ test(
     assert.ok(pid > 0);
     assert.equal(fixture.active(), 1);
     await finished;
-    await delay(0);
+    const deadline = Date.now() + 1000;
+    while (fixture.active() && Date.now() < deadline) await delay(5);
     assert.equal(fixture.active(), 0);
   },
 );

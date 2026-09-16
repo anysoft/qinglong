@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import { withInheritedLease } from './inheritedLeases';
 import path from 'path';
 import { AsyncLocalStorage } from 'async_hooks';
 import { randomUUID } from 'crypto';
@@ -33,7 +34,7 @@ export interface BarrierState {
  * Every asynchronous operation must retain mutation() until its final writes finish.
  */
 export class PlatformBackupBarrier {
-  private readonly context = new AsyncLocalStorage<boolean>();
+  private readonly context = new AsyncLocalStorage<{ active: boolean }>();
   private readonly paths: BarrierPaths;
   constructor(readonly controlRoot: string) {
     this.paths = new BarrierPaths(controlRoot);
@@ -66,13 +67,14 @@ export class PlatformBackupBarrier {
     }
   }
   async mutation<T>(action: () => Promise<T>, drain = false): Promise<T> {
-    if (this.context.getStore()) return action();
+    const admitted = this.context.getStore()?.active === true;
     const lease = await this.acquire(2, 'shared');
     try {
       const state = await this.state();
-      if (state && !(drain && state.phase === 'QUIESCING'))
+      if (state && !admitted && !(drain && state.phase === 'QUIESCING'))
         fail('PLATFORM_BACKUP_IN_PROGRESS');
-      return await this.context.run(true, action);
+      const scope = { active: true };
+      try { return await this.context.run(scope, () => withInheritedLease(lease.handle.fd, action)); } finally { scope.active = false; }
     } finally {
       await lease.release();
     }
@@ -121,7 +123,7 @@ export class PlatformBackupBarrier {
     } finally {
       // Failed work never resumes producers before the exclusive snapshot handle releases.
       try {
-        if (published) {
+        if (published && (await this.state())?.phase !== 'RESTORE_PENDING') {
           await fs.unlink(this.marker);
           await syncDirectory(this.controlRoot);
         }

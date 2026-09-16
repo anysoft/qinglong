@@ -1,4 +1,6 @@
 import 'reflect-metadata';
+import { prepareOperationalDatabase } from './services/backup/bootstrap';
+import { setBackendLeaseFd } from './services/backup/inheritedLeases';
 import cluster, { type Worker } from 'cluster';
 import compression from 'compression';
 import cors from 'cors';
@@ -6,12 +8,17 @@ import express from 'express';
 import helmet from 'helmet';
 import { Container } from 'typedi';
 import config from './config';
-import Logger from './loaders/logger';
+import Logger, { enableFileLogging } from './loaders/logger';
 import { monitoringMiddleware } from './middlewares/monitoring';
 import { errStack } from './config/util';
 import { type GrpcServerService } from './services/grpc';
 import { type HttpServerService } from './services/http';
 import cronClient from './schedule/client';
+import { platformPaths, platformBarrier } from './services/backup/platform';
+import { acquireBackendLease } from './services/backup/paths';
+import { RestoreService } from './services/backup/restore';
+import { BackupOperations } from './services/backup/operations';
+import { RuntimeLease } from './services/runtimeProcess';
 
 interface WorkerMetadata {
   id: number;
@@ -27,6 +34,7 @@ class Application {
   private isShuttingDown = false;
   private workerMetadataMap = new Map<number, WorkerMetadata>();
   private httpWorker?: Worker;
+  private backendLease?: RuntimeLease;
 
   constructor() {
     this.app = express();
@@ -46,9 +54,19 @@ class Application {
   }
 
   async start() {
+    let restoring = cluster.isPrimary;
     try {
       if (cluster.isPrimary) {
+        const paths = await platformPaths();
+        this.backendLease = await acquireBackendLease(paths);
+        setBackendLeaseFd(this.backendLease!.handle.fd);
+        await new RestoreService(paths).apply(true);
+        await (await platformBarrier()).recoverAbandonedSnapshot();
+        await new BackupOperations(paths).recover();
+        cluster.setupPrimary({ stdio: ['inherit', 'inherit', 'inherit', 'ipc', this.backendLease!.handle.fd] });
+        restoring = false;
         await this.initializeDatabase();
+        enableFileLogging();
       }
       if (cluster.isPrimary) {
         this.startMasterProcess();
@@ -56,7 +74,8 @@ class Application {
         await this.startWorkerProcess();
       }
     } catch (error) {
-      Logger.error(`Failed to start application:\n${errStack(error)}`);
+      if (restoring) { const code=(error as any).code;Logger.error('Restore bootstrap failed: %s', /^(BACKUP|RESTORE|PLATFORM)_[A-Z_]+$/.test(code)?code:'RESTORE_RECOVERY_REQUIRED'); }
+      else Logger.error(`Failed to start application:\n${errStack(error)}`);
       process.exit(1);
     }
   }
@@ -182,6 +201,7 @@ class Application {
   }
 
   private async initializeDatabase() {
+    await prepareOperationalDatabase((await platformPaths()).data);
     const dbLoader = await import('./loaders/db');
     await dbLoader.default();
   }
@@ -250,6 +270,8 @@ class Application {
   }
 
   private async startWorkerProcess() {
+    setBackendLeaseFd(4);
+    enableFileLogging();
     const serviceType = process.env.SERVICE_TYPE;
     if (!serviceType || !['http', 'grpc'].includes(serviceType)) {
       Logger.error('[boot] Invalid SERVICE_TYPE:', serviceType);

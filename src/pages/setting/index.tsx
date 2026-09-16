@@ -28,6 +28,7 @@ import SecuritySettings from './security';
 import LoginLog from './loginLog';
 import NotificationSetting from '../notifications';
 import Other from './other';
+import BackupSettings from './backup';
 import About from './about';
 import { useOutletContext } from '@umijs/max';
 import { SharedContext } from '@/layouts';
@@ -339,6 +340,11 @@ const Setting = () => {
               key: 'dependence',
               label: intl.get('依赖设置'),
               children: <Dependence />,
+            },
+            {
+              key: 'backup',
+              label: '备份与恢复',
+              children: <BackupSettings />,
             },
             {
               key: 'other',

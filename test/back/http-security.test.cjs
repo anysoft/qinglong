@@ -64,6 +64,8 @@ test('HTTP authentication protects init, scopes, expired sessions and config sec
   };
   const mocks = {
     '../config': config,
+    // This fixture isolates authentication; real HTTP admission is exercised by Phase 14.
+    '../services/backup/platform': { backupAdmission: (_req, _res, next) => next() },
     '../config/util': {
       getToken: (r) => (r.headers.authorization || '').replace(/^Bearer /, ''),
       getPlatform: () => 'desktop',

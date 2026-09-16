@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: barrier blocks producers, permits existing queue drain, waits for shared writers, releases on timeout
+ok 1 - barrier blocks producers, permits existing queue drain, waits for shared writers, releases on timeout
+  ---
+  duration_ms: 447.208708
+  type: 'test'
+  ...
+# Subtest: barrier rechecks idle under exclusive lock and retains business work on busy timeout
+ok 2 - barrier rechecks idle under exclusive lock and retains business work on busy timeout
+  ---
+  duration_ms: 404.804875
+  type: 'test'
+  ...
+# Subtest: independent process SIGKILL leaves fail-closed marker and releases FD lock for deterministic recovery
+ok 3 - independent process SIGKILL leaves fail-closed marker and releases FD lock for deterministic recovery
+  ---
+  duration_ms: 701.387792
+  type: 'test'
+  ...
+# Subtest: detached nested operations retain their own lease after the request returns
+ok 4 - detached nested operations retain their own lease after the request returns
+  ---
+  duration_ms: 405.318791
+  type: 'test'
+  ...
+# Subtest: inherited process descriptor blocks snapshot after controller releases its lease
+ok 5 - inherited process descriptor blocks snapshot after controller releases its lease
+  ---
+  duration_ms: 1130.522083
+  type: 'test'
+  ...
+# Subtest: HTTP client disconnect does not release an unfinished async route mutation
+ok 6 - HTTP client disconnect does not release an unfinished async route mutation
+  ---
+  duration_ms: 422.134708
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3853.870917

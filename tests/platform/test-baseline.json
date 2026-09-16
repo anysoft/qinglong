@@ -636,5 +636,9 @@
   {
     "path": "tests/phase14/sqlite.test.cjs",
     "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase14/production.test.cjs",
+    "classification": "PLATFORM_CORE"
   }
 ]

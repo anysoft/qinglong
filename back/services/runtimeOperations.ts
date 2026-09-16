@@ -1,3 +1,4 @@
+import { PlatformMutation } from './backup/platform';
 import NodeEnvironmentService from './nodeEnvironment';
 import NodeDistributionProvider from './nodeDistributionProvider';
 import NodePathResolver from './nodePaths';
@@ -190,6 +191,7 @@ export default class RuntimeOperationService {
       }),
     );
   }
+  @PlatformMutation()
   async request(
     type: OperationType,
     input: {
@@ -247,7 +249,7 @@ export default class RuntimeOperationService {
             version: input.version,
           },
         });
-        if (existing && existing.get('state') !== 'REMOVED')
+        if (existing && !['REMOVED','MISSING'].includes(existing.get('state') as string))
           throw new RuntimeError('RUNTIME_ALREADY_INSTALLED');
         runtime = existing?.get({ plain: true }) ?? null;
       } else if (type.startsWith('RUNTIME_')) {
@@ -462,6 +464,7 @@ export default class RuntimeOperationService {
     await this.active.get(id)?.done;
     return this.operation(id);
   }
+  @PlatformMutation(true)
   private async execute(
     operation: RuntimeOperation,
     provider: RuntimeProvider,
@@ -765,6 +768,7 @@ export default class RuntimeOperationService {
       }
     });
   }
+  @PlatformMutation(true)
   async recover() {
     if (this.recovering) return;
     this.recovering = true;

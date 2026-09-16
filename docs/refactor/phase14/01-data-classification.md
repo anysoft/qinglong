@@ -40,9 +40,13 @@ BACKUP_DIR 与 DATA_DIR 独立、禁止相互包含；inventory 从 manifest/sid
 Restore 仅离线/启动前应用；不同 DATA_DIR 通过 ID resolver + git worktree repair 修复，
 不能替换字符串猜路径。所有 Runtime 缺失后必须显式重建，不使用系统解释器。
 
-## B16 实际审计
+## B16 历史入口审计（现已关闭）
 
 `SystemService.exportData` 用 shell tar 打包 db/upload 和选中目录，未做 SQLite snapshot、
 停写、Git/Config/Run 一致性或加密。`importData` 解包任意旧 tar；`reloadSystem('data')`
-交给旧 CLI 应用。这不是当前平台完整备份，须在替代验收通过时移除正常入口。
+交给旧 CLI 应用。这不是当前平台完整备份，continuation 已关闭这些旧入口；新验收证据以最终 Phase 14 报告为准。
 未在这些入口发现独立 Backup Schedule；本阶段不新增备份调度器。
+
+## Continuation B16 边界
+
+System 的完整 tar 导出/上传实现删除，旧 route 返回 410，Shell data reload 在停服务/修改文件前拒绝。`api/script` 的编辑前单文件 `data/bak` 副本仍承担局部数据保护，不是平台备份产品；本阶段保留且由默认 `other-user-data` 分类纳入完整快照。它的编辑器替代属于 Phase 12，不以 Backup 清理为由删除用户副本。

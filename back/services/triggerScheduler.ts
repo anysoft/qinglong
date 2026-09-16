@@ -1,3 +1,4 @@
+import { PlatformMutation } from './backup/platform';
 import { Op, Transaction } from 'sequelize';
 import { sequelize } from '../data';
 import { CronTriggerModel } from '../data/taskTrigger';
@@ -14,6 +15,7 @@ export default class TriggerScheduler {
     readonly clock: TriggerClock = { now: () => new Date() },
     readonly events = new TriggerEvents(),
   ) {}
+  @PlatformMutation()
   async tick() {
     if (this.running) return;
     this.running = true;

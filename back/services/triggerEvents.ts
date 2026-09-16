@@ -1,3 +1,4 @@
+import { PlatformMutation } from './backup/platform';
 import { Transaction } from 'sequelize';
 import { sequelize } from '../data';
 import { TaskTriggerModel, TriggerEventModel } from '../data/taskTrigger';
@@ -7,6 +8,7 @@ import type ExecutionService from './executionService';
 /** Durable inbox; execution remains owned exclusively by ExecutionService. */
 export default class TriggerEvents {
   constructor(readonly execution?: ExecutionService) {}
+  @PlatformMutation()
   async receive(
     triggerId: number,
     eventKey: string,
@@ -74,6 +76,7 @@ export default class TriggerEvents {
     await execution.submit(event.task_id, event.trigger_type, event.id);
     return TriggerEventModel.findByPk(id);
   }
+  @PlatformMutation()
   async recover(limit = 100) {
     const pending = await TriggerEventModel.findAll({
       where: { status: ['RECEIVED', 'PROCESSING'] },

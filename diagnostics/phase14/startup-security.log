@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: real application refuses malformed restore journal before creating a DATA_DIR
+ok 1 - real application refuses malformed restore journal before creating a DATA_DIR
+  ---
+  duration_ms: 671.295833
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1546.838334

@@ -1,0 +1,10 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+const root=path.resolve(__dirname,'../..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const checks=[];const check=(name,fn)=>{fn();checks.push({name,status:'PASS'});};
+check('legacy System export/import implementations removed',()=>{assert.doesNotMatch(read('back/services/system.ts'),/async (?:exportData|importData)\(/);assert.match(read('back/api/system.ts'),/410/);});
+check('Settings entry points use new Backup domain',()=>{assert.match(read('src/pages/setting/index.tsx'),/BackupSettings/);assert.doesNotMatch(read('src/pages/setting/other.tsx'),/system\/data|exportData|importData/);});
+check('legacy shell data reload rejected before service changes',()=>{const s=read('shell/update.sh'),start=s.indexOf('reload_qinglong()'),end=s.indexOf('\n}',start),body=s.slice(start,end);assert.match(body,/return 64/);assert.ok(body.indexOf('return 64')<body.indexOf('delete_pm2'));assert.doesNotMatch(body,/rm -rf.*dir_data/);execFileSync('bash',['-n',path.join(root,'shell/update.sh')]);});
+check('diagnostic output contains no fixture secrets',()=>{const secrets=['CONFIG_SECRET_E2E','ENV_SECRET_E2E','NOTIFICATION_SECRET_E2E','UNIQUE_SUPER_SECRET_BACKUP_PASSPHRASE'];const visit=dir=>{for(const e of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,e.name);if(e.isDirectory())visit(file);else if(/\.(log|json|txt)$/.test(e.name))assert.ok(!secrets.some(s=>fs.readFileSync(file,'utf8').includes(s)),path.relative(root,file));}};visit(__dirname);});
+check('production tests belong to platform manifest',()=>assert.match(read('tests/platform/test-baseline.json'),/tests\/phase14\/production\.test\.cjs/));
+check('whitespace integrity',()=>execFileSync('git',['diff','--check'],{cwd:root,stdio:'pipe'}));
+fs.writeFileSync(path.join(__dirname,'static-audit.json'),JSON.stringify({status:'PASS',checks},null,2)+'\n');console.log(JSON.stringify({status:'PASS',checks:checks.length}));
