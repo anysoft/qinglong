@@ -33,5 +33,17 @@
   ],
   "candidate_state": "CANDIDATE_COMMITTED",
   "candidate_reference": "develop HEAD containing this receipt; full SHA recorded in final response",
-  "hosted_socket_rounds_required": 10
+  "hosted_socket_rounds_required": 10,
+  "latest_hosted_foundation": {
+    "run_id": 35119097926,
+    "commit": "32bbdbd294ea258723a782aa863c4c452ba399e4",
+    "status": "FAIL",
+    "tests": 385,
+    "pass": 378,
+    "fail": 7,
+    "skipped": 0,
+    "classification": "HARNESS_BUG",
+    "fix_verification": "LOCAL_CLEAN_SOURCE_7_OF_7_PASS",
+    "new_hosted_run": "PENDING"
+  }
 }

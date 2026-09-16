@@ -1,0 +1,439 @@
+{
+  "run_id": 35119097926,
+  "attempt": 1,
+  "workflow": "Linux CI Foundation",
+  "qualification": "NOT_PHASE15_QUALIFICATION",
+  "commit": "32bbdbd294ea258723a782aa863c4c452ba399e4",
+  "artifacts": {
+    "linux-preflight-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4.zip": {
+      "sha256": "dddd12e458b4d888164d54b5e9b6f8cdb01afaa0d4ed2968c840254ddd4b4aaf",
+      "summaries": {
+        "ci-summary.json": {
+          "phase": "16A",
+          "job": "preflight",
+          "status": "PASS",
+          "collection": "PASS",
+          "error_code": null,
+          "run_id": "35119097926-1",
+          "commit": "32bbdbd294ea258723a782aa863c4c452ba399e4",
+          "bytes": 7873
+        },
+        "preflight.json": {
+          "os": "Linux",
+          "osVersion": "24.04",
+          "arch": "x64",
+          "kernel": "6.17.0-1022-azure",
+          "runner": "github-hosted-ubuntu-24.04",
+          "uname": "Linux runnervmlun5p 6.17.0-1022-azure #22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux",
+          "node": "v22.23.2",
+          "git": "git version 2.55.0",
+          "flock": true,
+          "tools": {
+            "node": "v22.23.2",
+            "npm": "10.9.8",
+            "git": "git version 2.55.0",
+            "python": "Python 3.12.3",
+            "bash": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)",
+            "flock": "flock from util-linux 2.39.3",
+            "timeout": "timeout (GNU coreutils) 9.4",
+            "tar": "tar (GNU tar) 1.35",
+            "gzip": "gzip 1.12",
+            "sqlite3": "3.45.1 2024-01-30 16:01:20 e876e51a0ed5c5b3126f52e532044363a014bc594cfefa87ffb5b82257ccalt1 (64-bit)",
+            "shellcheck": "ShellCheck - shell script analysis tool"
+          },
+          "chrome": "Google Chrome 152.0.7977.82",
+          "filesystem": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/root       145G   59G   86G  41% /",
+          "disk": {
+            "type": 61267,
+            "bsize": 4096,
+            "blocks": 37815964,
+            "bfree": 22507584,
+            "bavail": 22503488,
+            "files": 19529728,
+            "ffree": 18428518
+          },
+          "memory": {
+            "total": 16766414848,
+            "free": 15629717504
+          },
+          "status": "PASS"
+        }
+      },
+      "cleanup": {
+        "status": "PASS",
+        "owned_processes_signalled": 0,
+        "owned_root_removed": true
+      }
+    },
+    "linux-managed-runtime-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4.zip": {
+      "sha256": "15ab2339ae2d0cae7bd86980d9f06a73411472caa7f866c3195014f44a4cab4e",
+      "summaries": {
+        "ci-summary.json": {
+          "phase": "16A",
+          "job": "managed-runtime",
+          "status": "PASS",
+          "collection": "PASS",
+          "error_code": null,
+          "run_id": "35119097926-1",
+          "commit": "32bbdbd294ea258723a782aa863c4c452ba399e4",
+          "bytes": 1996590
+        },
+        "managed-summary.json": {
+          "status": "PASS",
+          "failed_stage": null,
+          "backend_build": {
+            "name": "backend-build",
+            "status": "PASS",
+            "supervision_failed": false,
+            "exit_code": 0,
+            "started": "2026-09-16T16:02:08.592Z",
+            "finished": "2026-09-16T16:02:14.248Z",
+            "bytes": 0,
+            "truncated": false
+          },
+          "environment": {
+            "name": "managed-environments",
+            "status": "PASS",
+            "supervision_failed": false,
+            "exit_code": 0,
+            "started": "2026-09-16T16:04:03.953Z",
+            "finished": "2026-09-16T16:06:00.086Z",
+            "bytes": 1059,
+            "truncated": false,
+            "tests": {
+              "tests": 3,
+              "pass": 3,
+              "fail": 0,
+              "skipped": 0,
+              "skip_names": []
+            }
+          },
+          "execution": {
+            "name": "managed-execution",
+            "status": "PASS",
+            "supervision_failed": false,
+            "exit_code": 0,
+            "started": "2026-09-16T16:06:00.086Z",
+            "finished": "2026-09-16T16:06:46.770Z",
+            "bytes": 727,
+            "truncated": false,
+            "tests": {
+              "tests": 2,
+              "pass": 2,
+              "fail": 0,
+              "skipped": 0,
+              "skip_names": []
+            }
+          },
+          "shell": {
+            "name": "shell-execution",
+            "status": "PASS",
+            "supervision_failed": false,
+            "exit_code": 0,
+            "started": "2026-09-16T16:06:46.770Z",
+            "finished": "2026-09-16T16:06:59.040Z",
+            "bytes": 1288,
+            "truncated": false,
+            "tests": {
+              "tests": 5,
+              "pass": 5,
+              "fail": 0,
+              "skipped": 0,
+              "skip_names": []
+            }
+          }
+        }
+      },
+      "cleanup": {
+        "status": "PASS",
+        "owned_processes_signalled": 0,
+        "owned_root_removed": true
+      }
+    },
+    "linux-core-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4.zip": {
+      "sha256": "861483ca885dd0f808771c06e5c37cb6bebad4ec36bc7b13e20b247e2c8fd303",
+      "summaries": {
+        "ci-summary.json": {
+          "phase": "16A",
+          "job": "core",
+          "status": "FAIL",
+          "collection": "PASS",
+          "error_code": null,
+          "run_id": "35119097926-1",
+          "commit": "32bbdbd294ea258723a782aa863c4c452ba399e4",
+          "bytes": 138098
+        },
+        "core-summary.json": {
+          "status": "FAIL",
+          "tests": {
+            "tests": 385,
+            "pass": 378,
+            "fail": 7,
+            "skipped": 0,
+            "skip_names": []
+          },
+          "typecheck": {
+            "mode": "STRICT_ZERO",
+            "errors": 0,
+            "raw_failed": false,
+            "diagnostics": [],
+            "status": "PASS"
+          },
+          "preflight": {
+            "os": "Linux",
+            "osVersion": "24.04",
+            "arch": "x64",
+            "kernel": "6.17.0-1022-azure",
+            "runner": "github-hosted-ubuntu-24.04",
+            "uname": "Linux runnervmlun5p 6.17.0-1022-azure #22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux",
+            "node": "v22.23.2",
+            "git": "git version 2.55.0",
+            "flock": true,
+            "tools": {
+              "node": "v22.23.2",
+              "npm": "10.9.8",
+              "git": "git version 2.55.0",
+              "python": "Python 3.12.3",
+              "bash": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)",
+              "flock": "flock from util-linux 2.39.3",
+              "timeout": "timeout (GNU coreutils) 9.4",
+              "tar": "tar (GNU tar) 1.35",
+              "gzip": "gzip 1.12",
+              "sqlite3": "3.45.1 2024-01-30 16:01:20 e876e51a0ed5c5b3126f52e532044363a014bc594cfefa87ffb5b82257ccalt1 (64-bit)",
+              "shellcheck": "ShellCheck - shell script analysis tool"
+            },
+            "chrome": "Google Chrome 152.0.7977.82",
+            "filesystem": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/root       145G   59G   86G  41% /",
+            "disk": {
+              "type": 61267,
+              "bsize": 4096,
+              "blocks": 37815964,
+              "bfree": 22507886,
+              "bavail": 22503790,
+              "files": 19529728,
+              "ffree": 18428526
+            },
+            "memory": {
+              "total": 16766414848,
+              "free": 15559548928
+            },
+            "status": "PASS"
+          }
+        }
+      },
+      "cleanup": {
+        "status": "PASS",
+        "owned_processes_signalled": 0,
+        "owned_root_removed": true
+      }
+    },
+    "linux-summary-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4.zip": {
+      "sha256": "8bfa79f725ed9389ee6fbdbe1383b4c5b36f8ebd74a8d980705bbdbf34ce5feb",
+      "summaries": {
+        "final-summary.json": {
+          "phase": "16A",
+          "commit": "32bbdbd294ea258723a782aa863c4c452ba399e4",
+          "runner": {
+            "os": "ubuntu-24.04",
+            "arch": "x64"
+          },
+          "jobs": {
+            "preflight": {
+              "status": "PASS",
+              "artifact": "success",
+              "artifact_name": "linux-preflight-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4"
+            },
+            "core": {
+              "status": "FAILURE",
+              "artifact": "success",
+              "artifact_name": "linux-core-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4"
+            },
+            "managed-runtime": {
+              "status": "PASS",
+              "artifact": "success",
+              "artifact_name": "linux-managed-runtime-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4"
+            },
+            "browser": {
+              "status": "PASS",
+              "artifact": "success",
+              "artifact_name": "linux-browser-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4"
+            }
+          },
+          "tests": {
+            "tests": 385,
+            "pass": 378,
+            "fail": 7,
+            "skipped": 0,
+            "skip_names": []
+          },
+          "typecheck": {
+            "mode": "STRICT_ZERO",
+            "errors": 0,
+            "raw_failed": false,
+            "diagnostics": [],
+            "status": "PASS"
+          },
+          "missing_core_evidence": false,
+          "status": "FAIL",
+          "qualification": "NOT_PHASE15_QUALIFICATION"
+        }
+      }
+    },
+    "linux-browser-35119097926-1-32bbdbd294ea258723a782aa863c4c452ba399e4.zip": {
+      "sha256": "5fa26df372515321df6c36d0925d10a037cf4debdbd8c0500879e548ed49e818",
+      "summaries": {
+        "browser-summary.json": {
+          "status": "PASS",
+          "failed_stage": null,
+          "backend_build": {
+            "name": "backend-build",
+            "status": "PASS",
+            "supervision_failed": false,
+            "exit_code": 0,
+            "started": "2026-09-16T16:02:24.540Z",
+            "finished": "2026-09-16T16:02:30.185Z",
+            "bytes": 0,
+            "truncated": false
+          },
+          "frontend_build": {
+            "name": "frontend-build",
+            "status": "PASS",
+            "supervision_failed": false,
+            "exit_code": 0,
+            "started": "2026-09-16T16:02:30.185Z",
+            "finished": "2026-09-16T16:03:00.865Z",
+            "bytes": 12627,
+            "truncated": false
+          },
+          "scenarios": [
+            {
+              "phase": "phase12",
+              "name": "browser-phase12",
+              "status": "PASS",
+              "supervision_failed": false,
+              "exit_code": 0,
+              "started": "2026-09-16T16:04:43.329Z",
+              "finished": "2026-09-16T16:05:48.391Z",
+              "bytes": 641,
+              "truncated": false
+            },
+            {
+              "phase": "phase14",
+              "name": "browser-phase14",
+              "status": "PASS",
+              "supervision_failed": false,
+              "exit_code": 0,
+              "started": "2026-09-16T16:05:48.392Z",
+              "finished": "2026-09-16T16:10:36.691Z",
+              "bytes": 2273,
+              "truncated": false
+            }
+          ],
+          "real_managed_runtime": true
+        },
+        "ci-summary.json": {
+          "phase": "16A",
+          "job": "browser",
+          "status": "PASS",
+          "collection": "PASS",
+          "error_code": null,
+          "run_id": "35119097926-1",
+          "commit": "32bbdbd294ea258723a782aa863c4c452ba399e4",
+          "bytes": 3311808
+        }
+      },
+      "platform_browser": {
+        "status": "PASS",
+        "steps": [
+          "empty-root-bootstrap",
+          "browser-fresh-initialize-login",
+          "browser-credential-create",
+          "browser-repository-create",
+          "browser-initialize-fetch",
+          "browser-subscription-create-branch",
+          "subscription-prepare-waits-for-refs-ten-rounds",
+          "browser-prepare-sync-discovery",
+          "browser-worktree-view",
+          "browser-global-create",
+          "browser-profile-create-default",
+          "task-domain-discovery-three-languages",
+          "real-python-venv-and-node-dependency-environments",
+          "browser-discovered-task-runtime-settings-validation",
+          "browser-manual-worktree-entrypoint-create",
+          "browser-arguments-concurrency-and-negative-resource-gates",
+          "browser-task-env-config-hooks",
+          "browser-runtime-default-inherit-override-reset",
+          "browser-clone-disable-enable",
+          "browser-environment-reference-protection",
+          "browser-managed-python-node-shell-and-manual-clone-runs",
+          "browser-run-list-cancel-and-result",
+          "browser-multiple-cron-and-real-scheduled-run",
+          "browser-webhook-show-once-real-http-and-dedup",
+          "real-ssh-git-sync-discovery-event-runner",
+          "browser-discovery-preview-read-only-and-apply",
+          "restart-validate-all-task-resources",
+          "restart-webhook-trigger-definition-and-execution",
+          "restart-cron-and-real-git-trigger-execution",
+          "observability-panel-auth-required",
+          "browser-channel-secret-test-real-http",
+          "browser-threshold-single-failure-alert",
+          "browser-live-logs-reconnect-and-recovery-alert",
+          "browser-attempts-retry-timeline",
+          "observability-timeout-run",
+          "browser-notification-retry",
+          "restart-automatic-outbox-resume",
+          "restart-history-health-logs-outbox-delivery",
+          "backup-panel-auth-and-legacy-routes-absent",
+          "browser-create-consistent-ready-backup",
+          "browser-validate-encrypted-export-download",
+          "browser-import-wrong-passphrase-rejected",
+          "browser-import-stage-restore-pending",
+          "real-backend-restart-applies-staged-restore",
+          "destroy-original-offline-import-startup-restore-different-root",
+          "local-only-git-dirty-untracked-symlink-preserved-with-origin-unavailable",
+          "restored-history-health-trigger-identities-and-browser-old-log",
+          "explicit-managed-python-node-and-environment-rebuild",
+          "restored-managed-python-node-shell-tasks-execute",
+          "restored-webhook-original-secret-executes",
+          "restored-cron-executes",
+          "restored-git-new-transition-executes",
+          "restored-failure-and-recovery-notifications-real-http",
+          "fresh-v9-restart-fk-secret-audit"
+        ],
+        "linux": true,
+        "response_payloads_inspected": 1579,
+        "websocket_frames_inspected": 116,
+        "run_log_frames_inspected": 65,
+        "runtime_execution_activation": "RUNNER_V2"
+      },
+      "cleanup": {
+        "status": "PASS",
+        "owned_processes_signalled": 0,
+        "owned_root_removed": true
+      }
+    }
+  },
+  "failures": {
+    "count": 7,
+    "category": "HARNESS_BUG",
+    "file": "tests/phase4/helpers.cjs",
+    "cause": "Retired preload fixture writes depend on untracked empty directory absent from clean Git checkout"
+  },
+  "artifact_digests_match_github": true,
+  "fix_verification": {
+    "host": "Darwin",
+    "source": "git archive HEAD plus only helper fix",
+    "before": {
+      "tests": 7,
+      "pass": 0,
+      "fail": 7
+    },
+    "after": {
+      "tests": 7,
+      "pass": 7,
+      "fail": 0,
+      "skipped": 0
+    },
+    "assertions_unchanged": true
+  }
+}

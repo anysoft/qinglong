@@ -198,3 +198,17 @@ Collector canary/私钥扫描 PASS，owned root/process cleanup PASS，archive P
 ## Final Gate candidate audit
 
 再次通过 backend/frontend build、原始 tsc 零诊断、static/bridge 与 qualification 汇总失败路径验证。Hosted socket 从单轮补齐为 10 个独立强制 suite，每轮 20 并发与 SIGKILL/restart；缺任意一轮结果必须 FAIL。这是 harness 覆盖补齐，未改产品实现。
+
+## Hosted Foundation 35119097926 — failure analyzed
+
+- Run: https://github.com/anysoft/qinglong/actions/runs/35119097926
+- SHA: `32bbdbd294ea258723a782aa863c4c452ba399e4`，attempt 1。
+- 实际 workflow：Linux CI Foundation，**NOT_PHASE15_QUALIFICATION**。
+- Ubuntu 24.04 x64，kernel `6.17.0-1022-azure`；runner image version 未从本次附件取得，不推测。
+- Preflight / Managed Runtime / Workspace browser / Full Platform browser PASS；raw tsc 0 errors。
+- Core：385 total / 378 pass / 7 fail / 0 skip；summary 正确 FAIL。
+- 7 项失败全部来自 `tests/phase4/helpers.cjs` 写入已退休 preload SDK 的 ENOENT。分类：Harness bug。Darwin 本机未跟踪的空 preload 目录掩盖了错误，并非 Linux 系统调用缺陷。
+- 用 git archive 干净源码副本复现：修复前 0/7，通过删除无消费者的旧 Shell/preload fixture 初始化，修复后 7/7；原测试断言完全保留，无 skip/retry/timeout 放宽。该复验宿主仍为 Darwin。
+- 5 个下载 ZIP 的 SHA-256 均匹配 GitHub 公布值；collection 与 owned-root cleanup 均 PASS。完整浏览器恢复/rebuild 成功，此次未复现历史 rebuild timeout。
+- 机器证据：`diagnostics/phase15/hosted-foundation-35119097926.json`。
+- 保持 PARTIAL；用户推送修复提交后，须运行 **Linux Qualification**（包含 Foundation full 和 10 轮 socket 等附加门禁），不能只重复 Foundation 后宣称最终 PASS。

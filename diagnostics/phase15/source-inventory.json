@@ -15,7 +15,7 @@
     {
       "path": "PHASE15_REPORT.md",
       "status": "PRESENT",
-      "sha256": "bb9f50d019996c4aaff886fa587780901f644cfe7ecd5549b5d249c19e5a107f"
+      "sha256": "4725e1af3e69bc6c56558657ad071caf8f921bd1c2cedad5335359e0da587e18"
     },
     {
       "path": "PHASE16A_REPORT.md",
@@ -1036,6 +1036,11 @@
       "path": "tests/platform/test-baseline.json",
       "status": "PRESENT",
       "sha256": "3aaa151d5b3640108f866a3e10f3bb3c12a80ffb150b4b2af455e35f8e129da8"
+    },
+    {
+      "path": "tests/phase4/helpers.cjs",
+      "status": "PRESENT",
+      "sha256": "6d1e97c067a19c1a205d2e6166c03c54ae5562f9fa5a509442f218cee800201d"
     }
   ]
 }
