@@ -1,5 +1,5 @@
 {
-  "provenance": "LOCAL_UNCOMMITTED_WORKTREE",
+  "provenance": "LOCAL_CANDIDATE_SOURCE_SNAPSHOT_NOT_HOSTED",
   "base_sha": "abd5939e316a918126cdadcf887ff7d756ab51db",
   "files": [
     {
@@ -15,7 +15,7 @@
     {
       "path": "PHASE15_REPORT.md",
       "status": "PRESENT",
-      "sha256": "33bbfd3b150b76958f213e73055cffd4813ceb8a21ed7f15cd77bed4ddf4e8e3"
+      "sha256": "bb9f50d019996c4aaff886fa587780901f644cfe7ecd5549b5d249c19e5a107f"
     },
     {
       "path": "PHASE16A_REPORT.md",
@@ -550,12 +550,12 @@
     {
       "path": "scripts/qualification/run.cjs",
       "status": "PRESENT",
-      "sha256": "047dd4eaec0238e7fcd8e2e76307bf436a77545716af4a935a24f96d6af1da74"
+      "sha256": "9679e81facc77e728c42f6088b0bf9bdad3546dcd1859a17f7f1fbee5dbb4bf9"
     },
     {
       "path": "scripts/qualification/summary.cjs",
       "status": "PRESENT",
-      "sha256": "7c01fdf3e0341de82af2fa1446f45a1c6ff592a5e358ffdba0d479f5293f4b2f"
+      "sha256": "7ee54da8a7a991b26b42413d1c03d569e8735b1e2848eeb666e9a257170e2818"
     },
     {
       "path": "shell/api.sh",
@@ -945,7 +945,7 @@
     {
       "path": "tests/phase15/qualification.test.cjs",
       "status": "PRESENT",
-      "sha256": "d5fb7487c984a2a543d74b4c9c4a1dd7b0cbc8b499c88b52f914f72536f4d2c8"
+      "sha256": "b14e84bc536ec307fdf1141aeb027fe843aac0810330b25e01842ca8818df129"
     },
     {
       "path": "tests/phase15/socket-recovery.test.cjs",

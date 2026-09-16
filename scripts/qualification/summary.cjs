@@ -36,6 +36,9 @@ function summary() {
     for (const name of ['native','execution','triggers','workspace','backup','observability']) {
       requireGate(validCounts(result.qualification.suites?.[name]), 'QUALIFICATION_SUITE_' + name);
     }
+    for (let round = 1; round <= 10; round++) {
+      requireGate(validCounts(result.qualification.suites?.['socket-' + round]), 'QUALIFICATION_SOCKET_ROUND_' + round);
+    }
     requireGate(result.qualification.run_id === process.env.CI_QUALIFICATION_RUN_ID, 'QUALIFICATION_RUN_MISMATCH');
     requireGate(result.foundation.commit === result.commit, 'FOUNDATION_SHA_MISMATCH');
     requireGate(result.qualification.commit === result.commit, 'QUALIFICATION_SHA_MISMATCH');

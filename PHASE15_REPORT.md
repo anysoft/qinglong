@@ -8,7 +8,7 @@
 - 分支：`develop`。
 - 入口 HEAD：`abd5939e316a918126cdadcf887ff7d756ab51db`；入口工作区干净。
 - 前序功能基线：Phase0–14（含后完成的 Code Workspace）及 Phase16A Linux CI。
-- 当前修改尚未提交或推送；schema v9。
+- Phase15 主变更已提交为 `f61de1c158100d3ec8fbdfd0aa18681f2f3d47c5`；本报告所在后续候选提交补齐 Hosted socket 10 轮门禁。尚未推送；schema v9。
 
 ## Phase16A Freeze
 
@@ -159,7 +159,7 @@ Fresh 不再创建高权限 system App；真实用户 Apps 保留。旧任意 co
 ## GitHub Hosted Qualification
 
 - 新 run：未执行。
-- 新 commit SHA：未创建。
+- 候选提交：以本报告所在 develop HEAD 为准；最终回复记录完整 SHA。
 - Runner：要求 `ubuntu-24.04` / x64。
 - Workflow：`.github/workflows/linux-qualification.yml`，复用 Foundation full，并独立执行 native/crash/scale suites。
 - 结果：**GITHUB_HOSTED_QUALIFICATION_PENDING**。
@@ -180,7 +180,7 @@ Collector canary/私钥扫描 PASS，owned root/process cleanup PASS，archive P
 
 ## Git
 
-- Commit：未创建；入口 HEAD 保持不变。
+- Commit：主收敛提交 f61de1c1；最终门禁修正作为独立后续提交，不改写既有历史。
 - Push：not performed。
 - 无 tag、Release、Docker image、DockerHub token、PAT、write permission 或 deployment 修改。
 
@@ -192,5 +192,9 @@ Collector canary/私钥扫描 PASS，owned root/process cleanup PASS，archive P
 
 ## Next
 
-由用户 commit、push，并在新 SHA 手动运行 Linux Qualification（workflow_dispatch）。
+由用户执行 `git push origin develop`，然后 Actions → Linux Qualification → Run workflow → develop。取得新 Run ID 后核查 jobs/logs/artifacts；未授权 push，本任务停在候选提交。
 只有该 run 所有 gates 通过才可 Phase15 PASS。**Phase16B — Release Engineering 不自动开始。**
+
+## Final Gate candidate audit
+
+再次通过 backend/frontend build、原始 tsc 零诊断、static/bridge 与 qualification 汇总失败路径验证。Hosted socket 从单轮补齐为 10 个独立强制 suite，每轮 20 并发与 SIGKILL/restart；缺任意一轮结果必须 FAIL。这是 harness 覆盖补齐，未改产品实现。

@@ -5,7 +5,9 @@ const { run } = require('../ci/runner.cjs');
 const { preflight, tap, cleanup } = require('../ci/ci.cjs');
 const evidence = require('../ci/evidence.cjs');
 const suites = {
-  native: ['tests/phase15/native-semantics.test.cjs', 'tests/phase15/fd-exec.test.cjs', 'tests/phase15/socket-recovery.test.cjs'],
+  native: ['tests/phase15/native-semantics.test.cjs', 'tests/phase15/fd-exec.test.cjs'],
+  ...Object.fromEntries(Array.from({ length: 10 }, (_, index) =>
+    ['socket-' + (index + 1), ['tests/phase15/socket-recovery.test.cjs']])),
   execution: ['tests/phase15/convergence.test.cjs', 'tests/phase15/formal-lifecycle.test.cjs', 'tests/phase15/formal-environment.test.cjs', 'tests/phase10/execution.test.cjs', 'tests/phase10/recovery.test.cjs', 'tests/phase10/hardening.test.cjs', 'tests/phase10/entrypoints.test.cjs'],
   triggers: ['tests/phase15/disabled-cron.test.cjs', 'tests/phase11/cron.test.cjs', 'tests/phase11/recovery.test.cjs', 'tests/phase11/scale.test.cjs'],
   workspace: ['tests/phase12/files.test.cjs', 'tests/phase12/git.test.cjs', 'tests/phase12/discovery.test.cjs', 'tests/phase12/api.test.cjs'],

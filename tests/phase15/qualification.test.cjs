@@ -32,6 +32,7 @@ test('qualification summary fails closed for missing evidence, SHA mismatch, bri
     assert.equal(summary().status, 'FAIL');
     write('qualification-downloaded/foundation/final-summary.json', { status: 'PASS', commit: 'fixture-sha', jobs: Object.fromEntries(['preflight','core','managed-runtime','browser'].map(x=>[x,{status:'PASS',artifact:'success'}])), tests:{tests:1,pass:1,fail:0,skipped:0}, typecheck: { status: 'PASS', errors: 0, raw_failed: false } });
     const native = { run_id:'fixture-run', runner:{status:'PASS',os:'Linux',osVersion:'24.04',arch:'x64'}, suites:Object.fromEntries(['native','execution','triggers','workspace','backup','observability'].map(x=>[x,{tests:1,pass:1,fail:0,skipped:0}])), status: 'PASS', commit: 'fixture-sha', collection: 'PASS', cleanup: 'PASS', packaging: 'PASS' };
+    for (let round = 1; round <= 10; round++) native.suites['socket-' + round] = {tests:1,pass:1,fail:0,skipped:0};
     write('qualification-downloaded/native/qualification.json', native);
     const bridges = { temporaryRemaining:0, entries: Array.from({ length: 17 }, (_, i) => ({ id: 'B' + String(i + 1).padStart(2,'0'), complete: true, decision:'REMOVE_PHYSICALLY' })) };
     write('diagnostics/phase15/bridge-audit.json', bridges);
@@ -40,6 +41,12 @@ test('qualification summary fails closed for missing evidence, SHA mismatch, bri
       write('qualification-downloaded/native/qualification.json',{...native,...patch}); assert.equal(summary().status,'FAIL');
     }
     write('qualification-downloaded/native/qualification.json',native);
+    for (let round = 1; round <= 10; round++) {
+      const suites = {...native.suites}; delete suites['socket-' + round];
+      write('qualification-downloaded/native/qualification.json', {...native, suites});
+      assert.equal(summary().status, 'FAIL');
+    }
+    write('qualification-downloaded/native/qualification.json', native);
     process.env.CI_FINAL_UPLOAD='failure';assert.equal(summary().status,'FAIL');delete process.env.CI_FINAL_UPLOAD;
     bridges.entries[0].complete = false; write('diagnostics/phase15/bridge-audit.json', bridges);
     assert.equal(summary().status, 'FAIL');

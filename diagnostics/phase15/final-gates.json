@@ -23,12 +23,15 @@
   "archive": "PASS",
   "gitnexus_risk": "CRITICAL",
   "schema_version": 9,
-  "commit_created": false,
+  "commit_created": true,
   "push_performed": false,
   "limitations": [
     "Ubuntu24.04 qualification pending",
     "Local ShellCheck unavailable",
     "Earlier restore rebuild timeout root cause unconfirmed; final unchanged-deadline run passed",
     "Docker qualification out of scope"
-  ]
+  ],
+  "candidate_state": "CANDIDATE_COMMITTED",
+  "candidate_reference": "develop HEAD containing this receipt; full SHA recorded in final response",
+  "hosted_socket_rounds_required": 10
 }
