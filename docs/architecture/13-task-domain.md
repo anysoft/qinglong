@@ -1,5 +1,7 @@
 # Task Domain — Phase 11
 
+> Phase15 convergence: schema v9 remains unchanged. The current cross-domain ownership, physical bridge removals and operations contract are in [Platform overview](00-platform-overview.md) and [Platform operations](20-platform-operations.md). Earlier bridge-retention statements below are historical. Hosted Linux qualification is a separate gate in [Phase15](../../PHASE15_REPORT.md).
+
 Task 是定义的正式中心；TaskTriggers 为独立触发定义，TriggerEvents 保存接收事实，TaskRuns / TaskRunAttempts 承担执行。Task 不含 schedule 字段，SchedulerProjections 退出正常任务路径。Task 定义没有绝对运行路径或 Build pin；这些属于运行快照。
 
 ```mermaid

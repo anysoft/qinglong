@@ -1,0 +1,132 @@
+TAP version 13
+# CI stage: timeout-fixture
+# Subtest: strict summary rejects historical budgets, nonzero diagnostics and failed raw compiler
+ok 1 - strict summary rejects historical budgets, nonzero diagnostics and failed raw compiler
+  ---
+  duration_ms: 0.882667
+  type: 'test'
+  ...
+# Subtest: failed test still collects and packages bounded diagnostics with machine summary
+ok 2 - failed test still collects and packages bounded diagnostics with machine summary
+  ---
+  duration_ms: 283.689
+  type: 'test'
+  ...
+# Subtest: canary rejects publication and invalidates a previous archive
+ok 3 - canary rejects publication and invalidates a previous archive
+  ---
+  duration_ms: 239.017084
+  type: 'test'
+  ...
+# Subtest: random fixture secrets and private keys are blocked
+ok 4 - random fixture secrets and private keys are blocked
+  ---
+  duration_ms: 251.070167
+  type: 'test'
+  ...
+# Subtest: artifact paths reject traversal, symlinks, operational DB and oversized logs
+ok 5 - artifact paths reject traversal, symlinks, operational DB and oversized logs
+  ---
+  duration_ms: 357.724459
+  type: 'test'
+  ...
+# Subtest: cleanup rejects foreign roots and is idempotent for its owned root
+ok 6 - cleanup rejects foreign roots and is idempotent for its owned root
+  ---
+  duration_ms: 5.08275
+  type: 'test'
+  ...
+# Subtest: summary derives counts and exposes failures, cancellations, scope skips and upload failures
+ok 7 - summary derives counts and exposes failures, cancellations, scope skips and upload failures
+  ---
+  duration_ms: 0.456833
+  type: 'test'
+  ...
+# Subtest: workflow parses and uses read-only fixed Ubuntu official-action orchestration
+ok 8 - workflow parses and uses read-only fixed Ubuntu official-action orchestration
+  ---
+  duration_ms: 271.925708
+  type: 'test'
+  ...
+# Subtest: summary cannot turn blocked core or missing successful-core evidence into PASS
+ok 9 - summary cannot turn blocked core or missing successful-core evidence into PASS
+  ---
+  duration_ms: 0.391
+  type: 'test'
+  ...
+# Subtest: supervised stage timeout stops owned child and grandchild and retains failure evidence
+ok 10 - supervised stage timeout stops owned child and grandchild and retains failure evidence
+  ---
+  duration_ms: 1848.594375
+  type: 'test'
+  ...
+# Subtest: managed clean checkout builds real backend before provision and preserves failure summary
+ok 11 - managed clean checkout builds real backend before provision and preserves failure summary
+  ---
+  duration_ms: 21833.855208
+  type: 'test'
+  ...
+# Subtest: managed and browser preserve build failure evidence and reject missing TAP summaries
+ok 12 - managed and browser preserve build failure evidence and reject missing TAP summaries
+  ---
+  duration_ms: 3824.444958
+  type: 'test'
+  ...
+# Subtest: Panel workspace routes reject Open access, unknown fields, absent concurrency tokens and unsafe error output
+ok 13 - Panel workspace routes reject Open access, unknown fields, absent concurrency tokens and unsafe error output
+  ---
+  duration_ms: 141.428625
+  type: 'test'
+  ...
+# Subtest: disabled Cron never schedules, survives scheduler restart and reenables without replay
+ok 14 - disabled Cron never schedules, survives scheduler restart and reenables without replay
+  ---
+  duration_ms: 7174.325959
+  type: 'test'
+  ...
+# Subtest: disabled due rows cannot starve enabled Cron behind the scheduler batch limit
+ok 15 - disabled due rows cannot starve enabled Cron behind the scheduler batch limit
+  ---
+  duration_ms: 4310.387709
+  type: 'test'
+  ...
+# Subtest: ten real disable/tick process races serialize and disabled restart never emits later events
+ok 16 - ten real disable/tick process races serialize and disabled restart never emits later events
+  ---
+  duration_ms: 70348.712291
+  type: 'test'
+  ...
+# Subtest: formal Shell Task preserves complex ENV and UNSET without interpolation or secret disclosure
+ok 17 - formal Shell Task preserves complex ENV and UNSET without interpolation or secret disclosure
+  ---
+  duration_ms: 7177.832334
+  type: 'test'
+  ...
+# Subtest: 50 live formal Resolver/Runner processes retain A across scoped ENV update to B
+ok 18 - 50 live formal Resolver/Runner processes retain A across scoped ENV update to B
+  ---
+  duration_ms: 29640.294458
+  type: 'test'
+  ...
+# Subtest: FD flock survives parent exit and only the last grandchild owner releases it
+ok 19 - FD flock survives parent exit and only the last grandchild owner releases it
+  ---
+  duration_ms: 381.243084
+  type: 'test'
+  ...
+# Subtest: fixed no-replace helper supports literal names, symlink and directory conflicts, and two-process race
+ok 20 - fixed no-replace helper supports literal names, symlink and directory conflicts, and two-process race
+  ---
+  duration_ms: 588.151125
+  type: 'test'
+  ...
+# {"platform":"darwin","syscall":"renamex_np(RENAME_EXCL)","linux_qualification":"NOT_EXECUTED"}
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 82536.665416

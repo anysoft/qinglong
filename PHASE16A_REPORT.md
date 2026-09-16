@@ -1,6 +1,16 @@
-# Phase 16A Status: PARTIAL
+# Phase 16A Status: PASS
 
-**WORKFLOW_IMPLEMENTED / FIRST_GITHUB_UBUNTU_RUN_ANALYZED / LINUX_FIX_VALIDATED_LOCALLY / HOSTED_FULL_REVALIDATION_PENDING**
+**WORKFLOW_IMPLEMENTED / GITHUB_HOSTED_UBUNTU_FULL_REVALIDATION_PASS**
+
+## Phase16A 最终冻结（Phase15 入口）
+
+最终 Run [35098329236](https://github.com/anysoft/qinglong/actions/runs/35098329236)，SHA `abd5939e316a918126cdadcf887ff7d756ab51db`，develop / workflow_dispatch / scope=full；preflight、core、managed-runtime、browser、ci-summary **全部 PASS**。browser 确实运行 Phase12/Phase14、managed provision 和 cleanup。Ubuntu24.04.5 x86_64：469 tests / 469 pass / 0 fail / 0 skip；TypeScript historical22 / remaining4 / new0 / budget PASS。
+
+演进链完整保留：首次 normal Run 35078896295 FAIL → 本地两个隔离修复 → 第二次 normal Run [35096852979](https://github.com/anysoft/qinglong/actions/runs/35096852979) SUCCESS → 最终 full Run 35098329236 SUCCESS。Run 元数据及五个 job conclusion 已通过 GitHub API 核对；平台计数、OS 与 scope 取自用户提供的 hosted artifact 证据。
+
+机器记录：[final-gates.json](diagnostics/phase16a/final-gates.json)。Phase16A 在此冻结为 PASS；`NOT_PHASE15_QUALIFICATION` 保持。**下文 PARTIAL/pending 表述保留为当时历史记录，不代表最终状态。** Phase15 新改动必须使用新 SHA 的新 qualification Run。
+
+## 以下为首轮及本地修复历史
 
 本阶段建立 CI Foundation。首轮 GitHub Ubuntu Run [35078896295](https://github.com/anysoft/qinglong/actions/runs/35078896295) 已执行并分析：preflight PASS、core/managed FAIL、browser SKIPPED_BY_SCOPE。本轮在 Darwin arm64 修复并重新验证两个 fixture/CI 问题；完整 hosted 修复验证仍待新 SHA 的 workflow_dispatch full。Phase15 Linux Qualification 和 Temporary Bridge 删除未开始。
 

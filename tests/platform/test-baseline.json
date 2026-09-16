@@ -1,31 +1,49 @@
 [
   {
+    "path": "tests/phase15/convergence.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase15/qualification.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase15/formal-lifecycle.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase15/socket-recovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase15/fd-exec.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase15/disabled-cron.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase15/formal-environment.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase15/native-semantics.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
     "path": "test/back/auth-security.test.cjs",
     "classification": "PLATFORM_CORE"
   },
   {
     "path": "test/back/build-provenance.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/cron-log-name.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/cron-validation.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/dashboard-failures.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/dependence-cache-status.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform process supervision and diagnostics"
   },
   {
     "path": "test/back/ecosystem.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform process supervision and diagnostics"
   },
   {
     "path": "tests/archived/legacy/test/back/env-name-parsing.test.cjs",
@@ -33,7 +51,8 @@
   },
   {
     "path": "test/back/execution-lifecycle.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Config materialization and owned process lifecycle"
   },
   {
     "path": "test/back/file-access-security.test.cjs",
@@ -41,11 +60,8 @@
   },
   {
     "path": "test/back/fileTreeListing.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/grpc-cron-response.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform file/log boundaries and retention"
   },
   {
     "path": "test/back/http-exclusive-listen.test.cjs",
@@ -65,11 +81,8 @@
   },
   {
     "path": "test/back/logReader.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/manual-execution.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform file/log boundaries and retention"
   },
   {
     "path": "test/back/manual-stop-claim.test.cjs",
@@ -78,67 +91,42 @@
   },
   {
     "path": "test/back/metrics.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform process supervision and diagnostics"
   },
   {
     "path": "test/back/monitoring.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/node-path-cache.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/node-path-lock.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform process supervision and diagnostics"
   },
   {
     "path": "test/back/primary-apm.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform process supervision and diagnostics"
   },
   {
     "path": "test/back/process-exit-state.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform process supervision and diagnostics"
   },
   {
     "path": "test/back/protected-path-case.test.cjs",
     "classification": "PLATFORM_CORE"
   },
   {
-    "path": "test/back/qlServiceLogCommand.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
     "path": "test/back/retention.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform file/log boundaries and retention"
   },
   {
     "path": "test/back/schedule-health.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/scheduler-file-lock.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/scheduler-mutation.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Internal Subscription scheduler and mTLS health"
   },
   {
     "path": "test/back/scheduler-readiness.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/scheduler-reconciliation.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/scheduler-rpc-timeout.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/shell-api-parsing.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Internal Subscription scheduler and mTLS health"
   },
   {
     "path": "test/back/sock-security.test.cjs",
@@ -151,15 +139,8 @@
   },
   {
     "path": "test/back/subscription-cleanup.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/system-dependence-cache.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
-    "path": "test/back/task-time.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Internal Subscription scheduler and mTLS health"
   },
   {
     "path": "test/back/user-api.test.cjs",
@@ -171,15 +152,18 @@
   },
   {
     "path": "test/back/worker-apm.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform process supervision and diagnostics"
   },
   {
     "path": "test/back/wpush-grpc.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Explicit backend notification provider transport"
   },
   {
     "path": "test/front/http-error.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Frontend authenticated HTTP error contract"
   },
   {
     "path": "tests/phase1/api.test.cjs",
@@ -206,16 +190,13 @@
     "classification": "PLATFORM_CORE"
   },
   {
-    "path": "tests/phase3/cron-publication.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
     "path": "tests/phase4/repository-deletion.test.cjs",
     "classification": "PLATFORM_CORE"
   },
   {
     "path": "tests/platform/api-file-routes.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Platform file/log boundaries and retention"
   },
   {
     "path": "tests/platform/bootstrap-data.test.cjs",
@@ -235,10 +216,6 @@
     "reason": "Phase 11 removed B07 staging/projection publication; equivalent active coverage: tests/phase11/discovery.test.cjs, git-pipeline.test.cjs, scale.test.cjs and tests/phase5/publication-integrity.test.cjs."
   },
   {
-    "path": "tests/platform/environment-account-mode.test.cjs",
-    "classification": "PLATFORM_CORE"
-  },
-  {
     "path": "tests/platform/environment-api.test.cjs",
     "classification": "PLATFORM_CORE"
   },
@@ -247,23 +224,11 @@
     "classification": "PLATFORM_CORE"
   },
   {
-    "path": "tests/platform/environment-entrypoint.test.cjs",
-    "classification": "PLATFORM_CORE"
-  },
-  {
-    "path": "tests/platform/environment-execution.test.cjs",
-    "classification": "PLATFORM_CORE"
-  },
-  {
     "path": "tests/platform/environment-isolation.test.cjs",
     "classification": "PLATFORM_CORE"
   },
   {
     "path": "tests/platform/environment-redaction.test.cjs",
-    "classification": "PLATFORM_CORE"
-  },
-  {
-    "path": "tests/platform/environment-transport.test.cjs",
     "classification": "PLATFORM_CORE"
   },
   {
@@ -276,7 +241,8 @@
   },
   {
     "path": "tests/platform/runtime-bridges.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Internal Subscription scheduler and mTLS health"
   },
   {
     "path": "tests/platform/subscription-domain.test.cjs",
@@ -290,10 +256,6 @@
     "path": "tests/platform/subscription-pipeline.test.cjs",
     "classification": "ARCHIVED_LEGACY",
     "reason": "Phase 11 removed B07 staging/projection publication; equivalent active coverage: tests/phase11/discovery.test.cjs, git-pipeline.test.cjs, scale.test.cjs and tests/phase5/publication-integrity.test.cjs."
-  },
-  {
-    "path": "tests/platform/task-model-bridge.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
   },
   {
     "path": "tests/platform/workspace-paths.test.cjs",
@@ -441,24 +403,23 @@
     "classification": "PLATFORM_CORE"
   },
   {
-    "path": "tests/phase5/runtime.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
-  },
-  {
     "path": "tests/phase5/schema.test.cjs",
     "classification": "PLATFORM_CORE"
   },
   {
     "path": "tests/phase5/publication-integrity.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Config materialization and owned process lifecycle"
   },
   {
     "path": "tests/phase5/script-access.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Config materialization and owned process lifecycle"
   },
   {
     "path": "tests/phase5/process-group.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "PLATFORM_CORE",
+    "owner": "Config materialization and owned process lifecycle"
   },
   {
     "path": "tests/phase6/schema.test.cjs",

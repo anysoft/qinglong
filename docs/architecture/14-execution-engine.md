@@ -1,5 +1,7 @@
 # Execution Engine — Phase 10
 
+> Phase15 convergence: schema v9 remains unchanged. The current cross-domain ownership, physical bridge removals and operations contract are in [Platform overview](00-platform-overview.md) and [Platform operations](20-platform-operations.md). Earlier bridge-retention statements below are historical. Hosted Linux qualification is a separate gate in [Phase15](../../PHASE15_REPORT.md).
+
 TaskRun / TaskRunAttempt 是唯一正常执行记录。TaskSource 直接指向 Worktree；ExecutionResolver 将逻辑资源绑定变成单次运行的不可变快照，Runner v2 执行绝对解释器和原生 argv。
 
 ```mermaid

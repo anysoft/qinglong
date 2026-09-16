@@ -1,0 +1,3 @@
+info  - [你知道吗？] 全局样式、全局脚本写在哪里？创建 src/global.(ts|css) 轻松解决，详见 https://umijs.org/docs/guides/directory-structure#globaljtsx
+info  - generate files
+info  - Preparing...

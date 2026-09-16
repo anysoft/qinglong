@@ -1,0 +1,1793 @@
+{
+  "summary": {
+    "changed_count": 223,
+    "affected_count": 18,
+    "changed_files": 177,
+    "risk_level": "critical"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:PHASE16A_REPORT.md:L1:Phase 16A Status: PASS",
+      "name": "Phase 16A Status: PASS",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L5:Phase16A 最终冻结（Phase15 入口）",
+      "name": "Phase16A 最终冻结（Phase15 入口）",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L13:以下为首轮及本地修复历史",
+      "name": "以下为首轮及本地修复历史",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L1:Temporary Bridges — 退出条件登记",
+      "name": "Temporary Bridges — 退出条件登记",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L169:Phase 12 — Code Workspace",
+      "name": "Phase 12 — Code Workspace",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L180:Phase 15 — final source/ownership disposition",
+      "name": "Phase 15 — final source/ownership disposition",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/retention.ts:route",
+      "name": "route",
+      "type": "Const",
+      "filePath": "back/api/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/retention.ts:cleanupSchema",
+      "name": "cleanupSchema",
+      "type": "Const",
+      "filePath": "back/api/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/api/retention.ts:cleanupSchema.logRetentionDays",
+      "name": "logRetentionDays",
+      "type": "Property",
+      "filePath": "back/api/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/tasks.ts:taskRoutes",
+      "name": "taskRoutes",
+      "type": "Function",
+      "filePath": "back/api/tasks.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/config/const.ts:LOG_END_SYMBOL",
+      "name": "LOG_END_SYMBOL",
+      "type": "Const",
+      "filePath": "back/config/const.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/config/const.ts:NotificationModeStringMap",
+      "name": "NotificationModeStringMap",
+      "type": "Const",
+      "filePath": "back/config/const.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/config/index.ts:shellPath",
+      "name": "shellPath",
+      "type": "Const",
+      "filePath": "back/config/index.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/config/index.ts:configPath",
+      "name": "configPath",
+      "type": "Const",
+      "filePath": "back/config/index.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/config/index.ts:systemLogPath",
+      "name": "systemLogPath",
+      "type": "Const",
+      "filePath": "back/config/index.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/config/index.ts:versionFile",
+      "name": "versionFile",
+      "type": "Const",
+      "filePath": "back/config/index.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/config/util.ts:isDemoEnv",
+      "name": "isDemoEnv",
+      "type": "Function",
+      "filePath": "back/config/util.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/protos/api.ts:UpdateEnvNamesRequest",
+      "name": "UpdateEnvNamesRequest",
+      "type": "Const",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:UpdateEnvNamesRequest.fromJSON#1",
+      "name": "fromJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:UpdateEnvNamesRequest.fromJSON.ids@1013:6",
+      "name": "ids",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:UpdateEnvNamesRequest.fromJSON.name@1014:6",
+      "name": "name",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:UpdateEnvNamesRequest.toJSON#1",
+      "name": "toJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:UpdateEnvNamesRequest.create#1",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:UpdateEnvNamesRequest.fromPartial#1",
+      "name": "fromPartial",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/protos/api.ts:createBaseGetEnvByIdRequest",
+      "name": "createBaseGetEnvByIdRequest",
+      "type": "Function",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:createBaseGetEnvByIdRequest.id@1041:11",
+      "name": "id",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/protos/api.ts:GetEnvByIdRequest",
+      "name": "GetEnvByIdRequest",
+      "type": "Const",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:GetEnvByIdRequest.encode#2",
+      "name": "encode",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:GetEnvByIdRequest.decode#2",
+      "name": "decode",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:GetEnvByIdRequest.fromJSON#1",
+      "name": "fromJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:GetEnvByIdRequest.fromJSON.id@1077:13",
+      "name": "id",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:GetEnvByIdRequest.toJSON#1",
+      "name": "toJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:GetEnvByIdRequest.create#1",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:GetEnvByIdRequest.fromPartial#1",
+      "name": "fromPartial",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/protos/api.ts:createBaseEnvsResponse",
+      "name": "createBaseEnvsResponse",
+      "type": "Function",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/protos/api.ts:EnvsResponse",
+      "name": "EnvsResponse",
+      "type": "Const",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvsResponse.encode#2",
+      "name": "encode",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvsResponse.decode#2",
+      "name": "decode",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvsResponse.fromJSON#1",
+      "name": "fromJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:EnvsResponse.fromJSON.data@1159:6",
+      "name": "data",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvsResponse.toJSON#1",
+      "name": "toJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvsResponse.create#1",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvsResponse.fromPartial#1",
+      "name": "fromPartial",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/protos/api.ts:createBaseEnvResponse",
+      "name": "createBaseEnvResponse",
+      "type": "Function",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/protos/api.ts:EnvResponse",
+      "name": "EnvResponse",
+      "type": "Const",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvResponse.encode#2",
+      "name": "encode",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvResponse.decode#2",
+      "name": "decode",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvResponse.fromJSON#1",
+      "name": "fromJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:EnvResponse.fromJSON.data@1251:6",
+      "name": "data",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvResponse.toJSON#1",
+      "name": "toJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvResponse.create#1",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:EnvResponse.fromPartial#1",
+      "name": "fromPartial",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/protos/api.ts:createBaseResponse",
+      "name": "createBaseResponse",
+      "type": "Function",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:createBaseResponse.code@1283:11",
+      "name": "code",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:createBaseResponse.message@1283:20",
+      "name": "message",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/protos/api.ts:Response",
+      "name": "Response",
+      "type": "Const",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:Response.encode#2",
+      "name": "encode",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:Response.decode#2",
+      "name": "decode",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:Response.fromJSON#1",
+      "name": "fromJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:Response.fromJSON.code@1331:6",
+      "name": "code",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:Response.toJSON#1",
+      "name": "toJSON",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:Response.create#1",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:Response.fromPartial#1",
+      "name": "fromPartial",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/protos/api.ts:ApiService",
+      "name": "ApiService",
+      "type": "Const",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/protos/api.ts:ApiServer",
+      "name": "ApiServer",
+      "type": "Interface",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/protos/api.ts:ApiServer.systemNotify",
+      "name": "systemNotify",
+      "type": "Property",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/protos/api.ts:ApiClient",
+      "name": "ApiClient",
+      "type": "Interface",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/protos/api.ts:ApiClient.systemNotify#4",
+      "name": "systemNotify",
+      "type": "Method",
+      "filePath": "back/protos/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/schedule/api.ts:systemNotify",
+      "name": "systemNotify",
+      "type": "Function",
+      "filePath": "back/schedule/api.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/schedule/client.ts:Client",
+      "name": "Client",
+      "type": "Class",
+      "filePath": "back/schedule/client.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/schedule/client.ts:Client._client",
+      "name": "_client",
+      "type": "Property",
+      "filePath": "back/schedule/client.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/schedule/client.ts:Client.client#0",
+      "name": "client",
+      "type": "Method",
+      "filePath": "back/schedule/client.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator",
+      "name": "ExecutionAttemptCoordinator",
+      "type": "Class",
+      "filePath": "back/services/executionAttemptCoordinator.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator.run#5",
+      "name": "run",
+      "type": "Method",
+      "filePath": "back/services/executionAttemptCoordinator.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionSubmission.ts:ExecutionSubmissionServer",
+      "name": "ExecutionSubmissionServer",
+      "type": "Class",
+      "filePath": "back/services/executionSubmission.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/executionSubmission.ts:ExecutionSubmissionServer.submissions",
+      "name": "submissions",
+      "type": "Property",
+      "filePath": "back/services/executionSubmission.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/executionSubmission.ts:ExecutionSubmissionServer.queuedSubmissions",
+      "name": "queuedSubmissions",
+      "type": "Property",
+      "filePath": "back/services/executionSubmission.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/executionSubmission.ts:ExecutionSubmissionServer.listen#0",
+      "name": "listen",
+      "type": "Method",
+      "filePath": "back/services/executionSubmission.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionSubmission.ts:ExecutionSubmissionServer.listen.server@62:6",
+      "name": "server",
+      "type": "Function",
+      "filePath": "back/services/executionSubmission.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/grpc.ts:GrpcServerService",
+      "name": "GrpcServerService",
+      "type": "Class",
+      "filePath": "back/services/grpc.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/grpc.ts:GrpcServerService.initialize#0",
+      "name": "initialize",
+      "type": "Method",
+      "filePath": "back/services/grpc.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/retention.ts:StorageCleanupRequest",
+      "name": "StorageCleanupRequest",
+      "type": "Interface",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/retention.ts:RetentionService",
+      "name": "RetentionService",
+      "type": "Class",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.timer",
+      "name": "timer",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.cleaning",
+      "name": "cleaning",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/retention.ts:RetentionService.configure#2",
+      "name": "configure",
+      "type": "Method",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/retention.ts:RetentionService.configure.warn@17:43#1",
+      "name": "warn",
+      "type": "Method",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/retention.ts:RetentionService.configure.tick@22:4",
+      "name": "tick",
+      "type": "Function",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/retention.ts:RetentionService.preview#1",
+      "name": "preview",
+      "type": "Method",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.preview.bytes@31:58",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.preview.files@31:51",
+      "name": "files",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.preview.policy@31:43",
+      "name": "policy",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.preview.bytes@55:28",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.preview.files@55:21",
+      "name": "files",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.preview.policy@55:13",
+      "name": "policy",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/retention.ts:RetentionService.cleanup#1",
+      "name": "cleanup",
+      "type": "Method",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.cleanup.bytes@59:44",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.cleanup.deleted@59:32",
+      "name": "deleted",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/retention.ts:RetentionService.cleanup.fn@62:54.bytes@64:8",
+      "name": "bytes",
+      "type": "Const",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.cleanup.fn@62:54.bytes@75:26",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/retention.ts:RetentionService.cleanup.fn@62:54.deleted@75:17",
+      "name": "deleted",
+      "type": "Property",
+      "filePath": "back/services/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/schedule.ts:ScheduleTaskType",
+      "name": "ScheduleTaskType",
+      "type": "Interface",
+      "filePath": "back/services/schedule.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/schedule.ts:ScheduleTaskType.runOrigin",
+      "name": "runOrigin",
+      "type": "Property",
+      "filePath": "back/services/schedule.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/schedule.ts:ScheduleService",
+      "name": "ScheduleService",
+      "type": "Class",
+      "filePath": "back/services/schedule.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/schedule.ts:ScheduleService.taskLimitMap",
+      "name": "taskLimitMap",
+      "type": "Property",
+      "filePath": "back/services/schedule.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/schedule.ts:ScheduleService.runTask#4",
+      "name": "runTask",
+      "type": "Method",
+      "filePath": "back/services/schedule.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/subscription.ts:SubscriptionService",
+      "name": "SubscriptionService",
+      "type": "Class",
+      "filePath": "back/services/subscription.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/subscription.ts:SubscriptionService.constructor#3",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/subscription.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/subscription.ts:SubscriptionService.sockService",
+      "name": "sockService",
+      "type": "Property",
+      "filePath": "back/services/subscription.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/system.ts:SystemService",
+      "name": "SystemService",
+      "type": "Class",
+      "filePath": "back/services/system.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/system.ts:SystemService.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/system.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/system.ts:SystemService.logger",
+      "name": "logger",
+      "type": "Property",
+      "filePath": "back/services/system.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/system.ts:SystemService.configureLogRetention#1",
+      "name": "configureLogRetention",
+      "type": "Method",
+      "filePath": "back/services/system.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/system.ts:SystemService.updateLogRemoveFrequency#1",
+      "name": "updateLogRemoveFrequency",
+      "type": "Method",
+      "filePath": "back/services/system.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/system.ts:SystemService.updateLanguage#1",
+      "name": "updateLanguage",
+      "type": "Method",
+      "filePath": "back/services/system.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/system.ts:SystemService.updatePanelTitle#1",
+      "name": "updatePanelTitle",
+      "type": "Method",
+      "filePath": "back/services/system.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/taskHookLifecycle.ts:LifecycleOptions",
+      "name": "LifecycleOptions",
+      "type": "Interface",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:LifecycleOptions.main",
+      "name": "main",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:LifecycleOptions.redactor",
+      "name": "redactor",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/taskHookLifecycle.ts:HookLifecyclePlan",
+      "name": "HookLifecyclePlan",
+      "type": "Interface",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:HookLifecyclePlan.environment",
+      "name": "environment",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:HookLifecyclePlan.secretValues",
+      "name": "secretValues",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:HookLifecyclePlan.workspace",
+      "name": "workspace",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:HookLifecyclePlan.hooks",
+      "name": "hooks",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:HookLifecyclePlan.directory",
+      "name": "directory",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:HookLifecyclePlan.args",
+      "name": "args",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:HookLifecyclePlan.mainTimeout",
+      "name": "mainTimeout",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskHookLifecycle.ts:HookLifecyclePlan.task",
+      "name": "task",
+      "type": "Property",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/taskHookLifecycle.ts:TaskHookLifecycle",
+      "name": "TaskHookLifecycle",
+      "type": "Class",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run#3",
+      "name": "run",
+      "type": "Method",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run.context@88:4",
+      "name": "context",
+      "type": "Function",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run.phase@95:4",
+      "name": "phase",
+      "type": "Function",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/taskTrigger.ts:TaskTriggerService",
+      "name": "TaskTriggerService",
+      "type": "Class",
+      "filePath": "back/services/taskTrigger.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/taskTrigger.ts:TaskTriggerService.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/taskTrigger.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/services/taskTrigger.ts:TaskTriggerService.now",
+      "name": "now",
+      "type": "Property",
+      "filePath": "back/services/taskTrigger.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/taskTrigger.ts:TaskTriggerService.save#3",
+      "name": "save",
+      "type": "Method",
+      "filePath": "back/services/taskTrigger.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/triggerScheduler.ts:TriggerScheduler",
+      "name": "TriggerScheduler",
+      "type": "Class",
+      "filePath": "back/services/triggerScheduler.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/triggerScheduler.ts:TriggerScheduler.tick#0",
+      "name": "tick",
+      "type": "Method",
+      "filePath": "back/services/triggerScheduler.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/bootstrapDirectories.ts:bootstrapDirectories",
+      "name": "bootstrapDirectories",
+      "type": "Function",
+      "filePath": "back/shared/bootstrapDirectories.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/shared/pLimit.ts:TaskLimit",
+      "name": "TaskLimit",
+      "type": "Class",
+      "filePath": "back/shared/pLimit.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/shared/pLimit.ts:TaskLimit.subscriptionLimit",
+      "name": "subscriptionLimit",
+      "type": "Property",
+      "filePath": "back/shared/pLimit.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/shared/pLimit.ts:TaskLimit.runWithSubscriptionLimit#3",
+      "name": "runWithSubscriptionLimit",
+      "type": "Method",
+      "filePath": "back/shared/pLimit.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/shared/retention.ts:RetentionPolicy",
+      "name": "RetentionPolicy",
+      "type": "Interface",
+      "filePath": "back/shared/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/shared/retention.ts:RetentionPolicy.logRetentionDays",
+      "name": "logRetentionDays",
+      "type": "Property",
+      "filePath": "back/shared/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/retention.ts:normalizeRetentionPolicy",
+      "name": "normalizeRetentionPolicy",
+      "type": "Function",
+      "filePath": "back/shared/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:back/shared/retention.ts:normalizeRetentionPolicy.logRetentionDays@9:11",
+      "name": "logRetentionDays",
+      "type": "Property",
+      "filePath": "back/shared/retention.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/browser-backup.cjs:browser-backup",
+      "name": "browser-backup",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/browser-backup.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/browser-backup.cjs:fn@3:15.waitOperation@8:1",
+      "name": "waitOperation",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/browser-backup.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.refsRequest@88:2",
+      "name": "refsRequest",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.prepared@92:2",
+      "name": "prepared",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/00-platform-overview.md:L1:Platform 1.0 architecture",
+      "name": "Platform 1.0 architecture",
+      "type": "Section",
+      "filePath": "docs/architecture/00-platform-overview.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/01-domain-model.md:L1:Current domain ownership — schema v9",
+      "name": "Current domain ownership — schema v9",
+      "type": "Section",
+      "filePath": "docs/architecture/01-domain-model.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/02-git-workspace.md:L1:Git resources and Workspaces",
+      "name": "Git resources and Workspaces",
+      "type": "Section",
+      "filePath": "docs/architecture/02-git-workspace.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/03-subscription-sync.md:L1:Subscription sync and Discovery",
+      "name": "Subscription sync and Discovery",
+      "type": "Section",
+      "filePath": "docs/architecture/03-subscription-sync.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/04-environment-model.md:L1:Execution environment model",
+      "name": "Execution environment model",
+      "type": "Section",
+      "filePath": "docs/architecture/04-environment-model.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/05-filesystem-layout.md:L1:Current filesystem ownership",
+      "name": "Current filesystem ownership",
+      "type": "Section",
+      "filePath": "docs/architecture/05-filesystem-layout.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/06-database-target.md:L1:Current database contract",
+      "name": "Current database contract",
+      "type": "Section",
+      "filePath": "docs/architecture/06-database-target.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/07-service-boundaries.md:L1:Current service boundaries",
+      "name": "Current service boundaries",
+      "type": "Section",
+      "filePath": "docs/architecture/07-service-boundaries.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/08-temporary-bridges.md:L1:Bridge disposition",
+      "name": "Bridge disposition",
+      "type": "Section",
+      "filePath": "docs/architecture/08-temporary-bridges.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/09-config-assets-and-hooks.md:L1:Config Assets 与 Hooks v2（Phase 5）",
+      "name": "Config Assets 与 Hooks v2（Phase 5）",
+      "type": "Section",
+      "filePath": "docs/architecture/09-config-assets-and-hooks.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/10-python-runtime.md:L1:Python Runtime Manager — Phase 6",
+      "name": "Python Runtime Manager — Phase 6",
+      "type": "Section",
+      "filePath": "docs/architecture/10-python-runtime.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/11-python-environments.md:L1:Python Environments — current architecture (Phase 7)",
+      "name": "Python Environments — current architecture (Phase 7)",
+      "type": "Section",
+      "filePath": "docs/architecture/11-python-environments.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/12-node-runtime-environments.md:L1:Node Runtime + Dependency Environment（Phase 8）",
+      "name": "Node Runtime + Dependency Environment（Phase 8）",
+      "type": "Section",
+      "filePath": "docs/architecture/12-node-runtime-environments.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/13-task-domain.md:L1:Task Domain — Phase 11",
+      "name": "Task Domain — Phase 11",
+      "type": "Section",
+      "filePath": "docs/architecture/13-task-domain.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/14-execution-engine.md:L1:Execution Engine — Phase 10",
+      "name": "Execution Engine — Phase 10",
+      "type": "Section",
+      "filePath": "docs/architecture/14-execution-engine.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/15-discovery-triggers.md:L1:Discovery v2 + Trigger Model — Phase 11",
+      "name": "Discovery v2 + Trigger Model — Phase 11",
+      "type": "Section",
+      "filePath": "docs/architecture/15-discovery-triggers.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/16-task-run-observability.md:L1:TaskRun Observability — Phase 13",
+      "name": "TaskRun Observability — Phase 13",
+      "type": "Section",
+      "filePath": "docs/architecture/16-task-run-observability.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/17-notification-platform.md:L1:Notification Platform — Phase 13",
+      "name": "Notification Platform — Phase 13",
+      "type": "Section",
+      "filePath": "docs/architecture/17-notification-platform.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/18-backup-restore.md:L1:Backup / Restore / Disaster Recovery",
+      "name": "Backup / Restore / Disaster Recovery",
+      "type": "Section",
+      "filePath": "docs/architecture/18-backup-restore.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/19-code-workspace.md:L1:Code Workspace — Phase12, schema v9",
+      "name": "Code Workspace — Phase12, schema v9",
+      "type": "Section",
+      "filePath": "docs/architecture/19-code-workspace.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:typecheck",
+      "name": "typecheck",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.mode@174:4",
+      "name": "mode",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.errors@175:4",
+      "name": "errors",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.diagnostics@177:4",
+      "name": "diagnostics",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.status@178:4",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:core",
+      "name": "core",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/evidence.cjs:summarize",
+      "name": "summarize",
+      "type": "Function",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.typecheck@267:4",
+      "name": "typecheck",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.status@273:4",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/static.cjs:audit",
+      "name": "audit",
+      "type": "Function",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.formal_environment_invariants@125:4",
+      "name": "formal_environment_invariants",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.legacy_execution_source_absent@126:4",
+      "name": "legacy_execution_source_absent",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/tag.tsx:EditableTagGroup",
+      "name": "EditableTagGroup",
+      "type": "Function",
+      "filePath": "src/components/tag.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/tag.tsx:EditableTagGroup.handleInputChange@28:2",
+      "name": "handleInputChange",
+      "type": "Function",
+      "filePath": "src/components/tag.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/setting/index.tsx:Setting",
+      "name": "Setting",
+      "type": "Function",
+      "filePath": "src/pages/setting/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/pages/setting/other.tsx:dataMap",
+      "name": "dataMap",
+      "type": "Const",
+      "filePath": "src/pages/setting/other.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/setting/other.tsx:Other",
+      "name": "Other",
+      "type": "Function",
+      "filePath": "src/pages/setting/other.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/setting/other.tsx:Other.previewStorageCleanup@121:2",
+      "name": "previewStorageCleanup",
+      "type": "Function",
+      "filePath": "src/pages/setting/other.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/setting/other.tsx:Other.previewStorageCleanup@121:32.logRetentionDays@124:6",
+      "name": "logRetentionDays",
+      "type": "Property",
+      "filePath": "src/pages/setting/other.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/setting/security.tsx:SecuritySettings",
+      "name": "SecuritySettings",
+      "type": "Function",
+      "filePath": "src/pages/setting/security.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/setting/security.tsx:SecuritySettings.onChange@98:2",
+      "name": "onChange",
+      "type": "Function",
+      "filePath": "src/pages/setting/security.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/subscription/modal.tsx:SubscriptionModal",
+      "name": "SubscriptionModal",
+      "type": "Function",
+      "filePath": "src/pages/subscription/modal.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/subscription/modal.tsx:SubscriptionModal.fn@18:12.finish@22:4",
+      "name": "finish",
+      "type": "Function",
+      "filePath": "src/pages/subscription/modal.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/tasks/triggers.tsx:TaskTriggers",
+      "name": "TaskTriggers",
+      "type": "Function",
+      "filePath": "src/pages/tasks/triggers.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/tasks/triggers.tsx:TaskTriggers.render@124:12",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/tasks/triggers.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:test/back/execution-lifecycle.test.cjs:scheduleFixture",
+      "name": "scheduleFixture",
+      "type": "Function",
+      "filePath": "test/back/execution-lifecycle.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:test/back/retention.test.cjs:load",
+      "name": "load",
+      "type": "Const",
+      "filePath": "test/back/retention.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:test/back/retention.test.cjs:fn@14:96.findAll@26:70",
+      "name": "findAll",
+      "type": "Function",
+      "filePath": "test/back/retention.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:test/back/retention.test.cjs:fn@14:96.platformBarrier@27:25",
+      "name": "platformBarrier",
+      "type": "Function",
+      "filePath": "test/back/retention.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:test/back/retention.test.cjs:fn@14:96.platformBarrier@27:41.mutation@27:52",
+      "name": "mutation",
+      "type": "Function",
+      "filePath": "test/back/retention.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:test/back/retention.test.cjs:fn@14:96.warn@37:23#0",
+      "name": "warn",
+      "type": "Method",
+      "filePath": "test/back/retention.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:test/back/scheduler-readiness.test.cjs:fn@54:76.createSsl@62:102",
+      "name": "createSsl",
+      "type": "Function",
+      "filePath": "test/back/scheduler-readiness.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:test/back/scheduler-readiness.test.cjs:constructor#0",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "test/back/scheduler-readiness.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/ci/foundation.test.cjs:fn@15:95.core@16:18",
+      "name": "core",
+      "type": "Property",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase10/managed-entrypoints.cjs:parity",
+      "name": "parity",
+      "type": "Function",
+      "filePath": "tests/phase10/managed-entrypoints.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@2:114.Read@2:218",
+      "name": "Read",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@2:114.chunk@2:412",
+      "name": "chunk",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@2:114.f@2:124",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@2:114.r@2:124",
+      "name": "r",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase9/subscription-delete.test.cjs:fn@1:114.Service@1:124",
+      "name": "Service",
+      "type": "Const",
+      "filePath": "tests/phase9/subscription-delete.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase9/subscription-delete.test.cjs:fn@1:114.fail@1:233",
+      "name": "fail",
+      "type": "Const",
+      "filePath": "tests/phase9/subscription-delete.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase9/subscription-delete.test.cjs:fn@1:114.hook@1:504",
+      "name": "hook",
+      "type": "Const",
+      "filePath": "tests/phase9/subscription-delete.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase9/subscription-delete.test.cjs:fn@1:114.manual@1:504",
+      "name": "manual",
+      "type": "Const",
+      "filePath": "tests/phase9/subscription-delete.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase9/subscription-delete.test.cjs:fn@1:114.service@1:124",
+      "name": "service",
+      "type": "Const",
+      "filePath": "tests/phase9/subscription-delete.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase9/subscription-delete.test.cjs:fn@1:114.task@1:504",
+      "name": "task",
+      "type": "Const",
+      "filePath": "tests/phase9/subscription-delete.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:tests/phase9/subscription-delete.test.cjs:fn@1:114.error@1:215#0",
+      "name": "error",
+      "type": "Method",
+      "filePath": "tests/phase9/subscription-delete.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/platform/api-file-routes.test.cjs:findOne",
+      "name": "findOne",
+      "type": "Function",
+      "filePath": "tests/platform/api-file-routes.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/platform/api-file-routes.test.cjs:deprecatedRoutes",
+      "name": "deprecatedRoutes",
+      "type": "Const",
+      "filePath": "tests/platform/api-file-routes.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/platform/environment-isolation.test.cjs:setup",
+      "name": "setup",
+      "type": "Const",
+      "filePath": "tests/platform/environment-isolation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/platform/runtime-bridges.test.cjs:logger",
+      "name": "logger",
+      "type": "Const",
+      "filePath": "tests/platform/runtime-bridges.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:tests/platform/runtime-bridges.test.cjs:logger.error#0",
+      "name": "error",
+      "type": "Method",
+      "filePath": "tests/platform/runtime-bridges.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:tests/platform/runtime-bridges.test.cjs:logger.info#0",
+      "name": "info",
+      "type": "Method",
+      "filePath": "tests/platform/runtime-bridges.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:tests/platform/runtime-bridges.test.cjs:logger.warn#0",
+      "name": "warn",
+      "type": "Method",
+      "filePath": "tests/platform/runtime-bridges.test.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": [
+    {
+      "id": "proc_24_execute",
+      "name": "Execute → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_25_execute",
+      "name": "Execute → Journal",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_26_execute",
+      "name": "Execute → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_62_tasktriggerroutes",
+      "name": "TaskTriggerRoutes → Now",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 2
+        },
+        {
+          "symbol": "now",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_68_browser_backup",
+      "name": "Browser-backup → Read",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "browser-backup",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_91_tasktriggers",
+      "name": "TaskTriggers → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "TaskTriggers",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_117_taskroutes",
+      "name": "TaskRoutes → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_118_taskroutes",
+      "name": "TaskRoutes → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_119_execute",
+      "name": "Execute → AsError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_120_tasktriggerroutes",
+      "name": "TaskTriggerRoutes → TriggerError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_136_execute",
+      "name": "Execute → SyncDirectory",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_137_execute",
+      "name": "Execute → AssertHeld",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_150_subscriptionmodal",
+      "name": "SubscriptionModal → Load",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "SubscriptionModal",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_151_subscriptionmodal",
+      "name": "SubscriptionModal → Open",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "SubscriptionModal",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_170_subscriptionmodal",
+      "name": "SubscriptionModal → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "SubscriptionModal",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_174_taskroutes",
+      "name": "TaskRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_375_previewstoragecleanu",
+      "name": "PreviewStorageCleanup → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "previewStorageCleanup",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_381_subscriptionmodal",
+      "name": "SubscriptionModal → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "SubscriptionModal",
+          "step": 1
+        }
+      ]
+    }
+  ]
+}

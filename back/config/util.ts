@@ -1,48 +1,17 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import { exec, execSync } from 'child_process';
+import { exec } from 'child_process';
 import psTreeFun from 'ps-tree';
 import { promisify } from 'util';
 import { load } from 'js-yaml';
 import config from './index';
-import { PYTHON_INSTALL_DIR, TASK_COMMAND } from './const';
 import Logger from '../loaders/logger';
 import { writeFileWithLock } from '../shared/utils';
-import { DependenceTypes } from '../data/dependence';
 import { FormData } from 'undici';
-import os from 'os';
-import { maybeSudo, isInContainer } from './container';
+import { maybeSudo } from './container';
 import { resolveFileAccess } from '../shared/fileAccess';
 
 export * from './share';
-
-let osType: 'Debian' | 'Ubuntu' | 'Alpine' | undefined;
-
-function getOsTypeSync(): 'Debian' | 'Ubuntu' | 'Alpine' | undefined {
-  // 1. 环境变量覆盖
-  const envOs = process.env.QL_OS_TYPE?.toLowerCase();
-  if (envOs === 'alpine') return 'Alpine';
-  if (envOs === 'debian') return 'Debian';
-  if (envOs === 'ubuntu') return 'Ubuntu';
-
-  // 2. 模块缓存（由 detectOS 设置）
-  if (osType) return osType;
-
-  // 3. 能力检测：检查包管理器二进制
-  try {
-    execSync('which apt-get', { stdio: 'ignore' });
-    return 'Debian';
-  } catch {
-    try {
-      execSync('which apk', { stdio: 'ignore' });
-      return 'Alpine';
-    } catch {
-      // macOS / 未知系统
-    }
-  }
-
-  return undefined;
-}
 
 export async function getFileContentByName(fileName: string) {
   const _exsit = await fileExist(fileName);
@@ -597,48 +566,6 @@ export function parseContentVersion(content: string): IVersion {
   return load(content) as IVersion;
 }
 
-export async function getUniqPath(
-  command: string,
-  id: string,
-): Promise<string> {
-  let suffix = '';
-  if (/^\d+$/.test(id)) {
-    suffix = `_${id}`;
-  }
-
-  let items = command.split(/ +/);
-
-  const maxTimeCommandIndex = items.findIndex((x) => x === '-m');
-  if (maxTimeCommandIndex !== -1) {
-    items = items.slice(maxTimeCommandIndex + 2);
-  }
-
-  let str = items[0];
-  if (items[0] === TASK_COMMAND) {
-    str = items[1];
-  }
-
-  const dotIndex = str.lastIndexOf('.');
-
-  if (dotIndex !== -1) {
-    str = str.slice(0, dotIndex);
-  }
-
-  const slashIndex = str.lastIndexOf('/');
-
-  let tempStr = '';
-  if (slashIndex !== -1) {
-    tempStr = str.slice(0, slashIndex);
-    const _slashIndex = tempStr.lastIndexOf('/');
-    if (_slashIndex !== -1) {
-      tempStr = tempStr.slice(_slashIndex + 1);
-    }
-    str = `${tempStr}_${str.slice(slashIndex + 1)}`;
-  }
-
-  return `${str}${suffix}`;
-}
-
 export function safeJSONParse(value?: string) {
   if (!value) {
     return {};
@@ -685,207 +612,6 @@ export async function setSystemTimezone(timezone: string): Promise<boolean> {
   }
 }
 
-export function getGetCommand(type: DependenceTypes, name: string): string {
-  const baseCommands = {
-    [DependenceTypes.nodejs]: `pnpm ls -g  | grep "${name}" | head -1`,
-    [DependenceTypes.python3]: `
-    python3 -c "exec('''
-name='${name}'
-try:
-    from importlib.metadata import version
-    print(version(name))
-except:
-    import importlib.util as u
-    import importlib.metadata as m
-    spec=u.find_spec(name)
-    print(name if spec else '')
-''')"`,
-    [DependenceTypes.linux]: getOsTypeSync() === 'Alpine'
-      ? `apk info -es ${name}`
-      : maybeSudo(`dpkg-query -s ${name}`),
-  };
-
-  return baseCommands[type];
-}
-
-export function getInstallCommand(type: DependenceTypes, name: string): string {
-  const baseCommands = {
-    [DependenceTypes.nodejs]: 'pnpm add -g',
-    [DependenceTypes.python3]:
-      'pip3 install --disable-pip-version-check --root-user-action=ignore',
-    [DependenceTypes.linux]: getOsTypeSync() === 'Alpine'
-      ? 'apk add --no-check-certificate'
-      : maybeSudo('apt-get install -y'),
-  };
-
-  let command = baseCommands[type];
-
-  if (type === DependenceTypes.python3 && PYTHON_INSTALL_DIR) {
-    command = `${command} --prefix=${PYTHON_INSTALL_DIR}`;
-  }
-
-  return `${command} ${name.trim()}`;
-}
-
-export function getUninstallCommand(
-  type: DependenceTypes,
-  name: string,
-): string {
-  const baseCommands = {
-    [DependenceTypes.nodejs]: 'pnpm remove -g',
-    [DependenceTypes.python3]:
-      'pip3 uninstall --disable-pip-version-check --root-user-action=ignore -y',
-    [DependenceTypes.linux]: getOsTypeSync() === 'Alpine'
-      ? 'apk del'
-      : maybeSudo('apt-get remove -y'),
-  };
-
-  return `${baseCommands[type]} ${name.trim()}`;
-}
-
 export function isDemoEnv() {
   return process.env.DeployEnv === 'demo';
-}
-
-async function getOSReleaseInfo(): Promise<string> {
-  const osRelease = await fs.readFile('/etc/os-release', 'utf8');
-  return osRelease;
-}
-
-function isDebian(osReleaseInfo: string): boolean {
-  return osReleaseInfo.includes('Debian');
-}
-
-function isUbuntu(osReleaseInfo: string): boolean {
-  return osReleaseInfo.includes('Ubuntu');
-}
-
-function isCentOS(osReleaseInfo: string): boolean {
-  return osReleaseInfo.includes('CentOS') || osReleaseInfo.includes('Red Hat');
-}
-
-function isAlpine(osReleaseInfo: string): boolean {
-  return osReleaseInfo.includes('Alpine');
-}
-
-export async function detectOS(): Promise<
-  'Debian' | 'Ubuntu' | 'Alpine' | undefined
-> {
-  if (osType) return osType;
-
-  const envOs = process.env.QL_OS_TYPE?.toLowerCase();
-  if (envOs === 'alpine') {
-    osType = 'Alpine';
-    return osType;
-  }
-  if (envOs === 'debian') {
-    osType = 'Debian';
-    return osType;
-  }
-  if (envOs === 'ubuntu') {
-    osType = 'Ubuntu';
-    return osType;
-  }
-
-  const platform = os.platform();
-
-  if (platform === 'linux') {
-    const osReleaseInfo = await getOSReleaseInfo();
-    if (isDebian(osReleaseInfo)) {
-      osType = 'Debian';
-    } else if (isUbuntu(osReleaseInfo)) {
-      osType = 'Ubuntu';
-    } else if (isAlpine(osReleaseInfo)) {
-      osType = 'Alpine';
-    } else {
-      Logger.error(`Unknown Linux Distribution: ${osReleaseInfo}`);
-      console.error(`Unknown Linux Distribution: ${osReleaseInfo}`);
-    }
-  } else if (platform === 'darwin') {
-    osType = undefined;
-  } else {
-    Logger.error(`Unsupported platform: ${platform}`);
-    console.error(`Unsupported platform: ${platform}`);
-  }
-
-  return osType;
-}
-
-async function getCurrentMirrorDomain(
-  filePath: string,
-): Promise<string | null> {
-  const fileContent = await fs.readFile(filePath, 'utf8');
-  const lines = fileContent.split('\n');
-  for (const line of lines) {
-    if (line.trim().startsWith('#')) {
-      continue;
-    }
-    const match = line.match(/https?:\/\/[^\/]+/);
-    if (match) {
-      return match[0];
-    }
-  }
-  return null;
-}
-
-async function replaceDomainInFile(
-  filePath: string,
-  oldDomainWithScheme: string,
-  newDomainWithScheme: string,
-): Promise<void> {
-  let fileContent = await fs.readFile(filePath, 'utf8');
-  let updatedContent = fileContent.replace(
-    new RegExp(oldDomainWithScheme, 'g'),
-    newDomainWithScheme,
-  );
-
-  if (!newDomainWithScheme.endsWith('/')) {
-    newDomainWithScheme += '/';
-  }
-
-  await writeFileWithLock(filePath, updatedContent);
-}
-
-async function _updateLinuxMirror(
-  osType: string,
-  mirrorDomainWithScheme: string,
-): Promise<string> {
-  const S = isInContainer() ? 'sudo ' : '';
-  let filePath: string, currentDomainWithScheme: string | null;
-  switch (osType) {
-    case 'Debian':
-      filePath = '/etc/apt/sources.list.d/debian.sources';
-      currentDomainWithScheme = await getCurrentMirrorDomain(filePath);
-      if (currentDomainWithScheme) {
-        return `${S}sed -i 's|${currentDomainWithScheme}|${mirrorDomainWithScheme || 'http://deb.debian.org'}|g' ${filePath} || (${S}mkdir -p /etc/apt/sources.list.d && echo -e "Types: deb\\nURIs: ${mirrorDomainWithScheme || 'http://deb.debian.org'}\\nSuites: \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-updates\\nComponents: main\\nSigned-By: /usr/share/keyrings/debian-archive-keyring.gpg" | ${S}tee ${filePath}) && ${S}apt-get update`;
-      } else {
-        return `${S}mkdir -p /etc/apt/sources.list.d && echo -e "Types: deb\\nURIs: ${mirrorDomainWithScheme || 'http://deb.debian.org'}\\nSuites: \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-updates\\nComponents: main\\nSigned-By: /usr/share/keyrings/debian-archive-keyring.gpg" | ${S}tee ${filePath} && ${S}apt-get update`;
-      }
-    case 'Ubuntu':
-      filePath = '/etc/apt/sources.list.d/ubuntu.sources';
-      currentDomainWithScheme = await getCurrentMirrorDomain(filePath);
-      if (currentDomainWithScheme) {
-        return `${S}sed -i 's|${currentDomainWithScheme}|${mirrorDomainWithScheme || 'http://archive.ubuntu.com'}|g' ${filePath} || (${S}mkdir -p /etc/apt/sources.list.d && echo -e "Types: deb\\nURIs: ${mirrorDomainWithScheme || 'http://archive.ubuntu.com'}\\nSuites: \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-updates \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-backports\\nComponents: main restricted universe multiverse\\nSigned-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg" | ${S}tee ${filePath}) && ${S}apt-get update`;
-      } else {
-        return `${S}mkdir -p /etc/apt/sources.list.d && echo -e "Types: deb\\nURIs: ${mirrorDomainWithScheme || 'http://archive.ubuntu.com'}\\nSuites: \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-updates \\$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-backports\\nComponents: main restricted universe multiverse\\nSigned-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg" | ${S}tee ${filePath} && ${S}apt-get update`;
-      }
-    case 'Alpine':
-      filePath = '/etc/apk/repositories';
-      currentDomainWithScheme = await getCurrentMirrorDomain(filePath);
-      if (currentDomainWithScheme) {
-        return `sed -i 's|${currentDomainWithScheme}|${mirrorDomainWithScheme || 'http://dl-cdn.alpinelinux.org'}|g' ${filePath} || (mkdir -p /etc/apk && echo -e "\\$(grep VERSION_ID /etc/os-release | cut -d= -f2 | cut -d. -f1,2)/main\\n\\$(grep VERSION_ID /etc/os-release | cut -d= -f2 | cut -d. -f1,2)/community" | sed "s|^|${mirrorDomainWithScheme || 'http://dl-cdn.alpinelinux.org'}/alpine/v|" | tee ${filePath}) && apk update`;
-      } else {
-        return `mkdir -p /etc/apk && echo -e "\\$(grep VERSION_ID /etc/os-release | cut -d= -f2 | cut -d. -f1,2)/main\\n\\$(grep VERSION_ID /etc/os-release | cut -d= -f2 | cut -d. -f1,2)/community" | sed "s|^|${mirrorDomainWithScheme || 'http://dl-cdn.alpinelinux.org'}/alpine/v|" | tee ${filePath} && apk update`;
-      }
-    default:
-      throw Error('Unsupported OS type for updating mirrors.');
-  }
-}
-
-export async function updateLinuxMirrorFile(mirror: string): Promise<string> {
-  const detectedOS = await detectOS();
-  if (!detectedOS) {
-    throw Error(`Unknown Linux Distribution`);
-  }
-  return await _updateLinuxMirror(detectedOS, mirror);
 }

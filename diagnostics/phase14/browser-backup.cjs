@@ -2,9 +2,29 @@ const acceptance=require('../../scripts/ci/acceptance.cjs');
 const evidenceDirectory=acceptance.output(__dirname);
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{execFileSync}=require('node:child_process');
 module.exports=async({page,base,checked,api,until,mark,tmp,env,root,stop,start,login,shellTask,tasks,hook,cron,gitTrigger,origin,git,messages})=>{
- assert.equal((await fetch(base+'/api/backups')).status,401);assert.equal((await api('/system/data/export','PUT')).code,410);assert.equal((await api('/system/data/import','PUT')).code,410);mark('backup-panel-auth-and-legacy-routes-410');
+ assert.equal((await fetch(base+'/api/backups')).status,401);
+ for (const action of ['export','import']) assert.equal(await page.evaluate(async action => (await fetch('/api/system/data/'+action,{method:'PUT',headers:{Authorization:'Bearer '+localStorage.getItem('token')}})).status,action),404);
+ mark('backup-panel-auth-and-legacy-routes-absent');
  const backupPage=async()=>{await page.goto(base+'/setting');await page.getByRole('tab',{name:'备份与恢复',exact:true}).click();await page.getByRole('button',{name:'创建备份',exact:true}).waitFor();};
- const waitOperation=async(kind)=>{let op;await until(async()=>{const text=await page.locator('body').innerText();if(text.includes(kind+': FAILED'))throw Error(text.slice(-2000));return text.includes(kind+': SUCCESS');});};
+ const waitOperation=async(kind)=>{
+  const started=Date.now();
+  try { await until(async()=>{const text=await page.locator('body').innerText();if(text.includes(kind+': FAILED'))throw Error(text.slice(-2000));return text.includes(kind+': SUCCESS');}); }
+  catch(error) {
+   const samples=[];
+   // Failure-only observation preserves the original assertion and deadline. It
+   // distinguishes a live long operation from a stuck worker without passing it.
+   const deadline=Date.now()+(kind==='REBUILD'?120000:0);
+   do {
+    try { const rows=await checked('/runtime/python/operations'); samples.push({elapsed_ms:Date.now()-started,operations:rows.map(row=>Object.fromEntries(['id','operation_type','status','stage','started_at','finished_at','error_code'].map(key=>[key,row[key]])))}); }
+    catch { samples.push({elapsed_ms:Date.now()-started,error_code:'OPERATION_DIAGNOSTIC_UNAVAILABLE'});break; }
+    const text=await page.locator('body').innerText();if(text.includes(kind+': SUCCESS')||text.includes(kind+': FAILED'))break;
+    if(Date.now()>=deadline)break;
+    await new Promise(resolve=>setTimeout(resolve,2000));
+   }while(Date.now()<deadline);
+   fs.writeFileSync(path.join(evidenceDirectory,'operation-failure.json'),JSON.stringify({kind,samples},null,2));
+   throw error;
+  }
+ };
  const oldRuns=await checked(`/tasks/${shellTask.id}/runs`),oldRun=oldRuns.find(r=>r.status==='SUCCESS'),oldLog=(await checked(`/task-runs/${oldRun.id}/log`)).content;
  const oldTriggers=await checked(`/tasks/${shellTask.id}/triggers`),oldHealth=await checked(`/tasks/${shellTask.id}/health`),oldDeliveries=await checked('/notification-deliveries');
  const repos=await checked('/repositories');const bare=path.join(env.QL_DATA_DIR,'git',repos[0].host,`repository-${repos[0].id}.git`);

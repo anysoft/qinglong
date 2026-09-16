@@ -176,3 +176,17 @@ B13/B14 沿用 Phase 13 状态与责任。B01/B02/B03/B04/B06/B07/B08/B09/B10/B1
 | Phase14 platform barrier | **REUSED**；所有Workspace mutations持shared FD，snapshot排他等待 | RESTORE_PENDING阻止Save/Create/Delete/Commit/Push，Git/rename子进程继承租约 |
 
 旧 `/scripts` 路由统一410 CODE_WORKSPACE_REQUIRED；旧 `/script` 页面只指向新入口。Workspace不依赖api/script、generated ENV、global dependencies或Shell→Open API。独立Linux残余材料清理仍归Phase15。验收见[Phase12报告](PHASE12_REPORT.md)。
+
+## Phase 15 — final source/ownership disposition
+
+**Temporary remaining = 0.** The earlier entries above are historical records.
+This statement is the source/domain ownership exit, not a claim that hosted Linux
+qualification has passed. See [Phase15 report](PHASE15_REPORT.md) for the separate
+local and GitHub gates, and the [17-item final matrix](docs/refactor/phase15/05-bridge-finalization.md)
+for physical removals, retained owners and evidence.
+
+B01/B02/B03/B05/B06/B07/B08/B09/B10/B12/B15/B16 are physically removed from the
+current source contracts. B04/B11/B13/B14/B17 are formal internal responsibilities
+with dedicated owners and tests. The private environment.sh writer and its bootstrap
+cleanup are also removed. Existing user files and schema v9 historical storage remain
+intact. Docker deployment templates require the separately authorized Phase16B review.

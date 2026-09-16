@@ -26,7 +26,7 @@ const EditableTagGroup = ({
     setInputVisible(true);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 

@@ -1,5 +1,5 @@
 import { PlatformMutation } from './backup/platform';
-import { Op, Transaction } from 'sequelize';
+import { Op, Transaction, literal } from 'sequelize';
 import { sequelize } from '../data';
 import { CronTriggerModel } from '../data/taskTrigger';
 import { cronNext } from '../shared/triggerDefinition';
@@ -25,7 +25,13 @@ export default class TriggerScheduler {
         { type: Transaction.TYPES.IMMEDIATE },
         async (transaction) => {
           const due = await CronTriggerModel.findAll({
-            where: { next_fire_at: { [Op.lte]: now } },
+            where: {
+              next_fire_at: { [Op.lte]: now },
+              // Filter before LIMIT: dormant rows must never consume the batch.
+              [Op.and]: literal(
+                '"trigger_id" IN (SELECT "id" FROM "TaskTriggers" WHERE "enabled" = 1)',
+              ),
+            },
             order: [
               ['next_fire_at', 'ASC'],
               ['trigger_id', 'ASC'],

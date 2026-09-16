@@ -8,7 +8,6 @@ import { ConfigAssetModel } from '../data/configAsset';
 import ConfigAssetService from '../services/configAsset';
 import TaskConfigService from '../services/taskConfig';
 import TaskHookService from '../services/taskHooks';
-import TaskWorkspaceResolver from '../services/taskWorkspace';
 import { ConfigAssetError, configId } from '../shared/configAssets';
 const id = Joi.number().integer().positive();
 const assetSchema = Joi.object({

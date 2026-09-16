@@ -1,15 +1,15 @@
 import fs from 'fs/promises';
 import path from 'path';
-import config from '../config';
 import HookExecutor from './hookExecutor';
 import ExecutionRedactor from './executionRedactor';
 import { applyHookOutput, ExecutionEnvironment } from './hookOutput';
-import { TaskExecutionPreparation } from './taskExecutionPreparation';
+import type { ResolvedTaskEnvironment } from './taskEnvironmentResolver';
+import type { TaskWorkspace } from './configMaterialization';
 import { TaskHook, HookPhase } from '../data/configAsset';
 import { ConfigAssetError, atomicPrivateWrite } from '../shared/configAssets';
 export interface LifecycleOptions {
   event?: (type: string, metadata: {phase?:string; hook_id?:number}) => Promise<void>;
-  main?: (
+  main: (
     environment: NodeJS.ProcessEnv,
     output: (text: string) => Promise<void>,
   ) => Promise<{
@@ -19,18 +19,17 @@ export interface LifecycleOptions {
     signal?: string | null;
   }>;
   redactor?: ExecutionRedactor;
-  persistEnvironment?: boolean;
 }
-export type HookLifecyclePlan = Pick<
-  TaskExecutionPreparation,
-  | 'environment'
-  | 'secretValues'
-  | 'workspace'
-  | 'hooks'
-  | 'directory'
-  | 'args'
-  | 'mainTimeout'
-> & { task: { id?: number; work_dir?: string } | null };
+export interface HookLifecyclePlan {
+  environment: ResolvedTaskEnvironment;
+  secretValues: string[];
+  workspace: TaskWorkspace;
+  hooks: TaskHook[];
+  directory: string;
+  args: string[];
+  mainTimeout: number;
+  task: { id?: number; work_dir?: string } | null;
+}
 export interface LifecycleResult {
   code: number;
   main?: {
@@ -58,7 +57,7 @@ export default class TaskHookLifecycle {
   async run(
     plan: HookLifecyclePlan,
     sink: (text: string) => Promise<void>,
-    options: LifecycleOptions = {},
+    options: LifecycleOptions,
   ) {
     let environment: ExecutionEnvironment = {
       variables: { ...plan.environment.variables },
@@ -94,36 +93,6 @@ export default class TaskHookLifecycle {
       PLATFORM_WORKSPACE_ROOT: plan.workspace.workspaceRoot,
       PLATFORM_TASK_DIR: plan.workspace.taskDir,
     });
-    const writeDerived = async () => {
-      if (options.persistEnvironment === false) return;
-      const unset = [
-        ...new Set([
-          ...plan.environment.unsetVariables,
-          ...Object.keys(plan.environment.variables).filter(
-            (name) => !(name in environment.variables),
-          ),
-        ]),
-      ];
-      await atomicPrivateWrite(
-        path.join(plan.directory, 'snapshot.json'),
-        JSON.stringify({
-          variables: environment.variables,
-          unset,
-          secretNames: environment.secretNames,
-          metadata: plan.environment.metadata,
-        }),
-      );
-      const quote = (value: string) => "'" + value.replace(/'/g, "'\\''") + "'";
-      await atomicPrivateWrite(
-        path.join(plan.directory, 'environment.sh'),
-        [
-          ...unset.map((name) => `unset ${name}`),
-          ...Object.entries(environment.variables).map(
-            ([name, value]) => `export ${name}=${quote(value)}`,
-          ),
-        ].join('\n') + '\n',
-      );
-    };
     const phase = async (name: HookPhase) => {
       const eventPhase = name.startsWith('AFTER') ? 'AFTER' : name;
       await options.event?.(eventPhase + '_STARTED', {phase:name});
@@ -168,7 +137,6 @@ export default class TaskHookLifecycle {
           try {
             environment = await applyHookOutput(output, name, environment);
             redactor.add(environment.secretValues);
-            await writeDerived();
           } catch (error) {
             outputValid = false;
             record(
@@ -211,31 +179,11 @@ export default class TaskHookLifecycle {
       if (this.cancelled && !result.primary)
         record('MAIN', 'CANCELLED', undefined, 143);
       if (!result.primary) {
-        await writeDerived();
         await redactor.write('[MAIN]\n');
         await options.event?.('MAIN_STARTED', {});
-        const main = options.main
-          ? await options.main(context('MAIN'), (chunk) =>
-              redactor.write(chunk),
-            )
-          : await this.executor.run(
-              '/bin/bash',
-              [path.join(config.rootPath, 'shell/task.sh'), ...plan.args],
-              plan.workspace.cwd,
-              {
-                ...context('MAIN'),
-                PLATFORM_MAIN_ONLY: '1',
-                PLATFORM_RECOVERY_TEST_ONLY:
-                  process.env.PLATFORM_RECOVERY_TEST_ONLY === '1' ? '1' : '0',
-                QL_TASK_ENV_SNAPSHOT: plan.directory,
-                ...(plan.task?.id ? { ID: String(plan.task.id) } : {}),
-                ...(plan.task?.work_dir
-                  ? { work_dir: plan.task.work_dir }
-                  : {}),
-              },
-              plan.mainTimeout,
-              (chunk) => redactor.write(chunk),
-            );
+        const main = await options.main(context('MAIN'), (chunk) =>
+          redactor.write(chunk),
+        );
         await options.event?.('MAIN_FINISHED', {});
         result.main = main;
         if (this.cancelled) record('MAIN', 'CANCELLED', undefined, 143);

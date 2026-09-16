@@ -10,6 +10,7 @@ test('official managed Python imports from pinned venv across retry and Build pr
  let environment=await service.create({name:'phase10 python '+Date.now(),runtime_id:runtime.id,requirements:['ql-phase7-root==1.0.0']});
  async function build(){environment=await service.environment(environment.id);const op=await ops.request('PYTHON_ENV_BUILD',{environment:{environment_id:environment.id,expected_version:environment.version},timeout_seconds:120});assert.equal((await ops.wait(op.id)).status,'SUCCESS');environment=await service.environment(environment.id);return environment.current_build_id;}
  const first=await build();
+ await require('../phase15/managed-environment-invariants.cjs')(h,{kind:'PYTHON',python_environment_id:environment.id,node_environment_id:null},'PYTHON');
  const f=await task(h,'import sys, os, pathlib, ql_phase7_root\nprint(ql_phase7_root.__version__)\nprint(sys.executable)\nprint(sys.argv[1])\nprint(os.environ.get("PYTHONPATH", "NO_HOST_PATH"))\np=pathlib.Path("once")\nif not p.exists():\n p.write_text("yes")\n sys.exit(3)\n',{max_attempts:2,initial_delay_seconds:8},{entry:'main.py',language:'PYTHON',arguments:['literal $TOKEN'],runtime:{kind:'PYTHON',python_environment_id:environment.id,node_environment_id:null}});
  await h.TaskEnvVariableModel.create({task_id:f.definition.id,name:'PYTHONPATH',value:'/unsafe/host/deps',operation:'SET',status:'enabled'});
  const run=await h.execution.submit(f.definition.id);await h.execution.tick();

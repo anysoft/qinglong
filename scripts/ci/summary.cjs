@@ -49,9 +49,9 @@ for (const [name, row] of Object.entries(result.jobs))
 lines.push(
   '',
   result.summary_artifact || '',
-  `Typecheck: historical 22, remaining ${
-    result.typecheck.remaining ?? 'unavailable'
-  }, new ${result.typecheck.new ?? 'unavailable'}`,
+  `Typecheck: strict zero, errors ${
+    result.typecheck.errors ?? 'unavailable'
+  }, raw failed ${result.typecheck.raw_failed ?? 'unavailable'}`,
   '',
   'This run establishes CI infrastructure; it is not Phase15 qualification.',
 );

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "provenance": "LOCAL_DIRTY_WORKTREE_DARWIN_NOT_HOSTED",
+  "collection": "PASS",
+  "cleanup": "PASS",
+  "archive": "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/ci-packages/phase16a-phase15-managed-1789568784009-abd5939e316a.tar.gz",
+  "sha256": "bde6501fbfcc083841e249a141c2c1371bf07891ba5784ea44529f438050ddd8"
+}

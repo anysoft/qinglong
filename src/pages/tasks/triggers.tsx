@@ -128,7 +128,7 @@ export default function TaskTriggers({ taskId }: { taskId?: number }) {
                   {row.config.expression} · {row.config.timezone} ·{' '}
                   {row.config.misfire_policy}
                   <br />
-                  Next: {row.config.next_fire_at}
+                  Next: {row.enabled ? row.config.next_fire_at : '— (disabled)'}
                   <br />
                   Last: {row.config.last_fire_at ?? '—'}
                 </>

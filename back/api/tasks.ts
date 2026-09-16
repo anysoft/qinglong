@@ -9,7 +9,7 @@ import path from 'path';
 import TaskService from '../services/task';
 import { sequelize } from '../data';
 import { Transaction } from 'sequelize';
-import TaskExecutionBridge from '../services/taskExecutionBridge';
+import TaskExecutionFacade from '../services/taskExecutionFacade';
 import WorktreeService from '../services/worktree';
 import TaskReferenceService from '../services/taskReferences';
 import TaskResourceValidator from '../services/taskResourceValidator';
@@ -63,7 +63,7 @@ export default function taskRoutes(app: Router) {
         Number(req.query.page ?? 1),
         Number(req.query.size ?? 100),
       );
-      const statuses = await new TaskExecutionBridge().statuses(
+      const statuses = await new TaskExecutionFacade().statuses(
         result.data.map((task) => task.id),
       );
       return {
@@ -164,14 +164,14 @@ export default function taskRoutes(app: Router) {
             req.body?.source === 'MANUAL' ? 'MANUAL' : 'API',
           );
         }
-        return new TaskExecutionBridge().stop(identifier(req.params.id));
+        return new TaskExecutionFacade().stop(identifier(req.params.id));
       }),
     );
   for (const operation of ['log', 'logs'] as const)
     app.get(
       `/tasks/:id/${operation}`,
       endpoint((req) =>
-        new TaskExecutionBridge()[operation](identifier(req.params.id)),
+        new TaskExecutionFacade()[operation](identifier(req.params.id)),
       ),
     );
   app.get(

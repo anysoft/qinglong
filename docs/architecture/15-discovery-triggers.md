@@ -1,5 +1,7 @@
 # Discovery v2 + Trigger Model — Phase 11
 
+> Phase15 convergence: schema v9 remains unchanged. The current cross-domain ownership, physical bridge removals and operations contract are in [Platform overview](00-platform-overview.md) and [Platform operations](20-platform-operations.md). Earlier bridge-retention statements below are historical. Hosted Linux qualification is a separate gate in [Phase15](../../PHASE15_REPORT.md).
+
 当前 schema v8。Task、Trigger、TriggerEvent、TaskRun 分离；执行核心继续采用 Phase 10 immutable Context 与 Runner v2。
 
 ## Trigger / Task / TaskRun

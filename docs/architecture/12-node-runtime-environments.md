@@ -1,5 +1,7 @@
 # Node Runtime + Dependency Environment（Phase 8）
 
+> Phase15 convergence: schema v9 remains unchanged. The current cross-domain ownership, physical bridge removals and operations contract are in [Platform overview](00-platform-overview.md) and [Platform operations](20-platform-operations.md). Earlier bridge-retention statements below are historical. Hosted Linux qualification is a separate gate in [Phase15](../../PHASE15_REPORT.md).
+
 当前平台 schema v5。Node 复用 Runtime Core，增加独立 Toolchain 与不可变 Dependency Build。Python venv 和 Node node_modules 使用各自领域模型，共享 Operation、引用和进程锁生命周期。
 
 ```mermaid

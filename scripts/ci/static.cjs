@@ -86,20 +86,13 @@ function audit() {
     }).trim(),
     '',
   );
-  const diagnosticTest = fs.readFileSync(
-    'tests/platform/environment-execution.test.cjs',
+  const formalEnvironmentTest = fs.readFileSync(
+    'tests/phase15/formal-environment.test.cjs',
     'utf8',
   );
-  assert.ok(!/\bskip\b/.test(diagnosticTest));
-  const guardEnv = { ...process.env };
-  delete guardEnv.PLATFORM_RECOVERY_TEST_ONLY;
-  const guard = require('node:child_process').spawnSync(
-    'bash',
-    ['shell/otask.sh'],
-    { env: guardEnv, encoding: 'utf8' },
-  );
-  assert.equal(guard.status, 64);
-  assert.match(guard.stderr, /LEGACY_EXECUTION_DISABLED/);
+  assert.ok(!/\bskip\b/.test(formalEnvironmentTest));
+  for (const file of ['shell/task.sh', 'shell/otask.sh', 'back/taskExecution.ts', 'tests/phase5/snapshot-main.cjs'])
+    assert.equal(fs.existsSync(file), false, 'LEGACY_EXECUTION_SOURCE_REMAINS');
   const scripts = fs.readdirSync('scripts/ci').filter((f) => f.endsWith('.sh'));
   for (const name of scripts) {
     const f = 'scripts/ci/' + name,
@@ -130,8 +123,8 @@ function audit() {
     custom_secrets: 0,
     isolated_managed_build: 'PASS',
     job_summary_paths: 'PASS',
-    diagnostic_only_ts_resolution: 'PASS',
-    legacy_normal_exit: guard.status,
+    formal_environment_invariants: 'PASS',
+    legacy_execution_source_absent: true,
   };
 }
 if (require.main === module) {

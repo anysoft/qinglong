@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: qualification workflow composes full foundation with read-only fixed Ubuntu gates
+ok 1 - qualification workflow composes full foundation with read-only fixed Ubuntu gates
+  ---
+  duration_ms: 4.164083
+  type: 'test'
+  ...
+# Subtest: qualification summary fails closed for missing evidence, SHA mismatch, bridges and upload failure
+ok 2 - qualification summary fails closed for missing evidence, SHA mismatch, bridges and upload failure
+  ---
+  duration_ms: 22.429209
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 100.61025

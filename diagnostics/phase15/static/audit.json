@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "workflow": ".github/workflows/linux-ci.yml",
+  "shellcheck": "UNAVAILABLE",
+  "bash_syntax": "PASS",
+  "permissions": "contents: read",
+  "custom_secrets": 0,
+  "isolated_managed_build": "PASS",
+  "job_summary_paths": "PASS",
+  "formal_environment_invariants": "PASS",
+  "legacy_execution_source_absent": true
+}

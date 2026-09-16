@@ -1,7 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { Container } from 'typedi';
 import { Logger } from 'winston';
-import * as fs from 'fs/promises';
 import config from '../config';
 import SystemService from '../services/system';
 import { celebrate, Joi } from 'celebrate';
@@ -9,13 +8,9 @@ import UserService from '../services/user';
 import { t } from '../shared/i18n';
 import { isDefaultAuthInfo } from '../shared/auth';
 import {
-  getUniqPath,
-  handleLogPath,
   parseVersion,
-  promiseExec,
 } from '../config/util';
 import dayjs from 'dayjs';
-import { logStreamManager } from '../shared/logStreamManager';
 
 const route = Router();
 
@@ -66,150 +61,13 @@ export default (app: Router) => {
     '/config/log-remove-frequency',
     celebrate({
       body: Joi.object({
-        logRemoveFrequency: Joi.number().allow(null),
+        logRemoveFrequency: Joi.number().integer().min(0).max(3650).allow(null),
       }),
     }),
     async (req: Request, res: Response, next: NextFunction) => {
       try {
         const systemService = Container.get(SystemService);
         const result = await systemService.updateLogRemoveFrequency(req.body);
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/config/cron-concurrency',
-    celebrate({
-      body: Joi.object({
-        cronConcurrency: Joi.number().allow(null),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.updateCronConcurrency(req.body);
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/config/dependence-proxy',
-    celebrate({
-      body: Joi.object({
-        dependenceProxy: Joi.string().allow('').allow(null),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.updateDependenceProxy(req.body);
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/config/node-mirror',
-    celebrate({
-      body: Joi.object({
-        nodeMirror: Joi.string().allow('').allow(null),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        res.setHeader('Content-type', 'application/octet-stream');
-        await systemService.updateNodeMirror(req.body, res);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/config/python-mirror',
-    celebrate({
-      body: Joi.object({
-        pythonMirror: Joi.string().allow('').allow(null),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.updatePythonMirror(req.body);
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/config/linux-mirror',
-    celebrate({
-      body: Joi.object({
-        linuxMirror: Joi.string().allow('').allow(null),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        res.setHeader('Content-type', 'application/octet-stream');
-        await systemService.updateLinuxMirror(req.body, res);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/update-check',
-    async (req: Request, res: Response, next: NextFunction) => {
-      const logger: Logger = Container.get('logger');
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.checkUpdate();
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/update',
-    async (req: Request, res: Response, next: NextFunction) => {
-      const logger: Logger = Container.get('logger');
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.updateSystem();
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/reload',
-    celebrate({
-      body: Joi.object({
-        type: Joi.string().optional().allow('').allow(null),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      const logger: Logger = Container.get('logger');
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.reloadSystem(req.body.type);
         res.send(result);
       } catch (e) {
         return next(e);
@@ -236,77 +94,6 @@ export default (app: Router) => {
       }
     },
   );
-
-  route.put(
-    '/command-run',
-    celebrate({
-      body: Joi.object({
-        command: Joi.string().required(),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        const command = req.body.command;
-        const idStr = `cat ${config.crontabFile} | grep -E "${command}" | perl -pe "s|.*ID=(.*) ${command}.*|\\1|" | head -1 | awk -F " " '{print $1}' | xargs echo -n`;
-        let id = await promiseExec(idStr);
-        const uniqPath = await getUniqPath(command, id);
-        const logTime = dayjs().format('YYYY-MM-DD-HH-mm-ss-SSS');
-        const logPath = `${uniqPath}/${logTime}.log`;
-        res.setHeader('Content-type', 'application/octet-stream');
-        await systemService.run(
-          { ...req.body, logPath },
-          {
-            onStart: async (cp, startTime) => {
-              res.setHeader('QL-Task-Pid', `${cp.pid}`);
-              res.setHeader('QL-Task-Log', `${logPath}`);
-            },
-            onEnd: async (cp, endTime, diff) => {
-              // Close the stream after task completion
-              try {
-                await logStreamManager.closeStream(await handleLogPath(logPath));
-              } finally {
-                res.end();
-              }
-            },
-            onError: async (message: string) => {
-              res.write(message);
-              const absolutePath = await handleLogPath(logPath);
-              await logStreamManager.write(absolutePath, message);
-            },
-            onLog: async (message: string) => {
-              res.write(message);
-              const absolutePath = await handleLogPath(logPath);
-              await logStreamManager.write(absolutePath, message);
-            },
-          },
-        );
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(
-    '/command-stop',
-    celebrate({
-      body: Joi.object({
-        command: Joi.string().optional(),
-        pid: Joi.number().optional(),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.stop(req.body);
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
-
-  route.put(['/data/export','/data/import'], (_req,res)=>res.status(410).json({code:410,message:'BACKUP_LEGACY_REMOVED'}));
 
   route.get(
     '/log',
@@ -430,21 +217,4 @@ export default (app: Router) => {
     },
   );
 
-  route.put(
-    '/config/dependence-clean',
-    celebrate({
-      body: Joi.object({
-        type: Joi.string().allow(''),
-      }),
-    }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const systemService = Container.get(SystemService);
-        const result = await systemService.cleanDependence(req.body.type);
-        res.send(result);
-      } catch (e) {
-        return next(e);
-      }
-    },
-  );
 };

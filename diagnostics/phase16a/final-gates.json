@@ -1,0 +1,73 @@
+{
+  "phase": "16A",
+  "status": "PASS",
+  "run_id": 35098329236,
+  "run_url": "https://github.com/anysoft/qinglong/actions/runs/35098329236",
+  "commit": "abd5939e316a918126cdadcf887ff7d756ab51db",
+  "event": "workflow_dispatch",
+  "scope": "full",
+  "scope_evidence": "user-provided full run; browser executed successfully",
+  "branch": "develop",
+  "jobs": [
+    {
+      "name": "preflight",
+      "conclusion": "success",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35098329236/job/104801154177"
+    },
+    {
+      "name": "managed-runtime",
+      "conclusion": "success",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35098329236/job/104801288505"
+    },
+    {
+      "name": "browser",
+      "conclusion": "success",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35098329236/job/104801288555"
+    },
+    {
+      "name": "core",
+      "conclusion": "success",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35098329236/job/104801288574"
+    },
+    {
+      "name": "ci-summary",
+      "conclusion": "success",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35098329236/job/104804693948"
+    }
+  ],
+  "platform": {
+    "tests": 469,
+    "pass": 469,
+    "fail": 0,
+    "skip": 0,
+    "source": "user-provided hosted artifacts"
+  },
+  "typecheck": {
+    "historical": 22,
+    "remaining": 4,
+    "new": 0,
+    "budget": "PASS",
+    "source": "user-provided hosted artifacts"
+  },
+  "runner": {
+    "os": "Ubuntu 24.04.5",
+    "arch": "x86_64",
+    "label": "ubuntu-24.04",
+    "source": "user-provided hosted evidence"
+  },
+  "qualification": "NOT_PHASE15_QUALIFICATION",
+  "history": [
+    {
+      "run_id": 35078896295,
+      "status": "FAIL",
+      "scope": "normal"
+    },
+    {
+      "run_id": 35096852979,
+      "status": "success",
+      "event": "push",
+      "sha": "abd5939e316a918126cdadcf887ff7d756ab51db",
+      "scope": "normal"
+    }
+  ]
+}

@@ -31,10 +31,8 @@ import SockService from './sock';
 import { t, tf } from '../shared/i18n';
 import dayjs from 'dayjs';
 import { LOG_END_SYMBOL } from '../config/const';
-import { SchedulerProjectionModel } from '../data/cron';
 import { TaskModel } from '../data/task';
 import { TaskDefinitionError } from '../shared/taskDefinition';
-import CrontabService from './cron';
 import taskLimit from '../shared/pLimit';
 import { logStreamManager } from '../shared/logStreamManager';
 import { LogReadOptions, readLogChunk } from '../shared/logReader';
@@ -45,7 +43,6 @@ export default class SubscriptionService {
     @Inject('logger') private logger: winston.Logger,
     private scheduleService: ScheduleService,
     private sockService: SockService,
-    private crontabService: CrontabService,
   ) {}
 
   public async list(

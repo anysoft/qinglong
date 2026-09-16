@@ -1,11 +1,22 @@
-# Git Workspace
+# Git resources and Workspaces
 
-> **当前基线：Phase14 + Phase12 / schema v9。** Code Workspace 直接消费 Worktree，与 Execution/GitSync 复用 EX lease，与 Backup 复用平台 mutation barrier。当前结构见 [Code Workspace](19-code-workspace.md) 与 [Backup/Restore](18-backup-restore.md)；下列早期阶段段落为历史记录。后续顺序 Phase16A → Phase15 → Phase16B。
+Repository owns normalized remote identity, credential reference and managed Git
+object storage. Worktree owns a canonical checkout, ref and local state. Subscription,
+Task execution and Code Workspace consume these resources directly; there is no
+staged `data/scripts` copy and no ScriptService editor.
 
-保留 RepositoryStorageService、WorktreeService、GitCommandService、GitCredentialResolver、RepositoryPathResolver、WorkspaceLocks 与 POSIX supervisor。远端访问只经 argv runner/私有凭据上下文；不在 URL/command/log 传密码。新平台没有 legacy clone/raw 路径。
+Repository fetch and Worktree update retain leases, dirty/untracked protection,
+credential isolation and successful-watermark rules. Workspace operations share
+exclusive Worktree coordination with execution/config materialization and sync.
+Git commands use validated fixed argv and suppress untrusted hooks and external
+helpers where required. Credential material is private and is not stored in remote URLs.
 
-Repository 的 git/ 存共享对象，worktrees/ 是独立代码工作区，ID生成路径。fetch不移动已检出分支；update只FF；dirty/ignored/ahead/diverged/detached/local commit/缺失注册/lease均按已有安全规则处理。错误恢复和ownership检查不是compatibility。
+Code Workspace provides bounded tree/read/edit/rename/delete and Git status/diff/
+commit operations through the actual Worktree. Path boundaries, no-follow reads,
+no-overwrite rename, atomic write/rollback and user-data preservation are formal
+contracts; see [Code Workspace](19-code-workspace.md).
 
-Workspace 可被用户编辑及多个Subscription引用；purpose只表创建来源。Task未来执行须绑定 lease 生命周期，当前Task脚本仍跑scripts，不可宣称已有运行期Worktree保护。非协作外部Git、网络文件系统、多主机不在现有锁保证内。
-
-4.5B删除旧repo目录的条件包括可选bot clone退场。构建Docker/CI拉平台源码的git clone/fetch是不同供应链，不属于此删除范围。
+Discovery and Git triggers follow successful sync/commit events through their
+services. A dirty tree or failed fetch cannot advance the last successful sync
+watermark. Backup captures unique local content and Git state under the same
+platform mutation barrier; unpushed or untracked work is not disposable cache.

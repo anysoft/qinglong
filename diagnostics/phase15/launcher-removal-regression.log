@@ -1,0 +1,197 @@
+TAP version 13
+# CI stage: timeout-fixture
+# Subtest: strict summary rejects historical budgets, nonzero diagnostics and failed raw compiler
+ok 1 - strict summary rejects historical budgets, nonzero diagnostics and failed raw compiler
+  ---
+  duration_ms: 0.848292
+  type: 'test'
+  ...
+# Subtest: failed test still collects and packages bounded diagnostics with machine summary
+ok 2 - failed test still collects and packages bounded diagnostics with machine summary
+  ---
+  duration_ms: 138.511458
+  type: 'test'
+  ...
+# Subtest: canary rejects publication and invalidates a previous archive
+ok 3 - canary rejects publication and invalidates a previous archive
+  ---
+  duration_ms: 203.425125
+  type: 'test'
+  ...
+# Subtest: random fixture secrets and private keys are blocked
+ok 4 - random fixture secrets and private keys are blocked
+  ---
+  duration_ms: 269.845625
+  type: 'test'
+  ...
+# Subtest: artifact paths reject traversal, symlinks, operational DB and oversized logs
+ok 5 - artifact paths reject traversal, symlinks, operational DB and oversized logs
+  ---
+  duration_ms: 365.195041
+  type: 'test'
+  ...
+# Subtest: cleanup rejects foreign roots and is idempotent for its owned root
+ok 6 - cleanup rejects foreign roots and is idempotent for its owned root
+  ---
+  duration_ms: 4.749833
+  type: 'test'
+  ...
+# Subtest: summary derives counts and exposes failures, cancellations, scope skips and upload failures
+ok 7 - summary derives counts and exposes failures, cancellations, scope skips and upload failures
+  ---
+  duration_ms: 0.470917
+  type: 'test'
+  ...
+# Subtest: workflow parses and uses read-only fixed Ubuntu official-action orchestration
+ok 8 - workflow parses and uses read-only fixed Ubuntu official-action orchestration
+  ---
+  duration_ms: 150.025833
+  type: 'test'
+  ...
+# Subtest: summary cannot turn blocked core or missing successful-core evidence into PASS
+ok 9 - summary cannot turn blocked core or missing successful-core evidence into PASS
+  ---
+  duration_ms: 0.377541
+  type: 'test'
+  ...
+# Subtest: supervised stage timeout stops owned child and grandchild and retains failure evidence
+ok 10 - supervised stage timeout stops owned child and grandchild and retains failure evidence
+  ---
+  duration_ms: 1759.447917
+  type: 'test'
+  ...
+# Subtest: managed clean checkout builds real backend before provision and preserves failure summary
+ok 11 - managed clean checkout builds real backend before provision and preserves failure summary
+  ---
+  duration_ms: 9206.761209
+  type: 'test'
+  ...
+# Subtest: managed and browser preserve build failure evidence and reject missing TAP summaries
+ok 12 - managed and browser preserve build failure evidence and reject missing TAP summaries
+  ---
+  duration_ms: 2921.171
+  type: 'test'
+  ...
+# Subtest: native shell argv, direct Worktree cwd, immutable resolver, no host secrets
+ok 13 - native shell argv, direct Worktree cwd, immutable resolver, no host secrets
+  ---
+  duration_ms: 2943.488209
+  type: 'test'
+  ...
+# Subtest: real exit 124 is FAILED, supervisor timeout is TIMEOUT, cancellation is CANCELLED
+ok 14 - real exit 124 is FAILED, supervisor timeout is TIMEOUT, cancellation is CANCELLED
+  ---
+  duration_ms: 4535.097083
+  type: 'test'
+  ...
+# Subtest: FORBID persists skipped submission, QUEUE is FIFO, queued cancel never spawns
+ok 15 - FORBID persists skipped submission, QUEUE is FIFO, queued cancel never spawns
+  ---
+  duration_ms: 5185.38725
+  type: 'test'
+  ...
+# Subtest: retry attempts freeze scoped ENV and settings; each BEFORE patch starts from snapshot
+ok 16 - retry attempts freeze scoped ENV and settings; each BEFORE patch starts from snapshot
+  ---
+  duration_ms: 2984.872458
+  type: 'test'
+  ...
+# Subtest: BEFORE generated secret is redacted before buffered output and MAIN, FINALLY runs
+ok 17 - BEFORE generated secret is redacted before buffered output and MAIN, FINALLY runs
+  ---
+  duration_ms: 1985.186625
+  type: 'test'
+  ...
+# Subtest: SIGKILL recovery waits for inherited ownership, reaps descendants and restores Config; queued run survives
+ok 18 - SIGKILL recovery waits for inherited ownership, reaps descendants and restores Config; queued run survives
+  ---
+  duration_ms: 4715.269583
+  type: 'test'
+  ...
+# Subtest: two independent dispatchers atomically claim one queued run
+ok 19 - two independent dispatchers atomically claim one queued run
+  ---
+  duration_ms: 5028.650417
+  type: 'test'
+  ...
+# Subtest: cleanup conflict preserves unexpected file and backup, preventing SUCCESS
+ok 20 - cleanup conflict preserves unexpected file and backup, preventing SUCCESS
+  ---
+  duration_ms: 2628.019541
+  type: 'test'
+  ...
+# Subtest: backoff cancellation is prompt and keeps original workspace locked until cleanup
+ok 21 - backoff cancellation is prompt and keeps original workspace locked until cleanup
+  ---
+  duration_ms: 1810.232459
+  type: 'test'
+  ...
+# Subtest: formal Shell Task preserves complex ENV and UNSET without interpolation or secret disclosure
+ok 22 - formal Shell Task preserves complex ENV and UNSET without interpolation or secret disclosure
+  ---
+  duration_ms: 2792.442459
+  type: 'test'
+  ...
+# Subtest: 50 live formal Resolver/Runner processes retain A across scoped ENV update to B
+ok 23 - 50 live formal Resolver/Runner processes retain A across scoped ENV update to B
+  ---
+  duration_ms: 14929.944084
+  type: 'test'
+  ...
+# Subtest: formal Task lifecycle: main failure
+ok 24 - formal Task lifecycle: main failure
+  ---
+  duration_ms: 3305.12575
+  type: 'test'
+  ...
+# Subtest: formal Task lifecycle: after success failure does not enter failure branch
+ok 25 - formal Task lifecycle: after success failure does not enter failure branch
+  ---
+  duration_ms: 2524.425458
+  type: 'test'
+  ...
+# Subtest: formal Task lifecycle: finally failure changes success
+ok 26 - formal Task lifecycle: finally failure changes success
+  ---
+  duration_ms: 2712.253875
+  type: 'test'
+  ...
+# Subtest: formal Task lifecycle: finally failure preserves main error
+ok 27 - formal Task lifecycle: finally failure preserves main error
+  ---
+  duration_ms: 3302.426417
+  type: 'test'
+  ...
+# Subtest: formal Task lifecycle: continue before failure permits main
+ok 28 - formal Task lifecycle: continue before failure permits main
+  ---
+  duration_ms: 2361.088917
+  type: 'test'
+  ...
+# Subtest: formal Task lifecycle: invalid hook output hides its buffered secret
+ok 29 - formal Task lifecycle: invalid hook output hides its buffered secret
+  ---
+  duration_ms: 2026.44875
+  type: 'test'
+  ...
+# Subtest: formal PREPARE conflict starts no user phase and preserves original Config target
+ok 30 - formal PREPARE conflict starts no user phase and preserves original Config target
+  ---
+  duration_ms: 1493.212416
+  type: 'test'
+  ...
+# Subtest: formal BEFORE timeout kills descendants and still executes failure/finally
+ok 31 - formal BEFORE timeout kills descendants and still executes failure/finally
+  ---
+  duration_ms: 2797.119666
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 20845.362208

@@ -265,13 +265,19 @@ function summarize(needs, artifacts = {}) {
     runner: { os: 'ubuntu-24.04', arch: core.preflight?.arch || 'UNKNOWN' },
     jobs,
     tests: core.tests || null,
-    typecheck: core.typecheck || { historical: 22, new: null },
+    typecheck: core.typecheck || {
+      mode: 'STRICT_ZERO',
+      errors: null,
+      status: 'MISSING',
+    },
     missing_core_evidence: !!missing,
     status:
       missing ||
       core.status === 'FAIL' ||
       core.tests?.fail > 0 ||
-      core.typecheck?.new > 0 ||
+      core.typecheck?.status !== 'PASS' ||
+      core.typecheck?.errors !== 0 ||
+      core.typecheck?.raw_failed !== false ||
       Object.values(jobs).some(
         (j) =>
           ['FAILURE', 'CANCELLED', 'SKIPPED_BY_DEPENDENCY'].includes(

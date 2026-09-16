@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: Installed parser accepts five/six fields and aliases, validates zones, deterministic DST
+ok 1 - Installed parser accepts five/six fields and aliases, validates zones, deterministic DST
+  ---
+  duration_ms: 41.066125
+  type: 'test'
+  ...
+# Subtest: Relative glob rejects escaping and matches nested paths without regex injection
+ok 2 - Relative glob rejects escaping and matches nested paths without regex injection
+  ---
+  duration_ms: 0.386917
+  type: 'test'
+  ...
+# Subtest: Long hostile wildcard sequences have bounded matching work
+ok 3 - Long hostile wildcard sequences have bounded matching work
+  ---
+  duration_ms: 5.531083
+  type: 'test'
+  ...
+# Subtest: Actual SIGKILL before-link recovers one TaskRun
+ok 4 - Actual SIGKILL before-link recovers one TaskRun
+  ---
+  duration_ms: 3044.076333
+  type: 'test'
+  ...
+# Subtest: Actual SIGKILL after-commit recovers one TaskRun
+ok 5 - Actual SIGKILL after-commit recovers one TaskRun
+  ---
+  duration_ms: 2254.294792
+  type: 'test'
+  ...
+# Subtest: Two real scheduler processes race on one due time without duplicate Event or Run
+ok 6 - Two real scheduler processes race on one due time without duplicate Event or Run
+  ---
+  duration_ms: 2267.455208
+  type: 'test'
+  ...
+# Subtest: Trigger schema fresh, typed configurations, webhook hash and rotation
+ok 7 - Trigger schema fresh, typed configurations, webhook hash and rotation
+  ---
+  duration_ms: 1490.023042
+  type: 'test'
+  ...
+# Subtest: Event durable dedup, atomic submit/link, disabled skip, real execution
+ok 8 - Event durable dedup, atomic submit/link, disabled skip, real execution
+  ---
+  duration_ms: 1943.02775
+  type: 'test'
+  ...
+# Subtest: Clock scheduler misfire SKIP and FIRE_ONCE, restart identity
+ok 9 - Clock scheduler misfire SKIP and FIRE_ONCE, restart identity
+  ---
+  duration_ms: 1123.985541
+  type: 'test'
+  ...
+# Subtest: Clone regenerates webhook credentials; deleted trigger and Task preserve event history
+ok 10 - Clone regenerates webhook credentials; deleted trigger and Task preserve event history
+  ---
+  duration_ms: 855.979625
+  type: 'test'
+  ...
+# Subtest: Git event cannot execute a Task rebound to another repository before submission
+ok 11 - Git event cannot execute a Task rebound to another repository before submission
+  ---
+  duration_ms: 901.229958
+  type: 'test'
+  ...
+# Subtest: disabled Cron never schedules, survives scheduler restart and reenables without replay
+ok 12 - disabled Cron never schedules, survives scheduler restart and reenables without replay
+  ---
+  duration_ms: 2340.827458
+  type: 'test'
+  ...
+# Subtest: disabled due rows cannot starve enabled Cron behind the scheduler batch limit
+ok 13 - disabled due rows cannot starve enabled Cron behind the scheduler batch limit
+  ---
+  duration_ms: 1155.00125
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7834.418583

@@ -4,7 +4,7 @@ const fs = require('node:fs/promises');
 const os = require('node:os');
 const path = require('node:path');
 const load = require('../helpers/load-security-module.cjs');
-const { LogStreamManager } = require('../../back/shared/logStreamManager');
+const { LogStreamManager } = load(path.resolve('back/shared/logStreamManager.ts'), { '../config': { logPath: '/unused' } });
 
 async function fixture(t) {
   const base = await fs.mkdtemp(path.join(os.tmpdir(), 'ql-log-boundary-'));
@@ -86,73 +86,4 @@ test('log initialization rejects unsafe paths before mkdir or file writes', asyn
   assert.equal(await fs.readFile(log, 'utf8'), 'initial');
   assert.equal(await handleLogPath(log, 'ignored'), log);
   assert.equal(await fs.readFile(log, 'utf8'), 'initial');
-});
-
-test('manual execution rejects escaping log names before creating directories or spawning', async (t) => {
-  const { root, outside, victim } = await fixture(t);
-  let spawned = 0;
-  let releases = 0;
-  const errors = [];
-  const CronService = load(path.resolve('back/services/cron.ts'), {
-    '../config': { logPath: root },
-    '../data/cron': {
-      CrontabStatus: { queued: 3, idle: 1 },
-      SchedulerProjectionModel: { update: async () => {} },
-    },
-    '../data/runningInstance': { RunningInstanceModel: {}, InstanceStatus: {} },
-    '../config/util': {},
-    '../config/const': {},
-    '../schedule/client': {},
-    '../shared/pLimit': {
-      manualRunWithCronLimit: async (fn) => {
-        try {
-          return await fn();
-        } finally {
-          releases++;
-        }
-      },
-    },
-    '../shared/utils': {},
-    '../shared/i18n': { t: (s) => s },
-    '../shared/logReader': {},
-    '../shared/logStreamManager': {
-      logStreamManager: { closeStream: async () => {} },
-    },
-    'cross-spawn': {
-      spawn: () => {
-        spawned++;
-        throw new Error('must not spawn');
-      },
-    },
-  }).default;
-  const service = new CronService({
-    info() {},
-    error: (...args) => errors.push(args),
-  });
-  for (const log_name of [
-    '../log-other/new',
-    outside,
-    'escape-dir/new',
-    'dangling',
-    'bad\0name',
-  ]) {
-    service.getDb = async () => ({
-      id: 1,
-      status: 3,
-      command: 'ignored',
-      log_path: '',
-      log_name,
-    });
-    await service.runSingle(1);
-  }
-  assert.equal(spawned, 0);
-  assert.equal(releases, 5);
-  assert.equal(
-    errors.filter((args) =>
-      args.includes('Log path is outside the log directory'),
-    ).length,
-    5,
-  );
-  assert.equal(await fs.readFile(victim, 'utf8'), 'unchanged');
-  assert.deepEqual(await fs.readdir(outside), ['victim.log']);
 });

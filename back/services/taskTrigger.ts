@@ -21,6 +21,7 @@ import {
 } from '../shared/triggerDefinition';
 
 export default class TaskTriggerService {
+  constructor(private readonly now: () => Date = () => new Date()) {}
   async list(taskId: number) {
     positiveTriggerId(taskId);
     const triggers = await TaskTriggerModel.findAll({
@@ -71,7 +72,7 @@ export default class TaskTriggerService {
         expression: config.expression,
         timezone,
         misfire_policy: misfire,
-        next_fire_at: cronNext(config.expression, timezone, new Date()),
+        next_fire_at: cronNext(config.expression, timezone, this.now()),
       };
     } else if (input.type === 'WEBHOOK') {
       exactKeys(config, []);
@@ -135,6 +136,22 @@ export default class TaskTriggerService {
             },
             { transaction },
           );
+        if (input.type === 'CRON') {
+          const previous =
+            id === undefined
+              ? null
+              : await CronTriggerModel.findByPk(id, { transaction });
+          // v9 keeps a NOT NULL timestamp. enabled=false is the persisted
+          // inactive state; freeze its dormant timestamp and exclude it in SQL.
+          values.next_fire_at =
+            !row.enabled && previous
+              ? previous.next_fire_at
+              : cronNext(
+                  config.expression,
+                  String(values.timezone),
+                  this.now(),
+                );
+        }
         const model =
           input.type === 'CRON'
             ? CronTriggerModel

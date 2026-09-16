@@ -35,7 +35,6 @@ import { SharedContext } from '@/layouts';
 import './index.less';
 import useResizeObserver from '@react-hook/resize-observer';
 import SystemLog from './systemLog';
-import Dependence from './dependence';
 import ClientIp from './clientIp';
 
 const { Text } = Typography;
@@ -335,11 +334,6 @@ const Setting = () => {
               key: 'client-ip',
               label: intl.get('客户端 IP'),
               children: <ClientIp />,
-            },
-            {
-              key: 'dependence',
-              label: intl.get('依赖设置'),
-              children: <Dependence />,
             },
             {
               key: 'backup',

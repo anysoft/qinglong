@@ -13,7 +13,7 @@
     "url": "https://github.com/whyour/qinglong/issues"
   },
   "scripts": {
-    "start": "concurrently -n w: npm:start:*",
+    "start": "concurrently -n w: npm:start:back npm:start:front",
     "start:back": "nodemon ./back/app.ts",
     "start:front": "max dev",
     "build:front": "max build",
@@ -27,7 +27,8 @@
     "postinstall": "max setup 2>/dev/null || true",
     "test:platform": "node tests/platform/run.cjs",
     "test:platform:e2e": "node diagnostics/phase10/platform-e2e.cjs",
-    "typecheck": "tsc --noEmit --skipLibCheck"
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "start:platform": "node scripts/platform/start.cjs"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -39,11 +40,6 @@
     "*.ts?(x)": [
       "prettier --parser=typescript --write"
     ]
-  },
-  "bin": {
-    "ql": "shell/update.sh",
-    "task": "shell/task.sh",
-    "qinglong": "shell/start.sh"
   },
   "pnpm": {
     "peerDependencyRules": {

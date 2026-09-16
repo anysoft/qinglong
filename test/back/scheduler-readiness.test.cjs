@@ -52,29 +52,19 @@ test('health checks actual gRPC transport without requiring Task projection rest
   assert.equal(r.status,expected);assert.equal(b.code,expected);assert.equal(b.data.services.grpc,ready);
  }
 });
-test('recovery registration errors propagate while ordinary autosave retains file synchronization',async()=>{
- const source=fs.readFileSync('back/services/cron.ts','utf8');const a=source.indexOf('  public async autosave_crontab('),z=source.indexOf('  public async bootTask',a);
- const js=ts.transpileModule('class Fixture {\n'+source.slice(a,z)+'}\nmodule.exports=Fixture;', {compilerOptions:{target:ts.ScriptTarget.ES2020}}).outputText;
- const module={exports:{}};let files=0;
- new Function('module','isDemoEnv','cronClient','withSchedulerMutation','TaskResourceResolver',js)(module,()=>false,{addCron:async()=>{throw Error('registration unavailable');}},fn=>fn(),class {async resolve(ids){return ids.map(id=>({task:{id,enabled:true},readiness:{status:'READY'}}));}});
- const fixture=new module.exports();fixture.crontabs=async()=>({data:[]});fixture.setCrontab=async()=>{files++;};fixture.logger={warn(){}};
- await fixture.autosave_crontab();assert.equal(files,1);
- await assert.rejects(fixture.autosave_crontab(true),/registration unavailable/);assert.equal(files,2);
-});
-test('scheduler probe uses the cron channel and failed writes are not replayed',async()=>{
+test('control-plane health probe uses a bounded authenticated gRPC channel',async()=>{
  const calls=[];const fake={
   waitForReady(deadline,cb){calls.push(['wait',deadline]);cb();},
   makeUnaryRequest(path,serialize,deserialize,request,options,cb){calls.push(['probe',path,request,options]);cb(null,{status:1});},
   addCron(request,metadata,options,cb){calls.push(['add',request,options]);cb(Object.assign(Error('invalid'),{code:3}));},
  };
  const client=load('back/schedule/client.ts',{
-  '../protos/cron':{CronClient:class{constructor(){return fake;}}},
   '../config':{grpcPort:5500},'../config/grpcCerts':{getGrpcCerts:()=>({caCert:'ca',clientKey:'key',clientCert:'cert'})},
-  '@grpc/grpc-js':{...require('@grpc/grpc-js'),credentials:{createSsl:()=>({})},status:{UNAVAILABLE:14},Metadata:class{}},
+  '@grpc/grpc-js':{...require('@grpc/grpc-js'),Client:class{constructor(){return fake;}},credentials:{createSsl:()=>({})},status:{UNAVAILABLE:14},Metadata:class{}},
  }).default;
  client.readiness.configure(async()=>{});assert.equal(await client.readiness.recover(),true);
  assert.ok(calls.filter(x=>x[0]==='probe').every(x=>x[1]==='/com.ql.health.Health/Check'&&x[2].service==='scheduler'&&x[3].deadline>Date.now()));
- await assert.rejects(client.addCron([]),/invalid/);assert.equal(calls.filter(x=>x[0]==='add').length,1);
+ assert.equal(client.addCron,undefined);assert.equal(client.delCron,undefined);
 });
 test('scheduler health probe never calls back into HTTP health',async()=>{
  const {check}=load('back/schedule/health.ts',{

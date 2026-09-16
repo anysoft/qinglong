@@ -75,22 +75,10 @@ export default {
         component: '@/pages/runtime-python',
       },
       {
-        path: '/dependence',
-        name: intl.get('依赖管理'),
-        icon: <IconFont type="ql-icon-dependence" />,
-        component: '@/pages/dependence/index',
-      },
-      {
         path: '/log',
         name: intl.get('日志管理'),
         icon: <IconFont type="ql-icon-log" />,
         component: '@/pages/log/index',
-      },
-      {
-        path: '/diff',
-        name: intl.get('对比工具'),
-        icon: <IconFont type="ql-icon-diff" />,
-        component: '@/pages/diff/index',
       },
       {
         path: '/setting',

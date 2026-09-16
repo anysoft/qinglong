@@ -4,7 +4,6 @@ import EnvService from '../services/env';
 import { sendUnaryData, ServerUnaryCall } from '@grpc/grpc-js';
 import {
   CreateEnvRequest,
-  CronItem,
   DeleteEnvsRequest,
   DisableEnvsRequest,
   EnableEnvsRequest,
@@ -22,23 +21,8 @@ import {
 import LoggerInstance from '../loaders/logger';
 import pick from 'lodash/pick';
 import SystemService from '../services/system';
-import CurrentTaskBridgeService from '../services/cron';
-import {
-  CronDetailRequest,
-  CronDetailResponse,
-  CreateCronRequest,
-  UpdateCronRequest,
-  DeleteCronsRequest,
-  CronResponse,
-  GetCronsRequest,
-  CronsResponse,
-  GetCronByIdRequest,
-  EnableCronsRequest,
-  DisableCronsRequest,
-  RunCronsRequest,
-} from '../protos/api';
+
 import { NotificationInfo } from '../data/notify';
-import { Model } from 'sequelize';
 
 Container.set('logger', LoggerInstance);
 
@@ -241,154 +225,6 @@ export const systemNotify = async (
       notificationInfo: call.request.notificationInfo as unknown as NotificationInfo,
     });
     callback(null, data);
-  } catch (e: any) {
-    callback(e);
-  }
-};
-
-const normalizeCronData = (data: CronItem | null): CronItem | undefined => {
-  if (!data) return undefined;
-  // create() returns a Sequelize instance; spreading it omits attribute getters.
-  const cron = data instanceof Model ? (data.get({ plain: true }) as CronItem) : data;
-  return {
-    ...cron,
-    labels: cron.labels ?? [],
-    sub_id: cron.sub_id ?? undefined,
-    extra_schedules: cron.extra_schedules ?? [],
-    pid: cron.pid ?? undefined,
-  };
-};
-
-export const getCronDetail = async (
-  call: ServerUnaryCall<CronDetailRequest, CronDetailResponse>,
-  callback: sendUnaryData<CronDetailResponse>,
-) => {
-  try {
-    if (!call.request.log_path) {
-      return callback(null, {
-        code: 400,
-        data: undefined,
-        message: 'log_path is required',
-      });
-    }
-    const cronService = Container.get(CurrentTaskBridgeService);
-    const data = (await cronService.find({
-      log_path: call.request.log_path,
-    })) as CronItem;
-    callback(null, { code: 200, data: normalizeCronData(data) });
-  } catch (e: any) {
-    callback(e);
-  }
-};
-
-export const createCron = async (
-  call: ServerUnaryCall<CreateCronRequest, CronResponse>,
-  callback: sendUnaryData<CronResponse>,
-) => {
-  // Retired definition mutation: protobuf names remain reserved for bridge clients.
-  callback(null, { code: 410, data: undefined, message: "TASK_API_REQUIRED" });
-};
-
-export const updateCron = async (
-  call: ServerUnaryCall<UpdateCronRequest, CronResponse>,
-  callback: sendUnaryData<CronResponse>,
-) => {
-  // Retired definition mutation: protobuf names remain reserved for bridge clients.
-  callback(null, { code: 410, data: undefined, message: "TASK_API_REQUIRED" });
-};
-
-export const deleteCrons = async (
-  call: ServerUnaryCall<DeleteCronsRequest, Response>,
-  callback: sendUnaryData<Response>,
-) => {
-  // Retired definition mutation: protobuf names remain reserved for bridge clients.
-  callback(null, { code: 410, message: "TASK_API_REQUIRED" });
-};
-
-export const getCrons = async (
-  call: ServerUnaryCall<GetCronsRequest, CronsResponse>,
-  callback: sendUnaryData<CronsResponse>,
-) => {
-  try {
-    const cronService = Container.get(CurrentTaskBridgeService);
-    const result = await cronService.crontabs({
-      searchValue: call.request.searchValue || '',
-      page: '0',
-      size: '0',
-      sorter: '',
-      filters: '',
-      queryString: '',
-    });
-    const data = result.data.map((x) => normalizeCronData(x as CronItem));
-    callback(null, {
-      code: 200,
-      data: data.filter((x): x is CronItem => x !== undefined),
-    });
-  } catch (e: any) {
-    callback(null, {
-      code: 500,
-      data: [],
-      message: e.message,
-    });
-  }
-};
-
-export const getCronById = async (
-  call: ServerUnaryCall<GetCronByIdRequest, CronResponse>,
-  callback: sendUnaryData<CronResponse>,
-) => {
-  try {
-    if (!call.request.id) {
-      return callback(null, {
-        code: 400,
-        data: undefined,
-        message: 'id parameter is required',
-      });
-    }
-
-    const cronService = Container.get(CurrentTaskBridgeService);
-    const data = (await cronService.getDb({ id: call.request.id })) as CronItem;
-    callback(null, { code: 200, data: normalizeCronData(data) });
-  } catch (e: any) {
-    callback(null, {
-      code: 404,
-      data: undefined,
-      message: e.message,
-    });
-  }
-};
-
-export const enableCrons = async (
-  call: ServerUnaryCall<EnableCronsRequest, Response>,
-  callback: sendUnaryData<Response>,
-) => {
-  // Retired definition mutation: protobuf names remain reserved for bridge clients.
-  callback(null, { code: 410, message: "TASK_API_REQUIRED" });
-};
-
-export const disableCrons = async (
-  call: ServerUnaryCall<DisableCronsRequest, Response>,
-  callback: sendUnaryData<Response>,
-) => {
-  // Retired definition mutation: protobuf names remain reserved for bridge clients.
-  callback(null, { code: 410, message: "TASK_API_REQUIRED" });
-};
-
-export const runCrons = async (
-  call: ServerUnaryCall<RunCronsRequest, Response>,
-  callback: sendUnaryData<Response>,
-) => {
-  try {
-    if (!call.request.ids || call.request.ids.length === 0) {
-      return callback(null, {
-        code: 400,
-        message: 'ids parameter is required',
-      });
-    }
-
-    const cronService = Container.get(CurrentTaskBridgeService);
-    await cronService.run(call.request.ids);
-    callback(null, { code: 200 });
   } catch (e: any) {
     callback(e);
   }

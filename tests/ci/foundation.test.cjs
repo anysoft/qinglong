@@ -13,6 +13,16 @@ const { context, repository } = require('../../scripts/ci/context.cjs'),
     artifactDirectory,
   } = require('../../scripts/ci/evidence.cjs'),
   { tap, cleanup } = require('../../scripts/ci/ci.cjs');
+test('strict summary rejects historical budgets, nonzero diagnostics and failed raw compiler', () => {
+  const needs = { core: { result: 'success', outputs: { upload: 'success' } } };
+  for (const typecheck of [
+    { status: 'PASS', baseline: 22, remaining: 4, new: 0 },
+    { mode: 'STRICT_ZERO', status: 'PASS', errors: 1, raw_failed: false },
+    { mode: 'STRICT_ZERO', status: 'PASS', errors: 0, raw_failed: true },
+  ]) {
+    assert.equal(summarize(needs, { core: { status: 'PASS', tests: { tests: 1, pass: 1, fail: 0, skipped: 0 }, typecheck } }).status, 'FAIL');
+  }
+});
 function fixture(t) {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'ci-evidence-test-'));
   const previous = process.env.CI_OUTPUT;
@@ -124,7 +134,7 @@ test('summary derives counts and exposes failures, cancellations, scope skips an
       browser: { result: 'cancelled' },
       runtime: { result: 'skipped' },
     },
-    { core: { tests, typecheck: { historical: 22, new: 0 } } },
+    { core: { tests, typecheck: { mode: 'STRICT_ZERO', errors: 0, raw_failed: false, status: 'PASS' } } },
   );
   assert.equal(report.status, 'FAIL');
   assert.equal(report.jobs.core.artifact, 'ARTIFACT_UPLOAD_FAILED');
@@ -154,7 +164,7 @@ test('summary cannot turn blocked core or missing successful-core evidence into 
       core: {
         status: 'PASS',
         tests: { tests: 3, pass: 3, fail: 0, skipped: 0 },
-        typecheck: { new: 0 },
+        typecheck: { mode: 'STRICT_ZERO', errors: 0, raw_failed: false, status: 'PASS' },
       },
     },
   );

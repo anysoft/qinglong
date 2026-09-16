@@ -13,17 +13,6 @@ const { LogStreamManager } = require('../../back/shared/logStreamManager');
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const logger = { info() {}, error() {} };
 
-test('scheduler submission failure settles and next Task identity can be submitted', async () => {
-  const calls = [];
-  const { runCron } = load(path.resolve('back/shared/runCron.ts'), {
-    '../services/executionService': { executionService: { async submit(id, trigger) {
-      calls.push({ id, trigger }); if (id === 1) throw Error('QUEUE_UNAVAILABLE'); return { id: 22 };
-    } } },
-  });
-  await assert.rejects(runCron('must-not-spawn', { id: '1' }), /QUEUE_UNAVAILABLE/);
-  assert.equal(await runCron('must-not-spawn', { id: '2' }), 22);
-  assert.deepEqual(calls, [{ id: 1, trigger: 'SCHEDULE' }, { id: 2, trigger: 'SCHEDULE' }]);
-});
 
 test(
   'completion waits for slow log consumers and preserves the final output',
@@ -110,8 +99,7 @@ function scheduleFixture() {
   };
   const Schedule = load(path.resolve('back/services/schedule.ts'), {
     '../shared/pLimit': {
-      runWithScriptLimit: limit,
-      runWithSystemLimit: limit,
+      runWithSubscriptionLimit: limit,
     },
     'cross-spawn': {
       spawn: () =>
@@ -141,7 +129,7 @@ test(
           finish();
         },
       },
-      { id: 'script', runOrigin: 'script' },
+      { id: 'script', runOrigin: 'subscription' },
       'start',
     );
     assert.ok(pid > 0);
@@ -174,7 +162,7 @@ test(
           throw new Error('cleanup failed');
         },
       },
-      { id: 'system', runOrigin: 'system' },
+      { id: 'system', runOrigin: 'subscription' },
     );
     assert.equal(result.error.message, 'setup failed');
     assert.equal(ended, 1);

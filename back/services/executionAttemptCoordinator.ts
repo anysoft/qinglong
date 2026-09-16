@@ -118,7 +118,6 @@ export default class ExecutionAttemptCoordinator {
         },
         (text) => redactor.write(text),
         {
-          persistEnvironment: false,
           event: (type, metadata) => runEvent(context.identity.taskRunId, type, {attempt,...metadata}),
           redactor,
           main: (environment, output) =>

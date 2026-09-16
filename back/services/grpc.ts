@@ -1,9 +1,6 @@
 import { Server, ServerCredentials } from '@grpc/grpc-js';
-import { CronService } from '../protos/cron';
 import { HealthService } from '../protos/health';
 import { ApiService } from '../protos/api';
-import { addCron } from '../schedule/addCron';
-import { delCron } from '../schedule/delCron';
 import { check } from '../schedule/health';
 import * as Api from '../schedule/api';
 import Logger from '../loaders/logger';
@@ -27,7 +24,6 @@ export class GrpcServerService {
   async initialize() {
     try {
       this.server.addService(HealthService, { check });
-      this.server.addService(CronService, { addCron, delCron });
       this.server.addService(ApiService, Api);
 
       const tlsConfig = await initGrpcCerts();

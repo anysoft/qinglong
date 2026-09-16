@@ -151,7 +151,6 @@ async function build(s) {
   await buildFrontend(s);
 }
 async function typecheck(s) {
-  const baseline = require('./typecheck-baseline.json');
   let failed = false;
   try {
     await run(s, 'typecheck', [
@@ -166,32 +165,21 @@ async function typecheck(s) {
     failed = true;
   }
   const text = fs.readFileSync(
-      path.join(s.output, 'logs/typecheck.log'),
-      'utf8',
-    ),
-    current = {};
-  for (const line of text.split('\n'))
-    if (/^.+\(\d+,\d+\): error TS\d+:/.test(line)) {
-      const key = line.replace(/\(\d+,\d+\):/, ':').trim();
-      current[key] = (current[key] || 0) + 1;
-    }
-  const added = Object.entries(current).filter(
-    ([k, n]) => n > (baseline.diagnostics[k] || 0),
+    path.join(s.output, 'logs/typecheck.log'),
+    'utf8',
   );
-  const remaining = Object.values(current).reduce((a, b) => a + b, 0);
+  const diagnostics = text
+    .split('\n')
+    .filter((line) => /error TS\d+:/.test(line));
   const result = {
-    historical: 22,
-    remaining,
-    new: added.reduce(
-      (sum, [key, count]) => sum + count - (baseline.diagnostics[key] || 0),
-      0,
-    ),
-    diagnostics: added,
+    mode: 'STRICT_ZERO',
+    errors: diagnostics.length,
     raw_failed: failed,
-    status: added.length || (failed && !remaining) ? 'FAIL' : 'PASS',
+    diagnostics,
+    status: failed || diagnostics.length ? 'FAIL' : 'PASS',
   };
-  atomic(path.join(s.output, 'tests/typecheck-budget.json'), result);
-  if (result.status !== 'PASS') throw Error('TYPECHECK_BUDGET');
+  atomic(path.join(s.output, 'tests/typecheck.json'), result);
+  if (result.status !== 'PASS') throw Error('TYPECHECK_ZERO_REQUIRED');
   return result;
 }
 async function staticCheck(s) {
@@ -251,7 +239,7 @@ async function core(s) {
     types = await typecheck(s);
   } catch (e) {
     failure ||= e;
-    const file = path.join(s.output, 'tests/typecheck-budget.json');
+    const file = path.join(s.output, 'tests/typecheck.json');
     if (fs.existsSync(file)) types = JSON.parse(fs.readFileSync(file));
   }
   try {

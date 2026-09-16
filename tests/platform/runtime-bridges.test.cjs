@@ -8,19 +8,6 @@ const {spawnSync}=require('node:child_process');
 const load=require('../../test/helpers/load-security-module.cjs');
 const root=path.resolve(__dirname,'../..');
 const logger={info(){},error(){},warn(){}};
-test('dependency command generation retains global Node and optional Python prefix without installing packages',()=>{
-  for(const prefix of [undefined,'/tmp/phase0-prefix']) {
-    const util=load(path.join(root,'back/config/util.ts'),{
-      './index':{}, './const':{PYTHON_INSTALL_DIR:prefix,TASK_COMMAND:'task'},
-      '../loaders/logger':logger,'../shared/utils':{},'../data/dependence':{DependenceTypes:{nodejs:0,python3:1,linux:2}},
-      './share':{},
-    });
-    assert.equal(util.getInstallCommand(0,' demo@1 '),'pnpm add -g demo@1');
-    assert.equal(util.getInstallCommand(1,' demo==1 '),'pip3 install --disable-pip-version-check --root-user-action=ignore'+(prefix?` --prefix=${prefix}`:'')+' demo==1');
-    assert.equal(util.getUninstallCommand(0,'demo'),'pnpm remove -g demo');
-    assert.match(util.getGetCommand(1,'demo'),/importlib.metadata/);
-  }
-});
 test('real node-schedule trigger reaches production runTask and drains stdout/stderr', {timeout:6000},async()=>{
   const Schedule=load(path.join(root,'back/services/schedule.ts'),{
     '../shared/pLimit':{runWithSubscriptionLimit:(_,fn)=>fn()},

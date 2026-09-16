@@ -23,7 +23,7 @@ async function fixture(t) {
   return {root,data,database,models};
 }
 const schema = database => database.query("SELECT name,sql FROM sqlite_master WHERE name NOT LIKE 'sqlite_%' ORDER BY name",{type:QueryTypes.SELECT});
-test('empty data root creates v4, all bridge/core tables, and restarts without schema writes',async t=>{
+test('empty data root creates schema v9 and restarts without schema writes',async t=>{
   const {data,database,models}=await fixture(t);
   await initializeOperationalSchema(database,models);
   const before=await schema(database);
@@ -33,8 +33,8 @@ test('empty data root creates v4, all bridge/core tables, and restarts without s
   await initializeOperationalSchema(database,models);
   assert.deepEqual(await schema(database),before);
   assert.deepEqual(await database.query('PRAGMA foreign_key_check',{type:QueryTypes.SELECT}),[]);
-  for(const name of ['git','worktrees','.locks','tmp','scripts','config','deps']) assert.ok((await fs.stat(path.join(data,name))).isDirectory());
-  for(const name of ['repo','raw']) await assert.rejects(fs.stat(path.join(data,name)),{code:'ENOENT'});
+  for(const name of ['git','worktrees','.locks','tmp','config']) assert.ok((await fs.stat(path.join(data,name))).isDirectory());
+  for(const name of ['repo','raw','scripts','deps','dep_cache','bak']) await assert.rejects(fs.stat(path.join(data,name)),{code:'ENOENT'});
 });
 test('unknown nonempty database fails closed and preserves rows and schema',async t=>{
   const {database,models}=await fixture(t);

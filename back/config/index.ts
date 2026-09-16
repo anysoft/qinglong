@@ -65,7 +65,6 @@ if (!process.env.QL_DIR) {
   process.env.QL_DIR = qlHomePath.replace(/\/$/g, '');
 }
 
-const lastVersionFile = `https://qn.whyour.cn/version.yaml`;
 
 // Get and normalize QlBaseUrl
 let baseUrl = process.env.QlBaseUrl || '';
@@ -90,31 +89,16 @@ if (process.env.QL_DATA_DIR) {
 }
 
 const shellPath = path.join(rootPath, 'shell/');
-const preloadPath = path.join(shellPath, 'preload/');
 const tmpPath = path.join(rootPath, '.tmp/');
 const samplePath = path.join(rootPath, 'sample/');
 const configPath = path.join(dataPath, 'config/');
-const scriptPath = path.join(dataPath, 'scripts/');
-const bakPath = path.join(dataPath, 'bak/');
 const logPath = path.join(dataPath, 'log/');
 const dbPath = path.join(dataPath, 'db/');
 const uploadPath = path.join(dataPath, 'upload/');
 const systemLogPath = path.join(dataPath, 'syslog/');
-const dependenceCachePath = path.join(dataPath, 'dep_cache/');
 
-const jsNotifyFile = path.join(preloadPath, '__ql_notify__.js');
-const pyNotifyFile = path.join(preloadPath, '__ql_notify__.py');
-const langEnvFile = path.join(preloadPath, 'lang_env.sh');
-const confFile = path.join(configPath, 'config.sh');
-const crontabFile = path.join(configPath, 'crontab.list');
-const extraFile = path.join(configPath, 'extra.sh');
-const confBakDir = path.join(dataPath, 'config/bak/');
-const sampleFile = path.join(samplePath, 'config.sample.sh');
 
 const versionFile = path.join(rootPath, 'version.yaml');
-const dataTgzFile = path.join(tmpPath, 'data.tgz');
-const shareShellFile = path.join(shellPath, 'share.sh');
-const dependenceProxyFile = path.join(configPath, 'dependence-proxy.sh');
 
 if (envFound.error) {
   throw new Error("⚠️  Couldn't find .env file  ⚠️");
@@ -127,22 +111,10 @@ export default {
   rootPath,
   tmpPath,
   dataPath,
-  dataTgzFile,
-  shareShellFile,
-  dependenceProxyFile,
   logPath,
-  extraFile,
-  confBakDir,
-  crontabFile,
-  sampleFile,
-  confFile,
-  jsNotifyFile,
-  pyNotifyFile,
-  langEnvFile,
   dbPath,
   uploadPath,
   configPath,
-  scriptPath,
   samplePath,
   blackFileList: [
     'auth.json',
@@ -154,8 +126,6 @@ export default {
     'grpc',
     '__pycache__',
   ],
-  writePathList: [configPath, scriptPath],
-  bakPath,
   apiWhiteList: [
     '/api/user/login',
     '/api/health',
@@ -171,8 +141,6 @@ export default {
     '/open/user/notification/init',
   ],
   versionFile,
-  lastVersionFile,
   systemLogPath,
-  dependenceCachePath,
   maxTokensPerPlatform: 10, // Maximum number of concurrent sessions per platform
 };

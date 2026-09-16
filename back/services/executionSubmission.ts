@@ -19,6 +19,10 @@ export class ExecutionSubmissionServer {
   private server?: net.Server;
   private lease?: RuntimeLease;
   private starting?: Promise<void>;
+  // SQLite has one writer. Concurrent BEGIN IMMEDIATE calls can occupy the
+  // native worker pool while the transaction owning the lock waits to finish.
+  private submissions: Promise<void> = Promise.resolve();
+  private queuedSubmissions = 0;
   constructor(private execution: ExecutionService) {}
   start() {
     return (this.starting ??= this.listen());
@@ -80,14 +84,22 @@ export class ExecutionSubmissionServer {
             socket.end('INVALID\n');
             return;
           }
-          void this.execution
-            .submit(Number(text.trim()), 'SCHEDULE')
-            .then((run) =>
-              socket.end(
-                JSON.stringify({ id: run.id, status: run.status }) + '\n',
-              ),
-            )
-            .catch(() => socket.end('FAILED\n'));
+          if (this.queuedSubmissions >= 128) {
+            socket.end('BUSY\n');
+            return;
+          }
+          this.queuedSubmissions++;
+          this.submissions = this.submissions.then(async () => {
+            try {
+              if (socket.destroyed) return;
+              const run = await this.execution.submit(Number(text.trim()), 'SCHEDULE');
+              socket.end(JSON.stringify({ id: run.id, status: run.status }) + '\n');
+            } catch {
+              socket.end('FAILED\n');
+            } finally {
+              this.queuedSubmissions--;
+            }
+          });
         });
       });
       await new Promise<void>((resolve, reject) => {

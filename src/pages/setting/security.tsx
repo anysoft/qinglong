@@ -9,6 +9,7 @@ import { PageLoading } from '@ant-design/pro-layout';
 import { UploadOutlined, UserOutlined } from '@ant-design/icons';
 import ImgCrop from 'antd-img-crop';
 import 'antd/es/slider/style';
+import type { UploadChangeParam, UploadFile } from 'antd/es/upload/interface';
 
 const { Title, Link } = Typography;
 
@@ -95,11 +96,9 @@ const SecuritySettings = ({ user, userChange }: any) => {
       });
   };
 
-  const onChange = (e) => {
+  const onChange = (e: UploadChangeParam<UploadFile<{ data: string }>>) => {
     if (e.file && e.file.response) {
-      setAvatar(
-        `${config.apiPrefix}static/${e.file.response.data}`,
-      );
+      setAvatar(`${config.apiPrefix}static/${e.file.response.data}`);
       userChange();
     }
   };

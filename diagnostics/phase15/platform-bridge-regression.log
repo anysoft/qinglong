@@ -1,0 +1,99 @@
+TAP version 13
+# /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120
+#   throw new Error("⚠️  Couldn't find .env file  ⚠️");
+#         ^
+# Error: ⚠️  Couldn't find .env file  ⚠️
+#     at Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+#     at Module._compile (node:internal/modules/cjs/loader:1781:14)
+#     at Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+#     at node:internal/modules/cjs/loader:1913:10
+#     at Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+#     at Module.load (node:internal/modules/cjs/loader:1505:32)
+#     at Function._load (node:internal/modules/cjs/loader:1309:12)
+#     at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+#     at Module.require (node:internal/modules/cjs/loader:1527:12)
+#     at require (node:internal/modules/helpers:147:16)
+# Subtest: test/back/execution-lifecycle.test.cjs
+not ok 1 - test/back/execution-lifecycle.test.cjs
+  ---
+  duration_ms: 343.06725
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/execution-lifecycle.test.cjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: log streams reject traversal, sibling prefixes and escaping symlinks before writing
+ok 2 - log streams reject traversal, sibling prefixes and escaping symlinks before writing
+  ---
+  duration_ms: 20.589583
+  type: 'test'
+  ...
+# Subtest: log initialization rejects unsafe paths before mkdir or file writes
+ok 3 - log initialization rejects unsafe paths before mkdir or file writes
+  ---
+  duration_ms: 188.050542
+  type: 'test'
+  ...
+# Subtest: subscription retention defaults to disabled and bounds days
+ok 4 - subscription retention defaults to disabled and bounds days
+  ---
+  duration_ms: 1.581458
+  type: 'test'
+  ...
+# Subtest: retention protects active syncs, TaskRun logs, user files, historical data and symlinks
+ok 5 - retention protects active syncs, TaskRun logs, user files, historical data and symlinks
+  ---
+  duration_ms: 82.747167
+  type: 'test'
+  ...
+# Subtest: provider transport refuses unsafe URLs, redirects, and oversized responses; secrets never escape error codes
+ok 6 - provider transport refuses unsafe URLs, redirects, and oversized responses; secrets never escape error codes
+  ---
+  duration_ms: 1270.632292
+  type: 'test'
+  ...
+# Subtest: Run logs reject forged cursors and symlinks; non-Task log API and retention service cannot delete Run logs
+ok 7 - Run logs reject forged cursors and symlinks; non-Task log API and retention service cannot delete Run logs
+  ---
+  duration_ms: 916.601084
+  type: 'test'
+  ...
+# Subtest: live redaction releases safe short output before completion and preserves all split secret boundaries
+ok 8 - live redaction releases safe short output before completion and preserves all split secret boundaries
+  ---
+  duration_ms: 645.660958
+  type: 'test'
+  ...
+# Subtest: real node-schedule trigger reaches production runTask and drains stdout/stderr
+not ok 9 - real node-schedule trigger reaches production runTask and drains stdout/stderr
+  ---
+  duration_ms: 107.106542
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/runtime-bridges.test.cjs:13:1'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:37:3), <anonymous>:90:11)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:37:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:64)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:37:3), <anonymous>:11:34)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:37:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:23:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:37:3), <anonymous>:18:20)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:37:72)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/runtime-bridges.test.cjs:12:18)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 7
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3282.215041

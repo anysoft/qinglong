@@ -14,7 +14,6 @@ import {
 import * as DarkReader from '@umijs/ssr-darkreader';
 import config from '@/utils/config';
 import { request } from '@/utils/http';
-import CheckUpdate from './checkUpdate';
 import { SharedContext } from '@/layouts';
 import './index.less';
 import pick from 'lodash/pick';
@@ -23,7 +22,6 @@ import { TIMEZONES } from '@/utils/const';
 const dataMap = {
   'panel-title': 'panelTitle',
   'log-remove-frequency': 'logRemoveFrequency',
-  'cron-concurrency': 'cronConcurrency',
   timezone: 'timezone',
 };
 
@@ -40,17 +38,10 @@ const Other = ({
   const [systemConfig, setSystemConfig] = useState<{
     panelTitle?: string | null;
     logRemoveFrequency?: number | null;
-    cronConcurrency?: number | null;
     timezone?: string | null;
-    runningInstanceRetentionDays?: number | null;
-    cronStatRetentionDays?: number | null;
   }>();
   const [form] = Form.useForm();
   const [cleanupLoading, setCleanupLoading] = useState(false);
-  const [dependenceCacheTypes, setDependenceCacheTypes] = useState<string[]>(
-    [],
-  );
-  const [compactDatabase, setCompactDatabase] = useState(false);
 
   const {
     enable: enableDarkMode,
@@ -118,25 +109,6 @@ const Other = ({
       });
   };
 
-  const retentionPayload = () => ({
-    runningInstanceRetentionDays:
-      systemConfig?.runningInstanceRetentionDays || 0,
-    cronStatRetentionDays: systemConfig?.cronStatRetentionDays || 0,
-  });
-
-  const saveRetentionPolicy = () => {
-    request
-      .put(
-        `${config.apiPrefix}system/storage-retention/config`,
-        retentionPayload(),
-      )
-      .then(({ code }) => {
-        if (code === 200) {
-          message.success(intl.get('更新成功'));
-        }
-      });
-  };
-
   const formatBytes = (bytes: number) => {
     if (!bytes) return '0 B';
     const units = ['B', 'KiB', 'MiB', 'GiB'];
@@ -150,9 +122,7 @@ const Other = ({
   const previewStorageCleanup = () => {
     setCleanupLoading(true);
     const payload = {
-      ...retentionPayload(),
-      dependenceCacheTypes,
-      compactDatabase,
+      logRetentionDays: systemConfig?.logRemoveFrequency || 0,
     };
     request
       .post(`${config.apiPrefix}system/storage-retention/preview`, payload)
@@ -167,22 +137,8 @@ const Other = ({
           okButtonProps: { danger: true },
           content: (
             <div>
-              <p>
-                {intl.get('将删除历史运行实例')}: {data.runningInstances}
-              </p>
-              <p>
-                {intl.get('将删除任务统计')}: {data.cronStats}
-              </p>
-              <p>
-                {intl.get('将清除依赖缓存')}: {data.dependenceCaches.length} (
-                {formatBytes(data.dependenceCacheBytes)})
-              </p>
-              {data.dependenceCaches.length > 0 && (
-                <p>{intl.get('清理依赖缓存后相关依赖需要重新安装')}</p>
-              )}
-              {compactDatabase && (
-                <p>{intl.get('数据库压缩期间可能暂时阻塞请求')}</p>
-              )}
+              <p>将删除 {data.files.length} 个订阅同步日志（{formatBytes(data.bytes)}）。</p>
+              <p>TaskRun 日志单独保留；系统日志由服务日志轮转管理。</p>
               <p>{intl.get('此操作不可恢复，请确认已完成必要备份')}</p>
             </div>
           ),
@@ -275,7 +231,7 @@ const Other = ({
         <Form.Item
           label={intl.get('日志删除频率')}
           name="frequency"
-          tooltip={intl.get('每x天自动删除x天以前的日志')}
+          tooltip="订阅同步日志保留天数；0 表示禁用，TaskRun 日志不在清理范围内"
         >
           <Input.Group compact>
             <InputNumber
@@ -300,90 +256,8 @@ const Other = ({
             </Button>
           </Input.Group>
         </Form.Item>
-        <Form.Item
-          label={intl.get('历史数据保留与手动清理')}
-          tooltip={intl.get('保留天数为0时禁用对应清理，预览不会删除数据')}
-        >
-          <div style={{ marginBottom: 8 }}>
-            <InputNumber
-              addonBefore={intl.get('运行实例')}
-              addonAfter={intl.get('天')}
-              min={0}
-              max={3650}
-              value={systemConfig?.runningInstanceRetentionDays || 0}
-              onChange={(value) => {
-                setSystemConfig({
-                  ...systemConfig,
-                  runningInstanceRetentionDays: value,
-                });
-              }}
-            />
-          </div>
-          <div style={{ marginBottom: 8 }}>
-            <InputNumber
-              addonBefore={intl.get('任务统计')}
-              addonAfter={intl.get('天')}
-              min={0}
-              max={3650}
-              value={systemConfig?.cronStatRetentionDays || 0}
-              onChange={(value) => {
-                setSystemConfig({
-                  ...systemConfig,
-                  cronStatRetentionDays: value,
-                });
-              }}
-            />
-          </div>
-          <div style={{ marginBottom: 8 }}>
-            <Checkbox.Group
-              value={dependenceCacheTypes}
-              options={[
-                { label: intl.get('清除 Node 依赖缓存'), value: 'node' },
-                { label: intl.get('清除 Python 依赖缓存'), value: 'python3' },
-              ]}
-              onChange={(value) => setDependenceCacheTypes(value as string[])}
-            />
-          </div>
-          <div style={{ marginBottom: 8 }}>
-            <Checkbox
-              checked={compactDatabase}
-              onChange={(event) => setCompactDatabase(event.target.checked)}
-            >
-              {intl.get('清理后压缩数据库')}
-            </Checkbox>
-          </div>
-          <Button onClick={saveRetentionPolicy} style={{ marginRight: 8 }}>
-            {intl.get('保存设置')}
-          </Button>
-          <Button
-            danger
-            loading={cleanupLoading}
-            onClick={previewStorageCleanup}
-          >
-            {intl.get('预览清理')}
-          </Button>
-        </Form.Item>
-        <Form.Item label={intl.get('定时任务并发数')} name="frequency">
-          <Input.Group compact>
-            <InputNumber
-              style={{ width: 180 }}
-              min={4}
-              value={systemConfig?.cronConcurrency}
-              placeholder={intl.get('默认为 CPU 个数')}
-              onChange={(value) => {
-                setSystemConfig({ ...systemConfig, cronConcurrency: value });
-              }}
-            />
-            <Button
-              type="primary"
-              onClick={() => {
-                updateSystemConfig('cron-concurrency');
-              }}
-              style={{ width: 84 }}
-            >
-              {intl.get('确认')}
-            </Button>
-          </Input.Group>
+        <Form.Item label="订阅同步日志清理" tooltip="按上方保留天数预览；0 表示禁用。每小时检查一次。">
+          <Button danger loading={cleanupLoading} onClick={previewStorageCleanup}>预览清理</Button>
         </Form.Item>
         <Form.Item label={intl.get('时区')} name="timezone">
           <Input.Group compact>
@@ -426,9 +300,7 @@ const Other = ({
             ]}
           />
         </Form.Item>
-        <Form.Item label={intl.get('检查更新')} name="update">
-          <CheckUpdate systemInfo={systemInfo} />
-        </Form.Item>
+
       </Form>
 
     </>

@@ -1,5 +1,7 @@
 # Code Workspace — Phase12, schema v9
 
+> Phase15 convergence: schema v9 remains unchanged. The current cross-domain ownership, physical bridge removals and operations contract are in [Platform overview](00-platform-overview.md) and [Platform operations](20-platform-operations.md). Earlier bridge-retention statements below are historical. Hosted Linux qualification is a separate gate in [Phase15](../../PHASE15_REPORT.md).
+
 Workspace 是注册 Worktree 的文件/Git 操作视图，不持有另一份源码。生产入口、限制和验证见 [Phase12](../refactor/phase12/01-workspace-domain.md)。
 
 ```mermaid

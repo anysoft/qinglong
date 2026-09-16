@@ -1,0 +1,131 @@
+TAP version 13
+# Subtest: real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 1 - real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 3515.312375
+  type: 'test'
+  ...
+# Subtest: real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 2 - real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 9361.379625
+  type: 'test'
+  ...
+# Subtest: real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 3 - real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 2936.709208
+  type: 'test'
+  ...
+# Subtest: real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+ok 4 - real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+  ---
+  duration_ms: 3025.325208
+  type: 'test'
+  ...
+# Subtest: lifecycle: main failure
+ok 5 - lifecycle: main failure
+  ---
+  duration_ms: 2377.106833
+  type: 'test'
+  ...
+# Subtest: lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+ok 6 - lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+  ---
+  duration_ms: 2621.402959
+  type: 'test'
+  ...
+# Subtest: lifecycle: FINALLY failure changes success
+ok 7 - lifecycle: FINALLY failure changes success
+  ---
+  duration_ms: 2703.179416
+  type: 'test'
+  ...
+# Subtest: lifecycle: FINALLY failure preserves primary
+ok 8 - lifecycle: FINALLY failure preserves primary
+  ---
+  duration_ms: 2577.406333
+  type: 'test'
+  ...
+# Subtest: lifecycle: CONTINUE before failure permits MAIN
+ok 9 - lifecycle: CONTINUE before failure permits MAIN
+  ---
+  duration_ms: 2620.19575
+  type: 'test'
+  ...
+# Subtest: lifecycle: invalid BEFORE output fails without leaking generated log
+ok 10 - lifecycle: invalid BEFORE output fails without leaking generated log
+  ---
+  duration_ms: 2000.780417
+  type: 'test'
+  ...
+# Subtest: graceful cancellation tee=false executes AFTER_FAILURE/FINALLY with config, then restores original
+ok 11 - graceful cancellation tee=false executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 2494.351541
+  type: 'test'
+  ...
+# Subtest: graceful cancellation tee=true executes AFTER_FAILURE/FINALLY with config, then restores original
+ok 12 - graceful cancellation tee=true executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 2493.886167
+  type: 'test'
+  ...
+# Subtest: same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+ok 13 - same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+  ---
+  duration_ms: 6143.615042
+  type: 'test'
+  ...
+# Subtest: live execution pins Config revision, ENV and Hook plan across edits; next run observes new values
+ok 14 - live execution pins Config revision, ENV and Hook plan across edits; next run observes new values
+  ---
+  duration_ms: 4232.990875
+  type: 'test'
+  ...
+# Subtest: retained recovery bridge preserves Config/Hooks; scheduler projection carries Task ID only
+ok 15 - retained recovery bridge preserves Config/Hooks; scheduler projection carries Task ID only
+  ---
+  duration_ms: 2990.384125
+  type: 'test'
+  ...
+# Subtest: PREPARE conflict starts no user phase and preserves existing data
+ok 16 - PREPARE conflict starts no user phase and preserves existing data
+  ---
+  duration_ms: 1487.228041
+  type: 'test'
+  ...
+# Subtest: MAIN timeout invokes failure and finally independently of hook deadlines
+ok 17 - MAIN timeout invokes failure and finally independently of hook deadlines
+  ---
+  duration_ms: 2982.995625
+  type: 'test'
+  ...
+# Subtest: all publication sources share the existing global publication-1 lease
+ok 18 - all publication sources share the existing global publication-1 lease
+  ---
+  duration_ms: 2815.572041
+  type: 'test'
+  ...
+# Subtest: actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+ok 19 - actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+  ---
+  duration_ms: 2358.348291
+  type: 'test'
+  ...
+# {"global_ts_runner_used":false,"repository_local_runner":"node_modules/.bin/ts-node-transpile-only","typescript_diagnostic":"PASS"}
+# Subtest: 50 simultaneously live runs across repositories/profiles/tasks isolate snapshots and preserve A across update to B
+ok 20 - 50 simultaneously live runs across repositories/profiles/tasks isolate snapshots and preserve A across update to B
+  ---
+  duration_ms: 9426.34425
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 59752.35325

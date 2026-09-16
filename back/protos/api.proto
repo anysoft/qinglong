@@ -53,82 +53,6 @@ message Response {
   optional string message = 2;
 }
 
-message ExtraScheduleItem { string schedule = 1; }
-
-message CronItem {
-  optional int32 id = 1;
-  optional string command = 2;
-  optional string schedule = 3;
-  optional string name = 4;
-  repeated string labels = 5;
-  optional int32 sub_id = 6;
-  repeated ExtraScheduleItem extra_schedules = 7;
-  reserved 8, 9;
-  reserved "task_before", "task_after";
-  optional int32 status = 10;
-  optional string log_path = 11;
-  optional int32 pid = 12;
-  optional int64 last_running_time = 13;
-  optional int64 last_execution_time = 14;
-}
-
-message CreateCronRequest {
-  string command = 1;
-  string schedule = 2;
-  optional string name = 3;
-  repeated string labels = 4;
-  optional int32 sub_id = 5;
-  repeated ExtraScheduleItem extra_schedules = 6;
-  reserved 7, 8;
-  reserved "task_before", "task_after";
-}
-
-message UpdateCronRequest {
-  int32 id = 1;
-  optional string command = 2;
-  optional string schedule = 3;
-  optional string name = 4;
-  repeated string labels = 5;
-  optional int32 sub_id = 6;
-  repeated ExtraScheduleItem extra_schedules = 7;
-  reserved 8, 9;
-  reserved "task_before", "task_after";
-}
-
-message DeleteCronsRequest { repeated int32 ids = 1; }
-
-message GetCronsRequest {
-  optional string searchValue = 1;
-}
-
-message GetCronByIdRequest { int32 id = 1; }
-
-message EnableCronsRequest { repeated int32 ids = 1; }
-
-message DisableCronsRequest { repeated int32 ids = 1; }
-
-message RunCronsRequest { repeated int32 ids = 1; }
-
-message CronsResponse {
-  int32 code = 1;
-  repeated CronItem data = 2;
-  optional string message = 3;
-}
-
-message CronResponse {
-  int32 code = 1;
-  CronItem data = 2;
-  optional string message = 3;
-}
-
-message CronDetailRequest { string log_path = 1; }
-
-message CronDetailResponse {
-  int32 code = 1;
-  CronItem data = 2;
-  optional string message = 3;
-}
-
 enum NotificationMode {
   gotify = 0;
   goCqHttpBot = 1;
@@ -271,13 +195,4 @@ service Api {
   rpc UpdateEnvNames(UpdateEnvNamesRequest) returns (Response) {}
   rpc GetEnvById(GetEnvByIdRequest) returns (EnvResponse) {}
   rpc SystemNotify(SystemNotifyRequest) returns (Response) {}
-  rpc GetCronDetail(CronDetailRequest) returns (CronDetailResponse) {}
-  rpc CreateCron(CreateCronRequest) returns (CronResponse) {}
-  rpc UpdateCron(UpdateCronRequest) returns (CronResponse) {}
-  rpc DeleteCrons(DeleteCronsRequest) returns (Response) {}
-  rpc GetCrons(GetCronsRequest) returns (CronsResponse) {}
-  rpc GetCronById(GetCronByIdRequest) returns (CronResponse) {}
-  rpc EnableCrons(EnableCronsRequest) returns (Response) {}
-  rpc DisableCrons(DisableCronsRequest) returns (Response) {}
-  rpc RunCrons(RunCronsRequest) returns (Response) {}
 }

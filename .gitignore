@@ -47,3 +47,8 @@ __pycache__
 /diagnostics/ci-browser/
 
 ci-downloaded/
+
+# Phase15 private working fixtures and hosted qualification scratch
+/diagnostics/phase15/managed-local/
+/diagnostics/qualification/
+/qualification-downloaded/

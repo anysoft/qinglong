@@ -1,5 +1,7 @@
 # Python Runtime Manager — Phase 6
 
+> Phase15 convergence: schema v9 remains unchanged. The current cross-domain ownership, physical bridge removals and operations contract are in [Platform overview](00-platform-overview.md) and [Platform operations](20-platform-operations.md). Earlier bridge-retention statements below are historical. Hosted Linux qualification is a separate gate in [Phase15](../../PHASE15_REPORT.md).
+
 ```mermaid
 flowchart TD
  UI[Runtime · Python] --> API[Panel Runtime API]

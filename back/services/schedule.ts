@@ -20,7 +20,7 @@ export interface ScheduleTaskType {
   command: string;
   name?: string;
   schedule?: string;
-  runOrigin: 'subscription' | 'system' | 'script';
+  runOrigin: 'subscription';
 }
 
 export interface TaskCallbacks {
@@ -45,8 +45,6 @@ export default class ScheduleService {
   private intervalSchedule = new ToadScheduler();
 
   private taskLimitMap = {
-    system: 'runWithSystemLimit' as const,
-    script: 'runWithScriptLimit' as const,
     subscription: 'runWithSubscriptionLimit' as const,
   };
 
@@ -60,7 +58,7 @@ export default class ScheduleService {
       name?: string;
       command?: string;
       id: string;
-      runOrigin: 'subscription' | 'system' | 'script';
+      runOrigin: 'subscription';
     },
     completionTime: 'start' | 'end' = 'end',
   ) {

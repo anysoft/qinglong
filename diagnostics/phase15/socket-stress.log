@@ -1,0 +1,180 @@
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 4962.569708
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5223.935708
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 4939.133
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5206.324625
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 4857.462833
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5117.382875
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 4862.9285
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5119.475042
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 4851.854667
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5097.301875
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 4854.517917
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5110.596959
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 5036.563959
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5291.539167
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 5342.147417
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5597.314333
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 5072.522208
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5328.383792
+TAP version 13
+# Subtest: real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+ok 1 - real submission socket permissions, concurrent access, owner SIGKILL and stale socket restart
+  ---
+  duration_ms: 5089.815417
+  type: 'test'
+  ...
+# malformed request rejected
+# 20 concurrent submissions persisted
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5354.3655

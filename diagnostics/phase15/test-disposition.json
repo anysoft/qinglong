@@ -1,0 +1,228 @@
+{
+  "phase": "15",
+  "removed_tests": [
+    {
+      "removed": "test/back/cron-log-name.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/cron-validation.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/dashboard-failures.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/dependence-cache-status.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase7/8 managed Environment and Build lifecycle; Phase10 managed execution; Phase15 source absence"
+    },
+    {
+      "removed": "test/back/grpc-cron-response.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/manual-execution.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/node-path-cache.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase7/8 managed Environment and Build lifecycle; Phase10 managed execution; Phase15 source absence"
+    },
+    {
+      "removed": "test/back/node-path-lock.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase7/8 managed Environment and Build lifecycle; Phase10 managed execution; Phase15 source absence"
+    },
+    {
+      "removed": "test/back/qlServiceLogCommand.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Platform system log API/logReader and explicit foreground startup; operator maintenance"
+    },
+    {
+      "removed": "test/back/scheduler-file-lock.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/scheduler-mutation.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/scheduler-reconciliation.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/scheduler-rpc-timeout.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "test/back/shell-api-parsing.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Formal TaskRun supervisor result channel; protected Unix submission; no loopback parser"
+    },
+    {
+      "removed": "test/back/system-dependence-cache.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase7/8 managed Environment and Build lifecycle; Phase10 managed execution; Phase15 source absence"
+    },
+    {
+      "removed": "test/back/task-time.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Formal TaskRun/Runner process lifecycle and immutable Context tests"
+    },
+    {
+      "removed": "tests/phase3/cron-publication.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    },
+    {
+      "removed": "tests/phase5/runtime.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase15 formal-environment/formal-lifecycle; Phase10 managed Python/Node/tsx; Phase13 streaming security"
+    },
+    {
+      "removed": "tests/platform/environment-account-mode.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase15 formal-environment/formal-lifecycle; Phase10 managed Python/Node/tsx; Phase13 streaming security"
+    },
+    {
+      "removed": "tests/platform/environment-entrypoint.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase15 formal-environment/formal-lifecycle; Phase10 managed Python/Node/tsx; Phase13 streaming security"
+    },
+    {
+      "removed": "tests/platform/environment-execution.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase15 formal-environment/formal-lifecycle; Phase10 managed Python/Node/tsx; Phase13 streaming security"
+    },
+    {
+      "removed": "tests/platform/environment-transport.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase15 formal-environment/formal-lifecycle; Phase10 managed Python/Node/tsx; Phase13 streaming security"
+    },
+    {
+      "removed": "tests/platform/task-model-bridge.test.cjs",
+      "reason": "sole retired implementation physically removed",
+      "replacement": "Phase10 execution/entrypoints/recovery; Phase11 Trigger/Discovery; Phase13 observability; Phase15 disabled Cron/socket"
+    }
+  ],
+  "formalized_tests": [
+    {
+      "path": "test/back/build-provenance.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform process supervision and diagnostics"
+    },
+    {
+      "path": "test/back/ecosystem.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform process supervision and diagnostics"
+    },
+    {
+      "path": "test/back/execution-lifecycle.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Config materialization and owned process lifecycle"
+    },
+    {
+      "path": "test/back/fileTreeListing.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform file/log boundaries and retention"
+    },
+    {
+      "path": "test/back/logReader.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform file/log boundaries and retention"
+    },
+    {
+      "path": "test/back/metrics.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform process supervision and diagnostics"
+    },
+    {
+      "path": "test/back/monitoring.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform process supervision and diagnostics"
+    },
+    {
+      "path": "test/back/primary-apm.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform process supervision and diagnostics"
+    },
+    {
+      "path": "test/back/process-exit-state.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform process supervision and diagnostics"
+    },
+    {
+      "path": "test/back/retention.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform file/log boundaries and retention"
+    },
+    {
+      "path": "test/back/schedule-health.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Internal Subscription scheduler and mTLS health"
+    },
+    {
+      "path": "test/back/scheduler-readiness.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Internal Subscription scheduler and mTLS health"
+    },
+    {
+      "path": "test/back/subscription-cleanup.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Internal Subscription scheduler and mTLS health"
+    },
+    {
+      "path": "test/back/worker-apm.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform process supervision and diagnostics"
+    },
+    {
+      "path": "test/back/wpush-grpc.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Explicit backend notification provider transport"
+    },
+    {
+      "path": "test/front/http-error.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Frontend authenticated HTTP error contract"
+    },
+    {
+      "path": "tests/platform/api-file-routes.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Platform file/log boundaries and retention"
+    },
+    {
+      "path": "tests/platform/runtime-bridges.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Internal Subscription scheduler and mTLS health"
+    },
+    {
+      "path": "tests/phase5/publication-integrity.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Config materialization and owned process lifecycle"
+    },
+    {
+      "path": "tests/phase5/script-access.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Config materialization and owned process lifecycle"
+    },
+    {
+      "path": "tests/phase5/process-group.test.cjs",
+      "classification": "PLATFORM_CORE",
+      "owner": "Config materialization and owned process lifecycle"
+    }
+  ],
+  "note": "Historical archived tests remain non-active; no skip flags or reduced assertion thresholds added."
+}

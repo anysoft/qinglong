@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: production supervisor passes only explicit lease descriptors across Node, Python and Shell exec
+ok 1 - production supervisor passes only explicit lease descriptors across Node, Python and Shell exec
+  ---
+  duration_ms: 524.752458
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 804.547875

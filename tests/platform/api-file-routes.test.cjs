@@ -47,13 +47,12 @@ for (const service of ['log']) {
     default: class {},
   });
 }
-mockModule('../../back/data/runningInstance', {
-  InstanceStatus: { running: 'running' },
-  RunningInstanceModel: { findOne: async () => null },
+mockModule('../../back/data/subscription', {
+  SubscriptionStatus: { running: 'running' },
+  SubscriptionModel: { findOne: async () => null },
 });
 
 const deprecatedRoutes = [
-  ['script', '/scripts/detail'],
   ['log', '/logs/detail'],
 ];
 

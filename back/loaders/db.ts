@@ -28,7 +28,6 @@ import {
   RepositoryEnvVariableModel,
   TaskEnvVariableModel,
 } from '../data/scopedEnv';
-import ExecutionEnvironmentTransport from '../services/executionEnvironmentTransport';
 
 export default async () => {
   try {
@@ -58,10 +57,6 @@ export default async () => {
       ...triggerModels,
       ...discoveryModels,
     ]);
-    await new ExecutionEnvironmentTransport().cleanupStale().catch(() => {
-      Logger.warn('[environment] stale snapshot cleanup deferred');
-    });
-
     Logger.info('[boot] DB loaded');
   } catch (error) {
     Logger.error('[boot] DB load failed', error);

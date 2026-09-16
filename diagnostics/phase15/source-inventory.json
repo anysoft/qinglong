@@ -1,0 +1,1041 @@
+{
+  "provenance": "LOCAL_UNCOMMITTED_WORKTREE",
+  "base_sha": "abd5939e316a918126cdadcf887ff7d756ab51db",
+  "files": [
+    {
+      "path": ".github/workflows/linux-qualification.yml",
+      "status": "PRESENT",
+      "sha256": "370426407fbd617afd291da6f6dfdbcda40403349f1de5d4849864f45a3a76aa"
+    },
+    {
+      "path": ".gitignore",
+      "status": "PRESENT",
+      "sha256": "ac0ae6518919c92bb3c4f7467978677f4a73ff8d60d74c1fae22114a56ab196b"
+    },
+    {
+      "path": "PHASE15_REPORT.md",
+      "status": "PRESENT",
+      "sha256": "33bbfd3b150b76958f213e73055cffd4813ceb8a21ed7f15cd77bed4ddf4e8e3"
+    },
+    {
+      "path": "PHASE16A_REPORT.md",
+      "status": "PRESENT",
+      "sha256": "4f342a4d4c1a369529a9745c5e5a524689704c93294fcf1562b863223287796f"
+    },
+    {
+      "path": "TEMPORARY_BRIDGES.md",
+      "status": "PRESENT",
+      "sha256": "d02d3a69dc9401e3f69c770ded8854a06ae3ba75a059a42d84d25bbf4673d8c5"
+    },
+    {
+      "path": "back/api/configAssets.ts",
+      "status": "PRESENT",
+      "sha256": "a452b300e6fb2ecf3c289de3cb7d4d30c9983f48c21dc98b4405d08afac2958c"
+    },
+    {
+      "path": "back/api/cron.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/api/dashboard.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/api/dependence.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/api/index.ts",
+      "status": "PRESENT",
+      "sha256": "7e91304d6d2533dfd38dd94e8f43941fed4d9668d9e5b04ee4984768a60bc45d"
+    },
+    {
+      "path": "back/api/log.ts",
+      "status": "PRESENT",
+      "sha256": "d83d36d5397848625933ccf8cccbe547990a98e06e3a1ee7fe633be6e62878f5"
+    },
+    {
+      "path": "back/api/retention.ts",
+      "status": "PRESENT",
+      "sha256": "e3c9ad25c77b0dc4119c3b61f7ce67126096a5ced3329e70056791b7d97d6a69"
+    },
+    {
+      "path": "back/api/script.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/api/system.ts",
+      "status": "PRESENT",
+      "sha256": "a36038ab6523e2796df9a417a49a8990078d38cbdcc92b08b7d1ef1e5d62b3cb"
+    },
+    {
+      "path": "back/api/tasks.ts",
+      "status": "PRESENT",
+      "sha256": "e26122186dc230f782d49b23bab6a0f053fa9cd63fddd1bc250bc41f547aa592"
+    },
+    {
+      "path": "back/api/update.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/config/const.ts",
+      "status": "PRESENT",
+      "sha256": "a664d0a124d9689effa24dc7af56e33ab43db668509f1d53cb10fb69876bf4f8"
+    },
+    {
+      "path": "back/config/index.ts",
+      "status": "PRESENT",
+      "sha256": "173031fc8f2726c51bfbdbbc1d33ad32db6874af70c72dac317bd9d4a38c9d2d"
+    },
+    {
+      "path": "back/config/util.ts",
+      "status": "PRESENT",
+      "sha256": "2ab95aeed170fa6df4de83a68d79082f9aaa9a29d2a99447975a09341f00b79a"
+    },
+    {
+      "path": "back/interface/schedule.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/loaders/app.ts",
+      "status": "PRESENT",
+      "sha256": "2d7731319ef870ca617c79ef84657bb7b37483af413e3a40f7d5f9a269d915cc"
+    },
+    {
+      "path": "back/loaders/db.ts",
+      "status": "PRESENT",
+      "sha256": "8a2ecbd563fdee088026cecc72dfa41c07c3de6ae0c35c1f2b68a0d1a68352d6"
+    },
+    {
+      "path": "back/loaders/deps.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/loaders/initData.ts",
+      "status": "PRESENT",
+      "sha256": "973fdbe54bc731b3c5200d03236a7683775c45890d15e100100891d5356034ac"
+    },
+    {
+      "path": "back/loaders/initFile.ts",
+      "status": "PRESENT",
+      "sha256": "7bbba950d2577e2706955808b8201c3ce0f49249ff8893652eebdd5cd2c6acd7"
+    },
+    {
+      "path": "back/loaders/initTask.ts",
+      "status": "PRESENT",
+      "sha256": "a4efb1fe649b958ee5766dfda8aa9d4d8d49788c2da5e9ed0c0b8719a0aef035"
+    },
+    {
+      "path": "back/protos/api.proto",
+      "status": "PRESENT",
+      "sha256": "c8c922aa032d0a956c4f261e42aaeb460e93f5741cb8ddcfaa0e314700ba971e"
+    },
+    {
+      "path": "back/protos/api.ts",
+      "status": "PRESENT",
+      "sha256": "51df3e8a533ef6d456929180b0be541ff48e35127454bd2aeab77bacedbff3b8"
+    },
+    {
+      "path": "back/protos/cron.proto",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/protos/cron.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/schedule/addCron.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/schedule/api.ts",
+      "status": "PRESENT",
+      "sha256": "c9c69b1473de37a55c7f928d7bb4cadbe54e8712425111b09d2d24f1635ec64f"
+    },
+    {
+      "path": "back/schedule/client.ts",
+      "status": "PRESENT",
+      "sha256": "dd623cf34ccad8f9d76e3a67f7262f0766417f33813dce2b73c5dad3a8d7d70b"
+    },
+    {
+      "path": "back/schedule/data.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/schedule/delCron.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/cron.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/cronView.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/dependence.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/executionAttemptCoordinator.ts",
+      "status": "PRESENT",
+      "sha256": "1f9a4287bbf2566753d46eb69e8268b713659bae647f2b98d3b4b058e5745cbe"
+    },
+    {
+      "path": "back/services/executionEnvironmentTransport.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/executionSubmission.ts",
+      "status": "PRESENT",
+      "sha256": "0dce6f9b6534bbe2d79108f9afc6a9f0eb256fbe9ff2b1c7b9c3e5904855de1b"
+    },
+    {
+      "path": "back/services/grpc.ts",
+      "status": "PRESENT",
+      "sha256": "636c2cc62d4d22e65b61b5ccc2dabbba8126b888164ba1261456729b83268625"
+    },
+    {
+      "path": "back/services/retention.ts",
+      "status": "PRESENT",
+      "sha256": "c15bff78681a5386b58ff7c87911c1751d9a82d8d8a49438ba7f5430d8bf4b46"
+    },
+    {
+      "path": "back/services/schedule.ts",
+      "status": "PRESENT",
+      "sha256": "7abfccda88eb7fc3bd39199c0bff4d7c61c883c4bcc180d06f96641563b50800"
+    },
+    {
+      "path": "back/services/schedulerBridge.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/subscription.ts",
+      "status": "PRESENT",
+      "sha256": "a999712e2051991cd4a0892a3bca6595e9cd79227ae524723a7a75628cf9deea"
+    },
+    {
+      "path": "back/services/system.ts",
+      "status": "PRESENT",
+      "sha256": "ca207526f43b2c082cf640f632be97ec35667fc8463d050597997a1b76180315"
+    },
+    {
+      "path": "back/services/taskExecutionBridge.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/taskExecutionFacade.ts",
+      "status": "PRESENT",
+      "sha256": "64929a68756e20ebeed5925aff5f3e34c40ca702d2253e3dc2aa8e23fa42a60a"
+    },
+    {
+      "path": "back/services/taskExecutionPreparation.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/taskExecutionSourceBridge.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/taskHookLifecycle.ts",
+      "status": "PRESENT",
+      "sha256": "a3414af4613035e6db6e91a8077bf156f0599d9045812093007d3434bd5dd8e0"
+    },
+    {
+      "path": "back/services/taskTrigger.ts",
+      "status": "PRESENT",
+      "sha256": "1f6518577c9a6ddbb348a8d3bb5483403f714255ff6d3ec49e0199edd3ce88f4"
+    },
+    {
+      "path": "back/services/taskWorkspace.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/services/triggerScheduler.ts",
+      "status": "PRESENT",
+      "sha256": "a1d34f038b9659795898d0ffa5739bd97f144512b8b136fe42f03ce785d9d8bb"
+    },
+    {
+      "path": "back/shared/bootstrapDirectories.ts",
+      "status": "PRESENT",
+      "sha256": "bbc13e117053d38877e79b30e3023161ddf163ffbfd4bcf3d5cdbdbc1943e88c"
+    },
+    {
+      "path": "back/shared/interface.ts",
+      "status": "PRESENT",
+      "sha256": "1946d91ad1c7d1ed5801ef4b2fd831816d93eaca3745966a38d42240d57c8cbf"
+    },
+    {
+      "path": "back/shared/pLimit.ts",
+      "status": "PRESENT",
+      "sha256": "4b81ecd141e76dc31eb24ebdfd6fd7cff76e62aa494d8ecde02dd95cd455d30a"
+    },
+    {
+      "path": "back/shared/retention.ts",
+      "status": "PRESENT",
+      "sha256": "e96b174e581e6d1ed7dc69b32d8f8cc5eaa4932a6fbe8f6e64a42e32e383fb57"
+    },
+    {
+      "path": "back/shared/runCron.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/shared/schedulerMutationLock.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/taskExecution.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/token.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "back/validation/schedule.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "docs/architecture/00-platform-overview.md",
+      "status": "PRESENT",
+      "sha256": "9433ec4c87fb122b0b3e204e7008f73135dc97a6bfbe3a8bf083441cf0453323"
+    },
+    {
+      "path": "docs/architecture/01-domain-model.md",
+      "status": "PRESENT",
+      "sha256": "f3cfe8bdea86a6c2c5da6a6d7a0cd8be4101d0af0e33774bcfe79bfcfc8c9951"
+    },
+    {
+      "path": "docs/architecture/02-git-workspace.md",
+      "status": "PRESENT",
+      "sha256": "49d5b1a13c2aa566e16705de980c7146ea34fb929e00ffd94056829215a3819a"
+    },
+    {
+      "path": "docs/architecture/03-subscription-sync.md",
+      "status": "PRESENT",
+      "sha256": "fd9c4a63a5085eef29035bd551adb0a92b53d435de21462e90fe969c6189a93d"
+    },
+    {
+      "path": "docs/architecture/04-environment-model.md",
+      "status": "PRESENT",
+      "sha256": "61035e46f1e931a47270a1f147207c6031a5a9a40e58b3e5ce1bf061dd188cf3"
+    },
+    {
+      "path": "docs/architecture/05-filesystem-layout.md",
+      "status": "PRESENT",
+      "sha256": "f38d37aae51503f4cad8be7f3ecf5b7db68718154cdbe47ac80fcb400b6a064a"
+    },
+    {
+      "path": "docs/architecture/06-database-target.md",
+      "status": "PRESENT",
+      "sha256": "fe9c638108fdf0110ff87fca4d8c74515ca0cad34367857a9d78b84eeec321a8"
+    },
+    {
+      "path": "docs/architecture/07-service-boundaries.md",
+      "status": "PRESENT",
+      "sha256": "2c18c0ae4225f0d377acfcc2eaf05079aa8a207a19a52038a11d71af96f17c54"
+    },
+    {
+      "path": "docs/architecture/08-temporary-bridges.md",
+      "status": "PRESENT",
+      "sha256": "2d4b710be9fd67ebe3bfce7961940a90ba91a67f7acff1c0284009250bfba225"
+    },
+    {
+      "path": "docs/architecture/09-config-assets-and-hooks.md",
+      "status": "PRESENT",
+      "sha256": "cd28c2d285cd5b7299681b4a8e91a30435d54444befc6a0aea3e9c69fdc9cf89"
+    },
+    {
+      "path": "docs/architecture/10-python-runtime.md",
+      "status": "PRESENT",
+      "sha256": "bfbb1d471001f90d8c7c0b3ae969db88da1e11d63cdedcd4ac1620f2bf3cdcc4"
+    },
+    {
+      "path": "docs/architecture/11-python-environments.md",
+      "status": "PRESENT",
+      "sha256": "7ff9389794660933a4546ce44624c03491792d74c9fefc6fa4bd7409fc89e5b7"
+    },
+    {
+      "path": "docs/architecture/12-node-runtime-environments.md",
+      "status": "PRESENT",
+      "sha256": "a9eac15cf99cbca498c37fd057b24b9b12e7e64f44760dca03e2cad434694ed1"
+    },
+    {
+      "path": "docs/architecture/13-task-domain.md",
+      "status": "PRESENT",
+      "sha256": "e711435deb3a4fae38feef481a55c3ee7d7f4decc35c0cf748e5d0d260bc5d0f"
+    },
+    {
+      "path": "docs/architecture/14-execution-engine.md",
+      "status": "PRESENT",
+      "sha256": "16453e67b37ae003c1ea4aa56dfbdee4c3bf66138f8300a9fc2ecadea8bfbb3d"
+    },
+    {
+      "path": "docs/architecture/15-discovery-triggers.md",
+      "status": "PRESENT",
+      "sha256": "3df7824b9c0abf08653fe897c44113c15d5025d9234bfdc3f8b15499ed5ca812"
+    },
+    {
+      "path": "docs/architecture/16-task-run-observability.md",
+      "status": "PRESENT",
+      "sha256": "6fbf73d22d70bcf406a6ccfd4f4cf88ed3891c68c9d4c2924a5a6726032b724b"
+    },
+    {
+      "path": "docs/architecture/17-notification-platform.md",
+      "status": "PRESENT",
+      "sha256": "a2f6d43b2e93193a1f387776e0174ac0aaa057bdd8facfafddd9a8aba43a98f1"
+    },
+    {
+      "path": "docs/architecture/18-backup-restore.md",
+      "status": "PRESENT",
+      "sha256": "39737eb4074461a1a578add39d656c5073a62ef487ce2e7a27f608be7d65b940"
+    },
+    {
+      "path": "docs/architecture/19-code-workspace.md",
+      "status": "PRESENT",
+      "sha256": "ee27ab87013b4bcd9a1d58bb0eb1a2c5f3a1d809e42a11927a761410ec2e3535"
+    },
+    {
+      "path": "docs/architecture/20-platform-operations.md",
+      "status": "PRESENT",
+      "sha256": "371bbd5c3e6b967f66476827cc8c89c9c02abc335f48ce13288048e1b7530007"
+    },
+    {
+      "path": "docs/refactor/phase15/01-entry-audit.md",
+      "status": "PRESENT",
+      "sha256": "87c958479e8f403a79fafc2c56ed6ce5fdcfb6012b74fc43180de1299bd7a541"
+    },
+    {
+      "path": "docs/refactor/phase15/02-linux-native-semantics.md",
+      "status": "PRESENT",
+      "sha256": "b896b5474e40f5a2f93b8937e19373e572c1adc70d1b1730e7041be75ba45d7e"
+    },
+    {
+      "path": "docs/refactor/phase15/03-runtime-qualification.md",
+      "status": "PRESENT",
+      "sha256": "20388f8259ec77c04a50c85f16679e59857669860026887df9a85c6e95817942"
+    },
+    {
+      "path": "docs/refactor/phase15/04-trigger-convergence.md",
+      "status": "PRESENT",
+      "sha256": "e5d579c3b7a443b53bfdfedf04f79a07559f876eb6c42492558f7cd1591f0b33"
+    },
+    {
+      "path": "docs/refactor/phase15/05-bridge-finalization.md",
+      "status": "PRESENT",
+      "sha256": "240f4b848c955738479eb61620ebb9b53cee668082684c4fbd774c422792a7e9"
+    },
+    {
+      "path": "docs/refactor/phase15/06-type-system-convergence.md",
+      "status": "PRESENT",
+      "sha256": "eb5ebadfe19a158e438753593db378e64e909ef64b37826aed540f814f2f6e54"
+    },
+    {
+      "path": "docs/refactor/phase15/07-backup-restore-qualification.md",
+      "status": "PRESENT",
+      "sha256": "5c2fd6c83aeb90dcee8bb2108d74cef86b380abbcdb5f757bc4c7f962ba04a3f"
+    },
+    {
+      "path": "docs/refactor/phase15/08-security-audit.md",
+      "status": "PRESENT",
+      "sha256": "e22c67a35247a9669d5894a28696d8eb60f4bec6eaa40d09a3fa9d4d55457f66"
+    },
+    {
+      "path": "docs/refactor/phase15/09-scale-and-recovery.md",
+      "status": "PRESENT",
+      "sha256": "88efbb3c48d92344126e8a4b2ab6f8e4b3a6c0d0a8b14fb3732b36bbbf6a4045"
+    },
+    {
+      "path": "docs/refactor/phase15/10-platform-1.0-architecture.md",
+      "status": "PRESENT",
+      "sha256": "0a4335cbd994091f3153dcaca9d5cab84ee1c47efbbcb06b431400edb773dcbb"
+    },
+    {
+      "path": "docs/refactor/phase15/11-linux-qualification-workflow.md",
+      "status": "PRESENT",
+      "sha256": "4b5e85f31298b72b7dfa70b38ab04f3419a1e3b98bbc8de5921eea5daae58877"
+    },
+    {
+      "path": "docs/refactor/phase15/12-phase15-test-report.md",
+      "status": "PRESENT",
+      "sha256": "3a40307fd1e1f14190c3d76da23d5429d967290a0743690058c0acf5186b5be3"
+    },
+    {
+      "path": "package.json",
+      "status": "PRESENT",
+      "sha256": "15a6d68503149a1e654484c7c3aeec19fd98d1fd44d2f0ec955cfe5a0d78cec0"
+    },
+    {
+      "path": "sample/auth.sample.json",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "sample/config.sample.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "sample/extra.sample.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "sample/ql_sample.js",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "sample/ql_sample.py",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "scripts/ci/ci.cjs",
+      "status": "PRESENT",
+      "sha256": "c93ae56f243aaaa31a5509d8dcf6bef0e167eee367b707a0deac21609c687d95"
+    },
+    {
+      "path": "scripts/ci/evidence.cjs",
+      "status": "PRESENT",
+      "sha256": "965eafb84d8eec7f813b6ca0512ba6e1a2faaaa0c7094046a715737e7db2e97d"
+    },
+    {
+      "path": "scripts/ci/static.cjs",
+      "status": "PRESENT",
+      "sha256": "32d4ce1ef5382272d5cccfc709c646fa3c85559ecec14f2c1538f86756433032"
+    },
+    {
+      "path": "scripts/ci/summary.cjs",
+      "status": "PRESENT",
+      "sha256": "a78dc2dab0419ee2e37aaa60df80c250434af77818a86b79a3b29acb90eee9d0"
+    },
+    {
+      "path": "scripts/ci/typecheck-baseline.json",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "scripts/platform/start.cjs",
+      "status": "PRESENT",
+      "sha256": "16eee079dc547194dfb1763b048f0c8771b3dad88faea8cea1d1c9751139aba6"
+    },
+    {
+      "path": "scripts/qualification/run.cjs",
+      "status": "PRESENT",
+      "sha256": "047dd4eaec0238e7fcd8e2e76307bf436a77545716af4a935a24f96d6af1da74"
+    },
+    {
+      "path": "scripts/qualification/summary.cjs",
+      "status": "PRESENT",
+      "sha256": "7c01fdf3e0341de82af2fa1446f45a1c6ff592a5e358ffdba0d479f5293f4b2f"
+    },
+    {
+      "path": "shell/api.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/check.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/env.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/execution_lease.py",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/node_path_cache.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/otask.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/preload/client.js",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/preload/client.py",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/preload/esm-loader.mjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/preload/scoped-env.js",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/preload/scoped_env.py",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/preload/sitecustomize.js",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/preload/sitecustomize.py",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/preload/task_types.py",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/pub.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/rmlog.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/share.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/start.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/task.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/task_env.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "shell/update.sh",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/components/tag.tsx",
+      "status": "PRESENT",
+      "sha256": "c2b8176ec43e4102c0a72b70e360414bf2f08a03911ce6ac6f25e6c1c75bb3ae"
+    },
+    {
+      "path": "src/layouts/defaultProps.tsx",
+      "status": "PRESENT",
+      "sha256": "471cfb11a4cf6a53a1710431ae82367ccd4ef3cf402455354585cc86e59c6f7c"
+    },
+    {
+      "path": "src/pages/dashboard/failureModal.tsx",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/dependence/index.less",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/dependence/index.tsx",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/dependence/logModal.tsx",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/dependence/modal.tsx",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/dependence/type.ts",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/diff/index.less",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/diff/index.tsx",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/log/index.tsx",
+      "status": "PRESENT",
+      "sha256": "4da95a1a045ce8cccfe845a90aec3508f819da91b9eb2798daf3aee5d5529695"
+    },
+    {
+      "path": "src/pages/script/index.tsx",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/setting/checkUpdate.tsx",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/setting/dependence.tsx",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "src/pages/setting/index.tsx",
+      "status": "PRESENT",
+      "sha256": "89c12545bd43dd4231782adebdb0bfd429511b0f504e960930698471c9e7dc81"
+    },
+    {
+      "path": "src/pages/setting/other.tsx",
+      "status": "PRESENT",
+      "sha256": "df166c2a18174466a711b5d1c80d81a3b9bd9e252126a7ab5dabdb33d3cc1a59"
+    },
+    {
+      "path": "src/pages/setting/security.tsx",
+      "status": "PRESENT",
+      "sha256": "4ecc40c22ab50b4dccb8cb0882bd51fe7d996a62a25684084cb1808fa99d29c5"
+    },
+    {
+      "path": "src/pages/subscription/modal.tsx",
+      "status": "PRESENT",
+      "sha256": "25a712fb1ad7bc1efdcd09016e0a2fad1fc190882cb7900f05afffa92e12139c"
+    },
+    {
+      "path": "src/pages/tasks/triggers.tsx",
+      "status": "PRESENT",
+      "sha256": "55c5c84b7d08aed40cd01c4b415f9c77e81458656da84aa11ea61f7f117b8ba8"
+    },
+    {
+      "path": "src/utils/config.ts",
+      "status": "PRESENT",
+      "sha256": "ccf7138ce462c1c94feeab3952d94e9b3f6550d2a06e3b3494c1d700733859e5"
+    },
+    {
+      "path": "test/back/cron-log-name.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/cron-validation.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/dashboard-failures.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/dependence-cache-status.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/execution-lifecycle.test.cjs",
+      "status": "PRESENT",
+      "sha256": "a33cc77c0ecbc01c3b058290eff54b5e38746599fa052b8a99659fe60ab5188f"
+    },
+    {
+      "path": "test/back/grpc-cron-response.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/log-path-security.test.cjs",
+      "status": "PRESENT",
+      "sha256": "8e24da8b8ad5d5bc1b908cb808bf6a8f3b75586bcff87fb3ecb1a801206d8fd2"
+    },
+    {
+      "path": "test/back/manual-execution.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/node-path-cache.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/node-path-lock.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/qlServiceLogCommand.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/retention.test.cjs",
+      "status": "PRESENT",
+      "sha256": "3ca98a54b26f78da39b13fd0eb8c601aea87f02c1cda79b5107220d867d441f8"
+    },
+    {
+      "path": "test/back/scheduler-file-lock.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/scheduler-mutation.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/scheduler-readiness.test.cjs",
+      "status": "PRESENT",
+      "sha256": "b8a0977c4536d716f6b06a978c1bdf99a5cb2c119607d33a38f63cf819c8be3a"
+    },
+    {
+      "path": "test/back/scheduler-reconciliation.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/scheduler-rpc-timeout.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/shell-api-parsing.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/system-dependence-cache.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "test/back/task-time.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/ci/foundation.test.cjs",
+      "status": "PRESENT",
+      "sha256": "24cfbdad78002b022035547927f601636bb18fbfed4f24a66779de717eebbe7c"
+    },
+    {
+      "path": "tests/phase10/entrypoints.test.cjs",
+      "status": "PRESENT",
+      "sha256": "3d80864a79e76087be46041a7bc2e48996fac588cc2c8288864b0e32a568e276"
+    },
+    {
+      "path": "tests/phase10/managed-entrypoints.cjs",
+      "status": "PRESENT",
+      "sha256": "dc3ce4c02809443947e8a3435eb3659c6ab7285caf2ad6aa73bf45e6ca8e5278"
+    },
+    {
+      "path": "tests/phase10/managed-node.test.cjs",
+      "status": "PRESENT",
+      "sha256": "013a09ea90b462c19a643142ad179d1e8e8616281b00b08546f5fd329607bd42"
+    },
+    {
+      "path": "tests/phase10/managed-python.test.cjs",
+      "status": "PRESENT",
+      "sha256": "6c378b9f39995d9e7919d5249f068ff5b69e9d8b9e707de152955bbbe587a611"
+    },
+    {
+      "path": "tests/phase12/api.test.cjs",
+      "status": "PRESENT",
+      "sha256": "f727b771ccf61c353bd7e4b66f716860f98bef0062574cfcc230f983c03f147d"
+    },
+    {
+      "path": "tests/phase13/security.test.cjs",
+      "status": "PRESENT",
+      "sha256": "c017a042a3b41f5b837ac15b3445c04fbae7022bdd3ecb385a13231e66d31ba3"
+    },
+    {
+      "path": "tests/phase15/convergence.test.cjs",
+      "status": "PRESENT",
+      "sha256": "074aa488494e382b567f5ba73409e7cc70f5ff6f4ca1391f1ac35dca4c751048"
+    },
+    {
+      "path": "tests/phase15/disable-worker.cjs",
+      "status": "PRESENT",
+      "sha256": "b18bbe540de780b696a673811c9552993f09df2b936bfb34f2d8a543a6d89cb1"
+    },
+    {
+      "path": "tests/phase15/disabled-cron.test.cjs",
+      "status": "PRESENT",
+      "sha256": "209de1595dbdb3ed31f2b63103ac61bc0d87fd1bcbeed34d0dd08e6da8a06491"
+    },
+    {
+      "path": "tests/phase15/fd-exec.test.cjs",
+      "status": "PRESENT",
+      "sha256": "9791e36970a943fc4b11da827cfe2ff3f0d909eec62062611768ff1f38e318d4"
+    },
+    {
+      "path": "tests/phase15/formal-environment.test.cjs",
+      "status": "PRESENT",
+      "sha256": "e6ddaa8404d00fbd182461b397486ed7f269d0b1fa37d5c277ae7ab1eb854a46"
+    },
+    {
+      "path": "tests/phase15/formal-lifecycle.test.cjs",
+      "status": "PRESENT",
+      "sha256": "27c89662f26765d69b4ef20ccef055e9867cbe52095e4b3f896fec86f281e901"
+    },
+    {
+      "path": "tests/phase15/lease-tree-worker.cjs",
+      "status": "PRESENT",
+      "sha256": "4946f822903d56afd4c14a59165a217d343e34eff0644ed81f3ad641a560644a"
+    },
+    {
+      "path": "tests/phase15/managed-environment-invariants.cjs",
+      "status": "PRESENT",
+      "sha256": "eea7e7d96d3333b81aded231adb115452294611e8b3fb343badc8eca6d128cbe"
+    },
+    {
+      "path": "tests/phase15/native-semantics.test.cjs",
+      "status": "PRESENT",
+      "sha256": "5d2671dcd097da95298a43dddf9e6477c956f7f9a69fc9564cdf59ba4a071eb3"
+    },
+    {
+      "path": "tests/phase15/qualification.test.cjs",
+      "status": "PRESENT",
+      "sha256": "d5fb7487c984a2a543d74b4c9c4a1dd7b0cbc8b499c88b52f914f72536f4d2c8"
+    },
+    {
+      "path": "tests/phase15/socket-recovery.test.cjs",
+      "status": "PRESENT",
+      "sha256": "800d791067a219dfe8555cc372c9f23fdfb4ae14a86196805b2a618f332d5eb0"
+    },
+    {
+      "path": "tests/phase15/socket-worker.cjs",
+      "status": "PRESENT",
+      "sha256": "5981712b1847e94d968b3e89f7cec1ab10c705150201e5555c5730488e59ad1b"
+    },
+    {
+      "path": "tests/phase15/submit-cron.cjs",
+      "status": "PRESENT",
+      "sha256": "668a1587b47472ec3e965795c5b14b5a210160ccec4b9927a9b26fd007e78a92"
+    },
+    {
+      "path": "tests/phase3/cron-publication.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/phase5/runtime.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/phase5/snapshot-main.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/phase9/subscription-delete.test.cjs",
+      "status": "PRESENT",
+      "sha256": "0cf0e604e0b98c8b10a568ccccc128ffa0d96b58792413d8270c0b87793a47d6"
+    },
+    {
+      "path": "tests/platform/api-file-routes.test.cjs",
+      "status": "PRESENT",
+      "sha256": "944249384b96acf18ff992104c899969021eab3f538ea562b042024a2209a314"
+    },
+    {
+      "path": "tests/platform/bootstrap-data.test.cjs",
+      "status": "PRESENT",
+      "sha256": "284a195bae0aa5fa883f5bcb354563396b0879ed0859bfd27c7516cbd1330e56"
+    },
+    {
+      "path": "tests/platform/environment-account-mode.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/platform/environment-entrypoint.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/platform/environment-execution.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/platform/environment-isolation.test.cjs",
+      "status": "PRESENT",
+      "sha256": "0ce56e563124bc7cb953e981e722dd1355b63a9bee4167b4cdbcdc36812d3810"
+    },
+    {
+      "path": "tests/platform/environment-transport.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/platform/fresh-schema.test.cjs",
+      "status": "PRESENT",
+      "sha256": "254855d013d8e4d5fa51fe4881785c38b61f36484275bd760d500a1d1470ec29"
+    },
+    {
+      "path": "tests/platform/runtime-bridges.test.cjs",
+      "status": "PRESENT",
+      "sha256": "047f56892891dd65d41e0b847eecfffed132564b445a4b789662bf63af61b915"
+    },
+    {
+      "path": "tests/platform/task-model-bridge.test.cjs",
+      "status": "DELETED",
+      "sha256": null
+    },
+    {
+      "path": "tests/platform/test-baseline.json",
+      "status": "PRESENT",
+      "sha256": "3aaa151d5b3640108f866a3e10f3bb3c12a80ffb150b4b2af455e35f8e129da8"
+    }
+  ]
+}

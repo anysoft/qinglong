@@ -1,32 +1,4 @@
-import { maybeSudo } from './container';
-
 export const LOG_END_SYMBOL = '　　　　　';
-
-export const TASK_COMMAND = 'task';
-export const QL_COMMAND = 'ql';
-
-export const TASK_PREFIX = `${TASK_COMMAND} `;
-export const QL_PREFIX = `${QL_COMMAND} `;
-
-export const SAMPLE_FILES = [
-  {
-    title: 'config.sample.sh',
-    value: 'sample/config.sample.sh',
-    target: 'config.sh',
-  },
-  {
-    title: 'notify.js',
-    value: 'sample/notify.js',
-    target: 'data/scripts/sendNotify.js',
-  },
-  {
-    title: 'notify.py',
-    value: 'sample/notify.py',
-    target: 'data/scripts/notify.py',
-  },
-];
-
-export const PYTHON_INSTALL_DIR = process.env.PYTHON_HOME;
 
 export const NotificationModeStringMap = {
   0: 'gotify',
@@ -53,38 +25,3 @@ export const NotificationModeStringMap = {
   21: 'wxPusherSpt',
   22: 'wpush',
 } as const;
-
-export const LINUX_DEPENDENCE_COMMAND: Record<
-  'Debian' | 'Ubuntu' | 'Alpine',
-  {
-    install: string;
-    uninstall: string;
-    info: string;
-    check(info: string): boolean;
-  }
-> = {
-  Debian: {
-    install: maybeSudo('apt-get install -y'),
-    uninstall: maybeSudo('apt-get remove -y'),
-    info: maybeSudo('dpkg-query -s'),
-    check(info: string) {
-      return info.includes('install ok installed');
-    },
-  },
-  Ubuntu: {
-    install: maybeSudo('apt-get install -y'),
-    uninstall: maybeSudo('apt-get remove -y'),
-    info: maybeSudo('dpkg-query -s'),
-    check(info: string) {
-      return info.includes('install ok installed');
-    },
-  },
-  Alpine: {
-    install: 'apk add --no-check-certificate',
-    uninstall: 'apk del',
-    info: 'apk info -es',
-    check(info: string) {
-      return info.includes('installed');
-    },
-  },
-};

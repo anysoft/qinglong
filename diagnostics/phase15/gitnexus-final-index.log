@@ -1,0 +1,23 @@
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.peerDependencyRules", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+  GitNexus Analyzer (1.6.12)
+
+  GitNexus Analyzer (1.6.12)
+[2Kanalyzer runner identity changed (stamped schema 4, this build uses schema 4); forcing a full rebuild so the index provenance matches the analyzer and dependency/native runtime that produced it.
+[2K  Skipped 26 large files (>512KB, likely generated/vendored)
+[2K  - diagnostics/phase10/impact-entrypoints.json
+[2K  - diagnostics/phase10/impact-test-updates.json
+[2K  - diagnostics/phase10/managed-runtime/final-operation-logs/operation-2.log
+[2K  - diagnostics/phase10/managed-runtime/operation-2.log
+[2K  - diagnostics/phase11/impact-core.json
+[2K  ...and 21 more (set GITNEXUS_VERBOSE=1 to list them all)
+[2K  Set GITNEXUS_MAX_FILE_SIZE=<KB> to include files above the default cap.
+{"level":40,"time":1789572102046,"name":"gitnexus","msg":"[scope-resolution] 2576 property read/write site(s) name a field that IS defined in this workspace, but only in another language, so per-language inference declined to link them. Queries for these fields return an empty result that does NOT mean \"unused\" — it means the definition anchor is in a different language. Affected: BACK_PORT (javascript), BIND_HOST (javascript), BIND_HOST_GRPC (javascript), GRPC_PORT (javascript), JSON (javascript), JWT_SECRET (javascript), NODE_ENV (javascript), QL_CONTAINER (javascript), QL_DATA_DIR (javascript), QL_DIR (javascript), …"}
+{"level":40,"time":1789572102240,"name":"gitnexus","truncation":{"truncated":true,"entryPointCandidatesDropped":1169,"entryPointsUnexplored":0,"walksCutByBudget":59,"tracesDepthCapped":0,"calleesDropped":1736,"processesDropped":0},"msg":"[processes] 422 flows reported, but whole flows are MISSING: 1169 of 1369 candidate entry point(s) never ranked in, 0 ranked entry point(s) never traced, 0 deduplicated flow(s) dropped at maxProcesses, 0 trace(s) cut at maxTraceDepth, 1736 callee(s) skipped at maxBranching, 59 walk(s) cut by the per-entry trace budget. An absent flow does NOT mean the code path does not exist."}
+{"level":30,"time":1789572118300,"name":"gitnexus","msg":"name-fallback resolution: 190 call sites (91 distinct caller-file/name pairs), 7 refused as impossible (guessed/refused by language: javascript 190/7)"}
+
+  Repository indexed successfully (34.1s)
+
+  15,394 nodes | 39,141 edges | 488 clusters | 422 flows
+  /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+

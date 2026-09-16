@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "tests": 385,
+  "pass": 385,
+  "fail": 0,
+  "skipped": 0,
+  "skip_names": [],
+  "host": "darwin",
+  "qualification": "LOCAL_ONLY"
+}

@@ -10,7 +10,7 @@ import {
   rmPath,
 } from '../config/util';
 import LogService from '../services/log';
-import { InstanceStatus, RunningInstanceModel } from '../data/runningInstance';
+import { SubscriptionModel, SubscriptionStatus } from '../data/subscription';
 import { MAX_LOG_CHUNK_BYTES, readLogChunk } from '../shared/logReader';
 const route = Router();
 const blacklist = ['.tmp', 'task-runs'];
@@ -62,8 +62,8 @@ export default (app: Router) => {
           });
         }
         const logPath = `${req.query.path as string}/${req.query.file as string}`;
-        const runningInstance = await RunningInstanceModel.findOne({
-          where: { log_path: logPath, status: InstanceStatus.running },
+        const activeSync = await SubscriptionModel.findOne({
+          where: { log_path: logPath, status: SubscriptionStatus.running },
         });
 
         const chunk = await readLogChunk(finalPath, {
@@ -74,7 +74,7 @@ export default (app: Router) => {
         res.send({
           code: 200,
           data: removeAnsi(chunk.content),
-          logStatus: runningInstance ? 'running' : undefined,
+          logStatus: activeSync ? 'running' : undefined,
           offset: chunk.offset,
           nextOffset: chunk.nextOffset,
           total: chunk.total,

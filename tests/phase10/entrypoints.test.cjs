@@ -7,11 +7,11 @@ test('manual, scheduler and protected system-cron launcher share canonical Confi
  for(const phase of ['BEFORE','AFTER_FAILURE','FINALLY'])await h.TaskHookModel.create({task_id:f.definition.id,name:phase,phase,command:'printf '+phase+'_PARITY',cwd_base:'TASK_CWD',position:1,timeout_seconds:5,failure_policy:'FAIL_EXECUTION',enabled:true});
  const shared=h.load('back/services/executionService.ts').executionService;
  const Submission=h.load('back/services/executionSubmission.ts').ExecutionSubmissionServer,server=new Submission(shared);await server.start();t.after(()=>server.stop());t.after(()=>shared.stop());
- const manual=await h.load('back/services/taskExecutionBridge.ts').default.prototype.run(f.definition.id);
- const scheduled=await h.load('back/shared/runCron.ts').runCron('must never execute this shell text',{id:String(f.definition.id)});
+ const manual=await h.load('back/services/taskExecutionFacade.ts').default.prototype.run(f.definition.id);
+ const scheduled=await require('../phase15/submit-cron.cjs')(h,f.definition.id);
  const command=h.load('back/shared/executionLauncher.ts').executionLauncher(f.definition.id);assert.ok(!command.includes('main.sh'));
  const child=spawn('/bin/sh',['-c',command],{stdio:['ignore','pipe','pipe']});let errors='';child.stderr.on('data',x=>errors+=x);assert.equal(await new Promise(resolve=>child.on('close',resolve)),0,errors);
- const runs=await shared.list(f.definition.id);assert.equal(runs.length,3);assert.equal(runs.filter(row=>row.trigger_type==='SCHEDULE').length,2);
+ const runs=await shared.list(f.definition.id);assert.equal(runs.length,3);assert.equal(runs.filter(row=>row.trigger_type==='SCHEDULE').length,1);assert.equal(runs.filter(row=>row.trigger_type==='CRON').length,1);
  for(const run of [...runs].reverse()){const result=await wait(h,run.id);assert.equal(result.status,'FAILED');assert.equal(result.exit_code,7);const log=await h.execution.log(run.id);for(const token of ['CONFIG_PARITY','BEFORE_PARITY','MAIN_PARITY','AFTER_FAILURE_PARITY','FINALLY_PARITY'])assert.ok(log.includes(token),log);await assert.rejects(fs.stat(path.join(f.root,'config.txt')),{code:'ENOENT'});}
  const sock=h.load('back/shared/executionSocket.ts').executionSocketAddress(h.root);assert.equal((await fs.stat(sock)).mode&0o777,0o600);assert.equal((await fs.stat(path.dirname(sock))).mode&0o777,0o700);
 });

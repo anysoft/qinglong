@@ -17,10 +17,6 @@ export default {
   ],
   scopes: [
     {
-      name: intl.get('定时任务'),
-      value: 'crons',
-    },
-    {
       name: intl.get('环境变量'),
       value: 'envs',
     },
@@ -29,40 +25,19 @@ export default {
       value: 'subscriptions',
     },
     {
-      name: intl.get('配置文件'),
-      value: 'configs',
-    },
-    {
-      name: intl.get('脚本管理'),
-      value: 'scripts',
-    },
-    {
       name: intl.get('日志管理'),
       value: 'logs',
-    },
-    {
-      name: intl.get('依赖管理'),
-      value: 'dependencies',
     },
     {
       name: intl.get('系统信息'),
       value: 'system',
     },
-    {
-      name: intl.get('仪表盘'),
-      value: 'dashboard',
-    },
   ],
   scopesMap: {
-    crons: intl.get('定时任务'),
     envs: intl.get('环境变量'),
     subscriptions: intl.get('订阅管理'),
-    configs: intl.get('配置文件'),
-    scripts: intl.get('脚本管理'),
     logs: intl.get('日志管理'),
-    dependencies: intl.get('依赖管理'),
     system: intl.get('系统信息'),
-    dashboard: intl.get('仪表盘'),
   },
   notificationModes: [
     { value: 'gotify', label: 'Gotify' },
@@ -537,18 +512,15 @@ export default {
   documentTitleMap: {
     '/login': intl.get('登录'),
     '/initialization': intl.get('初始化'),
-    '/crontab': intl.get('定时任务'),
+    '/tasks': 'Tasks',
     '/env': intl.get('环境变量'),
     '/subscription': intl.get('订阅管理'),
     '/config': intl.get('配置文件'),
-    '/script': intl.get('脚本管理'),
-    '/diff': intl.get('对比工具'),
+    '/workspace': 'Code Workspace',
     '/log': intl.get('日志管理'),
     '/setting': intl.get('系统设置'),
     '/error': intl.get('错误日志'),
     '/runtime-python': 'Runtime · Python',
-    '/dependence': intl.get('依赖管理'),
     '/dashboard': intl.get('仪表盘'),
   },
-  dependenceTypes: ['nodejs', 'python3', 'linux'],
 };

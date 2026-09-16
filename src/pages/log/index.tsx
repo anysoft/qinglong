@@ -105,7 +105,7 @@ const Log = () => {
   }, []);
 
   const onSearch = useCallback(
-    (e) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       const keyword = e.target.value;
       debounceSearch(keyword);
     },

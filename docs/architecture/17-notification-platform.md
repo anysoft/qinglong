@@ -1,5 +1,7 @@
 # Notification Platform — Phase 13
 
+> Phase15 convergence: schema v9 remains unchanged. The current cross-domain ownership, physical bridge removals and operations contract are in [Platform overview](00-platform-overview.md) and [Platform operations](20-platform-operations.md). Earlier bridge-retention statements below are historical. Hosted Linux qualification is a separate gate in [Phase15](../../PHASE15_REPORT.md).
+
 TaskNotificationPolicy + 显式Channel bindings → 原子Outbox → 独立Dispatcher → Provider → Delivery history。所有旧24种providers保留为独立每次请求adapter，另提供结构化WEBHOOK。Channel Secret复用protected SQLite，不从Task ENV读取。
 
 ```mermaid

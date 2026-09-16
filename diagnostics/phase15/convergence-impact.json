@@ -1,0 +1,465 @@
+[
+  {
+    "file": "back/services/triggerScheduler.ts",
+    "target": "tick",
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 2 symbols matching 'tick'. Blast radius differs per candidate (max 4 impacted at risk LOW). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "tick"
+      },
+      "direction": "upstream",
+      "totalCandidates": 2,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 4,
+      "maxRisk": "LOW",
+      "candidates": [
+        {
+          "uid": "Function:back/services/triggerScheduler.ts:TriggerScheduler.start.tick@67:4",
+          "name": "tick",
+          "kind": "Function",
+          "filePath": "back/services/triggerScheduler.ts",
+          "line": 68,
+          "score": 0.96,
+          "impactedCount": 4,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 1
+        },
+        {
+          "uid": "Method:back/services/triggerScheduler.ts:TriggerScheduler.tick#0",
+          "name": "tick",
+          "kind": "Method",
+          "filePath": "back/services/triggerScheduler.ts",
+          "line": 19,
+          "score": 0.94,
+          "impactedCount": 4,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 1
+        }
+      ]
+    }
+  },
+  {
+    "file": "back/services/taskTrigger.ts",
+    "target": "save",
+    "result": {
+      "target": {
+        "id": "Method:back/services/taskTrigger.ts:TaskTriggerService.save#3",
+        "name": "save",
+        "type": "Method",
+        "filePath": "back/services/taskTrigger.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "101 call sites invoking `save` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 101,
+        "dispatchBoundary": 0,
+        "externalBoundary": 63,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [
+        {
+          "name": "taskTriggerRoutes",
+          "type": "Function",
+          "filePath": "back/api/taskTriggers.ts",
+          "affected_process_count": 1,
+          "total_hits": 1,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:back/api/taskTriggers.ts:taskTriggerRoutes",
+            "name": "taskTriggerRoutes",
+            "filePath": "back/api/taskTriggers.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_137_tasktriggerroutes",
+                "label": "TaskTriggerRoutes → TriggerError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file": "back/services/taskTrigger.ts",
+    "target": "remove",
+    "result": {
+      "target": {
+        "id": "Method:back/services/taskTrigger.ts:TaskTriggerService.remove#3",
+        "name": "remove",
+        "type": "Method",
+        "filePath": "back/services/taskTrigger.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "30 call sites invoking `remove` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 30,
+        "dispatchBoundary": 0,
+        "externalBoundary": 32,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [
+        {
+          "name": "taskTriggerRoutes",
+          "type": "Function",
+          "filePath": "back/api/taskTriggers.ts",
+          "affected_process_count": 1,
+          "total_hits": 1,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:back/api/taskTriggers.ts:taskTriggerRoutes",
+            "name": "taskTriggerRoutes",
+            "filePath": "back/api/taskTriggers.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_137_tasktriggerroutes",
+                "label": "TaskTriggerRoutes → TriggerError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file": "back/services/cloneTaskTriggers.ts",
+    "target": "cloneTaskTriggers",
+    "result": {
+      "target": {
+        "id": "Function:back/services/cloneTaskTriggers.ts:cloneTaskTriggers",
+        "name": "cloneTaskTriggers",
+        "type": "Function",
+        "filePath": "back/services/cloneTaskTriggers.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/task.ts:TaskService.clone#3",
+            "name": "clone",
+            "filePath": "back/services/task.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file": "back/services/discovery.ts",
+    "target": "apply",
+    "result": {
+      "error": "Target 'apply' not found",
+      "target": {
+        "name": "apply"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "file": "src/components/tag.tsx",
+    "target": "handleInputChange",
+    "result": {
+      "target": {
+        "id": "Function:src/components/tag.tsx:EditableTagGroup.handleInputChange@28:2",
+        "name": "handleInputChange",
+        "type": "Function",
+        "filePath": "src/components/tag.tsx"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file": "src/pages/diff/index.tsx",
+    "target": "originFileChange",
+    "result": {
+      "target": {
+        "id": "Function:src/pages/diff/index.tsx:Diff.originFileChange@75:2",
+        "name": "originFileChange",
+        "type": "Function",
+        "filePath": "src/pages/diff/index.tsx"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file": "src/pages/log/index.tsx",
+    "target": "onSearch",
+    "result": {
+      "error": "Target 'onSearch' not found",
+      "target": {
+        "name": "onSearch"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "file": "src/pages/setting/security.tsx",
+    "target": "onChange",
+    "result": {
+      "target": {
+        "id": "Function:src/pages/setting/security.tsx:SecuritySettings.onChange@97:2",
+        "name": "onChange",
+        "type": "Function",
+        "filePath": "src/pages/setting/security.tsx"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file": "scripts/ci/ci.cjs",
+    "target": "typecheck",
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 2 symbols matching 'typecheck'. Blast radius differs per candidate (max 4 impacted at risk UNKNOWN; LOW among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "typecheck"
+      },
+      "direction": "upstream",
+      "totalCandidates": 2,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 4,
+      "maxRisk": "UNKNOWN",
+      "knownMaxRisk": "LOW",
+      "candidates": [
+        {
+          "uid": "Function:scripts/ci/ci.cjs:typecheck",
+          "name": "typecheck",
+          "kind": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "line": 153,
+          "score": 0.96,
+          "impactedCount": 4,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 3
+        },
+        {
+          "uid": "Property:scripts/ci/ci.cjs:main.typecheck@580:4",
+          "name": "typecheck",
+          "kind": "",
+          "filePath": "scripts/ci/ci.cjs",
+          "line": 581,
+          "score": 0.9,
+          "impactedCount": 0,
+          "risk": "UNKNOWN",
+          "riskSharedAxes": "UNKNOWN",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 0,
+          "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+        }
+      ]
+    }
+  }
+]

@@ -5,43 +5,12 @@ import RetentionService from '../services/retention';
 import { MAX_RETENTION_DAYS } from '../shared/retention';
 
 const route = Router();
-const policySchema = {
-  runningInstanceRetentionDays: Joi.number()
-    .integer()
-    .min(0)
-    .max(MAX_RETENTION_DAYS)
-    .required(),
-  cronStatRetentionDays: Joi.number()
-    .integer()
-    .min(0)
-    .max(MAX_RETENTION_DAYS)
-    .required(),
-};
 const cleanupSchema = {
-  ...policySchema,
-  dependenceCacheTypes: Joi.array()
-    .items(Joi.string().valid('node', 'python3'))
-    .unique()
-    .default([]),
-  compactDatabase: Joi.boolean().default(false),
+  logRetentionDays: Joi.number().integer().min(0).max(MAX_RETENTION_DAYS).required(),
 };
 
 export default (app: Router) => {
   app.use('/system/storage-retention', route);
-
-  route.put(
-    '/config',
-    celebrate({ body: Joi.object(policySchema) }),
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const service = Container.get(RetentionService);
-        const data = await service.updatePolicy(req.body);
-        res.send({ code: 200, data });
-      } catch (error) {
-        next(error);
-      }
-    },
-  );
 
   route.post(
     '/preview',

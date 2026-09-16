@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: formal Shell Task preserves complex ENV and UNSET without interpolation or secret disclosure
+ok 1 - formal Shell Task preserves complex ENV and UNSET without interpolation or secret disclosure
+  ---
+  duration_ms: 1906.874417
+  type: 'test'
+  ...
+# Subtest: 50 live formal Resolver/Runner processes retain A across scoped ENV update to B
+ok 2 - 50 live formal Resolver/Runner processes retain A across scoped ENV update to B
+  ---
+  duration_ms: 8826.745375
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10988.156959

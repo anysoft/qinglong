@@ -1,5 +1,7 @@
 # TaskRun Observability — Phase 13
 
+> Phase15 convergence: schema v9 remains unchanged. The current cross-domain ownership, physical bridge removals and operations contract are in [Platform overview](00-platform-overview.md) and [Platform operations](20-platform-operations.md). Earlier bridge-retention statements below are historical. Hosted Linux qualification is a separate gate in [Phase15](../../PHASE15_REPORT.md).
+
 当前schema v9。TaskRun是唯一执行历史，RunObservability提供SQL历史/统计，TaskRunEvents提供少量生命周期Timeline，RunLogService提供文件增量读取。Health由终态维护，与resource readiness独立。
 
 ```mermaid

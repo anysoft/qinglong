@@ -20,7 +20,6 @@ async function until(fn){const deadline=Date.now()+60000;let last;while(Date.now
  fs.symlinkSync(path.join(root,'node_modules'),path.join(tmp,'node_modules'));fs.mkdirSync(path.join(tmp,'back'));fs.symlinkSync(path.join(root,'back/protos'),path.join(tmp,'back/protos'));
  fs.mkdirSync(path.join(tmp,'static'));for(const d of ['build','dist'])fs.symlinkSync(path.join(root,'static',d),path.join(tmp,'static',d));
  fs.mkdirSync(path.join(tmp,'home'));fs.mkdirSync(path.join(tmp,'bin'));
- fs.symlinkSync(path.join(tmp,'shell/task.sh'),path.join(tmp,'bin/task'));fs.symlinkSync(path.join(tmp,'shell/update.sh'),path.join(tmp,'bin/ql'));
  fs.writeFileSync(path.join(tmp,'.env'),'JWT_SECRET=' + acceptance.secret('local-e2e-only-backend-secret') + '\n');
  const origin=path.join(tmp,'origin');fs.mkdirSync(origin);
  const git=(...args)=>execFileSync('git',args,{cwd:origin,stdio:'pipe'});
@@ -82,8 +81,21 @@ async function until(fn){const deadline=Date.now()+60000;let last;while(Date.now
  await repositoryAction('Initialize','initialize');await repositoryAction('Fetch','fetch');mark('browser-initialize-fetch');
  await page.goto(base+'/subscription');await page.getByRole('button',{name:'创建订阅',exact:true}).click();modal=page.locator('.ant-modal:visible');assert.doesNotMatch(await modal.innerText(),/Legacy|Managed|Manual URL|Convert|Pull Type|Pull Option|Credential Override/i);await modal.getByLabel('名称',{exact:true}).fill('E2E Subscription');await modal.getByLabel('Repository',{exact:true}).locator('xpath=ancestor::div[contains(@class,"ant-select-selector")]').click();await page.locator('.ant-select-dropdown:visible').getByText(/E2E Repo/).click();await modal.getByLabel('Branch',{exact:true}).fill('main');await confirm();
  const sub=await until(async()=>(await api('/subscriptions')).data[0]);await page.goto(base+'/subscription');assert.ok(sub.id);mark('browser-subscription-create-branch');
- // Open the existing row editor through its name link.
- await page.getByRole('row').filter({hasText:'E2E Subscription'}).locator('.ant-dropdown-trigger').click();await page.getByText('编辑',{exact:true}).click();await page.getByRole('button',{name:'准备已保存的订阅'}).click();await until(async()=>((await api('/subscriptions')).data[0].worktree_id));await page.locator('.ant-modal:visible').getByRole('button',{name:/取.*消/}).click();
+ // A slow branch query must not race the Worktree prepare mutation.
+ const refsRoute='**/api/repositories/*/refs';
+ await page.route(refsRoute,async route=>{await delay(300);await route.continue();});
+ for(let round=0;round<10;round++) {
+  await page.getByRole('row').filter({hasText:'E2E Subscription'}).locator('.ant-dropdown-trigger').click();
+  const refsRequest=page.waitForRequest(request=>/\/api\/repositories\/\d+\/refs$/.test(new URL(request.url()).pathname));
+  await page.getByText('编辑',{exact:true}).click();await refsRequest;
+  const prepare=page.getByRole('button',{name:'准备已保存的订阅'});
+  assert.equal(await prepare.isDisabled(),true);
+  const prepared=page.waitForResponse(response=>new URL(response.url()).pathname===`/api/subscriptions/${sub.id}/prepare`&&response.request().method()==='POST');
+  await prepare.click();const response=await prepared;assert.equal(response.status(),200);
+  await until(async()=>((await api('/subscriptions')).data[0].worktree_id));
+  await page.locator('.ant-modal:visible').getByRole('button',{name:/取.*消/}).click();
+ }
+ await page.unroute(refsRoute);mark('subscription-prepare-waits-for-refs-ten-rounds');
  await page.getByRole('row').filter({hasText:'E2E Subscription'}).getByText('运行',{exact:true}).click();await confirm();await until(async()=>((await api('/subscriptions')).data[0].last_sync_state==='SUCCESS'));mark('browser-prepare-sync-discovery');
  await page.goto(base+`/repository-workspace?id=${repo.id}`);await page.getByRole('tab',{name:/Worktrees/}).click();await page.getByRole('cell',{name:'branch: main',exact:true}).waitFor();mark('browser-worktree-view');
  async function variable(name,value,secret=false){await page.getByRole('button',{name:'添加变量',exact:true}).last().click();const dialog=page.locator('.ant-modal:visible');await dialog.getByLabel('变量名',{exact:true}).fill(name);if(secret)await dialog.getByLabel('Secret',{exact:true}).setChecked(true);await dialog.getByLabel(secret?'新 Secret 值':'值（允许空字符串）',{exact:true}).fill(value);await confirm();}
