@@ -1,0 +1,65 @@
+TAP version 13
+# CI stage: timeout-fixture
+# Subtest: failed test still collects and packages bounded diagnostics with machine summary
+ok 1 - failed test still collects and packages bounded diagnostics with machine summary
+  ---
+  duration_ms: 100.209291
+  type: 'test'
+  ...
+# Subtest: canary rejects publication and invalidates a previous archive
+ok 2 - canary rejects publication and invalidates a previous archive
+  ---
+  duration_ms: 167.083292
+  type: 'test'
+  ...
+# Subtest: random fixture secrets and private keys are blocked
+ok 3 - random fixture secrets and private keys are blocked
+  ---
+  duration_ms: 160.004917
+  type: 'test'
+  ...
+# Subtest: artifact paths reject traversal, symlinks, operational DB and oversized logs
+ok 4 - artifact paths reject traversal, symlinks, operational DB and oversized logs
+  ---
+  duration_ms: 239.240625
+  type: 'test'
+  ...
+# Subtest: cleanup rejects foreign roots and is idempotent for its owned root
+ok 5 - cleanup rejects foreign roots and is idempotent for its owned root
+  ---
+  duration_ms: 4.892375
+  type: 'test'
+  ...
+# Subtest: summary derives counts and exposes failures, cancellations, scope skips and upload failures
+ok 6 - summary derives counts and exposes failures, cancellations, scope skips and upload failures
+  ---
+  duration_ms: 0.5015
+  type: 'test'
+  ...
+# Subtest: workflow parses and uses read-only fixed Ubuntu official-action orchestration
+ok 7 - workflow parses and uses read-only fixed Ubuntu official-action orchestration
+  ---
+  duration_ms: 72.779625
+  type: 'test'
+  ...
+# Subtest: summary cannot turn blocked core or missing successful-core evidence into PASS
+ok 8 - summary cannot turn blocked core or missing successful-core evidence into PASS
+  ---
+  duration_ms: 0.322083
+  type: 'test'
+  ...
+# Subtest: supervised stage timeout stops owned child and grandchild and retains failure evidence
+ok 9 - supervised stage timeout stops owned child and grandchild and retains failure evidence
+  ---
+  duration_ms: 1611.561209
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2412.095166

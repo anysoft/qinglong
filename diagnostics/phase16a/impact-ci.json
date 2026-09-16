@@ -1,0 +1,67 @@
+[
+  {
+    "target": "run",
+    "file_path": "scripts/ci/runner.cjs",
+    "result": {
+      "error": "Target 'run' not found",
+      "target": {
+        "name": "run"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "target": "collect",
+    "file_path": "scripts/ci/evidence.cjs",
+    "result": {
+      "error": "Target 'collect' not found",
+      "target": {
+        "name": "collect"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "target": "summarize",
+    "file_path": "scripts/ci/evidence.cjs",
+    "result": {
+      "error": "Target 'summarize' not found",
+      "target": {
+        "name": "summarize"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "target": "core",
+    "file_path": "scripts/ci/ci.cjs",
+    "result": {
+      "error": "Target 'core' not found",
+      "target": {
+        "name": "core"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "target": "release images receive the same-run artifact and verify it before use",
+    "file_path": "test/back/build-provenance.test.cjs",
+    "result": {
+      "error": "Target 'release images receive the same-run artifact and verify it before use' not found",
+      "target": {
+        "name": "release images receive the same-run artifact and verify it before use"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  }
+]

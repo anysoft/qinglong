@@ -1,0 +1,27 @@
+{
+  "historical": 22,
+  "diagnostics": {
+    "src/app.ts: error TS2305: Module '\"@umijs/max\"' has no exported member 'setLocale'.": 1,
+    "src/components/tag.tsx: error TS7006: Parameter 'e' implicitly has an 'any' type.": 1,
+    "src/layouts/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'history'.": 1,
+    "src/layouts/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'Link'.": 1,
+    "src/layouts/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'Outlet'.": 1,
+    "src/layouts/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'useLocation'.": 1,
+    "src/pages/dependence/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'useOutletContext'.": 1,
+    "src/pages/diff/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'useOutletContext'.": 1,
+    "src/pages/diff/index.tsx: error TS7006: Parameter 'op' implicitly has an 'any' type.": 1,
+    "src/pages/error/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'history'.": 1,
+    "src/pages/error/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'useOutletContext'.": 1,
+    "src/pages/initialization/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'history'.": 1,
+    "src/pages/log/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'useOutletContext'.": 1,
+    "src/pages/log/index.tsx: error TS7006: Parameter 'e' implicitly has an 'any' type.": 1,
+    "src/pages/login/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'history'.": 1,
+    "src/pages/login/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'useOutletContext'.": 1,
+    "src/pages/setting/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'useOutletContext'.": 1,
+    "src/pages/setting/security.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'history'.": 1,
+    "src/pages/setting/security.tsx: error TS7006: Parameter 'e' implicitly has an 'any' type.": 1,
+    "src/pages/subscription/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'history'.": 1,
+    "src/pages/subscription/index.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'useOutletContext'.": 1,
+    "src/utils/http.tsx: error TS2305: Module '\"@umijs/max\"' has no exported member 'history'.": 1
+  }
+}

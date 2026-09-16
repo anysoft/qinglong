@@ -1,10 +1,11 @@
+const evidenceDirectory=process.env.QL_MANAGED_DIR||__dirname;
 // Online setup only. Retain this owned test fixture for subsequent OFFLINE venv/pip gates.
 const fs=require('node:fs/promises'),path=require('node:path');
 const {runtimeFixture}=require('../../tests/phase6/helpers.cjs');
 (async()=>{
  const callbacks=[],h=await runtimeFixture({after:f=>callbacks.push(f)},{real:true});
  const result={root:h.root,managed:true,fixture_provider:false,version:'3.13.15',started_at:new Date().toISOString()};
- const destination=path.resolve('diagnostics/phase12/managed-runtime');await fs.mkdir(destination,{recursive:true});
+ const destination=path.join(evidenceDirectory,'managed-runtime');await fs.mkdir(destination,{recursive:true});
  let timer;try{
  timer=setInterval(async()=>{const op=(await h.service.operations())[0];console.log(JSON.stringify(op&&{id:op.id,status:op.status,stage:op.stage}));},15000);
  async function run(type,input){const op=await h.run(type,input);await fs.copyFile(await h.paths.log(op.id),path.join(destination,'operation-'+op.id+'.log'));if(op.status!=='SUCCESS')throw Error(type+':'+op.error_code);return op;}

@@ -1,0 +1,1974 @@
+{
+  "summary": {
+    "changed_count": 258,
+    "affected_count": 8,
+    "changed_files": 93,
+    "risk_level": "high"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:PHASE16A_REPORT.md:L1:Phase 16A Status: PARTIAL",
+      "name": "Phase 16A Status: PARTIAL",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L7:状态矩阵",
+      "name": "状态矩阵",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L23:Workflow 与范围",
+      "name": "Workflow 与范围",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L35:执行与隔离",
+      "name": "执行与隔离",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L49:诊断与安全",
+      "name": "诊断与安全",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L59:本机验证",
+      "name": "本机验证",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L86:证据入口",
+      "name": "证据入口",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L95:使用与后续边界",
+      "name": "使用与后续边界",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:README.md:L90:推荐使用 pnpm https://pnpm.io/zh/installation",
+      "name": "推荐使用 pnpm https://pnpm.io/zh/installation",
+      "type": "Section",
+      "filePath": "README.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:README.md:L108:名称来源",
+      "name": "名称来源",
+      "type": "Section",
+      "filePath": "README.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:README.md:L116:Linux CI",
+      "name": "Linux CI",
+      "type": "Section",
+      "filePath": "README.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:acceptance",
+      "name": "acceptance",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:evidenceDirectory",
+      "name": "evidenceDirectory",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:flushBrowser",
+      "name": "flushBrowser",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/browser-e2e.cjs:fn@71:1.JWT_SECRET@210:4",
+      "name": "JWT_SECRET",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@71:1.start@218:2",
+      "name": "start",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@71:1.login@280:2",
+      "name": "login",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@71:1.api@291:2",
+      "name": "api",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@71:1.cli@708:2",
+      "name": "cli",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:evidenceDirectory",
+      "name": "evidenceDirectory",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.result@3:824",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.run@3:888.done@3:919",
+      "name": "done",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.run@3:888",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.fixtures@3:39",
+      "name": "fixtures",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.kind@3:859",
+      "name": "kind",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.operations@3:869",
+      "name": "operations",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.root@3:864",
+      "name": "root",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.status@3:25",
+      "name": "status",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-node.cjs:evidenceDirectory",
+      "name": "evidenceDirectory",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/prepare-managed-node.cjs:fn@3:1.run@8:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-python.cjs:evidenceDirectory",
+      "name": "evidenceDirectory",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/browser-backup.cjs:acceptance",
+      "name": "acceptance",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/browser-backup.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/browser-backup.cjs:evidenceDirectory",
+      "name": "evidenceDirectory",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/browser-backup.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/browser-backup.cjs:browser-backup",
+      "name": "browser-backup",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/browser-backup.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/browser-backup.cjs:fn@3:15.file@17:552",
+      "name": "file",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/browser-backup.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/browser-backup.cjs:fn@3:15.cli@23:1",
+      "name": "cli",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/browser-backup.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/browser-observability.cjs:acceptance",
+      "name": "acceptance",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/browser-observability.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/browser-observability.cjs:evidenceDirectory",
+      "name": "evidenceDirectory",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/browser-observability.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/browser-observability.cjs:browser-observability",
+      "name": "browser-observability",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/browser-observability.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase14/browser-provider.cjs:install",
+      "name": "install",
+      "type": "Method",
+      "filePath": "diagnostics/phase14/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/browser-provider.cjs:manifest",
+      "name": "manifest",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/platform-e2e.cjs:acceptance",
+      "name": "acceptance",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/platform-e2e.cjs:evidenceDirectory",
+      "name": "evidenceDirectory",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:flushBrowser",
+      "name": "flushBrowser",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.BACK_PORT@48:208",
+      "name": "BACK_PORT",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.BIND_HOST@48:254",
+      "name": "BIND_HOST",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.BIND_HOST_GRPC@48:276",
+      "name": "BIND_HOST_GRPC",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.GRPC_PORT@48:231",
+      "name": "GRPC_PORT",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.HOME@48:72",
+      "name": "HOME",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.JWT_SECRET@48:146",
+      "name": "JWT_SECRET",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.NODE_ENV@48:323",
+      "name": "NODE_ENV",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.PATH@48:99",
+      "name": "PATH",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.QL_DATA_DIR@48:38",
+      "name": "QL_DATA_DIR",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.QL_DIR@48:27",
+      "name": "QL_DIR",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase14/platform-e2e.cjs:fn@15:1.QL_SCHEDULER@48:303",
+      "name": "QL_SCHEDULER",
+      "type": "Property",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.start@49:1",
+      "name": "start",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase14/platform-e2e.cjs:fn@15:1.runLogFrames@55:295",
+      "name": "runLogFrames",
+      "type": "Const",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.login@58:1",
+      "name": "login",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.api@60:1",
+      "name": "api",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.repositoryAction@68:1",
+      "name": "repositoryAction",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.addTrigger@146:1",
+      "name": "addTrigger",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.applyResponse@177:1",
+      "name": "applyResponse",
+      "type": "Function",
+      "filePath": "diagnostics/phase14/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/graph-review.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/graph-review.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/graph-review.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/01-ci-architecture.md:L1:CI architecture",
+      "name": "CI architecture",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/01-ci-architecture.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/02-ubuntu-runner.md:L1:Ubuntu runner",
+      "name": "Ubuntu runner",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/02-ubuntu-runner.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/03-ci-scripts.md:L1:Repository entrypoints",
+      "name": "Repository entrypoints",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/03-ci-scripts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/04-job-matrix.md:L1:Jobs and triggers",
+      "name": "Jobs and triggers",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/04-job-matrix.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/05-diagnostics-artifacts.md:L1:Diagnostics and artifacts",
+      "name": "Diagnostics and artifacts",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/05-diagnostics-artifacts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/06-managed-runtime-ci.md:L1:Managed runtimes",
+      "name": "Managed runtimes",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/06-managed-runtime-ci.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/07-browser-ci.md:L1:Browser acceptance",
+      "name": "Browser acceptance",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/07-browser-ci.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/08-workflow-security.md:L1:Workflow security",
+      "name": "Workflow security",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/08-workflow-security.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/09-local-reproduction.md:L1:Local Ubuntu reproduction",
+      "name": "Local Ubuntu reproduction",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/09-local-reproduction.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/10-phase16a-test-report.md:L1:Phase16A validation",
+      "name": "Phase16A validation",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/10-phase16a-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/acceptance.cjs:crypto",
+      "name": "crypto",
+      "type": "Const",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/acceptance.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/acceptance.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/acceptance.cjs:registry",
+      "name": "registry",
+      "type": "Const",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/acceptance.cjs:labels",
+      "name": "labels",
+      "type": "Const",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:read",
+      "name": "read",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:secret",
+      "name": "secret",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:values",
+      "name": "values",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:register",
+      "name": "register",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:payload",
+      "name": "payload",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:redact",
+      "name": "redact",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:output",
+      "name": "output",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:startIdentity",
+      "name": "startIdentity",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:track",
+      "name": "track",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/acceptance.cjs:track.rows@67:2",
+      "name": "rows",
+      "type": "Const",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/acceptance.cjs:observe",
+      "name": "observe",
+      "type": "Function",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/acceptance.cjs:observe.network@73:2",
+      "name": "network",
+      "type": "Const",
+      "filePath": "scripts/ci/acceptance.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:evidence",
+      "name": "evidence",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:command",
+      "name": "command",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:tap",
+      "name": "tap",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:preflight",
+      "name": "preflight",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.os@69:4",
+      "name": "os",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.osVersion@70:4",
+      "name": "osVersion",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.arch@71:4",
+      "name": "arch",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.kernel@72:4",
+      "name": "kernel",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.runner@73:4",
+      "name": "runner",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.uname@74:4",
+      "name": "uname",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.node@75:4",
+      "name": "node",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.git@76:4",
+      "name": "git",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.flock@77:4",
+      "name": "flock",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.tools@78:4",
+      "name": "tools",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.chrome@79:4",
+      "name": "chrome",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.filesystem@80:4",
+      "name": "filesystem",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.disk@81:4",
+      "name": "disk",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.memory@82:4",
+      "name": "memory",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:preflight.status@83:4",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:install",
+      "name": "install",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:build",
+      "name": "build",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:typecheck",
+      "name": "typecheck",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:typecheck.current@161:2",
+      "name": "current",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.historical@176:4",
+      "name": "historical",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.remaining@177:4",
+      "name": "remaining",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.new@178:4",
+      "name": "new",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.diagnostics@182:4",
+      "name": "diagnostics",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.raw_failed@183:4",
+      "name": "raw_failed",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:typecheck.status@184:4",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:staticCheck",
+      "name": "staticCheck",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:core",
+      "name": "core",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:core.built@205:2",
+      "name": "built",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:core.tests@205:2",
+      "name": "tests",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/ci.cjs:core.types@205:2",
+      "name": "types",
+      "type": "Const",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:provision",
+      "name": "provision",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:managed",
+      "name": "managed",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:browser",
+      "name": "browser",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:runtimeCleanup",
+      "name": "runtimeCleanup",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:cleanup",
+      "name": "cleanup",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:job",
+      "name": "job",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:finish",
+      "name": "finish",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:main",
+      "name": "main",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.preflight@521:4",
+      "name": "preflight",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.install@522:4",
+      "name": "install",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.build@523:4",
+      "name": "build",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.core@524:4",
+      "name": "core",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.managed@525:4",
+      "name": "managed",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.browser@526:4",
+      "name": "browser",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.static@527:4",
+      "name": "static",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.collect@528:4",
+      "name": "collect",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.package@529:4",
+      "name": "package",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:main.cleanup@530:4",
+      "name": "cleanup",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.typecheck@534:4",
+      "name": "typecheck",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.provision@535:4",
+      "name": "provision",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.finish@536:4",
+      "name": "finish",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:crypto",
+      "name": "crypto",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:repository",
+      "name": "repository",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/context.cjs:atomic",
+      "name": "atomic",
+      "type": "Function",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/context.cjs:context",
+      "name": "context",
+      "type": "Function",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/context.cjs:owned",
+      "name": "owned",
+      "type": "Function",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/context.cjs:environment",
+      "name": "environment",
+      "type": "Function",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/evidence.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/evidence.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/evidence.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/evidence.cjs:maximum",
+      "name": "maximum",
+      "type": "Const",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/evidence.cjs:walk",
+      "name": "walk",
+      "type": "Function",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/evidence.cjs:walk.file@10:4",
+      "name": "file",
+      "type": "Const",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/evidence.cjs:walk.st@10:4",
+      "name": "st",
+      "type": "Const",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/evidence.cjs:safeName",
+      "name": "safeName",
+      "type": "Function",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/evidence.cjs:artifactDirectory",
+      "name": "artifactDirectory",
+      "type": "Function",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/evidence.cjs:collect",
+      "name": "collect",
+      "type": "Function",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/evidence.cjs:collect.pending@89:2",
+      "name": "pending",
+      "type": "Const",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.phase@179:4",
+      "name": "phase",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.job@180:4",
+      "name": "job",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.status@181:4",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.collection@182:4",
+      "name": "collection",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.error_code@183:4",
+      "name": "error_code",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.run_id@184:4",
+      "name": "run_id",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.commit@185:4",
+      "name": "commit",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.bytes@189:4",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:collect.inventory@190:4",
+      "name": "inventory",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/evidence.cjs:pack",
+      "name": "pack",
+      "type": "Function",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/evidence.cjs:summarize",
+      "name": "summarize",
+      "type": "Function",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.phase@262:4",
+      "name": "phase",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.commit@263:4",
+      "name": "commit",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.runner@264:4",
+      "name": "runner",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.jobs@265:4",
+      "name": "jobs",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.tests@266:4",
+      "name": "tests",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.typecheck@267:4",
+      "name": "typecheck",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.missing_core_evidence@268:4",
+      "name": "missing_core_evidence",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.status@269:4",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/evidence.cjs:summarize.qualification@282:4",
+      "name": "qualification",
+      "type": "Property",
+      "filePath": "scripts/ci/evidence.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-preload.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-preload.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-preload.cjs:destination",
+      "name": "destination",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-preload.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-preload.cjs:file",
+      "name": "file",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-preload.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-tests.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-tests.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-tests.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-tests.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-tests.cjs:execution",
+      "name": "execution",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-tests.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-tests.cjs:reports",
+      "name": "reports",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-tests.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-tests.cjs:tests",
+      "name": "tests",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-tests.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-tests.cjs:snapshots",
+      "name": "snapshots",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-tests.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-tests.cjs:privateRoot",
+      "name": "privateRoot",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-tests.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/managed-tests.cjs:result",
+      "name": "result",
+      "type": "Const",
+      "filePath": "scripts/ci/managed-tests.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/report-snapshots.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/report-snapshots.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/report-snapshots.cjs:allowed",
+      "name": "allowed",
+      "type": "Const",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/report-snapshots.cjs:restore",
+      "name": "restore",
+      "type": "Function",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/report-snapshots.cjs:save",
+      "name": "save",
+      "type": "Function",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/report-snapshots.cjs:recover",
+      "name": "recover",
+      "type": "Function",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/runner.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/runner.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/runner.cjs:run",
+      "name": "run",
+      "type": "Function",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/runner.cjs:run.truncated@9:2",
+      "name": "truncated",
+      "type": "Const",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/runner.cjs:run.observe@36:2",
+      "name": "observe",
+      "type": "Function",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/runner.cjs:run.monitor@73:2",
+      "name": "monitor",
+      "type": "Function",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/runner.cjs:run.interrupt@82:2",
+      "name": "interrupt",
+      "type": "Function",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/runner.cjs:run.name@104:4",
+      "name": "name",
+      "type": "Property",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/runner.cjs:run.status@105:4",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/runner.cjs:run.supervision_failed@106:4",
+      "name": "supervision_failed",
+      "type": "Property",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/runner.cjs:run.exit_code@107:4",
+      "name": "exit_code",
+      "type": "Property",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/runner.cjs:run.started@108:4",
+      "name": "started",
+      "type": "Property",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/runner.cjs:run.finished@109:4",
+      "name": "finished",
+      "type": "Property",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/runner.cjs:run.bytes@110:4",
+      "name": "bytes",
+      "type": "Property",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/runner.cjs:run.truncated@111:4",
+      "name": "truncated",
+      "type": "Property",
+      "filePath": "scripts/ci/runner.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:yaml",
+      "name": "yaml",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/static.cjs:audit",
+      "name": "audit",
+      "type": "Function",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:audit.text@6:2",
+      "name": "text",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:audit.workflow@6:2",
+      "name": "workflow",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:audit.s@37:4",
+      "name": "s",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.status@57:4",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.workflow@58:4",
+      "name": "workflow",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.shellcheck@59:4",
+      "name": "shellcheck",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.bash_syntax@60:4",
+      "name": "bash_syntax",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.permissions@61:4",
+      "name": "permissions",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.custom_secrets@62:4",
+      "name": "custom_secrets",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:report",
+      "name": "report",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:out",
+      "name": "out",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/summary.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/summary.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/summary.cjs:artifacts",
+      "name": "artifacts",
+      "type": "Const",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/summary.cjs:needs",
+      "name": "needs",
+      "type": "Const",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/summary.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/summary.cjs:visit",
+      "name": "visit",
+      "type": "Function",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/summary.cjs:coreArtifact",
+      "name": "coreArtifact",
+      "type": "Const",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/summary.cjs:result",
+      "name": "result",
+      "type": "Const",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/summary.cjs:lines",
+      "name": "lines",
+      "type": "Const",
+      "filePath": "scripts/ci/summary.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:crypto",
+      "name": "crypto",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/ci/foundation.test.cjs:fixture",
+      "name": "fixture",
+      "type": "Function",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:fn@67:60.r@68:2",
+      "name": "r",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:fn@163:95.pidFile@164:2",
+      "name": "pidFile",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": [
+    {
+      "id": "proc_37_run",
+      "name": "Run → Owned",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "environment",
+          "step": 3
+        },
+        {
+          "symbol": "owned",
+          "step": 4
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_40_job",
+      "name": "Job → SafeName",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "collect",
+          "step": 2
+        },
+        {
+          "symbol": "artifactDirectory",
+          "step": 3
+        },
+        {
+          "symbol": "safeName",
+          "step": 4
+        },
+        {
+          "symbol": "job",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_76_browser_backup",
+      "name": "Browser-backup → Read",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "secret",
+          "step": 2
+        },
+        {
+          "symbol": "read",
+          "step": 3
+        },
+        {
+          "symbol": "browser-backup",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_77_run",
+      "name": "Run → Atomic",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "atomic",
+          "step": 3
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_78_run",
+      "name": "Run → Interrupt",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "interrupt",
+          "step": 3
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_82_job",
+      "name": "Job → Walk",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "pack",
+          "step": 2
+        },
+        {
+          "symbol": "walk",
+          "step": 3
+        },
+        {
+          "symbol": "job",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_165_job",
+      "name": "Job → Owned",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "owned",
+          "step": 3
+        },
+        {
+          "symbol": "collect",
+          "step": 2
+        },
+        {
+          "symbol": "job",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_194_job",
+      "name": "Job → Atomic",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "context",
+          "step": 2
+        },
+        {
+          "symbol": "atomic",
+          "step": 3
+        },
+        {
+          "symbol": "job",
+          "step": 1
+        }
+      ]
+    }
+  ]
+}

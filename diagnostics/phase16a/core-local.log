@@ -1,0 +1,6 @@
+CI stage: backend-build
+CI stage: frontend-build
+CI stage: platform-tests
+CI stage: typecheck
+CI stage: ci-foundation-tests
+CI stage: ci-static

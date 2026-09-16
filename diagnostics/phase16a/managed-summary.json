@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "environment": {
+    "tests": 3,
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0,
+    "skip_names": []
+  },
+  "execution": {
+    "tests": 2,
+    "pass": 2,
+    "fail": 0,
+    "skipped": 0,
+    "skip_names": []
+  },
+  "shell": {
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "skipped": 0,
+    "skip_names": []
+  }
+}

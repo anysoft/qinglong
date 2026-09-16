@@ -1,0 +1,72 @@
+{
+  "phase": "16A",
+  "job": "core",
+  "status": "PASS",
+  "collection": "PASS",
+  "error_code": null,
+  "run_id": "1789546202617",
+  "commit": "e27f2380905a5e272466db7b937f825785fd0bd1",
+  "bytes": 139090,
+  "inventory": [
+    {
+      "path": "logs/backend-build.log",
+      "bytes": 0
+    },
+    {
+      "path": "logs/ci-foundation-tests.log",
+      "bytes": 2127
+    },
+    {
+      "path": "logs/ci-static.log",
+      "bytes": 160
+    },
+    {
+      "path": "logs/frontend-build.log",
+      "bytes": 15652
+    },
+    {
+      "path": "logs/platform-tests.log",
+      "bytes": 115636
+    },
+    {
+      "path": "logs/typecheck.log",
+      "bytes": 2294
+    },
+    {
+      "path": "tests/backend-build.json",
+      "bytes": 218
+    },
+    {
+      "path": "tests/ci-foundation-tests.json",
+      "bytes": 227
+    },
+    {
+      "path": "tests/ci-static.json",
+      "bytes": 216
+    },
+    {
+      "path": "tests/frontend-build.json",
+      "bytes": 223
+    },
+    {
+      "path": "tests/platform-tests.json",
+      "bytes": 224
+    },
+    {
+      "path": "tests/typecheck-budget.json",
+      "bytes": 117
+    },
+    {
+      "path": "tests/typecheck.json",
+      "bytes": 217
+    },
+    {
+      "path": "static/audit.json",
+      "bytes": 184
+    },
+    {
+      "path": "static/host.json",
+      "bytes": 1042
+    }
+  ]
+}

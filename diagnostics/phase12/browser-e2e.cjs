@@ -1,3 +1,5 @@
+const acceptance=require('../../scripts/ci/acceptance.cjs');
+const evidenceDirectory=acceptance.output(__dirname);
 const fs = require('node:fs'),
   os = require('node:os'),
   path = require('node:path'),
@@ -18,6 +20,7 @@ const evidence = {
   linux: process.platform === 'linux',
 };
 let rejectSsh = false;
+let flushBrowser=()=>{};
 let backend,
   browser,
   ssh,
@@ -89,7 +92,7 @@ async function until(fn) {
   fs.symlinkSync(path.join(tmp, 'shell/update.sh'), path.join(tmp, 'bin/ql'));
   fs.writeFileSync(
     path.join(tmp, '.env'),
-    'JWT_SECRET=local-e2e-only-backend-secret\n',
+    'JWT_SECRET=' + acceptance.secret('local-e2e-only-backend-secret') + '\n',
   );
   const origin = path.join(tmp, 'origin');
   fs.mkdirSync(origin);
@@ -205,7 +208,7 @@ async function until(fn) {
     QL_DATA_DIR: path.join(tmp, 'data'),
     HOME: path.join(tmp, 'home'),
     PATH: path.join(tmp, 'bin') + ':' + process.env.PATH,
-    JWT_SECRET: 'local-e2e-only-backend-secret',
+    JWT_SECRET: acceptance.secret('local-e2e-only-backend-secret'),
     BACK_PORT: String(http),
     GRPC_PORT: String(grpc),
     BIND_HOST: '127.0.0.1',
@@ -219,7 +222,7 @@ async function until(fn) {
       [path.join(root, 'static/build/app.js')],
       { cwd: root, env, detached: true, stdio: ['ignore', 'pipe', 'pipe'] },
     );
-    backend.stdout.on('data', (b) => (output += b));
+    acceptance.track(backend);backend.stdout.on('data', (b) => (output += b));
     backend.stderr.on('data', (b) => (output += b));
     await until(async () => {
       const r = await fetch(base + '/api/system');
@@ -230,13 +233,14 @@ async function until(fn) {
   mark('empty-root-bootstrap');
   browser = await chromium.launch({
     headless: true,
+    ...(process.env.QL_BROWSER_EXECUTABLE ? {executablePath:process.env.QL_BROWSER_EXECUTABLE} : {}),
     ...(process.platform === 'darwin' ? { channel: 'chrome' } : {}),
   });
   page = await browser.newPage({
     locale: 'zh-CN',
     viewport: { width: 1440, height: 1100 },
   });
-  page.setDefaultTimeout(20000);
+  flushBrowser=acceptance.observe(page,evidenceDirectory);page.setDefaultTimeout(20000);
   const forbidden = [
     'local-e2e-only-backend-secret',
     'CONFIG_SECRET_E2E',
@@ -244,7 +248,7 @@ async function until(fn) {
     'ENV_SECRET_E2E',
     'NOTIFICATION_SECRET_E2E',
   ];
-  const leaks = [];
+  acceptance.register(fs.readFileSync(path.join(tmp,'client'),'utf8').split('\n')[1]);forbidden.push(...acceptance.values());const leaks = [];
   const inspected = [];
   let websocketFrames = 0,
     runLogFrames = 0;
@@ -268,19 +272,20 @@ async function until(fn) {
   await page.goto(base);
   await page.getByRole('button', { name: '开始安装', exact: true }).click();
   await page.getByLabel('用户名', { exact: true }).fill('platform-owner');
-  await page.getByLabel('密码', { exact: true }).fill('e2e-fixture-password');
+  await page.getByLabel('密码', { exact: true }).fill(acceptance.secret('e2e-fixture-password'));
   await page
     .getByLabel('确认密码', { exact: true })
-    .fill('e2e-fixture-password');
+    .fill(acceptance.secret('e2e-fixture-password'));
   await page.getByRole('button', { name: /提.*交/ }).click();
   await page.getByRole('button', { name: '去登录', exact: true }).click();
   async function login() {
     await page.getByLabel('用户名', { exact: true }).fill('platform-owner');
-    await page.getByLabel('密码', { exact: true }).fill('e2e-fixture-password');
+    await page.getByLabel('密码', { exact: true }).fill(acceptance.secret('e2e-fixture-password'));
     await page.getByRole('button', { name: /登.*录/ }).click();
     await until(async () =>
       page.evaluate(() => !!localStorage.getItem('token')),
     );
+    acceptance.register(await page.evaluate(() => localStorage.getItem('token')));
   }
   await login();
   mark('browser-fresh-initialize-login');
@@ -298,7 +303,7 @@ async function until(fn) {
         });
         return r.json();
       },
-      { url, method, body },
+      { url, method, body: acceptance.payload(body) },
     );
   const checked = async (url, method = 'GET', body) => {
     let r;
@@ -424,6 +429,14 @@ async function until(fn) {
   mark('browser-repository-worktree-open-workspace');
   await page.getByRole('button', { name: 'edit.txt', exact: true }).click();
   const editor = page.locator('.workspace-editor .monaco-editor textarea');
+  // Initial Git status and file reads share repository ownership; retry only
+  // the explicit transient busy response without relaxing editor assertions.
+  await until(async () => {
+    if (await editor.count()) return true;
+    if (await page.getByText('REPOSITORY_BUSY', {exact:true}).count())
+      await page.getByRole('button', { name: 'edit.txt', exact: true }).click();
+    return false;
+  });
   await editor.waitFor();
   async function replace(text) {
     await editor.click();
@@ -692,19 +705,16 @@ async function until(fn) {
   const backup = (await checked('/backups'))[0];
   mark('browser-backup-includes-editor-state');
   await stop();
-  const passfile = path.join(tmp, 'passphrase');
-  fs.writeFileSync(passfile, 'workspace-backup-private-passphrase', {
-    mode: 0o600,
-  });
+  const backupPhrase=acceptance.secret('workspace-backup-private-passphrase');
   const cli = (...args) =>
     JSON.parse(
       execFileSync(
         process.execPath,
         [path.join(root, 'static/build/backupCli.js'), ...args],
-        { env, cwd: root, stdio: ['ignore', 'pipe', 'pipe'] },
+        { env, cwd: root, stdio: ['pipe', 'pipe', 'pipe'], input: backupPhrase },
       ).toString(),
     );
-  const exported = cli('export', backup.id, '--passphrase-file', passfile);
+  const exported = cli('export', backup.id, );
   const portable = path.join(tmp, 'portable.backup');
   const exportsDir = path.join(env.QL_DATA_DIR + '-backups', 'exports');
   const exportedFiles = fs.readdirSync(exportsDir);
@@ -712,7 +722,7 @@ async function until(fn) {
   fs.copyFileSync(path.join(exportsDir, exportedFiles[0]), portable);
   const original = env.QL_DATA_DIR;
   env.QL_DATA_DIR = path.join(tmp, 'restored-B');
-  const imported = cli('import', portable, '--passphrase-file', passfile).data
+  const imported = cli('import', portable, ).data
     .import_id;
   cli('stage', imported, '--import');
   await start();
@@ -734,7 +744,7 @@ async function until(fn) {
   await page.goto(base + `/workspace?id=${wt.id}`);
   await page.getByRole('button', { name: 'edit.txt', exact: true }).click();
   await page.screenshot({
-    path: path.join(__dirname, 'browser-workspace.png'),
+    path: path.join(evidenceDirectory, 'browser-workspace.png'),
     fullPage: true,
   });
   assert.deepEqual(leaks, []);
@@ -752,23 +762,23 @@ async function until(fn) {
     if (page)
       await page
         .screenshot({
-          path: path.join(__dirname, 'browser-failure.png'),
+          path: path.join(evidenceDirectory, 'browser-failure.png'),
           fullPage: true,
         })
         .catch(() => {});
     process.exitCode = 1;
   })
   .finally(async () => {
-    await browser?.close();
+    flushBrowser();await browser?.close();
     await stop();
     for (const c of connections) c.destroy();
     await new Promise((r) => (ssh ? ssh.close(r) : r()));
     fs.writeFileSync(
-      path.join(__dirname, 'browser-e2e.json'),
+      path.join(evidenceDirectory, 'browser-e2e.json'),
       JSON.stringify(evidence, null, 2),
     );
     fs.writeFileSync(
-      path.join(__dirname, 'browser-backend.log'),
+      path.join(evidenceDirectory, 'browser-backend.log'),
       output.replace(/(private_key|token|password)[^\n]*/gi, '[redacted]'),
     );
     fs.rmSync(tmp, { recursive: true, force: true });

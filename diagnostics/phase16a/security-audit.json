@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "active_workflows": [
+    "linux-ci.yml"
+  ],
+  "readonly": true,
+  "custom_secrets": 0,
+  "official_actions_only": true,
+  "artifact_allowlist": true,
+  "always_uploads": 5,
+  "retention_days": 30,
+  "checkout_credentials_persisted": false,
+  "untrusted_shell_interpolation": false,
+  "attempt_isolation": true,
+  "reusable_normal_scope": true
+}

@@ -1,0 +1,1592 @@
+[
+  {
+    "target": "port",
+    "file_path": "diagnostics/phase12/browser-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/browser-e2e.cjs:port",
+        "name": "port",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/browser-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/browser-e2e.cjs",
+            "name": "browser-e2e.cjs",
+            "filePath": "diagnostics/phase12/browser-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "stop",
+    "file_path": "diagnostics/phase12/browser-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/browser-e2e.cjs:stop",
+        "name": "stop",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/browser-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "20 call sites invoking `stop` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 20,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/browser-e2e.cjs",
+            "name": "browser-e2e.cjs",
+            "filePath": "diagnostics/phase12/browser-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "until",
+    "file_path": "diagnostics/phase12/browser-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/browser-e2e.cjs:until",
+        "name": "until",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/browser-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 3,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 3
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase12",
+          "hits": 2,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/browser-e2e.cjs",
+            "name": "browser-e2e.cjs",
+            "filePath": "diagnostics/phase12/browser-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.login@276:2",
+            "name": "login",
+            "filePath": "diagnostics/phase12/browser-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.start@215:2",
+            "name": "start",
+            "filePath": "diagnostics/phase12/browser-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "start",
+    "file_path": "diagnostics/phase12/browser-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.start@215:2",
+        "name": "start",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/browser-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `start` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/browser-e2e.cjs",
+            "name": "browser-e2e.cjs",
+            "filePath": "diagnostics/phase12/browser-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "login",
+    "file_path": "diagnostics/phase12/browser-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.login@276:2",
+        "name": "login",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/browser-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "10 call sites invoking `login` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 10,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/browser-e2e.cjs",
+            "name": "browser-e2e.cjs",
+            "filePath": "diagnostics/phase12/browser-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "replace",
+    "file_path": "diagnostics/phase12/browser-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.replace@427:2",
+        "name": "replace",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/browser-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "40 call sites invoking `replace` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 40,
+        "dispatchBoundary": 0,
+        "externalBoundary": 16,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/browser-e2e.cjs",
+            "name": "browser-e2e.cjs",
+            "filePath": "diagnostics/phase12/browser-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "port",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:port",
+        "name": "port",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "stop",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:stop",
+        "name": "stop",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 4,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "20 call sites invoking `stop` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 20,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 4,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 4
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase10/cleanup-execution-definitions.cjs",
+            "name": "cleanup-execution-definitions.cjs",
+            "filePath": "diagnostics/phase10/cleanup-execution-definitions.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase11/cleanup-execution-definitions.cjs",
+            "name": "cleanup-execution-definitions.cjs",
+            "filePath": "diagnostics/phase11/cleanup-execution-definitions.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase13/cleanup-execution-definitions.cjs",
+            "name": "cleanup-execution-definitions.cjs",
+            "filePath": "diagnostics/phase13/cleanup-execution-definitions.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.7,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "until",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:until",
+        "name": "until",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 5,
+      "risk": "MEDIUM",
+      "riskSharedAxes": "MEDIUM",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 0,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 1
+      },
+      "summary": {
+        "direct": 5,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 5
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase14",
+          "hits": 4,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.login@55:1",
+            "name": "login",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.operation@90:1",
+            "name": "operation",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.repositoryAction@65:1",
+            "name": "repositoryAction",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.start@46:1",
+            "name": "start",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "start",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.start@46:1",
+        "name": "start",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `start` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "login",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.login@55:1",
+        "name": "login",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "10 call sites invoking `login` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 10,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "choose",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.choose@58:1",
+        "name": "choose",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 2,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 0,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 1
+      },
+      "summary": {
+        "direct": 2,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase14",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.addTrigger@143:1",
+            "name": "addTrigger",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "confirm",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.confirm@59:1",
+        "name": "confirm",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 2,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 2,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase14",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.variable@85:1",
+            "name": "variable",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "repositoryAction",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.repositoryAction@65:1",
+        "name": "repositoryAction",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "variable",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.variable@85:1",
+        "name": "variable",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "operation",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.operation@90:1",
+        "name": "operation",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "2 call sites invoking `operation` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 2,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "edit",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.edit@97:1",
+        "name": "edit",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 0,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 1
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "save",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.save@98:1",
+        "name": "save",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "101 call sites invoking `save` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 101,
+        "dispatchBoundary": 0,
+        "externalBoundary": 63,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "addTrigger",
+    "file_path": "diagnostics/phase14/platform-e2e.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@12:1.addTrigger@143:1",
+        "name": "addTrigger",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/platform-e2e.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase14/platform-e2e.cjs",
+            "name": "platform-e2e.cjs",
+            "filePath": "diagnostics/phase14/platform-e2e.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "upload",
+    "file_path": "diagnostics/phase14/browser-backup.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/browser-backup.cjs:fn@1:15.upload@16:1",
+        "name": "upload",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/browser-backup.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase14",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/browser-backup.cjs:browser-backup",
+            "name": "browser-backup",
+            "filePath": "diagnostics/phase14/browser-backup.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "configure",
+    "file_path": "diagnostics/phase14/browser-backup.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/browser-backup.cjs:fn@1:15.configure@33:74",
+        "name": "configure",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/browser-backup.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `configure` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase14",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/browser-backup.cjs:browser-backup",
+            "name": "browser-backup",
+            "filePath": "diagnostics/phase14/browser-backup.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "run",
+    "file_path": "diagnostics/phase14/browser-backup.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/browser-backup.cjs:fn@1:15.run@34:1",
+        "name": "run",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/browser-backup.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "98 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 98,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase14",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/browser-backup.cjs:browser-backup",
+            "name": "browser-backup",
+            "filePath": "diagnostics/phase14/browser-backup.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "configure",
+    "file_path": "diagnostics/phase14/browser-observability.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/browser-observability.cjs:fn@1:15.configure@5:1",
+        "name": "configure",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/browser-observability.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `configure` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase14",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/browser-observability.cjs:browser-observability",
+            "name": "browser-observability",
+            "filePath": "diagnostics/phase14/browser-observability.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "run",
+    "file_path": "diagnostics/phase14/browser-observability.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase14/browser-observability.cjs:fn@1:15.run@6:1",
+        "name": "run",
+        "type": "Function",
+        "filePath": "diagnostics/phase14/browser-observability.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "98 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 98,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Phase14",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:diagnostics/phase14/browser-observability.cjs:browser-observability",
+            "name": "browser-observability",
+            "filePath": "diagnostics/phase14/browser-observability.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "browser-provider.cjs",
+    "file_path": "diagnostics/phase14/browser-provider.cjs",
+    "result": {
+      "target": {
+        "id": "File:diagnostics/phase14/browser-provider.cjs",
+        "name": "browser-provider.cjs",
+        "type": "File",
+        "filePath": "diagnostics/phase14/browser-provider.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          },
+          {
+            "axis": "modules",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          }
+        ]
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "target": "run",
+    "file_path": "diagnostics/phase12/prepare-managed-python.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/prepare-managed-python.cjs:fn@3:1.run@9:1",
+        "name": "run",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/prepare-managed-python.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "98 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 98,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/prepare-managed-python.cjs",
+            "name": "prepare-managed-python.cjs",
+            "filePath": "diagnostics/phase12/prepare-managed-python.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "run",
+    "file_path": "diagnostics/phase12/prepare-managed-node.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/prepare-managed-node.cjs:fn@2:1.run@7:1",
+        "name": "run",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/prepare-managed-node.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "98 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 98,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/prepare-managed-node.cjs",
+            "name": "prepare-managed-node.cjs",
+            "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "run",
+    "file_path": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+    "result": {
+      "target": {
+        "id": "Function:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@2:1.run@2:880",
+        "name": "run",
+        "type": "Function",
+        "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "98 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 98,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:diagnostics/phase12/cleanup-managed-fixtures.cjs",
+            "name": "cleanup-managed-fixtures.cjs",
+            "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  }
+]

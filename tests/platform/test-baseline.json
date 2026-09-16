@@ -656,5 +656,9 @@
   {
     "path": "tests/phase12/api.test.cjs",
     "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/ci/foundation.test.cjs",
+    "classification": "PLATFORM_CORE"
   }
 ]
