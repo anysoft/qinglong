@@ -326,21 +326,7 @@
         "skipped": 0
       },
       "full_browser_restore": "PASS",
-      "github_hosted": "PASS"
+      "github_hosted": "PENDING"
     }
-  },
-  "provenance": "VERIFIED_GITHUB_HOSTED_ARTIFACT",
-  "verification": {
-    "run_url": "https://github.com/anysoft/qinglong/actions/runs/35121041296",
-    "artifact_id": 10457432440,
-    "zip_sha256": "2b4e63f31b035a8487a54b2cc2bf9c83730307139ddefe740839fc61a584f079",
-    "digest_matches_github": true,
-    "jobs_success": 7,
-    "final_upload": "success",
-    "ubuntu": "24.04.5",
-    "runner_image": "ubuntu-24.04 20260907.300.1",
-    "github_hosted": true
-  },
-  "schema_version": 9,
-  "platform_convergence": "PASS"
+  }
 }

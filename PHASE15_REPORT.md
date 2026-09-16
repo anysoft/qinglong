@@ -1,14 +1,14 @@
-# Phase 15 Status: PARTIAL
+# Phase 15 Status: PASS
 
-**LOCAL_CONVERGENCE_PASS / GITHUB_HOSTED_QUALIFICATION_PENDING**
-本地最终验证、证据脱敏与资源清理已完成。不能用入口 SHA 的 Phase16A 全绿替代新代码的 Linux 验证。
+**LINUX_QUALIFICATION_PASS / PLATFORM_1_0_CONVERGENCE_PASS**
+新 SHA 的完整 Hosted Qualification 已独立核验通过；入口 Phase16A 记录仍作为历史保留。
 
 ## Entry Baseline
 
 - 分支：`develop`。
 - 入口 HEAD：`abd5939e316a918126cdadcf887ff7d756ab51db`；入口工作区干净。
 - 前序功能基线：Phase0–14（含后完成的 Code Workspace）及 Phase16A Linux CI。
-- Phase15 主变更已提交为 `f61de1c158100d3ec8fbdfd0aa18681f2f3d47c5`；本报告所在后续候选提交补齐 Hosted socket 10 轮门禁。尚未推送；schema v9。
+- Phase15 主变更已提交为 `f61de1c158100d3ec8fbdfd0aa18681f2f3d47c5`；本报告所在后续候选提交补齐 Hosted socket 10 轮门禁。候选代码已由用户推送并完成 Hosted 验证；schema v9。
 
 ## Phase16A Freeze
 
@@ -72,15 +72,15 @@
 
 | 语义 | 本地真实测试 | Ubuntu 24.04 |
 |---|---|---|
-| flock / inherited FD / descendant lifetime | PASS | PENDING |
-| FD across Node/Python/Shell exec，私有 FD 不泄露 | PASS | PENDING |
-| TERM/KILL / grandchild cleanup | PASS | PENDING |
-| rename no-replace，竞争/Unicode/symlink | PASS | PENDING |
-| file/parent fsync 与回滚 | PASS | PENDING |
-| restore switch / crash journal | PASS | PENDING |
-| Unix socket owner crash/restart | PASS；20 并发，10 轮 stress | PENDING |
+| flock / inherited FD / descendant lifetime | PASS | PASS |
+| FD across Node/Python/Shell exec，私有 FD 不泄露 | PASS | PASS |
+| TERM/KILL / grandchild cleanup | PASS | PASS |
+| rename no-replace，竞争/Unicode/symlink | PASS | PASS |
+| file/parent fsync 与回滚 | PASS | PASS |
+| restore switch / crash journal | PASS | PASS |
+| Unix socket owner crash/restart | PASS；20 并发，10 轮 stress | PASS |
 
-本地宿主是 Darwin，不能据此宣称 Linux PASS。Socket 并发暴露 SQLite 写入竞争，现以有界串行 admission 修复，原协议 deadline 未提高。
+原本地宿主是 Darwin；Linux PASS 现由 Hosted Run 35121041296 的独立真实执行证明。Socket 并发暴露 SQLite 写入竞争，现以有界串行 admission 修复，原协议 deadline 未提高。
 
 ## Runtime
 
@@ -158,11 +158,16 @@ Fresh 不再创建高权限 system App；真实用户 Apps 保留。旧任意 co
 
 ## GitHub Hosted Qualification
 
-- 新 run：未执行。
-- 候选提交：以本报告所在 develop HEAD 为准；最终回复记录完整 SHA。
-- Runner：要求 `ubuntu-24.04` / x64。
-- Workflow：`.github/workflows/linux-qualification.yml`，复用 Foundation full，并独立执行 native/crash/scale suites。
-- 结果：**GITHUB_HOSTED_QUALIFICATION_PENDING**。
+- Run：[35121041296](https://github.com/anysoft/qinglong/actions/runs/35121041296)，attempt 1，Linux Qualification。
+- Tested SHA：`fc6bab97d5abfd96f51a952ac04516e5bd6d85cb`。
+- Ubuntu 24.04.5 / x64；kernel `6.17.0-1022-azure`。
+- GitHub-hosted runner image：`ubuntu-24.04 20260907.300.1`，来自 qualification job 实际日志。
+- 7 个 Jobs 全部 success，上传/下载步骤成功。
+- Foundation：385/385、0 fail、0 skip；raw TypeScript 0。
+- Qualification：118/118，0 fail、0 skip；包括 socket 10 轮、native、execution、triggers、workspace、backup、observability。
+- Managed Runtime、Workspace/完整平台浏览器、异地恢复/rebuild、security、scale、artifact scrub、cleanup PASS。
+- 最终 ZIP 摘要匹配 GitHub：`2b4e63f31b035a8487a54b2cc2bf9c83730307139ddefe740839fc61a584f079`。
+- 原始最终证据：`diagnostics/phase15/hosted-final-gates-35121041296.json`；核验后的总门禁：`diagnostics/phase15/final-gates.json`。
 
 ## Artifacts
 
@@ -181,19 +186,21 @@ Collector canary/私钥扫描 PASS，owned root/process cleanup PASS，archive P
 ## Git
 
 - Commit：主收敛提交 f61de1c1；最终门禁修正作为独立后续提交，不改写既有历史。
-- Push：not performed。
+- Push：已由用户完成候选代码推送；本次文档冻结未推送。
 - 无 tag、Release、Docker image、DockerHub token、PAT、write permission 或 deployment 修改。
 
 ## Final Gate
 
-本地门禁：**LOCAL_CONVERGENCE_PASS**。
-总状态：**PARTIAL / GITHUB_HOSTED_QUALIFICATION_PENDING**。
-已知限制：本机 Darwin 无 ShellCheck；一次 restore rebuild 超时的根因未证实；新 Ubuntu 完整运行必须重新验证。Docker 模板尚未按新启动入口改造，本阶段未进行 Docker 资格认证。
+**Phase15 PASS / LINUX_QUALIFICATION_PASS / PLATFORM_1_0_CONVERGENCE_PASS**。
+Platform 1.0 functional schema = **v9**。正式架构以 tested SHA 冻结。
+此前 Darwin rebuild 超时保留为历史，本次最终 Hosted 完整恢复/rebuild 未复现。
+本次仅更新证据和文档，不更改已验证产品代码；不自动推送、打 tag 或发布。
 
 ## Next
 
-由用户执行 `git push origin develop`，然后 Actions → Linux Qualification → Run workflow → develop。取得新 Run ID 后核查 jobs/logs/artifacts；未授权 push，本任务停在候选提交。
-只有该 run 所有 gates 通过才可 Phase15 PASS。**Phase16B — Release Engineering 不自动开始。**
+STOP。Phase16B — Release Engineering 未开始。
+下一阶段输入见 `docs/architecture/21-platform-1.0-freeze.md`。
+以下候选审计与首次 Hosted 失败记录属于历史，保留原结论。
 
 ## Final Gate candidate audit
 

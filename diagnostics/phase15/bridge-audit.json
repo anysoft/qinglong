@@ -98,6 +98,7 @@
       "skipped": 0
     },
     "full_browser_restore": "PASS",
-    "github_hosted": "PENDING"
+    "github_hosted": "PASS",
+    "run_id": 35121041296
   }
 }

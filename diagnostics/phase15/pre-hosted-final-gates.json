@@ -1,0 +1,49 @@
+{
+  "phase": 15,
+  "status": "PARTIAL",
+  "local": "LOCAL_CONVERGENCE_PASS",
+  "hosted": "GITHUB_HOSTED_QUALIFICATION_PENDING",
+  "platform": "Darwin",
+  "core": {
+    "tests": 385,
+    "pass": 385,
+    "fail": 0,
+    "skipped": 0
+  },
+  "frontend_build": "PASS",
+  "backend_build": "PASS",
+  "typescript_errors": 0,
+  "workspace_browser": "PASS",
+  "restore_browser": "PASS",
+  "refs_prepare_rounds": 10,
+  "socket_stress_rounds": 10,
+  "temporary_bridges_remaining": 0,
+  "collection": "PASS",
+  "cleanup": "PASS",
+  "archive": "PASS",
+  "gitnexus_risk": "CRITICAL",
+  "schema_version": 9,
+  "commit_created": true,
+  "push_performed": false,
+  "limitations": [
+    "Ubuntu24.04 qualification pending",
+    "Local ShellCheck unavailable",
+    "Earlier restore rebuild timeout root cause unconfirmed; final unchanged-deadline run passed",
+    "Docker qualification out of scope"
+  ],
+  "candidate_state": "CANDIDATE_COMMITTED",
+  "candidate_reference": "develop HEAD containing this receipt; full SHA recorded in final response",
+  "hosted_socket_rounds_required": 10,
+  "latest_hosted_foundation": {
+    "run_id": 35119097926,
+    "commit": "32bbdbd294ea258723a782aa863c4c452ba399e4",
+    "status": "FAIL",
+    "tests": 385,
+    "pass": 378,
+    "fail": 7,
+    "skipped": 0,
+    "classification": "HARNESS_BUG",
+    "fix_verification": "LOCAL_CLEAN_SOURCE_7_OF_7_PASS",
+    "new_hosted_run": "PENDING"
+  }
+}
