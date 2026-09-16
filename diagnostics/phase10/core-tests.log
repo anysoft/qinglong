@@ -1,0 +1,143 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: native shell argv, direct Worktree cwd, immutable resolver, no host secrets
+ok 1 - native shell argv, direct Worktree cwd, immutable resolver, no host secrets
+  ---
+  duration_ms: 2265.268375
+  type: 'test'
+  ...
+# Subtest: real exit 124 is FAILED, supervisor timeout is TIMEOUT, cancellation is CANCELLED
+ok 2 - real exit 124 is FAILED, supervisor timeout is TIMEOUT, cancellation is CANCELLED
+  ---
+  duration_ms: 3196.982458
+  type: 'test'
+  ...
+# Subtest: FORBID persists skipped submission, QUEUE is FIFO, queued cancel never spawns
+ok 3 - FORBID persists skipped submission, QUEUE is FIFO, queued cancel never spawns
+  ---
+  duration_ms: 2201.827417
+  type: 'test'
+  ...
+# Subtest: retry attempts freeze scoped ENV and settings; each BEFORE patch starts from snapshot
+ok 4 - retry attempts freeze scoped ENV and settings; each BEFORE patch starts from snapshot
+  ---
+  duration_ms: 2183.043666
+  type: 'test'
+  ...
+# Subtest: BEFORE generated secret is redacted before buffered output and MAIN, FINALLY runs
+ok 5 - BEFORE generated secret is redacted before buffered output and MAIN, FINALLY runs
+  ---
+  duration_ms: 1321.609458
+  type: 'test'
+  ...
+# Subtest: SIGKILL recovery waits for inherited ownership, reaps descendants and restores Config; queued run survives
+ok 6 - SIGKILL recovery waits for inherited ownership, reaps descendants and restores Config; queued run survives
+  ---
+  duration_ms: 3919.023875
+  type: 'test'
+  ...
+# Subtest: two independent dispatchers atomically claim one queued run
+ok 7 - two independent dispatchers atomically claim one queued run
+  ---
+  duration_ms: 2659.878
+  type: 'test'
+  ...
+# Subtest: cleanup conflict preserves unexpected file and backup, preventing SUCCESS
+ok 8 - cleanup conflict preserves unexpected file and backup, preventing SUCCESS
+  ---
+  duration_ms: 1118.201166
+  type: 'test'
+  ...
+# Subtest: backoff cancellation is prompt and keeps original workspace locked until cleanup
+ok 9 - backoff cancellation is prompt and keeps original workspace locked until cleanup
+  ---
+  duration_ms: 1069.653042
+  type: 'test'
+  ...
+# Subtest: actual frozen v6 upgrades to identical fresh v7 and restarts without schema mutation
+ok 10 - actual frozen v6 upgrades to identical fresh v7 and restarts without schema mutation
+  ---
+  duration_ms: 1489.368792
+  type: 'test'
+  ...
+# Subtest: v6 late DDL failure preserves Task and secret rows, then retries
+ok 11 - v6 late DDL failure preserves Task and secret rows, then retries
+  ---
+  duration_ms: 484.502792
+  type: 'test'
+  ...
+# Subtest: v6 tampered schema fails closed before v7 DDL
+ok 12 - v6 tampered schema fails closed before v7 DDL
+  ---
+  duration_ms: 418.758
+  type: 'test'
+  ...
+# Subtest: durable run and attempt constraints preserve history and protect active task
+ok 13 - durable run and attempt constraints preserve history and protect active task
+  ---
+  duration_ms: 361.256625
+  type: 'test'
+  ...
+# Subtest: COPY readonly=true, per-run copy, canonical immutable and cleanup
+ok 14 - COPY readonly=true, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 1198.848833
+  type: 'test'
+  ...
+# Subtest: COPY readonly=false, per-run copy, canonical immutable and cleanup
+ok 15 - COPY readonly=false, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 674.207042
+  type: 'test'
+  ...
+# Subtest: SYMLINK readonly=true, per-run copy, canonical immutable and cleanup
+ok 16 - SYMLINK readonly=true, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 492.103292
+  type: 'test'
+  ...
+# Subtest: SYMLINK readonly=false, per-run copy, canonical immutable and cleanup
+ok 17 - SYMLINK readonly=false, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 690.608791
+  type: 'test'
+  ...
+# Subtest: replace restores original exact bytes/mode after simulated process loss and next acquire
+ok 18 - replace restores original exact bytes/mode after simulated process loss and next acquire
+  ---
+  duration_ms: 587.133667
+  type: 'test'
+  ...
+# Subtest: unsafe paths, symlink parents/targets, special files, duplicate physical aliases fail without touching user data
+ok 19 - unsafe paths, symlink parents/targets, special files, duplicate physical aliases fail without touching user data
+  ---
+  duration_ms: 547.607125
+  type: 'test'
+  ...
+# Subtest: unexpected replacement is preserved with backup and recoverable journal
+ok 20 - unexpected replacement is preserved with backup and recoverable journal
+  ---
+  duration_ms: 374.841333
+  type: 'test'
+  ...
+# Subtest: pinned revision remains old through asset edit; next resolve sees new revision
+ok 21 - pinned revision remains old through asset edit; next resolve sees new revision
+  ---
+  duration_ms: 432.736042
+  type: 'test'
+  ...
+# Subtest: recovery rejects a journal task root outside the leased workspace without writing outside
+ok 22 - recovery rejects a journal task root outside the leased workspace without writing outside
+  ---
+  duration_ms: 458.192
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11452.018125

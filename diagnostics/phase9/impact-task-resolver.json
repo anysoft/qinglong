@@ -1,0 +1,9 @@
+{
+  "error": "Target 'TaskResourceResolver' not found",
+  "target": {
+    "name": "TaskResourceResolver"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

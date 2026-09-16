@@ -1,0 +1,65 @@
+{
+  "status": "ambiguous",
+  "message": "Found 2 symbols matching 'checkFilePath'. Blast radius differs per candidate (max 153 impacted at risk CRITICAL). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "checkFilePath"
+  },
+  "direction": "upstream",
+  "totalCandidates": 2,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 153,
+  "maxRisk": "CRITICAL",
+  "candidates": [
+    {
+      "uid": "",
+      "name": "checkFilePath",
+      "kind": "",
+      "filePath": "",
+      "line": 11,
+      "score": 0.5,
+      "impactedCount": 153,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 129
+    },
+    {
+      "uid": "",
+      "name": "checkFilePath",
+      "kind": "",
+      "filePath": "",
+      "line": 58,
+      "score": 0.5,
+      "impactedCount": 100,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+[PREPARING]
+[CREATING_VENV]
+[INSTALLING_DEPENDENCIES]
+Using pip 26.2.1 from /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/runtime/python/environments/env-1/builds/build-3/venv/lib/python3.13/site-packages/pip (python 3.13)
+Looking in indexes: http://127.0.0.1:64345/simple
+Collecting ql-phase7-root==1.0.0
+  Downloading ql_phase7_root-1.0.0-py3-none-any.whl (1.1 kB)
+Collecting ql-phase7-leaf==2.0.0
+  Downloading ql_phase7_leaf-2.0.0-py3-none-any.whl (1.1 kB)
+INFO: pip is looking at multiple versions of ql-phase7-root to determine which version is compatible with other requirements. This could take a while.
+ERROR: Cannot install ql-phase7-leaf==2.0.0 and ql-phase7-root==1.0.0 because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested ql-phase7-leaf==2.0.0
+    ql-phase7-root 1.0.0 depends on ql-phase7-leaf==1.0.0
+
+Additionally, some packages in these conflicts have no matching distributions available for your environment:
+    ql-phase7-leaf
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip to attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+[DEPENDENCY_BUILD_FAILED]

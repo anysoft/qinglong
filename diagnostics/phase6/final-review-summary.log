@@ -1,0 +1,18 @@
+HEAD: Changes: 144 files, 387 symbols
+Affected processes: 52
+Risk level: critical
+
+Changed symbols:
+  Section GitNexus — Code Intelligence → CLAUDE.md
+  Section Always Do → CLAUDE.md
+  Section Never Do → CLAUDE.md
+  Section Resources → CLAUDE.md
+develop: Changes: 144 files, 387 symbols
+Affected processes: 52
+Risk level: critical
+
+Changed symbols:
+  Section GitNexus — Code Intelligence → CLAUDE.md
+  Section Always Do → CLAUDE.md
+  Section Never Do → CLAUDE.md
+  Section Resources → CLAUDE.md

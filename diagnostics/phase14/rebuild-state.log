@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: failed managed resource remains visible and prevents a false successful rebuild
+ok 1 - failed managed resource remains visible and prevents a false successful rebuild
+  ---
+  duration_ms: 790.202166
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2141.742375

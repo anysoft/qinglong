@@ -22,9 +22,7 @@ interface HealthStatus {
 export class HealthService {
   private startTime = Date.now();
 
-  constructor(
-    private httpServerService: HttpServerService,
-  ) {}
+  constructor(private httpServerService: HttpServerService) {}
 
   async check(): Promise<HealthStatus> {
     const status: HealthStatus = {
@@ -55,7 +53,7 @@ export class HealthService {
     }
 
     try {
-      if (!(await cronClient.readiness.check())) {
+      if (!(await cronClient.transportHealthy())) {
         status.services.grpc = false;
         status.status = 'error';
       }

@@ -1,3 +1,5 @@
+import { inheritedLeaseFds } from './backup/inheritedLeases';
+import { platformBarrier } from './backup/platform';
 import { Service, Inject } from 'typedi';
 import winston from 'winston';
 import nodeSchedule from 'node-schedule';
@@ -74,14 +76,14 @@ export default class ScheduleService {
     void startResult.catch(() => {});
     const completion = taskLimit[this.taskLimitMap[runOrigin]](
       others,
-      async () => {
+      async () => (await platformBarrier()).mutation(async () => {
         const startTime = dayjs();
         let cp: ChildProcessWithoutNullStreams | undefined;
         let result: ProcessResult = { code: null, signal: null };
         try {
           this.logger.info('[panel][开始执行任务] 任务ID: %s', others.id);
           await callbacks.onBefore?.(startTime);
-          cp = spawn(command, { shell: '/bin/bash' });
+          cp = spawn(command, { shell: '/bin/bash', stdio: ['pipe','pipe','pipe',...inheritedLeaseFds()] }) as ChildProcessWithoutNullStreams;
           const child = cp;
           const observed = observeChildProcess(child, {
             onStart: async () => {
@@ -133,7 +135,7 @@ export default class ScheduleService {
           result.code,
         );
         return { ...others, pid: cp?.pid, ...result };
-      },
+      }),
     ).catch((error) => {
       // Queue/setup failures must not become unhandled rejections in detached callers.
       rejectStart(asError(error));

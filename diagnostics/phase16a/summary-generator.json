@@ -1,0 +1,36 @@
+{
+  "fixture_only": true,
+  "status": "PASS",
+  "scenarios": [
+    {
+      "scenario": "success-current-attempt",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "scenario": "cancelled",
+      "exit_code": 1,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "upload-failed",
+      "exit_code": 1,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "summary-upload-failed",
+      "exit_code": 1,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "empty",
+      "exit_code": 1,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "missing-current-artifact",
+      "exit_code": 1,
+      "status": "FAIL"
+    }
+  ]
+}

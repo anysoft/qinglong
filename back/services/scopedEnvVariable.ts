@@ -2,7 +2,8 @@ import { Service } from 'typedi';
 import { Transaction } from 'sequelize';
 import { sequelize } from '../data';
 import { EnvModel } from '../data/env';
-import { CrontabModel } from '../data/cron';
+import { TaskModel } from '../data/task';
+import { taskRepository } from './taskRelationships';
 import { SubscriptionModel } from '../data/subscription';
 import { ScopedVariable, RepositoryEnvVariableModel, TaskEnvVariableModel } from '../data/scopedEnv';
 import RepositoryEnvProfileService from './repositoryEnvProfile';
@@ -20,20 +21,20 @@ export default class ScopedEnvVariableService {
   private async owner(scope: 'global' | 'repository' | 'task', id: number, transaction?: Transaction) {
     if (scope === 'global') return null;
     if (scope === 'repository') return this.profiles.get(id, transaction);
-    const task = await CrontabModel.findByPk(id, { transaction });
+    const task = await TaskModel.findByPk(id, { transaction });
     if (!task) throw new ScopedEnvironmentError('ENV_TASK_NOT_FOUND', 404);
     return task;
   }
   async list(scope: 'global' | 'repository' | 'task', id: number) {
     await this.owner(scope, id);
     const model: any = scope === 'global' ? EnvModel : scope === 'repository' ? RepositoryEnvVariableModel : TaskEnvVariableModel;
-    const rows = await model.unscoped().findAll({ where: scope === 'global' ? {} : { [scope === 'repository' ? 'profile_id' : 'cron_id']: id }, order: [['position', 'DESC'], ['name', 'ASC']] });
+    const rows = await model.unscoped().findAll({ where: scope === 'global' ? {} : { [scope === 'repository' ? 'profile_id' : 'task_id']: id }, order: [['position', 'DESC'], ['name', 'ASC']] });
     return rows.map((x: any) => { const row = x.get({ plain: true }); return publicVariable({ ...row, status: scope === 'global' ? row.status === 1 ? 'disabled' : 'enabled' : row.status }); });
   }
   async save(scope: 'global' | 'repository' | 'task', id: number, patches: VariablePatch[]) {
     if (!Array.isArray(patches) || patches.length > 1000) throw new ScopedEnvironmentError('ENV_VALUE_INVALID');
     const model: any = scope === 'global' ? EnvModel : scope === 'repository' ? RepositoryEnvVariableModel : TaskEnvVariableModel;
-    const key = scope === 'repository' ? 'profile_id' : 'cron_id';
+    const key = scope === 'repository' ? 'profile_id' : 'task_id';
     try {
       await sequelize.transaction(async transaction => {
         await this.owner(scope, id, transaction);
@@ -72,10 +73,10 @@ export default class ScopedEnvVariableService {
         await this.profiles.validateBinding(profileId, sub.repository_id, transaction);
         await sub.update({ env_profile_id: profileId }, { transaction });
       } else {
-        const task = await CrontabModel.findByPk(id, { transaction });
+        const task = await TaskModel.findByPk(id, { transaction });
         if (!task) throw new ScopedEnvironmentError('ENV_TASK_NOT_FOUND', 404);
-        const sub = task.sub_id ? await SubscriptionModel.findByPk(task.sub_id, { transaction }) : null;
-        await this.profiles.validateBinding(profileId, sub?.repository_id, transaction);
+        const { repository_id } = await taskRepository(id, transaction);
+        await this.profiles.validateBinding(profileId, repository_id, transaction);
         await task.update({ env_profile_id: profileId }, { transaction });
       }
     });

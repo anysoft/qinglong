@@ -1,0 +1,2064 @@
+[
+  {
+    "file_path": "back/services/backup/barrier.ts",
+    "target": "mutation",
+    "result": {
+      "target": {
+        "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.mutation#2",
+        "name": "mutation",
+        "type": "Method",
+        "filePath": "back/services/backup/barrier.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file_path": "back/services/backup/barrier.ts",
+    "target": "PlatformBackupBarrier",
+    "result": {
+      "target": {
+        "id": "Class:back/services/backup/barrier.ts:PlatformBackupBarrier",
+        "name": "PlatformBackupBarrier",
+        "type": "Class",
+        "filePath": "back/services/backup/barrier.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file_path": "back/app.ts",
+    "target": "start",
+    "result": {
+      "target": {
+        "id": "Method:back/app.ts:Application.start#0",
+        "name": "start",
+        "type": "Method",
+        "filePath": "back/app.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `start` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:back/app.ts",
+            "name": "app.ts",
+            "filePath": "back/app.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/app.ts",
+    "target": "startWorkerProcess",
+    "result": {
+      "target": {
+        "id": "Method:back/app.ts:Application.startWorkerProcess#0",
+        "name": "startWorkerProcess",
+        "type": "Method",
+        "filePath": "back/app.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 2,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Back",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/app.ts:Application.start#0",
+            "name": "start",
+            "filePath": "back/app.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:back/app.ts",
+            "name": "app.ts",
+            "filePath": "back/app.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/loaders/express.ts",
+    "target": "resolveTrustProxy",
+    "result": {
+      "target": {
+        "id": "Function:back/loaders/express.ts:resolveTrustProxy",
+        "name": "resolveTrustProxy",
+        "type": "Function",
+        "filePath": "back/loaders/express.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:back/loaders/express.ts",
+            "name": "express.ts",
+            "filePath": "back/loaders/express.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:back/loaders/app.ts",
+            "name": "app.ts",
+            "filePath": "back/loaders/app.ts",
+            "relationType": "IMPORTS",
+            "confidence": 1,
+            "processes": []
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "File:back/app.ts",
+            "name": "app.ts",
+            "filePath": "back/app.ts",
+            "relationType": "IMPORTS",
+            "confidence": 1,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/executionService.ts",
+    "target": "submit",
+    "result": {
+      "target": {
+        "id": "Method:back/services/executionService.ts:ExecutionService.submit#3",
+        "name": "submit",
+        "type": "Method",
+        "filePath": "back/services/executionService.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 6,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "75 call sites invoking `submit` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 75,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 4,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 4,
+        "2": 2
+      },
+      "affected_processes": [
+        {
+          "name": "taskRoutes",
+          "type": "Function",
+          "filePath": "back/api/tasks.ts",
+          "affected_process_count": 3,
+          "total_hits": 3,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 6,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:back/api/tasks.ts:taskRoutes",
+            "name": "taskRoutes",
+            "filePath": "back/api/tasks.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Function:back/services/executionSubmission.ts:ExecutionSubmissionServer.listen.server@58:6",
+            "name": "server",
+            "filePath": "back/services/executionSubmission.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:back/shared/runCron.ts:runCron",
+            "name": "runCron",
+            "filePath": "back/shared/runCron.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Method:back/services/taskExecutionBridge.ts:TaskExecutionBridge.run#1",
+            "name": "run",
+            "filePath": "back/services/taskExecutionBridge.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Function:back/schedule/addCron.ts:addCron.fn@123:28.job@124:10",
+            "name": "job",
+            "filePath": "back/schedule/addCron.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:back/schedule/addCron.ts:addCron.mainJob@109:4",
+            "name": "mainJob",
+            "filePath": "back/schedule/addCron.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/executionService.ts",
+    "target": "tick",
+    "result": {
+      "target": {
+        "id": "Method:back/services/executionService.ts:ExecutionService.tick#0",
+        "name": "tick",
+        "type": "Method",
+        "filePath": "back/services/executionService.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 2,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "27 call sites invoking `tick` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 27,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 1
+      },
+      "affected_processes": [
+        {
+          "name": "taskRoutes",
+          "type": "Function",
+          "filePath": "back/api/tasks.ts",
+          "affected_process_count": 3,
+          "total_hits": 6,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 2,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/executionService.ts:ExecutionService.start#0",
+            "name": "start",
+            "filePath": "back/services/executionService.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Function:back/api/tasks.ts:taskRoutes",
+            "name": "taskRoutes",
+            "filePath": "back/api/tasks.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/executionService.ts",
+    "target": "execute",
+    "result": {
+      "target": {
+        "id": "Method:back/services/executionService.ts:ExecutionService.execute#5",
+        "name": "execute",
+        "type": "Method",
+        "filePath": "back/services/executionService.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "affected_processes": [
+        {
+          "name": "taskRoutes",
+          "type": "Function",
+          "filePath": "back/api/tasks.ts",
+          "affected_process_count": 3,
+          "total_hits": 9,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 3,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/executionService.ts:ExecutionService.tick#0",
+            "name": "tick",
+            "filePath": "back/services/executionService.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 3
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Method:back/services/executionService.ts:ExecutionService.start#0",
+            "name": "start",
+            "filePath": "back/services/executionService.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 2
+              }
+            ]
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "Function:back/api/tasks.ts:taskRoutes",
+            "name": "taskRoutes",
+            "filePath": "back/api/tasks.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/executionService.ts",
+    "target": "recover",
+    "result": {
+      "target": {
+        "id": "Method:back/services/executionService.ts:ExecutionService.recover#0",
+        "name": "recover",
+        "type": "Method",
+        "filePath": "back/services/executionService.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "12 call sites invoking `recover` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 12,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "affected_processes": [
+        {
+          "name": "taskRoutes",
+          "type": "Function",
+          "filePath": "back/api/tasks.ts",
+          "affected_process_count": 3,
+          "total_hits": 9,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 3,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/executionService.ts:ExecutionService.tick#0",
+            "name": "tick",
+            "filePath": "back/services/executionService.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 3
+              },
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 3
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Method:back/services/executionService.ts:ExecutionService.start#0",
+            "name": "start",
+            "filePath": "back/services/executionService.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              }
+            ]
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "Function:back/api/tasks.ts:taskRoutes",
+            "name": "taskRoutes",
+            "filePath": "back/api/tasks.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_130_taskroutes",
+                "label": "TaskRoutes → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_201_taskroutes",
+                "label": "TaskRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_129_taskroutes",
+                "label": "TaskRoutes → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/triggerScheduler.ts",
+    "target": "tick",
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 2 symbols matching 'tick'. Blast radius differs per candidate (max 4 impacted at risk LOW). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "tick"
+      },
+      "direction": "upstream",
+      "totalCandidates": 2,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 4,
+      "maxRisk": "LOW",
+      "candidates": [
+        {
+          "uid": "Function:back/services/triggerScheduler.ts:TriggerScheduler.start.tick@65:4",
+          "name": "tick",
+          "kind": "Function",
+          "filePath": "back/services/triggerScheduler.ts",
+          "line": 66,
+          "score": 0.96,
+          "impactedCount": 4,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 1
+        },
+        {
+          "uid": "Method:back/services/triggerScheduler.ts:TriggerScheduler.tick#0",
+          "name": "tick",
+          "kind": "Method",
+          "filePath": "back/services/triggerScheduler.ts",
+          "line": 17,
+          "score": 0.94,
+          "impactedCount": 4,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 1
+        }
+      ]
+    }
+  },
+  {
+    "file_path": "back/services/triggerEvents.ts",
+    "target": "receive",
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 2 symbols matching 'receive'. Blast radius differs per candidate (max 2 impacted at risk LOW). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "receive"
+      },
+      "direction": "upstream",
+      "totalCandidates": 2,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 2,
+      "maxRisk": "LOW",
+      "candidates": [
+        {
+          "uid": "Function:back/services/triggerEvents.ts:TriggerEvents.receive.receive@33:4",
+          "name": "receive",
+          "kind": "Function",
+          "filePath": "back/services/triggerEvents.ts",
+          "line": 34,
+          "score": 0.96,
+          "impactedCount": 2,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 1
+        },
+        {
+          "uid": "Method:back/services/triggerEvents.ts:TriggerEvents.receive#5",
+          "name": "receive",
+          "kind": "Method",
+          "filePath": "back/services/triggerEvents.ts",
+          "line": 10,
+          "score": 0.94,
+          "impactedCount": 1,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 1
+        }
+      ]
+    }
+  },
+  {
+    "file_path": "back/services/triggerEvents.ts",
+    "target": "recover",
+    "result": {
+      "target": {
+        "id": "Method:back/services/triggerEvents.ts:TriggerEvents.recover#1",
+        "name": "recover",
+        "type": "Method",
+        "filePath": "back/services/triggerEvents.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "12 call sites invoking `recover` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 12,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file_path": "back/services/managedSubscription.ts",
+    "target": "exclusive",
+    "result": {
+      "target": {
+        "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.exclusive#2",
+        "name": "exclusive",
+        "type": "Method",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 2,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "4 call sites invoking `exclusive` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 4,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 2,
+        "processes_affected": 2,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2
+      },
+      "affected_processes": [
+        {
+          "name": "preflight",
+          "type": "Function",
+          "filePath": "back/services/managedSubscription.ts",
+          "affected_process_count": 5,
+          "total_hits": 5,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "run",
+          "type": "Function",
+          "filePath": "back/services/managedSubscription.ts",
+          "affected_process_count": 5,
+          "total_hits": 5,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 2,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.preflight#1",
+            "name": "preflight",
+            "filePath": "back/services/managedSubscription.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_28_preflight",
+                "label": "Preflight → Release",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_203_preflight",
+                "label": "Preflight → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_202_preflight",
+                "label": "Preflight → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_27_preflight",
+                "label": "Preflight → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_253_preflight",
+                "label": "Preflight → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.run#1",
+            "name": "run",
+            "filePath": "back/services/managedSubscription.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_254_run",
+                "label": "Run → WorkspaceError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_290_run",
+                "label": "Run → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_255_run",
+                "label": "Run → Root",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_153_run",
+                "label": "Run → WorkspaceGuard",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_154_run",
+                "label": "Run → Release",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/runtimeOperations.ts",
+    "target": "request",
+    "result": {
+      "target": {
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.request#2",
+        "name": "request",
+        "type": "Method",
+        "filePath": "back/services/runtimeOperations.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "34 call sites invoking `request` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 34,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 2,
+        "processes_affected": 2,
+        "modules_affected": 2
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 1
+      },
+      "affected_processes": [
+        {
+          "name": "nodeEnvironmentRoutes",
+          "type": "Function",
+          "filePath": "back/api/nodeEnvironment.ts",
+          "affected_process_count": 1,
+          "total_hits": 1,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "pythonEnvironmentRoutes",
+          "type": "Function",
+          "filePath": "back/api/pythonEnvironment.ts",
+          "affected_process_count": 1,
+          "total_hits": 1,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Api",
+          "hits": 2,
+          "impact": "direct"
+        },
+        {
+          "name": "Services",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:back/api/nodeEnvironment.ts:nodeEnvironmentRoutes.operation@56:2",
+            "name": "operation",
+            "filePath": "back/api/nodeEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:back/api/pythonEnvironment.ts:pythonEnvironmentRoutes",
+            "name": "pythonEnvironmentRoutes",
+            "filePath": "back/api/pythonEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_128_pythonenvironmentrou",
+                "label": "PythonEnvironmentRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Function:back/api/nodeEnvironment.ts:nodeEnvironmentRoutes",
+            "name": "nodeEnvironmentRoutes",
+            "filePath": "back/api/nodeEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.8,
+            "processes": [
+              {
+                "id": "proc_395_nodeenvironmentroute",
+                "label": "NodeEnvironmentRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/runtimeOperations.ts",
+    "target": "execute",
+    "result": {
+      "target": {
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.execute#4",
+        "name": "execute",
+        "type": "Method",
+        "filePath": "back/services/runtimeOperations.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 6,
+      "risk": "HIGH",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 3,
+        "processes_affected": 3,
+        "modules_affected": 2
+      },
+      "byDepthCounts": {
+        "1": 3,
+        "2": 2,
+        "3": 1
+      },
+      "affected_processes": [
+        {
+          "name": "request",
+          "type": "Function",
+          "filePath": "back/services/runtimeOperations.ts",
+          "affected_process_count": 4,
+          "total_hits": 8,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "nodeEnvironmentRoutes",
+          "type": "Function",
+          "filePath": "back/api/nodeEnvironment.ts",
+          "affected_process_count": 1,
+          "total_hits": 1,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "pythonEnvironmentRoutes",
+          "type": "Function",
+          "filePath": "back/api/pythonEnvironment.ts",
+          "affected_process_count": 1,
+          "total_hits": 1,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 4,
+          "impact": "direct"
+        },
+        {
+          "name": "Api",
+          "hits": 2,
+          "impact": "indirect"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.request#2",
+            "name": "request",
+            "filePath": "back/services/runtimeOperations.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_3_request",
+                "label": "Request → AsError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_16_request",
+                "label": "Request → RuntimeLease",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_30_request",
+                "label": "Request → ResourceLock",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_389_request",
+                "label": "Request → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.requestEnvironmentLocked#5",
+            "name": "requestEnvironmentLocked",
+            "filePath": "back/services/runtimeOperations.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.requestNode#3",
+            "name": "requestNode",
+            "filePath": "back/services/runtimeOperations.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_16_request",
+                "label": "Request → RuntimeLease",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_30_request",
+                "label": "Request → ResourceLock",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_389_request",
+                "label": "Request → RuntimeError",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_3_request",
+                "label": "Request → AsError",
+                "processType": "cross_community",
+                "step": 2
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Function:back/api/nodeEnvironment.ts:nodeEnvironmentRoutes.operation@56:2",
+            "name": "operation",
+            "filePath": "back/api/nodeEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:back/api/pythonEnvironment.ts:pythonEnvironmentRoutes",
+            "name": "pythonEnvironmentRoutes",
+            "filePath": "back/api/pythonEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_128_pythonenvironmentrou",
+                "label": "PythonEnvironmentRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "Function:back/api/nodeEnvironment.ts:nodeEnvironmentRoutes",
+            "name": "nodeEnvironmentRoutes",
+            "filePath": "back/api/nodeEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.8,
+            "processes": [
+              {
+                "id": "proc_395_nodeenvironmentroute",
+                "label": "NodeEnvironmentRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/runtimeOperations.ts",
+    "target": "recover",
+    "result": {
+      "target": {
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.recover#0",
+        "name": "recover",
+        "type": "Method",
+        "filePath": "back/services/runtimeOperations.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "12 call sites invoking `recover` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 12,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.startRecovery#0",
+            "name": "startRecovery",
+            "filePath": "back/services/runtimeOperations.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/pythonEnvironment.ts",
+    "target": "withMutation",
+    "result": {
+      "target": {
+        "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation#2",
+        "name": "withMutation",
+        "type": "Method",
+        "filePath": "back/services/pythonEnvironment.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 5,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `withMutation` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 3,
+        "processes_affected": 2,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 3,
+        "2": 2
+      },
+      "affected_processes": [
+        {
+          "name": "revise",
+          "type": "Function",
+          "filePath": "back/services/pythonEnvironment.ts",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        },
+        {
+          "name": "pythonEnvironmentRoutes",
+          "type": "Function",
+          "filePath": "back/api/pythonEnvironment.ts",
+          "affected_process_count": 1,
+          "total_hits": 1,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 5,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.create#1",
+            "name": "create",
+            "filePath": "back/services/pythonEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.metadata#2",
+            "name": "metadata",
+            "filePath": "back/services/pythonEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.revise#2",
+            "name": "revise",
+            "filePath": "back/services/pythonEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_363_revise",
+                "label": "Revise → AsError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_412_revise",
+                "label": "Revise → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_116_revise",
+                "label": "Revise → Release",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_353_revise",
+                "label": "Revise → RuntimeLease",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Function:back/api/pythonEnvironment.ts:pythonEnvironmentRoutes",
+            "name": "pythonEnvironmentRoutes",
+            "filePath": "back/api/pythonEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_128_pythonenvironmentrou",
+                "label": "PythonEnvironmentRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 2,
+            "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.clone#2",
+            "name": "clone",
+            "filePath": "back/services/pythonEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/nodeEnvironment.ts",
+    "target": "definition",
+    "result": {
+      "target": {
+        "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.definition#2",
+        "name": "definition",
+        "type": "Method",
+        "filePath": "back/services/nodeEnvironment.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 2,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 2,
+        "processes_affected": 1,
+        "modules_affected": 2
+      },
+      "byDepthCounts": {
+        "1": 2
+      },
+      "affected_processes": [
+        {
+          "name": "nodeEnvironmentRoutes",
+          "type": "Function",
+          "filePath": "back/api/nodeEnvironment.ts",
+          "affected_process_count": 1,
+          "total_hits": 1,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Api",
+          "hits": 1,
+          "impact": "direct"
+        },
+        {
+          "name": "Services",
+          "hits": 1,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:back/api/nodeEnvironment.ts:nodeEnvironmentRoutes",
+            "name": "nodeEnvironmentRoutes",
+            "filePath": "back/api/nodeEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_395_nodeenvironmentroute",
+                "label": "NodeEnvironmentRoutes → RuntimeError",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.clone#2",
+            "name": "clone",
+            "filePath": "back/services/nodeEnvironment.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/nodeEnvironment.ts",
+    "target": "metadata",
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 3 symbols matching 'metadata'. Blast radius differs per candidate (max 19 impacted at risk UNKNOWN; MEDIUM among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "metadata"
+      },
+      "direction": "upstream",
+      "totalCandidates": 3,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 19,
+      "maxRisk": "UNKNOWN",
+      "knownMaxRisk": "MEDIUM",
+      "candidates": [
+        {
+          "uid": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.metadata#2",
+          "name": "metadata",
+          "kind": "Method",
+          "filePath": "back/services/nodeEnvironment.ts",
+          "line": 346,
+          "score": 0.94,
+          "impactedCount": 19,
+          "risk": "MEDIUM",
+          "riskSharedAxes": "MEDIUM",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 9
+        },
+        {
+          "uid": "",
+          "name": "metadata",
+          "kind": "",
+          "filePath": "back/services/nodeEnvironment.ts",
+          "line": 627,
+          "score": 0.9,
+          "impactedCount": 19,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 3
+        },
+        {
+          "uid": "",
+          "name": "metadata",
+          "kind": "",
+          "filePath": "back/services/nodeEnvironment.ts",
+          "line": 401,
+          "score": 0.9,
+          "impactedCount": 0,
+          "risk": "UNKNOWN",
+          "riskSharedAxes": "UNKNOWN",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 0,
+          "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+        }
+      ]
+    }
+  },
+  {
+    "file_path": "back/services/notificationDispatcher.ts",
+    "target": "deliver",
+    "result": {
+      "target": {
+        "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.deliver#1",
+        "name": "deliver",
+        "type": "Method",
+        "filePath": "back/services/notificationDispatcher.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "affected_processes": [
+        {
+          "name": "observabilityRoutes",
+          "type": "Function",
+          "filePath": "back/api/observability.ts",
+          "affected_process_count": 3,
+          "total_hits": 3,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 3,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.tick#0",
+            "name": "tick",
+            "filePath": "back/services/notificationDispatcher.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.start#0",
+            "name": "start",
+            "filePath": "back/services/notificationDispatcher.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "Function:back/api/observability.ts:observabilityRoutes",
+            "name": "observabilityRoutes",
+            "filePath": "back/api/observability.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_17_observabilityroutes",
+                "label": "ObservabilityRoutes → DecodeJson",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_151_observabilityroutes",
+                "label": "ObservabilityRoutes → ExecutionError",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_32_observabilityroutes",
+                "label": "ObservabilityRoutes → SelectRows",
+                "processType": "intra_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file_path": "back/services/system.ts",
+    "target": "exportData",
+    "result": {
+      "target": {
+        "id": "Method:back/services/system.ts:SystemService.exportData#2",
+        "name": "exportData",
+        "type": "Method",
+        "filePath": "back/services/system.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file_path": "back/services/system.ts",
+    "target": "importData",
+    "result": {
+      "target": {
+        "id": "Method:back/services/system.ts:SystemService.importData#0",
+        "name": "importData",
+        "type": "Method",
+        "filePath": "back/services/system.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file_path": "back/services/system.ts",
+    "target": "reloadSystem",
+    "result": {
+      "target": {
+        "id": "Method:back/services/system.ts:SystemService.reloadSystem#1",
+        "name": "reloadSystem",
+        "type": "Method",
+        "filePath": "back/services/system.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "file_path": "back/token.ts",
+    "target": "getToken",
+    "result": {
+      "target": {
+        "id": "Function:back/token.ts:getToken",
+        "name": "getToken",
+        "type": "Function",
+        "filePath": "back/token.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:back/token.ts",
+            "name": "token.ts",
+            "filePath": "back/token.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,46 @@
+[PREPARING]
+true
+10.17.1
+[INSTALLING_DEPENDENCIES]
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +3
++++
+Progress: resolved 3, reused 1, downloaded 2, added 3, done
+
+dependencies:
++ ql-phase8-foo 2.0.0
+
+Done in 282ms using pnpm v10.17.1
+[VERIFYING_BUILD]
+true
+10.17.1
+[
+  {
+    "name": "platform-environment",
+    "version": "0.0.0",
+    "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-MVQ0Xd/runtime/node/environments/env-5/builds/build-9",
+    "private": true,
+    "dependencies": {
+      "ql-phase8-foo": {
+        "from": "ql-phase8-foo",
+        "version": "2.0.0",
+        "resolved": "http://127.0.0.1:49777/artifacts/ca62a499937d7b2862df27f4b9ab15782a6352f4dc3165b905b8bdf7661316ed.tgz",
+        "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-MVQ0Xd/runtime/node/environments/env-5/builds/build-9/node_modules/.pnpm/ql-phase8-foo@2.0.0/node_modules/ql-phase8-foo",
+        "dependencies": {
+          "ql-phase8-extra": {
+            "from": "ql-phase8-extra",
+            "version": "1.0.0",
+            "resolved": "http://127.0.0.1:49777/artifacts/db47b69869017752ed3485b265498d74255eab9bacd0a80fb6f95471b423764a.tgz",
+            "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-MVQ0Xd/runtime/node/environments/env-5/builds/build-9/node_modules/.pnpm/ql-phase8-extra@1.0.0/node_modules/ql-phase8-extra"
+          },
+          "ql-phase8-leaf": {
+            "from": "ql-phase8-leaf",
+            "version": "1.1.0",
+            "resolved": "http://127.0.0.1:49777/artifacts/3e50959ad7377cbf29824a2a2370c5f605d8dabe227c0e5e0ec10c6d578b603c.tgz",
+            "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-MVQ0Xd/runtime/node/environments/env-5/builds/build-9/node_modules/.pnpm/ql-phase8-leaf@1.1.0/node_modules/ql-phase8-leaf"
+          }
+        }
+      }
+    }
+  }
+]

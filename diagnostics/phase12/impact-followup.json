@@ -1,0 +1,175 @@
+[
+  {
+    "target": "workspaceFail",
+    "result": {
+      "error": "Target 'workspaceFail' not found",
+      "target": {
+        "name": "workspaceFail"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "target": "mutate",
+    "result": {
+      "error": "Target 'mutate' not found",
+      "target": {
+        "name": "mutate"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "target": "access",
+    "result": {
+      "error": "Target 'access' not found",
+      "target": {
+        "name": "access"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "target": "Script",
+    "result": {
+      "target": {
+        "id": "Function:src/pages/script/index.tsx:Script",
+        "name": "Script",
+        "type": "Function",
+        "filePath": "src/pages/script/index.tsx"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "target": "script",
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 3 symbols matching 'script'. Blast radius differs per candidate (max 0 impacted at risk UNKNOWN). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "script"
+      },
+      "direction": "upstream",
+      "totalCandidates": 3,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 0,
+      "maxRisk": "UNKNOWN",
+      "candidates": [
+        {
+          "uid": "Folder:src/pages/script",
+          "name": "script",
+          "kind": "",
+          "filePath": "src/pages/script",
+          "score": 0.5,
+          "impactedCount": 0,
+          "risk": "UNKNOWN",
+          "riskSharedAxes": "UNKNOWN",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 0,
+          "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+        },
+        {
+          "uid": "Property:tests/platform/subscription-pipeline.test.cjs:pipeline.script@34:4",
+          "name": "script",
+          "kind": "",
+          "filePath": "tests/platform/subscription-pipeline.test.cjs",
+          "line": 35,
+          "score": 0.5,
+          "impactedCount": 0,
+          "risk": "UNKNOWN",
+          "riskSharedAxes": "UNKNOWN",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 0,
+          "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+        },
+        {
+          "uid": "Property:tests/archived/legacy/tests/phase3/pipeline.test.cjs:pipeline.script@38:4",
+          "name": "script",
+          "kind": "",
+          "filePath": "tests/archived/legacy/tests/phase3/pipeline.test.cjs",
+          "line": 39,
+          "score": 0.5,
+          "impactedCount": 0,
+          "risk": "UNKNOWN",
+          "riskSharedAxes": "UNKNOWN",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 0,
+          "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+        }
+      ]
+    }
+  },
+  {
+    "target": "CodeWorkspacePage",
+    "result": {
+      "error": "Target 'CodeWorkspacePage' not found",
+      "target": {
+        "name": "CodeWorkspacePage"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  }
+]

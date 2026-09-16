@@ -1,0 +1,9 @@
+{
+  "error": "Target 'installTaskFixture' not found",
+  "target": {
+    "name": "installTaskFixture"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

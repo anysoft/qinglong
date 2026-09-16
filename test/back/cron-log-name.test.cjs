@@ -10,48 +10,8 @@ const { commonCronSchema } = loadModule(
   { '../config': { logPath: '/ql/data/log/' } },
 );
 
-// Execute the actual form validator without mounting the entire task modal.
-const source = ts.createSourceFile(
-  'modal.tsx',
-  fs.readFileSync(
-    path.join(__dirname, '../../src/pages/crontab/modal.tsx'),
-    'utf8',
-  ),
-  ts.ScriptTarget.Latest,
-  true,
-  ts.ScriptKind.TSX,
-);
-let validateForm;
-function visit(node) {
-  if (
-    ts.isJsxOpeningElement(node) &&
-    node.attributes.properties.some(
-      (attr) =>
-        ts.isJsxAttribute(attr) &&
-        attr.name.text === 'name' &&
-        attr.initializer?.text === 'log_name',
-    )
-  ) {
-    const rules = node.attributes.properties.find(
-      (attr) => ts.isJsxAttribute(attr) && attr.name.text === 'rules',
-    );
-    const validator = rules.initializer.expression.elements[0].properties.find(
-      (property) => property.name.text === 'validator',
-    ).initializer;
-    const { outputText } = ts.transpileModule(
-      `const validate = ${validator.getText(source)};`,
-      { compilerOptions: { target: ts.ScriptTarget.ES2017 } },
-    );
-    validateForm = new Function('intl', `${outputText}\nreturn validate;`)({
-      get: (key) => key,
-    });
-  }
-  ts.forEachChild(node, visit);
-}
-visit(source);
-assert.equal(typeof validateForm, 'function');
-
-test('form and API accept Chinese log names and existing supported names', async () => {
+// Log naming is retained exclusively in the scheduler/log bridge. Task UI has no log_name editor.
+test('bridge API accepts Chinese log names and existing supported names', async () => {
   for (const value of [
     '',
     null,
@@ -66,7 +26,6 @@ test('form and API accept Chinese log names and existing supported names', async
     '/dev/null',
     '中'.repeat(100),
   ]) {
-    await validateForm(undefined, value);
     assert.equal(
       commonCronSchema.log_name.validate(value).error,
       undefined,
@@ -75,7 +34,7 @@ test('form and API accept Chinese log names and existing supported names', async
   }
 });
 
-test('form and API still reject unsafe relative names and excessive length', async () => {
+test('bridge API still rejects unsafe relative names and excessive length', async () => {
   for (const value of [
     '.',
     '..',
@@ -93,7 +52,6 @@ test('form and API still reject unsafe relative names and excessive length', asy
     '测试😀',
     '中'.repeat(101),
   ]) {
-    await assert.rejects(validateForm(undefined, value), undefined, value);
     assert.ok(commonCronSchema.log_name.validate(value).error, value);
   }
 });

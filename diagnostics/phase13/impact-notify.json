@@ -1,0 +1,165 @@
+{
+  "status": "ambiguous",
+  "message": "Found 6 symbols matching 'notify'. Blast radius differs per candidate (max 153 impacted at risk CRITICAL). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "notify"
+  },
+  "direction": "upstream",
+  "totalCandidates": 6,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 153,
+  "maxRisk": "CRITICAL",
+  "candidates": [
+    {
+      "uid": "",
+      "name": "notify",
+      "kind": "",
+      "filePath": "",
+      "line": 64,
+      "score": 0.5,
+      "impactedCount": 153,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 129
+    },
+    {
+      "uid": "",
+      "name": "notify",
+      "kind": "",
+      "filePath": "",
+      "line": 69,
+      "score": 0.5,
+      "impactedCount": 147,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 129
+    },
+    {
+      "uid": "",
+      "name": "notify",
+      "kind": "",
+      "filePath": "",
+      "line": 36,
+      "score": 0.5,
+      "impactedCount": 146,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 129
+    },
+    {
+      "uid": "",
+      "name": "notify",
+      "kind": "",
+      "filePath": "",
+      "line": 373,
+      "score": 0.5,
+      "impactedCount": 101,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "",
+      "name": "notify",
+      "kind": "",
+      "filePath": "",
+      "line": 68,
+      "score": 0.5,
+      "impactedCount": 100,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "",
+      "name": "notify",
+      "kind": "",
+      "filePath": "",
+      "line": 53,
+      "score": 0.5,
+      "impactedCount": 100,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    }
+  ]
+}

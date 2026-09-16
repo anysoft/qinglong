@@ -1,0 +1,82 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: frozen v2 migrates to identical fresh latest schema, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+ok 1 - frozen v2 migrates to identical fresh latest schema, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+  ---
+  duration_ms: 523.875416
+  type: 'test'
+  ...
+# Subtest: v2 late migration failure rolls back runtime tables, metadata and data, then retries
+ok 2 - v2 late migration failure rolls back runtime tables, metadata and data, then retries
+  ---
+  duration_ms: 152.167208
+  type: 'test'
+  ...
+# Subtest: tampered v2 signature and unknown version fail closed
+ok 3 - tampered v2 signature and unknown version fail closed
+  ---
+  duration_ms: 203.760333
+  type: 'test'
+  ...
+# Subtest: Node panel-only strict API, identity scoping, optimistic definitions and resource-owned operations
+ok 4 - Node panel-only strict API, identity scoping, optimistic definitions and resource-owned operations
+  ---
+  duration_ms: 1852.967083
+  type: 'test'
+  ...
+# Subtest: v4 → v5 preserves real Python environment references; fresh matches migration and late failure rolls back
+ok 5 - v4 → v5 preserves real Python environment references; fresh matches migration and late failure rolls back
+  ---
+  duration_ms: 533.899417
+  type: 'test'
+  ...
+# Subtest: v4 tampering is rejected without mutation
+ok 6 - v4 tampering is rejected without mutation
+  ---
+  duration_ms: 137.315667
+  type: 'test'
+  ...
+# Subtest: Node actual SQLite constraints protect language/toolchain and immutable revision/build ownership
+ok 7 - Node actual SQLite constraints protect language/toolchain and immutable revision/build ownership
+  ---
+  duration_ms: 126.612584
+  type: 'test'
+  ...
+# Subtest: archive preflight rejects traversal, absolute paths, symlink/hardlink escape, special files and link ancestors before extraction
+ok 8 - archive preflight rejects traversal, absolute paths, symlink/hardlink escape, special files and link ancestors before extraction
+  ---
+  duration_ms: 1214.349875
+  type: 'test'
+  ...
+# Subtest: Node resource IDs, ownership, inode and symlink boundary fail closed without deleting unknown data
+not ok 9 - Node resource IDs, ownership, inode and symlink boundary fail closed without deleting unknown data
+  ---
+  duration_ms: 431.038208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase8/security.test.cjs:8:1'
+  failureType: 'testCodeFailure'
+  error: 'RUNTIME_LOCK_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'RuntimeError'
+  stack: |-
+    RuntimeLease.acquire (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:39:23)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase8/security.test.cjs:14:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Node catalog, exact versions, platform and registry credential/source policy
+ok 10 - Node catalog, exact versions, platform and registry credential/source policy
+  ---
+  duration_ms: 192.122583
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 9
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2102.421125

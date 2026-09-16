@@ -1,3 +1,5 @@
+// Explicit diagnostic-only admission to the retained legacy transport fixture.
+process.env.PLATFORM_RECOVERY_TEST_ONLY = '1';
 // Integration adapter for the existing full-ENV transport tests: execute a frozen
 // snapshot through the Phase 5 lifecycle and the unchanged MAIN source bridge.
 const fs=require('node:fs'),path=require('node:path');

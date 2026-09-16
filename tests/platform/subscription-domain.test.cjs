@@ -12,7 +12,7 @@ async function domain(t){
  h.mocks['../shared/i18n'].tf=(text,value)=>text.replace('%s',value);
  const schedule={cancelCronTask:async x=>events.push(['cancel-cron',x.id]),createCronTask:async(x,callbacks)=>events.push(['cron',x,callbacks]),cancelIntervalTask:async x=>events.push(['cancel-interval',x.id]),createIntervalTask:async(x,rule,immediate,callbacks)=>events.push(['interval',x,rule,callbacks]),runTask:async(command,callbacks,meta)=>events.push(['manual',command,callbacks,meta])};
  const Service=h.get('services/subscription').default;
- const service=new Service({error(){}},schedule,{sendMessage(){}},{remove:async ids=>h.CrontabModel.destroy({where:{id:ids}})});
+ const service=new Service({error(){}},schedule,{sendMessage(){}},{remove:async ids=>h.SchedulerProjectionModel.destroy({where:{id:ids}})});
  return {...h,service,events,sync:Container.get(Sync),resolver:Container.get(Resolver)};
 }
 test('repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns',async t=>{

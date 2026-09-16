@@ -1,0 +1,23 @@
+
+  GitNexus Analyzer (1.6.12)
+
+  GitNexus Analyzer (1.6.12)
+[2K  Skipped 17 large files (>512KB, likely generated/vendored)
+[2K  - diagnostics/phase10/impact-entrypoints.json
+[2K  - diagnostics/phase10/impact-test-updates.json
+[2K  - diagnostics/phase10/managed-runtime/final-operation-logs/operation-2.log
+[2K  - diagnostics/phase10/managed-runtime/operation-2.log
+[2K  - diagnostics/phase11/impact-core.json
+[2K  ...and 12 more (set GITNEXUS_VERBOSE=1 to list them all)
+[2K  Set GITNEXUS_MAX_FILE_SIZE=<KB> to include files above the default cap.
+{"level":40,"time":1789526714370,"name":"gitnexus","msg":"[scope-resolution] 2208 property read/write site(s) name a field that IS defined in this workspace, but only in another language, so per-language inference declined to link them. Queries for these fields return an empty result that does NOT mean \"unused\" — it means the definition anchor is in a different language. Affected: BACK_PORT (javascript), BIND_HOST (javascript), BIND_HOST_GRPC (javascript), GRPC_PORT (javascript), JSON (javascript), JWT_SECRET (javascript), NODE_ENV (javascript), QL_CONTAINER (javascript), QL_DATA_DIR (javascript), QL_DIR (javascript), …"}
+{"level":40,"time":1789526714588,"name":"gitnexus","truncation":{"truncated":true,"entryPointCandidatesDropped":1115,"entryPointsUnexplored":0,"walksCutByBudget":48,"tracesDepthCapped":0,"calleesDropped":1700,"processesDropped":0},"msg":"[processes] 444 flows reported, but whole flows are MISSING: 1115 of 1315 candidate entry point(s) never ranked in, 0 ranked entry point(s) never traced, 0 deduplicated flow(s) dropped at maxProcesses, 0 trace(s) cut at maxTraceDepth, 1700 callee(s) skipped at maxBranching, 48 walk(s) cut by the per-entry trace budget. An absent flow does NOT mean the code path does not exist."}
+[2KIncremental: changed=7, added=5, deleted=0 (skipping wipe + 2140 unchanged file rows preserved)
+{"level":30,"time":1789526718131,"name":"gitnexus","msg":"name-fallback resolution: 163 call sites (88 distinct caller-file/name pairs), 11 refused as impossible (guessed/refused by language: javascript 163/11)"}
+[2KParse cache: pruned 1 stale chunk entries
+
+  Repository indexed successfully (7.4s)
+
+  14,468 nodes | 50,628 edges | 483 clusters | 444 flows
+  /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+

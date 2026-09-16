@@ -1,0 +1,46 @@
+{
+  "target": {
+    "id": "Function:src/pages/setting/index.tsx:Setting.getNotification@261:2",
+    "name": "getNotification",
+    "type": "Function",
+    "filePath": "src/pages/setting/index.tsx"
+  },
+  "direction": "upstream",
+  "impactedCount": 1,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 1,
+    "processes_affected": 0,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 1
+  },
+  "affected_processes": [],
+  "affected_modules": [
+    {
+      "name": "Setting",
+      "hits": 1,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Function:src/pages/setting/index.tsx:Setting.tabChange@250:2",
+        "name": "tabChange",
+        "filePath": "src/pages/setting/index.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      }
+    ]
+  }
+}

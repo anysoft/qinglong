@@ -1,0 +1,100 @@
+[
+  {
+    "file": "back/api/tasks.ts",
+    "name": "back/api/tasks.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/tasks.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/tasks.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/tasks.ts",
+    "name": "identifier",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'identifier' not found\",\n  \"target\": {\n    \"name\": \"identifier\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/tasks.ts",
+    "name": "endpoint",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'endpoint' not found\",\n  \"target\": {\n    \"name\": \"endpoint\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/tasks.ts",
+    "name": "taskRoutes",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'taskRoutes' not found\",\n  \"target\": {\n    \"name\": \"taskRoutes\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "back/services/taskExecutionBridge.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/taskExecutionBridge.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/taskExecutionBridge.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "TaskExecutionBridge",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskExecutionBridge' not found\",\n  \"target\": {\n    \"name\": \"TaskExecutionBridge\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "stop",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'stop' not found\",\n  \"target\": {\n    \"name\": \"stop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "log",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'log' not found\",\n  \"target\": {\n    \"name\": \"log\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "logs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'logs' not found\",\n  \"target\": {\n    \"name\": \"logs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/tasks/index.tsx",
+    "name": "src/pages/tasks/index.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/tasks/index.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/tasks/index.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/tasks/index.tsx",
+    "name": "get",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'get' not found\",\n  \"target\": {\n    \"name\": \"get\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/tasks/index.tsx",
+    "name": "RuntimeDefaults",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimeDefaults' not found\",\n  \"target\": {\n    \"name\": \"RuntimeDefaults\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/tasks/index.tsx",
+    "name": "TasksPage",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TasksPage' not found\",\n  \"target\": {\n    \"name\": \"TasksPage\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

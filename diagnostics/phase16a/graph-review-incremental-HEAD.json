@@ -1,0 +1,6078 @@
+{
+  "summary": {
+    "changed_count": 66,
+    "affected_count": 320,
+    "changed_files": 90,
+    "risk_level": "critical"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:PHASE16A_REPORT.md:L1:Phase 16A Status: PARTIAL",
+      "name": "Phase 16A Status: PARTIAL",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L7:状态矩阵",
+      "name": "状态矩阵",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L23:Workflow 与范围",
+      "name": "Workflow 与范围",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L35:执行与隔离",
+      "name": "执行与隔离",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L49:诊断与安全",
+      "name": "诊断与安全",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L59:本机验证",
+      "name": "本机验证",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L86:证据入口",
+      "name": "证据入口",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L95:使用与后续边界",
+      "name": "使用与后续边界",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:README.md:L90:推荐使用 pnpm https://pnpm.io/zh/installation",
+      "name": "推荐使用 pnpm https://pnpm.io/zh/installation",
+      "type": "Section",
+      "filePath": "README.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:README.md:L108:名称来源",
+      "name": "名称来源",
+      "type": "Section",
+      "filePath": "README.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:README.md:L116:Linux CI",
+      "name": "Linux CI",
+      "type": "Section",
+      "filePath": "README.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "",
+      "name": "flushBrowser",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.fixtures@3:39",
+      "name": "fixtures",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.kind@3:859",
+      "name": "kind",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.operations@3:869",
+      "name": "operations",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.root@3:864",
+      "name": "root",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@3:1.status@3:25",
+      "name": "status",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase14/browser-provider.cjs:install",
+      "name": "install",
+      "type": "Method",
+      "filePath": "diagnostics/phase14/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/01-ci-architecture.md:L1:CI architecture",
+      "name": "CI architecture",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/01-ci-architecture.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/02-ubuntu-runner.md:L1:Ubuntu runner",
+      "name": "Ubuntu runner",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/02-ubuntu-runner.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/03-ci-scripts.md:L1:Repository entrypoints",
+      "name": "Repository entrypoints",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/03-ci-scripts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/04-job-matrix.md:L1:Jobs and triggers",
+      "name": "Jobs and triggers",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/04-job-matrix.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/05-diagnostics-artifacts.md:L1:Diagnostics and artifacts",
+      "name": "Diagnostics and artifacts",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/05-diagnostics-artifacts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/06-managed-runtime-ci.md:L1:Managed runtimes",
+      "name": "Managed runtimes",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/06-managed-runtime-ci.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/07-browser-ci.md:L1:Browser acceptance",
+      "name": "Browser acceptance",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/07-browser-ci.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/08-workflow-security.md:L1:Workflow security",
+      "name": "Workflow security",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/08-workflow-security.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/09-local-reproduction.md:L1:Local Ubuntu reproduction",
+      "name": "Local Ubuntu reproduction",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/09-local-reproduction.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/10-phase16a-test-report.md:L1:Phase16A validation",
+      "name": "Phase16A validation",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/10-phase16a-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.preflight@521:4",
+      "name": "preflight",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.install@522:4",
+      "name": "install",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.build@523:4",
+      "name": "build",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.core@524:4",
+      "name": "core",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.managed@525:4",
+      "name": "managed",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.browser@526:4",
+      "name": "browser",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.static@527:4",
+      "name": "static",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.collect@528:4",
+      "name": "collect",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.package@529:4",
+      "name": "package",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.typecheck@534:4",
+      "name": "typecheck",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.provision@535:4",
+      "name": "provision",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:main.finish@536:4",
+      "name": "finish",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:crypto",
+      "name": "crypto",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/context.cjs:repository",
+      "name": "repository",
+      "type": "Const",
+      "filePath": "scripts/ci/context.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/report-snapshots.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/report-snapshots.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/report-snapshots.cjs:allowed",
+      "name": "allowed",
+      "type": "Const",
+      "filePath": "scripts/ci/report-snapshots.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:yaml",
+      "name": "yaml",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:audit.text@6:2",
+      "name": "text",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:audit.workflow@6:2",
+      "name": "workflow",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:audit.s@37:4",
+      "name": "s",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:report",
+      "name": "report",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:scripts/ci/static.cjs:out",
+      "name": "out",
+      "type": "Const",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:crypto",
+      "name": "crypto",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:fn@67:60.r@68:2",
+      "name": "r",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:fn@163:95.pidFile@164:2",
+      "name": "pidFile",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": [
+    {
+      "id": "proc_1_runtimeroutes",
+      "name": "RuntimeRoutes → BackupError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 8
+        }
+      ]
+    },
+    {
+      "id": "proc_4_request",
+      "name": "Request → AsError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 8
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 9
+        }
+      ]
+    },
+    {
+      "id": "proc_5_discoveryroutes",
+      "name": "DiscoveryRoutes → TriggerError",
+      "process_type": "intra_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_6_resolve",
+      "name": "Resolve → ScopedEnvironmentError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_7_resolve",
+      "name": "Resolve → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_8_runtimeroutes",
+      "name": "RuntimeRoutes → BackupPaths",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_9_consumeprepared",
+      "name": "ConsumePrepared → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_10_runspage",
+      "name": "RunsPage → ObsGet",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_11_runspage",
+      "name": "RunsPage → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_12_runspage",
+      "name": "RunsPage → Send",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_14_observabilityroutes",
+      "name": "ObservabilityRoutes → DecodeJson",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_15_runtimeroutes",
+      "name": "RuntimeRoutes → PlatformBackupBarrier",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_16_onend",
+      "name": "OnEnd → FileExist",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_17_onend",
+      "name": "OnEnd → GetUniqueLockPath",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_18_consumeprepared",
+      "name": "ConsumePrepared → SyncDirectory",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_19_consumeprepared",
+      "name": "ConsumePrepared → AssertHeld",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_20_sendnotify",
+      "name": "SendNotify → Request",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_21_pythonenvironments",
+      "name": "PythonEnvironments → Request",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_22_start",
+      "name": "Start → Sha256",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_23_stage",
+      "name": "Stage → Hash",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_26_execute",
+      "name": "Execute → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_29_installbuild",
+      "name": "InstallBuild → NodeFileHash",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_31_remove",
+      "name": "Remove → Exists",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_32_configassetroutes",
+      "name": "ConfigAssetRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_33_observabilityroutes",
+      "name": "ObservabilityRoutes → SelectRows",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_34_onend",
+      "name": "OnEnd → IsWithin",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_35_onend",
+      "name": "OnEnd → IsBlocked",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_36_action",
+      "name": "Action → Git",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_37_run",
+      "name": "Run → Owned",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_38_nodeflow",
+      "name": "NodeFlow → OperationModal",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_39_sendnotify",
+      "name": "SendNotify → Post",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_40_job",
+      "name": "Job → SafeName",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_41_scopedenvironmentpag",
+      "name": "ScopedEnvironmentPage → Load",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_42_scopedenvironmentpag",
+      "name": "ScopedEnvironmentPage → Open",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_43_codeworkspacepage",
+      "name": "CodeWorkspacePage → Call",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_45_create",
+      "name": "Create → ExecutionSocketAddress",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_53_cancel",
+      "name": "Cancel → IsInContainer",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_56_resolve",
+      "name": "Resolve → RuntimeKind",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_57_run",
+      "name": "Run → Invalid",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_64_prepare",
+      "name": "Prepare → MergeTaskEnvironment",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_70_remove",
+      "name": "Remove → Hash",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_71_backuproutes",
+      "name": "BackupRoutes → PublicManifest",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_72_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_73_configassetroutes",
+      "name": "ConfigAssetRoutes → Status",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_74_triggerwebhook",
+      "name": "TriggerWebhook → SecretDigest",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_75_onend",
+      "name": "OnEnd → GetDb",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_76_browser_backup",
+      "name": "Browser-backup → Read",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_77_run",
+      "name": "Run → Atomic",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_78_run",
+      "name": "Run → Interrupt",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_79_sendnotify",
+      "name": "SendNotify → Body",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_80_sendnotify",
+      "name": "SendNotify → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_81_sendnotify",
+      "name": "SendNotify → LogErr",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_82_job",
+      "name": "Job → Walk",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_83_noderuntime",
+      "name": "NodeRuntime → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_84_noderuntime",
+      "name": "NodeRuntime → Load",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_85_repositoryworkspacep",
+      "name": "RepositoryWorkspacePage → Load",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_86_repositoryworkspacep",
+      "name": "RepositoryWorkspacePage → Open",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_87_repositoryworkspacep",
+      "name": "RepositoryWorkspacePage → Reload",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_88_pythonruntimepage",
+      "name": "PythonRuntimePage → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_89_scopedenvironmentpag",
+      "name": "ScopedEnvironmentPage → Load",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_90_render",
+      "name": "Render → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_91_render",
+      "name": "Render → LoadProfiles",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_92_checkupdate",
+      "name": "CheckUpdate → DisableBody",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_93_save",
+      "name": "Save → ParseSetting",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_94_onclick",
+      "name": "OnClick → DelSubscription",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_95_onclick",
+      "name": "OnClick → EditSubscription",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_96_onclick",
+      "name": "OnClick → EnabledOrDisabledSubscription",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_97_subscriptionlogmodal",
+      "name": "SubscriptionLogModal → LogEnded",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_98_render",
+      "name": "Render → Get",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_99_tasktriggers",
+      "name": "TaskTriggers → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_100_create",
+      "name": "Create → GetUniqPath",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_104_cancel",
+      "name": "Cancel → GetOSReleaseInfo",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_105_cancel",
+      "name": "Cancel → IsAlpine",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_106_cancel",
+      "name": "Cancel → IsDebian",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_107_cancel",
+      "name": "Cancel → IsUbuntu",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_108_cancel",
+      "name": "Cancel → GetOsTypeSync",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_109_cancel",
+      "name": "Cancel → PromiseExec",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_112_execute",
+      "name": "Execute → Wake",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_114_run",
+      "name": "Run → Cleanup",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_116_save",
+      "name": "Save → PublicKeyFingerprint",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_118_webhook",
+      "name": "Webhook → ParseString",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_119_create",
+      "name": "Create → GetOne",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_125_save",
+      "name": "Save → PublicVariable",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_130_save",
+      "name": "Save → Decode",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_131_acquireexecutionleas",
+      "name": "AcquireExecutionLease → Exists",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_132_pythonenvironmentrou",
+      "name": "PythonEnvironmentRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_133_constructor",
+      "name": "Constructor → BackupError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 8
+        }
+      ]
+    },
+    {
+      "id": "proc_134_taskroutes",
+      "name": "TaskRoutes → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_135_taskroutes",
+      "name": "TaskRoutes → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_136_execute",
+      "name": "Execute → AsError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 8
+        }
+      ]
+    },
+    {
+      "id": "proc_137_tasktriggerroutes",
+      "name": "TaskTriggerRoutes → TriggerError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_138_prepare",
+      "name": "Prepare → ScopedEnvironmentError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_139_autosave_crontab",
+      "name": "Autosave_crontab → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_140_constructor",
+      "name": "Constructor → BackupPaths",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_141_prepare",
+      "name": "Prepare → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_142_taskspage",
+      "name": "TasksPage → ObsGet",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_143_taskspage",
+      "name": "TasksPage → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_144_taskspage",
+      "name": "TasksPage → Send",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_146_constructor",
+      "name": "Constructor → PlatformBackupBarrier",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_147_onerror",
+      "name": "OnError → FileExist",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_148_onerror",
+      "name": "OnError → GetUniqueLockPath",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_149_prepare",
+      "name": "Prepare → SyncDirectory",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_151_get",
+      "name": "Get → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_152_noderuntime",
+      "name": "NodeRuntime → Request",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_153_backuproutes",
+      "name": "BackupRoutes → Sha256",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_154_action",
+      "name": "Action → Hash",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_155_observabilityroutes",
+      "name": "ObservabilityRoutes → ExecutionError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_156_preflight",
+      "name": "Preflight → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_159_snapshot",
+      "name": "Snapshot → NodeFileHash",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_161_rename",
+      "name": "Rename → Exists",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_162_gitresources",
+      "name": "GitResources → GetDb",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_163_onerror",
+      "name": "OnError → IsWithin",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_164_onerror",
+      "name": "OnError → IsBlocked",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_165_job",
+      "name": "Job → Owned",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_166_subscriptionmodal",
+      "name": "SubscriptionModal → Load",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_167_subscriptionmodal",
+      "name": "SubscriptionModal → Open",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_168_onok",
+      "name": "OnOk → Call",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_169_enabled",
+      "name": "Enabled → ExecutionSocketAddress",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_177_updatetimezone",
+      "name": "UpdateTimezone → IsInContainer",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_178_onend",
+      "name": "OnEnd → SendMessage",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_179_mutatetaskdefinition",
+      "name": "MutateTaskDefinitions → RuntimeKind",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_180_testaccess",
+      "name": "TestAccess → Invalid",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_181_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_182_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_190_rename",
+      "name": "Rename → Hash",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_191_pythonenvironments",
+      "name": "PythonEnvironments → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_192_gitresources",
+      "name": "GitResources → Status",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_194_job",
+      "name": "Job → Atomic",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_195_pythonenvironments",
+      "name": "PythonEnvironments → Load",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_196_render",
+      "name": "Render → Reload",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_197_render",
+      "name": "Render → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_198_subscriptionmodal",
+      "name": "SubscriptionModal → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_199_save",
+      "name": "Save → Get",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_200_publishsubscription",
+      "name": "PublishSubscription → GetUniqPath",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_203_updatetimezone",
+      "name": "UpdateTimezone → PromiseExec",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_204_testaccess",
+      "name": "TestAccess → Cleanup",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_207_remove",
+      "name": "Remove → Exists",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_208_taskroutes",
+      "name": "TaskRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_209_start",
+      "name": "Start → BackupError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_212_mutation",
+      "name": "Mutation → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_213_triggerwebhook",
+      "name": "TriggerWebhook → TriggerError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_215_boottask",
+      "name": "BootTask → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_216_backupadmission",
+      "name": "BackupAdmission → BackupPaths",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_217_prepare",
+      "name": "Prepare → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_218_dashboard",
+      "name": "Dashboard → ObsGet",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_219_dashboard",
+      "name": "Dashboard → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_220_dashboard",
+      "name": "Dashboard → Send",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_222_backupadmission",
+      "name": "BackupAdmission → PlatformBackupBarrier",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_223_onlog",
+      "name": "OnLog → FileExist",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_224_onlog",
+      "name": "OnLog → GetUniqueLockPath",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_225_execute",
+      "name": "Execute → SyncDirectory",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_227_save",
+      "name": "Save → Request",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_228_stage",
+      "name": "Stage → Sha256",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_229_create",
+      "name": "Create → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_230_run",
+      "name": "Run → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_231_gitresources",
+      "name": "GitResources → GitResourceError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_234_save",
+      "name": "Save → Exists",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_235_runtimeroutes",
+      "name": "RuntimeRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_236_onlog",
+      "name": "OnLog → IsWithin",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_237_onlog",
+      "name": "OnLog → IsBlocked",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_238_taskspage",
+      "name": "TasksPage → Load",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_239_onok",
+      "name": "OnOk → Call",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_240_mutatetaskdefinition",
+      "name": "MutateTaskDefinitions → ExecutionSocketAddress",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_245_testaccess",
+      "name": "TestAccess → Invalid",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_246_pythonenvironments",
+      "name": "PythonEnvironments → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_247_pythonenvironments",
+      "name": "PythonEnvironments → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_253_save",
+      "name": "Save → Hash",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_254_render",
+      "name": "Render → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_255_runtimeroutes",
+      "name": "RuntimeRoutes → Status",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_257_repositoryworkspacep",
+      "name": "RepositoryWorkspacePage → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_258_render",
+      "name": "Render → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_259_update",
+      "name": "Update → GetUniqPath",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_260_testaccess",
+      "name": "TestAccess → Cleanup",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_263_repair",
+      "name": "Repair → Exists",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_265_stage",
+      "name": "Stage → BackupError",
+      "process_type": "intra_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_268_recoverabandonedsnap",
+      "name": "RecoverAbandonedSnapshot → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_270_mutatetaskdefinition",
+      "name": "MutateTaskDefinitions → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_271_save",
+      "name": "Save → ConfigAssetError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_272_notificationchannels",
+      "name": "NotificationChannelsPage → ObsGet",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_273_dependence",
+      "name": "Dependence → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_274_dependence",
+      "name": "Dependence → Send",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_276_onerror",
+      "name": "OnError → FileExist",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_277_onerror",
+      "name": "OnError → GetUniqueLockPath",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_278_protectscriptconfiga",
+      "name": "ProtectScriptConfigAccess → SyncDirectory",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_279_backupsettings",
+      "name": "BackupSettings → Request",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_280_enabled",
+      "name": "Enabled → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_281_changeremote",
+      "name": "ChangeRemote → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_284_create",
+      "name": "Create → Exists",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_285_scopedenvironmentrou",
+      "name": "ScopedEnvironmentRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_286_onerror",
+      "name": "OnError → IsWithin",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_287_onerror",
+      "name": "OnError → IsBlocked",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_288_onok",
+      "name": "OnOk → Call",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_289_publishsubscription",
+      "name": "PublishSubscription → ExecutionSocketAddress",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_290_gitresources",
+      "name": "GitResources → Invalid",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_291_render",
+      "name": "Render → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_292_render",
+      "name": "Render → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_298_create",
+      "name": "Create → Hash",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_299_showprogress",
+      "name": "ShowProgress → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_300_scopedenvironmentrou",
+      "name": "ScopedEnvironmentRoutes → Status",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_301_withsync",
+      "name": "WithSync → Exists",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_303_action",
+      "name": "Action → BackupError",
+      "process_type": "intra_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_306_snapshot",
+      "name": "Snapshot → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_308_save",
+      "name": "Save → TaskDefinitionError",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_309_save",
+      "name": "Save → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_310_onok",
+      "name": "OnOk → ObsGet",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_311_dependencelogmodal",
+      "name": "DependenceLogModal → WebSocketManager",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_312_dependencelogmodal",
+      "name": "DependenceLogModal → Send",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_314_onlog",
+      "name": "OnLog → FileExist",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_315_onlog",
+      "name": "OnLog → GetUniqueLockPath",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_316_save",
+      "name": "Save → SyncDirectory",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_317_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_318_mutatetaskdefinition",
+      "name": "MutateTaskDefinitions → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_319_initialize",
+      "name": "Initialize → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_322_search",
+      "name": "Search → Exists",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_324_onlog",
+      "name": "OnLog → IsWithin",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_325_onlog",
+      "name": "OnLog → IsBlocked",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_326_save",
+      "name": "Save → Call",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_327_runsingle",
+      "name": "RunSingle → ExecutionSocketAddress",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_328_save",
+      "name": "Save → Invalid",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_329_showprogress",
+      "name": "ShowProgress → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_330_showprogress",
+      "name": "ShowProgress → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_336_tree",
+      "name": "Tree → Hash",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_337_render",
+      "name": "Render → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_340_backupadmission",
+      "name": "BackupAdmission → BackupError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_343_definition",
+      "name": "Definition → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_344_scopedenvironmentrou",
+      "name": "ScopedEnvironmentRoutes → ScopedEnvironmentError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_345_prepare",
+      "name": "Prepare → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_346_configassetroutes",
+      "name": "ConfigAssetRoutes → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_347_save",
+      "name": "Save → ObsGet",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_348_checkupdate",
+      "name": "CheckUpdate → WebSocketManager",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_349_checkupdate",
+      "name": "CheckUpdate → Send",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_351_updatetimezone",
+      "name": "UpdateTimezone → FileExist",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_352_submit",
+      "name": "Submit → Request",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_353_publishsubscription",
+      "name": "PublishSubscription → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_354_prune",
+      "name": "Prune → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_357_tree",
+      "name": "Tree → Exists",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_358_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_359_render",
+      "name": "Render → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_360_render",
+      "name": "Render → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_361_save",
+      "name": "Save → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_363_backuproutes",
+      "name": "BackupRoutes → BackupError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_366_prepare",
+      "name": "Prepare → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_367_configassetroutes",
+      "name": "ConfigAssetRoutes → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_368_protectscriptconfiga",
+      "name": "ProtectScriptConfigAccess → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_369_dependence",
+      "name": "Dependence → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_370_dependence",
+      "name": "Dependence → Send",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_372_gitresources",
+      "name": "GitResources → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_373_runsingle",
+      "name": "RunSingle → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_374_remove",
+      "name": "Remove → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_377_protectedpathcase",
+      "name": "ProtectedPathCase → GetDb",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_381_run",
+      "name": "Run → BackupError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_384_revise",
+      "name": "Revise → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_385_scopedenvironmentrou",
+      "name": "ScopedEnvironmentRoutes → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_386_remove",
+      "name": "Remove → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_387_subscription",
+      "name": "Subscription → WebSocketManager",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_388_subscription",
+      "name": "Subscription → Send",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_390_workspaceroutes",
+      "name": "WorkspaceRoutes → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_391_send",
+      "name": "Send → ExecutionError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_392_repair",
+      "name": "Repair → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_394_backupadmission",
+      "name": "BackupAdmission → GetDb",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_397_auditmaterialization",
+      "name": "AuditMaterializations → BackupError",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_400_prepare",
+      "name": "Prepare → AsError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 7
+        }
+      ]
+    },
+    {
+      "id": "proc_402_handleok",
+      "name": "HandleOk → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_403_diagnostics",
+      "name": "Diagnostics → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_404_protectscriptconfiga",
+      "name": "ProtectScriptConfigAccess → GetDb",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_407_mutation",
+      "name": "Mutation → BackupError",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_408_initialize",
+      "name": "Initialize → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_409_action",
+      "name": "Action → Root",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_410_backuproutes",
+      "name": "BackupRoutes → AsError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_411_bind",
+      "name": "Bind → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_412_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_415_snapshot",
+      "name": "Snapshot → BackupError",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_416_updatelogremovefrequ",
+      "name": "UpdateLogRemoveFrequency → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_418_run",
+      "name": "Run → AsError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_419_save",
+      "name": "Save → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_421_unpackarchive",
+      "name": "UnpackArchive → BackupError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_422_create",
+      "name": "Create → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_423_repositorypage",
+      "name": "RepositoryPage → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_425_decryptportable",
+      "name": "DecryptPortable → BackupError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_426_remove",
+      "name": "Remove → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_427_scopedenvironmentpag",
+      "name": "ScopedEnvironmentPage → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_429_encryptportable",
+      "name": "EncryptPortable → BackupError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_430_rename",
+      "name": "Rename → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_431_previewstoragecleanu",
+      "name": "PreviewStorageCleanup → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_434_save",
+      "name": "Save → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_435_discoverypolicy",
+      "name": "DiscoveryPolicy → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_436_backuproutes",
+      "name": "BackupRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_437_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_438_subscriptionmodal",
+      "name": "SubscriptionModal → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_439_nodeenvironmentroute",
+      "name": "NodeEnvironmentRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_440_pythonenvironments",
+      "name": "PythonEnvironments → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_441_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_443_render",
+      "name": "Render → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_444_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_446_showprogress",
+      "name": "ShowProgress → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_447_save",
+      "name": "Save → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_449_render",
+      "name": "Render → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_450_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_452_save",
+      "name": "Save → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_453_codeworkspacepage",
+      "name": "CodeWorkspacePage → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_455_search",
+      "name": "Search → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_457_tree",
+      "name": "Tree → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_460_execute",
+      "name": "Execute → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_461_commit",
+      "name": "Commit → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_463_diff",
+      "name": "Diff → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_465_push",
+      "name": "Push → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_467_read",
+      "name": "Read → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_468_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_469_stage",
+      "name": "Stage → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_470_runtimeroutes",
+      "name": "RuntimeRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_471_status",
+      "name": "Status → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_472_catalog",
+      "name": "Catalog → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 2
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 3
+        },
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_474_execute",
+      "name": "Execute → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_475_remove",
+      "name": "Remove → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_477_removerecord",
+      "name": "RemoveRecord → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_479_repair",
+      "name": "Repair → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_481_withsync",
+      "name": "WithSync → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_482_action",
+      "name": "Action → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_483_action",
+      "name": "Action → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_484_runtimebuildenvironm",
+      "name": "RuntimeBuildEnvironment → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "flushBrowser",
+          "step": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+const fs=require('fs'),os=require('os'),path=require('path'),{spawnSync}=require('child_process');
+const root=fs.mkdtempSync(path.join(os.tmpdir(),'phase11-gate-'));
+try {fs.writeFileSync(path.join(root,'.env'),'JWT_SECRET=phase11-test-only\n');for(const name of ['shell','sample'])fs.cpSync(name,path.join(root,name),{recursive:true});const r=spawnSync(process.execPath,['-r','ts-node/register/transpile-only','--test',...process.argv.slice(2)],{env:{...process.env,QL_DIR:root,QL_DATA_DIR:root,TS_NODE_PROJECT:path.resolve('back/tsconfig.json')},stdio:'inherit'});process.exitCode=r.status??1;}finally{fs.rmSync(root,{recursive:true,force:true});}

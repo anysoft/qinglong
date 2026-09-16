@@ -22,7 +22,7 @@ import {
 import LoggerInstance from '../loaders/logger';
 import pick from 'lodash/pick';
 import SystemService from '../services/system';
-import CronService from '../services/cron';
+import CurrentTaskBridgeService from '../services/cron';
 import {
   CronDetailRequest,
   CronDetailResponse,
@@ -271,7 +271,7 @@ export const getCronDetail = async (
         message: 'log_path is required',
       });
     }
-    const cronService = Container.get(CronService);
+    const cronService = Container.get(CurrentTaskBridgeService);
     const data = (await cronService.find({
       log_path: call.request.log_path,
     })) as CronItem;
@@ -285,51 +285,24 @@ export const createCron = async (
   call: ServerUnaryCall<CreateCronRequest, CronResponse>,
   callback: sendUnaryData<CronResponse>,
 ) => {
-  try {
-    const cronService = Container.get(CronService);
-    const data = (await cronService.create(call.request)) as CronItem;
-    callback(null, { code: 200, data: normalizeCronData(data) });
-  } catch (e: any) {
-    callback(e);
-  }
+  // Retired definition mutation: protobuf names remain reserved for bridge clients.
+  callback(null, { code: 410, data: undefined, message: "TASK_API_REQUIRED" });
 };
 
 export const updateCron = async (
   call: ServerUnaryCall<UpdateCronRequest, CronResponse>,
   callback: sendUnaryData<CronResponse>,
 ) => {
-  try {
-    const cronService = Container.get(CronService);
-    const { id, ...fields } = call.request;
-
-    const updateRequest = {
-      id,
-      ...Object.entries(fields).reduce((acc: any, [key, value]) => {
-        if (value !== undefined) {
-          acc[key] = value;
-        }
-        return acc;
-      }, {}),
-    } as UpdateCronRequest;
-
-    const data = (await cronService.update(updateRequest)) as CronItem;
-    callback(null, { code: 200, data: normalizeCronData(data) });
-  } catch (e: any) {
-    callback(e);
-  }
+  // Retired definition mutation: protobuf names remain reserved for bridge clients.
+  callback(null, { code: 410, data: undefined, message: "TASK_API_REQUIRED" });
 };
 
 export const deleteCrons = async (
   call: ServerUnaryCall<DeleteCronsRequest, Response>,
   callback: sendUnaryData<Response>,
 ) => {
-  try {
-    const cronService = Container.get(CronService);
-    await cronService.remove(call.request.ids);
-    callback(null, { code: 200 });
-  } catch (e: any) {
-    callback(e);
-  }
+  // Retired definition mutation: protobuf names remain reserved for bridge clients.
+  callback(null, { code: 410, message: "TASK_API_REQUIRED" });
 };
 
 export const getCrons = async (
@@ -337,7 +310,7 @@ export const getCrons = async (
   callback: sendUnaryData<CronsResponse>,
 ) => {
   try {
-    const cronService = Container.get(CronService);
+    const cronService = Container.get(CurrentTaskBridgeService);
     const result = await cronService.crontabs({
       searchValue: call.request.searchValue || '',
       page: '0',
@@ -373,7 +346,7 @@ export const getCronById = async (
       });
     }
 
-    const cronService = Container.get(CronService);
+    const cronService = Container.get(CurrentTaskBridgeService);
     const data = (await cronService.getDb({ id: call.request.id })) as CronItem;
     callback(null, { code: 200, data: normalizeCronData(data) });
   } catch (e: any) {
@@ -389,40 +362,16 @@ export const enableCrons = async (
   call: ServerUnaryCall<EnableCronsRequest, Response>,
   callback: sendUnaryData<Response>,
 ) => {
-  try {
-    if (!call.request.ids || call.request.ids.length === 0) {
-      return callback(null, {
-        code: 400,
-        message: 'ids parameter is required',
-      });
-    }
-
-    const cronService = Container.get(CronService);
-    await cronService.enabled(call.request.ids);
-    callback(null, { code: 200 });
-  } catch (e: any) {
-    callback(e);
-  }
+  // Retired definition mutation: protobuf names remain reserved for bridge clients.
+  callback(null, { code: 410, message: "TASK_API_REQUIRED" });
 };
 
 export const disableCrons = async (
   call: ServerUnaryCall<DisableCronsRequest, Response>,
   callback: sendUnaryData<Response>,
 ) => {
-  try {
-    if (!call.request.ids || call.request.ids.length === 0) {
-      return callback(null, {
-        code: 400,
-        message: 'ids parameter is required',
-      });
-    }
-
-    const cronService = Container.get(CronService);
-    await cronService.disabled(call.request.ids);
-    callback(null, { code: 200 });
-  } catch (e: any) {
-    callback(e);
-  }
+  // Retired definition mutation: protobuf names remain reserved for bridge clients.
+  callback(null, { code: 410, message: "TASK_API_REQUIRED" });
 };
 
 export const runCrons = async (
@@ -437,7 +386,7 @@ export const runCrons = async (
       });
     }
 
-    const cronService = Container.get(CronService);
+    const cronService = Container.get(CurrentTaskBridgeService);
     await cronService.run(call.request.ids);
     callback(null, { code: 200 });
   } catch (e: any) {

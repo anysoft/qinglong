@@ -1,0 +1,2 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[{"file":"back/shared/operationalSchema.ts","name":"back/shared/operationalSchema.ts","risk":"UNKNOWN","total":null},{"file":"back/shared/operationalSchema.ts","name":"UnsupportedDatabaseSchemaError","status":0},{"file":"back/shared/operationalSchema.ts","name":"initializeOperationalSchema","status":0},{"file":"back/loaders/db.ts","name":"back/loaders/db.ts","risk":"UNKNOWN","total":null}]

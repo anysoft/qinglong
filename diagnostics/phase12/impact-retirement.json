@@ -1,0 +1,211 @@
+[
+  {
+    "target": {
+      "id": "Class:back/services/script.ts:ScriptService",
+      "name": "ScriptService",
+      "type": "Class",
+      "filePath": "back/services/script.ts"
+    },
+    "direction": "upstream",
+    "impactedCount": 3,
+    "risk": "LOW",
+    "riskSharedAxes": "LOW",
+    "riskScale": {
+      "comparableAcrossKinds": true,
+      "unusedAxes": []
+    },
+    "epistemic": "exact",
+    "summary": {
+      "direct": 1,
+      "processes_affected": 0,
+      "modules_affected": 0
+    },
+    "byDepthCounts": {
+      "1": 1,
+      "2": 1,
+      "3": 1
+    },
+    "affected_processes": [],
+    "affected_modules": [],
+    "byDepth": {
+      "1": [
+        {
+          "depth": 1,
+          "id": "File:back/api/script.ts",
+          "name": "script.ts",
+          "filePath": "back/api/script.ts",
+          "relationType": "IMPORTS",
+          "confidence": 1,
+          "processes": []
+        }
+      ],
+      "2": [
+        {
+          "depth": 2,
+          "id": "File:back/api/index.ts",
+          "name": "index.ts",
+          "filePath": "back/api/index.ts",
+          "relationType": "IMPORTS",
+          "confidence": 1,
+          "processes": []
+        }
+      ],
+      "3": [
+        {
+          "depth": 3,
+          "id": "File:back/loaders/express.ts",
+          "name": "express.ts",
+          "filePath": "back/loaders/express.ts",
+          "relationType": "IMPORTS",
+          "confidence": 1,
+          "processes": []
+        }
+      ]
+    }
+  },
+  {
+    "target": {
+      "id": "Function:back/api/script.ts:isPathAllowed",
+      "name": "isPathAllowed",
+      "type": "Function",
+      "filePath": "back/api/script.ts"
+    },
+    "direction": "upstream",
+    "impactedCount": 3,
+    "risk": "LOW",
+    "riskSharedAxes": "LOW",
+    "riskScale": {
+      "comparableAcrossKinds": true,
+      "unusedAxes": []
+    },
+    "epistemic": "exact",
+    "summary": {
+      "direct": 1,
+      "processes_affected": 0,
+      "modules_affected": 0
+    },
+    "byDepthCounts": {
+      "1": 1,
+      "2": 1,
+      "3": 1
+    },
+    "affected_processes": [],
+    "affected_modules": [],
+    "byDepth": {
+      "1": [
+        {
+          "depth": 1,
+          "id": "File:back/api/script.ts",
+          "name": "script.ts",
+          "filePath": "back/api/script.ts",
+          "relationType": "CALLS",
+          "confidence": 0.85,
+          "processes": []
+        }
+      ],
+      "2": [
+        {
+          "depth": 2,
+          "id": "File:back/api/index.ts",
+          "name": "index.ts",
+          "filePath": "back/api/index.ts",
+          "relationType": "IMPORTS",
+          "confidence": 1,
+          "processes": []
+        }
+      ],
+      "3": [
+        {
+          "depth": 3,
+          "id": "File:back/loaders/express.ts",
+          "name": "express.ts",
+          "filePath": "back/loaders/express.ts",
+          "relationType": "IMPORTS",
+          "confidence": 1,
+          "processes": []
+        }
+      ]
+    }
+  },
+  {
+    "target": {
+      "id": "Function:src/pages/script/editModal.tsx:EditModal",
+      "name": "EditModal",
+      "type": "Function",
+      "filePath": "src/pages/script/editModal.tsx"
+    },
+    "direction": "upstream",
+    "impactedCount": 0,
+    "risk": "UNKNOWN",
+    "riskSharedAxes": "UNKNOWN",
+    "riskScale": {
+      "comparableAcrossKinds": true,
+      "unusedAxes": []
+    },
+    "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+    "epistemic": "exact",
+    "summary": {
+      "direct": 0,
+      "processes_affected": 0,
+      "modules_affected": 0
+    },
+    "byDepthCounts": {},
+    "affected_processes": [],
+    "affected_modules": [],
+    "byDepth": {}
+  },
+  {
+    "target": {
+      "id": "Function:src/pages/script/saveModal.tsx:SaveModal",
+      "name": "SaveModal",
+      "type": "Function",
+      "filePath": "src/pages/script/saveModal.tsx"
+    },
+    "direction": "upstream",
+    "impactedCount": 0,
+    "risk": "UNKNOWN",
+    "riskSharedAxes": "UNKNOWN",
+    "riskScale": {
+      "comparableAcrossKinds": true,
+      "unusedAxes": []
+    },
+    "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+    "epistemic": "exact",
+    "summary": {
+      "direct": 0,
+      "processes_affected": 0,
+      "modules_affected": 0
+    },
+    "byDepthCounts": {},
+    "affected_processes": [],
+    "affected_modules": [],
+    "byDepth": {}
+  },
+  {
+    "target": {
+      "id": "Function:src/pages/script/renameModal.tsx:RenameModal",
+      "name": "RenameModal",
+      "type": "Function",
+      "filePath": "src/pages/script/renameModal.tsx"
+    },
+    "direction": "upstream",
+    "impactedCount": 0,
+    "risk": "UNKNOWN",
+    "riskSharedAxes": "UNKNOWN",
+    "riskScale": {
+      "comparableAcrossKinds": true,
+      "unusedAxes": []
+    },
+    "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+    "epistemic": "exact",
+    "summary": {
+      "direct": 0,
+      "processes_affected": 0,
+      "modules_affected": 0
+    },
+    "byDepthCounts": {},
+    "affected_processes": [],
+    "affected_modules": [],
+    "byDepth": {}
+  }
+]

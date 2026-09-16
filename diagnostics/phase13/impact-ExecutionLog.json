@@ -1,0 +1,65 @@
+{
+  "status": "ambiguous",
+  "message": "Found 2 symbols matching 'ExecutionLog'. Blast radius differs per candidate (max 212 impacted at risk CRITICAL). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "ExecutionLog"
+  },
+  "direction": "upstream",
+  "totalCandidates": 2,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 212,
+  "maxRisk": "CRITICAL",
+  "candidates": [
+    {
+      "uid": "Class:back/services/executionLog.ts:ExecutionLog",
+      "name": "ExecutionLog",
+      "kind": "Class",
+      "filePath": "back/services/executionLog.ts",
+      "line": 41,
+      "score": 0.6,
+      "impactedCount": 212,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 1
+    },
+    {
+      "uid": "Class:back/services/executionLog.ts:ExecutionLog",
+      "name": "ExecutionLog",
+      "kind": "Class",
+      "filePath": "back/services/executionLog.ts",
+      "line": 6,
+      "score": 0.6,
+      "impactedCount": 157,
+      "risk": "HIGH",
+      "riskSharedAxes": "HIGH",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 1
+    }
+  ]
+}

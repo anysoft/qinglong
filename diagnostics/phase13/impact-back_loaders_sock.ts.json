@@ -1,0 +1,9 @@
+{
+  "error": "Target 'back/loaders/sock.ts' not found",
+  "target": {
+    "name": "back/loaders/sock.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "file": "tests/phase7/offline.test.cjs",
+    "name": "tests/phase7/offline.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase7/offline.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase7/offline.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase7/offline.test.cjs",
+    "name": "until",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'until' not found\",\n  \"target\": {\n    \"name\": \"until\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase7/wheelhouse.cjs",
+    "name": "tests/phase7/wheelhouse.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase7/wheelhouse.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase7/wheelhouse.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase7/wheelhouse.cjs",
+    "name": "wheelhouse",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'wheelhouse' not found\",\n  \"target\": {\n    \"name\": \"wheelhouse\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

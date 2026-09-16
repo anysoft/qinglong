@@ -1,0 +1,21 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs/promises'),path=require('node:path'),os=require('node:os'),{execFileSync}=require('node:child_process');
+const {fixture}=require('../phase5/helpers.cjs');
+test('archive preflight rejects traversal, absolute paths, symlink/hardlink escape, special files and link ancestors before extraction',async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'phase8-archive-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const cases=[{name:'node/../escape',type:'file'},{name:'/escape',type:'file'},{name:'node/link',type:'symlink',link:'../../outside'},{name:'node/link',type:'hardlink',link:'other/outside'},{name:'node/device',type:'device'},{name:'node/link',type:'symlink',link:'file',child:true}];
+ for(let i=0;i<cases.length;i++){const archive=path.join(root,i+'.tar'),out=path.join(root,'out-'+i);execFileSync('/usr/bin/python3',['-I','-S','-c',`import tarfile,io,json,sys\nx=json.loads(sys.argv[2])\nwith tarfile.open(sys.argv[1],'w') as t:\n f=tarfile.TarInfo('node/file');f.size=1;t.addfile(f,io.BytesIO(b'x'))\n f=tarfile.TarInfo(x['name']);f.type={'file':tarfile.REGTYPE,'symlink':tarfile.SYMTYPE,'hardlink':tarfile.LNKTYPE,'device':tarfile.CHRTYPE}[x['type']];f.linkname=x.get('link','');t.addfile(f)\n if x.get('child'):t.addfile(tarfile.TarInfo('node/link/child'))`,archive,JSON.stringify(cases[i])]);assert.throws(()=>execFileSync('/usr/bin/python3',['-I','-S',path.resolve('shell/node_archive.py'),archive,out,'node'],{stdio:'pipe'}));await assert.rejects(fs.stat(out),{code:'ENOENT'});}
+});
+test('Node resource IDs, ownership, inode and symlink boundary fail closed without deleting unknown data',async t=>{
+ const h=await fixture(t);h.config.rootPath=process.cwd();const Paths=h.load('back/services/nodePaths.ts').default,paths=new Paths(h.root);for(const id of ['../x','/tmp',0,-1])assert.throws(()=>paths.relative('runtime',id));
+ const runtime=await paths.create('runtime',1);await fs.mkdir(path.join(runtime,'bin'));await fs.symlink('/bin/sh',path.join(runtime,'bin/node'));await assert.rejects(paths.file(runtime,'bin/node'),/NODE_PATH_INVALID/);
+ const tool=await paths.create('toolchain',1);await fs.mkdir(path.join(tool,'node_modules'));await fs.symlink('/tmp',path.join(tool,'node_modules/pnpm'));await assert.rejects(paths.file(tool,'node_modules/pnpm/missing'));
+ const env=await paths.create('environment',1);await fs.writeFile(path.join(env,'user-file'),'keep');await assert.rejects(paths.remove('environment',1),/NODE_ORPHAN/);assert.equal(await fs.readFile(path.join(env,'user-file'),'utf8'),'keep');
+ const build=await paths.create('build',1,1);await fs.rename(build,build+'-old');await fs.mkdir(build);await fs.writeFile(path.join(build,'unknown'),'keep');await assert.rejects(paths.remove('build',1,1),/NODE_PATH_INVALID/);assert.equal(await fs.readFile(path.join(build,'unknown'),'utf8'),'keep');
+ const a=await paths.lease('build',2,'shared'),b=await paths.lease('build',2,'shared');await assert.rejects(paths.lease('build',2),/RUNTIME_BUSY/);await a.release();await b.release();const exclusive=await paths.lease('build',2);await exclusive.release();
+});
+test('Node catalog, exact versions, platform and registry credential/source policy',async t=>{
+ const h=await fixture(t),m=h.load('back/services/nodeDistributionProvider.ts'),Paths=h.load('back/services/nodePaths.ts').default,PackageManager=h.load('back/services/nodePackageManager.ts').default;
+ for(const version of ['latest','LTS','22','22.x','22.1.0;touch /tmp/x','../22.0.0'])assert.throws(()=>m.exactNodeVersion(version));assert.throws(()=>m.nodePlatform('win32','x64'));assert.throws(()=>m.nodePlatform('linux','riscv64'));
+ const parsed=m.parseNodeCatalog(JSON.stringify([{version:'v22.19.0',date:'2025-08-28',lts:'Jod',files:['linux-x64'],npm:'10.9.3'},{version:'v24.0.0-rc.1',date:'2025-01-01',lts:false,files:[]}]));assert.equal(parsed.length,1);assert.equal(parsed[0].lts,'Jod');
+ for(const url of ['https://user:pass@registry.npmjs.org/','https://evil.example/','file:///tmp','http://127.0.0.1/?token=secret'])assert.throws(()=>new PackageManager(new Paths(h.root),url),/NODE_REGISTRY_INVALID/);
+});

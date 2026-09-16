@@ -1,0 +1,497 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: recovery snapshot cannot overwrite concurrent create
+not ok 1 - recovery snapshot cannot overwrite concurrent create
+  ---
+  duration_ms: 203.994292
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:5'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent update
+not ok 2 - recovery snapshot cannot overwrite concurrent update
+  ---
+  duration_ms: 91.334125
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:5'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent remove
+not ok 3 - recovery snapshot cannot overwrite concurrent remove
+  ---
+  duration_ms: 63.749959
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:5'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent disabled
+not ok 4 - recovery snapshot cannot overwrite concurrent disabled
+  ---
+  duration_ms: 60.11375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:5'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent enabled
+not ok 5 - recovery snapshot cannot overwrite concurrent enabled
+  ---
+  duration_ms: 54.801708
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:85:5'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: recovery waits for an admitted mutation to finish registration before reading the DB
+not ok 6 - recovery waits for an admitted mutation to finish registration before reading the DB
+  ---
+  duration_ms: 57.94975
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:121:1'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: create preserves scheduler 503 after rollback and releases its lock
+not ok 7 - create preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 53.933458
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:148:5'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: update preserves scheduler 503 after rollback and releases its lock
+not ok 8 - update preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 54.747041
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:148:5'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: enabled preserves scheduler 503 after rollback and releases its lock
+not ok 9 - enabled preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 52.894458
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:148:5'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: scheduler lock excludes a second OS process and leaves no lock after completion
+ok 10 - scheduler lock excludes a second OS process and leaves no lock after completion
+  ---
+  duration_ms: 389.475916
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+not ok 11 - update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 71.528458
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+not ok 12 - update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 58.26875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+not ok 13 - update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 48.428042
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+not ok 14 - update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 47.920292
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+not ok 15 - remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 47.247583
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+not ok 16 - remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 43.497292
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+not ok 17 - remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 44.358833
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+not ok 18 - remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 47.087375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+not ok 19 - disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 45.593125
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+not ok 20 - disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 45.149083
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+not ok 21 - disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 44.092208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+not ok 22 - disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 41.325541
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:224:13'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: configuration rollback cannot restore an obsolete manual queue token
+not ok 23 - configuration rollback cannot restore an obsolete manual queue token
+  ---
+  duration_ms: 43.849375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:255:1'
+  failureType: 'testCodeFailure'
+  error: "⚠️  Couldn't find .env file  ⚠️"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/config/index.ts:120:9)
+    Module._compile (node:internal/modules/cjs/loader:1781:14)
+    Module.m._compile (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1618:23)
+    node:internal/modules/cjs/loader:1913:10
+    Object.require.extensions.<computed> [as .ts] (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/ts-node@10.9.2_@types+node@17.0.45_typescript@5.2.2/node_modules/ts-node/src/index.ts:1621:12)
+    Module.load (node:internal/modules/cjs/loader:1505:32)
+    Function._load (node:internal/modules/cjs/loader:1309:12)
+    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    Module.require (node:internal/modules/cjs/loader:1527:12)
+    require (node:internal/modules/helpers:147:16)
+  ...
+# Subtest: Python/JS/TS/Shell binding matrix, missing/wrong environments and effective references
+ok 24 - Python/JS/TS/Shell binding matrix, missing/wrong environments and effective references
+  ---
+  duration_ms: 541.343042
+  type: 'test'
+  ...
+# Subtest: Task > Subscription > Repository precedence and clone retain subscription-owned logical resources
+ok 25 - Task > Subscription > Repository precedence and clone retain subscription-owned logical resources
+  ---
+  duration_ms: 300.83525
+  type: 'test'
+  ...
+# Subtest: readiness responds to source loss, disabled profile and malformed Config/Hook without execution snapshots
+ok 26 - readiness responds to source loss, disabled profile and malformed Config/Hook without execution snapshots
+  ---
+  duration_ms: 213.29125
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 4
+# fail 22
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2021.745875

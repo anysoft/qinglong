@@ -1,0 +1,9 @@
+{
+  "error": "Target 'tests/phase8/security.test.cjs' not found",
+  "target": {
+    "name": "tests/phase8/security.test.cjs"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

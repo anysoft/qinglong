@@ -1,0 +1,136 @@
+TAP version 13
+# Subtest: native shell argv, direct Worktree cwd, immutable resolver, no host secrets
+ok 1 - native shell argv, direct Worktree cwd, immutable resolver, no host secrets
+  ---
+  duration_ms: 2760.051167
+  type: 'test'
+  ...
+# Subtest: real exit 124 is FAILED, supervisor timeout is TIMEOUT, cancellation is CANCELLED
+ok 2 - real exit 124 is FAILED, supervisor timeout is TIMEOUT, cancellation is CANCELLED
+  ---
+  duration_ms: 3191.590542
+  type: 'test'
+  ...
+# Subtest: FORBID persists skipped submission, QUEUE is FIFO, queued cancel never spawns
+ok 3 - FORBID persists skipped submission, QUEUE is FIFO, queued cancel never spawns
+  ---
+  duration_ms: 2836.415833
+  type: 'test'
+  ...
+# Subtest: retry attempts freeze scoped ENV and settings; each BEFORE patch starts from snapshot
+ok 4 - retry attempts freeze scoped ENV and settings; each BEFORE patch starts from snapshot
+  ---
+  duration_ms: 2438.701125
+  type: 'test'
+  ...
+# Subtest: BEFORE generated secret is redacted before buffered output and MAIN, FINALLY runs
+ok 5 - BEFORE generated secret is redacted before buffered output and MAIN, FINALLY runs
+  ---
+  duration_ms: 1649.087916
+  type: 'test'
+  ...
+# Subtest: retry resets BEFORE patches, freezes Config and Hooks, keeps run-wide secrets, removes private Hook files
+ok 6 - retry resets BEFORE patches, freezes Config and Hooks, keeps run-wide secrets, removes private Hook files
+  ---
+  duration_ms: 4544.786917
+  type: 'test'
+  ...
+# Subtest: invalid Hook output never retries; FINALLY executes and private files are removed
+ok 7 - invalid Hook output never retries; FINALLY executes and private files are removed
+  ---
+  duration_ms: 1477.68925
+  type: 'test'
+  ...
+# Subtest: pre-resolution, skipped and queued cancelled runs persist canonical results
+ok 8 - pre-resolution, skipped and queued cancelled runs persist canonical results
+  ---
+  duration_ms: 947.448541
+  type: 'test'
+  ...
+# Subtest: node binding rejects imported sibling module trees and preserves unknown replacement on recovery
+ok 9 - node binding rejects imported sibling module trees and preserves unknown replacement on recovery
+  ---
+  duration_ms: 1186.513625
+  type: 'test'
+  ...
+# Subtest: private cleanup fails closed on unknown file and preserves that file
+ok 10 - private cleanup fails closed on unknown file and preserves that file
+  ---
+  duration_ms: 702.532
+  type: 'test'
+  ...
+# Subtest: execution terminal result queues durable notification without synchronous provider calls
+ok 11 - execution terminal result queues durable notification without synchronous provider calls
+  ---
+  duration_ms: 1354.354125
+  type: 'test'
+  ...
+# Subtest: large UTF-8 per-run logs drain all bytes and tail without split-codepoint replacement
+ok 12 - large UTF-8 per-run logs drain all bytes and tail without split-codepoint replacement
+  ---
+  duration_ms: 900.442208
+  type: 'test'
+  ...
+# Subtest: graceful shutdown waits for an in-flight claim and cancels its new owner
+ok 13 - graceful shutdown waits for an in-flight claim and cancels its new owner
+  ---
+  duration_ms: 1231.827833
+  type: 'test'
+  ...
+# Subtest: threshold, recovery, per-status overrides, atomic outbox and real HTTP delivery
+ok 14 - threshold, recovery, per-status overrides, atomic outbox and real HTTP delivery
+  ---
+  duration_ms: 2525.54825
+  type: 'test'
+  ...
+# Subtest: delivery retry/dead/manual identity and channel archive preserve history; execution does not wait
+ok 15 - delivery retry/dead/manual identity and channel archive preserve history; execution does not wait
+  ---
+  duration_ms: 1765.299042
+  type: 'test'
+  ...
+# Subtest: run events are ordered, attempts retain retry results, resource/log APIs omit secret values
+ok 16 - run events are ordered, attempts retain retry results, resource/log APIs omit secret values
+  ---
+  duration_ms: 1417.939
+  type: 'test'
+  ...
+# Subtest: terminal transaction rollback includes health and outbox
+ok 17 - terminal transaction rollback includes health and outbox
+  ---
+  duration_ms: 839.554958
+  type: 'test'
+  ...
+# Subtest: channel modes, optimistic secret updates and task clone preserve explicit notification semantics
+ok 18 - channel modes, optimistic secret updates and task clone preserve explicit notification semantics
+  ---
+  duration_ms: 806.110708
+  type: 'test'
+  ...
+# Subtest: provider transport refuses unsafe URLs, redirects, and oversized responses; secrets never escape error codes
+ok 19 - provider transport refuses unsafe URLs, redirects, and oversized responses; secrets never escape error codes
+  ---
+  duration_ms: 1973.718875
+  type: 'test'
+  ...
+# Subtest: Run logs reject forged cursors and symlinks; old log API and cleaner cannot delete Run logs
+ok 20 - Run logs reject forged cursors and symlinks; old log API and cleaner cannot delete Run logs
+  ---
+  duration_ms: 1018.142084
+  type: 'test'
+  ...
+# Subtest: live redaction releases safe short output before completion and preserves all split secret boundaries
+ok 21 - live redaction releases safe short output before completion and preserves all split secret boundaries
+  ---
+  duration_ms: 795.691
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13118.405

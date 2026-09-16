@@ -1,0 +1,169 @@
+{
+  "status": "ambiguous",
+  "message": "Found 17 symbols matching 'cancel' (showing 6 of 17). Blast radius differs per candidate (max 151 impacted at risk UNKNOWN; CRITICAL among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "cancel"
+  },
+  "direction": "upstream",
+  "totalCandidates": 17,
+  "candidatesTruncated": true,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 151,
+  "maxRisk": "UNKNOWN",
+  "knownMaxRisk": "CRITICAL",
+  "candidates": [
+    {
+      "uid": "",
+      "name": "cancel",
+      "kind": "",
+      "filePath": "",
+      "line": 230,
+      "score": 0.5,
+      "impactedCount": 151,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 127
+    },
+    {
+      "uid": "",
+      "name": "cancel",
+      "kind": "",
+      "filePath": "",
+      "line": 53,
+      "score": 0.5,
+      "impactedCount": 93,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "",
+      "name": "cancel",
+      "kind": "",
+      "filePath": "",
+      "line": 14,
+      "score": 0.5,
+      "impactedCount": 93,
+      "risk": "CRITICAL",
+      "riskSharedAxes": "CRITICAL",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 76
+    },
+    {
+      "uid": "Function:src/pages/dependence/logModal.tsx:DependenceLogModal.cancel@28:2",
+      "name": "cancel",
+      "kind": "Function",
+      "filePath": "src/pages/dependence/logModal.tsx",
+      "line": 29,
+      "score": 0.56,
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 3
+    },
+    {
+      "uid": "Function:back/taskExecution.ts:consumePrepared.cancel@70:2",
+      "name": "cancel",
+      "kind": "Function",
+      "filePath": "back/taskExecution.ts",
+      "line": 71,
+      "score": 0.56,
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 0,
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+    },
+    {
+      "uid": "Function:back/taskExecution.ts:startExecution.cancel@151:2",
+      "name": "cancel",
+      "kind": "Function",
+      "filePath": "back/taskExecution.ts",
+      "line": 152,
+      "score": 0.56,
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 0,
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+    }
+  ]
+}

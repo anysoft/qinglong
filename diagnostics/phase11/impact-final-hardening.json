@@ -1,0 +1,121 @@
+[
+  {
+    "file": "back/shared/triggerDefinition.ts",
+    "name": "back/shared/triggerDefinition.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/triggerDefinition.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/triggerDefinition.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/triggerDefinition.ts",
+    "name": "TriggerError",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TriggerError' not found\",\n  \"target\": {\n    \"name\": \"TriggerError\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/triggerDefinition.ts",
+    "name": "exactKeys",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'exactKeys' not found\",\n  \"target\": {\n    \"name\": \"exactKeys\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/triggerDefinition.ts",
+    "name": "positiveTriggerId",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'positiveTriggerId' not found\",\n  \"target\": {\n    \"name\": \"positiveTriggerId\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/triggerDefinition.ts",
+    "name": "cronNext",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cronNext' not found\",\n  \"target\": {\n    \"name\": \"cronNext\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/triggerDefinition.ts",
+    "name": "relativeGlob",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'relativeGlob' not found\",\n  \"target\": {\n    \"name\": \"relativeGlob\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/triggerDefinition.ts",
+    "name": "matchesGlob",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'matchesGlob' not found\",\n  \"target\": {\n    \"name\": \"matchesGlob\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/schema/triggerSchema.ts",
+    "name": "back/schema/triggerSchema.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/schema/triggerSchema.ts' not found\",\n  \"target\": {\n    \"name\": \"back/schema/triggerSchema.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/schema/triggerSchema.ts",
+    "name": "createTriggerSchema",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'createTriggerSchema' not found\",\n  \"target\": {\n    \"name\": \"createTriggerSchema\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discoveryScanner.ts",
+    "name": "back/services/discoveryScanner.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/discoveryScanner.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/discoveryScanner.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discoveryScanner.ts",
+    "name": "DiscoveryScanner",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'DiscoveryScanner' not found\",\n  \"target\": {\n    \"name\": \"DiscoveryScanner\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/discoveryScanner.ts",
+    "name": "scan",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'scan' not found\",\n  \"target\": {\n    \"name\": \"scan\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/triggerWebhook.ts",
+    "name": "back/api/triggerWebhook.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/triggerWebhook.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/triggerWebhook.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/triggerWebhook.ts",
+    "name": "triggerWebhook",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'triggerWebhook' not found\",\n  \"target\": {\n    \"name\": \"triggerWebhook\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase9/subscription-delete.test.cjs",
+    "name": "tests/phase9/subscription-delete.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase9/subscription-delete.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase9/subscription-delete.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase9/subscription-delete.test.cjs",
+    "name": "warn",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'warn' not found\",\n  \"target\": {\n    \"name\": \"warn\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase9/subscription-delete.test.cjs",
+    "name": "error",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'error' not found\",\n  \"target\": {\n    \"name\": \"error\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

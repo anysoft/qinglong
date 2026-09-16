@@ -1,0 +1,113 @@
+[PREPARING]
+true
+11.19.0
+[INSTALLING_DEPENDENCIES]
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "package-manager-strict-version". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> fsevents@2.3.3 install
+> node-gyp rebuild
+
+gyp info it worked if it ends with ok
+gyp info using node-gyp@12.4.0
+gyp info using node@24.21.0 | darwin | arm64
+gyp info find Python using Python version 3.9.6 found at "/Library/Developer/CommandLineTools/usr/bin/python3"
+
+gyp http GET https://nodejs.org/download/release/v24.21.0/node-v24.21.0-headers.tar.gz
+gyp WARN install got an error, rolling back install
+gyp ERR! configure error 
+gyp ERR! stack ConnectTimeoutError: Connect Timeout Error (attempted addresses: 2606:4700::6810:d583:443, timeout: 10000ms)
+gyp ERR! stack at onConnectTimeout (/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-L4lbfp/runtime/node/versions/runtime-1/lib/node_modules/npm/node_modules/undici/lib/core/connect.js:237:24)
+gyp ERR! stack at Immediate._onImmediate (/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-L4lbfp/runtime/node/versions/runtime-1/lib/node_modules/npm/node_modules/undici/lib/core/connect.js:206:11)
+gyp ERR! stack at process.processImmediate (node:internal/timers:574:21)
+gyp ERR! System Darwin 25.6.0
+gyp ERR! command "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-L4lbfp/runtime/node/versions/runtime-1/bin/node" "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-L4lbfp/runtime/node/versions/runtime-1/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-L4lbfp/runtime/node/environments/env-1/builds/build-1/node_modules/fsevents
+gyp ERR! node -v v24.21.0
+gyp ERR! node-gyp -v v12.4.0
+gyp ERR! $npm_package_name fsevents
+gyp ERR! $npm_package_version 2.3.3
+gyp ERR! not ok 
+
+> esbuild@0.25.12 postinstall
+> node install.js
+
+
+added 6 packages in 19s
+npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn install-scripts   esbuild@0.25.12 (postinstall: node install.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[VERIFYING_BUILD]
+true
+11.19.0
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "package-manager-strict-version". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+{
+  "version": "0.0.0",
+  "name": "platform-environment",
+  "dependencies": {
+    "is-number": {
+      "version": "7.0.0",
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
+      "overridden": false
+    },
+    "tsx": {
+      "version": "4.20.6",
+      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.20.6.tgz",
+      "overridden": false,
+      "dependencies": {
+        "esbuild": {
+          "version": "0.25.12",
+          "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.25.12.tgz",
+          "overridden": false,
+          "dependencies": {
+            "@esbuild/aix-ppc64": {},
+            "@esbuild/android-arm": {},
+            "@esbuild/android-arm64": {},
+            "@esbuild/android-x64": {},
+            "@esbuild/darwin-arm64": {
+              "version": "0.25.12",
+              "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.25.12.tgz",
+              "overridden": false
+            },
+            "@esbuild/darwin-x64": {},
+            "@esbuild/freebsd-arm64": {},
+            "@esbuild/freebsd-x64": {},
+            "@esbuild/linux-arm": {},
+            "@esbuild/linux-arm64": {},
+            "@esbuild/linux-ia32": {},
+            "@esbuild/linux-loong64": {},
+            "@esbuild/linux-mips64el": {},
+            "@esbuild/linux-ppc64": {},
+            "@esbuild/linux-riscv64": {},
+            "@esbuild/linux-s390x": {},
+            "@esbuild/linux-x64": {},
+            "@esbuild/netbsd-arm64": {},
+            "@esbuild/netbsd-x64": {},
+            "@esbuild/openbsd-arm64": {},
+            "@esbuild/openbsd-x64": {},
+            "@esbuild/openharmony-arm64": {},
+            "@esbuild/sunos-x64": {},
+            "@esbuild/win32-arm64": {},
+            "@esbuild/win32-ia32": {},
+            "@esbuild/win32-x64": {}
+          }
+        },
+        "fsevents": {},
+        "get-tsconfig": {
+          "version": "4.14.3",
+          "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.14.3.tgz",
+          "overridden": false,
+          "dependencies": {
+            "resolve-pkg-maps": {
+              "version": "1.0.0",
+              "resolved": "https://registry.npmjs.org/resolve-pkg-maps/-/resolve-pkg-maps-1.0.0.tgz",
+              "overridden": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -40,10 +40,11 @@ test('build verification accepts matching source and rejects stale or dirty arti
   }
 });
 
-test('release images receive the same-run artifact and verify it before use', () => {
+test('archived release recipe preserves same-run artifact provenance without activation', () => {
+  assert.equal(fs.existsSync('.github/workflows/build-docker-image.yml'), false);
   const yaml = require('js-yaml');
   const workflow = yaml.load(
-    fs.readFileSync('.github/workflows/build-docker-image.yml', 'utf8'),
+    fs.readFileSync('.github/archived-workflows/build-docker-image.yml.disabled', 'utf8'),
   );
   assert.equal(workflow.jobs['build-static'].needs, 'validate');
   const upload = workflow.jobs['build-static'].steps.find(step => step.uses?.startsWith('actions/upload-artifact@'));

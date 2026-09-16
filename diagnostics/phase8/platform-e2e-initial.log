@@ -1,0 +1,305 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+empty-root-bootstrap
+browser-fresh-initialize-login
+browser-credential-create
+browser-repository-create
+browser-initialize-fetch
+browser-subscription-create-branch
+browser-prepare-sync-discovery
+browser-worktree-view
+browser-global-create
+browser-profile-create-default
+browser-task-overrides-preview
+browser-text-secret-assets-create
+browser-revision-increment-secret-keep
+browser-repository-config-bindings
+browser-task-override-mask-preview-four-phase-hooks
+browser-three-language-run-logs
+browser-disable-enable
+runtime-browser-provider-setup-fixture
+runtime-browser-exact-install-live-log
+runtime-browser-verify-metadata-references
+runtime-browser-repair
+runtime-browser-cancel-partial
+restart-relogin
+runtime-browser-restart-remove
+environment-real-prebuilt-managed-cpython
+environment-create-real-venv-local-wheel-live-log
+environment-desired-resolved-separation
+environment-new-revision-generation
+environment-build-diff
+environment-promote-old-build
+environment-delete-unused-build
+environment-runtime-delete-protected
+environment-restart-health-resolver
+node-browser-official-prebuilt-install
+node-browser-pnpm-and-bundled-npm-toolchains
+locator.click: Timeout 20000ms exceeded.
+Call log:
+[2m  - waiting for locator('.ant-modal:visible').filter({ has: locator('.ant-modal-title').filter({ hasText: /^Runtime Operation #\d+$/ }) }).locator('.ant-modal-close')[22m
+[2m    - locator resolved to <button type="button" aria-label="Close" class="ant-modal-close">…</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div id=":r5:" class="ant-modal-title">Node Environment · E2E Node pnpm</div> from <div>…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div id=":r5:" class="ant-modal-title">Node Environment · E2E Node pnpm</div> from <div>…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    39 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div id=":r5:" class="ant-modal-title">Node Environment · E2E Node pnpm</div> from <div>…</div> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at done (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/diagnostics/phase8/browser-node-flow.cjs:5:459)
+    at async create (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/diagnostics/phase8/browser-node-flow.cjs:14:716)
+    at async nodeFlow (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/diagnostics/phase8/browser-node-flow.cjs:15:81)
+    at async /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/diagnostics/phase8/platform-e2e.cjs:157:28 {
+  name: 'TimeoutError'
+}
+runtime/runtime-operation-1.log [PREPARING]
+[FETCHING_PROVIDER]
+[REFRESHING_CATALOG]
+
+runtime/runtime-operation-10.log on/environments/env-1/builds/build-2/venv/lib/python3.13/site-packages", "pip_file": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-2/venv/lib/python3.13/site-packages/pip/__init__.py", "pip_version": "26.2.1"}
+[INSTALLING_DEPENDENCIES]
+Using pip 26.2.1 from /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-2/venv/lib/python3.13/site-packages/pip (python 3.13)
+Looking in indexes: http://127.0.0.1:51152/simple
+Collecting ql-phase7-root==2.0.0
+  Downloading ql_phase7_root-2.0.0-py3-none-any.whl (1.1 kB)
+Collecting ql-phase7-leaf==2.0.0 (from ql-phase7-root==2.0.0)
+  Downloading ql_phase7_leaf-2.0.0-py3-none-any.whl (1.1 kB)
+Installing collected packages: ql-phase7-leaf, ql-phase7-root
+
+Successfully installed ql-phase7-leaf-2.0.0 ql-phase7-root-2.0.0
+[VERIFYING_ENVIRONMENT]
+{"executable": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-2/venv/bin/python", "prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-2/venv", "base_prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.13.15", "version": "3.13.15", "implementation": "CPython", "system": "Darwin", "arch": "arm64", "user_site": false, "site_packages": ["/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-2/venv/lib/python3.13/site-packages"], "purelib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-2/venv/lib/python3.13/site-packages", "platlib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-2/venv/lib/python3.13/site-packages", "pip_file": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-2/venv/lib/python3.13/site-packages/pip/__init__.py", "pip_version": "26.2.1"}
+[{"name": "pip", "version": "26.2.1"}, {"name": "ql-phase7-leaf", "version": "2.0.0"}, {"name": "ql-phase7-root", "version": "2.0.0"}]
+pip==26.2.1
+ql-phase7-leaf==2.0.0
+ql-phase7-root==2.0.0
+No broken requirements found.
+
+runtime/runtime-operation-11.log [PREPARING]
+[VERIFYING_ENVIRONMENT]
+{"executable": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/bin/python", "prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv", "base_prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.13.15", "version": "3.13.15", "implementation": "CPython", "system": "Darwin", "arch": "arm64", "user_site": false, "site_packages": ["/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages"], "purelib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages", "platlib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages", "pip_file": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages/pip/__init__.py", "pip_version": "26.2.1"}
+[{"name": "pip", "version": "26.2.1"}, {"name": "ql-phase7-leaf", "version": "1.0.0"}, {"name": "ql-phase7-root", "version": "1.0.0"}]
+pip==26.2.1
+ql-phase7-leaf==1.0.0
+ql-phase7-root==1.0.0
+No broken requirements found.
+
+runtime/runtime-operation-12.log [PREPARING]
+[DELETING_BUILD]
+
+runtime/runtime-operation-13.log [PREPARING]
+
+runtime/runtime-operation-14.log [PREPARING]
+[MATERIALIZING_VERIFIED_OFFICIAL_NODE_FIXTURE]
+[VERIFYING_RUNTIME]
+{"executable":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/node/versions/runtime-4/bin/node","version":"v24.21.0","versions":{"node":"24.21.0","acorn":"8.18.0","ada":"4.0.0","amaro":"1.1.11","ares":"1.34.8","brotli":"1.2.0","cldr":"48.0","icu":"78.3","llhttp":"9.4.3","merve":"1.2.2","modules":"137","napi":"10","nbytes":"0.1.4","ncrypto":"0.0.1","nghttp2":"1.70.0","nghttp3":"","ngtcp2":"","openssl":"3.5.8","simdjson":"4.6.7","simdutf":"6.4.0","sqlite":"3.53.4","tz":"2026c","undici":"7.29.1","unicode":"17.0","uv":"1.52.1","uvwasi":"0.0.23","v8":"13.6.233.17-node.53","zlib":"1.3.2.1-motley-8002e91","zstd":"1.5.7"},"platform":"darwin","arch":"arm64"}
+11.19.0
+
+runtime/runtime-operation-15.log [PREPARING]
+[VERIFYING_RUNTIME]
+{"executable":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/node/versions/runtime-4/bin/node","version":"v24.21.0","versions":{"node":"24.21.0","acorn":"8.18.0","ada":"4.0.0","amaro":"1.1.11","ares":"1.34.8","brotli":"1.2.0","cldr":"48.0","icu":"78.3","llhttp":"9.4.3","merve":"1.2.2","modules":"137","napi":"10","nbytes":"0.1.4","ncrypto":"0.0.1","nghttp2":"1.70.0","nghttp3":"","ngtcp2":"","openssl":"3.5.8","simdjson":"4.6.7","simdutf":"6.4.0","sqlite":"3.53.4","tz":"2026c","undici":"7.29.1","unicode":"17.0","uv":"1.52.1","uvwasi":"0.0.23","v8":"13.6.233.17-node.53","zlib":"1.3.2.1-motley-8002e91","zstd":"1.5.7"},"platform":"darwin","arch":"arm64"}
+11.19.0
+
+runtime/runtime-operation-16.log [PREPARING]
+[MATERIALIZING_EXACT_PNPM_TEST_TOOLCHAIN]
+true
+10.17.1
+
+runtime/runtime-operation-17.log [PREPARING]
+true
+11.19.0
+
+runtime/runtime-operation-18.log [PREPARING]
+true
+10.17.1
+[INSTALLING_DEPENDENCIES]
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +2
+++
+Progress: resolved 2, reused 0, downloaded 2, added 2, done
+
+dependencies:
++ ql-phase8-foo 1.0.0 (2.0.0 is available)
+
+Done in 233ms using pnpm v10.17.1
+[VERIFYING_BUILD]
+true
+10.17.1
+[
+  {
+    "name": "platform-environment",
+    "version": "0.0.0",
+    "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/node/environments/env-1/builds/build-1",
+    "private": true,
+    "dependencies": {
+      "ql-phase8-foo": {
+        "from": "ql-phase8-foo",
+        "version": "1.0.0",
+        "resolved": "http://127.0.0.1:51153/artifacts/b16d4050ec0e856abe67f2c878ba856ca62f3b27375db5848193cec7281fef19.tgz",
+        "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/node/environments/env-1/builds/build-1/node_modules/.pnpm/ql-phase8-foo@1.0.0/node_modules/ql-phase8-foo",
+        "dependencies": {
+          "ql-phase8-leaf": {
+            "from": "ql-phase8-leaf",
+            "version": "1.0.0",
+            "resolved": "http://127.0.0.1:51153/artifacts/a2e320aa9c74dba4cd087f97b240bd263abe14bd723d58bdc839a07d166e89a7.tgz",
+            "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/node/environments/env-1/builds/build-1/node_modules/.pnpm/ql-phase8-leaf@1.0.0/node_modules/ql-phase8-leaf"
+          }
+        }
+      }
+    }
+  }
+]
+
+runtime/runtime-operation-2.log [PREPARING]
+[BUILDING]
+browser-fixture-build
+{"executable":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12/bin/python","version":[3,12,12],"prefix":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12","base_prefix":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12","implementation":"CPython","machine":"arm64","system":"darwin","version_text":"3.12.12"}
+
+runtime/runtime-operation-3.log [PREPARING]
+[VERIFYING]
+{"executable":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12/bin/python","version":[3,12,12],"prefix":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12","base_prefix":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12","implementation":"CPython","machine":"arm64","system":"darwin","version_text":"3.12.12"}
+
+runtime/runtime-operation-4.log [PREPARING]
+[REPAIRING]
+[BUILDING]
+browser-fixture-build
+{"executable":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12/bin/python","version":[3,12,12],"prefix":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12","base_prefix":"/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.12.12","implementation":"CPython","machine":"arm64","system":"darwin","version_text":"3.12.12"}
+
+runtime/runtime-operation-5.log [PREPARING]
+[BUILDING]
+browser-fixture-build
+[RUNTIME_CANCELLED]
+
+runtime/runtime-operation-6.log [PREPARING]
+[REMOVING]
+
+runtime/runtime-operation-7.log [PREPARING]
+[REMOVING]
+
+runtime/runtime-operation-8.log [PREPARING]
+{"executable": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.13.15/bin/python3.13", "version": [3, 13, 15], "version_text": "3.13.15 (main, Sep 16 2026, 01:20:44) [Clang 21.0.0 (clang-2100.3.34.2)]", "prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.13.15", "base_prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.13.15", "implementation": "CPython", "machine": "arm64", "system": "Darwin"}
+
+runtime/runtime-operation-9.log on/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages", "pip_file": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages/pip/__init__.py", "pip_version": "26.2.1"}
+[INSTALLING_DEPENDENCIES]
+Using pip 26.2.1 from /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages/pip (python 3.13)
+Looking in indexes: http://127.0.0.1:51152/simple
+Collecting ql-phase7-root==1.0.0
+  Downloading ql_phase7_root-1.0.0-py3-none-any.whl (1.1 kB)
+Collecting ql-phase7-leaf==1.0.0 (from ql-phase7-root==1.0.0)
+  Downloading ql_phase7_leaf-1.0.0-py3-none-any.whl (1.1 kB)
+Installing collected packages: ql-phase7-leaf, ql-phase7-root
+
+Successfully installed ql-phase7-leaf-1.0.0 ql-phase7-root-1.0.0
+[VERIFYING_ENVIRONMENT]
+{"executable": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/bin/python", "prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv", "base_prefix": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/pyenv/versions/3.13.15", "version": "3.13.15", "implementation": "CPython", "system": "Darwin", "arch": "arm64", "user_site": false, "site_packages": ["/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages"], "purelib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages", "platlib": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages", "pip_file": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-q4wWY0/data/runtime/python/environments/env-1/builds/build-1/venv/lib/python3.13/site-packages/pip/__init__.py", "pip_version": "26.2.1"}
+[{"name": "pip", "version": "26.2.1"}, {"name": "ql-phase7-leaf", "version": "1.0.0"}, {"name": "ql-phase7-root", "version": "1.0.0"}]
+pip==26.2.1
+ql-phase7-leaf==1.0.0
+ql-phase7-root==1.0.0
+No broken requirements found.
+
+subscription-1_job/2026-09-16-01-23-05-544.log ## 开始执行... 2026-09-16 01:23:06
+
+[PREPARE] Materialized 1 config assets
+[BEFORE] First
+ORDER_FIRST
+[BEFORE] BEFORE
+CONFIG_TASK_OVERRIDEORDER_BEFORE
+********
+[MAIN]
+E2E_SHELL:global:profile:task
+CONFIG_OK:CONFIG_TASK_OVERRIDE
+********
+[AFTER_SUCCESS] AFTER_SUCCESS
+CONFIG_TASK_OVERRIDEORDER_SUCCESS
+[FINALLY] FINALLY
+CONFIG_TASK_OVERRIDEORDER_FINALLY
+[RESULT] SUCCESS
+[CLEANUP] Completed
+
+## 完成 ✅... 2026-09-16 01:23:11  耗时 5 秒　　　　　
+
+subscription-1_job/2026-09-16-01-23-11-676.log ## 开始执行... 2026-09-16 01:23:11
+
+[PREPARE] Materialized 2 config assets
+[BEFORE] First
+ORDER_FIRST
+[BEFORE] BEFORE
+CONFIG_REVISION_2ORDER_BEFORE
+********
+[MAIN]
+E2E_PYTHON:global:profile:task
+CONFIG_OK:CONFIG_REVISION_2
+********
+********
+[AFTER_SUCCESS] AFTER_SUCCESS
+CONFIG_REVISION_2ORDER_SUCCESS
+[FINALLY] FINALLY
+CONFIG_REVISION_2ORDER_FINALLY
+[RESULT] SUCCESS
+[CLEANUP] Completed
+
+## 完成 ✅... 2026-09-16 01:23:17  耗时 6 秒　　　　　
+
+subscription-1_job/2026-09-16-01-23-17-718.log ## 开始执行... 2026-09-16 01:23:17
+
+[PREPARE] Materialized 2 config assets
+[BEFORE] First
+ORDER_FIRST
+[BEFORE] BEFORE
+CONFIG_REVISION_2ORDER_BEFORE
+********
+[MAIN]
+E2E_NODE:global:profile:task
+CONFIG_OK:CONFIG_REVISION_2
+********
+********
+[AFTER_SUCCESS] AFTER_SUCCESS
+CONFIG_REVISION_2ORDER_SUCCESS
+[FINALLY] FINALLY
+CONFIG_REVISION_2ORDER_FINALLY
+[RESULT] SUCCESS
+[CLEANUP] Completed
+
+## 完成 ✅... 2026-09-16 01:23:23  耗时 6 秒　　　　　
+
+## 开始执行... 2026-09-16 01:22:30
+
+[[32minfo[39m 2026-09-16 01:22:30]:	[boot] Loaded existing gRPC mTLS certificates from disk
+
+[Managed] REPOSITORY_FETCH subscription=1
+
+{"level":"info","message":"Git workspace operation=%s repository=%d result=%s"}
+
+[Managed] WORKTREE_ENSURE subscription=1
+
+{"level":"info","message":"Git workspace operation=%s repository=%d result=%s"}
+
+[Managed] WORKTREE_UPDATE subscription=1
+
+[Managed] worktree=1 commit=3ffe81a9e93fd7cc18cfc1aa57264a2b56be183f -> 3ffe81a9e93fd7cc18cfc1aa57264a2b56be183f
+
+[Managed] DISCOVERY subscription=1
+
+[Managed] discovery add=3 drop=0
+
+[Managed] COPY_AND_CRON subscription=1
+
+{"level":"info","message":"Git workspace operation=%s repository=%d result=%s"}
+
+## 执行结束... 2026-09-16 01:22:33  耗时 2 秒　　　　　

@@ -1,0 +1,92 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: failed publication retains Task Hooks, Config bindings and ENV; successful deletion cascades once
+ok 1 - failed publication retains Task Hooks, Config bindings and ENV; successful deletion cascades once
+  ---
+  duration_ms: 867.022417
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=6e313ad00dbb1f3230b29c40c595193084ed698f -> 6e313ad00dbb1f3230b29c40c595193084ed698f
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=6e313ad00dbb1f3230b29c40c595193084ed698f -> cbbce04bc98cea7e95dc3c746ae1d6318893f6db
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=cbbce04bc98cea7e95dc3c746ae1d6318893f6db -> 1354711525a33d43d2cddd96e1d5371de113a905
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=1354711525a33d43d2cddd96e1d5371de113a905 -> 3a25cd8f0d5f3b961aecf1aca3d2f79af7012334
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: real Git discovery retains canonical user resources and renames create new stable identities
+ok 2 - real Git discovery retains canonical user resources and renames create new stable identities
+  ---
+  duration_ms: 9141.803833
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=219652724cedaf4cc85939f1df69da4217987118 -> 219652724cedaf4cc85939f1df69da4217987118
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: UNSAFE_DISCOVERY_PATH
+# Subtest: discovery publishes quoted canonical source and crontab escapes percent without shell injection
+not ok 3 - discovery publishes quoted canonical source and crontab escapes percent without shell injection
+  ---
+  duration_ms: 3449.41825
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/discovery.test.cjs:48:1'
+  failureType: 'testCodeFailure'
+  error: 'UNSAFE_DISCOVERY_PATH'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/discovery.test.cjs:6:792)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: DB projection controls identity, nested filters, metadata updates, user edits and removal policy
+ok 4 - DB projection controls identity, nested filters, metadata updates, user edits and removal policy
+  ---
+  duration_ms: 699.988041
+  type: 'test'
+  ...
+# Subtest: symlinks fail closed and no cron metadata never invents a schedule
+ok 5 - symlinks fail closed and no cron metadata never invents a schedule
+  ---
+  duration_ms: 372.744542
+  type: 'test'
+  ...
+# Subtest: definition DB failure and scheduler failure compensate updates without changing task identity or overrides
+ok 6 - definition DB failure and scheduler failure compensate updates without changing task identity or overrides
+  ---
+  duration_ms: 527.366917
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12890.689292

@@ -1,0 +1,100 @@
+[
+  {
+    "file": "tests/phase8/offline.test.cjs",
+    "name": "tests/phase8/offline.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase8/offline.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase8/offline.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/offline.test.cjs",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/offline.test.cjs",
+    "name": "create",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'create' not found\",\n  \"target\": {\n    \"name\": \"create\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/offline.test.cjs",
+    "name": "build",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'build' not found\",\n  \"target\": {\n    \"name\": \"build\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/registry.cjs",
+    "name": "tests/phase8/registry.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase8/registry.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase8/registry.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/registry.cjs",
+    "name": "registry",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'registry' not found\",\n  \"target\": {\n    \"name\": \"registry\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/registry.cjs",
+    "name": "add",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'add' not found\",\n  \"target\": {\n    \"name\": \"add\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/managed-helper.cjs",
+    "name": "tests/phase8/managed-helper.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase8/managed-helper.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase8/managed-helper.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/managed-helper.cjs",
+    "name": "attach",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'attach' not found\",\n  \"target\": {\n    \"name\": \"attach\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/managed-helper.cjs",
+    "name": "treeDigest",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'treeDigest' not found\",\n  \"target\": {\n    \"name\": \"treeDigest\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/managed-helper.cjs",
+    "name": "walk",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'walk' not found\",\n  \"target\": {\n    \"name\": \"walk\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/prepare-managed-node.cjs",
+    "name": "diagnostics/phase8/prepare-managed-node.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diagnostics/phase8/prepare-managed-node.cjs' not found\",\n  \"target\": {\n    \"name\": \"diagnostics/phase8/prepare-managed-node.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/prepare-managed-node.cjs",
+    "name": "after",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'after' not found\",\n  \"target\": {\n    \"name\": \"after\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/prepare-managed-node.cjs",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: Discovery preview read-only, ownership overrides and source retirement
+ok 1 - Discovery preview read-only, ownership overrides and source retirement
+  ---
+  duration_ms: 1407.240875
+  type: 'test'
+  ...
+# Subtest: Frozen v7 upgrades transactionally to identical fresh v8, retry after rollback
+ok 2 - Frozen v7 upgrades transactionally to identical fresh v8, retry after rollback
+  ---
+  duration_ms: 1161.975
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1799.980875

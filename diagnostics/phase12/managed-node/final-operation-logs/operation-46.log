@@ -1,0 +1,24 @@
+[PREPARING]
+true
+11.19.0
+[INSTALLING_DEPENDENCIES]
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "package-manager-strict-version". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+added 1 package in 989ms
+[VERIFYING_BUILD]
+true
+11.19.0
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "package-manager-strict-version". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+{
+  "version": "0.0.0",
+  "name": "platform-environment",
+  "dependencies": {
+    "is-number": {
+      "version": "6.0.0",
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-6.0.0.tgz",
+      "overridden": false
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "target": {
+    "id": "Function:src/components/task-hooks.tsx:TaskHooks",
+    "name": "TaskHooks",
+    "type": "Function",
+    "filePath": "src/components/task-hooks.tsx"
+  },
+  "direction": "upstream",
+  "impactedCount": 2,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 2,
+    "processes_affected": 2,
+    "modules_affected": 2
+  },
+  "byDepthCounts": {
+    "1": 2
+  },
+  "affected_processes": [
+    {
+      "name": "CronModal",
+      "type": "Function",
+      "filePath": "src/pages/crontab/modal.tsx",
+      "affected_process_count": 7,
+      "total_hits": 7,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "TasksPage",
+      "type": "Function",
+      "filePath": "src/pages/tasks/index.tsx",
+      "affected_process_count": 7,
+      "total_hits": 7,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Crontab",
+      "hits": 1,
+      "impact": "direct"
+    },
+    {
+      "name": "Tasks",
+      "hits": 1,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Function:src/pages/crontab/modal.tsx:CronModal",
+        "name": "CronModal",
+        "filePath": "src/pages/crontab/modal.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_34_cronmodal",
+            "label": "CronModal → Load",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_35_cronmodal",
+            "label": "CronModal → Open",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_84_cronmodal",
+            "label": "CronModal → Open",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_86_cronmodal",
+            "label": "CronModal → Load",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_87_cronmodal",
+            "label": "CronModal → Open",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_85_cronmodal",
+            "label": "CronModal → Load",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_83_cronmodal",
+            "label": "CronModal → Load",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:src/pages/tasks/index.tsx:TasksPage",
+        "name": "TasksPage",
+        "filePath": "src/pages/tasks/index.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_250_taskspage",
+            "label": "TasksPage → Open",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_280_taskspage",
+            "label": "TasksPage → Load",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_281_taskspage",
+            "label": "TasksPage → Open",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_249_taskspage",
+            "label": "TasksPage → Load",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_299_taskspage",
+            "label": "TasksPage → Load",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_190_taskspage",
+            "label": "TasksPage → Load",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_191_taskspage",
+            "label": "TasksPage → Open",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      }
+    ]
+  }
+}

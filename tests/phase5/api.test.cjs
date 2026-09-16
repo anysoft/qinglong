@@ -9,7 +9,7 @@ test('Config/Hook API contracts deny Secret plaintext in all responses and sanit
  const create=await api('/config-assets','POST',{name:'secret',is_secret:true,content:secret});assert.equal(create.code,200);const a=create.data;
  assert.equal((await api(`/config-assets/${a.id}/content`)).status,403);
  for(const url of ['/config-assets',`/config-assets/${a.id}/revisions`,`/config-assets/${a.id}/usage`])assert.equal((await api(url)).code,200);
- const task=await h.CrontabModel.create({command:'task main.sh'}),binding=await api(`/tasks/${task.id}/config-bindings`,'POST',{asset_id:a.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});assert.equal(binding.code,200);
+ const task=await h.SchedulerProjectionModel.create({command:'task main.sh'}),binding=await api(`/tasks/${task.id}/config-bindings`,'POST',{asset_id:a.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});assert.equal(binding.code,200);
  assert.equal((await api(`/tasks/${task.id}/config-preview`)).code,200);assert.equal((await api(`/config-assets/${a.id}?version=${a.version}`,'DELETE')).status,409);
  const hook=await api(`/tasks/${task.id}/hooks`,'POST',{name:'before',command:'echo safe',phase:'BEFORE',cwd_base:'TASK_CWD',position:10,timeout_seconds:1,failure_policy:'CONTINUE',enabled:true});assert.equal(hook.code,200);
  assert.equal((await api(`/tasks/${task.id}/hooks/${hook.data.id}`,'PUT',{...hook.data,id:undefined,task_id:undefined,createdAt:undefined,updatedAt:undefined,version:undefined,expected_version:0})).status,400);

@@ -267,7 +267,7 @@ export default (app: Router) => {
       const logger: Logger = Container.get('logger');
       try {
         const userService = Container.get(UserService);
-        const data = await userService.getNotificationMode();
+        const data = { notice: 'Use notification-channels', secret_configured: true };
         res.send({ code: 200, data });
       } catch (e) {
         return next(e);
@@ -281,7 +281,8 @@ export default (app: Router) => {
       const logger: Logger = Container.get('logger');
       try {
         const userService = Container.get(UserService);
-        const result = await userService.updateNotificationMode(req.body);
+        const result = { code: 410, error_code: 'NOTIFICATION_CHANNEL_API_REQUIRED' };
+        res.status(410);
         res.send(result);
       } catch (e) {
         return next(e);
@@ -316,7 +317,8 @@ export default (app: Router) => {
       const logger: Logger = Container.get('logger');
       try {
         const userService = Container.get(UserService);
-        const result = await userService.updateNotificationMode(req.body);
+        const result = { code: 410, error_code: 'NOTIFICATION_CHANNEL_API_REQUIRED' };
+        res.status(410);
         res.send(result);
       } catch (e) {
         return next(e);

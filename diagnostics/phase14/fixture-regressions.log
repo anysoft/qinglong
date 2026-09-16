@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: COPY readonly=true, per-run copy, canonical immutable and cleanup
+ok 1 - COPY readonly=true, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 929.220416
+  type: 'test'
+  ...
+# Subtest: COPY readonly=false, per-run copy, canonical immutable and cleanup
+ok 2 - COPY readonly=false, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 551.888625
+  type: 'test'
+  ...
+# Subtest: SYMLINK readonly=true, per-run copy, canonical immutable and cleanup
+ok 3 - SYMLINK readonly=true, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 556.9065
+  type: 'test'
+  ...
+# Subtest: SYMLINK readonly=false, per-run copy, canonical immutable and cleanup
+ok 4 - SYMLINK readonly=false, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 471.974666
+  type: 'test'
+  ...
+# Subtest: replace restores original exact bytes/mode after simulated process loss and next acquire
+ok 5 - replace restores original exact bytes/mode after simulated process loss and next acquire
+  ---
+  duration_ms: 450.729833
+  type: 'test'
+  ...
+# Subtest: unsafe paths, symlink parents/targets, special files, duplicate physical aliases fail without touching user data
+ok 6 - unsafe paths, symlink parents/targets, special files, duplicate physical aliases fail without touching user data
+  ---
+  duration_ms: 477.926875
+  type: 'test'
+  ...
+# Subtest: unexpected replacement is preserved with backup and recoverable journal
+ok 7 - unexpected replacement is preserved with backup and recoverable journal
+  ---
+  duration_ms: 393.018
+  type: 'test'
+  ...
+# Subtest: pinned revision remains old through asset edit; next resolve sees new revision
+ok 8 - pinned revision remains old through asset edit; next resolve sees new revision
+  ---
+  duration_ms: 452.388083
+  type: 'test'
+  ...
+# Subtest: recovery rejects a journal task root outside the leased workspace without writing outside
+ok 9 - recovery rejects a journal task root outside the leased workspace without writing outside
+  ---
+  duration_ms: 475.868666
+  type: 'test'
+  ...
+# Subtest: Script HTTP access is excluded by Config SH lease and blocked by stale journals, then resumes
+ok 10 - Script HTTP access is excluded by Config SH lease and blocked by stale journals, then resumes
+  ---
+  duration_ms: 1788.79575
+  type: 'test'
+  ...
+# Subtest: Node retains API flock after helper exit through asynchronous action and response completion
+ok 11 - Node retains API flock after helper exit through asynchronous action and response completion
+  ---
+  duration_ms: 859.833875
+  type: 'test'
+  ...
+# Subtest: Task HTTP definitions stay independent of legacy scheduler; API/MANUAL sources explicit
+ok 12 - Task HTTP definitions stay independent of legacy scheduler; API/MANUAL sources explicit
+  ---
+  duration_ms: 2148.025708
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5005.21925

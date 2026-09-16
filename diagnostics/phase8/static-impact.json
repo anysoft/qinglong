@@ -1,0 +1,9 @@
+{
+  "error": "Target 'diagnostics/phase8/static-audit.cjs' not found",
+  "target": {
+    "name": "diagnostics/phase8/static-audit.cjs"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

@@ -26,8 +26,9 @@ import {
 } from '@ant-design/icons';
 import SecuritySettings from './security';
 import LoginLog from './loginLog';
-import NotificationSetting from './notification';
+import NotificationSetting from '../notifications';
 import Other from './other';
+import BackupSettings from './backup';
 import About from './about';
 import { useOutletContext } from '@umijs/max';
 import { SharedContext } from '@/layouts';
@@ -126,7 +127,6 @@ const Setting = () => {
   const [editedApp, setEditedApp] = useState<any>();
   const [tabActiveKey, setTabActiveKey] = useState('security');
   const [loginLogData, setLoginLogData] = useState<any[]>([]);
-  const [notificationInfo, setNotificationInfo] = useState<any>();
   const containergRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number>(0);
 
@@ -254,22 +254,8 @@ const Setting = () => {
       getApps();
     } else if (activeKey === 'login') {
       getLoginLog();
-    } else if (activeKey === 'notification') {
-      getNotification();
-    }
-  };
 
-  const getNotification = () => {
-    request
-      .get(`${config.apiPrefix}user/notification`)
-      .then(({ code, data }) => {
-        if (code === 200) {
-          setNotificationInfo(data);
-        }
-      })
-      .catch((error: any) => {
-        console.log(error);
-      });
+    }
   };
 
   useEffect(() => {
@@ -333,7 +319,7 @@ const Setting = () => {
             {
               key: 'notification',
               label: intl.get('通知设置'),
-              children: <NotificationSetting data={notificationInfo} />,
+              children: <NotificationSetting />,
             },
             {
               key: 'syslog',
@@ -354,6 +340,11 @@ const Setting = () => {
               key: 'dependence',
               label: intl.get('依赖设置'),
               children: <Dependence />,
+            },
+            {
+              key: 'backup',
+              label: '备份与恢复',
+              children: <BackupSettings />,
             },
             {
               key: 'other',

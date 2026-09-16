@@ -1,0 +1,30 @@
+[
+  {
+    "file": "tests/phase7/managed-helper.cjs",
+    "name": "tests/phase7/managed-helper.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase7/managed-helper.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase7/managed-helper.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase7/managed-helper.cjs",
+    "name": "attach",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'attach' not found\",\n  \"target\": {\n    \"name\": \"attach\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase7/managed-helper.cjs",
+    "name": "treeDigest",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'treeDigest' not found\",\n  \"target\": {\n    \"name\": \"treeDigest\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase7/managed-helper.cjs",
+    "name": "walk",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'walk' not found\",\n  \"target\": {\n    \"name\": \"walk\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

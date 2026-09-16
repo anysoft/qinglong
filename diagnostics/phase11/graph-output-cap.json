@@ -1,0 +1,9 @@
+{
+  "tool": "GitNexus 1.6.12",
+  "original_sha256": "c421d9cfd6af419ee3ad210a27f1158385a35f73f22cd2aeafc49ca3cd3ec506",
+  "output_listing_cap_from": 1000,
+  "output_listing_cap_to": 10000,
+  "analysis_changes": false,
+  "installed_tool_changes": false,
+  "temporary_module_removed": true
+}

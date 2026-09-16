@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { sequelize } from '../data';
-import { Crontab, CrontabModel } from '../data/cron';
+import { SchedulerProjection, SchedulerProjectionModel } from '../data/cron';
 import { TaskHook } from '../data/configAsset';
 import TaskEnvironmentResolver, {
   ResolvedTaskEnvironment,
@@ -11,6 +11,7 @@ import ExecutionEnvironmentTransport from './executionEnvironmentTransport';
 import TaskConfigService, { ResolvedConfig } from './taskConfig';
 import TaskHookService from './taskHooks';
 import TaskWorkspaceResolver from './taskWorkspace';
+import TaskResourceResolver from './taskResourceResolver';
 import ConfigAssetService from './configAsset';
 import { TaskWorkspace } from './configMaterialization';
 import {
@@ -20,7 +21,7 @@ import {
 } from '../shared/configAssets';
 export interface TaskExecutionPreparation {
   version: 1;
-  task: Crontab | null;
+  task: SchedulerProjection | null;
   workspace: TaskWorkspace;
   configs: ResolvedConfig[];
   hooks: TaskHook[];
@@ -39,7 +40,7 @@ export default class TaskExecutionPreparationService {
   ) {
     const resolved = await sequelize.transaction(async (transaction) => {
       const task = taskId
-        ? (await CrontabModel.findByPk(configId(taskId), { transaction }))?.get(
+        ? (await SchedulerProjectionModel.findByPk(configId(taskId), { transaction }))?.get(
             { plain: true },
           ) ?? null
         : null;
@@ -56,6 +57,10 @@ export default class TaskExecutionPreparationService {
             .map((x) => x.get({ plain: true }))
             .filter((x) => x.enabled)
         : [];
+      if (taskId) {
+        const resources = (await new TaskResourceResolver().resolve([taskId], transaction, true))[0];
+        if (!resources || resources.readiness.status !== 'READY') throw new ConfigAssetError('TASK_NOT_READY', 409);
+      }
       return { task, environment, configs, hooks };
     });
     const workspace = await new TaskWorkspaceResolver().resolve(

@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: Frozen v7 upgrades transactionally to identical fresh v8, retry after rollback
+ok 1 - Frozen v7 upgrades transactionally to identical fresh v8, retry after rollback
+  ---
+  duration_ms: 858.848542
+  type: 'test'
+  ...
+# Subtest: v7 discovered cron ownership and explicit cleared schedule survive migration
+ok 2 - v7 discovered cron ownership and explicit cleared schedule survive migration
+  ---
+  duration_ms: 288.823459
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1360.019417

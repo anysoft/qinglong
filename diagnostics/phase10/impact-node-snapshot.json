@@ -1,0 +1,3232 @@
+{
+  "target": {
+    "name": "snapshot",
+    "type": "",
+    "filePath": "back/services/nodePackageManager.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 258,
+  "risk": "CRITICAL",
+  "riskSharedAxes": "CRITICAL",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 140,
+    "processes_affected": 47,
+    "modules_affected": 8
+  },
+  "byDepthCounts": {
+    "1": 140,
+    "2": 70,
+    "3": 48
+  },
+  "affected_processes": [
+    {
+      "name": "twoFactorLogin",
+      "type": "Function",
+      "filePath": "back/services/user.ts",
+      "affected_process_count": 7,
+      "total_hits": 14,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "request",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 5,
+      "total_hits": 13,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "preflight",
+      "type": "Function",
+      "filePath": "back/services/managedSubscription.ts",
+      "affected_process_count": 5,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "prepare",
+      "type": "Function",
+      "filePath": "back/services/managedSubscription.ts",
+      "affected_process_count": 7,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "run",
+      "type": "Function",
+      "filePath": "back/services/managedSubscription.ts",
+      "affected_process_count": 5,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "changeRemote",
+      "type": "Function",
+      "filePath": "back/services/repositoryStorage.ts",
+      "affected_process_count": 6,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "fetch",
+      "type": "Function",
+      "filePath": "back/services/repositoryStorage.ts",
+      "affected_process_count": 11,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "prune",
+      "type": "Function",
+      "filePath": "back/services/repositoryStorage.ts",
+      "affected_process_count": 6,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "refs",
+      "type": "Function",
+      "filePath": "back/services/repositoryStorage.ts",
+      "affected_process_count": 11,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "remove",
+      "type": "Function",
+      "filePath": "back/services/repositoryStorage.ts",
+      "affected_process_count": 6,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "repair",
+      "type": "Function",
+      "filePath": "back/services/repositoryStorage.ts",
+      "affected_process_count": 11,
+      "total_hits": 11,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "prepare",
+      "type": "Function",
+      "filePath": "back/services/taskExecutionPreparation.ts",
+      "affected_process_count": 9,
+      "total_hits": 9,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "UpdateLogRemoveFrequency → AsError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 8,
+      "total_hits": 8,
+      "earliest_broken_step": 2
+    },
+    {
+      "name": "gitResources",
+      "type": "Function",
+      "filePath": "back/api/gitResources.ts",
+      "affected_process_count": 5,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "workspaceRoutes",
+      "type": "Function",
+      "filePath": "back/api/workspace.ts",
+      "affected_process_count": 4,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "revise",
+      "type": "Function",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "affected_process_count": 4,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "stage",
+      "type": "Function",
+      "filePath": "back/services/managedSubscription.ts",
+      "affected_process_count": 3,
+      "total_hits": 7,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "initialize",
+      "type": "Function",
+      "filePath": "back/services/repositoryStorage.ts",
+      "affected_process_count": 4,
+      "total_hits": 7,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "diagnostics",
+      "type": "Function",
+      "filePath": "back/services/repositoryStorage.ts",
+      "affected_process_count": 6,
+      "total_hits": 6,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "autosave_crontab",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 5,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "bootTask",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 5,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "definition",
+      "type": "Function",
+      "filePath": "back/services/nodeEnvironment.ts",
+      "affected_process_count": 4,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "prepare",
+      "type": "Function",
+      "filePath": "back/services/nodeEnvironment.ts",
+      "affected_process_count": 5,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "initializeUser",
+      "type": "Function",
+      "filePath": "back/services/user.ts",
+      "affected_process_count": 5,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "resetAuthInfo",
+      "type": "Function",
+      "filePath": "back/services/user.ts",
+      "affected_process_count": 5,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "updateUsernameAndPassword",
+      "type": "Function",
+      "filePath": "back/services/user.ts",
+      "affected_process_count": 5,
+      "total_hits": 5,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "UpdateLinuxMirror → OnBefore",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 2
+    },
+    {
+      "name": "testAccess",
+      "type": "Function",
+      "filePath": "back/services/gitCredential.ts",
+      "affected_process_count": 4,
+      "total_hits": 4,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "publishSubscription",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "execute",
+      "type": "Function",
+      "filePath": "back/services/nodeEnvironment.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "pythonEnvironmentRoutes",
+      "type": "Function",
+      "filePath": "back/api/pythonEnvironment.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "mutateTaskDefinitions",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "execute",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "onEnd",
+      "type": "Function",
+      "filePath": "back/services/system.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "DependenceLogModal",
+      "type": "Function",
+      "filePath": "src/pages/dependence/logModal.tsx",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "Dependence",
+      "type": "Function",
+      "filePath": "src/pages/setting/dependence.tsx",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "AcquireExecutionLease → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 5
+    },
+    {
+      "name": "NodeEnvironmentRoutes → RuntimeError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 2
+    },
+    {
+      "name": "Prepare → EnvironmentLockPaths",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 3
+    },
+    {
+      "name": "Remove → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 5
+    },
+    {
+      "name": "RemoveRecord → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 5
+    },
+    {
+      "name": "Repair → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 5
+    },
+    {
+      "name": "Run → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 4
+    },
+    {
+      "name": "WithSync → WorkspaceError",
+      "type": "Function",
+      "filePath": "",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 5
+    },
+    {
+      "name": "runtimeBuildEnvironment",
+      "type": "Function",
+      "filePath": "back/services/runtimeBuildEnvironment.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "filesystemDiagnostics",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "providerHealth",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 1,
+      "total_hits": 1,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 88,
+      "impact": "direct"
+    },
+    {
+      "name": "Protos",
+      "hits": 8,
+      "impact": "direct"
+    },
+    {
+      "name": "Api",
+      "hits": 5,
+      "impact": "direct"
+    },
+    {
+      "name": "Schedule",
+      "hits": 4,
+      "impact": "direct"
+    },
+    {
+      "name": "Back",
+      "hits": 1,
+      "impact": "direct"
+    },
+    {
+      "name": "Dependence",
+      "hits": 1,
+      "impact": "direct"
+    },
+    {
+      "name": "Phase8",
+      "hits": 1,
+      "impact": "direct"
+    },
+    {
+      "name": "Setting",
+      "hits": 1,
+      "impact": "direct"
+    }
+  ],
+  "pagination": {
+    "limit": 100,
+    "offset": 0,
+    "truncated": true
+  },
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Class:back/schedule/client.ts:Client",
+        "name": "Client",
+        "filePath": "back/schedule/client.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Class:back/services/nodePaths.ts:NodePathResolver",
+        "name": "NodePathResolver",
+        "filePath": "back/services/nodePaths.ts",
+        "relationType": "METHOD_OVERRIDES",
+        "confidence": 0.9,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Class:back/services/nodePaths.ts:ResourceLock",
+        "name": "ResourceLock",
+        "filePath": "back/services/nodePaths.ts",
+        "relationType": "METHOD_OVERRIDES",
+        "confidence": 0.9,
+        "processes": [
+          {
+            "id": "proc_23_request",
+            "label": "Request → ResourceLock",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_152_definition",
+            "label": "Definition → ResourceLock",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_229_prepare",
+            "label": "Prepare → ResourceLock",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Class:back/services/pythonEnvironmentPaths.ts:EnvironmentLockPaths",
+        "name": "EnvironmentLockPaths",
+        "filePath": "back/services/pythonEnvironmentPaths.ts",
+        "relationType": "METHOD_OVERRIDES",
+        "confidence": 0.9,
+        "processes": [
+          {
+            "id": "proc_111_prepare",
+            "label": "Prepare → EnvironmentLockPaths",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Class:back/shared/workspaceError.ts:WorkspaceError",
+        "name": "WorkspaceError",
+        "filePath": "back/shared/workspaceError.ts",
+        "relationType": "METHOD_OVERRIDES",
+        "confidence": 0.9,
+        "processes": [
+          {
+            "id": "proc_414_removerecord",
+            "label": "RemoveRecord → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_426_workspaceroutes",
+            "label": "WorkspaceRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_398_initialize",
+            "label": "Initialize → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_404_stage",
+            "label": "Stage → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_408_acquireexecutionleas",
+            "label": "AcquireExecutionLease → WorkspaceError",
+            "processType": "intra_community",
+            "step": 5
+          },
+          {
+            "id": "proc_417_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_337_prune",
+            "label": "Prune → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_306_fetch",
+            "label": "Fetch → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_369_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_390_diagnostics",
+            "label": "Diagnostics → WorkspaceError",
+            "processType": "cross_community",
+            "step": 7
+          },
+          {
+            "id": "proc_265_changeremote",
+            "label": "ChangeRemote → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_380_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_411_remove",
+            "label": "Remove → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_130_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_357_refs",
+            "label": "Refs → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_420_withsync",
+            "label": "WithSync → WorkspaceError",
+            "processType": "cross_community",
+            "step": 5
+          },
+          {
+            "id": "proc_210_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 8
+          },
+          {
+            "id": "proc_1_prepare",
+            "label": "Prepare → WorkspaceError",
+            "processType": "cross_community",
+            "step": 9
+          },
+          {
+            "id": "proc_423_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 4
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/api/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/dashboard.ts",
+        "name": "dashboard.ts",
+        "filePath": "back/api/dashboard.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/dependence.ts",
+        "name": "dependence.ts",
+        "filePath": "back/api/dependence.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/health.ts",
+        "name": "health.ts",
+        "filePath": "back/api/health.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/log.ts",
+        "name": "log.ts",
+        "filePath": "back/api/log.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/open.ts",
+        "name": "open.ts",
+        "filePath": "back/api/open.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/retention.ts",
+        "name": "retention.ts",
+        "filePath": "back/api/retention.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/script.ts",
+        "name": "script.ts",
+        "filePath": "back/api/script.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/api/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/system.ts",
+        "name": "system.ts",
+        "filePath": "back/api/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/user.ts",
+        "name": "user.ts",
+        "filePath": "back/api/user.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/app.ts",
+        "name": "app.ts",
+        "filePath": "back/app.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/config/const.ts",
+        "name": "const.ts",
+        "filePath": "back/config/const.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/config/http.ts",
+        "name": "http.ts",
+        "filePath": "back/config/http.ts",
+        "relationType": "USES",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/data/pythonEnvironment.ts",
+        "name": "pythonEnvironment.ts",
+        "filePath": "back/data/pythonEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/data/task.ts",
+        "name": "task.ts",
+        "filePath": "back/data/task.ts",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/gitSubscription.ts",
+        "name": "gitSubscription.ts",
+        "filePath": "back/gitSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/loaders/db.ts",
+        "name": "db.ts",
+        "filePath": "back/loaders/db.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/loaders/express.ts",
+        "name": "express.ts",
+        "filePath": "back/loaders/express.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/loaders/sock.ts",
+        "name": "sock.ts",
+        "filePath": "back/loaders/sock.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/services/metrics.ts",
+        "name": "metrics.ts",
+        "filePath": "back/services/metrics.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/taskExecution.ts",
+        "name": "taskExecution.ts",
+        "filePath": "back/taskExecution.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase1/ui-smoke.cjs",
+        "name": "ui-smoke.cjs",
+        "filePath": "diagnostics/phase1/ui-smoke.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase2/ui-smoke.cjs",
+        "name": "ui-smoke.cjs",
+        "filePath": "diagnostics/phase2/ui-smoke.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase3/ui-smoke.cjs",
+        "name": "ui-smoke.cjs",
+        "filePath": "diagnostics/phase3/ui-smoke.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase4.5b/fresh-process.cjs",
+        "name": "fresh-process.cjs",
+        "filePath": "diagnostics/phase4.5b/fresh-process.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase4.5b/platform-e2e.cjs",
+        "name": "platform-e2e.cjs",
+        "filePath": "diagnostics/phase4.5b/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase4/ui-smoke.cjs",
+        "name": "ui-smoke.cjs",
+        "filePath": "diagnostics/phase4/ui-smoke.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase5/platform-e2e.cjs",
+        "name": "platform-e2e.cjs",
+        "filePath": "diagnostics/phase5/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase6/platform-e2e.cjs",
+        "name": "platform-e2e.cjs",
+        "filePath": "diagnostics/phase6/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase6/real-runtime-smoke.cjs",
+        "name": "real-runtime-smoke.cjs",
+        "filePath": "diagnostics/phase6/real-runtime-smoke.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase7/cleanup-test-environments.cjs",
+        "name": "cleanup-test-environments.cjs",
+        "filePath": "diagnostics/phase7/cleanup-test-environments.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase7/finish-managed-runtime.cjs",
+        "name": "finish-managed-runtime.cjs",
+        "filePath": "diagnostics/phase7/finish-managed-runtime.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase7/platform-e2e.cjs",
+        "name": "platform-e2e.cjs",
+        "filePath": "diagnostics/phase7/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase7/refresh-fixture-schema.cjs",
+        "name": "refresh-fixture-schema.cjs",
+        "filePath": "diagnostics/phase7/refresh-fixture-schema.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/adjacent-node.cjs",
+        "name": "adjacent-node.cjs",
+        "filePath": "diagnostics/phase8/adjacent-node.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/cleanup-managed-fixtures.cjs",
+        "name": "cleanup-managed-fixtures.cjs",
+        "filePath": "diagnostics/phase8/cleanup-managed-fixtures.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/platform-e2e.cjs",
+        "name": "platform-e2e.cjs",
+        "filePath": "diagnostics/phase8/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/prepare-managed-node.cjs",
+        "name": "prepare-managed-node.cjs",
+        "filePath": "diagnostics/phase8/prepare-managed-node.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/prepare-managed-python.cjs",
+        "name": "prepare-managed-python.cjs",
+        "filePath": "diagnostics/phase8/prepare-managed-python.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/reset-offline-fixture.cjs",
+        "name": "reset-offline-fixture.cjs",
+        "filePath": "diagnostics/phase8/reset-offline-fixture.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/resume-managed-node.cjs",
+        "name": "resume-managed-node.cjs",
+        "filePath": "diagnostics/phase8/resume-managed-node.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/toolchain-reinstall.cjs",
+        "name": "toolchain-reinstall.cjs",
+        "filePath": "diagnostics/phase8/toolchain-reinstall.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase9/browser-restart-editor.cjs",
+        "name": "browser-restart-editor.cjs",
+        "filePath": "diagnostics/phase9/browser-restart-editor.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase9/cleanup-managed-fixtures.cjs",
+        "name": "cleanup-managed-fixtures.cjs",
+        "filePath": "diagnostics/phase9/cleanup-managed-fixtures.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase9/platform-e2e.cjs",
+        "name": "platform-e2e.cjs",
+        "filePath": "diagnostics/phase9/platform-e2e.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase9/prepare-managed-node.cjs",
+        "name": "prepare-managed-node.cjs",
+        "filePath": "diagnostics/phase9/prepare-managed-node.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase9/prepare-managed-python.cjs",
+        "name": "prepare-managed-python.cjs",
+        "filePath": "diagnostics/phase9/prepare-managed-python.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:sample/notify.js",
+        "name": "notify.js",
+        "filePath": "sample/notify.js",
+        "relationType": "USES",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:scripts/benchmark-execution.cjs",
+        "name": "benchmark-execution.cjs",
+        "filePath": "scripts/benchmark-execution.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:shell/preload/client.js",
+        "name": "client.js",
+        "filePath": "shell/preload/client.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:shell/preload/sitecustomize.js",
+        "name": "sitecustomize.js",
+        "filePath": "shell/preload/sitecustomize.js",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:src/hooks/useFilterTreeData.ts",
+        "name": "useFilterTreeData.ts",
+        "filePath": "src/hooks/useFilterTreeData.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:src/layouts/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/layouts/index.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/gitResources.ts:endpoint",
+        "name": "endpoint",
+        "filePath": "back/api/gitResources.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_225_gitresources",
+            "label": "GitResources → GitResourceError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_187_gitresources",
+            "label": "GitResources → Status",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_153_gitresources",
+            "label": "GitResources → GetDb",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/gitResources.ts:gitResources",
+        "name": "gitResources",
+        "filePath": "back/api/gitResources.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_153_gitresources",
+            "label": "GitResources → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_322_gitresources",
+            "label": "GitResources → Invalid",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_225_gitresources",
+            "label": "GitResources → GitResourceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_394_gitresources",
+            "label": "GitResources → Request",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_187_gitresources",
+            "label": "GitResources → Status",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/pythonEnvironment.ts:pythonEnvironmentRoutes",
+        "name": "pythonEnvironmentRoutes",
+        "filePath": "back/api/pythonEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_129_pythonenvironmentrou",
+            "label": "PythonEnvironmentRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/workspace.ts:endpoint",
+        "name": "endpoint",
+        "filePath": "back/api/workspace.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_319_workspaceroutes",
+            "label": "WorkspaceRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_332_workspaceroutes",
+            "label": "WorkspaceRoutes → Status",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_426_workspaceroutes",
+            "label": "WorkspaceRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/api/workspace.ts:workspaceRoutes",
+        "name": "workspaceRoutes",
+        "filePath": "back/api/workspace.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": [
+          {
+            "id": "proc_332_workspaceroutes",
+            "label": "WorkspaceRoutes → Status",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_319_workspaceroutes",
+            "label": "WorkspaceRoutes → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_402_workspaceroutes",
+            "label": "WorkspaceRoutes → Request",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_426_workspaceroutes",
+            "label": "WorkspaceRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/app.ts:Application.setupWorkerShutdown.shutdown@288:4",
+        "name": "shutdown",
+        "filePath": "back/app.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/protos/cron.ts:requestDeserialize",
+        "name": "requestDeserialize",
+        "filePath": "back/protos/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/protos/cron.ts:requestSerialize",
+        "name": "requestSerialize",
+        "filePath": "back/protos/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/protos/cron.ts:responseDeserialize",
+        "name": "responseDeserialize",
+        "filePath": "back/protos/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/protos/cron.ts:responseSerialize",
+        "name": "responseSerialize",
+        "filePath": "back/protos/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/hookOutput.ts:applyHookOutput",
+        "name": "applyHookOutput",
+        "filePath": "back/services/hookOutput.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/hookOutput.ts:applyHookOutput.validateName@58:2",
+        "name": "validateName",
+        "filePath": "back/services/hookOutput.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/metrics.ts:MetricsService.constructor.cleanupTimer@21:4",
+        "name": "cleanupTimer",
+        "filePath": "back/services/metrics.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/runtimeBuildEnvironment.ts:runtimeBuildEnvironment",
+        "name": "runtimeBuildEnvironment",
+        "filePath": "back/services/runtimeBuildEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_442_runtimebuildenvironm",
+            "label": "RuntimeBuildEnvironment → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/system.ts:SystemService.updateLinuxMirror.onEnd@230:8",
+        "name": "onEnd",
+        "filePath": "back/services/system.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_70_onend",
+            "label": "OnEnd → GetDb",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_243_onend",
+            "label": "OnEnd → SendMessage",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/services/taskEnvironmentResolver.ts:TaskEnvironmentResolver.resolve.read@45:4",
+        "name": "read",
+        "filePath": "back/services/taskEnvironmentResolver.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_58_prepare",
+            "label": "Prepare → MergeTaskEnvironment",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_11_prepare",
+            "label": "Prepare → ScopedEnvironmentError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_383_prepare",
+            "label": "Prepare → TaskDefinitionError",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/shared/trustProxy.ts:diagnoseClientIp",
+        "name": "diagnoseClientIp",
+        "filePath": "back/shared/trustProxy.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:back/shared/trustProxy.ts:parseForwardedFor",
+        "name": "parseForwardedFor",
+        "filePath": "back/shared/trustProxy.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:diagnostics/phase8/cleanup-managed-fixtures.cjs:fn@2:1.run@2:699",
+        "name": "run",
+        "filePath": "diagnostics/phase8/cleanup-managed-fixtures.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Function:src/pages/dependence/logModal.tsx:DependenceLogModal",
+        "name": "DependenceLogModal",
+        "filePath": "src/pages/dependence/logModal.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_193_dependencelogmodal",
+            "label": "DependenceLogModal → Send",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_192_dependencelogmodal",
+            "label": "DependenceLogModal → WebSocketManager",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:src/pages/setting/dependence.tsx:Dependence",
+        "name": "Dependence",
+        "filePath": "src/pages/setting/dependence.tsx",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_335_dependence",
+            "label": "Dependence → Send",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_334_dependence",
+            "label": "Dependence → WebSocketManager",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/schedule/client.ts:Client.addCron#2",
+        "name": "addCron",
+        "filePath": "back/schedule/client.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/schedule/client.ts:Client.delCron#1",
+        "name": "delCron",
+        "filePath": "back/schedule/client.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/schedule/client.ts:Client.waitForReady#1",
+        "name": "waitForReady",
+        "filePath": "back/schedule/client.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CurrentTaskBridgeService.autosave_crontab#1",
+        "name": "autosave_crontab",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_289_autosave_crontab",
+            "label": "Autosave_crontab → FormatSearchText",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_290_autosave_crontab",
+            "label": "Autosave_crontab → FormatViewQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_340_autosave_crontab",
+            "label": "Autosave_crontab → TaskDefinitionError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_288_autosave_crontab",
+            "label": "Autosave_crontab → FormatFilterQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_291_autosave_crontab",
+            "label": "Autosave_crontab → FormatViewSort",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CurrentTaskBridgeService.bootTask#0",
+        "name": "bootTask",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_360_boottask",
+            "label": "BootTask → TaskDefinitionError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_325_boottask",
+            "label": "BootTask → FormatViewQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_324_boottask",
+            "label": "BootTask → FormatSearchText",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_323_boottask",
+            "label": "BootTask → FormatFilterQuery",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_326_boottask",
+            "label": "BootTask → FormatViewSort",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CurrentTaskBridgeService.mutateTaskDefinitions#1",
+        "name": "mutateTaskDefinitions",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_100_mutatetaskdefinition",
+            "label": "MutateTaskDefinitions → Quote",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_133_mutatetaskdefinition",
+            "label": "MutateTaskDefinitions → TaskDefinitionError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CurrentTaskBridgeService.publishSubscription#2",
+        "name": "publishSubscription",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_203_publishsubscription",
+            "label": "PublishSubscription → Quote",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_200_publishsubscription",
+            "label": "PublishSubscription → GetUniqPath",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_213_publishsubscription",
+            "label": "PublishSubscription → TaskDefinitionError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/cron.ts:CurrentTaskBridgeService.runSingle#2",
+        "name": "runSingle",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/gitCredential.ts:GitCredentialService.testAccess#2",
+        "name": "testAccess",
+        "filePath": "back/services/gitCredential.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_250_testaccess",
+            "label": "TestAccess → Cleanup",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_251_testaccess",
+            "label": "TestAccess → QuoteGitShell",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_364_testaccess",
+            "label": "TestAccess → GitResourceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_233_testaccess",
+            "label": "TestAccess → Invalid",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.exclusive#2",
+        "name": "exclusive",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_149_run",
+            "label": "Run → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_209_preflight",
+            "label": "Preflight → RuntimeError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_131_preflight",
+            "label": "Preflight → Root",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_130_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_264_run",
+            "label": "Run → RuntimeError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_150_run",
+            "label": "Run → Release",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_210_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_211_run",
+            "label": "Run → Root",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_20_preflight",
+            "label": "Preflight → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_21_preflight",
+            "label": "Preflight → Release",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.preflight#1",
+        "name": "preflight",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_209_preflight",
+            "label": "Preflight → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_130_preflight",
+            "label": "Preflight → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_20_preflight",
+            "label": "Preflight → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_21_preflight",
+            "label": "Preflight → Release",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_131_preflight",
+            "label": "Preflight → Root",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.prepare#2",
+        "name": "prepare",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_2_prepare",
+            "label": "Prepare → Root",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_1_prepare",
+            "label": "Prepare → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_0_prepare",
+            "label": "Prepare → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_375_prepare",
+            "label": "Prepare → GitResourceError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.run#1",
+        "name": "run",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_210_run",
+            "label": "Run → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_211_run",
+            "label": "Run → Root",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_149_run",
+            "label": "Run → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_264_run",
+            "label": "Run → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_150_run",
+            "label": "Run → Release",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.stage#3",
+        "name": "stage",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_399_stage",
+            "label": "Stage → Root",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_433_stage",
+            "label": "Stage → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_404_stage",
+            "label": "Stage → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.validateFiles#1",
+        "name": "validateFiles",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_399_stage",
+            "label": "Stage → Root",
+            "processType": "intra_community",
+            "step": 2
+          },
+          {
+            "id": "proc_433_stage",
+            "label": "Stage → RuntimeError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_404_stage",
+            "label": "Stage → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/managedSubscription.ts:ManagedSubscriptionService.withBinding#2",
+        "name": "withBinding",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.cleanupCancelled#1",
+        "name": "cleanupCancelled",
+        "filePath": "back/services/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.definition#2",
+        "name": "definition",
+        "filePath": "back/services/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_139_definition",
+            "label": "Definition → RuntimeLease",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_132_definition",
+            "label": "Definition → AsError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_152_definition",
+            "label": "Definition → ResourceLock",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_413_definition",
+            "label": "Definition → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.diagnostics#0",
+        "name": "diagnostics",
+        "filePath": "back/services/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.diff#3",
+        "name": "diff",
+        "filePath": "back/services/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.8,
+        "processes": []
+      }
+    ],
+    "2": [
+      {
+        "depth": 2,
+        "id": "File:PHASE4_5B_REPORT.md",
+        "name": "PHASE4_5B_REPORT.md",
+        "filePath": "PHASE4_5B_REPORT.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:PHASE4_REPORT.md",
+        "name": "PHASE4_REPORT.md",
+        "filePath": "PHASE4_REPORT.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/clientIp.ts",
+        "name": "clientIp.ts",
+        "filePath": "back/api/clientIp.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/index.ts",
+        "name": "index.ts",
+        "filePath": "back/api/index.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/scopedEnvironment.ts",
+        "name": "scopedEnvironment.ts",
+        "filePath": "back/api/scopedEnvironment.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/tasks.ts",
+        "name": "tasks.ts",
+        "filePath": "back/api/tasks.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/config/util.ts",
+        "name": "util.ts",
+        "filePath": "back/config/util.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/data/runtime.ts",
+        "name": "runtime.ts",
+        "filePath": "back/data/runtime.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/loaders/app.ts",
+        "name": "app.ts",
+        "filePath": "back/loaders/app.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/loaders/server.ts",
+        "name": "server.ts",
+        "filePath": "back/loaders/server.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/middlewares/monitoring.ts",
+        "name": "monitoring.ts",
+        "filePath": "back/middlewares/monitoring.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/schedule/client.ts",
+        "name": "client.ts",
+        "filePath": "back/schedule/client.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/services/cron.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/dependence.ts",
+        "name": "dependence.ts",
+        "filePath": "back/services/dependence.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/grpc.ts",
+        "name": "grpc.ts",
+        "filePath": "back/services/grpc.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/http.ts",
+        "name": "http.ts",
+        "filePath": "back/services/http.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/notify.ts",
+        "name": "notify.ts",
+        "filePath": "back/services/notify.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/pipPackageManager.ts",
+        "name": "pipPackageManager.ts",
+        "filePath": "back/services/pipPackageManager.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/pythonDependency.ts",
+        "name": "pythonDependency.ts",
+        "filePath": "back/services/pythonDependency.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/pythonEnvironment.ts",
+        "name": "pythonEnvironment.ts",
+        "filePath": "back/services/pythonEnvironment.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/pythonEnvironmentBuild.ts",
+        "name": "pythonEnvironmentBuild.ts",
+        "filePath": "back/services/pythonEnvironmentBuild.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/pythonEnvironmentPaths.ts",
+        "name": "pythonEnvironmentPaths.ts",
+        "filePath": "back/services/pythonEnvironmentPaths.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/pythonEnvironmentReferences.ts",
+        "name": "pythonEnvironmentReferences.ts",
+        "filePath": "back/services/pythonEnvironmentReferences.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/pythonEnvironmentResolver.ts",
+        "name": "pythonEnvironmentResolver.ts",
+        "filePath": "back/services/pythonEnvironmentResolver.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/pythonVenv.ts",
+        "name": "pythonVenv.ts",
+        "filePath": "back/services/pythonVenv.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/repositoryEnvProfile.ts",
+        "name": "repositoryEnvProfile.ts",
+        "filePath": "back/services/repositoryEnvProfile.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/scopedEnvVariable.ts",
+        "name": "scopedEnvVariable.ts",
+        "filePath": "back/services/scopedEnvVariable.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/script.ts",
+        "name": "script.ts",
+        "filePath": "back/services/script.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/system.ts",
+        "name": "system.ts",
+        "filePath": "back/services/system.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/task.ts",
+        "name": "task.ts",
+        "filePath": "back/services/task.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/taskConfig.ts",
+        "name": "taskConfig.ts",
+        "filePath": "back/services/taskConfig.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/taskEnvironmentResolver.ts",
+        "name": "taskEnvironmentResolver.ts",
+        "filePath": "back/services/taskEnvironmentResolver.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/taskExecutionSourceBridge.ts",
+        "name": "taskExecutionSourceBridge.ts",
+        "filePath": "back/services/taskExecutionSourceBridge.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/taskHooks.ts",
+        "name": "taskHooks.ts",
+        "filePath": "back/services/taskHooks.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/taskReferences.ts",
+        "name": "taskReferences.ts",
+        "filePath": "back/services/taskReferences.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/taskRelationships.ts",
+        "name": "taskRelationships.ts",
+        "filePath": "back/services/taskRelationships.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/taskResourceResolver.ts",
+        "name": "taskResourceResolver.ts",
+        "filePath": "back/services/taskResourceResolver.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/shared/taskDefinition.ts",
+        "name": "taskDefinition.ts",
+        "filePath": "back/shared/taskDefinition.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/dashboard/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/pages/dashboard/index.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/dependence/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/pages/dependence/index.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/diff/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/pages/diff/index.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/error/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/pages/error/index.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/login/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/pages/login/index.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/script/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/pages/script/index.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/setting/about.tsx",
+        "name": "about.tsx",
+        "filePath": "src/pages/setting/about.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/setting/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/pages/setting/index.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/setting/other.tsx",
+        "name": "other.tsx",
+        "filePath": "src/pages/setting/other.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:src/pages/subscription/index.tsx",
+        "name": "index.tsx",
+        "filePath": "src/pages/subscription/index.tsx",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/api/workspace.ts:validate",
+        "name": "validate",
+        "filePath": "back/api/workspace.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Interface:back/protos/api.ts:ApiClient",
+        "name": "ApiClient",
+        "filePath": "back/protos/api.ts",
+        "relationType": "EXTENDS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Interface:back/protos/cron.ts:CronClient",
+        "name": "CronClient",
+        "filePath": "back/protos/cron.ts",
+        "relationType": "EXTENDS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Interface:back/protos/health.ts:HealthClient",
+        "name": "HealthClient",
+        "filePath": "back/protos/health.ts",
+        "relationType": "EXTENDS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/schedule/client.ts:Client.probe#0",
+        "name": "probe",
+        "filePath": "back/schedule/client.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/cron.ts:CurrentTaskBridgeService.run#1",
+        "name": "run",
+        "filePath": "back/services/cron.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.clone#2",
+        "name": "clone",
+        "filePath": "back/services/nodeEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.create#1",
+        "name": "create",
+        "filePath": "back/services/pythonEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.metadata#2",
+        "name": "metadata",
+        "filePath": "back/services/pythonEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.revise#2",
+        "name": "revise",
+        "filePath": "back/services/pythonEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_110_revise",
+            "label": "Revise → Release",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_273_revise",
+            "label": "Revise → RuntimeLease",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_419_revise",
+            "label": "Revise → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_267_revise",
+            "label": "Revise → AsError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.changeRemote#2",
+        "name": "changeRemote",
+        "filePath": "back/services/repositoryStorage.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_227_changeremote",
+            "label": "ChangeRemote → Release",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_265_changeremote",
+            "label": "ChangeRemote → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_226_changeremote",
+            "label": "ChangeRemote → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_336_changeremote",
+            "label": "ChangeRemote → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_266_changeremote",
+            "label": "ChangeRemote → Root",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.fetch#1",
+        "name": "fetch",
+        "filePath": "back/services/repositoryStorage.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_280_fetch",
+            "label": "Fetch → Release",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_356_fetch",
+            "label": "Fetch → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_307_fetch",
+            "label": "Fetch → Root",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_306_fetch",
+            "label": "Fetch → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_279_fetch",
+            "label": "Fetch → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.fetchLocked#3",
+        "name": "fetchLocked",
+        "filePath": "back/services/repositoryStorage.ts",
+        "relationType": "CALLS",
+        "confidence": 0.7,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.mark#2",
+        "name": "mark",
+        "filePath": "back/services/repositoryStorage.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.refs#1",
+        "name": "refs",
+        "filePath": "back/services/repositoryStorage.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_365_refs",
+            "label": "Refs → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_357_refs",
+            "label": "Refs → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_379_refs",
+            "label": "Refs → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_366_refs",
+            "label": "Refs → Release",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_358_refs",
+            "label": "Refs → Root",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.repair#1",
+        "name": "repair",
+        "filePath": "back/services/repositoryStorage.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_380_repair",
+            "label": "Repair → WorkspaceError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_388_repair",
+            "label": "Repair → Release",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_381_repair",
+            "label": "Repair → Root",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_387_repair",
+            "label": "Repair → WorkspaceGuard",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_397_repair",
+            "label": "Repair → RuntimeError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.constructor#4",
+        "name": "constructor",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.startRecovery#0",
+        "name": "startRecovery",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/schedule.ts:ScheduleService.createCronTask#3",
+        "name": "createCronTask",
+        "filePath": "back/services/schedule.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/schedule.ts:ScheduleService.createIntervalTask#4",
+        "name": "createIntervalTask",
+        "filePath": "back/services/schedule.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_339_updatelogremovefrequ",
+            "label": "UpdateLogRemoveFrequency → AsError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_54_updatelogremovefrequ",
+            "label": "UpdateLogRemoveFrequency → OnEnd",
+            "processType": "intra_community",
+            "step": 2
+          },
+          {
+            "id": "proc_53_updatelogremovefrequ",
+            "label": "UpdateLogRemoveFrequency → OnBefore",
+            "processType": "intra_community",
+            "step": 2
+          },
+          {
+            "id": "proc_55_updatelogremovefrequ",
+            "label": "UpdateLogRemoveFrequency → OnError",
+            "processType": "intra_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/user.ts:UserService.login#2",
+        "name": "login",
+        "filePath": "back/services/user.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ],
+    "3": [
+      {
+        "depth": 3,
+        "id": "File:GREENFIELD_REMOVAL_PLAN.md",
+        "name": "GREENFIELD_REMOVAL_PLAN.md",
+        "filePath": "GREENFIELD_REMOVAL_PLAN.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:TEMPORARY_BRIDGES.md",
+        "name": "TEMPORARY_BRIDGES.md",
+        "filePath": "TEMPORARY_BRIDGES.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/api/configAssets.ts",
+        "name": "configAssets.ts",
+        "filePath": "back/api/configAssets.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/api/gitResources.ts",
+        "name": "gitResources.ts",
+        "filePath": "back/api/gitResources.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/api/pythonEnvironment.ts",
+        "name": "pythonEnvironment.ts",
+        "filePath": "back/api/pythonEnvironment.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/api/runtime.ts",
+        "name": "runtime.ts",
+        "filePath": "back/api/runtime.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/api/update.ts",
+        "name": "update.ts",
+        "filePath": "back/api/update.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/config/grpcCerts.ts",
+        "name": "grpcCerts.ts",
+        "filePath": "back/config/grpcCerts.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/loaders/bootAfter.ts",
+        "name": "bootAfter.ts",
+        "filePath": "back/loaders/bootAfter.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/loaders/initData.ts",
+        "name": "initData.ts",
+        "filePath": "back/loaders/initData.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/loaders/initFile.ts",
+        "name": "initFile.ts",
+        "filePath": "back/loaders/initFile.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/loaders/initTask.ts",
+        "name": "initTask.ts",
+        "filePath": "back/loaders/initTask.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/protos/api.ts",
+        "name": "api.ts",
+        "filePath": "back/protos/api.ts",
+        "relationType": "USES",
+        "confidence": 0.55,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/protos/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/protos/cron.ts",
+        "relationType": "USES",
+        "confidence": 0.55,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/protos/health.ts",
+        "name": "health.ts",
+        "filePath": "back/protos/health.ts",
+        "relationType": "USES",
+        "confidence": 0.55,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/schedule/api.ts",
+        "name": "api.ts",
+        "filePath": "back/schedule/api.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/schema/taskSchema.ts",
+        "name": "taskSchema.ts",
+        "filePath": "back/schema/taskSchema.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/configMaterialization.ts",
+        "name": "configMaterialization.ts",
+        "filePath": "back/services/configMaterialization.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/env.ts",
+        "name": "env.ts",
+        "filePath": "back/services/env.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/executionEnvironmentTransport.ts",
+        "name": "executionEnvironmentTransport.ts",
+        "filePath": "back/services/executionEnvironmentTransport.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/health.ts",
+        "name": "health.ts",
+        "filePath": "back/services/health.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/managedSubscription.ts",
+        "name": "managedSubscription.ts",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/nodeDistributionProvider.ts",
+        "name": "nodeDistributionProvider.ts",
+        "filePath": "back/services/nodeDistributionProvider.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/nodeEnvironment.ts",
+        "name": "nodeEnvironment.ts",
+        "filePath": "back/services/nodeEnvironment.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/nodePackageManager.ts",
+        "name": "nodePackageManager.ts",
+        "filePath": "back/services/nodePackageManager.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/open.ts",
+        "name": "open.ts",
+        "filePath": "back/services/open.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/pyenvProvider.ts",
+        "name": "pyenvProvider.ts",
+        "filePath": "back/services/pyenvProvider.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/repository.ts",
+        "name": "repository.ts",
+        "filePath": "back/services/repository.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/runtimeOperations.ts",
+        "name": "runtimeOperations.ts",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/runtimeReferences.ts",
+        "name": "runtimeReferences.ts",
+        "filePath": "back/services/runtimeReferences.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/schedulerBridge.ts",
+        "name": "schedulerBridge.ts",
+        "filePath": "back/services/schedulerBridge.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/taskExecutionBridge.ts",
+        "name": "taskExecutionBridge.ts",
+        "filePath": "back/services/taskExecutionBridge.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/taskExecutionPreparation.ts",
+        "name": "taskExecutionPreparation.ts",
+        "filePath": "back/services/taskExecutionPreparation.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/taskResourceValidator.ts",
+        "name": "taskResourceValidator.ts",
+        "filePath": "back/services/taskResourceValidator.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/taskWorkspace.ts",
+        "name": "taskWorkspace.ts",
+        "filePath": "back/services/taskWorkspace.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/user.ts",
+        "name": "user.ts",
+        "filePath": "back/services/user.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/worktree.ts",
+        "name": "worktree.ts",
+        "filePath": "back/services/worktree.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/shared/pLimit.ts",
+        "name": "pLimit.ts",
+        "filePath": "back/shared/pLimit.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/shared/runCron.ts",
+        "name": "runCron.ts",
+        "filePath": "back/shared/runCron.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/shared/utils.ts",
+        "name": "utils.ts",
+        "filePath": "back/shared/utils.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:docs/architecture/adr/ADR-001-fresh-install-only.md",
+        "name": "ADR-001-fresh-install-only.md",
+        "filePath": "docs/architecture/adr/ADR-001-fresh-install-only.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:docs/architecture/adr/ADR-002-no-qinglong-compatibility.md",
+        "name": "ADR-002-no-qinglong-compatibility.md",
+        "filePath": "docs/architecture/adr/ADR-002-no-qinglong-compatibility.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:docs/architecture/adr/ADR-003-repository-required-for-subscription.md",
+        "name": "ADR-003-repository-required-for-subscription.md",
+        "filePath": "docs/architecture/adr/ADR-003-repository-required-for-subscription.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:docs/architecture/adr/ADR-005-unified-scoped-environment.md",
+        "name": "ADR-005-unified-scoped-environment.md",
+        "filePath": "docs/architecture/adr/ADR-005-unified-scoped-environment.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:docs/architecture/adr/ADR-006-database-is-domain-source-of-truth.md",
+        "name": "ADR-006-database-is-domain-source-of-truth.md",
+        "filePath": "docs/architecture/adr/ADR-006-database-is-domain-source-of-truth.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:docs/refactor/phase4/08-phase4-test-report.md",
+        "name": "08-phase4-test-report.md",
+        "filePath": "docs/refactor/phase4/08-phase4-test-report.md",
+        "relationType": "IMPORTS",
+        "confidence": 0.8,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.clone#2",
+        "name": "clone",
+        "filePath": "back/services/pythonEnvironment.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/repositoryStorage.ts:RepositoryStorageService.metadata#3",
+        "name": "metadata",
+        "filePath": "back/services/repositoryStorage.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ]
+  }
+}

@@ -73,7 +73,8 @@
   },
   {
     "path": "test/back/manual-stop-claim.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 10: old PID/token runner contract replaced by durable TaskRun claim/cancel/recovery tests; retained as historical evidence."
   },
   {
     "path": "test/back/metrics.test.cjs",
@@ -145,7 +146,8 @@
   },
   {
     "path": "test/back/stop-race.test.cjs",
-    "classification": "TEMPORARY_BRIDGE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 10: old PID/token runner contract replaced by durable TaskRun claim/cancel/recovery tests; retained as historical evidence."
   },
   {
     "path": "test/back/subscription-cleanup.test.cjs",
@@ -229,7 +231,8 @@
   },
   {
     "path": "tests/platform/discovery.test.cjs",
-    "classification": "PLATFORM_CORE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 11 removed B07 staging/projection publication; equivalent active coverage: tests/phase11/discovery.test.cjs, git-pipeline.test.cjs, scale.test.cjs and tests/phase5/publication-integrity.test.cjs."
   },
   {
     "path": "tests/platform/environment-account-mode.test.cjs",
@@ -285,7 +288,8 @@
   },
   {
     "path": "tests/platform/subscription-pipeline.test.cjs",
-    "classification": "PLATFORM_CORE"
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 11 removed B07 staging/projection publication; equivalent active coverage: tests/phase11/discovery.test.cjs, git-pipeline.test.cjs, scale.test.cjs and tests/phase5/publication-integrity.test.cjs."
   },
   {
     "path": "tests/platform/task-model-bridge.test.cjs",
@@ -455,5 +459,206 @@
   {
     "path": "tests/phase5/process-group.test.cjs",
     "classification": "TEMPORARY_BRIDGE"
+  },
+  {
+    "path": "tests/phase6/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase6/runtime.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase6/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase6/failures.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase6/provider.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase7/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase7/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase7/paths.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase7/failures.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase8/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase8/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase8/security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase8/provider.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase8/failures.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/domain.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/resources.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/source.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/discovery.test.cjs",
+    "classification": "ARCHIVED_LEGACY",
+    "reason": "Phase 11 removed B07 staging/projection publication; equivalent active coverage: tests/phase11/discovery.test.cjs, git-pipeline.test.cjs, scale.test.cjs and tests/phase5/publication-integrity.test.cjs."
+  },
+  {
+    "path": "tests/phase9/subscription-delete.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/execution.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/recovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/entrypoints.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/hardening.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase10/policies.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/triggers.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/discovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/scale.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/webhook.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/cron.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/recovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase11/git-pipeline.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/domain.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/recovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/scale.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/security.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase13/providers.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase14/barrier.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase14/portable.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase14/sqlite.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase14/production.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase12/files.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase12/git.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase12/discovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase12/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/ci/foundation.test.cjs",
+    "classification": "PLATFORM_CORE"
   }
 ]

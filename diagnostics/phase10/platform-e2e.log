@@ -1,0 +1,25 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+empty-root-bootstrap
+browser-fresh-initialize-login
+browser-credential-create
+browser-repository-create
+browser-initialize-fetch
+browser-subscription-create-branch
+browser-prepare-sync-discovery
+browser-worktree-view
+browser-global-create
+ENV_REPOSITORIES {"code":200,"data":[{"id":1,"name":"E2E Repo","default_env_profile_id":null,"profiles_count":0}]}
+browser-profile-create-default
+task-domain-discovery-three-languages
+real-python-venv-and-node-dependency-environments
+browser-discovered-task-runtime-settings-validation
+browser-manual-worktree-entrypoint-create
+browser-arguments-concurrency-and-negative-resource-gates
+browser-task-env-config-hooks
+browser-runtime-default-inherit-override-reset
+browser-clone-disable-enable
+browser-environment-reference-protection
+browser-managed-python-node-shell-and-manual-clone-runs
+browser-run-list-cancel-and-result
+restart-validate-all-task-resources
+fresh-v7-restart-fk-secret-audit

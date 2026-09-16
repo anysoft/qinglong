@@ -23,7 +23,7 @@ import {
   rmPath,
 } from '../config/util';
 import fs from 'fs/promises';
-import { FindOptions, Op } from 'sequelize';
+import { FindOptions, Op, Transaction } from 'sequelize';
 import path, { join } from 'path';
 import ScheduleService, { TaskCallbacks } from './schedule';
 import { SimpleIntervalSchedule } from 'toad-scheduler';
@@ -31,7 +31,9 @@ import SockService from './sock';
 import { t, tf } from '../shared/i18n';
 import dayjs from 'dayjs';
 import { LOG_END_SYMBOL } from '../config/const';
-import { CrontabModel } from '../data/cron';
+import { SchedulerProjectionModel } from '../data/cron';
+import { TaskModel } from '../data/task';
+import { TaskDefinitionError } from '../shared/taskDefinition';
 import CrontabService from './cron';
 import taskLimit from '../shared/pLimit';
 import { logStreamManager } from '../shared/logStreamManager';
@@ -265,17 +267,21 @@ export default class SubscriptionService {
 
   private async removeUnlocked(ids: number[], query: { force?: boolean }) {
     const docs = await SubscriptionModel.findAll({ where: { id: ids } });
+    const owned = await TaskModel.count({ where: { subscription_id: ids } });
+    if (owned && query?.force !== true) throw new TaskDefinitionError('SUBSCRIPTION_TASK_REFERENCED', 409);
     for (const doc of docs) {
       await this.handleTask(doc.get({ plain: true }), false);
     }
-    await SubscriptionModel.destroy({ where: { id: ids } });
-
-    if (query?.force === true) {
-      const crons = await CrontabModel.findAll({ where: { sub_id: ids } });
-      if (crons?.length) {
-        await this.crontabService.remove(crons.map((x) => x.id!));
-      }
-
+    try {
+      if (owned) await sequelize.transaction({ type: Transaction.TYPES.IMMEDIATE }, async transaction => {
+        await TaskModel.destroy({ where: { subscription_id: ids, origin: 'DISCOVERED' }, transaction });
+        await SubscriptionModel.destroy({ where: { id: ids }, transaction });
+        return null;
+      });
+      else await SubscriptionModel.destroy({ where: { id: ids } });
+    } catch (error) {
+      for (const doc of docs) await this.handleTask(doc.get({ plain: true }));
+      throw error;
     }
   }
 

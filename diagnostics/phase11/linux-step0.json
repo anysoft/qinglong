@@ -1,0 +1,12 @@
+{
+  "host": "Darwin",
+  "tools": {
+    "docker": null,
+    "podman": null,
+    "limactl": null,
+    "colima": null,
+    "gh": null
+  },
+  "status": "PARTIAL",
+  "reason": "No configured Linux container/VM/CI runner; inherited physical cleanup remains BLOCKED_BY_LINUX_GATE."
+}

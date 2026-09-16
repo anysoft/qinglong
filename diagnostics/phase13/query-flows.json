@@ -1,0 +1,185 @@
+{
+  "processes": [
+    {
+      "id": "proc_187_dependencelogmodal",
+      "summary": "DependenceLogModal → WebSocketManager",
+      "priority": 0.101,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_188_dependencelogmodal",
+      "summary": "DependenceLogModal → Send",
+      "priority": 0.101,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 3
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Function:src/pages/dependence/logModal.tsx:DependenceLogModal",
+      "name": "DependenceLogModal",
+      "filePath": "src/pages/dependence/logModal.tsx",
+      "startLine": 15,
+      "endLine": 165,
+      "module": "Dependence",
+      "process_id": "proc_187_dependencelogmodal",
+      "step_index": 1
+    }
+  ],
+  "definitions": [
+    {
+      "name": "isInContainer",
+      "type": "File"
+    },
+    {
+      "name": "evolvedObject",
+      "type": "File",
+      "filePath": "back/schema/taskSchema.ts"
+    },
+    {
+      "id": "Class:back/services/triggerEvents.ts:TriggerEvents",
+      "name": "TriggerEvents",
+      "filePath": "back/services/triggerEvents.ts",
+      "startLine": 8,
+      "endLine": 85,
+      "module": "Services"
+    },
+    {
+      "id": "Class:back/services/executionService.ts:ExecutionService",
+      "name": "ExecutionService",
+      "filePath": "back/services/executionService.ts",
+      "startLine": 33,
+      "endLine": 673
+    },
+    {
+      "id": "Const:back/services/executionService.ts:ExecutionService.execute.log@358:4",
+      "name": "log",
+      "filePath": "back/services/executionService.ts",
+      "startLine": 359,
+      "endLine": 360
+    },
+    {
+      "id": "Property:diagnostics/phase11/static-audit.cjs:report.discovery_staging_adapter_removed",
+      "name": "ME_LOG_WINDOWRUNTIME",
+      "filePath": "diagnostics/phase11/static-audit.cjs",
+      "startLine": 8,
+      "endLine": 8
+    },
+    {
+      "id": "Property:diagnostics/phase11/static-audit.cjs:report.normal_task_projection_removed",
+      "name": "assert",
+      "filePath": "diagnostics/phase11/static-audit.cjs",
+      "startLine": 8,
+      "endLine": 8
+    },
+    {
+      "id": "Property:diagnostics/phase11/static-audit.cjs:report.retained_reference_classification",
+      "name": "test",
+      "filePath": "diagnostics/phase11/static-audit.cjs",
+      "startLine": 8,
+      "endLine": 8
+    },
+    {
+      "id": "Class:shell/preload/client.py:CronItem",
+      "name": "CronItem",
+      "filePath": "shell/preload/client.py",
+      "startLine": 118,
+      "endLine": 130
+    },
+    {
+      "id": "Class:shell/preload/client.py:CronDetailParams",
+      "name": "CronDetailParams",
+      "filePath": "shell/preload/client.py",
+      "startLine": 156,
+      "endLine": 157
+    },
+    {
+      "id": "Class:shell/preload/client.py:Client",
+      "name": "Client",
+      "filePath": "shell/preload/client.py",
+      "startLine": 172,
+      "endLine": 277,
+      "module": "Preload"
+    },
+    {
+      "id": "Const:diagnostics/phase11/finalize-evidence.cjs:log",
+      "name": "log",
+      "filePath": "diagnostics/phase11/finalize-evidence.cjs",
+      "startLine": 3,
+      "endLine": 3
+    },
+    {
+      "id": "Const:diagnostics/phase11/finalize-evidence.cjs:counts",
+      "name": "counts",
+      "filePath": "diagnostics/phase11/finalize-evidence.cjs",
+      "startLine": 4,
+      "endLine": 4
+    },
+    {
+      "id": "TypeAlias:back/data/open.ts:AppScope",
+      "name": "AppScope",
+      "filePath": "back/data/open.ts",
+      "startLine": 27,
+      "endLine": 27
+    },
+    {
+      "id": "Function:back/schema/executionSchema.ts:createExecutionSchema",
+      "name": "createExecutionSchema",
+      "filePath": "back/schema/executionSchema.ts",
+      "startLine": 5,
+      "endLine": 54,
+      "module": "Schema"
+    },
+    {
+      "id": "Class:back/services/runtimePaths.ts:RuntimePathResolver",
+      "name": "RuntimePathResolver",
+      "filePath": "back/services/runtimePaths.ts",
+      "startLine": 9,
+      "endLine": 250,
+      "module": "Services"
+    },
+    {
+      "id": "Class:back/shared/logStreamManager.ts:LogStreamManager",
+      "name": "LogStreamManager",
+      "filePath": "back/shared/logStreamManager.ts",
+      "startLine": 10,
+      "endLine": 121
+    },
+    {
+      "id": "Function:src/pages/setting/dependence.tsx:Dependence.getSystemConfig@29:2",
+      "name": "getSystemConfig",
+      "filePath": "src/pages/setting/dependence.tsx",
+      "startLine": 30,
+      "endLine": 41,
+      "module": "Setting"
+    },
+    {
+      "id": "Function:src/pages/setting/dependence.tsx:Dependence.updateSystemConfig@57:2",
+      "name": "updateSystemConfig",
+      "filePath": "src/pages/setting/dependence.tsx",
+      "startLine": 58,
+      "endLine": 75,
+      "module": "Setting"
+    },
+    {
+      "id": "Function:src/pages/setting/dependence.tsx:Dependence.cleanDependenceCache@84:2",
+      "name": "cleanDependenceCache",
+      "filePath": "src/pages/setting/dependence.tsx",
+      "startLine": 85,
+      "endLine": 101,
+      "module": "Setting"
+    }
+  ],
+  "timing": {
+    "vector": 8.4,
+    "bm25": 384.3,
+    "merge": 0.6,
+    "symbol_lookup": 33.2,
+    "ranking": 0,
+    "formatting": 0.1,
+    "wall": 418.7
+  }
+}

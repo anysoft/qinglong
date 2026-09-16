@@ -3,7 +3,7 @@ const { spawn } = require('node:child_process');
 const setup = require('../phase4/helpers.cjs');
 for (const language of ['sh', 'js', 'py']) test(`scoped ${language} account concurrency keeps split secrets in private temporary logs`, async t => {
   const h = await setup(t); 
-  const task = await h.CrontabModel.create({ command: `task accounts.${language}` });
+  const task = await h.SchedulerProjectionModel.create({ command: `task accounts.${language}` });
   await h.variables.save('task', task.id, [{ name: 'ACCOUNTS', value: 'private-account-one&private-account-two', is_secret: true }]);
   const snapshot = await new (h.get('services/executionEnvironmentTransport').default)().prepare(await h.resolver.resolve(task.id), process.pid);
   const scripts = { sh: 'printf "ACCOUNT:%s\\n" "$ACCOUNTS"', js: 'console.log("ACCOUNT:"+process.env.ACCOUNTS)', py: 'import os\nprint("ACCOUNT:"+os.environ["ACCOUNTS"])' };

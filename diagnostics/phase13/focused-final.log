@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: threshold, recovery, per-status overrides, atomic outbox and real HTTP delivery
+ok 1 - threshold, recovery, per-status overrides, atomic outbox and real HTTP delivery
+  ---
+  duration_ms: 6005.826166
+  type: 'test'
+  ...
+# Subtest: delivery retry/dead/manual identity and channel archive preserve history; execution does not wait
+ok 2 - delivery retry/dead/manual identity and channel archive preserve history; execution does not wait
+  ---
+  duration_ms: 4110.555791
+  type: 'test'
+  ...
+# Subtest: run events are ordered, attempts retain retry results, resource/log APIs omit secret values
+ok 3 - run events are ordered, attempts retain retry results, resource/log APIs omit secret values
+  ---
+  duration_ms: 1643.004334
+  type: 'test'
+  ...
+# Subtest: terminal transaction rollback includes health and outbox
+ok 4 - terminal transaction rollback includes health and outbox
+  ---
+  duration_ms: 707.022709
+  type: 'test'
+  ...
+# Subtest: all existing HTTP provider adapters retain protocol behavior with isolated concurrent state and real HTTP fixture
+ok 5 - all existing HTTP provider adapters retain protocol behavior with isolated concurrent state and real HTTP fixture
+  ---
+  duration_ms: 5698.34325
+  type: 'test'
+  ...
+# Subtest: existing email adapter sends through a real deterministic SMTP receiver
+ok 6 - existing email adapter sends through a real deterministic SMTP receiver
+  ---
+  duration_ms: 2108.740541
+  type: 'test'
+  ...
+# Subtest: legacy webhook multipart transport preserves encoded fields and boundary
+ok 7 - legacy webhook multipart transport preserves encoded fields and boundary
+  ---
+  duration_ms: 2014.926458
+  type: 'test'
+  ...
+# Subtest: two real processes cannot send one outbox concurrently; crash after external send recovers at-least-once
+ok 8 - two real processes cannot send one outbox concurrently; crash after external send recovers at-least-once
+  ---
+  duration_ms: 10090.713125
+  type: 'test'
+  ...
+# Subtest: SIGKILL before terminal commit rolls back; after commit preserves one logical alert for restart
+ok 9 - SIGKILL before terminal commit rolls back; after commit preserves one logical alert for restart
+  ---
+  duration_ms: 2178.180708
+  type: 'test'
+  ...
+# Subtest: threshold and recovery terminal commits survive SIGKILL with one logical alert and actual restart HTTP delivery
+ok 10 - threshold and recovery terminal commits survive SIGKILL with one logical alert and actual restart HTTP delivery
+  ---
+  duration_ms: 3949.608459
+  type: 'test'
+  ...
+# Subtest: 100,000 runs use SQL aggregates/keysets; 100MB log reads stay bounded; 10,000 outbox due query uses index
+ok 11 - 100,000 runs use SQL aggregates/keysets; 100MB log reads stay bounded; 10,000 outbox due query uses index
+  ---
+  duration_ms: 9239.893958
+  type: 'test'
+  ...
+# Subtest: actual frozen v8 migrates to identical fresh v9; rollback/retry/history and legacy policy preserved
+ok 12 - actual frozen v8 migrates to identical fresh v9; rollback/retry/history and legacy policy preserved
+  ---
+  duration_ms: 4444.6175
+  type: 'test'
+  ...
+# Subtest: provider transport refuses unsafe URLs, redirects, and oversized responses; secrets never escape error codes
+ok 13 - provider transport refuses unsafe URLs, redirects, and oversized responses; secrets never escape error codes
+  ---
+  duration_ms: 7961.422875
+  type: 'test'
+  ...
+# Subtest: Run logs reject forged cursors and symlinks; old log API and cleaner cannot delete Run logs
+ok 14 - Run logs reject forged cursors and symlinks; old log API and cleaner cannot delete Run logs
+  ---
+  duration_ms: 1886.564208
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16938.860041

@@ -1,0 +1,31 @@
+{
+  "phase_status": "PARTIAL",
+  "complete": false,
+  "schema": 9,
+  "platform_tests": {
+    "tests": 413,
+    "pass": 410,
+    "fail": 0,
+    "skipped": 3,
+    "cancelled": 0
+  },
+  "backend_build": "PASS",
+  "frontend_build": "PASS",
+  "typecheck": {
+    "status": "PARTIAL",
+    "original": 32,
+    "remaining": 32,
+    "new": [],
+    "raw_exit_code": 2,
+    "regression_gate": "PASS"
+  },
+  "streaming_sample": {
+    "input_bytes": 104857600,
+    "peak_rss_delta": 81412096
+  },
+  "browser": "NOT_RUN",
+  "fresh_restore": "NOT_IMPLEMENTED",
+  "b16": "RETAINED",
+  "linux": "PARTIAL",
+  "production_entrypoints_integrated": false
+}

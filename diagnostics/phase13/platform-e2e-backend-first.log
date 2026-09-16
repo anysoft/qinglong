@@ -1,0 +1,98 @@
+[[32minfo[39m 2026-09-16 11:29:17]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 11:29:18]:	[boot] grpc worker started (PID: 92536)
+[[32minfo[39m 2026-09-16 11:29:18]:	[boot] Generating gRPC mTLS certificates...
+[[32minfo[39m 2026-09-16 11:29:18]:	[boot] gRPC mTLS certificates generated successfully
+[[32minfo[39m 2026-09-16 11:29:18]:	[boot] gRPC mTLS certificates saved to /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-kajSDi/data/config/grpc
+[[34mdebug[39m 2026-09-16 11:29:18]:	[boot] gRPC service started successfully on 127.0.0.1:49339
+[[32minfo[39m 2026-09-16 11:29:18]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 11:29:18]:	[boot] http worker started (PID: 92560)
+[[32minfo[39m 2026-09-16 11:29:18]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 11:29:19]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 11:29:19]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 11:29:19]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 11:29:19]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 11:29:19]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 11:29:19]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 11:29:19]:	[panel][取消interval任务] 任务ID: NaN, 任务名: Generate token
+[[32minfo[39m 2026-09-16 11:29:19]:	[panel][创建interval任务] 任务ID: NaN, 任务名: Generate token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-kajSDi/static/build/token.js
+[[32minfo[39m 2026-09-16 11:29:19]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 11:29:19]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 11:29:19]:	[boot] HTTP service started successfully on 127.0.0.1:49338
+[[32minfo[39m 2026-09-16 11:29:19]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 11:29:19]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[32minfo[39m 2026-09-16 11:29:25]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:26]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:27]:	Git workspace operation=initialize repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:27]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:27]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:29]:	Git workspace operation=fetch repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:29]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:29]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:31]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 11:29:31]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:31]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:32]:	Git workspace operation=fetch repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:32]:	Git workspace operation=create-worktree repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:33]:	Git workspace operation=SUBSCRIPTION_BIND repository=1 result=OK
+[[33mwarn[39m 2026-09-16 11:29:33]:	Slow request detected: POST /1/prepare took 1499.84ms
+[[32minfo[39m 2026-09-16 11:29:33]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 11:29:35]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 11:29:36]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:37]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:29:37]:	[environment] variables changed scope=global owner=0 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 11:29:38]:	[environment] variables changed scope=global owner=0 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 11:29:38]:	[environment] profile saved id=1
+[[32minfo[39m 2026-09-16 11:29:39]:	[environment] profile saved id=1
+[[32minfo[39m 2026-09-16 11:29:39]:	[environment] variables changed scope=repository owner=1 count=1 secret_replacements=0
+[[33mwarn[39m 2026-09-16 11:29:48]:	Slow request detected: POST /runtime/python/environments took 1685.19ms
+[[32minfo[39m 2026-09-16 11:30:10]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:13]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:16]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:20]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:23]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:27]:	[environment] variables changed scope=task owner=3 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 11:30:28]:	[environment] variables changed scope=task owner=2 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 11:30:29]:	[environment] variables changed scope=task owner=1 count=1 secret_replacements=0
+[[32minfo[39m 2026-09-16 11:30:32]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:35]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:38]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:41]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:30:46]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:31:07]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:31:14]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:31:15]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 11:31:20]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 11:31:23]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:31:23]:	Git workspace operation=DISCOVERY_RECONCILE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:31:24]:	Git workspace operation=DISCOVERY_RECONCILE repository=1 result=OK
+[[34mdebug[39m 2026-09-16 11:31:24]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 11:31:24]:	Worker 92536 exited
+[[32minfo[39m 2026-09-16 11:31:30]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 11:31:31]:	[boot] grpc worker started (PID: 8270)
+[[32minfo[39m 2026-09-16 11:31:31]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[34mdebug[39m 2026-09-16 11:31:31]:	[boot] gRPC service started successfully on 127.0.0.1:49339
+[[32minfo[39m 2026-09-16 11:31:31]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 11:31:32]:	[boot] http worker started (PID: 8487)
+[[32minfo[39m 2026-09-16 11:31:32]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 11:31:33]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 11:31:33]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 11:31:33]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 11:31:33]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 11:31:33]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 11:31:33]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 11:31:33]:	[panel][取消interval任务] 任务ID: NaN, 任务名: 生成token
+[[32minfo[39m 2026-09-16 11:31:33]:	[panel][创建interval任务] 任务ID: NaN, 任务名: 生成token, 执行命令: node /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-kajSDi/static/build/token.js
+[[32minfo[39m 2026-09-16 11:31:33]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 11:31:33]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 11:31:33]:	[boot] HTTP service started successfully on 127.0.0.1:49338
+[[32minfo[39m 2026-09-16 11:31:33]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 11:31:33]:	[panel][取消定时任务] 任务名: E2E Subscription
+[[32minfo[39m 2026-09-16 11:31:34]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[32minfo[39m 2026-09-16 11:31:40]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 11:31:47]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 11:31:52]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[32minfo[39m 2026-09-16 11:32:01]:	Git workspace operation=TASK_SOURCE_BROWSE repository=1 result=OK
+[[34mdebug[39m 2026-09-16 11:32:12]:	HTTP service stopped
+[[32minfo[39m 2026-09-16 11:32:12]:	Worker 8487 exited
+[[34mdebug[39m 2026-09-16 11:32:12]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 11:32:12]:	Worker 8270 exited

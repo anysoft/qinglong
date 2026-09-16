@@ -1,0 +1,240 @@
+[
+  {
+    "file": "back/services/executionResolver.ts",
+    "name": "back/services/executionResolver.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/executionResolver.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/executionResolver.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionResolver.ts",
+    "name": "ExecutionResolver",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ExecutionResolver' not found\",\n  \"target\": {\n    \"name\": \"ExecutionResolver\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionResolver.ts",
+    "name": "snapshot",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'snapshot' not found\",\n  \"target\": {\n    \"name\": \"snapshot\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionResolver.ts",
+    "name": "resolve",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'resolve' not found\",\n  \"target\": {\n    \"name\": \"resolve\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionResolver.ts",
+    "name": "release",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'release' not found\",\n  \"target\": {\n    \"name\": \"release\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionAttemptCoordinator.ts",
+    "name": "back/services/executionAttemptCoordinator.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/executionAttemptCoordinator.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/executionAttemptCoordinator.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionAttemptCoordinator.ts",
+    "name": "ExecutionAttemptCoordinator",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ExecutionAttemptCoordinator' not found\",\n  \"target\": {\n    \"name\": \"ExecutionAttemptCoordinator\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionAttemptCoordinator.ts",
+    "name": "cancel",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cancel' not found\",\n  \"target\": {\n    \"name\": \"cancel\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionAttemptCoordinator.ts",
+    "name": "backoff",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'backoff' not found\",\n  \"target\": {\n    \"name\": \"backoff\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionAttemptCoordinator.ts",
+    "name": "retry",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'retry' not found\",\n  \"target\": {\n    \"name\": \"retry\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionAttemptCoordinator.ts",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "back/services/executionService.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/executionService.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/executionService.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "ExecutionService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ExecutionService' not found\",\n  \"target\": {\n    \"name\": \"ExecutionService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "submit",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'submit' not found\",\n  \"target\": {\n    \"name\": \"submit\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "dto",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'dto' not found\",\n  \"target\": {\n    \"name\": \"dto\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "get",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'get' not found\",\n  \"target\": {\n    \"name\": \"get\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "list",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'list' not found\",\n  \"target\": {\n    \"name\": \"list\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "cancel",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cancel' not found\",\n  \"target\": {\n    \"name\": \"cancel\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "cancelTask",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cancelTask' not found\",\n  \"target\": {\n    \"name\": \"cancelTask\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "log",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'log' not found\",\n  \"target\": {\n    \"name\": \"log\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "start",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'start' not found\",\n  \"target\": {\n    \"name\": \"start\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "stop",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'stop' not found\",\n  \"target\": {\n    \"name\": \"stop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "tick",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tick' not found\",\n  \"target\": {\n    \"name\": \"tick\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "execute",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'execute' not found\",\n  \"target\": {\n    \"name\": \"execute\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionService.ts",
+    "name": "recover",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'recover' not found\",\n  \"target\": {\n    \"name\": \"recover\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionSubmission.ts",
+    "name": "back/services/executionSubmission.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/executionSubmission.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/executionSubmission.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionSubmission.ts",
+    "name": "SubmissionLock",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'SubmissionLock' not found\",\n  \"target\": {\n    \"name\": \"SubmissionLock\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionSubmission.ts",
+    "name": "lock",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'lock' not found\",\n  \"target\": {\n    \"name\": \"lock\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionSubmission.ts",
+    "name": "ExecutionSubmissionServer",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ExecutionSubmissionServer' not found\",\n  \"target\": {\n    \"name\": \"ExecutionSubmissionServer\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionSubmission.ts",
+    "name": "start",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'start' not found\",\n  \"target\": {\n    \"name\": \"start\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionSubmission.ts",
+    "name": "listen",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'listen' not found\",\n  \"target\": {\n    \"name\": \"listen\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionSubmission.ts",
+    "name": "stop",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'stop' not found\",\n  \"target\": {\n    \"name\": \"stop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/taskRunSubmit.ts",
+    "name": "back/taskRunSubmit.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/taskRunSubmit.ts' not found\",\n  \"target\": {\n    \"name\": \"back/taskRunSubmit.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/taskRunSubmit.ts",
+    "name": "submit",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'submit' not found\",\n  \"target\": {\n    \"name\": \"submit\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

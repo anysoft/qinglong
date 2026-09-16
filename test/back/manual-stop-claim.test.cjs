@@ -56,7 +56,7 @@ for (const conflict of ['stop', 'newer-queue', 'stop-requeue']) {
       const CronService = load('back/services/cron.ts', {
         '../config': { logPath: root },
         '../data/cron': {
-          CrontabModel: crons,
+          SchedulerProjectionModel: crons,
           CrontabStatus: { queued: 3, running: 0, idle: 1 },
         },
         '../data/runningInstance': {
@@ -178,7 +178,7 @@ test('a runner waiting for a concurrency slot cannot adopt a newer queued genera
   const CronService = load('back/services/cron.ts', {
     '../config': {},
     '../data/cron': {
-      CrontabModel: crons,
+      SchedulerProjectionModel: crons,
       CrontabStatus: { queued: 3, idle: 1, running: 0 },
     },
     '../data/runningInstance': {

@@ -546,6 +546,7 @@ export default {
     '/log': intl.get('日志管理'),
     '/setting': intl.get('系统设置'),
     '/error': intl.get('错误日志'),
+    '/runtime-python': 'Runtime · Python',
     '/dependence': intl.get('依赖管理'),
     '/dashboard': intl.get('仪表盘'),
   },

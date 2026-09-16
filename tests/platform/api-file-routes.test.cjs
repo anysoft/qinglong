@@ -41,7 +41,7 @@ mockModule('../../back/config/util', {
 mockModule('../../back/shared/utils', {
   writeFileWithLock: async () => {},
 });
-for (const service of ['script', 'log']) {
+for (const service of ['log']) {
   mockModule(`../../back/services/${service}`, {
     __esModule: true,
     default: class {},
@@ -58,7 +58,7 @@ const deprecatedRoutes = [
 ];
 
 for (const [moduleName, replacement] of deprecatedRoutes) {
-  test(`${moduleName} filename route is removed while the detail API remains`, () => {
+  test(`${moduleName} filename route is removed; detail route is explicitly handled`, () => {
     const app = express.Router();
     require(`../../back/api/${moduleName}`).default(app);
     const router = app.stack.find((layer) => layer.name === 'router').handle;
@@ -71,3 +71,5 @@ for (const [moduleName, replacement] of deprecatedRoutes) {
 }
 
 test('arbitrary Config editor has no public controller or service',()=>{const fs=require('node:fs');assert.equal(fs.existsSync('back/api/config.ts'),false);assert.equal(fs.existsSync('back/services/config.ts'),false);});
+
+ test('staging editor service is physically retired',()=>{assert.equal(require('node:fs').existsSync('back/services/script.ts'),false);});

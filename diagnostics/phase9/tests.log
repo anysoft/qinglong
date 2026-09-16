@@ -1,0 +1,65 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: Task CRUD, optimistic version, literal arguments, enable readiness and clone secrets
+ok 1 - Task CRUD, optimistic version, literal arguments, enable readiness and clone secrets
+  ---
+  duration_ms: 432.878291
+  type: 'test'
+  ...
+# Subtest: runtime inheritance changes readiness dynamically, explicit override wins, references protect deletion
+ok 2 - runtime inheritance changes readiness dynamically, explicit override wins, references protect deletion
+  ---
+  duration_ms: 235.357542
+  type: 'test'
+  ...
+# Subtest: cross-repository source/profile updates roll back atomically and client paths are rejected
+ok 3 - cross-repository source/profile updates roll back atomically and client paths are rejected
+  ---
+  duration_ms: 172.789209
+  type: 'test'
+  ...
+# Subtest: 1000 Task list uses bounded batch queries and does not expose execution paths
+ok 4 - 1000 Task list uses bounded batch queries and does not expose execution paths
+  ---
+  duration_ms: 1980.837416
+  type: 'test'
+  ...
+# Subtest: v5 and fresh Task schema have identical signatures and valid foreign keys
+ok 5 - v5 and fresh Task schema have identical signatures and valid foreign keys
+  ---
+  duration_ms: 526.356667
+  type: 'test'
+  ...
+# Subtest: v5 command-only task ID and owned secrets survive; failed migration rolls back and retries
+ok 6 - v5 command-only task ID and owned secrets survive; failed migration rolls back and retries
+  ---
+  duration_ms: 197.995042
+  type: 'test'
+  ...
+# Subtest: source paths reject traversal, absolute paths, Windows paths, control characters and ambiguous segments
+ok 7 - source paths reject traversal, absolute paths, Windows paths, control characters and ambiguous segments
+  ---
+  duration_ms: 0.709666
+  type: 'test'
+  ...
+# Subtest: arguments are literal structured strings; settings and runtime languages are bounded
+ok 8 - arguments are literal structured strings; settings and runtime languages are bounded
+  ---
+  duration_ms: 0.52225
+  type: 'test'
+  ...
+# Subtest: deep source validation rejects internal and escaping symlinks, directories, FIFO and socket
+ok 9 - deep source validation rejects internal and escaping symlinks, directories, FIFO and socket
+  ---
+  duration_ms: 12.721666
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3033.936666

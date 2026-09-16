@@ -1,0 +1,65 @@
+[
+  {
+    "file": "src/pages/crontab/modal.tsx",
+    "name": "src/pages/crontab/modal.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/crontab/modal.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/crontab/modal.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/crontab/detail.tsx",
+    "name": "src/pages/crontab/detail.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/crontab/detail.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/crontab/detail.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/crontab/detail.tsx",
+    "name": "onOk",
+    "status": 0,
+    "output": "{\n  \"status\": \"ambiguous\",\n  \"message\": \"Found 6 symbols matching 'onOk'. Blast radius differs per candidate (max 0 impacted at risk UNKNOWN). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.\",\n  \"target\": {\n    \"name\": \"onOk\"\n  },\n  \"direction\": \"upstream\",\n  \"totalCandidates\": 6,\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\",\n  \"maxImpactedCount\": 0,\n  \"maxRisk\": \"UNKNOWN\",\n  \"candidates\": [\n    {\n      \"uid\": \"Method:src/pages/crontab/detail.tsx:CronDetailModal.enabledOrDisabledCron@364:32.onOk@379:6#0\",\n      \"name\": \"onOk\",\n      \"kind\": \"Method\",\n      \"filePath\": \"src/pages/crontab/detail.tsx\",\n      \"line\": 380,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    },\n    {\n      \"uid\": \"Method:src/pages/crontab/detail.tsx:CronDetailModal.pinOrUnPinCron@398:25.onOk@413:6#0\",\n      \"name\": \"onOk\",\n      \"kind\": \"Method\",\n      \"filePath\": \"src/pages/crontab/detail.tsx\",\n      \"line\": 414,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    },\n    {\n      \"uid\": \"Method:src/pages/crontab/detail.tsx:CronDetailModal.runCron@315:18.onOk@327:6#0\",\n      \"name\": \"onOk\",\n      \"kind\": \"Method\",\n      \"filePath\": \"src/pages/crontab/detail.tsx\",\n      \"line\": 328,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    },\n    {\n      \"uid\": \"Method:src/pages/crontab/detail.tsx:CronDetailModal.saveFile@278:19.onOk@291:6#0\",\n      \"name\": \"onOk\",\n      \"kind\": \"Method\",\n      \"filePath\": \"src/pages/crontab/detail.tsx\",\n      \"line\": 292,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    },\n    {\n      \"uid\": \"Method:src/pages/crontab/detail.tsx:CronDetailModal.stopCron@340:19.onOk@352:6#0\",\n      \"name\": \"onOk\",\n      \"kind\": \"Method\",\n      \"filePath\": \"src/pages/crontab/detail.tsx\",\n      \"line\": 353,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    },\n    {\n      \"uid\": \"Method:src/pages/crontab/detail.tsx:CronDetailModal.stopRunningInstance@217:30.onOk@226:6#0\",\n      \"name\": \"onOk\",\n      \"kind\": \"Method\",\n      \"filePath\": \"src/pages/crontab/detail.tsx\",\n      \"line\": 227,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    }\n  ]\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/crontab/detail.tsx",
+    "name": "onEllipsis",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:src/pages/crontab/detail.tsx:CronDetailModal.onEllipsis@452:16#1\",\n    \"name\": \"onEllipsis\",\n    \"type\": \"Method\",\n    \"filePath\": \"src/pages/crontab/detail.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/crontab/viewCreateModal.tsx",
+    "name": "src/pages/crontab/viewCreateModal.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/crontab/viewCreateModal.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/crontab/viewCreateModal.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/crontab/viewManageModal.tsx",
+    "name": "src/pages/crontab/viewManageModal.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/crontab/viewManageModal.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/crontab/viewManageModal.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/crontab/viewManageModal.tsx",
+    "name": "onOk",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:src/pages/crontab/viewManageModal.tsx:ViewManageModal.deleteView@140:21.onOk@152:6#0\",\n    \"name\": \"onOk\",\n    \"type\": \"Method\",\n    \"filePath\": \"src/pages/crontab/viewManageModal.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/crontab/const.ts",
+    "name": "src/pages/crontab/const.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/crontab/const.ts' not found\",\n  \"target\": {\n    \"name\": \"src/pages/crontab/const.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/utils/config.ts",
+    "name": "src/utils/config.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/utils/config.ts' not found\",\n  \"target\": {\n    \"name\": \"src/utils/config.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

@@ -1,4 +1,5 @@
 import { Router, Request, Response } from 'express';
+import codeWorkspaceRoutes from './codeWorkspace';
 import { Container } from 'typedi';
 import { Joi } from 'celebrate';
 import RepositoryStorageService from '../services/repositoryStorage';
@@ -39,6 +40,7 @@ function endpoint(action: (req: Request) => Promise<unknown>) {
   };
 }
 export default function workspaceRoutes(app: Router) {
+  codeWorkspaceRoutes(app);
   const repository = () => Container.get(RepositoryStorageService),
     worktree = () => Container.get(WorktreeService);
   for (const operation of ['initialize', 'fetch', 'prune', 'repair'] as const)

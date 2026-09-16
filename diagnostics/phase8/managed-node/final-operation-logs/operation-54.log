@@ -1,0 +1,37 @@
+[PREPARING]
+true
+10.17.1
+[INSTALLING_DEPENDENCIES]
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +1
++
+Progress: resolved 2, reused 1, downloaded 1, added 1, done
+.../node_modules/ql-phase8-script postinstall$ node install.js
+.../node_modules/ql-phase8-script postinstall: PHASE8_POSTINSTALL_EXECUTED
+.../node_modules/ql-phase8-script postinstall: Done
+
+dependencies:
++ ql-phase8-script 1.0.0
+
+devDependencies: skipped
+
+Done in 272ms using pnpm v10.17.1
+[VERIFYING_BUILD]
+true
+10.17.1
+[
+  {
+    "name": "platform-environment",
+    "version": "0.0.0",
+    "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-hBiTpc/runtime/node/environments/env-14/builds/build-24",
+    "private": true,
+    "dependencies": {
+      "ql-phase8-script": {
+        "from": "ql-phase8-script",
+        "version": "1.0.0",
+        "resolved": "http://127.0.0.1:52160/artifacts/2795c9605f26f670795747ade17e368f3d3eae36d82c8bddf4d677e12fea4919.tgz",
+        "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-hBiTpc/runtime/node/environments/env-14/builds/build-24/node_modules/.pnpm/ql-phase8-script@1.0.0/node_modules/ql-phase8-script"
+      }
+    }
+  }
+]

@@ -1,0 +1,124 @@
+[[32minfo[39m 2026-09-16 15:37:19]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 15:37:20]:	[boot] grpc worker started (PID: 90272)
+[[32minfo[39m 2026-09-16 15:37:20]:	[boot] Generating gRPC mTLS certificates...
+[[32minfo[39m 2026-09-16 15:37:20]:	[boot] gRPC mTLS certificates generated successfully
+[[32minfo[39m 2026-09-16 15:37:20]:	[boot] gRPC mTLS certificates saved to /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-full-WTT6qZ/data/config/grpc
+[[34mdebug[39m 2026-09-16 15:37:20]:	[boot] gRPC service started successfully on 127.0.0.1:64933
+[[32minfo[39m 2026-09-16 15:37:20]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 15:37:20]:	[boot] http worker started (PID: 90312)
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 15:37:21]:	[panel][取消interval任务] 任务ID: NaN, 任务名: Generate [redacted]
+[[32minfo[39m 2026-09-16 15:37:21]:	[panel][创建interval任务] 任务ID: NaN, 任务名: Generate [redacted]
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 15:37:21]:	[boot] HTTP service started successfully on 127.0.0.1:64932
+[[32minfo[39m 2026-09-16 15:37:21]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 15:37:21]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 15:37:21]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[32minfo[39m 2026-09-16 15:37:26]:	Git workspace operation=initialize repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:27]:	Git workspace operation=create-worktree repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:27]:	[environment] variables changed scope=global owner=0 count=1 secret_replacements=1
+[[32minfo[39m 2026-09-16 15:37:28]:	[panel][取消定时任务] 任务名: Workspace sync
+[[32minfo[39m 2026-09-16 15:37:29]:	Git workspace operation=fetch repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:29]:	Git workspace operation=worktree-status repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:30]:	Git workspace operation=SUBSCRIPTION_BIND repository=1 result=OK
+[[33mwarn[39m 2026-09-16 15:37:30]:	Slow request detected: POST /1/prepare took 2030.66ms
+[[32minfo[39m 2026-09-16 15:37:30]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 15:37:33]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 15:37:35]:	Git workspace operation=diagnostics repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:36]:	Git workspace operation=refs repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:37]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:38]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:38]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:38]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:39]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:40]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:40]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:41]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:42]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:43]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:43]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:44]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:45]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:45]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:46]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:46]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:47]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:47]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:47]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:48]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:49]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:49]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:50]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:50]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:51]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:52]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:52]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:53]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:53]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:54]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:55]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:55]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:56]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[33mwarn[39m 2026-09-16 15:37:56]:	Slow request detected: POST /workspaces/1/git/push took 1002.89ms
+[[32minfo[39m 2026-09-16 15:37:57]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:37:58]:	Git workspace operation=CODE_WORKSPACE repository=1 result=GIT_AUTH_FAILED
+[[33mwarn[39m 2026-09-16 15:37:58]:	Slow request detected: POST /workspaces/1/git/push took 1598.63ms
+[[32minfo[39m 2026-09-16 15:37:59]:	Git workspace operation=CODE_WORKSPACE repository=1 result=GIT_REMOTE_UNREACHABLE
+[[32minfo[39m 2026-09-16 15:37:59]:	[panel][开始执行任务] 任务ID: 1
+[[32minfo[39m 2026-09-16 15:38:02]:	[panel][执行任务结束] 任务ID: 1, 退出码: 0
+[[32minfo[39m 2026-09-16 15:38:13]:	Git workspace operation=CODE_WORKSPACE repository=1 result=WORKSPACE_FILE_CONFLICT
+[[32minfo[39m 2026-09-16 15:38:14]:	Git workspace operation=CODE_WORKSPACE repository=1 result=WORKSPACE_FILE_CONFLICT
+[[32minfo[39m 2026-09-16 15:38:15]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:25]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:25]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:26]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:26]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:27]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:27]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:28]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:28]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:29]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+PLATFORM_BACKUP_IN_PROGRESS
+PLATFORM_BACKUP_IN_PROGRESS
+PLATFORM_BACKUP_IN_PROGRESS
+TRIGGER_SCHEDULER_TICK_FAILED
+PLATFORM_BACKUP_IN_PROGRESS
+RUNTIME_LOCK_FAILED
+[[34mdebug[39m 2026-09-16 15:38:31]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 15:38:31]:	Worker 90272 exited
+[[32minfo[39m 2026-09-16 15:38:40]:	[boot] DB loaded
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] grpc worker started (PID: 95880)
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[34mdebug[39m 2026-09-16 15:38:41]:	[boot] gRPC service started successfully on 127.0.0.1:64933
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] gRPC worker is ready, starting HTTP worker
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] http worker started (PID: 95881)
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Loaded existing gRPC mTLS certificates from disk
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Dependency loaded
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Link deps loaded
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Init file down
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Init file loaded
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Init data loaded
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Init task loaded
+[[32minfo[39m 2026-09-16 15:38:41]:	[panel][取消interval任务] 任务ID: NaN, 任务名: 生成[redacted]
+[[32minfo[39m 2026-09-16 15:38:41]:	[panel][创建interval任务] 任务ID: NaN, 任务名: 生成[redacted]
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Express loaded
+[[34mdebug[39m 2026-09-16 15:38:41]:	[boot] HTTP service started successfully on 127.0.0.1:64932
+[[32minfo[39m 2026-09-16 15:38:41]:	[boot] Sock loaded
+[[32minfo[39m 2026-09-16 15:38:41]:	[panel][取消定时任务] 任务名: Workspace sync
+[[32minfo[39m 2026-09-16 15:38:41]:	[panel][开始执行任务] 任务ID: NaN
+[[32minfo[39m 2026-09-16 15:38:42]:	[panel][执行任务结束] 任务ID: NaN, 退出码: 0
+[[32minfo[39m 2026-09-16 15:38:43]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:43]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:44]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:45]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[32minfo[39m 2026-09-16 15:38:46]:	Git workspace operation=CODE_WORKSPACE repository=1 result=OK
+[[34mdebug[39m 2026-09-16 15:38:46]:	HTTP service stopped
+[[32minfo[39m 2026-09-16 15:38:46]:	Worker 95881 exited
+[[34mdebug[39m 2026-09-16 15:38:46]:	gRPC service stopped
+[[32minfo[39m 2026-09-16 15:38:46]:	Worker 95880 exited

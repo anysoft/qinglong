@@ -13,7 +13,7 @@ import LogService from '../services/log';
 import { InstanceStatus, RunningInstanceModel } from '../data/runningInstance';
 import { MAX_LOG_CHUNK_BYTES, readLogChunk } from '../shared/logReader';
 const route = Router();
-const blacklist = ['.tmp'];
+const blacklist = ['.tmp', 'task-runs'];
 
 export default (app: Router) => {
   app.use('/logs', route);

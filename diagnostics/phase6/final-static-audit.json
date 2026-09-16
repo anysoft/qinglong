@@ -1,0 +1,587 @@
+{
+  "runtime_files": 11,
+  "protected_phase5_files": [
+    "back/services/taskExecutionPreparation.ts",
+    "back/services/taskWorkspace.ts",
+    "back/services/configMaterialization.ts",
+    "back/services/taskEnvironmentResolver.ts",
+    "back/services/dependence.ts",
+    "shell/task.sh",
+    "shell/otask.sh",
+    "shell/process_group.py",
+    "shell/hook_process.py"
+  ],
+  "status": "PASS",
+  "production_files": 310,
+  "forbidden_hits": [],
+  "classified_remaining_hits": [
+    {
+      "file": "shell/otask.sh",
+      "line": 79,
+      "text": ". $file_env",
+      "reason": "Per-execution private environment.sh path, no shared Global file",
+      "consumer": "current task runner",
+      "bridge_id": "B02",
+      "removal_phase": "10"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 315,
+      "text": "if [[ -f $file_env ]]; then",
+      "reason": "Per-execution private environment.sh path, no shared Global file",
+      "consumer": "current task runner",
+      "bridge_id": "B02",
+      "removal_phase": "10"
+    },
+    {
+      "file": "shell/otask.sh",
+      "line": 328,
+      "text": ". $file_env",
+      "reason": "Per-execution private environment.sh path, no shared Global file",
+      "consumer": "current task runner",
+      "bridge_id": "B02",
+      "removal_phase": "10"
+    },
+    {
+      "file": "shell/preload/sitecustomize.js",
+      "line": 4,
+      "text": "const scopedEnvironment = require('./scoped-env.js');",
+      "reason": "Full execution snapshot reader; no Global generated module",
+      "consumer": "language preload",
+      "bridge_id": "B06",
+      "removal_phase": "5–10"
+    },
+    {
+      "file": "shell/task.sh",
+      "line": 162,
+      "text": "file_env=\"$QL_TASK_ENV_SNAPSHOT/environment.sh\"",
+      "reason": "Per-execution private environment.sh path, no shared Global file",
+      "consumer": "current task runner",
+      "bridge_id": "B02",
+      "removal_phase": "10"
+    },
+    {
+      "file": "back/services/subscription.ts",
+      "line": 2,
+      "text": "import ManagedSubscriptionService from './managedSubscription';",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/subscription.ts",
+      "line": 200,
+      "text": "return Container.get(ManagedSubscriptionService).exclusive(payload.id!, () => this.updateUnlocked(payload));",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/subscription.ts",
+      "line": 254,
+      "text": "const storage = Container.get(ManagedSubscriptionService);",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 126,
+      "text": "// （DB 和 crontab.list 有记录但调度器永远不会执行）",
+      "reason": "System scheduler projection/config protection only; no Discovery reads",
+      "consumer": "CronService / scheduler / config protection",
+      "bridge_id": "B03",
+      "removal_phase": "10"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 221,
+      "text": "this.logger.warn('Managed subscription notification failed');",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 240,
+      "text": "'Managed subscription publication rollback requires recovery',",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 255,
+      "text": "this.logger.warn('Managed subscription staging cleanup failed'),",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 1163,
+      "text": "// 先同步 crontab.list 与系统 crontab，确保其始终反映数据库真实状态。",
+      "reason": "System scheduler projection/config protection only; no Discovery reads",
+      "consumer": "CronService / scheduler / config protection",
+      "bridge_id": "B03",
+      "removal_phase": "10"
+    },
+    {
+      "file": "back/services/cron.ts",
+      "line": 1165,
+      "text": "// 这避免了因调度器短暂不可用导致 crontab.list 与数据库脱节。",
+      "reason": "System scheduler projection/config protection only; no Discovery reads",
+      "consumer": "CronService / scheduler / config protection",
+      "bridge_id": "B03",
+      "removal_phase": "10"
+    },
+    {
+      "file": "back/services/credentialSecret.ts",
+      "line": 12,
+      "text": "// Explicit plaintext-at-rest adapter. Replace here when a managed encryption key exists.",
+      "reason": "Future encryption-key ownership wording; current storage remains plaintext at rest",
+      "consumer": "Credential secret adapter",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/services/repositoryStorage.ts",
+      "line": 137,
+      "text": "'PATH_CONFLICT: storage is not this managed bare repository',",
+      "reason": "Platform-owned Git storage/worktree path marker; not Subscription mode",
+      "consumer": "Repository/Worktree ownership and path protection",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/services/managedSubscription.ts",
+      "line": 16,
+      "text": "export default class ManagedSubscriptionService {",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/managedSubscription.ts",
+      "line": 96,
+      "text": "process.stdout.write(`[Managed] ${phase} subscription=${id}\\n`);",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/managedSubscription.ts",
+      "line": 113,
+      "text": "`[Managed] worktree=${tree.id} commit=${before} -> ${after}\\n`,",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/managedSubscription.ts",
+      "line": 171,
+      "text": "process.stderr.write(`[Managed] ${phase}: ${code}\\n`);",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/managedSubscription.ts",
+      "line": 211,
+      "text": "const stage = await fs.mkdtemp(path.join(scriptsRoot, '.managed-'));",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/services/managedSubscription.ts",
+      "line": 225,
+      "text": "`[Managed] discovery add=${adds.length} drop=${drops.length}\\n`,",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/loaders/express.ts",
+      "line": 51,
+      "text": "app.get(`${config.api.prefix}/env.js`, serveEnv);",
+      "reason": "Non-secret frontend server configuration endpoint",
+      "consumer": "UI bootstrap / serveEnv",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "src/pages/repository-workspace.tsx",
+      "line": 521,
+      "text": "路径由系统生成。每个远端分支默认只有一个 managed",
+      "reason": "Platform-owned Git storage/worktree path marker; not Subscription mode",
+      "consumer": "Repository/Worktree ownership and path protection",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/data/worktree.ts",
+      "line": 22,
+      "text": "managed?: boolean;",
+      "reason": "Platform-owned Git storage/worktree path marker; not Subscription mode",
+      "consumer": "Repository/Worktree ownership and path protection",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/data/worktree.ts",
+      "line": 47,
+      "text": "managed: { type: DataTypes.BOOLEAN, defaultValue: true },",
+      "reason": "Platform-owned Git storage/worktree path marker; not Subscription mode",
+      "consumer": "Repository/Worktree ownership and path protection",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/gitSubscription.ts",
+      "line": 18,
+      "text": "const { default: ManagedSubscriptionService } = await import('./services/managedSubscription');",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/gitSubscription.ts",
+      "line": 19,
+      "text": "return Container.get(ManagedSubscriptionService).run(id);",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/api/subscription.ts",
+      "line": 7,
+      "text": "import ManagedSubscriptionService from '../services/managedSubscription';",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/api/subscription.ts",
+      "line": 23,
+      "text": "data: await Container.get(ManagedSubscriptionService).preflight(",
+      "reason": "Internal class/log label for the sole normal pipeline; no mode field, selector, branch or fallback",
+      "consumer": "Subscription sync / publication",
+      "bridge_id": "B07",
+      "removal_phase": "11 (adapter replacement)"
+    },
+    {
+      "file": "back/config/index.ts",
+      "line": 109,
+      "text": "const crontabFile = path.join(configPath, 'crontab.list');",
+      "reason": "System scheduler projection/config protection only; no Discovery reads",
+      "consumer": "CronService / scheduler / config protection",
+      "bridge_id": "B03",
+      "removal_phase": "10"
+    },
+    {
+      "file": "back/config/index.ts",
+      "line": 151,
+      "text": "'crontab.list',",
+      "reason": "System scheduler projection/config protection only; no Discovery reads",
+      "consumer": "CronService / scheduler / config protection",
+      "bridge_id": "B03",
+      "removal_phase": "10"
+    },
+    {
+      "file": "back/config/const.ts",
+      "line": 29,
+      "text": "export const PYTHON_INSTALL_DIR = process.env.PYTHON_HOME;",
+      "reason": "Runtime Python installation location; regex env.py substring, no generated file",
+      "consumer": "dependency installer",
+      "bridge_id": "B09",
+      "removal_phase": "6–8"
+    },
+    {
+      "file": "back/schema/platformV2.ts",
+      "line": 126,
+      "text": "sql: \"CREATE TABLE `Worktrees` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `repository_id` INTEGER NOT NULL REFERENCES `Repositories` (`id`) ON DELETE RESTRICT, `name` VARCHAR(255) NOT NULL, `ref_type` VARCHAR(255) NOT NULL, `ref_name` VARCHAR(255) NOT NULL, `branch` VARCHAR(255), `branch_key` VARCHAR(255) UNIQUE, `commit` VARCHAR(255), `target_commit` VARCHAR(255), `local_path` TEXT, `lifecycle_state` VARCHAR(255) DEFAULT 'CREATING', `dirty_state` VARCHAR(255) DEFAULT 'UNKNOWN', `purpose` VARCHAR(255) NOT NULL DEFAULT 'USER', `managed` TINYINT(1) DEFAULT 1, `status_snapshot` JSON, `last_update_at` DATETIME, `last_error` TEXT, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\",",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/schema/platform-v2.json",
+      "line": 123,
+      "text": "\"sql\": \"CREATE TABLE `Worktrees` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `repository_id` INTEGER NOT NULL REFERENCES `Repositories` (`id`) ON DELETE RESTRICT, `name` VARCHAR(255) NOT NULL, `ref_type` VARCHAR(255) NOT NULL, `ref_name` VARCHAR(255) NOT NULL, `branch` VARCHAR(255), `branch_key` VARCHAR(255) UNIQUE, `commit` VARCHAR(255), `target_commit` VARCHAR(255), `local_path` TEXT, `lifecycle_state` VARCHAR(255) DEFAULT 'CREATING', `dirty_state` VARCHAR(255) DEFAULT 'UNKNOWN', `purpose` VARCHAR(255) NOT NULL DEFAULT 'USER', `managed` TINYINT(1) DEFAULT 1, `status_snapshot` JSON, `last_update_at` DATETIME, `last_error` TEXT, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\"",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/schema/platformV1.ts",
+      "line": 44,
+      "text": "\"sql\": \"CREATE TABLE `Crontabs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255), `command` VARCHAR(255), `schedule` VARCHAR(255), `timestamp` VARCHAR(255), `saved` TINYINT(1), `status` NUMBER, `isSystem` NUMBER, `pid` NUMBER, `isDisabled` NUMBER, `isPinned` NUMBER, `log_path` VARCHAR(255), `queued_token` VARCHAR(255), `labels` JSON, `last_running_time` NUMBER, `last_execution_time` NUMBER, `sub_id` NUMBER, `discovery_key` VARCHAR(255), `source_relative_path` VARCHAR(255), `discovery_definition` JSON, `env_profile_id` INTEGER REFERENCES `EnvironmentProfiles` (`id`) ON DELETE RESTRICT, `extra_schedules` JSON, `task_before` VARCHAR(255), `task_after` VARCHAR(255), `log_name` VARCHAR(255), `allow_multiple_instances` NUMBER, `work_dir` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`sub_id`, `discovery_key`))\"",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/schema/platformV1.ts",
+      "line": 80,
+      "text": "\"sql\": \"CREATE TABLE `Subscriptions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `env_profile_id` INTEGER REFERENCES `EnvironmentProfiles` (`id`) ON DELETE RESTRICT, `repository_id` INTEGER NOT NULL REFERENCES `Repositories` (`id`) ON DELETE RESTRICT, `worktree_id` INTEGER REFERENCES `Worktrees` (`id`) ON DELETE RESTRICT, `last_synced_commit` VARCHAR(255), `last_sync_at` DATETIME, `last_sync_state` VARCHAR(255), `last_sync_phase` VARCHAR(255), `last_sync_error` TEXT, `name` VARCHAR(255), `schedule` VARCHAR(255), `interval_schedule` JSON, `whitelist` VARCHAR(255), `blacklist` VARCHAR(255), `status` NUMBER, `dependences` VARCHAR(255), `extensions` VARCHAR(255), `sub_before` VARCHAR(255), `sub_after` VARCHAR(255), `branch` VARCHAR(255), `pid` NUMBER, `is_disabled` NUMBER, `log_path` VARCHAR(255), `schedule_type` VARCHAR(255), `autoAddCron` NUMBER, `autoDelCron` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\"",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/schema/platformV1.ts",
+      "line": 88,
+      "text": "\"sql\": \"CREATE TABLE `Worktrees` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `repository_id` INTEGER NOT NULL REFERENCES `Repositories` (`id`) ON DELETE RESTRICT, `name` VARCHAR(255) NOT NULL, `ref_type` VARCHAR(255) NOT NULL, `ref_name` VARCHAR(255) NOT NULL, `branch` VARCHAR(255), `branch_key` VARCHAR(255) UNIQUE, `commit` VARCHAR(255), `target_commit` VARCHAR(255), `local_path` TEXT, `lifecycle_state` VARCHAR(255) DEFAULT 'CREATING', `dirty_state` VARCHAR(255) DEFAULT 'UNKNOWN', `purpose` VARCHAR(255) NOT NULL DEFAULT 'USER', `managed` TINYINT(1) DEFAULT 1, `status_snapshot` JSON, `last_update_at` DATETIME, `last_error` TEXT, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\"",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/schema/platform-v1.json",
+      "line": 43,
+      "text": "\"sql\": \"CREATE TABLE `Crontabs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255), `command` VARCHAR(255), `schedule` VARCHAR(255), `timestamp` VARCHAR(255), `saved` TINYINT(1), `status` NUMBER, `isSystem` NUMBER, `pid` NUMBER, `isDisabled` NUMBER, `isPinned` NUMBER, `log_path` VARCHAR(255), `queued_token` VARCHAR(255), `labels` JSON, `last_running_time` NUMBER, `last_execution_time` NUMBER, `sub_id` NUMBER, `discovery_key` VARCHAR(255), `source_relative_path` VARCHAR(255), `discovery_definition` JSON, `env_profile_id` INTEGER REFERENCES `EnvironmentProfiles` (`id`) ON DELETE RESTRICT, `extra_schedules` JSON, `task_before` VARCHAR(255), `task_after` VARCHAR(255), `log_name` VARCHAR(255), `allow_multiple_instances` NUMBER, `work_dir` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`sub_id`, `discovery_key`))\"",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/schema/platform-v1.json",
+      "line": 79,
+      "text": "\"sql\": \"CREATE TABLE `Subscriptions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `env_profile_id` INTEGER REFERENCES `EnvironmentProfiles` (`id`) ON DELETE RESTRICT, `repository_id` INTEGER NOT NULL REFERENCES `Repositories` (`id`) ON DELETE RESTRICT, `worktree_id` INTEGER REFERENCES `Worktrees` (`id`) ON DELETE RESTRICT, `last_synced_commit` VARCHAR(255), `last_sync_at` DATETIME, `last_sync_state` VARCHAR(255), `last_sync_phase` VARCHAR(255), `last_sync_error` TEXT, `name` VARCHAR(255), `schedule` VARCHAR(255), `interval_schedule` JSON, `whitelist` VARCHAR(255), `blacklist` VARCHAR(255), `status` NUMBER, `dependences` VARCHAR(255), `extensions` VARCHAR(255), `sub_before` VARCHAR(255), `sub_after` VARCHAR(255), `branch` VARCHAR(255), `pid` NUMBER, `is_disabled` NUMBER, `log_path` VARCHAR(255), `schedule_type` VARCHAR(255), `autoAddCron` NUMBER, `autoDelCron` NUMBER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\"",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/schema/platform-v1.json",
+      "line": 87,
+      "text": "\"sql\": \"CREATE TABLE `Worktrees` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `repository_id` INTEGER NOT NULL REFERENCES `Repositories` (`id`) ON DELETE RESTRICT, `name` VARCHAR(255) NOT NULL, `ref_type` VARCHAR(255) NOT NULL, `ref_name` VARCHAR(255) NOT NULL, `branch` VARCHAR(255), `branch_key` VARCHAR(255) UNIQUE, `commit` VARCHAR(255), `target_commit` VARCHAR(255), `local_path` TEXT, `lifecycle_state` VARCHAR(255) DEFAULT 'CREATING', `dirty_state` VARCHAR(255) DEFAULT 'UNKNOWN', `purpose` VARCHAR(255) NOT NULL DEFAULT 'USER', `managed` TINYINT(1) DEFAULT 1, `status_snapshot` JSON, `last_update_at` DATETIME, `last_error` TEXT, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL)\"",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/protos/api.proto",
+      "line": 67,
+      "text": "reserved \"task_before\", \"task_after\";",
+      "reason": "Retired protobuf field names/numbers reserved against reuse; no encode/decode field",
+      "consumer": "SDK wire schema",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/protos/api.proto",
+      "line": 83,
+      "text": "reserved \"task_before\", \"task_after\";",
+      "reason": "Retired protobuf field names/numbers reserved against reuse; no encode/decode field",
+      "consumer": "SDK wire schema",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/protos/api.proto",
+      "line": 95,
+      "text": "reserved \"task_before\", \"task_after\";",
+      "reason": "Retired protobuf field names/numbers reserved against reuse; no encode/decode field",
+      "consumer": "SDK wire schema",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "src/locales/en-US.json",
+      "line": 620,
+      "text": "\"当前由环境变量 QL_TRUST_PROXY 管理\": \"Managed by QL_TRUST_PROXY\",",
+      "reason": "English wording for proxy environment ownership; not subscription mode",
+      "consumer": "security settings",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/workspacePaths.ts",
+      "line": 70,
+      "text": "'PATH_CONFLICT: managed path contains a symlink',",
+      "reason": "Platform-owned Git storage/worktree path marker; not Subscription mode",
+      "consumer": "Repository/Worktree ownership and path protection",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/operationalSchema.ts",
+      "line": 45,
+      "text": "// and task_after ran after either normal success or failure, hence FINALLY.",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/shared/operationalSchema.ts",
+      "line": 49,
+      "text": "const hooks = await database.query<{id: number; task_before: string | null; task_after: string | null}>(",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/shared/operationalSchema.ts",
+      "line": 50,
+      "text": "'SELECT id, task_before, task_after FROM Crontabs', { type: QueryTypes.SELECT, transaction });",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/shared/operationalSchema.ts",
+      "line": 51,
+      "text": "for (const row of hooks) for (const [field, phase] of [['task_before','BEFORE'], ['task_after','FINALLY']] as const) {",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/shared/operationalSchema.ts",
+      "line": 57,
+      "text": "for (const [table, fields] of [['Crontabs', ['task_before','task_after']], ['Subscriptions',['sub_before','sub_after']]] as const) {",
+      "reason": "Frozen platform v1 signature and explicit transactional v1→v2 conversion only; not an active hook field",
+      "consumer": "Schema initializer",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP while v1 upgrades are supported"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 44,
+      "text": "const rawPath = scp ? scp[3] : source.replace(/^[a-z]+:\\/\\/[^/]+\\//, '');",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 45,
+      "text": "if (rawPath.split('/').some((x) => x === '.' || x === '..')) throw invalid();",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 48,
+      "text": "const repoPath = url.pathname",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 53,
+      "text": "!repoPath ||",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 54,
+      "text": "!repoPath",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 65,
+      "text": "provider === 'github' ? repoPath.toLowerCase() : repoPath;",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 71,
+      "text": "path: repoPath,",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 72,
+      "text": "owner: repoPath.includes('/')",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 73,
+      "text": "? repoPath.slice(0, repoPath.lastIndexOf('/'))",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/shared/gitProvider.ts",
+      "line": 75,
+      "text": "repository_name: repoPath.split('/').pop()!,",
+      "reason": "Normalized URL path locals; no filesystem creation/ownership",
+      "consumer": "Git URL validation",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    },
+    {
+      "file": "back/schedule/delCron.ts",
+      "line": 18,
+      "text": "// 进而导致 HTTP 端的 remove() 跳过 setCrontab()，造成 crontab.list 残留。",
+      "reason": "System scheduler projection/config protection only; no Discovery reads",
+      "consumer": "CronService / scheduler / config protection",
+      "bridge_id": "B03",
+      "removal_phase": "10"
+    },
+    {
+      "file": ".umirc.ts",
+      "line": 36,
+      "text": "headScripts: [`./api/env.js`],",
+      "reason": "Non-secret frontend server configuration endpoint",
+      "consumer": "UI bootstrap / serveEnv",
+      "bridge_id": "PLATFORM_CORE",
+      "removal_phase": "KEEP"
+    }
+  ],
+  "scope": "Production source only; historical docs and archived tests excluded. API/UI/domain negative assertions also run in platform tests."
+}

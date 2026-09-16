@@ -43,7 +43,7 @@ async function fixture(t, onKill = async () => {}) {
   const CronService = load(path.resolve('back/services/cron.ts'), {
     '../config': {},
     '../data/cron': {
-      CrontabModel: crons,
+      SchedulerProjectionModel: crons,
       CrontabStatus: { queued: 3, running: 0, idle: 1 },
     },
     '../data/runningInstance': {

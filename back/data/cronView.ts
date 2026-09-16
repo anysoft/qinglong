@@ -17,7 +17,7 @@ interface FilterType {
   value: string;
 }
 
-export class CrontabView {
+export class TaskView {
   name?: string;
   id?: number;
   position?: number;
@@ -27,7 +27,7 @@ export class CrontabView {
   filterRelation?: 'and' | 'or';
   type?: CronViewType;
 
-  constructor(options: CrontabView) {
+  constructor(options: TaskView) {
     this.name = options.name;
     this.id = options.id;
     this.position = options.position;
@@ -39,11 +39,11 @@ export class CrontabView {
   }
 }
 
-export interface CronViewInstance
-  extends Model<CrontabView, CrontabView>,
-    CrontabView {}
-export const CrontabViewModel = sequelize.define<CronViewInstance>(
-  'CrontabView',
+export interface TaskViewInstance
+  extends Model<TaskView, TaskView>,
+    TaskView {}
+export const TaskViewModel = sequelize.define<TaskViewInstance>(
+  'TaskView',
   {
     name: {
       unique: 'name',
@@ -59,4 +59,5 @@ export const CrontabViewModel = sequelize.define<CronViewInstance>(
     },
     type: DataTypes.NUMBER,
   },
+  { tableName: 'TaskViews' },
 );

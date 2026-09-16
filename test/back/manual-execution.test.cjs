@@ -21,7 +21,7 @@ test(
       '../config': { logPath: root },
       '../data/cron': {
         CrontabStatus: { queued: 3, running: 0, idle: 1 },
-        CrontabModel: {
+        SchedulerProjectionModel: {
           update: async (data, options) => {
             await new Promise((resolve) => setTimeout(resolve, 40));
             updates.push({ data, options });

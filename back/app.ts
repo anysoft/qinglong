@@ -1,4 +1,6 @@
 import 'reflect-metadata';
+import { prepareOperationalDatabase } from './services/backup/bootstrap';
+import { setBackendLeaseFd } from './services/backup/inheritedLeases';
 import cluster, { type Worker } from 'cluster';
 import compression from 'compression';
 import cors from 'cors';
@@ -6,12 +8,17 @@ import express from 'express';
 import helmet from 'helmet';
 import { Container } from 'typedi';
 import config from './config';
-import Logger from './loaders/logger';
+import Logger, { enableFileLogging } from './loaders/logger';
 import { monitoringMiddleware } from './middlewares/monitoring';
 import { errStack } from './config/util';
 import { type GrpcServerService } from './services/grpc';
 import { type HttpServerService } from './services/http';
 import cronClient from './schedule/client';
+import { platformPaths, platformBarrier } from './services/backup/platform';
+import { acquireBackendLease } from './services/backup/paths';
+import { RestoreService } from './services/backup/restore';
+import { BackupOperations } from './services/backup/operations';
+import { RuntimeLease } from './services/runtimeProcess';
 
 interface WorkerMetadata {
   id: number;
@@ -27,22 +34,39 @@ class Application {
   private isShuttingDown = false;
   private workerMetadataMap = new Map<number, WorkerMetadata>();
   private httpWorker?: Worker;
+  private backendLease?: RuntimeLease;
 
   constructor() {
     this.app = express();
     // 创建一个全局中间件，删除查询参数中的t
-    this.app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
-      if (req.query.t) {
-        delete req.query.t;
-      }
-      next();
-    });
+    this.app.use(
+      (
+        req: express.Request,
+        res: express.Response,
+        next: express.NextFunction,
+      ) => {
+        if (req.query.t) {
+          delete req.query.t;
+        }
+        next();
+      },
+    );
   }
 
   async start() {
+    let restoring = cluster.isPrimary;
     try {
       if (cluster.isPrimary) {
+        const paths = await platformPaths();
+        this.backendLease = await acquireBackendLease(paths);
+        setBackendLeaseFd(this.backendLease!.handle.fd);
+        await new RestoreService(paths).apply(true);
+        await (await platformBarrier()).recoverAbandonedSnapshot();
+        await new BackupOperations(paths).recover();
+        cluster.setupPrimary({ stdio: ['inherit', 'inherit', 'inherit', 'ipc', this.backendLease!.handle.fd] });
+        restoring = false;
         await this.initializeDatabase();
+        enableFileLogging();
       }
       if (cluster.isPrimary) {
         this.startMasterProcess();
@@ -50,7 +74,8 @@ class Application {
         await this.startWorkerProcess();
       }
     } catch (error) {
-      Logger.error(`Failed to start application:\n${errStack(error)}`);
+      if (restoring) { const code=(error as any).code;Logger.error('Restore bootstrap failed: %s', /^(BACKUP|RESTORE|PLATFORM)_[A-Z_]+$/.test(code)?code:'RESTORE_RECOVERY_REQUIRED'); }
+      else Logger.error(`Failed to start application:\n${errStack(error)}`);
       process.exit(1);
     }
   }
@@ -58,7 +83,7 @@ class Application {
   private startMasterProcess() {
     // Fork gRPC worker first and wait for it to be ready
     const grpcWorker = this.forkWorker('grpc');
-    
+
     // Wait for gRPC worker to signal it's ready before starting HTTP worker
     this.waitForWorkerReady(grpcWorker, 30000)
       .then(() => {
@@ -66,7 +91,9 @@ class Application {
         this.httpWorker = this.forkWorker('http');
       })
       .catch((error) => {
-        Logger.error(`[boot] Failed to wait for gRPC worker:\n${errStack(error)}`);
+        Logger.error(
+          `[boot] Failed to wait for gRPC worker:\n${errStack(error)}`,
+        );
         process.exit(1);
       });
 
@@ -75,7 +102,8 @@ class Application {
       if (metadata) {
         if (!this.isShuttingDown) {
           Logger.error(
-            `${metadata.serviceType} worker ${worker.process.pid} died (${signal || code
+            `${metadata.serviceType} worker ${worker.process.pid} died (${
+              signal || code
             }). Restarting...`,
           );
           // If gRPC worker died, restart it and wait for it to be ready
@@ -95,19 +123,27 @@ class Application {
                     this.httpWorker.send('reregister-crons');
                     Logger.info('Sent reregister-crons message to HTTP worker');
                   } catch (error) {
-                    Logger.error(`Failed to send reregister-crons message:\n${errStack(error)}`);
+                    Logger.error(
+                      `Failed to send reregister-crons message:\n${errStack(
+                        error,
+                      )}`,
+                    );
                   }
                 }
               })
               .catch((error) => {
-                Logger.error(`Failed to restart gRPC worker:\n${errStack(error)}`);
+                Logger.error(
+                  `Failed to restart gRPC worker:\n${errStack(error)}`,
+                );
                 process.exit(1);
               });
           } else {
             // For HTTP worker, just restart it
             const newWorker = this.forkWorker(metadata.serviceType);
             this.httpWorker = newWorker;
-            Logger.info(`Restarted ${metadata.serviceType} worker (PID: ${newWorker.process.pid})`);
+            Logger.info(
+              `Restarted ${metadata.serviceType} worker (PID: ${newWorker.process.pid})`,
+            );
           }
         }
 
@@ -128,11 +164,15 @@ class Application {
         }
       };
       worker.on('message', messageHandler);
-      
+
       // Timeout after specified milliseconds
       const timeoutId = setTimeout(() => {
         worker.removeListener('message', messageHandler);
-        reject(new Error(`Worker failed to start within ${timeoutMs / 1000} seconds`));
+        reject(
+          new Error(
+            `Worker failed to start within ${timeoutMs / 1000} seconds`,
+          ),
+        );
       }, timeoutMs);
     });
   }
@@ -142,7 +182,10 @@ class Application {
     // PM2's fork launcher is inherited by our own cluster workers. Their APM
     // messages go to this primary, not PM2, and duplicate its sampling work.
     // Keep primary monitoring and allow restoring the inherited worker APM.
-    if (process.env.pm_id !== undefined && process.env.QL_WORKER_APM !== 'true') {
+    if (
+      process.env.pm_id !== undefined &&
+      process.env.QL_WORKER_APM !== 'true'
+    ) {
       workerEnv.pmx = 'false';
     }
     const worker = cluster.fork(workerEnv);
@@ -158,14 +201,17 @@ class Application {
   }
 
   private async initializeDatabase() {
+    await prepareOperationalDatabase((await platformPaths()).data);
     const dbLoader = await import('./loaders/db');
     await dbLoader.default();
   }
 
   private setupMiddlewares() {
-    this.app.use(helmet({
-      contentSecurityPolicy: false,
-    }));
+    this.app.use(
+      helmet({
+        contentSecurityPolicy: false,
+      }),
+    );
     this.app.use(cors(config.cors));
     this.app.use(compression());
     this.app.use(monitoringMiddleware);
@@ -190,7 +236,11 @@ class Application {
             try {
               worker.send('shutdown');
             } catch (error) {
-              Logger.warn(`Failed to send shutdown to worker ${worker.process.pid}:\n${errStack(error)}`);
+              Logger.warn(
+                `Failed to send shutdown to worker ${
+                  worker.process.pid
+                }:\n${errStack(error)}`,
+              );
             }
           });
 
@@ -220,6 +270,8 @@ class Application {
   }
 
   private async startWorkerProcess() {
+    setBackendLeaseFd(4);
+    enableFileLogging();
     const serviceType = process.env.SERVICE_TYPE;
     if (!serviceType || !['http', 'grpc'].includes(serviceType)) {
       Logger.error('[boot] Invalid SERVICE_TYPE:', serviceType);
@@ -280,8 +332,10 @@ class Application {
     process.on('message', async (msg) => {
       if (msg === 'shutdown') {
         this.gracefulShutdown(serviceType);
-      } else if (serviceType === 'http' &&
-        (msg === 'reregister-crons' || msg === 'scheduler-unavailable')) {
+      } else if (
+        serviceType === 'http' &&
+        (msg === 'reregister-crons' || msg === 'scheduler-unavailable')
+      ) {
         cronClient.readiness.invalidate();
       }
     });
@@ -297,13 +351,27 @@ class Application {
 
     try {
       if (serviceType === 'http') {
+        const { executionSubmission } = await import(
+          './services/executionSubmission'
+        );
+        const { executionService } = await import(
+          './services/executionService'
+        );
+        const { triggerScheduler } = await import('./services/triggerScheduler');
+        await triggerScheduler.stop();
+        await executionSubmission.stop();
+        await executionService.stop();
+        const { notificationDispatcher } = await import('./services/notificationDispatcher');
+        await notificationDispatcher.stop();
         await this.httpServerService?.shutdown();
       } else {
         await this.grpcServerService?.shutdown();
       }
       process.exit(0);
     } catch (error) {
-      Logger.error(`[${serviceType}] Error during shutdown:\n${errStack(error)}`);
+      Logger.error(
+        `[${serviceType}] Error during shutdown:\n${errStack(error)}`,
+      );
       process.exit(1);
     }
   }

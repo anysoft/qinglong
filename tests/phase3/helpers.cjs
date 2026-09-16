@@ -5,11 +5,11 @@ const fs = require('node:fs/promises'),
 const { Sequelize, Transaction } = require('sequelize');
 const load = require('../../test/helpers/load-security-module.cjs');
 require('reflect-metadata');
-module.exports = async function setup(t) {
+module.exports = async function setup(t, { persistent = false } = {}) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'ql-managed3-'));
   const sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: ':memory:',
+    storage: persistent ? path.join(dir, 'database.sqlite') : ':memory:',
     logging: false,
     transactionType: Transaction.TYPES.IMMEDIATE,
   });
@@ -84,8 +84,23 @@ module.exports = async function setup(t) {
     ...get('data/cron'),
     ...get('data/scopedEnv'),
     ...get('data/configAsset'),
+    ...get('data/task'),
+    ...get('data/taskRun'),
+    ...get('data/env'),
+    ...get('data/system'),
+    ...get('data/open'),
+    ...get('data/dependence'),
+    ...get('data/cronView'),
+    ...get('data/cronStats'),
+    ...get('data/runningInstance'),
+    ...get('data/taskTrigger'),
+    ...get('data/discoveryPolicy'),
+    ...get('data/runtime'),
+    ...get('data/pythonEnvironment'),
+    ...get('data/nodeEnvironment'),
   };
-  await sequelize.sync();
+  await get('shared/operationalSchema').initializeOperationalSchema(sequelize, Object.values(sequelize.models));
+  require('../phase9/task-fixture.cjs')(Models, sequelize, () => ({ scriptRoot: path.join(dir, 'scripts') }));
   for (const folder of ['scripts', 'config', 'log', 'deps'])
     await fs.mkdir(path.join(dir, folder));
   await fs.writeFile(

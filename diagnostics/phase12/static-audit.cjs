@@ -1,0 +1,21 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+const read=f=>fs.readFileSync(f,'utf8');
+const workspace=['back/services/codeWorkspace.ts','back/services/workspaceFiles.ts','back/api/codeWorkspace.ts','src/pages/workspace.tsx'];
+const joined=workspace.map(read).join('\n');
+const checks={};
+function check(name,fn){fn();checks[name]='PASS';}
+check('no_legacy_editor_api_or_staging',()=>assert.ok(!/api\/script|scriptPath|bakPath|stagingPath|workspace-copy/.test(joined)));
+check('no_editor_execution_or_trigger_submission',()=>assert.ok(!/ExecutionService|\.submit\(|TriggerEvent|exec\(|shell\s*:\s*true/.test(joined)));
+check('no_destructive_or_implicit_git_workflow',()=>assert.ok(!/--force|reset.+--hard|['"]clean['"]|['"]pull['"]|['"]rebase['"]|['"]checkout['"]/.test(joined)));
+check('legacy_service_physically_retired',()=>assert.ok(!fs.existsSync('back/services/script.ts')));
+check('legacy_api_tombstone',()=>{const s=read('back/api/script.ts');assert.ok(s.includes('410'));assert.ok(s.includes('CODE_WORKSPACE_REQUIRED'));assert.ok(!/fs\.|ScriptService/.test(s));});
+check('old_ui_is_workspace_link',()=>{const s=read('src/pages/script/index.tsx');assert.ok(s.includes('config.baseUrl}workspace'));assert.ok(!s.includes('request('));});
+const changed=execFileSync('git',['diff','--name-only','HEAD'],{encoding:'utf8'}).trim().split('\n');
+const added=execFileSync('git',['ls-files','--others','--exclude-standard'],{encoding:'utf8'}).trim().split('\n');
+check('schema_v9_unchanged',()=>assert.ok(!changed.some(f=>/^back\/(data|schema)\//.test(f))));
+check('no_ci_docker_release_scope',()=>assert.ok(![...changed,...added].some(f=>/^\.github\/(workflows|actions)\//.test(f)||/(^|\/)Dockerfile|docker-compose/.test(f))));
+check('all_prior_formal_tests_preserved',()=>{const before=JSON.parse(execFileSync('git',['show','HEAD:tests/platform/test-baseline.json'],{encoding:'utf8'})),after=JSON.parse(read('tests/platform/test-baseline.json'));for(const old of before)assert.ok(after.some(row=>row.path===old.path&&row.classification===old.classification));for(const name of ['api','discovery','files','git'])assert.ok(after.some(row=>row.path===`tests/phase12/${name}.test.cjs`&&row.classification!=='ARCHIVED_LEGACY'));});
+check('fourteen_phase_documents',()=>assert.equal(fs.readdirSync('docs/refactor/phase12').filter(f=>/^\d\d-.*\.md$/.test(f)).length,14));
+check('diff_whitespace',()=>execFileSync('git',['diff','--check'],{stdio:'pipe'}));
+const result={status:'PASS',checks,manual_review:{api_script_consumers:'Workspace: none; retired script page links to Workspace; route loader retains static 410 tombstone.',remaining_scriptPath:'B17 disabled Task source recovery and B13 SDK/bootstrap only; no new Workspace dependency.',B14:'Compatibility log unchanged.',secrets:'Real browser canary evidence is recorded separately; static scans do not replace it.',limitations:'Same-UID malicious filesystem mutation is not an OS sandbox; graph unresolved receiver calls require manual review.'}};
+fs.writeFileSync(path.join(__dirname,'static-audit.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

@@ -357,6 +357,7 @@ export default class SystemService {
   }
 
   public async reloadSystem(target?: 'system' | 'data') {
+    if(target === 'data')return {code:410,message:'RESTORE_LEGACY_REMOVED'};
     const cmd = `real_time=true ql reload ${target || ''}`;
     const cp = spawn(cmd, {
       shell: '/bin/bash',
@@ -429,35 +430,6 @@ export default class SystemService {
       return { code: 200 };
     } else {
       return { code: 400, message: t('任务未找到') };
-    }
-  }
-
-  public async exportData(res: Response, type?: string[]) {
-    try {
-      let dataDirs = ['db', 'upload'];
-      if (type && type.length) {
-        dataDirs = dataDirs.concat(type.filter((x) => x !== 'base'));
-      }
-      const dataPaths = dataDirs.map((dir) => `data/${dir}`);
-      await promiseExec(
-        `cd ${config.dataPath} && cd ../ && tar -zcvf ${config.dataTgzFile
-        } ${dataPaths.join(' ')}`,
-      );
-      res.download(config.dataTgzFile);
-    } catch (error: any) {
-      return res.send({ code: 400, message: error.message });
-    }
-  }
-
-  public async importData() {
-    try {
-      await promiseExec(`rm -rf ${path.join(config.tmpPath, 'data')}`);
-      const res = await promiseExec(
-        `cd ${config.tmpPath} && tar -zxvf ${config.dataTgzFile}`,
-      );
-      return { code: 200, data: res };
-    } catch (error: any) {
-      return { code: 400, message: error.message };
     }
   }
 

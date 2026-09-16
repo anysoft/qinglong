@@ -3,9 +3,10 @@
 days=$1
 
 remove_js_log() {
-  local log_full_path_list=$(find $dir_log -name "*.log")
-  local diff_time
-  for log in $log_full_path_list; do
+  # TaskRun logs have their own retention domain (automatic deletion is OFF).
+  [[ -n ${dir_log:-} && "$dir_log" = /* && "$dir_log" != / && ! -L "$dir_log" ]] || return 1
+  local diff_time log
+  while IFS= read -r -d '' log; do
     local log_date=$(echo $log | awk -F "/" '{print $NF}' | cut -c1-10)
     if ! [[ $log_date =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
       if [[ $is_macos -eq 1 ]]; then
@@ -25,24 +26,25 @@ remove_js_log() {
       t '查询文件 %s' "$log_path"
       if [[ -z $result ]]; then
         t '删除中~'
-        rm -vf $log
+        rm -vf -- "$log"
       else
         t '正在被 %s 使用，跳过~' "$result"
       fi
     fi
-  done
+  done < <(find "$dir_log" -path "$dir_log/task-runs" -prune -o -type f -name "*.log" -print0)
 }
 
 remove_empty_dir() {
-  cd $dir_log
+  cd "$dir_log" || return 1
   for dir in $(ls); do
+    [[ "$dir" == task-runs ]] && continue
     if [[ -d $dir ]] && [[ -z $(ls $dir) ]]; then
       rm -rf $dir
     fi
   done
 }
 
-if [[ ${days} ]]; then
+if [[ ${days} =~ ^[0-9]+$ ]]; then
   t '查找旧日志文件中...\n'
   remove_js_log
   remove_empty_dir

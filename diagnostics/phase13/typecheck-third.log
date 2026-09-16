@@ -1,0 +1,239 @@
+[96msrc/app.ts[0m:[93m2[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'setLocale'.
+
+[7m2[0m import { setLocale } from '@umijs/max';
+[7m [0m [91m         ~~~~~~~~~[0m
+
+[96msrc/components/observability/index.tsx[0m:[93m6[0m:[93m122[0m - [91merror[0m[90m TS2339: [0mProperty 'error_code' does not exist on type 'IResponseData'.
+
+[7m6[0m export async function obsGet(path:string){const r=await request.get(config.apiPrefix+path);if(r.code!==200)throw Error(r.error_code??'Request failed');return r.data;}
+[7m [0m [91m                                                                                                                         ~~~~~~~~~~[0m
+
+[96msrc/components/observability/index.tsx[0m:[93m29[0m:[93m85[0m - [91merror[0m[90m TS2322: [0mType '{ bordered: true; column: number; items: { key: string; label: string; children: string; }[]; }' is not assignable to type 'IntrinsicAttributes & DescriptionsProps'.
+  Property 'items' does not exist on type 'IntrinsicAttributes & DescriptionsProps'.
+
+[7m29[0m  {key:'overview',label:'Overview',children:run&&<><Descriptions bordered column={2} items={['id','task_id','trigger_type','trigger_id','event_id','status','submitted_at','started_at','finished_at','duration_ms','attempt_count','exit_code','signal','error_code'].map(k=>({key:k,label:k,children:String(run[k]??'—')}))}/>{run.event_id&&<Button onClick={async()=>setTrigger(await obsGet(`trigger-events/${run.event_id}`))}>View Trigger Event</Button>}</>},
+[7m  [0m [91m                                                                                    ~~~~~[0m
+
+[96msrc/components/observability/index.tsx[0m:[93m31[0m:[93m54[0m - [91merror[0m[90m TS2322: [0mType '{ items: { key: any; children: Element; }[]; }' is not assignable to type 'IntrinsicAttributes & TimelineProps'.
+  Property 'items' does not exist on type 'IntrinsicAttributes & TimelineProps'.
+
+[7m31[0m  {key:'timeline',label:'Timeline',children:<Timeline items={events.map(e=>({key:e.sequence,children:<><strong>{e.sequence}. {e.type}</strong> · {e.created_at}<div>{JSON.stringify(e.metadata)}</div></>}))}/>},
+[7m  [0m [91m                                                     ~~~~~[0m
+
+[96msrc/components/observability/taskPolicy.tsx[0m:[93m6[0m:[93m390[0m - [91merror[0m[90m TS2322: [0mType '{ column: number; items: { key: string; label: string; children: string; }[]; }' is not assignable to type 'IntrinsicAttributes & DescriptionsProps'.
+  Property 'items' does not exist on type 'IntrinsicAttributes & DescriptionsProps'.
+
+[7m6[0m export function TaskHealth({id}:{id:number}){const [health,setHealth]=useState<any>();useEffect(()=>{const load=()=>obsGet(`tasks/${id}/health`).then(setHealth);void load();const t=setInterval(()=>void load(),2000);return()=>clearInterval(t);},[id]);return <><Alert message="Health describes completed executions; readiness describes whether a task can execute."/><Descriptions column={1} items={Object.entries(health??{}).map(([key,value])=>({key,label:key,children:String(value??'—')}))}/></>;}
+[7m [0m [91m                                                                                                                                                                                                                                                                                                                                                                                                     ~~~~~[0m
+
+[96msrc/components/observability/taskPolicy.tsx[0m:[93m10[0m:[93m1480[0m - [91merror[0m[90m TS2339: [0mProperty 'code' does not exist on type 'AxiosResponse<any, any>'.
+
+[7m10[0m  return <Form form={form} layout="vertical"><Form.Item label="Preset"><Select placeholder="CUSTOM" options={['NONE','FAILURE','SUCCESS','ALWAYS','CUSTOM'].map(value=>({value,label:value}))} onChange={mode=>{if(mode==='CUSTOM')return;form.setFieldsValue({enabled:mode!=='NONE',notify_success:['SUCCESS','ALWAYS'].includes(mode),notify_failure:['FAILURE','ALWAYS'].includes(mode),notify_timeout:['FAILURE','ALWAYS'].includes(mode),notify_interrupted:['FAILURE','ALWAYS'].includes(mode),notify_cancelled:false,notify_recovery:true,failure_threshold:1,repeat_every_failures:0});}}/></Form.Item>{flags.map(k=><Form.Item key={k} label={k.replaceAll('_',' ')} name={k} valuePropName="checked"><Switch/></Form.Item>)}<Form.Item name="failure_threshold" label="Failure threshold"><InputNumber min={1} max={1000}/></Form.Item><Form.Item name="repeat_every_failures" label="Repeat every failures (0 = once per incident)"><InputNumber min={0} max={1000}/></Form.Item><Form.Item name="channel_mode" label="Channel mode"><Select options={['DEFAULT','EXPLICIT','NONE'].map(value=>({value,label:value}))}/></Form.Item><Form.Item name="channels" label="Explicit channels"><Select mode="multiple" options={channels.filter(c=>!c.archived).map(c=>({value:c.id,label:c.name}))}/></Form.Item><Button type="primary" onClick={async()=>{const v=await form.validateFields();const r=await request.patch(config.apiPrefix+`tasks/${id}/notification-policy`,{data:{...v,expected_version:policy.version}});if(r.code===200){message.success('Notification policy saved');await load();}else message.error(r.error_code);}}>Save notification policy</Button></Form>;
+[7m  [0m [91m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ~~~~[0m
+
+[96msrc/components/observability/taskPolicy.tsx[0m:[93m10[0m:[93m1572[0m - [91merror[0m[90m TS2339: [0mProperty 'error_code' does not exist on type 'AxiosResponse<any, any>'.
+
+[7m10[0m  return <Form form={form} layout="vertical"><Form.Item label="Preset"><Select placeholder="CUSTOM" options={['NONE','FAILURE','SUCCESS','ALWAYS','CUSTOM'].map(value=>({value,label:value}))} onChange={mode=>{if(mode==='CUSTOM')return;form.setFieldsValue({enabled:mode!=='NONE',notify_success:['SUCCESS','ALWAYS'].includes(mode),notify_failure:['FAILURE','ALWAYS'].includes(mode),notify_timeout:['FAILURE','ALWAYS'].includes(mode),notify_interrupted:['FAILURE','ALWAYS'].includes(mode),notify_cancelled:false,notify_recovery:true,failure_threshold:1,repeat_every_failures:0});}}/></Form.Item>{flags.map(k=><Form.Item key={k} label={k.replaceAll('_',' ')} name={k} valuePropName="checked"><Switch/></Form.Item>)}<Form.Item name="failure_threshold" label="Failure threshold"><InputNumber min={1} max={1000}/></Form.Item><Form.Item name="repeat_every_failures" label="Repeat every failures (0 = once per incident)"><InputNumber min={0} max={1000}/></Form.Item><Form.Item name="channel_mode" label="Channel mode"><Select options={['DEFAULT','EXPLICIT','NONE'].map(value=>({value,label:value}))}/></Form.Item><Form.Item name="channels" label="Explicit channels"><Select mode="multiple" options={channels.filter(c=>!c.archived).map(c=>({value:c.id,label:c.name}))}/></Form.Item><Button type="primary" onClick={async()=>{const v=await form.validateFields();const r=await request.patch(config.apiPrefix+`tasks/${id}/notification-policy`,{data:{...v,expected_version:policy.version}});if(r.code===200){message.success('Notification policy saved');await load();}else message.error(r.error_code);}}>Save notification policy</Button></Form>;
+[7m  [0m [91m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ~~~~~~~~~~[0m
+
+[96msrc/components/tag.tsx[0m:[93m29[0m:[93m30[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m29[0m   const handleInputChange = (e) => {
+[7m  [0m [91m                             ~[0m
+
+[96msrc/layouts/index.tsx[0m:[93m11[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m11[0m import { history, Link, Outlet, useLocation } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/layouts/index.tsx[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'Link'.
+
+[7m11[0m import { history, Link, Outlet, useLocation } from '@umijs/max';
+[7m  [0m [91m                  ~~~~[0m
+
+[96msrc/layouts/index.tsx[0m:[93m11[0m:[93m25[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'Outlet'.
+
+[7m11[0m import { history, Link, Outlet, useLocation } from '@umijs/max';
+[7m  [0m [91m                        ~~~~~~[0m
+
+[96msrc/layouts/index.tsx[0m:[93m11[0m:[93m33[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useLocation'.
+
+[7m11[0m import { history, Link, Outlet, useLocation } from '@umijs/max';
+[7m  [0m [91m                                ~~~~~~~~~~~[0m
+
+[96msrc/pages/dependence/index.tsx[0m:[93m35[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m35[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/diff/index.tsx[0m:[93m10[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m10[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/diff/index.tsx[0m:[93m76[0m:[93m44[0m - [91merror[0m[90m TS7006: [0mParameter 'op' implicitly has an 'any' type.
+
+[7m76[0m   const originFileChange = (value: string, op) => {
+[7m  [0m [91m                                           ~~[0m
+
+[96msrc/pages/error/index.tsx[0m:[93m6[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m6[0m import { history, useOutletContext } from '@umijs/max';
+[7m [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/error/index.tsx[0m:[93m6[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m6[0m import { history, useOutletContext } from '@umijs/max';
+[7m [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/initialization/index.tsx[0m:[93m14[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m14[0m import { history } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/log/index.tsx[0m:[93m10[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m10[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/log/index.tsx[0m:[93m108[0m:[93m6[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m108[0m     (e) => {
+[7m   [0m [91m     ~[0m
+
+[96msrc/pages/login/index.tsx[0m:[93m13[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m13[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/login/index.tsx[0m:[93m13[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m13[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/notifications/index.tsx[0m:[93m10[0m:[93m381[0m - [91merror[0m[90m TS2339: [0mProperty 'code' does not exist on type 'IResponseData | AxiosResponse<any, any>'.
+  Property 'code' does not exist on type 'AxiosResponse<any, any>'.
+
+[7m10[0m  const save=async()=>{try{const v=await form.validateFields();const body={...v,...(v.secret_action==='REPLACE'?{secret:JSON.parse(v.secret)}:{secret:undefined}),expected_version:editing.version};const r=editing.id?await request.patch(config.apiPrefix+`notification-channels/${editing.id}`,{data:body}):await request.post(config.apiPrefix+'notification-channels',{data:body});if(r.code===200){setEditing(undefined);form.resetFields();await load();}else message.error(r.error_code);}catch{message.error('Check the channel fields and secret JSON.');}};
+[7m  [0m [91m                                                                                                                                                                                                                                                                                                                                                                                            ~~~~[0m
+
+[96msrc/pages/notifications/index.tsx[0m:[93m10[0m:[93m469[0m - [91merror[0m[90m TS2339: [0mProperty 'error_code' does not exist on type 'IResponseData | AxiosResponse<any, any>'.
+  Property 'error_code' does not exist on type 'IResponseData'.
+
+[7m10[0m  const save=async()=>{try{const v=await form.validateFields();const body={...v,...(v.secret_action==='REPLACE'?{secret:JSON.parse(v.secret)}:{secret:undefined}),expected_version:editing.version};const r=editing.id?await request.patch(config.apiPrefix+`notification-channels/${editing.id}`,{data:body}):await request.post(config.apiPrefix+'notification-channels',{data:body});if(r.code===200){setEditing(undefined);form.resetFields();await load();}else message.error(r.error_code);}catch{message.error('Check the channel fields and secret JSON.');}};
+[7m  [0m [91m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~[0m
+
+[96msrc/pages/script/editNameModal.tsx[0m:[93m72[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m72[0m   const typeChange = (e) => {
+[7m  [0m [91m                      ~[0m
+
+[96msrc/pages/script/editNameModal.tsx[0m:[93m76[0m:[93m20[0m - [91merror[0m[90m TS7006: [0mParameter 'data' implicitly has an 'any' type.
+
+[7m76[0m   const getDirs = (data) => {
+[7m  [0m [91m                   ~~~~[0m
+
+[96msrc/pages/script/editNameModal.tsx[0m:[93m80[0m:[93m20[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m80[0m           .filter((x) => x.type === 'directory')
+[7m  [0m [91m                   ~[0m
+
+[96msrc/pages/script/editNameModal.tsx[0m:[93m81[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'x' implicitly has an 'any' type.
+
+[7m81[0m           .map((x) => ({ ...x, disabled: false }));
+[7m  [0m [91m                ~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m19[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m19[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m19[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m19[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m132[0m:[93m9[0m - [91merror[0m[90m TS2739: [0mType 'Record<string, any> & { children?: unknown[] | undefined; }' is missing the following properties from type '{ title: string | (string | null)[]; key: string | (string | null)[]; parent: string | (string | null)[] | null; }': title, key, parent
+
+[7m132[0m         obj.node = item;
+[7m   [0m [91m        ~~~~~~~~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m202[0m:[93m6[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m202[0m     (e) => {
+[7m   [0m [91m     ~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m382[0m:[93m16[0m - [91merror[0m[90m TS18048: [0m'item' is possibly 'undefined'.
+
+[7m382[0m       onSelect(item.title, item);
+[7m   [0m [91m               ~~~~[0m
+
+[96msrc/pages/script/index.tsx[0m:[93m383[0m:[93m23[0m - [91merror[0m[90m TS18048: [0m'item' is possibly 'undefined'.
+
+[7m383[0m       handleIsEditing(item.title, true);
+[7m   [0m [91m                      ~~~~[0m
+
+[96msrc/pages/setting/index.tsx[0m:[93m32[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m32[0m import { useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/setting/index.tsx[0m:[93m336[0m:[93m46[0m - [91merror[0m[90m TS2322: [0mType '{ data: any; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'data' does not exist on type 'IntrinsicAttributes'.
+
+[7m336[0m               children: <NotificationSetting data={notificationInfo} />,
+[7m   [0m [91m                                             ~~~~[0m
+
+[96msrc/pages/setting/notification.tsx[0m:[93m82[0m:[93m31[0m - [91merror[0m[90m TS7006: [0mParameter 'y' implicitly has an 'any' type.
+
+[7m82[0m                 {x.items.map((y) => (
+[7m  [0m [91m                              ~[0m
+
+[96msrc/pages/setting/security.tsx[0m:[93m6[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m6[0m import { history } from '@umijs/max';
+[7m [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/setting/security.tsx[0m:[93m98[0m:[93m21[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m98[0m   const onChange = (e) => {
+[7m  [0m [91m                    ~[0m
+
+[96msrc/pages/subscription/index.tsx[0m:[93m34[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m34[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m         ~~~~~~~[0m
+
+[96msrc/pages/subscription/index.tsx[0m:[93m34[0m:[93m19[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'useOutletContext'.
+
+[7m34[0m import { history, useOutletContext } from '@umijs/max';
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/utils/http.tsx[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@umijs/max"' has no exported member 'history'.
+
+[7m4[0m import { history } from '@umijs/max';
+[7m [0m [91m         ~~~~~~~[0m
+
+
+Found 42 errors in 19 files.
+
+Errors  Files
+     1  src/app.ts[90m:2[0m
+     3  src/components/observability/index.tsx[90m:6[0m
+     3  src/components/observability/taskPolicy.tsx[90m:6[0m
+     1  src/components/tag.tsx[90m:29[0m
+     4  src/layouts/index.tsx[90m:11[0m
+     1  src/pages/dependence/index.tsx[90m:35[0m
+     2  src/pages/diff/index.tsx[90m:10[0m
+     2  src/pages/error/index.tsx[90m:6[0m
+     1  src/pages/initialization/index.tsx[90m:14[0m
+     2  src/pages/log/index.tsx[90m:10[0m
+     2  src/pages/login/index.tsx[90m:13[0m
+     2  src/pages/notifications/index.tsx[90m:10[0m
+     4  src/pages/script/editNameModal.tsx[90m:72[0m
+     6  src/pages/script/index.tsx[90m:19[0m
+     2  src/pages/setting/index.tsx[90m:32[0m
+     1  src/pages/setting/notification.tsx[90m:82[0m
+     2  src/pages/setting/security.tsx[90m:6[0m
+     2  src/pages/subscription/index.tsx[90m:34[0m
+     1  src/utils/http.tsx[90m:4[0m

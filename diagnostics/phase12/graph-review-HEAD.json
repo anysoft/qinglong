@@ -1,0 +1,4250 @@
+{
+  "summary": {
+    "changed_count": 334,
+    "affected_count": 121,
+    "changed_files": 112,
+    "risk_level": "critical"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:PHASE12_REPORT.md:L1:Phase 12 — Code Workspace + Git Editor",
+      "name": "Phase 12 — Code Workspace + Git Editor",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L5:实现与边界",
+      "name": "实现与边界",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L11:文件与安全契约",
+      "name": "文件与安全契约",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L23:锁、执行与备份",
+      "name": "锁、执行与备份",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L31:Git 契约",
+      "name": "Git 契约",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L41:Task、Discovery 与 Trigger",
+      "name": "Task、Discovery 与 Trigger",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L47:Legacy / Bridge 审计结论",
+      "name": "Legacy / Bridge 审计结论",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L62:验收矩阵",
+      "name": "验收矩阵",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L66:证据与复现",
+      "name": "证据与复现",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L89:GitNexus 与变更范围",
+      "name": "GitNexus 与变更范围",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE12_REPORT.md:L95:当前限制与下一阶段",
+      "name": "当前限制与下一阶段",
+      "type": "Section",
+      "filePath": "PHASE12_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L1:Temporary Bridges — 退出条件登记",
+      "name": "Temporary Bridges — 退出条件登记",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L158:Phase 14 — Backup / Restore Production Integration",
+      "name": "Phase 14 — Backup / Restore Production Integration",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L169:Phase 12 — Code Workspace",
+      "name": "Phase 12 — Code Workspace",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/codeWorkspace.ts:id",
+      "name": "id",
+      "type": "Const",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/codeWorkspace.ts:relative",
+      "name": "relative",
+      "type": "Const",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/codeWorkspace.ts:expected",
+      "name": "expected",
+      "type": "Const",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/codeWorkspace.ts:content",
+      "name": "content",
+      "type": "Const",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/codeWorkspace.ts:validate",
+      "name": "validate",
+      "type": "Function",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/codeWorkspace.ts:codeWorkspaceRoutes",
+      "name": "codeWorkspaceRoutes",
+      "type": "Function",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/codeWorkspace.ts:codeWorkspaceRoutes.service@23:2",
+      "name": "service",
+      "type": "Function",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/codeWorkspace.ts:codeWorkspaceRoutes.route@24:2",
+      "name": "route",
+      "type": "Function",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "",
+      "name": "offset",
+      "type": "Property",
+      "filePath": "back/api/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/script.ts:retiredScriptRoutes",
+      "name": "retiredScriptRoutes",
+      "type": "Function",
+      "filePath": "back/api/script.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/script.ts:retiredScriptRoutes.retired@4:2",
+      "name": "retired",
+      "type": "Function",
+      "filePath": "back/api/script.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/workspace.ts:workspaceRoutes",
+      "name": "workspaceRoutes",
+      "type": "Function",
+      "filePath": "back/api/workspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/codeWorkspace.ts:CodeWorkspaceService",
+      "name": "CodeWorkspaceService",
+      "type": "Class",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.access#2",
+      "name": "access",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/codeWorkspace.ts:CodeWorkspaceService.access.fn@39:6.bare@40:8",
+      "name": "bare",
+      "type": "Const",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/codeWorkspace.ts:CodeWorkspaceService.access.fn@39:6.run@84:8",
+      "name": "run",
+      "type": "Function",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.info#1",
+      "name": "info",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.identity#0",
+      "name": "identity",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.setIdentity#1",
+      "name": "setIdentity",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.tree#4",
+      "name": "tree",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.read#2",
+      "name": "read",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.search#3",
+      "name": "search",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.mutate#3",
+      "name": "mutate",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.status#3",
+      "name": "status",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.diff#3",
+      "name": "diff",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/codeWorkspace.ts:CodeWorkspaceService.diff.fn@267:27.limited@290:6",
+      "name": "limited",
+      "type": "Const",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.stage#3",
+      "name": "stage",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/codeWorkspace.ts:CodeWorkspaceService.stage.fn@313:27.stat@315:8",
+      "name": "stat",
+      "type": "Const",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.commit#2",
+      "name": "commit",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/codeWorkspace.ts:CodeWorkspaceService.push#2",
+      "name": "push",
+      "type": "Method",
+      "filePath": "back/services/codeWorkspace.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/gitCommand.ts:GitCommandService",
+      "name": "GitCommandService",
+      "type": "Class",
+      "filePath": "back/services/gitCommand.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/gitCommand.ts:GitCommandService.run#7",
+      "name": "run",
+      "type": "Method",
+      "filePath": "back/services/gitCommand.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:EDIT_LIMIT",
+      "name": "EDIT_LIMIT",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:VIEW_LIMIT",
+      "name": "VIEW_LIMIT",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/workspaceFiles.ts:workspaceFail",
+      "name": "workspaceFail",
+      "type": "Function",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/workspaceFiles.ts:workspaceRelative",
+      "name": "workspaceRelative",
+      "type": "Function",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/workspaceFiles.ts:hash",
+      "name": "hash",
+      "type": "Function",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/workspaceFiles.ts:exists",
+      "name": "exists",
+      "type": "Function",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/workspaceFiles.ts:sync",
+      "name": "sync",
+      "type": "Function",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/workspaceFiles.ts:decode",
+      "name": "decode",
+      "type": "Function",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/workspaceFiles.ts:WorkspaceFiles",
+      "name": "WorkspaceFiles",
+      "type": "Class",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.constructor#2",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.target#3",
+      "name": "target",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.regular#1",
+      "name": "regular",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.bytes#2",
+      "name": "bytes",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.metadata#1",
+      "name": "metadata",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.metadata.stat@131:4",
+      "name": "stat",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.metadata.unsafe@146:4",
+      "name": "unsafe",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.read#1",
+      "name": "read",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.tree#3",
+      "name": "tree",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.tree.stat@201:4",
+      "name": "stat",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.expected#3",
+      "name": "expected",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.save#3",
+      "name": "save",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.save.temporary@276:4",
+      "name": "temporary",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.save.retainRollback@282:4",
+      "name": "retainRollback",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.save.rollbackReady@282:4",
+      "name": "rollbackReady",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.create#3",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.remove#2",
+      "name": "remove",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.remove.target@387:4",
+      "name": "target",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.rename#3",
+      "name": "rename",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.rename.target@405:4",
+      "name": "target",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceFiles.ts:WorkspaceFiles.search#2",
+      "name": "search",
+      "type": "Method",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.search.items@437:4",
+      "name": "items",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.search.bytes@439:4",
+      "name": "bytes",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.search.truncated@439:4",
+      "name": "truncated",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.search.directory@444:6",
+      "name": "directory",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/workspaceFiles.ts:WorkspaceFiles.search.target@444:6",
+      "name": "target",
+      "type": "Const",
+      "filePath": "back/services/workspaceFiles.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/workspaceLocks.ts:WorkspaceGuard",
+      "name": "WorkspaceGuard",
+      "type": "Class",
+      "filePath": "back/services/workspaceLocks.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceLocks.ts:WorkspaceGuard.run#6",
+      "name": "run",
+      "type": "Method",
+      "filePath": "back/services/workspaceLocks.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/workspaceLocks.ts:WorkspaceLocks",
+      "name": "WorkspaceLocks",
+      "type": "Class",
+      "filePath": "back/services/workspaceLocks.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/workspaceLocks.ts:WorkspaceLocks.acquire#3",
+      "name": "acquire",
+      "type": "Method",
+      "filePath": "back/services/workspaceLocks.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:net",
+      "name": "net",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:runtime",
+      "name": "runtime",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:tmp",
+      "name": "tmp",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:delay",
+      "name": "delay",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:evidence",
+      "name": "evidence",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_436_nodeenvironmentroute",
+      "name": "status",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_437_pythonenvironments",
+      "name": "steps",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_438_render",
+      "name": "linux",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:rejectSsh",
+      "name": "rejectSsh",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:backend",
+      "name": "backend",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:browser",
+      "name": "browser",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:nodeRegistry",
+      "name": "nodeRegistry",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:output",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:packageIndex",
+      "name": "packageIndex",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:page",
+      "name": "page",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:receiver",
+      "name": "receiver",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:ssh",
+      "name": "ssh",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:messages",
+      "name": "messages",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:receiverFailure",
+      "name": "receiverFailure",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:connections",
+      "name": "connections",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:mark",
+      "name": "mark",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:port",
+      "name": "port",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:stop",
+      "name": "stop",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:until",
+      "name": "until",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.git@95:2",
+      "name": "git",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_439_mutation",
+      "name": "js",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_440_render",
+      "name": "py",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_441_render",
+      "name": "sh",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:fn@68:1.hostPublic@137:2",
+      "name": "hostPublic",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:fn@68:1.base@197:2",
+      "name": "base",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:fn@68:1.grpc@197:2",
+      "name": "grpc",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:fn@68:1.http@197:2",
+      "name": "http",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_442_recoverabandonedsnap",
+      "name": "QL_DIR",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/layouts/",
+      "name": "QL_DATA_DIR",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "index.tsx:TSy",
+      "name": "HOME",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "stemInfo.versionP",
+      "name": "PATH",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "roperty:src/lay",
+      "name": "JWT_SECRET",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "outs/index.tsx:",
+      "name": "BACK_PORT",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "TSystemInfo.change",
+      "name": "GRPC_PORT",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "LogProperty:s",
+      "name": "BIND_HOST",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "rc/layouts/index.tsx:TSyst",
+      "name": "BIND_HOST_GRPC",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "emInfo.changeLogLin",
+      "name": "QL_SCHEDULER",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "kProperty:src/l",
+      "name": "NODE_ENV",
+      "type": "Property",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.start@215:2",
+      "name": "start",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:fn@68:1.runLogFrames@248:2",
+      "name": "runLogFrames",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.login@276:2",
+      "name": "login",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.api@286:2",
+      "name": "api",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.checked@302:2",
+      "name": "checked",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/browser-e2e.cjs:fn@68:1.ws@332:2",
+      "name": "ws",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.replace@423:2",
+      "name": "replace",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.identityResponse@469:2",
+      "name": "identityResponse",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.response@480:6",
+      "name": "response",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.committedResponse@502:2",
+      "name": "committedResponse",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@68:1.cli@694:2",
+      "name": "cli",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/browser-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:baseline",
+      "name": "baseline",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:result",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:output",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:current",
+      "name": "current",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:key",
+      "name": "key",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:added",
+      "name": "added",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:remaining",
+      "name": "remaining",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:unexpectedFailure",
+      "name": "unexpectedFailure",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/check-typecheck.cjs:report",
+      "name": "report",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@2:1.result@2:816",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@2:1.run@2:880.done@2:911",
+      "name": "done",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/cleanup-managed-fixtures.cjs:fn@2:1.run@2:880",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:diagnostics/phase12/download-python-source.py:source",
+      "name": "source",
+      "type": "Variable",
+      "filePath": "diagnostics/phase12/download-python-source.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:diagnostics/phase12/download-python-source.py:size",
+      "name": "size",
+      "type": "Variable",
+      "filePath": "diagnostics/phase12/download-python-source.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:diagnostics/phase12/download-python-source.py:chunk",
+      "name": "chunk",
+      "type": "Variable",
+      "filePath": "diagnostics/phase12/download-python-source.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:diagnostics/phase12/download-python-source.py:prefix",
+      "name": "prefix",
+      "type": "Variable",
+      "filePath": "diagnostics/phase12/download-python-source.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:diagnostics/phase12/download-python-source.py:parts",
+      "name": "parts",
+      "type": "Variable",
+      "filePath": "diagnostics/phase12/download-python-source.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/download-python-source.py:download",
+      "name": "download",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/download-python-source.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:diagnostics/phase12/download-python-source.py:data",
+      "name": "data",
+      "type": "Variable",
+      "filePath": "diagnostics/phase12/download-python-source.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/graph-review.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/graph-review.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/graph-review.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-node.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-node.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase12/prepare-managed-node.cjs:fn@2:1.after@3:36#1",
+      "name": "after",
+      "type": "Method",
+      "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-node.cjs:fn@2:1.Operations@4:1",
+      "name": "Operations",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-node.cjs:fn@2:1.Paths@4:1",
+      "name": "Paths",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/prepare-managed-node.cjs:fn@2:1.run@7:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-python.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-python.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-managed-python.cjs:fn@3:1.h@4:1",
+      "name": "h",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/prepare-managed-python.cjs:fn@3:1.after@4:44",
+      "name": "after",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/prepare-managed-python.cjs:fn@3:1.run@9:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-resources.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-resources.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-resources.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-resources.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-resources.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-resources.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/prepare-resources.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/prepare-resources.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/resume-managed-python.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/resume-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/resume-managed-python.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/resume-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/resume-managed-python.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/resume-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/resume-managed-python.cjs:fn@2:1.result@3:1",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/resume-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/resume-managed-python.cjs:fn@2:1.run@10:1.done@10:32",
+      "name": "done",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/resume-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/resume-managed-python.cjs:fn@2:1.run@10:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/resume-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-execution.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-execution.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-execution.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-execution.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-execution.cjs:artifacts",
+      "name": "artifacts",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-execution.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-execution.cjs:previous",
+      "name": "previous",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-execution.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-execution.cjs:run",
+      "name": "run",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-execution.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-regression.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-regression.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-regression.cjs:artifacts",
+      "name": "artifacts",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-regression.cjs:previous",
+      "name": "previous",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/run-managed-regression.cjs:run",
+      "name": "run",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/static-audit.cjs:read",
+      "name": "read",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:workspace",
+      "name": "workspace",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:joined",
+      "name": "joined",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:checks",
+      "name": "checks",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase12/static-audit.cjs:check",
+      "name": "check",
+      "type": "Function",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:changed",
+      "name": "changed",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:added",
+      "name": "added",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:fn@16:41.after@16:46",
+      "name": "after",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/static-audit.cjs:result",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/use-runtime-fixtures.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/use-runtime-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase12/use-runtime-fixtures.cjs:file",
+      "name": "file",
+      "type": "Const",
+      "filePath": "diagnostics/phase12/use-runtime-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/00-platform-overview.md:L1:Git-native Script Automation / Scheduling Platform",
+      "name": "Git-native Script Automation / Scheduling Platform",
+      "type": "Section",
+      "filePath": "docs/architecture/00-platform-overview.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/01-domain-model.md:L1:Domain Model（目标）",
+      "name": "Domain Model（目标）",
+      "type": "Section",
+      "filePath": "docs/architecture/01-domain-model.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/02-git-workspace.md:L1:Git Workspace",
+      "name": "Git Workspace",
+      "type": "Section",
+      "filePath": "docs/architecture/02-git-workspace.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/05-filesystem-layout.md:L1:Filesystem — 当前布局与后续目标",
+      "name": "Filesystem — 当前布局与后续目标",
+      "type": "Section",
+      "filePath": "docs/architecture/05-filesystem-layout.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/07-service-boundaries.md:L1:Service Boundaries",
+      "name": "Service Boundaries",
+      "type": "Section",
+      "filePath": "docs/architecture/07-service-boundaries.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/19-code-workspace.md:L1:Code Workspace — Phase12, schema v9",
+      "name": "Code Workspace — Phase12, schema v9",
+      "type": "Section",
+      "filePath": "docs/architecture/19-code-workspace.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/01-workspace-domain.md:L1:Workspace domain",
+      "name": "Workspace domain",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/01-workspace-domain.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/02-path-security.md:L1:Path security",
+      "name": "Path security",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/02-path-security.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/03-file-operations.md:L1:File operations",
+      "name": "File operations",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/03-file-operations.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/04-optimistic-concurrency.md:L1:Optimistic concurrency",
+      "name": "Optimistic concurrency",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/04-optimistic-concurrency.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/05-worktree-leases.md:L1:Worktree leases",
+      "name": "Worktree leases",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/05-worktree-leases.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/06-git-status-diff.md:L1:Git status / diff",
+      "name": "Git status / diff",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/06-git-status-diff.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/07-git-stage-commit.md:L1:Stage / commit",
+      "name": "Stage / commit",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/07-git-stage-commit.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/08-git-push.md:L1:Explicit push",
+      "name": "Explicit push",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/08-git-push.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/09-editor-ui.md:L1:Editor UI",
+      "name": "Editor UI",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/09-editor-ui.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/10-discovery-task-integration.md:L1:Discovery / Task integration",
+      "name": "Discovery / Task integration",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/10-discovery-task-integration.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/11-backup-restore-integration.md:L1:Backup / restore integration",
+      "name": "Backup / restore integration",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/11-backup-restore-integration.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/12-legacy-editor-removal.md:L1:Legacy editor removal audit",
+      "name": "Legacy editor removal audit",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/12-legacy-editor-removal.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/13-security.md:L1:Security contract",
+      "name": "Security contract",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/13-security.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase12/14-phase12-test-report.md:L1:Phase 12 test report",
+      "name": "Phase 12 test report",
+      "type": "Section",
+      "filePath": "docs/refactor/phase12/14-phase12-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:shell/git_workspace_lock.py:run",
+      "name": "run",
+      "type": "Function",
+      "filePath": "shell/git_workspace_lock.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:shell/workspace_rename.py:libc",
+      "name": "libc",
+      "type": "Variable",
+      "filePath": "shell/workspace_rename.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/repository-workspace.tsx:RepositoryWorkspacePage",
+      "name": "RepositoryWorkspacePage",
+      "type": "Function",
+      "filePath": "src/pages/repository-workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/repository-workspace.tsx:RepositoryWorkspacePage.render@412:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/repository-workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:RetiredScriptPage",
+      "name": "RetiredScriptPage",
+      "type": "Function",
+      "filePath": "src/pages/script/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/pages/workspace.tsx:history",
+      "name": "history",
+      "type": "Const",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/pages/workspace.tsx:languages",
+      "name": "languages",
+      "type": "Const",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.py",
+      "name": "py",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.js",
+      "name": "js",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.mjs",
+      "name": "mjs",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.cjs",
+      "name": "cjs",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.ts",
+      "name": "ts",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.tsx",
+      "name": "tsx",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.sh",
+      "name": "sh",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.json",
+      "name": "json",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.yaml",
+      "name": "yaml",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.yml",
+      "name": "yml",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:languages.md",
+      "name": "md",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:src/pages/workspace.tsx:Tab",
+      "name": "Tab",
+      "type": "TypeAlias",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:Tab.path",
+      "name": "path",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:Tab.content",
+      "name": "content",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:Tab.saved",
+      "name": "saved",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:Tab.hash",
+      "name": "hash",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:Tab.editable",
+      "name": "editable",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:Tab.error_code",
+      "name": "error_code",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:Tab.mode",
+      "name": "mode",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:Tab.eol",
+      "name": "eol",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage",
+      "name": "CodeWorkspacePage",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/pages/workspace.tsx:CodeWorkspacePage.dirtyRef@73:2",
+      "name": "dirtyRef",
+      "type": "Const",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.call@78:2",
+      "name": "call",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.perform@91:2",
+      "name": "perform",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.reload@106:2",
+      "name": "reload",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.fn@125:12.unload@126:4",
+      "name": "unload",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.fn@125:12.unblock@133:4",
+      "name": "unblock",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.fn@125:12.unblock@133:45.onOk@142:8",
+      "name": "onOk",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.confirmDirty@153:2",
+      "name": "confirmDirty",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.open@157:2",
+      "name": "open",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:CodeWorkspacePage.open@157:15.content@165:6",
+      "name": "content",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:src/pages/workspace.tsx:CodeWorkspacePage.open@157:15.saved@166:6",
+      "name": "saved",
+      "type": "Property",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.save@171:2",
+      "name": "save",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.save@171:15.onOk@196:10",
+      "name": "onOk",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.close@203:2",
+      "name": "close",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.close@203:16.action@205:4",
+      "name": "action",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.entryIdentity@214:2",
+      "name": "entryIdentity",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.fn@366:17.onOk@370:12",
+      "name": "onOk",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.fn@546:26.fn@580:35.fn@581:36.onOk@586:32",
+      "name": "onOk",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/workspace.tsx:CodeWorkspacePage.fn@794:14.fn@795:18.renamed@801:12",
+      "name": "renamed",
+      "type": "Function",
+      "filePath": "src/pages/workspace.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/api.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/api.test.cjs:express",
+      "name": "express",
+      "type": "Const",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/api.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/api.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/api.test.cjs:load",
+      "name": "load",
+      "type": "Const",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:tests/phase12/api.test.cjs:WorkspaceToken",
+      "name": "WorkspaceToken",
+      "type": "Class",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/api.test.cjs:routes",
+      "name": "routes",
+      "type": "Const",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/api.test.cjs:fn@4:116.info@5:43",
+      "name": "info",
+      "type": "Function",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/api.test.cjs:fn@4:116.mutate@5:66",
+      "name": "mutate",
+      "type": "Function",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/api.test.cjs:fn@4:116.router@6:1",
+      "name": "router",
+      "type": "Const",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/api.test.cjs:fn@4:116.request@7:1",
+      "name": "request",
+      "type": "Function",
+      "filePath": "tests/phase12/api.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/discovery.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase12/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/discovery.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase12/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/discovery.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase12/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/discovery.test.cjs:fn@4:106.sub@5:2",
+      "name": "sub",
+      "type": "Const",
+      "filePath": "tests/phase12/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/discovery.test.cjs:fn@4:106.Files@12:2",
+      "name": "Files",
+      "type": "Const",
+      "filePath": "tests/phase12/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/discovery.test.cjs:fn@4:106.f@12:2",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase12/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/discovery.test.cjs:fn@4:106.write@16:2",
+      "name": "write",
+      "type": "Function",
+      "filePath": "tests/phase12/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/discovery.test.cjs:fn@4:106.originalId@40:2",
+      "name": "originalId",
+      "type": "Const",
+      "filePath": "tests/phase12/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/files.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/files.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/files.test.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/files.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/files.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/files.test.cjs:load",
+      "name": "load",
+      "type": "Const",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/files.test.cjs:fixture",
+      "name": "fixture",
+      "type": "Function",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/files.test.cjs:rejects",
+      "name": "rejects",
+      "type": "Function",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/files.test.cjs:fn@140:78.rename@142:2",
+      "name": "rename",
+      "type": "Const",
+      "filePath": "tests/phase12/files.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:test",
+      "name": "test",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:setup",
+      "name": "setup",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/git.test.cjs:fixture",
+      "name": "fixture",
+      "type": "Function",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "comm_294",
+      "name": "service",
+      "type": "Property",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "comm_297",
+      "name": "w",
+      "type": "Property",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/git.test.cjs:rejects",
+      "name": "rejects",
+      "type": "Function",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:fn@78:89.s@79:2",
+      "name": "s",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:fn@175:93.s@176:2",
+      "name": "s",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/git.test.cjs:fn@175:93.worker@179:2",
+      "name": "worker",
+      "type": "Function",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase12/git.test.cjs:fn@175:93.pending@238:2",
+      "name": "pending",
+      "type": "Function",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:fn@312:96.id@313:2",
+      "name": "id",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:fn@312:96.s@313:2",
+      "name": "s",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:fn@370:93.id@371:2",
+      "name": "id",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:fn@370:93.s@371:2",
+      "name": "s",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/git.test.cjs:fn@398:79.outside@399:2",
+      "name": "outside",
+      "type": "Const",
+      "filePath": "tests/phase12/git.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/lease-worker.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase12/lease-worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase12/lease-worker.cjs:configFile",
+      "name": "configFile",
+      "type": "Const",
+      "filePath": "tests/phase12/lease-worker.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": [
+    {
+      "id": "proc_0_prepare",
+      "name": "Prepare → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 10,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_2_prepare",
+      "name": "Prepare → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_3_prepare",
+      "name": "Prepare → Root",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_28_preflight",
+      "name": "Preflight → Release",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_31_remove",
+      "name": "Remove → Exists",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "remove",
+          "step": 1
+        },
+        {
+          "symbol": "expected",
+          "step": 2
+        },
+        {
+          "symbol": "bytes",
+          "step": 3
+        },
+        {
+          "symbol": "target",
+          "step": 4
+        },
+        {
+          "symbol": "exists",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_39_sendnotify",
+      "name": "SendNotify → Post",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "offset",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_42_codeworkspacepage",
+      "name": "CodeWorkspacePage → Call",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "reload",
+          "step": 3
+        },
+        {
+          "symbol": "perform",
+          "step": 2
+        },
+        {
+          "symbol": "call",
+          "step": 4
+        },
+        {
+          "symbol": "CodeWorkspacePage",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_58_updatelogremovefrequ",
+      "name": "UpdateLogRemoveFrequency → Identity",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "identity",
+          "step": 4
+        },
+        {
+          "symbol": "info",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_59_updatelogremovefrequ",
+      "name": "UpdateLogRemoveFrequency → Worktree",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_68_remove",
+      "name": "Remove → Hash",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "remove",
+          "step": 1
+        },
+        {
+          "symbol": "expected",
+          "step": 2
+        },
+        {
+          "symbol": "metadata",
+          "step": 3
+        },
+        {
+          "symbol": "hash",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_70_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "run",
+          "step": 3
+        },
+        {
+          "symbol": "codeWorkspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_78_sendnotify",
+      "name": "SendNotify → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "offset",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_79_sendnotify",
+      "name": "SendNotify → LogErr",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "offset",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_82_repositoryworkspacep",
+      "name": "RepositoryWorkspacePage → Load",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "RepositoryWorkspacePage",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_83_repositoryworkspacep",
+      "name": "RepositoryWorkspacePage → Open",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "RepositoryWorkspacePage",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_84_repositoryworkspacep",
+      "name": "RepositoryWorkspacePage → Reload",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "RepositoryWorkspacePage",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_109_execute",
+      "name": "Execute → Wake",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "offset",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_125_save",
+      "name": "Save → Decode",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        },
+        {
+          "symbol": "read",
+          "step": 2
+        },
+        {
+          "symbol": "decode",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_151_preflight",
+      "name": "Preflight → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_153_run",
+      "name": "Run → Release",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_156_rename",
+      "name": "Rename → Exists",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "rename",
+          "step": 1
+        },
+        {
+          "symbol": "expected",
+          "step": 2
+        },
+        {
+          "symbol": "bytes",
+          "step": 3
+        },
+        {
+          "symbol": "target",
+          "step": 4
+        },
+        {
+          "symbol": "exists",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_160_run",
+      "name": "Run → Invalid",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_163_onok",
+      "name": "OnOk → Call",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "onOk",
+          "step": 1
+        },
+        {
+          "symbol": "reload",
+          "step": 3
+        },
+        {
+          "symbol": "perform",
+          "step": 2
+        },
+        {
+          "symbol": "call",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_175_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "identity",
+          "step": 3
+        },
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "codeWorkspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_176_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "codeWorkspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_184_rename",
+      "name": "Rename → Hash",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "rename",
+          "step": 1
+        },
+        {
+          "symbol": "expected",
+          "step": 2
+        },
+        {
+          "symbol": "metadata",
+          "step": 3
+        },
+        {
+          "symbol": "hash",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_185_pythonenvironments",
+      "name": "PythonEnvironments → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "run",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_187_run",
+      "name": "Run → Cleanup",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_188_run",
+      "name": "Run → QuoteGitShell",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_191_render",
+      "name": "Render → Reload",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_203_preflight",
+      "name": "Preflight → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_204_preflight",
+      "name": "Preflight → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_223_run",
+      "name": "Run → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_225_changeremote",
+      "name": "ChangeRemote → Release",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_227_save",
+      "name": "Save → Exists",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        },
+        {
+          "symbol": "read",
+          "step": 2
+        },
+        {
+          "symbol": "bytes",
+          "step": 3
+        },
+        {
+          "symbol": "target",
+          "step": 4
+        },
+        {
+          "symbol": "exists",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_233_onok",
+      "name": "OnOk → Call",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "onOk",
+          "step": 1
+        },
+        {
+          "symbol": "reload",
+          "step": 3
+        },
+        {
+          "symbol": "perform",
+          "step": 2
+        },
+        {
+          "symbol": "call",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_239_pythonenvironments",
+      "name": "PythonEnvironments → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "identity",
+          "step": 3
+        },
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_240_pythonenvironments",
+      "name": "PythonEnvironments → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_246_save",
+      "name": "Save → Hash",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        },
+        {
+          "symbol": "read",
+          "step": 2
+        },
+        {
+          "symbol": "metadata",
+          "step": 3
+        },
+        {
+          "symbol": "hash",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_247_render",
+      "name": "Render → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "run",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_252_repositoryworkspacep",
+      "name": "RepositoryWorkspacePage → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "RepositoryWorkspacePage",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_257_preflight",
+      "name": "Preflight → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_259_run",
+      "name": "Run → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_260_run",
+      "name": "Run → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_274_changeremote",
+      "name": "ChangeRemote → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_276_initialize",
+      "name": "Initialize → Release",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_277_create",
+      "name": "Create → Exists",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "create",
+          "step": 1
+        },
+        {
+          "symbol": "metadata",
+          "step": 2
+        },
+        {
+          "symbol": "target",
+          "step": 3
+        },
+        {
+          "symbol": "exists",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_282_onok",
+      "name": "OnOk → Call",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "onOk",
+          "step": 1
+        },
+        {
+          "symbol": "reload",
+          "step": 3
+        },
+        {
+          "symbol": "perform",
+          "step": 2
+        },
+        {
+          "symbol": "call",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_284_render",
+      "name": "Render → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "identity",
+          "step": 3
+        },
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_285_render",
+      "name": "Render → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_291_create",
+      "name": "Create → Hash",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "create",
+          "step": 1
+        },
+        {
+          "symbol": "metadata",
+          "step": 2
+        },
+        {
+          "symbol": "hash",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_292_showprogress",
+      "name": "ShowProgress → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "run",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_297_run",
+      "name": "Run → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_299_changeremote",
+      "name": "ChangeRemote → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_300_changeremote",
+      "name": "ChangeRemote → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_314_initialize",
+      "name": "Initialize → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_315_run",
+      "name": "Run → GitResourceError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_316_prune",
+      "name": "Prune → Release",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_317_search",
+      "name": "Search → Exists",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "search",
+          "step": 1
+        },
+        {
+          "symbol": "bytes",
+          "step": 2
+        },
+        {
+          "symbol": "target",
+          "step": 3
+        },
+        {
+          "symbol": "exists",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_318_workspaceroutes",
+      "name": "WorkspaceRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "workspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_322_save",
+      "name": "Save → Call",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        },
+        {
+          "symbol": "reload",
+          "step": 2
+        },
+        {
+          "symbol": "call",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_324_showprogress",
+      "name": "ShowProgress → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "identity",
+          "step": 3
+        },
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_325_showprogress",
+      "name": "ShowProgress → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_331_tree",
+      "name": "Tree → Hash",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "tree",
+          "step": 1
+        },
+        {
+          "symbol": "metadata",
+          "step": 2
+        },
+        {
+          "symbol": "hash",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_332_render",
+      "name": "Render → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "run",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_333_workspaceroutes",
+      "name": "WorkspaceRoutes → Status",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "workspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_336_prune",
+      "name": "Prune → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_337_prune",
+      "name": "Prune → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_349_prune",
+      "name": "Prune → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_351_remove",
+      "name": "Remove → Release",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_352_tree",
+      "name": "Tree → Exists",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "tree",
+          "step": 1
+        },
+        {
+          "symbol": "metadata",
+          "step": 2
+        },
+        {
+          "symbol": "target",
+          "step": 3
+        },
+        {
+          "symbol": "exists",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_353_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "codeWorkspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_355_render",
+      "name": "Render → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "identity",
+          "step": 3
+        },
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_356_render",
+      "name": "Render → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_357_save",
+      "name": "Save → Run",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "run",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_358_changeremote",
+      "name": "ChangeRemote → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_360_remove",
+      "name": "Remove → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_361_remove",
+      "name": "Remove → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_370_remove",
+      "name": "Remove → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_372_repair",
+      "name": "Repair → Release",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_374_save",
+      "name": "Save → Identity",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "identity",
+          "step": 3
+        },
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_375_save",
+      "name": "Save → Worktree",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_376_prune",
+      "name": "Prune → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_378_repair",
+      "name": "Repair → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_379_repair",
+      "name": "Repair → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_386_workspaceroutes",
+      "name": "WorkspaceRoutes → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "workspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_388_repair",
+      "name": "Repair → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_390_diagnostics",
+      "name": "Diagnostics → Release",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_393_remove",
+      "name": "Remove → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_395_diagnostics",
+      "name": "Diagnostics → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_396_diagnostics",
+      "name": "Diagnostics → Root",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_400_diagnostics",
+      "name": "Diagnostics → InheritedLeaseFds",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_403_repair",
+      "name": "Repair → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_405_initialize",
+      "name": "Initialize → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_413_updatelogremovefrequ",
+      "name": "UpdateLogRemoveFrequency → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 3
+        },
+        {
+          "symbol": "access",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_417_remove",
+      "name": "Remove → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "remove",
+          "step": 1
+        },
+        {
+          "symbol": "expected",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_419_create",
+      "name": "Create → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "create",
+          "step": 1
+        },
+        {
+          "symbol": "read",
+          "step": 2
+        },
+        {
+          "symbol": "metadata",
+          "step": 3
+        },
+        {
+          "symbol": "target",
+          "step": 4
+        },
+        {
+          "symbol": "workspaceRelative",
+          "step": 5
+        },
+        {
+          "symbol": "workspaceFail",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_421_rename",
+      "name": "Rename → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "rename",
+          "step": 1
+        },
+        {
+          "symbol": "expected",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_423_remove",
+      "name": "Remove → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "remove",
+          "step": 1
+        },
+        {
+          "symbol": "expected",
+          "step": 2
+        },
+        {
+          "symbol": "bytes",
+          "step": 3
+        },
+        {
+          "symbol": "target",
+          "step": 4
+        },
+        {
+          "symbol": "workspaceRelative",
+          "step": 5
+        },
+        {
+          "symbol": "workspaceFail",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_425_save",
+      "name": "Save → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        },
+        {
+          "symbol": "read",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_427_rename",
+      "name": "Rename → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "rename",
+          "step": 1
+        },
+        {
+          "symbol": "expected",
+          "step": 2
+        },
+        {
+          "symbol": "bytes",
+          "step": 3
+        },
+        {
+          "symbol": "target",
+          "step": 4
+        },
+        {
+          "symbol": "workspaceRelative",
+          "step": 5
+        },
+        {
+          "symbol": "workspaceFail",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_429_diagnostics",
+      "name": "Diagnostics → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "acquire",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_431_save",
+      "name": "Save → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 7,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        },
+        {
+          "symbol": "read",
+          "step": 2
+        },
+        {
+          "symbol": "bytes",
+          "step": 3
+        },
+        {
+          "symbol": "target",
+          "step": 4
+        },
+        {
+          "symbol": "workspaceRelative",
+          "step": 5
+        },
+        {
+          "symbol": "workspaceFail",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_434_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "access",
+          "step": 3
+        },
+        {
+          "symbol": "codeWorkspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_437_pythonenvironments",
+      "name": "PythonEnvironments → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "access",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_440_render",
+      "name": "Render → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "access",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_443_showprogress",
+      "name": "ShowProgress → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "access",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_446_render",
+      "name": "Render → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "access",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_449_save",
+      "name": "Save → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "info",
+          "step": 2
+        },
+        {
+          "symbol": "access",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_450_codeworkspacepage",
+      "name": "CodeWorkspacePage → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "CodeWorkspacePage",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_452_search",
+      "name": "Search → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "search",
+          "step": 1
+        },
+        {
+          "symbol": "bytes",
+          "step": 2
+        },
+        {
+          "symbol": "target",
+          "step": 3
+        },
+        {
+          "symbol": "workspaceRelative",
+          "step": 4
+        },
+        {
+          "symbol": "workspaceFail",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_454_tree",
+      "name": "Tree → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "tree",
+          "step": 1
+        },
+        {
+          "symbol": "metadata",
+          "step": 2
+        },
+        {
+          "symbol": "target",
+          "step": 3
+        },
+        {
+          "symbol": "workspaceRelative",
+          "step": 4
+        },
+        {
+          "symbol": "workspaceFail",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_458_commit",
+      "name": "Commit → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "commit",
+          "step": 1
+        },
+        {
+          "symbol": "access",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_460_diff",
+      "name": "Diff → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "diff",
+          "step": 1
+        },
+        {
+          "symbol": "access",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_462_push",
+      "name": "Push → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "push",
+          "step": 1
+        },
+        {
+          "symbol": "access",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_464_read",
+      "name": "Read → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "read",
+          "step": 1
+        },
+        {
+          "symbol": "access",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_465_codeworkspaceroutes",
+      "name": "CodeWorkspaceRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "codeWorkspaceRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_466_stage",
+      "name": "Stage → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "stage",
+          "step": 1
+        },
+        {
+          "symbol": "access",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_468_status",
+      "name": "Status → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "status",
+          "step": 1
+        },
+        {
+          "symbol": "access",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_482_run",
+      "name": "Run → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "run",
+          "step": 1
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_484_workspaceroutes",
+      "name": "WorkspaceRoutes → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "workspaceRoutes",
+          "step": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3830 @@
+{
+  "summary": {
+    "changed_count": 266,
+    "affected_count": 129,
+    "changed_files": 293,
+    "risk_level": "critical"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:PHASE10_REPORT.md:L1:Phase 10 Status: PARTIAL",
+      "name": "Phase 10 Status: PARTIAL",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L30:Database Changes",
+      "name": "Database Changes",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L34:TaskRun Core",
+      "name": "TaskRun Core",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L38:Execution Resolver",
+      "name": "Execution Resolver",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L42:ExecutionContext",
+      "name": "ExecutionContext",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L46:Snapshot Semantics",
+      "name": "Snapshot Semantics",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L50:Worktree Source Execution",
+      "name": "Worktree Source Execution",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L54:Python Runtime Binding",
+      "name": "Python Runtime Binding",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L58:Node Runtime Binding",
+      "name": "Node Runtime Binding",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L62:TypeScript Execution",
+      "name": "TypeScript Execution",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L66:Shell Execution",
+      "name": "Shell Execution",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L70:ENV",
+      "name": "ENV",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L74:Config",
+      "name": "Config",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L78:Hooks",
+      "name": "Hooks",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L82:Workspace Materialization",
+      "name": "Workspace Materialization",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L86:Runtime Leases",
+      "name": "Runtime Leases",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L90:Retry",
+      "name": "Retry",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L94:Concurrency",
+      "name": "Concurrency",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L98:Queue",
+      "name": "Queue",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L102:Timeout",
+      "name": "Timeout",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L106:Cancellation",
+      "name": "Cancellation",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L110:Process Supervision",
+      "name": "Process Supervision",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L114:Crash Recovery",
+      "name": "Crash Recovery",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L118:ExecutionResult",
+      "name": "ExecutionResult",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L122:Notifications",
+      "name": "Notifications",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L126:Logs",
+      "name": "Logs",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L130:Scheduler Integration",
+      "name": "Scheduler Integration",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L134:Manual/API Execution",
+      "name": "Manual/API Execution",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L138:Legacy Bridge Removal",
+      "name": "Legacy Bridge Removal",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L142:Security",
+      "name": "Security",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L146:Linux Gate",
+      "name": "Linux Gate",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L150:Platform Regression",
+      "name": "Platform Regression",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L154:Known Limitations",
+      "name": "Known Limitations",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L158:Important Findings",
+      "name": "Important Findings",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L162:Phase 11 Preconditions",
+      "name": "Phase 11 Preconditions",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L166:验证汇总",
+      "name": "验证汇总",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L181:GitNexus 影响与范围",
+      "name": "GitNexus 影响与范围",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L185:交付物",
+      "name": "交付物",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE10_REPORT.md:L189:Fixture 清理",
+      "name": "Fixture 清理",
+      "type": "Section",
+      "filePath": "PHASE10_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L1:Temporary Bridges — 退出条件登记",
+      "name": "Temporary Bridges — 退出条件登记",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L87:Phase 9 — Task Domain 合流",
+      "name": "Phase 9 — Task Domain 合流",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L108:Phase 10 — Execution Engine",
+      "name": "Phase 10 — Execution Engine",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/tasks.ts:endpoint",
+      "name": "endpoint",
+      "type": "Function",
+      "filePath": "back/api/tasks.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/tasks.ts:taskRoutes",
+      "name": "taskRoutes",
+      "type": "Function",
+      "filePath": "back/api/tasks.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/app.ts:Application",
+      "name": "Application",
+      "type": "Class",
+      "filePath": "back/app.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/app.ts:Application.waitForWorkerReady.fn@138:29.timeoutId@149:6",
+      "name": "timeoutId",
+      "type": "Function",
+      "filePath": "back/app.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/app.ts:Application.setupMasterShutdown.shutdown@200:4",
+      "name": "shutdown",
+      "type": "Function",
+      "filePath": "back/app.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "",
+      "name": "taskRunStatuses",
+      "type": "Const",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/data/taskRun.ts:TaskRunStatus",
+      "name": "TaskRunStatus",
+      "type": "TypeAlias",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/data/taskRun.ts:TaskRunTrigger",
+      "name": "TaskRunTrigger",
+      "type": "TypeAlias",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/data/taskRun.ts:TaskRun",
+      "name": "TaskRun",
+      "type": "Interface",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/data/taskRun.ts:TaskRunAttempt",
+      "name": "TaskRunAttempt",
+      "type": "Interface",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/data/taskRun.ts:text",
+      "name": "text",
+      "type": "Function",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/data/taskRun.ts:integer",
+      "name": "integer",
+      "type": "Function",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/data/taskRun.ts:date",
+      "name": "date",
+      "type": "Function",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/data/taskRun.ts:outcome",
+      "name": "outcome",
+      "type": "Function",
+      "filePath": "back/data/taskRun.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/schema/executionSchema.ts:createExecutionSchema",
+      "name": "createExecutionSchema",
+      "type": "Function",
+      "filePath": "back/schema/executionSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/configMaterialization.ts:MaterializationLease",
+      "name": "MaterializationLease",
+      "type": "Interface",
+      "filePath": "back/services/configMaterialization.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/configMaterialization.ts:ConfigMaterializationService",
+      "name": "ConfigMaterializationService",
+      "type": "Class",
+      "filePath": "back/services/configMaterialization.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/env.ts:EnvService.create#1",
+      "name": "create",
+      "type": "Method",
+      "filePath": "back/services/cron.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/cron.ts:CurrentTaskBridgeService",
+      "name": "CurrentTaskBridgeService",
+      "type": "Class",
+      "filePath": "back/services/cron.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/cron.ts:CurrentTaskBridgeService.mutateTaskDefinitions.fn@65:33.register@70:6",
+      "name": "register",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/cron.ts:CurrentTaskBridgeService.runSingle.fn@908:44.onStart@944:10",
+      "name": "onStart",
+      "type": "Function",
+      "filePath": "back/services/cron.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator",
+      "name": "ExecutionAttemptCoordinator",
+      "type": "Class",
+      "filePath": "back/services/executionAttemptCoordinator.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator.backoff.fn@31:28.finish@32:6",
+      "name": "finish",
+      "type": "Function",
+      "filePath": "back/services/executionAttemptCoordinator.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator.run.main@121:10",
+      "name": "main",
+      "type": "Function",
+      "filePath": "back/services/executionAttemptCoordinator.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionLog.ts:ExecutionLog",
+      "name": "ExecutionLog",
+      "type": "Class",
+      "filePath": "back/services/executionLog.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/executionNodeBinding.ts:BindingJournal",
+      "name": "BindingJournal",
+      "type": "Interface",
+      "filePath": "back/services/executionNodeBinding.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionNodeBinding.ts:stat",
+      "name": "stat",
+      "type": "Function",
+      "filePath": "back/services/executionNodeBinding.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionNodeBinding.ts:ExecutionNodeBinding",
+      "name": "ExecutionNodeBinding",
+      "type": "Class",
+      "filePath": "back/services/executionNodeBinding.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionNodeBinding.ts:ExecutionNodeBinding.prepare.cleanup@72:31",
+      "name": "cleanup",
+      "type": "Function",
+      "filePath": "back/services/executionNodeBinding.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionNodeBinding.ts:ExecutionNodeBinding.prepare.cleanup@116:15",
+      "name": "cleanup",
+      "type": "Function",
+      "filePath": "back/services/executionNodeBinding.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionPaths.ts:ExecutionPaths",
+      "name": "ExecutionPaths",
+      "type": "Class",
+      "filePath": "back/services/executionPaths.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionResolver.ts:hash",
+      "name": "hash",
+      "type": "Function",
+      "filePath": "back/services/executionResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionResolver.ts:ExecutionResolver",
+      "name": "ExecutionResolver",
+      "type": "Class",
+      "filePath": "back/services/executionResolver.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionService.ts:ExecutionService",
+      "name": "ExecutionService",
+      "type": "Class",
+      "filePath": "back/services/executionService.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionSubmission.ts:SubmissionLock",
+      "name": "SubmissionLock",
+      "type": "Class",
+      "filePath": "back/services/executionSubmission.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionSubmission.ts:ExecutionSubmissionServer",
+      "name": "ExecutionSubmissionServer",
+      "type": "Class",
+      "filePath": "back/services/executionSubmission.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionSubmission.ts:ExecutionSubmissionServer.listen.server@58:6",
+      "name": "server",
+      "type": "Function",
+      "filePath": "back/services/executionSubmission.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/hookExecutor.ts:HookExecutor",
+      "name": "HookExecutor",
+      "type": "Class",
+      "filePath": "back/services/hookExecutor.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/hookExecutor.ts:HookExecutor.run.output@64:4",
+      "name": "output",
+      "type": "Function",
+      "filePath": "back/services/hookExecutor.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/nodePackageManager.ts:NodePackageManager",
+      "name": "NodePackageManager",
+      "type": "Class",
+      "filePath": "back/services/nodePackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/nodePackageManager.ts:NodePackageManager.snapshot.visit@474:4",
+      "name": "visit",
+      "type": "Function",
+      "filePath": "back/services/nodePackageManager.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/runnerV2.ts:RunnerV2",
+      "name": "RunnerV2",
+      "type": "Class",
+      "filePath": "back/services/runnerV2.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/script.ts:ScriptService",
+      "name": "ScriptService",
+      "type": "Class",
+      "filePath": "back/services/script.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/taskExecutionBridge.ts:TaskExecutionBridge",
+      "name": "TaskExecutionBridge",
+      "type": "Class",
+      "filePath": "back/services/taskExecutionBridge.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/taskExecutionSourceBridge.ts:TaskExecutionSourceBridge",
+      "name": "TaskExecutionSourceBridge",
+      "type": "Class",
+      "filePath": "back/services/taskExecutionSourceBridge.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/taskHookLifecycle.ts:LifecycleOptions",
+      "name": "LifecycleOptions",
+      "type": "Interface",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/services/taskHookLifecycle.ts:HookLifecyclePlan",
+      "name": "HookLifecyclePlan",
+      "type": "TypeAlias",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/taskHookLifecycle.ts:LifecycleResult",
+      "name": "LifecycleResult",
+      "type": "Interface",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/taskHookLifecycle.ts:TaskHookLifecycle",
+      "name": "TaskHookLifecycle",
+      "type": "Class",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run.writeDerived@95:4",
+      "name": "writeDerived",
+      "type": "Function",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run.phase@125:4",
+      "name": "phase",
+      "type": "Function",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/shared/execution.ts:ExecutionError",
+      "name": "ExecutionError",
+      "type": "Class",
+      "filePath": "back/shared/execution.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/shared/execution.ts:ExecutionFailure",
+      "name": "ExecutionFailure",
+      "type": "Interface",
+      "filePath": "back/shared/execution.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/shared/execution.ts:ExecutionResult",
+      "name": "ExecutionResult",
+      "type": "Interface",
+      "filePath": "back/shared/execution.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/shared/execution.ts:ExecutionContext",
+      "name": "ExecutionContext",
+      "type": "Interface",
+      "filePath": "back/shared/execution.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/execution.ts:freezeExecutionSnapshot",
+      "name": "freezeExecutionSnapshot",
+      "type": "Function",
+      "filePath": "back/shared/execution.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/execution.ts:safeExecutionError",
+      "name": "safeExecutionError",
+      "type": "Function",
+      "filePath": "back/shared/execution.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/execution.ts:executionMetadata",
+      "name": "executionMetadata",
+      "type": "Function",
+      "filePath": "back/shared/execution.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/execution.ts:terminalExecutionResult",
+      "name": "terminalExecutionResult",
+      "type": "Function",
+      "filePath": "back/shared/execution.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/executionLauncher.ts:executionLauncher",
+      "name": "executionLauncher",
+      "type": "Function",
+      "filePath": "back/shared/executionLauncher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/executionLauncher.ts:executionLauncher.quote@7:2",
+      "name": "quote",
+      "type": "Function",
+      "filePath": "back/shared/executionLauncher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/executionSocket.ts:executionSocketAddress",
+      "name": "executionSocketAddress",
+      "type": "Function",
+      "filePath": "back/shared/executionSocket.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/shared/operationalSchema.ts:UnsupportedDatabaseSchemaError",
+      "name": "UnsupportedDatabaseSchemaError",
+      "type": "Class",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/operationalSchema.ts:hash",
+      "name": "hash",
+      "type": "Function",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/operationalSchema.ts:schemaSignature",
+      "name": "schemaSignature",
+      "type": "Function",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/operationalSchema.ts:modelSignature",
+      "name": "modelSignature",
+      "type": "Function",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/operationalSchema.ts:initializeOperationalSchema",
+      "name": "initializeOperationalSchema",
+      "type": "Function",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/operationalSchema.ts:initializeOperationalSchema.fn@77:4.objects@78:6",
+      "name": "objects",
+      "type": "Function",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/runCron.ts:runCron",
+      "name": "runCron",
+      "type": "Function",
+      "filePath": "back/shared/runCron.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/taskRunSubmit.ts:submit",
+      "name": "submit",
+      "type": "Function",
+      "filePath": "back/taskRunSubmit.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/taskRunSubmit.ts:submit.fn@24:26.socket@25:4",
+      "name": "socket",
+      "type": "Function",
+      "filePath": "back/taskRunSubmit.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_442_stage",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_443_catalog",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_444_execute",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_445_install",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase10/cleanup-managed-fixtures.cjs:fn@2:1.run@2:699",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase10/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_446_installbuild",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "proc_447_snapshot",
+      "name": "done",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ecycle / Fail",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ure SemanticsHook Outpu",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "yHook Model / Lif",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "L1:Phase 10 — Node 模块绑定Section:",
+      "name": "net",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "docs/refactor/phase10/11-bridge-removal.md:L1:Phase 10 ",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "e10/01-execution-engine.md:L1:Phase 10 — 执行引擎Section:docs/r",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "efactor/phase10/08-node-module-materialization.md:",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "— 桥接退出Section:docs/refactor/phase10/12-schema-v7.md:",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "L1:Phase 10 — Schema v7Section:docs/refactor/phase10/13-phase10-test-repor",
+      "name": "runtime",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "t.md:L1:Phase 10 — Phase 10 验收报告Section:docs/refactor/phase1",
+      "name": "evidence",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "0/13-phase10-test-report.md:L23:最终结果Section:docs/refactor/phase2/01-repository-stor",
+      "name": "backend",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "1-repository-storage.md:L22:Initialization and fetchSection:docs/ref",
+      "name": "connections",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "actor/phase2/01-repository-storage.md:L30:State and metadataSection:",
+      "name": "nodeRegistry",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "age.md:L4:Repository StorageSection:docs/refactor/phase2/0",
+      "name": "browser",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "docs/refactor/phase2/02-worktree-model.md:L4:Worktree model and rela",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ecycle.md:L4:Worktree lifecycleSection:docs/refactor/phase2/03-worktre",
+      "name": "ssh",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "itive RESTRICT foreign keySection:docs/refactor/phase2/03-worktree-lif",
+      "name": "page",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "tion ADRSection:docs/refactor/phase2/02-worktree-model.md:L17:ADR: add",
+      "name": "packageIndex",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "e-lifecycle.md:L6:CreateSection:docs/refactor/phase2/03-worktree-lifecy",
+      "name": "hostPublic",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "16:DeleteSection:docs/refactor/phase2/03-worktree-lifecycle.md:L20:Repai",
+      "name": "grpc",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "cle.md:L10:UpdateSection:docs/refactor/phase2/03-worktree-lifecycle.md:L",
+      "name": "base",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "r and record removalSection:docs/refactor/phase2/04-lock-and-lease.md:L4",
+      "name": "http",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "eport.md:L4:Phase 4 Test ReportSection:docs/refactor/phase5/01-config-asset-domain.md:L1:Config Asset ",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "领域Section:docs/refactor/phase5/09-schema-v2",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": ".md:L1:Platform Schema v2Section:docs/refactor/",
+      "name": "Operations",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "phase5/10-phase5-test-report.md:L1:Phase 5 �",
+      "name": "Paths",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ient openssl python3 jq perl util-linuxSection:docs/refactor",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "line.md:L69:Linux 环境先安装 git openssh-cl",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "deDefinitionInputTypeAlias:src/utils/http.",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ias:back/services/nodeEnvironment.ts:No",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "tsx:OverrideTypeAlias:back/data/runtime.ts",
+      "name": "artifacts",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": ":ProviderStateTypeAlias:back/data/runtime.ts:RuntimeState",
+      "name": "previous",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/data/runtime.ts:Opera",
+      "name": "run",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/services/nodeEnvironment.ts:NodeDefinitionInput",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:back/shared/pythonEnvironment.ts:PythonEnvironmentOperationType",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ages/error/index.tsx:Error.",
+      "name": "files",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "loopStatus@16:2Function:src",
+      "name": "core",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "/pages/error/index.tsx:Error.g",
+      "name": "forbidden",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "etHealthStatus@27:2Function",
+      "name": "source",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase10/static-audit.cjs:check",
+      "name": "check",
+      "type": "Function",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": ":back/shared/gitSecurity.ts",
+      "name": "references",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "tory-required-for-subscription.md:L5:ContextSectio",
+      "name": "report",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": ":Backup architecture updateSection:docs/refactor/phase2/",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/use-runtime-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "07-failure-recovery.md:L4:Failure recoverySection:docs/refactor/phase2/08",
+      "name": "file",
+      "type": "Const",
+      "filePath": "diagnostics/phase10/use-runtime-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/00-platform-overview.md:L1:Git-native Script Automation / Scheduling Platform",
+      "name": "Git-native Script Automation / Scheduling Platform",
+      "type": "Section",
+      "filePath": "docs/architecture/00-platform-overview.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/05-filesystem-layout.md:L1:Filesystem — 当前布局与后续目标",
+      "name": "Filesystem — 当前布局与后续目标",
+      "type": "Section",
+      "filePath": "docs/architecture/05-filesystem-layout.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/06-database-target.md:L1:Operational Schema v3 / 最终 Domain Schema",
+      "name": "Operational Schema v3 / 最终 Domain Schema",
+      "type": "Section",
+      "filePath": "docs/architecture/06-database-target.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/07-service-boundaries.md:L1:Service Boundaries",
+      "name": "Service Boundaries",
+      "type": "Section",
+      "filePath": "docs/architecture/07-service-boundaries.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/08-temporary-bridges.md:L1:Temporary Bridges / 当前与目标之间的约束",
+      "name": "Temporary Bridges / 当前与目标之间的约束",
+      "type": "Section",
+      "filePath": "docs/architecture/08-temporary-bridges.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/13-task-domain.md:L1:Task Domain — Phase 9",
+      "name": "Task Domain — Phase 9",
+      "type": "Section",
+      "filePath": "docs/architecture/13-task-domain.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/13-task-domain.md:L34:Phase 10 边界",
+      "name": "Phase 10 边界",
+      "type": "Section",
+      "filePath": "docs/architecture/13-task-domain.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/14-execution-engine.md:L1:Execution Engine — Phase 10",
+      "name": "Execution Engine — Phase 10",
+      "type": "Section",
+      "filePath": "docs/architecture/14-execution-engine.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/01-execution-engine.md:L1:Phase 10 — 执行引擎",
+      "name": "Phase 10 — 执行引擎",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/01-execution-engine.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/02-execution-resolver.md:L1:Phase 10 — Execution Resolver",
+      "name": "Phase 10 — Execution Resolver",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/02-execution-resolver.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/03-execution-context.md:L1:Phase 10 — 不可变 ExecutionContext",
+      "name": "Phase 10 — 不可变 ExecutionContext",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/03-execution-context.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/04-runner-v2.md:L1:Phase 10 — Runner v2",
+      "name": "Phase 10 — Runner v2",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/04-runner-v2.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/05-task-run-and-attempts.md:L1:Phase 10 — TaskRun 与 Attempt",
+      "name": "Phase 10 — TaskRun 与 Attempt",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/05-task-run-and-attempts.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/06-runtime-pinning.md:L1:Phase 10 — Runtime pins",
+      "name": "Phase 10 — Runtime pins",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/06-runtime-pinning.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/07-worktree-execution.md:L1:Phase 10 — 直接 Worktree 执行",
+      "name": "Phase 10 — 直接 Worktree 执行",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/07-worktree-execution.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/08-node-module-materialization.md:L1:Phase 10 — Node 模块绑定",
+      "name": "Phase 10 — Node 模块绑定",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/08-node-module-materialization.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/09-retry-concurrency-cancellation.md:L1:Phase 10 — 重试、并发与取消",
+      "name": "Phase 10 — 重试、并发与取消",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/09-retry-concurrency-cancellation.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/10-crash-recovery.md:L1:Phase 10 — 崩溃恢复",
+      "name": "Phase 10 — 崩溃恢复",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/10-crash-recovery.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/11-bridge-removal.md:L1:Phase 10 — 桥接退出",
+      "name": "Phase 10 — 桥接退出",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/11-bridge-removal.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/12-schema-v7.md:L1:Phase 10 — Schema v7",
+      "name": "Phase 10 — Schema v7",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/12-schema-v7.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/13-phase10-test-report.md:L1:Phase 10 — Phase 10 验收报告",
+      "name": "Phase 10 — Phase 10 验收报告",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/13-phase10-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase10/13-phase10-test-report.md:L23:最终结果",
+      "name": "最终结果",
+      "type": "Section",
+      "filePath": "docs/refactor/phase10/13-phase10-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:shell/hook_process.py:result_fd",
+      "name": "result_fd",
+      "type": "Variable",
+      "filePath": "shell/hook_process.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Variable:shell/hook_process.py:report",
+      "name": "report",
+      "type": "Variable",
+      "filePath": "shell/hook_process.py",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/editModal.tsx:EditModal",
+      "name": "EditModal",
+      "type": "Function",
+      "filePath": "src/pages/script/editModal.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "01-managed-subscription-model.md:L4:Managed 订阅模",
+      "name": "cache",
+      "type": "Const",
+      "filePath": "tests/phase10/attach.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "型Section:docs/refactor/phase3/02-managed-git-pipeline.md:L4:Managed Git 管线Section:docs/refactor/ph",
+      "name": "mocks",
+      "type": "Const",
+      "filePath": "tests/phase10/attach.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ase3/03-subscription-worktree-binding.md:L4:订阅与工作区绑定Section:docs/refactor/phase3/04-disc",
+      "name": "Paths",
+      "type": "Const",
+      "filePath": "tests/phase10/attach.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "overy-compatibility.md:L4:Discovery 兼容性Section:docs/refactor/phase3/05-lock-and-consistency.md:L4:锁",
+      "name": "Service",
+      "type": "Const",
+      "filePath": "tests/phase10/attach.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase10/entrypoints.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase10/entrypoints.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase10/entrypoints.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/entrypoints.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "name": "asset",
+      "type": "Const",
+      "filePath": "tests/phase10/entrypoints.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "name": "server",
+      "type": "Const",
+      "filePath": "tests/phase10/entrypoints.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/entrypoints.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.editFile@237:2",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.onDoubleClick@229:2",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.onExpand@225:2",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.cancelEdit@243:2",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.deleteFile@287:2",
+      "name": "b",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.renameFile@336:2",
+      "name": "c",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.saveFile@249:2",
+      "name": "a",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.handleRenameFileCancel@340:2",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.addFile@345:2",
+      "name": "b",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.addFileModalClose@349:2",
+      "name": "d",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.addFileModalClose@349:28.item@370:6",
+      "name": "e",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.initState@387:2",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.action@443:2",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/script/index.tsx:Script.menuAction@456:2",
+      "name": "result",
+      "type": "Const",
+      "filePath": "tests/phase10/execution.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/nodeEnvironment.ts:NodeEnvironmentService.definition.stage@259:8",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/nodeEnvironment.ts:NodeEnvironmentService.diagnostics.scan@903:4",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/nodeEnvironment.ts:NodeEnvironmentService.diff.groups@875:4",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase10/hardening.test.cjs:hook",
+      "name": "hook",
+      "type": "Function",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase10/hardening.test.cjs:attempted",
+      "name": "attempted",
+      "type": "Function",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/pythonEnvironment.ts:PythonEnvironmentService.withMutation.stage@134:8",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/repositoryStorage.ts:exists",
+      "name": "asset",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/repositoryStorage.ts:parseWorktreeList",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/utils/hooks.ts:useCtx",
+      "name": "result",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/utils/hooks.ts:useTheme",
+      "name": "b",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/utils/hooks.ts:useTheme.reloadTheme@44:2",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/utils/hooks.ts:useTheme.fn@52:12.cb@59:4",
+      "name": "Binding",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "dential modelSection:docs/refactor/phase1/02-r",
+      "name": "b",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/runtime.ts:payload",
+      "name": "run",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/runtime.ts:operationDto",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/runtime.ts:endpoint",
+      "name": "Log",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/runtime.ts:runtimeRoutes",
+      "name": "Redactor",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/schema/pythonEnvironmentSchema.ts:createPythonEnvironmentSchema",
+      "name": "owner",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/runtimeOperations.ts:RuntimeOperationService.execute.checkCancel@504:6",
+      "name": "run",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/runtimeOperations.ts:RuntimeOperationService.execute.stage@519:8",
+      "name": "entered",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/configAssets.ts:configAssetRoutes",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase10/helpers.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase10/managed-entrypoints.cjs:parity",
+      "name": "parity",
+      "type": "Function",
+      "filePath": "tests/phase10/managed-entrypoints.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "scription-flow.md:L10:两个入口到共同执行器Section:docs/refactor/02-current-gi",
+      "name": "error",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-entrypoints.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "-inventory.md:L526:tests/phase4/entr",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "4.5/test-inventory.md:L530:tests/phase4/e",
+      "name": "os",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "xecution.test.cjsSection:diagnostics/p",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ypoint.test.cjsSection:diagnostics/phase",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "hase4.5/test-inventory.md:L535:tests/",
+      "name": "manifest",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "40:tests/phase4/legacy-characterization.t",
+      "name": "tool",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "gnostics/phase4.5/test-inventory.md:L5",
+      "name": "s",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "phase4/isolation.test.cjsSection:dia",
+      "name": "runtime",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "est.cjsSection:diagnostics/phase4.5/",
+      "name": "result",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "test-inventory.md:L544:tests/phase4/mig",
+      "name": "run",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ity.md:L1:ADR-002 — No QingLong Compatibilit",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ng-compatibility.md:L5:ContextSect",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ySection:docs/architecture/adr/ADR-002-no-qinglo",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "nceLogModal.forceRemoveDepe",
+      "name": "runtime",
+      "type": "Const",
+      "filePath": "tests/phase10/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": ":docs/refactor/02-current-git-subscription-flow.md:L60:自动发现",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase10/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ion-flow.md:L48:目录命名 / 身份不一致Section",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase10/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "细节Section:docs/refactor/03-current-task-exe",
+      "name": "next",
+      "type": "Const",
+      "filePath": "tests/phase10/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "/ Hooks / LogsSection:docs/refactor/03-current-task-executio",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "cution-flow.md:L4:Task Scheduler / Executor ",
+      "name": "b",
+      "type": "Const",
+      "filePath": "tests/phase10/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "n-flow.md:L6:真实调用链Section:docs/refactor/03-curre",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "nt-task-execution-flow.md:L24:Scheduler 行为边界Section:",
+      "name": "m",
+      "type": "Const",
+      "filePath": "tests/phase10/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "docs/refactor/03-current-task-execution-flow.md:L40:执行",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/scopedEnvironment.ts:scopedEnvironmentRoutes.id@37:2",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase10/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "File:tests/phase5/schema.test.cjs",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "tests/phase5/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "ENV OverridesSection:docs/refactor/p",
+      "name": "Resolver",
+      "type": "Const",
+      "filePath": "tests/phase9/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "hase4/04-environment-resolution.md:L4:Environme",
+      "name": "current",
+      "type": "Const",
+      "filePath": "tests/phase9/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "hase4/05-execution-env-transport.md:L4:Execu",
+      "name": "managed",
+      "type": "Const",
+      "filePath": "tests/phase9/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "nt ResolutionSection:docs/refactor/p",
+      "name": "entry",
+      "type": "Const",
+      "filePath": "tests/phase9/discovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "tor/phase4/03-task-env-overrides.md:L4:Task ",
+      "name": "Current",
+      "type": "Const",
+      "filePath": "tests/phase9/discovery.test.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": [
+    {
+      "id": "proc_18_disabled",
+      "name": "Disabled → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 5
+        },
+        {
+          "symbol": "executionLauncher",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_19_disabled",
+      "name": "Disabled → ExecutionSocketAddress",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "executionLauncher",
+          "step": 4
+        },
+        {
+          "symbol": "executionSocketAddress",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_21_save",
+      "name": "Save → GitResourceError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_26_configassetroutes",
+      "name": "ConfigAssetRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "fs",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_29_inspectsshcredential",
+      "name": "InspectSshCredential → Invalid",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_31_sendnotify",
+      "name": "SendNotify → Post",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_33_render",
+      "name": "Render → Load",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_34_scopedenvironmentpag",
+      "name": "ScopedEnvironmentPage → Load",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_35_scopedenvironmentpag",
+      "name": "ScopedEnvironmentPage → Open",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_36_clientip",
+      "name": "ClientIp → ParseSetting",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_43_create",
+      "name": "Create → GetDb",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_44_cancel",
+      "name": "Cancel → IsInContainer",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_45_create",
+      "name": "Create → UpdateLog",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_46_create",
+      "name": "Create → SendMessage",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_50_cleanup",
+      "name": "Cleanup → NormalizeRetentionDays",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_51_updatelogremovefrequ",
+      "name": "UpdateLogRemoveFrequency → OnBefore",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_52_updatelogremovefrequ",
+      "name": "UpdateLogRemoveFrequency → OnEnd",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_53_updatelogremovefrequ",
+      "name": "UpdateLogRemoveFrequency → OnError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_57_run",
+      "name": "Run → Quote",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "phase",
+          "step": 2
+        },
+        {
+          "symbol": "writeDerived",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_63_configassetroutes",
+      "name": "ConfigAssetRoutes → Status",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "fs",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_64_inspectsshcredential",
+      "name": "InspectSshCredential → RedactGitCredential",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_65_inspectsshcredential",
+      "name": "InspectSshCredential → Cleanup",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_66_inspectsshcredential",
+      "name": "InspectSshCredential → QuoteGitShell",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_70_sendnotify",
+      "name": "SendNotify → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_71_sendnotify",
+      "name": "SendNotify → LogErr",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_72_custom_notify",
+      "name": "Custom_notify → Parse_string",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_73_wecom_app",
+      "name": "Wecom_app → Get_access_token",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_75_dependence",
+      "name": "Dependence → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_76_dependence",
+      "name": "Dependence → Send",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_81_render",
+      "name": "Render → Open",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_83_scopedenvironmentpag",
+      "name": "ScopedEnvironmentPage → Load",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_84_render",
+      "name": "Render → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_85_render",
+      "name": "Render → LoadProfiles",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_86_script",
+      "name": "Script → InitState",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "f",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_87_checkupdate",
+      "name": "CheckUpdate → DisableBody",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_88_onclick",
+      "name": "OnClick → DelSubscription",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_89_onclick",
+      "name": "OnClick → EditSubscription",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_90_onclick",
+      "name": "OnClick → EnabledOrDisabledSubscription",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_91_subscriptionlogmodal",
+      "name": "SubscriptionLogModal → LogEnded",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_97_create",
+      "name": "Create → List",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_98_move",
+      "name": "Move → TaskView",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_105_update",
+      "name": "Update → GetDb",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_106_attemptdirectory",
+      "name": "AttemptDirectory → Directory",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_108_execute",
+      "name": "Execute → Wake",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_109_execute",
+      "name": "Execute → ExecutionLog",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionLog",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_110_save",
+      "name": "Save → PublicKeyFingerprint",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_111_save",
+      "name": "Save → References",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_115_save",
+      "name": "Save → TaskReferenceService",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_116_save",
+      "name": "Save → Repository",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_117_cleanup",
+      "name": "Cleanup → CronStatWhere",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_118_cleanup",
+      "name": "Cleanup → RunningInstanceWhere",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_119_cleanup",
+      "name": "Cleanup → GetDirectorySize",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_121_save",
+      "name": "Save → PublicVariable",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_123_run",
+      "name": "Run → Context",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "phase",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_127_acquireexecutionleas",
+      "name": "AcquireExecutionLease → Exists",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "asset",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_130_taskroutes",
+      "name": "TaskRoutes → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_131_taskroutes",
+      "name": "TaskRoutes → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_133_addfilemodalclose",
+      "name": "AddFileModalClose → GetExtension",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "d",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_138_menuaction",
+      "name": "MenuAction → CanPreviewInMonaco",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "result",
+          "step": 1
+        },
+        {
+          "symbol": "path",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_139_addfilemodalclose",
+      "name": "AddFileModalClose → GetDetail",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "d",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_146_addfilemodalclose",
+      "name": "AddFileModalClose → Find",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "d",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_147_remove",
+      "name": "Remove → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 5
+        },
+        {
+          "symbol": "executionLauncher",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_148_remove",
+      "name": "Remove → ExecutionSocketAddress",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "executionLauncher",
+          "step": 4
+        },
+        {
+          "symbol": "executionSocketAddress",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_149_save",
+      "name": "Save → GitResourceError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_157_run",
+      "name": "Run → Invalid",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_159_render",
+      "name": "Render → Load",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_160_subscriptionmodal",
+      "name": "SubscriptionModal → Load",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_161_subscriptionmodal",
+      "name": "SubscriptionModal → Open",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_162_save",
+      "name": "Save → ParseSetting",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_169_move",
+      "name": "Move → GetDb",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_170_updatetimezone",
+      "name": "UpdateTimezone → IsInContainer",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_171_update",
+      "name": "Update → UpdateLog",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 4
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_172_update",
+      "name": "Update → SendMessage",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_182_run",
+      "name": "Run → Cleanup",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_183_run",
+      "name": "Run → QuoteGitShell",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_191_render",
+      "name": "Render → Open",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_193_subscriptionmodal",
+      "name": "SubscriptionModal → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_197_move",
+      "name": "Move → List",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_200_remove",
+      "name": "Remove → Exists",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "asset",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_202_taskroutes",
+      "name": "TaskRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_207_run",
+      "name": "Run → ScopedEnvironmentError",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "phase",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_211_addfilemodalclose",
+      "name": "AddFileModalClose → CanPreviewInMonaco",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "d",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_218_execute",
+      "name": "Execute → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_219_create",
+      "name": "Create → ExecutionSocketAddress",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        },
+        {
+          "symbol": "executionSocketAddress",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_225_runtimeroutes",
+      "name": "RuntimeRoutes → GetDb",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "Redactor",
+          "step": 1
+        },
+        {
+          "symbol": "Log",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_244_runtimeroutes",
+      "name": "RuntimeRoutes → Status",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "Redactor",
+          "step": 1
+        },
+        {
+          "symbol": "Log",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_249_editmodal",
+      "name": "EditModal → WebSocketManager",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "EditModal",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_250_editmodal",
+      "name": "EditModal → Send",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "EditModal",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_258_repair",
+      "name": "Repair → Exists",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "asset",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_264_save",
+      "name": "Save → ScopedEnvironmentError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_267_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_272_run",
+      "name": "Run → SyncDirectory",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "phase",
+          "step": 2
+        },
+        {
+          "symbol": "writeDerived",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_273_create",
+      "name": "Create → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 4
+        },
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_274_enabled",
+      "name": "Enabled → ExecutionSocketAddress",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        },
+        {
+          "symbol": "executionSocketAddress",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_275_inspectsshcredential",
+      "name": "InspectSshCredential → GitResourceError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_281_testaccess",
+      "name": "TestAccess → Invalid",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_294_testaccess",
+      "name": "TestAccess → Cleanup",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_295_testaccess",
+      "name": "TestAccess → QuoteGitShell",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_296_checkupdate",
+      "name": "CheckUpdate → WebSocketManager",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_297_checkupdate",
+      "name": "CheckUpdate → Send",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_300_withsync",
+      "name": "WithSync → Exists",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "asset",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_307_run",
+      "name": "Run → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "phase",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_308_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_313_enabled",
+      "name": "Enabled → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 4
+        },
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_314_mutatetaskdefinition",
+      "name": "MutateTaskDefinitions → ExecutionSocketAddress",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        },
+        {
+          "symbol": "executionSocketAddress",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_315_run",
+      "name": "Run → GitResourceError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_338_bind",
+      "name": "Bind → ScopedEnvironmentError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_346_mutatetaskdefinition",
+      "name": "MutateTaskDefinitions → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 4
+        },
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_347_publishsubscription",
+      "name": "PublishSubscription → ExecutionSocketAddress",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        },
+        {
+          "symbol": "executionSocketAddress",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_348_remove",
+      "name": "Remove → GitResourceError",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_354_save",
+      "name": "Save → Invalid",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_355_subscription",
+      "name": "Subscription → WebSocketManager",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_356_subscription",
+      "name": "Subscription → Send",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_366_publishsubscription",
+      "name": "PublishSubscription → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 4
+        },
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_367_runsingle",
+      "name": "RunSingle → ExecutionSocketAddress",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        },
+        {
+          "symbol": "executionSocketAddress",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_368_testaccess",
+      "name": "TestAccess → GitResourceError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_377_configassetroutes",
+      "name": "ConfigAssetRoutes → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "fs",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_380_runsingle",
+      "name": "RunSingle → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 4
+        },
+        {
+          "symbol": "executionLauncher",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_389_configassetroutes",
+      "name": "ConfigAssetRoutes → ConfigAssetError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "fs",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_391_attemptdirectory",
+      "name": "AttemptDirectory → ExecutionError",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "ExecutionError",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_392_testaccess",
+      "name": "TestAccess → GitResourceError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 2
+        },
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_406_bind",
+      "name": "Bind → TaskDefinitionError",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_407_handleok",
+      "name": "HandleOk → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_411_repositorypage",
+      "name": "RepositoryPage → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_414_scopedenvironmentpag",
+      "name": "ScopedEnvironmentPage → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_420_subscriptionmodal",
+      "name": "SubscriptionModal → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_431_run",
+      "name": "Run → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "taskRunStatuses",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_440_runtimeroutes",
+      "name": "RuntimeRoutes → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "Redactor",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_443_catalog",
+      "name": "Catalog → RuntimeError",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "entered",
+          "step": 2
+        },
+        {
+          "symbol": "run",
+          "step": 3
+        }
+      ]
+    }
+  ]
+}

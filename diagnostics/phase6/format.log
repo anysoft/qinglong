@@ -1,0 +1,14 @@
+back/data/runtime.ts 117ms
+back/schema/runtimeSchema.ts 5ms
+back/schema/platformV2.ts 6ms
+back/shared/runtime.ts 6ms
+back/services/runtimeOperations.ts 39ms
+back/services/runtimePaths.ts 13ms
+back/services/pyenvProvider.ts 12ms
+back/services/runtimeProcess.ts 6ms
+back/services/runtimeLog.ts 6ms
+back/services/runtimeDiagnostics.ts 5ms
+back/services/runtimeReferences.ts 3ms
+back/services/runtimeBuildEnvironment.ts 3ms
+back/api/runtime.ts 8ms
+src/pages/runtime-python.tsx 29ms

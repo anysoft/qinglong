@@ -1,4 +1,5 @@
 import { ConfigBindings } from '@/components/config-bindings';
+import { TaskResourceReferences } from '@/components/task-resource-references';
 import React, { useEffect, useState } from 'react';
 import {
   Alert,
@@ -159,7 +160,7 @@ export default function RepositoryWorkspacePage() {
       </Space>
       <p style={{ marginTop: 12 }}>
         持久 Git 工作区。Fetch 更新远端引用，Update Worktree
-        才快进本地分支；现有订阅和任务仍使用原执行路径。
+        才快进本地分支；任务和 Code Workspace 直接使用注册 Worktree。
       </p>
       {error && (
         <Alert
@@ -180,6 +181,7 @@ export default function RepositoryWorkspacePage() {
           description={`PID ${diagnostics.lock.owner?.pid || '—'}`}
         />
       )}
+      {id > 0 && <TaskResourceReferences kind="repository" id={id} />}
       <Tabs
         defaultActiveKey="overview"
         items={[
@@ -410,6 +412,7 @@ export default function RepositoryWorkspacePage() {
                       fixed: 'right' as const,
                       render: (_: any, r: any) => (
                         <Space wrap>
+                          <Button size="small" href={`${config.baseUrl}workspace?id=${r.id}`}>Open Workspace</Button>
                           <Button size="small" onClick={() => openTree(r.id)}>
                             Open
                           </Button>
@@ -560,6 +563,7 @@ export default function RepositoryWorkspacePage() {
           </Space>
         }
       >
+        {detail?.id && <TaskResourceReferences kind="worktree" id={detail.id} />}
         <Descriptions column={2} bordered size="small">
           <Descriptions.Item label="Repository">{repo?.name}</Descriptions.Item>
           <Descriptions.Item label="Ref">

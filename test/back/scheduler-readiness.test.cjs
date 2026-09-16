@@ -35,11 +35,11 @@ test('probe failure immediately invalidates a previously ready scheduler',async(
  fail=true;assert.equal(await state.check(),false);
  fail=false;await sleep(40);assert.equal(await state.check(),true);
 });
-test('health uses actual readiness and returns HTTP 503 until recovery',async(t)=>{
+test('health checks actual gRPC transport without requiring Task projection restoration',async(t)=>{
  let ready=false;const express=require('express');
  const {HealthService}=load('back/services/health.ts',{
   typedi:{Service:()=>x=>x},'../loaders/logger':{error(){}},'./http':{},
-  '../schedule/client':{readiness:{check:async()=>ready}},
+  '../schedule/client':{transportHealthy:async()=>ready},
  });
  const service=new HealthService({getServer:()=>({})});
  const app=express();load('back/api/health.ts',{
@@ -56,7 +56,7 @@ test('recovery registration errors propagate while ordinary autosave retains fil
  const source=fs.readFileSync('back/services/cron.ts','utf8');const a=source.indexOf('  public async autosave_crontab('),z=source.indexOf('  public async bootTask',a);
  const js=ts.transpileModule('class Fixture {\n'+source.slice(a,z)+'}\nmodule.exports=Fixture;', {compilerOptions:{target:ts.ScriptTarget.ES2020}}).outputText;
  const module={exports:{}};let files=0;
- new Function('module','isDemoEnv','cronClient','withSchedulerMutation',js)(module,()=>false,{addCron:async()=>{throw Error('registration unavailable');}},fn=>fn());
+ new Function('module','isDemoEnv','cronClient','withSchedulerMutation','TaskResourceResolver',js)(module,()=>false,{addCron:async()=>{throw Error('registration unavailable');}},fn=>fn(),class {async resolve(ids){return ids.map(id=>({task:{id,enabled:true},readiness:{status:'READY'}}));}});
  const fixture=new module.exports();fixture.crontabs=async()=>({data:[]});fixture.setCrontab=async()=>{files++;};fixture.logger={warn(){}};
  await fixture.autosave_crontab();assert.equal(files,1);
  await assert.rejects(fixture.autosave_crontab(true),/registration unavailable/);assert.equal(files,2);

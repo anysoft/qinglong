@@ -1,0 +1,100 @@
+[
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "back/services/executionPaths.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/executionPaths.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/executionPaths.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "ExecutionPaths",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ExecutionPaths' not found\",\n  \"target\": {\n    \"name\": \"ExecutionPaths\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "lock",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'lock' not found\",\n  \"target\": {\n    \"name\": \"lock\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "owner",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'owner' not found\",\n  \"target\": {\n    \"name\": \"owner\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "worktree",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'worktree' not found\",\n  \"target\": {\n    \"name\": \"worktree\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "resourceKey",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'resourceKey' not found\",\n  \"target\": {\n    \"name\": \"resourceKey\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "materializationLease",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'materializationLease' not found\",\n  \"target\": {\n    \"name\": \"materializationLease\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "assertHeld",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'assertHeld' not found\",\n  \"target\": {\n    \"name\": \"assertHeld\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionPaths.ts",
+    "name": "runDirectory",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runDirectory' not found\",\n  \"target\": {\n    \"name\": \"runDirectory\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionNodeBinding.ts",
+    "name": "back/services/executionNodeBinding.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/executionNodeBinding.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/executionNodeBinding.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionNodeBinding.ts",
+    "name": "ExecutionNodeBinding",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ExecutionNodeBinding' not found\",\n  \"target\": {\n    \"name\": \"ExecutionNodeBinding\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionNodeBinding.ts",
+    "name": "journal",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'journal' not found\",\n  \"target\": {\n    \"name\": \"journal\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionNodeBinding.ts",
+    "name": "recover",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'recover' not found\",\n  \"target\": {\n    \"name\": \"recover\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/executionNodeBinding.ts",
+    "name": "prepare",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'prepare' not found\",\n  \"target\": {\n    \"name\": \"prepare\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

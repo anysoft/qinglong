@@ -1,4 +1,5 @@
 export type SockMessageType =
+  | 'runLog'
   | 'ping'
   | 'installDependence'
   | 'uninstallDependence'

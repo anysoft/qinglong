@@ -1,0 +1,9 @@
+{
+  "error": "Target 'remove_empty_dir' not found",
+  "target": {
+    "name": "remove_empty_dir"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

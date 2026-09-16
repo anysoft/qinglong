@@ -1,0 +1,9 @@
+{
+  "error": "Target 'call' not found",
+  "target": {
+    "name": "call"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

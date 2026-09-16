@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: barrier blocks producers, permits existing queue drain, waits for shared writers, releases on timeout
+ok 1 - barrier blocks producers, permits existing queue drain, waits for shared writers, releases on timeout
+  ---
+  duration_ms: 433.263875
+  type: 'test'
+  ...
+# Subtest: barrier rechecks idle under exclusive lock and retains business work on busy timeout
+ok 2 - barrier rechecks idle under exclusive lock and retains business work on busy timeout
+  ---
+  duration_ms: 418.6565
+  type: 'test'
+  ...
+# Subtest: independent process SIGKILL leaves fail-closed marker and releases FD lock for deterministic recovery
+ok 3 - independent process SIGKILL leaves fail-closed marker and releases FD lock for deterministic recovery
+  ---
+  duration_ms: 704.149125
+  type: 'test'
+  ...
+# Subtest: detached nested operations retain their own lease after the request returns
+ok 4 - detached nested operations retain their own lease after the request returns
+  ---
+  duration_ms: 397.289583
+  type: 'test'
+  ...
+# Subtest: inherited process descriptor blocks snapshot after controller releases its lease
+ok 5 - inherited process descriptor blocks snapshot after controller releases its lease
+  ---
+  duration_ms: 1103.056667
+  type: 'test'
+  ...
+# Subtest: Python/JS/TS/Shell binding matrix, missing/wrong environments and effective references
+ok 6 - Python/JS/TS/Shell binding matrix, missing/wrong environments and effective references
+  ---
+  duration_ms: 787.223375
+  type: 'test'
+  ...
+# Subtest: Task > Subscription > Repository precedence and clone retain subscription-owned logical resources
+ok 7 - Task > Subscription > Repository precedence and clone retain subscription-owned logical resources
+  ---
+  duration_ms: 467.904375
+  type: 'test'
+  ...
+# Subtest: readiness responds to source loss, disabled profile and malformed Config/Hook without execution snapshots
+ok 8 - readiness responds to source loss, disabled profile and malformed Config/Hook without execution snapshots
+  ---
+  duration_ms: 389.495541
+  type: 'test'
+  ...
+# Subtest: clone copies Config/Hooks/settings while Task delete keeps independent resources and run history
+ok 9 - clone copies Config/Hooks/settings while Task delete keeps independent resources and run history
+  ---
+  duration_ms: 314.319541
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3367.430708

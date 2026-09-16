@@ -1,0 +1,20 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0 19.8M    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+HTTP/2 200 
+last-modified: Thu, 09 Oct 2025 11:43:24 GMT
+etag: "68e79fdc-13d5cf8"
+content-type: application/octet-stream
+server: nginx
+x-clacks-overhead: GNU Terry Pratchett
+via: 1.1 varnish, 1.1 varnish, 1.1 varnish
+accept-ranges: bytes
+age: 163801
+date: Tue, 15 Sep 2026 15:21:06 GMT
+x-served-by: cache-lga21928-LGA, cache-lga21928-LGA, cache-lga21979-LGA, cache-pdx12322-PDX
+x-cache: MISS, HIT, HIT
+x-cache-hits: 0, 21, 0
+x-timer: S1789485666.005770,VS0,VE1
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+content-length: 20798712
+

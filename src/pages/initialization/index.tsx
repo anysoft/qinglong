@@ -8,7 +8,6 @@ import {
   message,
   Typography,
   Steps,
-  Select,
 } from 'antd';
 import config from '@/utils/config';
 import { history } from '@umijs/max';
@@ -17,13 +16,11 @@ import { request } from '@/utils/http';
 
 const FormItem = Form.Item;
 const { Step } = Steps;
-const { Option } = Select;
 const { Link } = Typography;
 
 const Initialization = () => {
   const [loading, setLoading] = useState(false);
   const [current, setCurrent] = React.useState(0);
-  const [fields, setFields] = useState<any[]>([]);
 
   const next = () => {
     setCurrent(current + 1);
@@ -46,23 +43,6 @@ const Initialization = () => {
         }
       })
       .finally(() => setLoading(false));
-  };
-
-  const submitNotification = (values: any) => {
-    setLoading(true);
-    request
-      .put(`${config.apiPrefix}user/notification/init`, values)
-      .then(({ code, data }) => {
-        if (code === 200) {
-          next();
-        }
-      })
-      .finally(() => setLoading(false));
-  };
-
-  const notificationModeChange = (value: string) => {
-    const _fields = (config.notificationModeMap as any)[value];
-    setFields(_fields || []);
   };
 
   useEffect(() => {
@@ -93,53 +73,6 @@ const Initialization = () => {
             </Button>
           </div>
         </div>
-      ),
-    },
-    {
-      title: intl.get('通知设置'),
-      content: (
-        <Form onFinish={submitNotification} layout="vertical">
-          <Form.Item
-            label={intl.get('通知方式')}
-            name="type"
-            rules={[{ required: true, message: intl.get('请选择通知方式') }]}
-            style={{ maxWidth: 350 }}
-          >
-            <Select
-              onChange={notificationModeChange}
-              placeholder={intl.get('请选择通知方式')}
-            >
-              {config.notificationModes
-                .filter((x) => x.value !== 'closed')
-                .map((x) => (
-                  <Option key={x.value} value={x.value}>
-                    {x.label}
-                  </Option>
-                ))}
-            </Select>
-          </Form.Item>
-          {fields.map((x) => (
-            <Form.Item
-              key={x.label}
-              label={x.label}
-              name={x.label}
-              extra={x.tip}
-              rules={[{ required: x.required }]}
-              style={{ maxWidth: 400 }}
-            >
-              <Input.TextArea
-                autoSize={{ minRows: 1, maxRows: 5 }}
-                placeholder={`请输入${x.label}`}
-              />
-            </Form.Item>
-          ))}
-          <Button type="primary" htmlType="submit" loading={loading}>
-            {intl.get('保存')}
-          </Button>
-          <Button type="link" htmlType="button" onClick={() => next()}>
-            {intl.get('跳过')}
-          </Button>
-        </Form>
       ),
     },
     {

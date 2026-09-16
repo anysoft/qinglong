@@ -1,0 +1,12 @@
+{
+  "host": "Darwin",
+  "tools": {
+    "docker": null,
+    "podman": null,
+    "limactl": null,
+    "colima": null,
+    "gh": null
+  },
+  "status": "PARTIAL",
+  "reason": "No Linux container/VM/CI command found; current host Darwin. No remote runner configured for this task."
+}

@@ -1,0 +1,40 @@
+{
+  "os": "Darwin",
+  "osVersion": "25.6.0",
+  "arch": "arm64",
+  "kernel": "25.6.0",
+  "runner": "local",
+  "uname": "Darwin jonhys-MacBook-Pro.local 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:18:49 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6000 arm64",
+  "node": "v22.23.2",
+  "git": "git version 2.54.0 (Apple Git-157)",
+  "flock": false,
+  "tools": {
+    "node": "v22.23.2",
+    "npm": "11.16.0",
+    "git": "git version 2.54.0 (Apple Git-157)",
+    "python": "Python 3.11.15",
+    "bash": "GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)",
+    "flock": null,
+    "timeout": "timeout (GNU coreutils) 9.11",
+    "tar": "bsdtar 3.5.3 - libarchive 3.7.4 zlib/1.2.12 liblzma/5.4.3 bz2lib/1.0.8",
+    "gzip": null,
+    "sqlite3": "3.51.0 2025-06-12 13:14:41 f0ca7bba1c5e232e5d279fad6338121ab55af0c8c68c84cdfb18ba5114dcaapl (64-bit)",
+    "shellcheck": null
+  },
+  "chrome": null,
+  "filesystem": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s1   926Gi   469Gi   433Gi    52%    2.5M  4.5G    0%   /System/Volumes/Data",
+  "disk": {
+    "type": 26,
+    "bsize": 4096,
+    "blocks": 242837545,
+    "bfree": 113488151,
+    "bavail": 113488151,
+    "files": 4542043154,
+    "ffree": 4539526040
+  },
+  "memory": {
+    "total": 34359738368,
+    "free": 704036864
+  },
+  "status": "UNSUPPORTED_OR_MISSING_TOOLS"
+}

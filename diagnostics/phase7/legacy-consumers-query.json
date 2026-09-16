@@ -1,0 +1,228 @@
+{
+  "processes": [
+    {
+      "id": "proc_202_install",
+      "summary": "Install → RuntimeError",
+      "priority": 0.107,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 10
+    },
+    {
+      "id": "proc_445_runtimebuildenvironm",
+      "summary": "RuntimeBuildEnvironment → RuntimeError",
+      "priority": 0.107,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 5
+    },
+    {
+      "id": "proc_328_dependence",
+      "summary": "Dependence → WebSocketManager",
+      "priority": 0.086,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_329_dependence",
+      "summary": "Dependence → Send",
+      "priority": 0.086,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_86_dependence",
+      "summary": "Dependence → WebSocketManager",
+      "priority": 0.077,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Method:back/services/pyenvProvider.ts:PyenvProvider.install#3",
+      "name": "install",
+      "filePath": "back/services/pyenvProvider.ts",
+      "startLine": 191,
+      "endLine": 211,
+      "module": "Services",
+      "process_id": "proc_202_install",
+      "step_index": 1
+    },
+    {
+      "id": "Function:back/services/runtimeBuildEnvironment.ts:runtimeBuildEnvironment",
+      "name": "runtimeBuildEnvironment",
+      "filePath": "back/services/runtimeBuildEnvironment.ts",
+      "startLine": 4,
+      "endLine": 44,
+      "module": "Services",
+      "process_id": "proc_445_runtimebuildenvironm",
+      "step_index": 1
+    },
+    {
+      "id": "Function:src/pages/setting/dependence.tsx:Dependence",
+      "name": "Dependence",
+      "filePath": "src/pages/setting/dependence.tsx",
+      "startLine": 18,
+      "endLine": 286,
+      "module": "Setting",
+      "process_id": "proc_328_dependence",
+      "step_index": 1
+    },
+    {
+      "id": "Function:src/pages/dependence/index.tsx:Dependence",
+      "name": "Dependence",
+      "filePath": "src/pages/dependence/index.tsx",
+      "startLine": 88,
+      "endLine": 632,
+      "module": "Dependence",
+      "process_id": "proc_86_dependence",
+      "step_index": 1
+    }
+  ],
+  "definitions": [
+    {
+      "id": "File:test/back/dependence-cache-status.test.cjs",
+      "name": "dependence-cache-status.test.cjs",
+      "filePath": "test/back/dependence-cache-status.test.cjs"
+    },
+    {
+      "id": "File:test/back/system-dependence-cache.test.cjs",
+      "name": "system-dependence-cache.test.cjs",
+      "filePath": "test/back/system-dependence-cache.test.cjs"
+    },
+    {
+      "id": "Const:back/config/const.ts:PYTHON_INSTALL_DIR",
+      "name": "PYTHON_INSTALL_DIR",
+      "filePath": "back/config/const.ts",
+      "startLine": 29,
+      "endLine": 29
+    },
+    {
+      "id": "Const:back/config/const.ts:LINUX_DEPENDENCE_COMMAND",
+      "name": "LINUX_DEPENDENCE_COMMAND",
+      "filePath": "back/config/const.ts",
+      "startLine": 57,
+      "endLine": 90
+    },
+    {
+      "id": "File:back/config/const.ts",
+      "name": "const.ts",
+      "filePath": "back/config/const.ts"
+    },
+    {
+      "id": "Interface:back/data/runtime.ts:RuntimeProvider",
+      "name": "RuntimeProvider",
+      "filePath": "back/data/runtime.ts",
+      "startLine": 36,
+      "endLine": 49
+    },
+    {
+      "id": "Interface:back/data/runtime.ts:RuntimeInstallation",
+      "name": "RuntimeInstallation",
+      "filePath": "back/data/runtime.ts",
+      "startLine": 50,
+      "endLine": 62
+    },
+    {
+      "id": "Class:back/data/dependence.ts:Dependence",
+      "name": "Dependence",
+      "filePath": "back/data/dependence.ts",
+      "startLine": 4,
+      "endLine": 25,
+      "module": "Services"
+    },
+    {
+      "id": "Interface:back/data/dependence.ts:DependenceInstance",
+      "name": "DependenceInstance",
+      "filePath": "back/data/dependence.ts",
+      "startLine": 50,
+      "endLine": 52,
+      "module": "Services"
+    },
+    {
+      "id": "File:back/data/dependence.ts",
+      "name": "dependence.ts",
+      "filePath": "back/data/dependence.ts"
+    },
+    {
+      "id": "Const:back/shared/retention.ts:DEPENDENCE_CACHE_TYPES",
+      "name": "DEPENDENCE_CACHE_TYPES",
+      "filePath": "back/shared/retention.ts",
+      "startLine": 6,
+      "endLine": 6
+    },
+    {
+      "id": "TypeAlias:back/shared/retention.ts:DependenceCacheType",
+      "name": "DependenceCacheType",
+      "filePath": "back/shared/retention.ts",
+      "startLine": 8,
+      "endLine": 8
+    },
+    {
+      "id": "Const:tests/phase5/runtime.test.cjs:fn@20:167.task@21:1",
+      "name": "task",
+      "filePath": "tests/phase5/runtime.test.cjs",
+      "startLine": 22,
+      "endLine": 22
+    },
+    {
+      "id": "Const:tests/phase5/runtime.test.cjs:fn@32:122.task@33:1",
+      "name": "task",
+      "filePath": "tests/phase5/runtime.test.cjs",
+      "startLine": 34,
+      "endLine": 34
+    },
+    {
+      "id": "Const:tests/phase5/runtime.test.cjs:fn@45:53.task@46:1",
+      "name": "task",
+      "filePath": "tests/phase5/runtime.test.cjs",
+      "startLine": 47,
+      "endLine": 47
+    },
+    {
+      "id": "File:src/pages/setting/dependence.tsx",
+      "name": "dependence.tsx",
+      "filePath": "src/pages/setting/dependence.tsx"
+    },
+    {
+      "id": "Variable:diagnostics/phase6/prepare-source-cache.py:root",
+      "name": "root",
+      "filePath": "diagnostics/phase6/prepare-source-cache.py",
+      "startLine": 9,
+      "endLine": 9
+    },
+    {
+      "id": "Variable:diagnostics/phase6/prepare-source-cache.py:url",
+      "name": "url",
+      "filePath": "diagnostics/phase6/prepare-source-cache.py",
+      "startLine": 11,
+      "endLine": 11
+    },
+    {
+      "id": "File:diagnostics/phase6/prepare-source-cache.py",
+      "name": "prepare-source-cache.py",
+      "filePath": "diagnostics/phase6/prepare-source-cache.py"
+    },
+    {
+      "id": "Method:back/services/dependence.ts:DependenceService.dependencies#3",
+      "name": "dependencies",
+      "filePath": "back/services/dependence.ts",
+      "startLine": 100,
+      "endLine": 139,
+      "module": "Services"
+    }
+  ],
+  "timing": {
+    "vector": 4.5,
+    "bm25": 174.4,
+    "merge": 0.1,
+    "symbol_lookup": 15.2,
+    "ranking": 0,
+    "formatting": 0.1,
+    "wall": 190.1
+  }
+}

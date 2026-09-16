@@ -1,0 +1,198 @@
+[
+  {
+    "file": "back/services/task.ts",
+    "name": "back/services/task.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/task.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/task.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "allowedKeys",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'allowedKeys' not found\",\n  \"target\": {\n    \"name\": \"allowedKeys\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "positiveId",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'positiveId' not found\",\n  \"target\": {\n    \"name\": \"positiveId\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "TaskService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskService' not found\",\n  \"target\": {\n    \"name\": \"TaskService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "get",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'get' not found\",\n  \"target\": {\n    \"name\": \"get\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "detail",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'detail' not found\",\n  \"target\": {\n    \"name\": \"detail\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "list",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'list' not found\",\n  \"target\": {\n    \"name\": \"list\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "normalize",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'normalize' not found\",\n  \"target\": {\n    \"name\": \"normalize\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "save",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'save' not found\",\n  \"target\": {\n    \"name\": \"save\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "setEnabled",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'setEnabled' not found\",\n  \"target\": {\n    \"name\": \"setEnabled\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "remove",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'remove' not found\",\n  \"target\": {\n    \"name\": \"remove\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "clone",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'clone' not found\",\n  \"target\": {\n    \"name\": \"clone\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "saveRuntimeDefault",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'saveRuntimeDefault' not found\",\n  \"target\": {\n    \"name\": \"saveRuntimeDefault\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/task.ts",
+    "name": "reconcileDiscoveredTasks",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'reconcileDiscoveredTasks' not found\",\n  \"target\": {\n    \"name\": \"reconcileDiscoveredTasks\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionSourceBridge.ts",
+    "name": "back/services/taskExecutionSourceBridge.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/taskExecutionSourceBridge.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/taskExecutionSourceBridge.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionSourceBridge.ts",
+    "name": "TaskExecutionSourceBridge",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskExecutionSourceBridge' not found\",\n  \"target\": {\n    \"name\": \"TaskExecutionSourceBridge\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionSourceBridge.ts",
+    "name": "source",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'source' not found\",\n  \"target\": {\n    \"name\": \"source\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionSourceBridge.ts",
+    "name": "refresh",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'refresh' not found\",\n  \"target\": {\n    \"name\": \"refresh\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "back/services/taskExecutionBridge.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/taskExecutionBridge.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/taskExecutionBridge.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "TaskExecutionBridge",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskExecutionBridge' not found\",\n  \"target\": {\n    \"name\": \"TaskExecutionBridge\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "stop",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'stop' not found\",\n  \"target\": {\n    \"name\": \"stop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "log",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'log' not found\",\n  \"target\": {\n    \"name\": \"log\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskExecutionBridge.ts",
+    "name": "logs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'logs' not found\",\n  \"target\": {\n    \"name\": \"logs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskResourceResolver.ts",
+    "name": "back/services/taskResourceResolver.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/taskResourceResolver.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/taskResourceResolver.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskResourceResolver.ts",
+    "name": "TaskResourceResolver",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'TaskResourceResolver' not found\",\n  \"target\": {\n    \"name\": \"TaskResourceResolver\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskResourceResolver.ts",
+    "name": "resolve",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'resolve' not found\",\n  \"target\": {\n    \"name\": \"resolve\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/taskResourceResolver.ts",
+    "name": "detail",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'detail' not found\",\n  \"target\": {\n    \"name\": \"detail\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

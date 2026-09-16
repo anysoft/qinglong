@@ -1,3 +1,4 @@
+import { platformBarrier } from './services/backup/platform';
 import 'reflect-metadata';
 import OpenService from './services/open';
 import { Container } from 'typedi';
@@ -28,4 +29,4 @@ async function writeFile(data: any) {
   await writeFileWithLock(tokenFile, `${JSON.stringify(data)}${os.EOL}`);
 }
 
-getToken();
+void platformBarrier().then(gate => gate.mutation(getToken)).catch(() => console.error('PLATFORM_BACKUP_IN_PROGRESS'));

@@ -54,13 +54,14 @@ async function fixture(t) {
       logPath: root,
     },
     '../data/cron': {
-      CrontabModel: crons,
-      Crontab: class {
+      SchedulerProjectionModel: crons,
+      SchedulerProjection: class {
         constructor(options) {
           Object.assign(this, { isDisabled: 0 }, options);
         }
       },
     },
+    './taskResourceResolver': { __esModule: true, default: class { async resolve(ids) { return ids.map(id => ({task:{id,enabled:true},readiness:{status:'READY'}})); } } },
     '../data/runningInstance': {},
     '../config/util': { isDemoEnv: () => false },
     '../config/const': {},

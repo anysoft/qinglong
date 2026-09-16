@@ -1,0 +1,10 @@
+const fs=require('fs'),assert=require('node:assert/strict');
+const json=name=>JSON.parse(fs.readFileSync('diagnostics/phase11/'+name+'.json','utf8'));
+const log=fs.readFileSync('diagnostics/phase11/platform-tests-final.log','utf8');
+const counts={};for(const key of ['tests','pass','fail','skipped'])counts[key]=Number(log.match(new RegExp('^# '+key+' (\\d+)$','m'))?.[1]);
+assert.equal(counts.fail,0);assert.equal(counts.pass,382);
+const browser=json('platform-e2e'),typecheck=json('final-typecheck'),cleanup=json('cleanup-result');assert.equal(browser.status,'PASS');assert.equal(typecheck.new.length,0);assert.equal(cleanup.status,'PASS');
+for(const mark of ['browser-multiple-cron-and-real-scheduled-run','browser-webhook-show-once-real-http-and-dedup','real-ssh-git-sync-discovery-event-runner','restart-cron-and-real-git-trigger-execution'])assert.ok(browser.steps.includes(mark));
+for(const file of ['managed-regression.log','prior-managed-regression-final.log'])assert.match(fs.readFileSync('diagnostics/phase11/'+file,'utf8'),/^# fail 0$/m);
+const report={status:'PARTIAL',local_functional_gates:'PASS',linux:json('linux-step0'),platform:counts,managed_execution:{pass:2,fail:0},prior_managed_environments:{pass:3,fail:0},backend_build:'PASS',frontend_build:'PASS',typecheck,browser,cleanup,static_audit:json('static-audit').status,graph:{HEAD:json('graph-review-HEAD').summary,develop:json('graph-review-develop').summary},scope:'Phase 11 only; no commit/push/deployment; stop before Phase 12'};
+fs.writeFileSync('diagnostics/phase11/verification-summary.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({status:report.status,platform:counts,managed_pass:5,browser:browser.status,cleanup:cleanup.status}));

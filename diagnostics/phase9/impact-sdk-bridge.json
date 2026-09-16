@@ -1,0 +1,9 @@
+[
+  {
+    "file": "back/schedule/api.ts",
+    "name": "back/schedule/api.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/schedule/api.ts' not found\",\n  \"target\": {\n    \"name\": \"back/schedule/api.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

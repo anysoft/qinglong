@@ -1,0 +1,96 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+  GitNexus Impact (1.6.12)
+{
+  "target": {
+    "id": "Method:back/app.ts:Application.gracefulShutdown#1",
+    "name": "gracefulShutdown",
+    "type": "Method",
+    "filePath": "back/app.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 5,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 2,
+    "processes_affected": 0,
+    "modules_affected": 2
+  },
+  "byDepthCounts": {
+    "1": 2,
+    "2": 2,
+    "3": 1
+  },
+  "affected_processes": [],
+  "affected_modules": [
+    {
+      "name": "Back",
+      "hits": 4,
+      "impact": "direct"
+    },
+    {
+      "name": "Services",
+      "hits": 1,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Function:back/app.ts:Application.setupWorkerShutdown.shutdown@288:4",
+        "name": "shutdown",
+        "filePath": "back/app.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/app.ts:Application.setupWorkerShutdown#1",
+        "name": "setupWorkerShutdown",
+        "filePath": "back/app.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ],
+    "2": [
+      {
+        "depth": 2,
+        "id": "Method:back/app.ts:Application.startGrpcService#0",
+        "name": "startGrpcService",
+        "filePath": "back/app.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/app.ts:Application.startHttpService#0",
+        "name": "startHttpService",
+        "filePath": "back/app.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ],
+    "3": [
+      {
+        "depth": 3,
+        "id": "Method:back/app.ts:Application.startWorkerProcess#0",
+        "name": "startWorkerProcess",
+        "filePath": "back/app.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ]
+  }
+}

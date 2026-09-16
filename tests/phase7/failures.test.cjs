@@ -1,0 +1,30 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs/promises'),path=require('node:path');
+const {runtimeFixture}=require('../phase6/helpers.cjs');
+test('staging write failure, timeout and cancellation release locks, never publish or damage Runtime',async t=>{
+ const h=await runtimeFixture(t);await h.run('PROVIDER_INSTALL');await h.run('RUNTIME_INSTALL',{version:'3.12.12'});
+ const Service=h.load('back/services/pythonEnvironment.ts').default,service=new Service(h.service),env=await service.create({name:'fault-test',runtime_id:1,requirements:[]});
+ const input={environment:{environment_id:env.id,expected_version:env.version}};
+ h.service.environments.venv.create=async()=>{throw Object.assign(Error('no space'),{code:'ENOSPC'});};
+ let op=await h.service.request('PYTHON_ENV_BUILD',input);assert.equal((await h.service.wait(op.id)).status,'FAILED');assert.equal((await service.environment(env.id)).current_build_id,null);assert.equal((await h.service.runtime(1)).state,'READY');
+ h.service.environments.venv.create=async(ctx,build)=>{await h.service.environments.paths.build(build,true);await ctx.command.run('/bin/sh',['-c','sleep 30 & wait'],ctx.directory,ctx.environment);};
+ op=await h.service.request('PYTHON_ENV_REBUILD',{...input,timeout_seconds:1});assert.equal((await h.service.wait(op.id)).exit_code,124);assert.equal((await service.environment(env.id)).current_build_id,null);
+ op=await h.service.request('PYTHON_ENV_REBUILD',input);await new Promise(r=>setTimeout(r,300));await h.service.cancel(op.id);assert.equal((await h.service.wait(op.id)).status,'CANCELLED');
+ const build=(await service.builds(env.id))[0];await assert.rejects(fs.lstat(path.join(await h.paths.root(),`runtime/python/environments/env-${env.id}/builds/build-${build.id}`)),{code:'ENOENT'});
+ const deletion=await h.service.request('PYTHON_ENV_DELETE',input);assert.equal((await h.service.wait(deletion.id)).status,'SUCCESS');assert.equal((await h.service.references.inspect(1)).count,0);
+});
+test('partial filesystem deletion remains ERROR and retryable; publication DB failure never switches Current',async t=>{
+ const h=await runtimeFixture(t);await h.run('PROVIDER_INSTALL');await h.run('RUNTIME_INSTALL',{version:'3.12.12'});
+ const Service=h.load('back/services/pythonEnvironment.ts').default,service=new Service(h.service),env=await service.create({name:'delete-recovery',runtime_id:1,requirements:[]});
+ const row=await h.PythonEnvironmentBuildModel.create({environment_id:env.id,runtime_id:1,revision_id:env.current_revision_id,state:'READY',health:'HEALTHY',resolved_hash:'initial'});const current=row.get({plain:true});await h.service.environments.paths.build(current,true);await h.PythonEnvironmentModel.update({state:'READY',current_build_id:current.id},{where:{id:env.id}});
+ const input={environment:{environment_id:env.id,expected_version:env.version}};
+ const executor=h.service.environments,original=executor.paths.removeEnvironment.bind(executor.paths);
+ executor.paths.removeEnvironment=async()=>{throw Object.assign(Error('injected removal failure'),{code:'EACCES'});};
+ let op=await h.service.request('PYTHON_ENV_DELETE',input);assert.equal((await h.service.wait(op.id)).status,'FAILED');assert.equal((await service.environment(env.id)).state,'ERROR');assert.equal((await h.service.runtime(1)).state,'READY');
+ executor.paths.removeEnvironment=original;op=await h.service.request('PYTHON_ENV_DELETE',input);assert.equal((await h.service.wait(op.id)).status,'SUCCESS');
+ const second=await service.create({name:'publish-recovery',runtime_id:1,requirements:[]});
+ executor.venv.create=async(ctx,build)=>({...await executor.paths.build(build,true),executable:'/bin/false'});executor.venv.verify=async()=>({fixture:true});executor.pip.install=async()=>{};executor.pip.snapshot=async()=>({resolved:[],freeze:'',resolved_hash:'new'});executor.paths.executable=async()=>({executable:'/bin/false'});
+ const update=h.PythonEnvironmentModel.update;
+ h.PythonEnvironmentModel.update=function(values,...args){if(values.current_build_id)throw Error('INJECTED_CURRENT_COMMIT');return update.call(this,values,...args);};
+ op=await h.service.request('PYTHON_ENV_BUILD',{environment:{environment_id:second.id,expected_version:second.version}});assert.equal((await h.service.wait(op.id)).status,'FAILED');h.PythonEnvironmentModel.update=update;
+ assert.equal((await service.environment(second.id)).current_build_id,null);assert.equal((await service.builds(second.id))[0].state,'FAILED');assert.equal((await h.service.runtime(1)).state,'READY');
+});

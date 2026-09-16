@@ -1,0 +1,41 @@
+TAP version 13
+# Subtest: all existing HTTP provider adapters retain protocol behavior with isolated concurrent state and real HTTP fixture
+not ok 1 - all existing HTTP provider adapters retain protocol behavior with isolated concurrent state and real HTTP fixture
+  ---
+  duration_ms: 1299.930584
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/providers.test.cjs:2:1'
+  failureType: 'testCodeFailure'
+  error: 'webhook'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/providers.test.cjs:4:511)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: two real processes cannot send one outbox concurrently; crash after external send recovers at-least-once
+ok 2 - two real processes cannot send one outbox concurrently; crash after external send recovers at-least-once
+  ---
+  duration_ms: 3106.245792
+  type: 'test'
+  ...
+# Subtest: SIGKILL before terminal commit rolls back; after commit preserves one logical alert for restart
+ok 3 - SIGKILL before terminal commit rolls back; after commit preserves one logical alert for restart
+  ---
+  duration_ms: 1647.896584
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 2
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4969.824625

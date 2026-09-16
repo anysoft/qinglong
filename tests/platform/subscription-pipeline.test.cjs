@@ -40,13 +40,14 @@ test('repository-only prepare, first sync, no-change retry and FF update retain 
   await h.managed.preflight(h.sub.id);
   await h.managed.run(h.sub.id);
   assert.match(await fs.readFile(h.script, 'utf8'), /first/);
-  const original = (await h.CrontabModel.findAll()).map((x) =>
+  const original = (await h.SchedulerProjectionModel.findAll()).map((x) =>
     x.get({ plain: true }),
   );
   assert.equal(original.length, 1);
-  assert.equal(original[0].command, 'task subscription-1/job.js');
+  assert.match(original[0].command, /taskRunSubmit\.js/);
+  assert.ok(!original[0].command.includes('job.js'));
   await h.managed.run(h.sub.id);
-  assert.equal(await h.CrontabModel.count(), 1);
+  assert.equal(await h.SchedulerProjectionModel.count(), 1);
   await fs.writeFile(
     path.join(h.origin, 'job.js'),
     '// cron: 0 9 * * *\nconsole.log("second");\n',
@@ -56,7 +57,7 @@ test('repository-only prepare, first sync, no-change retry and FF update retain 
   await h.managed.run(h.sub.id);
   assert.match(await fs.readFile(h.script, 'utf8'), /second/);
   assert.equal(
-    (await h.CrontabModel.findByPk(original[0].id)).schedule,
+    (await h.SchedulerProjectionModel.findByPk(original[0].id)).schedule,
     '0 9 * * *',
   );
   const id = (await h.sub.reload()).worktree_id;
@@ -76,7 +77,7 @@ for (const state of ['dirty', 'untracked', 'ahead', 'missing', 'detached'])
     );
     const prior = await fs.readFile(h.script, 'utf8'),
       tasks = JSON.stringify(
-        (await h.CrontabModel.findAll()).map((x) => x.get({ plain: true })),
+        (await h.SchedulerProjectionModel.findAll()).map((x) => x.get({ plain: true })),
       );
     if (state === 'missing') await fs.rm(wt.local_path, { recursive: true });
     else if (state === 'detached')
@@ -95,7 +96,7 @@ for (const state of ['dirty', 'untracked', 'ahead', 'missing', 'detached'])
     assert.equal(await fs.readFile(h.script, 'utf8'), prior);
     assert.equal(
       JSON.stringify(
-        (await h.CrontabModel.findAll()).map((x) => x.get({ plain: true })),
+        (await h.SchedulerProjectionModel.findAll()).map((x) => x.get({ plain: true })),
       ),
       tasks,
     );
@@ -111,7 +112,7 @@ test('discovery failure preserves last good state and retry at same commit succe
   assert.equal(await fs.readFile(h.script, 'utf8'), prior);
   await h.sub.update({ whitelist: '' });
   await h.managed.run(h.sub.id);
-  assert.equal(await h.CrontabModel.count(), 1);
+  assert.equal(await h.SchedulerProjectionModel.count(), 1);
 });
 test('shared repository/branch binding is retained and blocks worktree deletion', async (t) => {
   const h = await pipeline(t);
@@ -137,7 +138,7 @@ test('fetch, scanner, copy and Cron failures preserve Tasks; every failure can r
   const h = await pipeline(t);
   await h.managed.preflight(h.sub.id);
   await h.managed.run(h.sub.id);
-  const saved = await h.CrontabModel.findOne(),
+  const saved = await h.SchedulerProjectionModel.findOne(),
     prior = await fs.readFile(h.script, 'utf8');
   await t.test('network failure never reaches discovery', async () => {
     const fetch = h.storage.fetch;
@@ -149,7 +150,7 @@ test('fetch, scanner, copy and Cron failures preserve Tasks; every failure can r
     await assert.rejects(h.managed.run(h.sub.id));
     h.storage.fetch = fetch;
     assert.equal(await fs.readFile(h.script, 'utf8'), prior);
-    assert.equal(await h.CrontabModel.count(), 1);
+    assert.equal(await h.SchedulerProjectionModel.count(), 1);
   });
   await fs.rm(path.join(h.origin, 'job.js'));
   await fs.writeFile(
@@ -173,7 +174,7 @@ test('fetch, scanner, copy and Cron failures preserve Tasks; every failure can r
       await assert.rejects(h.managed.run(h.sub.id));
       client.addCron = add;
       assert.equal(await fs.readFile(h.script, 'utf8'), prior);
-      const tasks = await h.CrontabModel.findAll();
+      const tasks = await h.SchedulerProjectionModel.findAll();
       assert.equal(tasks.length, 1);
       assert.equal(tasks[0].id, saved.id);
       assert.equal(tasks[0].command, saved.command);
@@ -184,9 +185,9 @@ test('fetch, scanner, copy and Cron failures preserve Tasks; every failure can r
     async () => {
       await h.managed.run(h.sub.id);
       await assert.rejects(fs.stat(h.script), { code: 'ENOENT' });
-      const rows = await h.CrontabModel.findAll();
+      const rows = await h.SchedulerProjectionModel.findAll();
       assert.equal(rows.length, 1);
-      assert.equal(rows[0].command, 'task subscription-1/new.js');
+      assert.match(rows[0].command, /taskRunSubmit\.js/); assert.doesNotMatch(rows[0].command, /subscription-1\/new\.js/);
     },
   );
   await t.test('copy failure leaves current scripts intact', async () => {
@@ -298,5 +299,5 @@ for (const failure of [
     }
     await assert.rejects(h.managed.run(h.sub.id));
     assert.equal(await fs.readFile(h.script, 'utf8'), prior);
-    assert.equal(await h.CrontabModel.count(), 1);
+    assert.equal(await h.SchedulerProjectionModel.count(), 1);
   });

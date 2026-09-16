@@ -1,0 +1,33 @@
+[PREPARING]
+[CREATING_VENV]
+[INSTALLING_DEPENDENCIES]
+Using pip 26.2.1 from /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip (python 3.13)
+Looking in indexes: http://127.0.0.1:64483/simple
+Collecting ql-phase7-fail==1.0.0
+  Downloading ql_phase7_fail-1.0.0.tar.gz (410 bytes)
+  Getting requirements to build wheel: started
+  Running command Getting requirements to build wheel
+  Traceback (most recent call last):
+    File "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+      main()
+      ~~~~^^
+    File "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+      json_out["return_val"] = hook(**hook_input["kwargs"])
+                               ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 143, in get_requires_for_build_wheel
+      return hook(config_settings)
+    File "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/tmp/runtime/python/operation-18/tmp/pip-install-wl4jeso4/ql-phase7-fail_007b816dd95847208752f795c2fd4319/backend.py", line 3, in get_requires_for_build_wheel
+      raise RuntimeError('CONTROLLED_BUILD_FAILURE')
+  RuntimeError: CONTROLLED_BUILD_FAILURE
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> No available output.
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  full command: /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/runtime/python/environments/env-1/builds/build-4/venv/bin/python /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/runtime/python/environments/env-1/builds/build-4/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py get_requires_for_build_wheel /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/tmp/runtime/python/operation-18/tmp/tmpmmveluwr
+  cwd: /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-NR9GVW/tmp/runtime/python/operation-18/tmp/pip-install-wl4jeso4/ql-phase7-fail_007b816dd95847208752f795c2fd4319
+  Getting requirements to build wheel: finished with status 'error'
+ERROR: Failed to build 'ql-phase7-fail' when getting requirements to build wheel
+[DEPENDENCY_BUILD_FAILED]

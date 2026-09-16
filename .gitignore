@@ -38,3 +38,12 @@ __pycache__
 
 # Local security audit artifacts
 /audit/
+
+# Private CI working state and generated upload bundles
+/diagnostics/ci/
+/ci-artifacts/
+/ci-packages/
+/scripts/ci/tools/node_modules/
+/diagnostics/ci-browser/
+
+ci-downloaded/

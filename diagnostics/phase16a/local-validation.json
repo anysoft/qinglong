@@ -1,0 +1,190 @@
+{
+  "phase": "16A",
+  "status": "PARTIAL",
+  "foundation": "PASS",
+  "workflow": "WORKFLOW_IMPLEMENTED",
+  "github": "GITHUB_HOSTED_RUNNER_NOT_YET_EXECUTED",
+  "github_run_url": null,
+  "host": {
+    "os": "Darwin",
+    "arch": "arm64",
+    "node": "v22.23.2"
+  },
+  "base_commit": "e27f2380905a5e272466db7b937f825785fd0bd1",
+  "uncommitted_phase16a_changes": true,
+  "core": {
+    "status": "PASS",
+    "tests": {
+      "tests": 467,
+      "pass": 464,
+      "fail": 0,
+      "skipped": 3,
+      "skip_names": [
+        "simultaneous cold and expired lookups share one successful refresh",
+        "waiters with different configuration do not reuse another key",
+        "lock timeout falls back while a holder is still alive"
+      ]
+    },
+    "typecheck": {
+      "historical": 22,
+      "remaining": 22,
+      "new": 0,
+      "diagnostics": [],
+      "raw_failed": true,
+      "status": "PASS"
+    },
+    "preflight": {
+      "arch": "arm64",
+      "os": "Darwin"
+    }
+  },
+  "managed": {
+    "status": "PASS",
+    "environment": {
+      "tests": 3,
+      "pass": 3,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    },
+    "execution": {
+      "tests": 2,
+      "pass": 2,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    },
+    "shell": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    }
+  },
+  "browser": {
+    "phase12": "PASS",
+    "phase14": "PASS",
+    "phase12_security": {
+      "api_responses": 233,
+      "websocket_frames": 8,
+      "leaks": 0
+    },
+    "phase14_api": 1507,
+    "phase14_websocket": 115,
+    "phase14_run_log_frames": 63
+  },
+  "runtimes": [
+    {
+      "kind": "managed-runtime",
+      "version": "3.13.15",
+      "status": "PASS",
+      "fixture_removed": true,
+      "metadata": {
+        "disk_usage_bytes": 249251319,
+        "version_text": "3.13.15 (main, Sep 16 2026, 16:23:01) [Clang 21.0.0 (clang-2100.3.34.2)]",
+        "version": "3.13.15",
+        "implementation": "CPython",
+        "platform": "Darwin",
+        "architecture": "arm64",
+        "executable_sha256": "1b50b437f87313f2625a1858d55dadd48e2e33826d0ac4d440945a46f4977d20",
+        "provider_revision": "c293de3650a2d08ea36c5f6f0d55c5a3841b0c72",
+        "build_timestamp": "2026-09-16T08:24:12.812Z"
+      }
+    },
+    {
+      "kind": "managed-node",
+      "version": "24.21.0",
+      "status": "PASS",
+      "fixture_removed": true,
+      "metadata": {
+        "executable_sha256": "e4b5a3af0e05c75de2eae013904145f40fe7fc2a6e6f17510128bf45cca4e79b",
+        "node_version": "24.21.0",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "versions": {
+          "node": "24.21.0",
+          "acorn": "8.18.0",
+          "ada": "4.0.0",
+          "amaro": "1.1.11",
+          "ares": "1.34.8",
+          "brotli": "1.2.0",
+          "cldr": "48.0",
+          "icu": "78.3",
+          "llhttp": "9.4.3",
+          "merve": "1.2.2",
+          "modules": "137",
+          "napi": "10",
+          "nbytes": "0.1.4",
+          "ncrypto": "0.0.1",
+          "nghttp2": "1.70.0",
+          "nghttp3": "",
+          "ngtcp2": "",
+          "openssl": "3.5.8",
+          "simdjson": "4.6.7",
+          "simdutf": "6.4.0",
+          "sqlite": "3.53.4",
+          "tz": "2026c",
+          "undici": "7.29.1",
+          "unicode": "17.0",
+          "uv": "1.52.1",
+          "uvwasi": "0.0.23",
+          "v8": "13.6.233.17-node.53",
+          "zlib": "1.3.2.1-motley-8002e91",
+          "zstd": "1.5.7"
+        },
+        "npm_version": "11.19.0",
+        "npm_cli_sha256": "8e5f6f3429f8cdbe693cdc29904e9d5a7b127a494bd15c804bd54c7403bfcbe7",
+        "corepack": true,
+        "artifact": "node-v24.21.0-darwin-arm64.tar.xz",
+        "artifact_sha256": "6239d4cf92d864487ec8cd3615038f7b67e7f58b77b21cd2f09ea9fbd68065fe",
+        "checksum_source": "https://nodejs.org/dist/v24.21.0/SHASUMS256.txt",
+        "signature_verified": false,
+        "distribution_source": "https://nodejs.org/dist",
+        "installed_at": "2026-09-16T08:24:31.151Z"
+      }
+    }
+  ],
+  "cleanup": {
+    "core": {
+      "status": "PASS",
+      "owned_processes_signalled": 0,
+      "owned_root_removed": true
+    },
+    "browser": {
+      "status": "PASS",
+      "owned_processes_signalled": 0,
+      "owned_root_removed": true
+    },
+    "managed": "PASS"
+  },
+  "artifacts": [
+    {
+      "file": "ci-packages/phase16a-core-1789546202617-e27f2380905a.tar.gz",
+      "bytes": 31012,
+      "sha256": "4e7828a41f86f91f7111ee4af585b1d910c4f5df9fa6b299fc18c3a0538cd0f5"
+    },
+    {
+      "file": "ci-packages/phase16a-browser-1789546202827-e27f2380905a.tar.gz",
+      "bytes": 3381857,
+      "sha256": "a5a0dbf89164c88e6cafffdb419bc76c757d6db9d772f69ad4f383aa69368ef1"
+    }
+  ],
+  "qualification": "NOT_PHASE15_QUALIFICATION",
+  "gitnexus": {
+    "head": {
+      "changed_count": 258,
+      "affected_count": 8,
+      "changed_files": 93,
+      "risk_level": "high"
+    },
+    "develop": {
+      "changed_count": 6033,
+      "affected_count": 359,
+      "changed_files": 2268,
+      "risk_level": "critical"
+    },
+    "develop_truncated": true,
+    "full_rebuild_after_incremental_inconsistency": true
+  }
+}

@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: exact catalog filters implementations, prereleases and injection
+ok 1 - exact catalog filters implementations, prereleases and injection
+  ---
+  duration_ms: 757.42725
+  type: 'test'
+  ...
+# Subtest: provider setup, two runtimes, explicit verify/repair/remove preserve sibling and snapshots
+ok 2 - provider setup, two runtimes, explicit verify/repair/remove preserve sibling and snapshots
+  ---
+  duration_ms: 4112.881209
+  type: 'test'
+  ...
+# Subtest: cross-service lock, cancel and timeout keep operation ownership and descendants bounded
+ok 3 - cross-service lock, cancel and timeout keep operation ownership and descendants bounded
+  ---
+  duration_ms: 2024.272917
+  type: 'test'
+  ...
+# Subtest: paths reject unknown roots, version symlink, parent symlink and executable escape
+ok 4 - paths reject unknown roots, version symlink, parent symlink and executable escape
+  ---
+  duration_ms: 398.391542
+  type: 'test'
+  ...
+# Subtest: recovery never kills stored PID or adopts unknown versions; reference checks block removal
+ok 5 - recovery never kills stored PID or adopts unknown versions; reference checks block removal
+  ---
+  duration_ms: 1637.586916
+  type: 'test'
+  ...
+# Subtest: build environment excludes backend/user secrets and logs redact split UTF-8 secrets
+ok 6 - build environment excludes backend/user secrets and logs redact split UTF-8 secrets
+  ---
+  duration_ms: 292.821375
+  type: 'test'
+  ...
+# Subtest: frozen v2 migrates to identical fresh v3, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+ok 7 - frozen v2 migrates to identical fresh v3, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+  ---
+  duration_ms: 738.840208
+  type: 'test'
+  ...
+# Subtest: v2 late migration failure rolls back runtime tables, metadata and data, then retries
+ok 8 - v2 late migration failure rolls back runtime tables, metadata and data, then retries
+  ---
+  duration_ms: 290.17875
+  type: 'test'
+  ...
+# Subtest: tampered v2 signature and unknown version fail closed
+ok 9 - tampered v2 signature and unknown version fail closed
+  ---
+  duration_ms: 300.265667
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9667.62075

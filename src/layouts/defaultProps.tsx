@@ -30,11 +30,13 @@ export default {
         icon: <DashboardOutlined />,
         component: '@/pages/dashboard/index',
       },
+      { path: '/runs', name: 'Runs', icon: <DashboardOutlined />, component: '@/pages/runs/index' },
+      { path: '/notifications', name: 'Notifications', icon: <SettingOutlined />, component: '@/pages/notifications/index' },
       {
-        path: '/crontab',
-        name: intl.get('定时任务'),
+        path: '/tasks',
+        name: 'Tasks',
         icon: <IconFont type="ql-icon-crontab" />,
-        component: '@/pages/crontab/index',
+        component: '@/pages/tasks/index',
       },
       {
         path: '/subscription',
@@ -61,10 +63,16 @@ export default {
         component: '@/pages/config/index',
       },
       {
-        path: '/script',
-        name: intl.get('脚本管理'),
+        path: '/workspace',
+        name: 'Code Workspace',
         icon: <IconFont type="ql-icon-script" />,
-        component: '@/pages/script/index',
+        component: '@/pages/workspace',
+      },
+      {
+        path: '/runtime-python',
+        name: 'Runtime',
+        icon: <SettingOutlined />,
+        component: '@/pages/runtime-python',
       },
       {
         path: '/dependence',

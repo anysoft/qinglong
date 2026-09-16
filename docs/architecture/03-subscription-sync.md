@@ -1,13 +1,11 @@
-# Subscription Sync / Discovery — 当前实现
+# Subscription Sync / Discovery — Phase 11
 
-Repository 必填 → 仓库当前凭据 → initialize/fetch → ensure Worktree → clean/local history 检查 → FF-only → Discovery Adapter → scripts staging / CronService publication → 成功水位。当前只支持 branch，不声称 tag/commit Ref Model 已实现。
+Repository → credentials → initialize/fetch → ensure Worktree → clean/local history checks → FF-only update → Discovery v2 → Git Update Trigger events → success watermark。
 
-不存在 Legacy/Managed 双模式、URL-only、credential override 或 convert。内部 `ManagedSubscriptionService` 名字表示唯一正常流水线，不是可切换模式。`subscription-ID` 是发布 namespace；展示名与 URL 不构成文件所有权。
+唯一正常流水线是 ManagedSubscriptionService。Subscription 保存 Repository、branch/Worktree、同步计划与同步状态；DiscoveryPolicies 独立保存文件筛选、语言和 enabled。Worktree 是源代码位置，不复制 scripts，不发布 Task command，不恢复 crontab.list。
 
-`SubscriptionDiscoveryAdapter` 是 Backend discovery-only 边界：接收已锁定 Worktree、策略、私有 stage 和当前 DB Task 投影，产出变更与诊断，不 clone/fetch、不拥有 DB、不调用 HTTP、不读取 live crontab.list。保留 nested、extensions、include/exclude、cron/name 注释、autoAdd/autoDel；无 cron 的文件给出 NO_CRON_METADATA，不随机创建任务。
+锁序为 Subscription → Repository → Worktree。Discovery API 独立 Preview/Apply 同样获取现有 Worktree guard。Reconcile 在数据库单事务中更新 Task 与 DISCOVERY Cron，保留用户资源。Task 身份为 subscription_id + SHA256(relative_path)。源移除先停用并保留资源/历史，重命名建立新身份。
 
-identity 为 subscription_id + SHA256(relative_path)，持久化 source_relative_path/discovery_key/discovery_definition。更新仅替换仍等于上次 source definition 的字段，保留用户覆盖、ENV、hook、禁用和运行状态。仅 reconcile 当前订阅所拥有的定义与文件。
+Git 更新成功但 Discovery 失败时，保留已更新的 Worktree，last_sync_phase 标为 DISCOVERY，成功水位不推进；同 HEAD 重试可重新 reconcile。Git Trigger 在其后，以之前成功水位与当前提交生成唯一事件。
 
-锁序继续 subscription → repository → worktree → publication → scheduler mutation。私有 stage、上一版 live、DB/scheduler 补偿与 recovery material 保留。失败不覆盖成功水位，补偿失败保留材料并要求恢复；无变更 commit 仍可重试 reconcile。
-
-B01 scripts 与 B15 Crontab 仍是执行桥。完整 metadata DSL、Task/Schedule v2 与 reconcile engine 属于后续 Phase 9–11。
+详见 [流程图](15-discovery-triggers.md)、[Discovery](../refactor/phase11/06-discovery-v2.md) 和 [Ownership](../refactor/phase11/07-discovery-ownership.md)。

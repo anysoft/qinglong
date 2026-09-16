@@ -1,0 +1,28 @@
+TAP version 13
+# Executing (default): SELECT * FROM TaskRuns  ORDER BY id DESC LIMIT 20
+# Executing (default): SELECT * FROM TaskRuns WHERE id<:cursor ORDER BY id DESC LIMIT 20
+# {"first":[100000,99999,99998,99997,99996,99995,99994,99993,99992,99991,99990,99989,99988,99987,99986,99985,99984,99983,99982,99981],"cursor":"eyJpZCI6OTk5ODF9","second":[]}
+# Subtest: 100,000 runs use SQL aggregates/keysets; 100MB log reads stay bounded; 10,000 outbox due query uses index
+not ok 1 - 100,000 runs use SQL aggregates/keysets; 100MB log reads stay bounded; 10,000 outbox due query uses index
+  ---
+  duration_ms: 2834.706458
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/scale.test.cjs:2:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'id')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase13/scale.test.cjs:2:1054)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3055.03175

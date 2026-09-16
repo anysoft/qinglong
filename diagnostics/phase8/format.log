@@ -1,0 +1,12 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+back/api/nodeEnvironment.ts 125ms
+back/data/nodeEnvironment.ts 12ms
+back/schema/nodeEnvironmentSchema.ts 6ms
+back/services/nodeDistributionProvider.ts 15ms
+back/services/nodeEnvironment.ts 41ms
+back/services/nodeEnvironmentReferences.ts 3ms
+back/services/nodeEnvironmentResolver.ts 5ms
+back/services/nodePackageManager.ts 19ms
+back/services/nodePaths.ts 8ms
+back/shared/nodeEnvironment.ts 2ms
+src/components/NodeRuntime/index.tsx 51ms

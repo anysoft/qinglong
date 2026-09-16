@@ -1,0 +1,2 @@
+const {attach}=require('./managed-helper.cjs');
+(async()=>{const h=await attach(process.argv[2],process.argv[3]),id=Number(process.argv[4]),env=await h.service.environment(id);const op=await h.operations.request('PYTHON_ENV_REBUILD',{environment:{environment_id:id,expected_version:env.version},timeout_seconds:180});process.send({id:op.id});setInterval(()=>{},1000);})().catch(error=>{console.error(error);process.exit(1);});

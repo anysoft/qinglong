@@ -1,0 +1,77 @@
+TAP version 13
+# Subtest: barrier blocks producers, permits existing queue drain, waits for shared writers, releases on timeout
+ok 1 - barrier blocks producers, permits existing queue drain, waits for shared writers, releases on timeout
+  ---
+  duration_ms: 420.163875
+  type: 'test'
+  ...
+# Subtest: barrier rechecks idle under exclusive lock and retains business work on busy timeout
+ok 2 - barrier rechecks idle under exclusive lock and retains business work on busy timeout
+  ---
+  duration_ms: 387.212458
+  type: 'test'
+  ...
+# Subtest: independent process SIGKILL leaves fail-closed marker and releases FD lock for deterministic recovery
+ok 3 - independent process SIGKILL leaves fail-closed marker and releases FD lock for deterministic recovery
+  ---
+  duration_ms: 682.897167
+  type: 'test'
+  ...
+# Subtest: portable archive roundtrip preserves secret bytes and safe links inside authenticated envelope
+ok 4 - portable archive roundtrip preserves secret bytes and safe links inside authenticated envelope
+  ---
+  duration_ms: 183.372417
+  type: 'test'
+  ...
+# Subtest: wrong passphrase, ciphertext/header/tag tamper, truncation and trailing data fail closed
+ok 5 - wrong passphrase, ciphertext/header/tag tamper, truncation and trailing data fail closed
+  ---
+  duration_ms: 477.116667
+  type: 'test'
+  ...
+# Subtest: archive rejects path traversal, drives, links, special entries and bounded sizes
+ok 6 - archive rejects path traversal, drives, links, special entries and bounded sizes
+  ---
+  duration_ms: 26.254708
+  type: 'test'
+  ...
+# Subtest: symlink followed by parent traversal cannot escape; hardlinked source and symlinked root rejected
+ok 7 - symlink followed by parent traversal cannot escape; hardlinked source and symlinked root rejected
+  ---
+  duration_ms: 5.387542
+  type: 'test'
+  ...
+# Subtest: extractor never follows an archived symlink parent and never accepts duplicate entries or trailing bytes
+ok 8 - extractor never follows an archived symlink parent and never accepts duplicate entries or trailing bytes
+  ---
+  duration_ms: 16.174333
+  type: 'test'
+  ...
+# Subtest: 100 MiB data streams through archive and encryption with bounded process memory
+ok 9 - 100 MiB data streams through archive and encryption with bounded process memory
+  ---
+  duration_ms: 734.757917
+  type: 'test'
+  ...
+# {"input_bytes":104857600,"peak_rss_delta":72187904}
+# Subtest: SQLite WAL snapshot is self-contained, consistent and FK verified
+ok 10 - SQLite WAL snapshot is self-contained, consistent and FK verified
+  ---
+  duration_ms: 27.42325
+  type: 'test'
+  ...
+# Subtest: SQLite foreign key violation fails validation without modifying database
+ok 11 - SQLite foreign key violation fails validation without modifying database
+  ---
+  duration_ms: 10.63475
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1788.960666

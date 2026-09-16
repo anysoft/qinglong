@@ -1,0 +1,83 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: frozen platform v1 upgrades transactionally to identical fresh latest schema and preserves data/hooks
+ok 1 - frozen platform v1 upgrades transactionally to identical fresh latest schema and preserves data/hooks
+  ---
+  duration_ms: 564.932584
+  type: 'test'
+  ...
+# Subtest: migration failure rolls back DDL, data, hooks and version then permits retry
+ok 2 - migration failure rolls back DDL, data, hooks and version then permits retry
+  ---
+  duration_ms: 127.4095
+  type: 'test'
+  ...
+# Subtest: unknown and tampered v1 databases fail closed without touching user rows
+ok 3 - unknown and tampered v1 databases fail closed without touching user rows
+  ---
+  duration_ms: 112.697083
+  type: 'test'
+  ...
+# Subtest: late migration failure after old columns drop restores all v1 data and hook fields
+ok 4 - late migration failure after old columns drop restores all v1 data and hook fields
+  ---
+  duration_ms: 126.072542
+  type: 'test'
+  ...
+# Subtest: frozen v2 migrates to identical fresh v3, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+ok 5 - frozen v2 migrates to identical fresh v3, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+  ---
+  duration_ms: 557.846875
+  type: 'test'
+  ...
+# Subtest: v2 late migration failure rolls back runtime tables, metadata and data, then retries
+ok 6 - v2 late migration failure rolls back runtime tables, metadata and data, then retries
+  ---
+  duration_ms: 130.022083
+  type: 'test'
+  ...
+# Subtest: tampered v2 signature and unknown version fail closed
+ok 7 - tampered v2 signature and unknown version fail closed
+  ---
+  duration_ms: 228.341333
+  type: 'test'
+  ...
+# Subtest: empty data root creates v3, all bridge/core tables, and restarts without schema writes
+ok 8 - empty data root creates v3, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 275.212209
+  type: 'test'
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 9 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 119.544333
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+ok 10 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 140.38375
+  type: 'test'
+  ...
+# Subtest: unexpected schema objects are rejected on restart
+ok 11 - unexpected schema objects are rejected on restart
+  ---
+  duration_ms: 112.574667
+  type: 'test'
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 12 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 1.688792
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1278.032334

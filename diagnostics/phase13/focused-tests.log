@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: threshold, recovery, per-status overrides, atomic outbox and real HTTP delivery
+ok 1 - threshold, recovery, per-status overrides, atomic outbox and real HTTP delivery
+  ---
+  duration_ms: 2103.278834
+  type: 'test'
+  ...
+# Subtest: delivery retry/dead/manual identity and channel archive preserve history; execution does not wait
+ok 2 - delivery retry/dead/manual identity and channel archive preserve history; execution does not wait
+  ---
+  duration_ms: 1303.704292
+  type: 'test'
+  ...
+# Subtest: run events are ordered, attempts retain retry results, resource/log APIs omit secret values
+ok 3 - run events are ordered, attempts retain retry results, resource/log APIs omit secret values
+  ---
+  duration_ms: 1191.967042
+  type: 'test'
+  ...
+# Subtest: terminal transaction rollback includes health and outbox
+ok 4 - terminal transaction rollback includes health and outbox
+  ---
+  duration_ms: 668.771791
+  type: 'test'
+  ...
+# Subtest: two real processes cannot send one outbox concurrently; crash after external send recovers at-least-once
+ok 5 - two real processes cannot send one outbox concurrently; crash after external send recovers at-least-once
+  ---
+  duration_ms: 3919.294375
+  type: 'test'
+  ...
+# Subtest: 100,000 runs use SQL aggregates/keysets; 100MB log reads stay bounded; 10,000 outbox due query uses index
+ok 6 - 100,000 runs use SQL aggregates/keysets; 100MB log reads stay bounded; 10,000 outbox due query uses index
+  ---
+  duration_ms: 3745.585375
+  type: 'test'
+  ...
+# Subtest: actual frozen v8 migrates to identical fresh v9; rollback/retry/history and legacy policy preserved
+ok 7 - actual frozen v8 migrates to identical fresh v9; rollback/retry/history and legacy policy preserved
+  ---
+  duration_ms: 1697.358167
+  type: 'test'
+  ...
+# Subtest: provider transport refuses unsafe URLs, redirects, and oversized responses; secrets never escape error codes
+ok 8 - provider transport refuses unsafe URLs, redirects, and oversized responses; secrets never escape error codes
+  ---
+  duration_ms: 4919.805708
+  type: 'test'
+  ...
+# Subtest: Run logs reject forged cursors and symlinks; old log API and cleaner cannot delete Run logs
+ok 9 - Run logs reject forged cursors and symlinks; old log API and cleaner cannot delete Run logs
+  ---
+  duration_ms: 721.97475
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5881.549708

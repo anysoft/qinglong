@@ -1,0 +1,10 @@
+{
+  "host": "Darwin",
+  "architecture": "arm64",
+  "linux_validation": "PARTIAL",
+  "executed_on_linux": false,
+  "docker": null,
+  "podman": null,
+  "qualification_phase": 15,
+  "note": "No Linux execution performed. No workflow or release configuration changed."
+}

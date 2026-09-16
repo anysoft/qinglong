@@ -1,0 +1,322 @@
+TAP version 13
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=dd2316f30d5303c4c5f5e415a727fce1de441b0a -> dd2316f30d5303c4c5f5e415a727fce1de441b0a
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Real Git fetch/update -> discovery -> typed Git events, dedup and source filters
+not ok 1 - Real Git fetch/update -> discovery -> typed Git events, dedup and source filters
+  ---
+  duration_ms: 5161.667208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:18:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:12:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=d56be18d59ee22bd0e2fabe8fcffe28f658184f2 -> d56be18d59ee22bd0e2fabe8fcffe28f658184f2
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Real Git dirty refuses sync and preserves Task definition
+not ok 2 - Real Git dirty refuses sync and preserves Task definition
+  ---
+  duration_ms: 4852.162417
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:57:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:28:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=fb390fcacf5ff10d425ee4fd2db4b95fcab8bb4c -> fb390fcacf5ff10d425ee4fd2db4b95fcab8bb4c
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Real Git untracked refuses sync and preserves Task definition
+not ok 3 - Real Git untracked refuses sync and preserves Task definition
+  ---
+  duration_ms: 4771.570875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:57:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:28:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=40e6883439daa38696f5a8c757997cf3539f9eec -> 40e6883439daa38696f5a8c757997cf3539f9eec
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Real Git ahead refuses sync and preserves Task definition
+not ok 4 - Real Git ahead refuses sync and preserves Task definition
+  ---
+  duration_ms: 4855.196042
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:57:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:28:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=450a1a0babaa8dda5c4daec3ed314ab6b443684f -> 450a1a0babaa8dda5c4daec3ed314ab6b443684f
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Real Git missing refuses sync and preserves Task definition
+not ok 5 - Real Git missing refuses sync and preserves Task definition
+  ---
+  duration_ms: 4758.746167
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:57:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:28:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=04638470d9e5b06f314d5629f862443a8b4075f7 -> 04638470d9e5b06f314d5629f862443a8b4075f7
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Real Git detached refuses sync and preserves Task definition
+not ok 6 - Real Git detached refuses sync and preserves Task definition
+  ---
+  duration_ms: 4669.803667
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:57:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:28:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=06bd221a05b3e355e91020e76dc54096cd1a57b4 -> 06bd221a05b3e355e91020e76dc54096cd1a57b4
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Discovery failure leaves successful Git update recoverable at same commit
+not ok 7 - Discovery failure leaves successful Git update recoverable at same commit
+  ---
+  duration_ms: 4739.977125
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:74:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:35:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=f09f11fedeaf9d691eeb8163255da982570bd20d -> f09f11fedeaf9d691eeb8163255da982570bd20d
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: branch deleted stops before Discovery and Git triggers
+not ok 8 - branch deleted stops before Discovery and Git triggers
+  ---
+  duration_ms: 4743.39775
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:93:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:42:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=c0a048249a48b272680d9001fd080f9003587703 -> c0a048249a48b272680d9001fd080f9003587703
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: force push stops before Discovery and Git triggers
+not ok 9 - force push stops before Discovery and Git triggers
+  ---
+  duration_ms: 4628.832667
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:93:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:42:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=9a435745957ae5b90e2f56f7c8ba6c280a7d8d4f -> 9a435745957ae5b90e2f56f7c8ba6c280a7d8d4f
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: storage missing stops before Discovery and Git triggers
+not ok 10 - storage missing stops before Discovery and Git triggers
+  ---
+  duration_ms: 4634.962208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:93:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:42:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=a83123e108616f1451517e5fe2f507a654c91bda -> a83123e108616f1451517e5fe2f507a654c91bda
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: disabled credential stops before Discovery and Git triggers
+not ok 11 - disabled credential stops before Discovery and Git triggers
+  ---
+  duration_ms: 4475.799958
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:93:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:42:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=301d8b7d3c5c4add3e88cf909cf9ee75670fc766 -> 301d8b7d3c5c4add3e88cf909cf9ee75670fc766
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Managed leases block overlapping sync, update and binding; symlink is ignored
+not ok 12 - Managed leases block overlapping sync, update and binding; symlink is ignored
+  ---
+  duration_ms: 4704.631625
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:118:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:50:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=aaced2e67982f0f03c36ba6cd3e1d6bed0bb23a3 -> aaced2e67982f0f03c36ba6cd3e1d6bed0bb23a3
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Branch rebinding updates discovered source while retaining old Worktree
+not ok 13 - Branch rebinding updates discovered source while retaining old Worktree
+  ---
+  duration_ms: 4643.672
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:129:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:127:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async pipeline (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:7:133)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase11/git-pipeline.test.cjs:58:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 0
+# fail 13
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 62157.847416

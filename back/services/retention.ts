@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { Op } from 'sequelize';
 import { Service } from 'typedi';
 import config from '../config';
-import { CrontabStatModel } from '../data/cronStats';
+import { TaskStatModel } from '../data/cronStats';
 import { sequelize } from '../data';
 import { InstanceStatus, RunningInstanceModel } from '../data/runningInstance';
 import { AuthDataType, SystemModel } from '../data/system';
@@ -75,7 +75,7 @@ export default class RetentionService {
           })
         : 0,
       policy.cronStatRetentionDays > 0
-        ? CrontabStatModel.count({
+        ? TaskStatModel.count({
             where: cronStatWhere(policy.cronStatRetentionDays),
           })
         : 0,
@@ -116,7 +116,7 @@ export default class RetentionService {
           : 0;
       const cronStats =
         preview.policy.cronStatRetentionDays > 0
-          ? await CrontabStatModel.destroy({
+          ? await TaskStatModel.destroy({
               where: cronStatWhere(preview.policy.cronStatRetentionDays),
               transaction,
             })

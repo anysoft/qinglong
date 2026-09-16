@@ -17,6 +17,8 @@ module.exports = function loadSecurityModule(
     if (Object.hasOwn(mocks, name)) return mocks[name];
     if (name.startsWith('.')) {
       const target = path.resolve(path.dirname(file), name);
+      if (target === path.resolve(__dirname, '../../back/config') && Object.hasOwn(mocks, '../config')) return mocks['../config'];
+      if (fs.existsSync(path.join(target, 'index.ts'))) return loadSecurityModule(path.join(target, 'index.ts'), mocks, cache);
       if (fs.existsSync(`${target}.ts`)) {
         return loadSecurityModule(`${target}.ts`, mocks, cache);
       }

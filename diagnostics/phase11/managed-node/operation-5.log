@@ -1,0 +1,10 @@
+[PREPARING]
+[INSTALLING_TOOLCHAIN]
+{
+  "node": ">=18.12"
+}
+true
+
+added 1 package in 2s
+true
+10.17.1

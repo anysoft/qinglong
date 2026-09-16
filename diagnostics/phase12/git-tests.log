@@ -1,0 +1,53 @@
+TAP version 13
+# Subtest: real Git literal paths, status, bounded diff, stage/unstage and explicit author commit
+ok 1 - real Git literal paths, status, bounded diff, stage/unstage and explicit author commit
+  ---
+  duration_ms: 8979.265917
+  type: 'test'
+  ...
+# Subtest: real local origin push success, non-fast-forward and credential write capability
+ok 2 - real local origin push success, non-fast-forward and credential write capability
+  ---
+  duration_ms: 5617.019792
+  type: 'test'
+  ...
+# Subtest: actual execution lock and recovery journals block reads and mutations
+ok 3 - actual execution lock and recovery journals block reads and mutations
+  ---
+  duration_ms: 3117.203042
+  type: 'test'
+  ...
+# {"phase12":"git-scale","changes":5000,"response_bytes":5094,"rss":274628608}
+# Subtest: 5k Git changes paginate without full response
+ok 4 - 5k Git changes paginate without full response
+  ---
+  duration_ms: 2432.479625
+  type: 'test'
+  ...
+# Subtest: separate process Execution, GitSync, editor and Backup ownership block editor writes
+ok 5 - separate process Execution, GitSync, editor and Backup ownership block editor writes
+  ---
+  duration_ms: 4763.086709
+  type: 'test'
+  ...
+# Subtest: Git deletion beneath missing parent, rename, binary diff and literal wildcard pathspecs
+ok 6 - Git deletion beneath missing parent, rename, binary diff and literal wildcard pathspecs
+  ---
+  duration_ms: 8985.760666
+  type: 'test'
+  ...
+# Subtest: Git conflicts reject commit and unborn unstage preserves subsequently edited content
+ok 7 - Git conflicts reject commit and unborn unstage preserves subsequently edited content
+  ---
+  duration_ms: 3769.585583
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 37943.141625

@@ -1,0 +1,69 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: Runtime API returns tracked async IDs, denies arbitrary commands/paths and sanitizes every error
+ok 1 - Runtime API returns tracked async IDs, denies arbitrary commands/paths and sanitizes every error
+  ---
+  duration_ms: 1868.6915
+  type: 'test'
+  ...
+# Subtest: Environment API scopes, strict input, definitions, optimistic revisions, reference protection and safe empty deletion
+ok 2 - Environment API scopes, strict input, definitions, optimistic revisions, reference protection and safe empty deletion
+  ---
+  duration_ms: 2342.270042
+  type: 'test'
+  ...
+# Subtest: frozen v3 to v4 is transactional, preserves runtime/history and equals fresh signature
+ok 3 - frozen v3 to v4 is transactional, preserves runtime/history and equals fresh signature
+  ---
+  duration_ms: 515.724833
+  type: 'test'
+  ...
+# Subtest: v3 tampering fails closed before any schema or user-data changes
+ok 4 - v3 tampering fails closed before any schema or user-data changes
+  ---
+  duration_ms: 239.650583
+  type: 'test'
+  ...
+# Subtest: actual SQLite constraints protect immutable revisions, build identity, current ownership and runtime FKs
+not ok 5 - actual SQLite constraints protect immutable revisions, build identity, current ownership and runtime FKs
+  ---
+  duration_ms: 97.751166
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase7/schema.test.cjs:22:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /IMMUTABLE/. Input:
+    
+    'SequelizeUniqueConstraintError: Validation error'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: 'Validation error'
+  stack: |-
+    Database.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/lib/dialects/sqlite/query.js:185:27)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/lib/dialects/sqlite/query.js:183:50
+    new Promise (<anonymous>)
+    Query.run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/lib/dialects/sqlite/query.js:183:12)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/lib/sequelize.js:315:28
+    async waitForActual (node:assert:644:5)
+    async Function.rejects (node:assert:767:25)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase7/schema.test.cjs:25:2)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase7/schema.test.cjs:25:2)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2614.009125

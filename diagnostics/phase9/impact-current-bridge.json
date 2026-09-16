@@ -1,0 +1,199 @@
+{
+  "target": {
+    "id": "Class:back/services/cron.ts:SchedulerBridgeService",
+    "name": "SchedulerBridgeService",
+    "type": "Class",
+    "filePath": "back/services/cron.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 18,
+  "risk": "MEDIUM",
+  "riskSharedAxes": "MEDIUM",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 9,
+    "processes_affected": 0,
+    "modules_affected": 0
+  },
+  "byDepthCounts": {
+    "1": 9,
+    "2": 8,
+    "3": 1
+  },
+  "affected_processes": [],
+  "affected_modules": [],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "File:back/api/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/api/cron.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/api/tasks.ts",
+        "name": "tasks.ts",
+        "filePath": "back/api/tasks.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/loaders/bootAfter.ts",
+        "name": "bootAfter.ts",
+        "filePath": "back/loaders/bootAfter.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/loaders/initData.ts",
+        "name": "initData.ts",
+        "filePath": "back/loaders/initData.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/schedule/api.ts",
+        "name": "api.ts",
+        "filePath": "back/schedule/api.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/services/managedSubscription.ts",
+        "name": "managedSubscription.ts",
+        "filePath": "back/services/managedSubscription.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/services/script.ts",
+        "name": "script.ts",
+        "filePath": "back/services/script.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/services/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/services/taskExecutionBridge.ts",
+        "name": "taskExecutionBridge.ts",
+        "filePath": "back/services/taskExecutionBridge.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      }
+    ],
+    "2": [
+      {
+        "depth": 2,
+        "id": "File:back/api/index.ts",
+        "name": "index.ts",
+        "filePath": "back/api/index.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/script.ts",
+        "name": "script.ts",
+        "filePath": "back/api/script.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/api/subscription.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/app.ts",
+        "name": "app.ts",
+        "filePath": "back/app.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/gitSubscription.ts",
+        "name": "gitSubscription.ts",
+        "filePath": "back/gitSubscription.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/loaders/app.ts",
+        "name": "app.ts",
+        "filePath": "back/loaders/app.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/loaders/initTask.ts",
+        "name": "initTask.ts",
+        "filePath": "back/loaders/initTask.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/grpc.ts",
+        "name": "grpc.ts",
+        "filePath": "back/services/grpc.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      }
+    ],
+    "3": [
+      {
+        "depth": 3,
+        "id": "File:back/loaders/express.ts",
+        "name": "express.ts",
+        "filePath": "back/loaders/express.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      }
+    ]
+  }
+}

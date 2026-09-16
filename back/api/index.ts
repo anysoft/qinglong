@@ -1,5 +1,10 @@
+import { protectApiMutations } from '../services/backup/apiLifetime';
+import observabilityRoutes from './observability';
+import backupRoutes from './backups';
 import { Router } from 'express';
 import user from './user';
+import runtimeRoutes from './runtime';
+import taskRoutes from './tasks';
 import configAssets from './configAssets';
 import log from './log';
 import cron from './cron';
@@ -18,7 +23,11 @@ import workspaceRoutes from './workspace';
 
 export default () => {
   const app = Router();
+  backupRoutes(app);
   user(app);
+  runtimeRoutes(app);
+  observabilityRoutes(app);
+  taskRoutes(app);
   configAssets(app);
   log(app);
   cron(app);
@@ -35,5 +44,5 @@ export default () => {
   clientIp(app);
   retention(app);
 
-  return app;
+  return protectApiMutations(app);
 };

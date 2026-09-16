@@ -1,0 +1,33 @@
+{
+  "status": "PARTIAL",
+  "platform_tests": {
+    "tests": 348,
+    "pass": 345,
+    "fail": 0,
+    "skipped": 3
+  },
+  "backend_build": "PASS",
+  "frontend_build": "PASS",
+  "typecheck": {
+    "status": "PARTIAL",
+    "original": 53,
+    "remaining": 53,
+    "new": [],
+    "raw_exit_code": 2,
+    "regression_gate": "PASS"
+  },
+  "node_offline": "PASS",
+  "node_lifecycle": "PASS",
+  "python_offline": "PASS",
+  "browser_fresh": "PASS",
+  "official_node_versions": [
+    "24.21.0",
+    "22.23.2"
+  ],
+  "toolchain_reinstall": "PASS",
+  "owned_fixture_cleanup": "PASS",
+  "linux": "PARTIAL_NOT_EXECUTED",
+  "phase9_started": false,
+  "phase8_committed": false,
+  "phase7_checkpoint": "33564c77"
+}

@@ -1,0 +1,3837 @@
+{
+  "summary": {
+    "changed_count": 447,
+    "affected_count": 38,
+    "changed_files": 238,
+    "risk_level": "critical"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:PHASE13_REPORT.md:L1:Phase 13 Status: PARTIAL",
+      "name": "Phase 13 Status: PARTIAL",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L25:Tests / Builds / Typecheck",
+      "name": "Tests / Builds / Typecheck",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L31:Database Changes / Migration",
+      "name": "Database Changes / Migration",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L37:TaskRun Event Model / Timeline",
+      "name": "TaskRun Event Model / Timeline",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L41:Run History / Attempt History / Resource Snapshot",
+      "name": "Run History / Attempt History / Resource Snapshot",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L47:Log Architecture / Live Logs",
+      "name": "Log Architecture / Live Logs",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L55:Dashboard / Statistics",
+      "name": "Dashboard / Statistics",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L61:Task Health / Failure Incident / Recovery",
+      "name": "Task Health / Failure Incident / Recovery",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L67:Notification Channel Domain / Channel Providers / Secret Handling",
+      "name": "Notification Channel Domain / Channel Providers / Secret Handling",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L77:Task Notification Policy",
+      "name": "Task Notification Policy",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L83:Notification Outbox / Atomic Transaction",
+      "name": "Notification Outbox / Atomic Transaction",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L89:Notification Delivery / Retry",
+      "name": "Notification Delivery / Retry",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L95:Crash Recovery",
+      "name": "Crash Recovery",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L101:API / UI",
+      "name": "API / UI",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L107:Browser / Fresh E2E",
+      "name": "Browser / Fresh E2E",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L111:Security / Performance / Static Audit",
+      "name": "Security / Performance / Static Audit",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L119:Retention / Phase 14 Preconditions",
+      "name": "Retention / Phase 14 Preconditions",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L125:Bridge Cleanup",
+      "name": "Bridge Cleanup",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L134:Platform Regression / Important Findings",
+      "name": "Platform Regression / Important Findings",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L146:Linux Gate / Known Limitations",
+      "name": "Linux Gate / Known Limitations",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE13_REPORT.md:L157:Recommended Next Phase",
+      "name": "Recommended Next Phase",
+      "type": "Section",
+      "filePath": "PHASE13_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L1:Temporary Bridges — 退出条件登记",
+      "name": "Temporary Bridges — 退出条件登记",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L130:Phase 11 — Discovery / Triggers",
+      "name": "Phase 11 — Discovery / Triggers",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:TEMPORARY_BRIDGES.md:L145:Phase 13 — Observability / Notifications",
+      "name": "Phase 13 — Observability / Notifications",
+      "type": "Section",
+      "filePath": "TEMPORARY_BRIDGES.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/log.ts:blacklist",
+      "name": "blacklist",
+      "type": "Const",
+      "filePath": "back/api/log.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/observability.ts:observabilityRoutes",
+      "name": "observabilityRoutes",
+      "type": "Function",
+      "filePath": "back/api/observability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/observability.ts:observabilityRoutes.query@12:2",
+      "name": "query",
+      "type": "Function",
+      "filePath": "back/api/observability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/observability.ts:observabilityRoutes.channels@16:2",
+      "name": "channels",
+      "type": "Const",
+      "filePath": "back/api/observability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/api/observability.ts:observabilityRoutes.logs@16:2",
+      "name": "logs",
+      "type": "Const",
+      "filePath": "back/api/observability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/observability.ts:observabilityRoutes.endpoint@19:2",
+      "name": "endpoint",
+      "type": "Function",
+      "filePath": "back/api/observability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/api/tasks.ts:taskRoutes",
+      "name": "taskRoutes",
+      "type": "Function",
+      "filePath": "back/api/tasks.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/app.ts:Application",
+      "name": "Application",
+      "type": "Class",
+      "filePath": "back/app.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/app.ts:Application.gracefulShutdown#1",
+      "name": "gracefulShutdown",
+      "type": "Method",
+      "filePath": "back/app.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/schema/observabilitySchema.ts:createObservabilitySchema",
+      "name": "createObservabilitySchema",
+      "type": "Function",
+      "filePath": "back/schema/observabilitySchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator",
+      "name": "ExecutionAttemptCoordinator",
+      "type": "Class",
+      "filePath": "back/services/executionAttemptCoordinator.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator.run#5",
+      "name": "run",
+      "type": "Method",
+      "filePath": "back/services/executionAttemptCoordinator.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator.run.event@121:10",
+      "name": "event",
+      "type": "Function",
+      "filePath": "back/services/executionAttemptCoordinator.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionRedactor.ts:ExecutionRedactor",
+      "name": "ExecutionRedactor",
+      "type": "Class",
+      "filePath": "back/services/executionRedactor.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/executionRedactor.ts:ExecutionRedactor.constructor#2",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/executionRedactor.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/executionRedactor.ts:ExecutionRedactor.flush#1",
+      "name": "flush",
+      "type": "Method",
+      "filePath": "back/services/executionRedactor.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/executionService.ts:ExecutionService",
+      "name": "ExecutionService",
+      "type": "Class",
+      "filePath": "back/services/executionService.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/executionService.ts:ExecutionService.execute#5",
+      "name": "execute",
+      "type": "Method",
+      "filePath": "back/services/executionService.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/executionService.ts:ExecutionService.recover#0",
+      "name": "recover",
+      "type": "Method",
+      "filePath": "back/services/executionService.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/log.ts:LogService",
+      "name": "LogService",
+      "type": "Class",
+      "filePath": "back/services/log.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/log.ts:LogService.checkFilePath#2",
+      "name": "checkFilePath",
+      "type": "Method",
+      "filePath": "back/services/log.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/notificationChannels.ts:channelProviders",
+      "name": "channelProviders",
+      "type": "Const",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/notificationChannels.ts:flags",
+      "name": "flags",
+      "type": "Const",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/notificationChannels.ts:strict",
+      "name": "strict",
+      "type": "Function",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/notificationChannels.ts:secrets",
+      "name": "secrets",
+      "type": "Function",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/notificationChannels.ts:NotificationChannels",
+      "name": "NotificationChannels",
+      "type": "Class",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationChannels.ts:NotificationChannels.list#0",
+      "name": "list",
+      "type": "Method",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationChannels.ts:NotificationChannels.get#1",
+      "name": "get",
+      "type": "Method",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationChannels.ts:NotificationChannels.save#2",
+      "name": "save",
+      "type": "Method",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationChannels.ts:NotificationChannels.archive#2",
+      "name": "archive",
+      "type": "Method",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationChannels.ts:NotificationChannels.test#1",
+      "name": "test",
+      "type": "Method",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationChannels.ts:NotificationChannels.policy#1",
+      "name": "policy",
+      "type": "Method",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationChannels.ts:NotificationChannels.savePolicy#2",
+      "name": "savePolicy",
+      "type": "Method",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationChannels.ts:NotificationChannels.send#3",
+      "name": "send",
+      "type": "Method",
+      "filePath": "back/services/notificationChannels.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/notificationDispatcher.ts:DeliveryPaths",
+      "name": "DeliveryPaths",
+      "type": "Class",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:DeliveryPaths.lock#1",
+      "name": "lock",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/notificationDispatcher.ts:NotificationDispatcher",
+      "name": "NotificationDispatcher",
+      "type": "Class",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.constructor#4",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.start#0",
+      "name": "start",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.stop#0",
+      "name": "stop",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.tick#0",
+      "name": "tick",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.deliver#1",
+      "name": "deliver",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.retry#1",
+      "name": "retry",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.list#1",
+      "name": "list",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationDispatcher.ts:NotificationDispatcher.attempts#1",
+      "name": "attempts",
+      "type": "Method",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/notificationDispatcher.ts:notificationDispatcher",
+      "name": "notificationDispatcher",
+      "type": "Const",
+      "filePath": "back/services/notificationDispatcher.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/notificationTransport.ts:notificationUrl",
+      "name": "notificationUrl",
+      "type": "Function",
+      "filePath": "back/services/notificationTransport.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/notificationTransport.ts:notificationTransport",
+      "name": "notificationTransport",
+      "type": "Const",
+      "filePath": "back/services/notificationTransport.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationTransport.ts:notificationTransport.request#2",
+      "name": "request",
+      "type": "Method",
+      "filePath": "back/services/notificationTransport.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/notificationTransport.ts:notificationTransport.request.timer@38:4",
+      "name": "timer",
+      "type": "Function",
+      "filePath": "back/services/notificationTransport.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/notificationTransport.ts:notificationTransport.request.text@62:51",
+      "name": "text",
+      "type": "Function",
+      "filePath": "back/services/notificationTransport.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notificationTransport.ts:notificationTransport.post#2",
+      "name": "post",
+      "type": "Method",
+      "filePath": "back/services/notificationTransport.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/notify.ts:NotificationService",
+      "name": "NotificationService",
+      "type": "Class",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.notify#3",
+      "name": "notify",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.gotify#0",
+      "name": "gotify",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.goCqHttpBot#0",
+      "name": "goCqHttpBot",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.serverChan#0",
+      "name": "serverChan",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.pushDeer#0",
+      "name": "pushDeer",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.chat#0",
+      "name": "chat",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.bark#0",
+      "name": "bark",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.telegramBot#0",
+      "name": "telegramBot",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.dingtalkBot#0",
+      "name": "dingtalkBot",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.weWorkBot#0",
+      "name": "weWorkBot",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.weWorkApp#0",
+      "name": "weWorkApp",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.aibotk#0",
+      "name": "aibotk",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.iGot#0",
+      "name": "iGot",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.pushPlus#0",
+      "name": "pushPlus",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.wePlusBot#0",
+      "name": "wePlusBot",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.lark#0",
+      "name": "lark",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.email#0",
+      "name": "email",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.pushMe#0",
+      "name": "pushMe",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.ntfy#0",
+      "name": "ntfy",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.wxPusherBot#0",
+      "name": "wxPusherBot",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.wxPusherSpt#0",
+      "name": "wxPusherSpt",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.chronocat#0",
+      "name": "chronocat",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.webhook#0",
+      "name": "webhook",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.openiLink#0",
+      "name": "openiLink",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/notify.ts:NotificationService.wpush#0",
+      "name": "wpush",
+      "type": "Method",
+      "filePath": "back/services/notify.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/runLog.ts:RunLogService",
+      "name": "RunLogService",
+      "type": "Class",
+      "filePath": "back/services/runLog.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runLog.ts:RunLogService.constructor#1",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/runLog.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runLog.ts:RunLogService.read#2",
+      "name": "read",
+      "type": "Method",
+      "filePath": "back/services/runLog.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/runLog.ts:RunLogService.read.identity@22:4",
+      "name": "identity",
+      "type": "Const",
+      "filePath": "back/services/runLog.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/runLog.ts:RunLogService.read.width@78:8",
+      "name": "width",
+      "type": "Const",
+      "filePath": "back/services/runLog.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runLog.ts:RunLogService.metadata#1",
+      "name": "metadata",
+      "type": "Method",
+      "filePath": "back/services/runLog.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/runLogFollow.ts:RunLogFollow",
+      "name": "RunLogFollow",
+      "type": "Class",
+      "filePath": "back/services/runLogFollow.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runLogFollow.ts:RunLogFollow.constructor#2",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "back/services/runLogFollow.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runLogFollow.ts:RunLogFollow.handle#1",
+      "name": "handle",
+      "type": "Method",
+      "filePath": "back/services/runLogFollow.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runLogFollow.ts:RunLogFollow.tick#0",
+      "name": "tick",
+      "type": "Method",
+      "filePath": "back/services/runLogFollow.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runLogFollow.ts:RunLogFollow.close#0",
+      "name": "close",
+      "type": "Method",
+      "filePath": "back/services/runLogFollow.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/runObservability.ts:terminalStatuses",
+      "name": "terminalStatuses",
+      "type": "Const",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/runObservability.ts:positiveId",
+      "name": "positiveId",
+      "type": "Function",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/runObservability.ts:runEvent",
+      "name": "runEvent",
+      "type": "Function",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/runObservability.ts:selectRows",
+      "name": "selectRows",
+      "type": "Function",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/runObservability.ts:decodeJson",
+      "name": "decodeJson",
+      "type": "Function",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/runObservability.ts:publicRun",
+      "name": "publicRun",
+      "type": "Function",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/runObservability.ts:RunObservability",
+      "name": "RunObservability",
+      "type": "Class",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runObservability.ts:RunObservability.readyCount#0",
+      "name": "readyCount",
+      "type": "Method",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/runObservability.ts:RunObservability.readyCount.ready@79:4",
+      "name": "ready",
+      "type": "Const",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runObservability.ts:RunObservability.list#1",
+      "name": "list",
+      "type": "Method",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runObservability.ts:RunObservability.detail#1",
+      "name": "detail",
+      "type": "Method",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runObservability.ts:RunObservability.attempts#1",
+      "name": "attempts",
+      "type": "Method",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runObservability.ts:RunObservability.events#2",
+      "name": "events",
+      "type": "Method",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runObservability.ts:RunObservability.health#1",
+      "name": "health",
+      "type": "Method",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/runObservability.ts:RunObservability.summary#2",
+      "name": "summary",
+      "type": "Method",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/services/runObservability.ts:RunObservability.summary.total@275:4",
+      "name": "total",
+      "type": "Const",
+      "filePath": "back/services/runObservability.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/task.ts:TaskService",
+      "name": "TaskService",
+      "type": "Class",
+      "filePath": "back/services/task.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/task.ts:TaskService.clone#3",
+      "name": "clone",
+      "type": "Method",
+      "filePath": "back/services/task.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/taskExecutionBridge.ts:TaskExecutionBridge",
+      "name": "TaskExecutionBridge",
+      "type": "Class",
+      "filePath": "back/services/taskExecutionBridge.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/taskExecutionBridge.ts:TaskExecutionBridge.statuses#1",
+      "name": "statuses",
+      "type": "Method",
+      "filePath": "back/services/taskExecutionBridge.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Interface:back/services/taskHookLifecycle.ts:LifecycleOptions",
+      "name": "LifecycleOptions",
+      "type": "Interface",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Class:back/services/taskHookLifecycle.ts:TaskHookLifecycle",
+      "name": "TaskHookLifecycle",
+      "type": "Class",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run#3",
+      "name": "run",
+      "type": "Method",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run.phase@126:4",
+      "name": "phase",
+      "type": "Function",
+      "filePath": "back/services/taskHookLifecycle.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/shared/notificationConfig.ts:notificationRequiredFields",
+      "name": "notificationRequiredFields",
+      "type": "Const",
+      "filePath": "back/shared/notificationConfig.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/notificationConfig.ts:validateNotificationConfig",
+      "name": "validateNotificationConfig",
+      "type": "Function",
+      "filePath": "back/shared/notificationConfig.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:back/shared/operationalSchema.ts:PLATFORM_SCHEMA_VERSION",
+      "name": "PLATFORM_SCHEMA_VERSION",
+      "type": "Const",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:back/shared/operationalSchema.ts:initializeOperationalSchema",
+      "name": "initializeOperationalSchema",
+      "type": "Function",
+      "filePath": "back/shared/operationalSchema.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase13/GRAPH_REVIEW.md:L1:Phase13 GitNexus Review",
+      "name": "Phase13 GitNexus Review",
+      "type": "Section",
+      "filePath": "diagnostics/phase13/GRAPH_REVIEW.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/browser-observability.cjs:browser-observability",
+      "name": "browser-observability",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/browser-observability.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/browser-observability.cjs:fn@1:15.path@2:1",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/browser-observability.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/browser-observability.cjs:fn@1:15.configure@5:1",
+      "name": "configure",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/browser-observability.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/browser-observability.cjs:fn@1:15.run@6:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/browser-observability.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/browser-provider.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/browser-provider.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/browser-provider.cjs:Python",
+      "name": "Python",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase13/browser-provider.cjs:catalog",
+      "name": "catalog",
+      "type": "Method",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase13/browser-provider.cjs:install",
+      "name": "install",
+      "type": "Method",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/browser-provider.cjs:manifest",
+      "name": "manifest",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/browser-provider.cjs:Node",
+      "name": "Node",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/browser-provider.cjs:Base",
+      "name": "Base",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/browser-provider.cjs:modulePath",
+      "name": "modulePath",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase13/browser-provider.cjs:BrowserOperations.constructor#2",
+      "name": "constructor",
+      "type": "Method",
+      "filePath": "diagnostics/phase13/browser-provider.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:baseline",
+      "name": "baseline",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:result",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:output",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:current",
+      "name": "current",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:key",
+      "name": "key",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:added",
+      "name": "added",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:remaining",
+      "name": "remaining",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:unexpectedFailure",
+      "name": "unexpectedFailure",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/check-typecheck.cjs:report",
+      "name": "report",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/check-typecheck.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-execution-definitions.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-execution-definitions.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-execution-definitions.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-execution-definitions.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-execution-definitions.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-execution-definitions.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-execution-definitions.cjs:fn@2:1.op@7:120",
+      "name": "op",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-execution-definitions.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-execution-definitions.cjs:fn@2:1.py@7:1",
+      "name": "py",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-execution-definitions.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-managed-fixtures.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-managed-fixtures.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-managed-fixtures.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-managed-fixtures.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-managed-fixtures.cjs:fn@2:1.result@2:527",
+      "name": "result",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/cleanup-managed-fixtures.cjs:fn@2:1.run@2:699.done@2:730",
+      "name": "done",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/cleanup-managed-fixtures.cjs:fn@2:1.run@2:699",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/cleanup-managed-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/freeze-v8.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/freeze-v8.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase13/freeze-v8.cjs:fn@2:1.after@2:203#1",
+      "name": "after",
+      "type": "Method",
+      "filePath": "diagnostics/phase13/freeze-v8.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase13/freeze-v8.cjs:fn@2:1.metadata@2:580",
+      "name": "metadata",
+      "type": "Property",
+      "filePath": "diagnostics/phase13/freeze-v8.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase13/freeze-v8.cjs:fn@2:1.objects@2:589",
+      "name": "objects",
+      "type": "Property",
+      "filePath": "diagnostics/phase13/freeze-v8.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase13/freeze-v8.cjs:fn@2:1.source_commit@2:559",
+      "name": "source_commit",
+      "type": "Property",
+      "filePath": "diagnostics/phase13/freeze-v8.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/graph-audit.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/graph-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/graph-final-services.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/graph-final-services.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/graph-integration.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/graph-integration.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/graph-logs.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/graph-logs.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/graph-review.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/graph-review.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/graph-review.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/graph-ui.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/graph-ui.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:net",
+      "name": "net",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:runtime",
+      "name": "runtime",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:tmp",
+      "name": "tmp",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:delay",
+      "name": "delay",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:evidence",
+      "name": "evidence",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:backend",
+      "name": "backend",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:browser",
+      "name": "browser",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:connections",
+      "name": "connections",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:messages",
+      "name": "messages",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:nodeRegistry",
+      "name": "nodeRegistry",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:output",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:packageIndex",
+      "name": "packageIndex",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:page",
+      "name": "page",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:receiver",
+      "name": "receiver",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:receiverFailure",
+      "name": "receiverFailure",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:ssh",
+      "name": "ssh",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:mark",
+      "name": "mark",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:port",
+      "name": "port",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:stop",
+      "name": "stop",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:until",
+      "name": "until",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.git@22:1",
+      "name": "git",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:fn@12:1.hostPublic@36:1",
+      "name": "hostPublic",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:fn@12:1.base@44:51",
+      "name": "base",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:fn@12:1.grpc@44:51",
+      "name": "grpc",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:fn@12:1.http@44:51",
+      "name": "http",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.start@46:1",
+      "name": "start",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:fn@12:1.runLogFrames@52:172",
+      "name": "runLogFrames",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.login@55:1",
+      "name": "login",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.api@57:1",
+      "name": "api",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.choose@58:1",
+      "name": "choose",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.confirm@59:1",
+      "name": "confirm",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.repositoryAction@65:1",
+      "name": "repositoryAction",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.repositoryAction@65:1.response@70:3",
+      "name": "response",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.variable@85:1",
+      "name": "variable",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.checked@89:1",
+      "name": "checked",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.operation@90:1",
+      "name": "operation",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.dialog@96:1",
+      "name": "dialog",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.edit@97:1",
+      "name": "edit",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.save@98:1",
+      "name": "save",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.save@98:1.response@98:23",
+      "name": "response",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.rejected@114:1",
+      "name": "rejected",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.submitted@128:3",
+      "name": "submitted",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.addTrigger@143:1",
+      "name": "addTrigger",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.addTrigger@143:1.response@148:3",
+      "name": "response",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.hookRequest@159:1",
+      "name": "hookRequest",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.loadedRefs@170:1",
+      "name": "loadedRefs",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.previewResponse@173:1",
+      "name": "previewResponse",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.applyResponse@174:1",
+      "name": "applyResponse",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/platform-e2e.cjs:fn@12:1.previousMax@179:1",
+      "name": "previousMax",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/platform-e2e.cjs:fn@12:1.setFailure@191:193",
+      "name": "setFailure",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/platform-e2e.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/prepare-managed-node.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/prepare-managed-node.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Method:diagnostics/phase13/prepare-managed-node.cjs:fn@2:1.after@3:36#1",
+      "name": "after",
+      "type": "Method",
+      "filePath": "diagnostics/phase13/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/prepare-managed-node.cjs:fn@2:1.Operations@4:1",
+      "name": "Operations",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/prepare-managed-node.cjs:fn@2:1.Paths@4:1",
+      "name": "Paths",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/prepare-managed-node.cjs:fn@2:1.run@7:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/prepare-managed-node.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/prepare-managed-python.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/prepare-managed-python.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/prepare-managed-python.cjs:fn@3:1.h@4:1",
+      "name": "h",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/prepare-managed-python.cjs:fn@3:1.after@4:44",
+      "name": "after",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/prepare-managed-python.cjs:fn@3:1.run@9:1",
+      "name": "run",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/prepare-managed-python.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/run-managed-regression.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/run-managed-regression.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/run-managed-regression.cjs:artifacts",
+      "name": "artifacts",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/run-managed-regression.cjs:previous",
+      "name": "previous",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/run-managed-regression.cjs:run",
+      "name": "run",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/run-managed-regression.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/static-audit.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/static-audit.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/static-audit.cjs:violations",
+      "name": "violations",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase13/static-audit.cjs:read",
+      "name": "read",
+      "type": "Function",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/static-audit.cjs:s",
+      "name": "s",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/static-audit.cjs:newFiles",
+      "name": "newFiles",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/static-audit.cjs:inventory",
+      "name": "inventory",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/static-audit.cjs:unchanged",
+      "name": "unchanged",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/static-audit.cjs:report",
+      "name": "report",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/static-audit.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/use-runtime-fixtures.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/use-runtime-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase13/use-runtime-fixtures.cjs:file",
+      "name": "file",
+      "type": "Const",
+      "filePath": "diagnostics/phase13/use-runtime-fixtures.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/00-platform-overview.md:L1:Git-native Script Automation / Scheduling Platform",
+      "name": "Git-native Script Automation / Scheduling Platform",
+      "type": "Section",
+      "filePath": "docs/architecture/00-platform-overview.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/01-domain-model.md:L1:Domain Model（目标）",
+      "name": "Domain Model（目标）",
+      "type": "Section",
+      "filePath": "docs/architecture/01-domain-model.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/06-database-target.md:L1:Operational Schema v3 / 最终 Domain Schema",
+      "name": "Operational Schema v3 / 最终 Domain Schema",
+      "type": "Section",
+      "filePath": "docs/architecture/06-database-target.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/07-service-boundaries.md:L1:Service Boundaries",
+      "name": "Service Boundaries",
+      "type": "Section",
+      "filePath": "docs/architecture/07-service-boundaries.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/08-temporary-bridges.md:L1:Temporary Bridges / 当前与目标之间的约束",
+      "name": "Temporary Bridges / 当前与目标之间的约束",
+      "type": "Section",
+      "filePath": "docs/architecture/08-temporary-bridges.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/14-execution-engine.md:L1:Execution Engine — Phase 10",
+      "name": "Execution Engine — Phase 10",
+      "type": "Section",
+      "filePath": "docs/architecture/14-execution-engine.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/16-task-run-observability.md:L1:TaskRun Observability — Phase 13",
+      "name": "TaskRun Observability — Phase 13",
+      "type": "Section",
+      "filePath": "docs/architecture/16-task-run-observability.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/architecture/17-notification-platform.md:L1:Notification Platform — Phase 13",
+      "name": "Notification Platform — Phase 13",
+      "type": "Section",
+      "filePath": "docs/architecture/17-notification-platform.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/01-observability-domain.md:L1:Phase 13 — Observability Domain",
+      "name": "Phase 13 — Observability Domain",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/01-observability-domain.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/02-task-run-events.md:L1:TaskRun Events",
+      "name": "TaskRun Events",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/02-task-run-events.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/03-log-architecture.md:L1:Per-Run Logs / Live Follow",
+      "name": "Per-Run Logs / Live Follow",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/03-log-architecture.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/04-run-history.md:L1:Run / Attempt History",
+      "name": "Run / Attempt History",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/04-run-history.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/05-task-health.md:L1:Task Health / Incident",
+      "name": "Task Health / Incident",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/05-task-health.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/06-notification-channel.md:L1:Notification Channels",
+      "name": "Notification Channels",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/06-notification-channel.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/07-notification-policy.md:L1:Task Notification Policy",
+      "name": "Task Notification Policy",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/07-notification-policy.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/08-notification-outbox.md:L1:Durable Outbox / Atomic Boundary",
+      "name": "Durable Outbox / Atomic Boundary",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/08-notification-outbox.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/09-notification-delivery.md:L1:Delivery Worker / History",
+      "name": "Delivery Worker / History",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/09-notification-delivery.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/10-crash-recovery.md:L1:Notification Crash Recovery",
+      "name": "Notification Crash Recovery",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/10-crash-recovery.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/11-security.md:L1:Security Contract",
+      "name": "Security Contract",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/11-security.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/12-retention.md:L1:Retention / Phase 14 Data Classification",
+      "name": "Retention / Phase 14 Data Classification",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/12-retention.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/13-schema-v9.md:L1:Schema v8 → v9",
+      "name": "Schema v8 → v9",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/13-schema-v9.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase13/14-phase13-test-report.md:L1:Phase 13 Test Evidence",
+      "name": "Phase 13 Test Evidence",
+      "type": "Section",
+      "filePath": "docs/refactor/phase13/14-phase13-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:obsGet",
+      "name": "obsGet",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:DeliveryTable",
+      "name": "DeliveryTable",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:DeliveryTable.load@27:2",
+      "name": "load",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:DeliveryTable.fn@35:12.timer@37:4",
+      "name": "timer",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:DeliveryTable.render@53:12",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:DeliveryTable.render@63:12",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:DeliveryTable.render@69:12",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunLogs",
+      "name": "RunLogs",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/components/observability/index.tsx:RunLogs.fn@133:12.busy@134:4",
+      "name": "busy",
+      "type": "Const",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/components/observability/index.tsx:RunLogs.fn@133:12.ticks@134:4",
+      "name": "ticks",
+      "type": "Const",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunLogs.fn@133:12.pull@141:4",
+      "name": "pull",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunLogs.fn@133:12.receive@168:4",
+      "name": "receive",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunLogs.fn@133:12.timer@173:4",
+      "name": "timer",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunDetail",
+      "name": "RunDetail",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunDetail.fn@215:12.load@218:4",
+      "name": "load",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunDetail.fn@215:12.t@231:4",
+      "name": "t",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunDetail.expandedRowRender@303:20",
+      "name": "expandedRowRender",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunsTable",
+      "name": "RunsTable",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunsTable.load@386:2",
+      "name": "load",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/index.tsx:RunsTable.fn@465:14.render@470:16",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/components/observability/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/taskPolicy.tsx:TaskHealth",
+      "name": "TaskHealth",
+      "type": "Function",
+      "filePath": "src/components/observability/taskPolicy.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/taskPolicy.tsx:TaskHealth.fn@16:12.load@17:4",
+      "name": "load",
+      "type": "Function",
+      "filePath": "src/components/observability/taskPolicy.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/taskPolicy.tsx:TaskHealth.fn@16:12.t@19:4",
+      "name": "t",
+      "type": "Function",
+      "filePath": "src/components/observability/taskPolicy.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:src/components/observability/taskPolicy.tsx:flags",
+      "name": "flags",
+      "type": "Const",
+      "filePath": "src/components/observability/taskPolicy.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/taskPolicy.tsx:TaskPolicy",
+      "name": "TaskPolicy",
+      "type": "Function",
+      "filePath": "src/components/observability/taskPolicy.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/components/observability/taskPolicy.tsx:TaskPolicy.load@48:2",
+      "name": "load",
+      "type": "Function",
+      "filePath": "src/components/observability/taskPolicy.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/dashboard/index.tsx:Dashboard",
+      "name": "Dashboard",
+      "type": "Function",
+      "filePath": "src/pages/dashboard/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/dashboard/index.tsx:Dashboard.load@18:2",
+      "name": "load",
+      "type": "Function",
+      "filePath": "src/pages/dashboard/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/dashboard/index.tsx:Dashboard.fn@20:12.t@22:4",
+      "name": "t",
+      "type": "Function",
+      "filePath": "src/pages/dashboard/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/dashboard/index.tsx:Dashboard.count@25:2",
+      "name": "count",
+      "type": "Function",
+      "filePath": "src/pages/dashboard/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/dashboard/index.tsx:Dashboard.fn@68:58.render@97:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/dashboard/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/dashboard/index.tsx:Dashboard.fn@68:58.render@108:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/dashboard/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/initialization/index.tsx:Initialization",
+      "name": "Initialization",
+      "type": "Function",
+      "filePath": "src/pages/initialization/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage",
+      "name": "NotificationChannelsPage",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage.load@24:2",
+      "name": "load",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage.edit@29:2",
+      "name": "edit",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage.save@48:2",
+      "name": "save",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage.render@97:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage.render@102:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage.render@107:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage.render@111:22",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/notifications/index.tsx:NotificationChannelsPage.render@111:30.fn@136:37.onOk@141:32",
+      "name": "onOk",
+      "type": "Function",
+      "filePath": "src/pages/notifications/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/runs/index.tsx:RunsPage",
+      "name": "RunsPage",
+      "type": "Function",
+      "filePath": "src/pages/runs/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/setting/index.tsx:Setting",
+      "name": "Setting",
+      "type": "Function",
+      "filePath": "src/pages/setting/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/setting/index.tsx:Setting.tabChange@249:2",
+      "name": "tabChange",
+      "type": "Function",
+      "filePath": "src/pages/setting/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/tasks/index.tsx:RuntimeDefaults",
+      "name": "RuntimeDefaults",
+      "type": "Function",
+      "filePath": "src/pages/tasks/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/tasks/index.tsx:TasksPage",
+      "name": "TasksPage",
+      "type": "Function",
+      "filePath": "src/pages/tasks/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/tasks/index.tsx:TasksPage.render@421:14",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/tasks/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/tasks/index.tsx:TasksPage.render@760:16",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/tasks/index.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/tasks/triggers.tsx:TaskTriggers",
+      "name": "TaskTriggers",
+      "type": "Function",
+      "filePath": "src/pages/tasks/triggers.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:src/pages/tasks/triggers.tsx:TaskTriggers.render@200:12",
+      "name": "render",
+      "type": "Function",
+      "filePath": "src/pages/tasks/triggers.tsx",
+      "change_type": "touched"
+    },
+    {
+      "id": "TypeAlias:src/utils/type.ts:SockMessageType",
+      "name": "SockMessageType",
+      "type": "TypeAlias",
+      "filePath": "src/utils/type.ts",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase10/hardening.test.cjs:fn@33:96.f@34:1",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase10/hardening.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:http",
+      "name": "http",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/domain.test.cjs:rows",
+      "name": "rows",
+      "type": "Function",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:setup.Dispatcher@4:74",
+      "name": "Dispatcher",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:setup.f@4:24",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/domain.test.cjs:setup",
+      "name": "setup",
+      "type": "Function",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/domain.test.cjs:setup.fail@4:893",
+      "name": "fail",
+      "type": "Function",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/domain.test.cjs:setup.receiver@4:362",
+      "name": "receiver",
+      "type": "Function",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase13/domain.test.cjs:setup.channel@4:885",
+      "name": "channel",
+      "type": "Property",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase13/domain.test.cjs:setup.f@4:874",
+      "name": "f",
+      "type": "Property",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase13/domain.test.cjs:setup.h@4:872",
+      "name": "h",
+      "type": "Property",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/domain.test.cjs:policy",
+      "name": "policy",
+      "type": "Function",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/domain.test.cjs:finish",
+      "name": "finish",
+      "type": "Function",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:fn@20:99.f@21:1",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:fn@20:99.o@21:223",
+      "name": "o",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:fn@20:99.content@22:74",
+      "name": "content",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/domain.test.cjs:fn@20:99.log@22:1",
+      "name": "log",
+      "type": "Const",
+      "filePath": "tests/phase13/domain.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:manifest",
+      "name": "manifest",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:fn@3:124.runtime@6:1",
+      "name": "runtime",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:fn@3:124.s@6:1",
+      "name": "s",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:fn@3:124.tool@6:1",
+      "name": "tool",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/managed-node.test.cjs:fn@3:124.define@9:1",
+      "name": "define",
+      "type": "Function",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:fn@3:124.result@11:34",
+      "name": "result",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-node.test.cjs:fn@3:124.run@11:34",
+      "name": "run",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-node.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:manifest",
+      "name": "manifest",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:fn@3:120.index@4:38",
+      "name": "index",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:fn@3:120.Execution@5:1",
+      "name": "Execution",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:fn@3:120.Paths@5:1",
+      "name": "Paths",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:fn@3:120.Provider@5:1",
+      "name": "Provider",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:fn@3:120.Resolver@5:1",
+      "name": "Resolver",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/managed-python.test.cjs:fn@3:120.runtime@8:1",
+      "name": "runtime",
+      "type": "Const",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/managed-python.test.cjs:fn@3:120.build@10:1",
+      "name": "build",
+      "type": "Function",
+      "filePath": "tests/phase13/managed-python.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/providers.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/providers.test.cjs:http",
+      "name": "http",
+      "type": "Const",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/providers.test.cjs:fn@1:121.transport@1:302",
+      "name": "transport",
+      "type": "Const",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/providers.test.cjs:fn@1:121.server@1:453",
+      "name": "server",
+      "type": "Function",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/providers.test.cjs:fn@1:121.t@1:294",
+      "name": "t",
+      "type": "Function",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/providers.test.cjs:fn@1:121.fn@3:47.post@3:187",
+      "name": "post",
+      "type": "Function",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/providers.test.cjs:fn@1:121.fn@3:47.request@3:84",
+      "name": "request",
+      "type": "Function",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/providers.test.cjs:fn@4:79.h@4:89",
+      "name": "h",
+      "type": "Const",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/providers.test.cjs:fn@4:79.server@4:409.data@4:522",
+      "name": "data",
+      "type": "Const",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/providers.test.cjs:fn@4:79.server@4:379",
+      "name": "server",
+      "type": "Function",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/providers.test.cjs:fn@4:79.t@4:276",
+      "name": "t",
+      "type": "Function",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/providers.test.cjs:fn@6:80.transport@6:261",
+      "name": "transport",
+      "type": "Const",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/providers.test.cjs:fn@6:80.type@6:397",
+      "name": "type",
+      "type": "Const",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/providers.test.cjs:fn@6:80.server@6:421",
+      "name": "server",
+      "type": "Function",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/providers.test.cjs:fn@6:80.t@6:253",
+      "name": "t",
+      "type": "Function",
+      "filePath": "tests/phase13/providers.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/recovery.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/recovery.test.cjs:http",
+      "name": "http",
+      "type": "Const",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/recovery.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/recovery.test.cjs:worker",
+      "name": "worker",
+      "type": "Function",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/recovery.test.cjs:fn@2:112.active@2:196",
+      "name": "active",
+      "type": "Const",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/recovery.test.cjs:fn@2:112.f@2:122",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/recovery.test.cjs:fn@2:112.max@2:196",
+      "name": "max",
+      "type": "Const",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/recovery.test.cjs:fn@2:112.server@2:237",
+      "name": "server",
+      "type": "Function",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/recovery.test.cjs:fn@5:103.f@5:113",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/recovery.test.cjs:fn@7:119.f@7:129",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/recovery.test.cjs:fn@7:119.server@7:222",
+      "name": "server",
+      "type": "Function",
+      "filePath": "tests/phase13/recovery.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/scale.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase13/scale.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/scale.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase13/scale.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/scale.test.cjs:fn@1:113.f@1:123",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase13/scale.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/scale.test.cjs:fn@1:113.obs@1:632",
+      "name": "obs",
+      "type": "Const",
+      "filePath": "tests/phase13/scale.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/scale.test.cjs:fn@1:113.second@1:757",
+      "name": "second",
+      "type": "Const",
+      "filePath": "tests/phase13/scale.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/scale.test.cjs:fn@1:113.RunLog@2:1",
+      "name": "RunLog",
+      "type": "Const",
+      "filePath": "tests/phase13/scale.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/scale.test.cjs:fn@1:113.file@2:1",
+      "name": "file",
+      "type": "Const",
+      "filePath": "tests/phase13/scale.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/schema.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase13/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/schema.test.cjs:v8",
+      "name": "v8",
+      "type": "Const",
+      "filePath": "tests/phase13/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/schema.test.cjs:seed",
+      "name": "seed",
+      "type": "Function",
+      "filePath": "tests/phase13/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/schema.test.cjs:objects",
+      "name": "objects",
+      "type": "Function",
+      "filePath": "tests/phase13/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/schema.test.cjs:fn@3:107.h@3:117",
+      "name": "h",
+      "type": "Const",
+      "filePath": "tests/phase13/schema.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:http",
+      "name": "http",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase13/security.test.cjs:fn@1:116.server@1:388",
+      "name": "server",
+      "type": "Function",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@2:99.Read@2:203",
+      "name": "Read",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@2:99.chunk@2:397",
+      "name": "chunk",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@2:99.f@2:109",
+      "name": "f",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@2:99.r@2:109",
+      "name": "r",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/security.test.cjs:fn@6:109.Redactor@6:119",
+      "name": "Redactor",
+      "type": "Const",
+      "filePath": "tests/phase13/security.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/worker.cjs:load",
+      "name": "load",
+      "type": "Const",
+      "filePath": "tests/phase13/worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/worker.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "tests/phase13/worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/worker.cjs:fn@1:1.cache@1:11",
+      "name": "cache",
+      "type": "Const",
+      "filePath": "tests/phase13/worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/worker.cjs:fn@1:1.db@1:11",
+      "name": "db",
+      "type": "Const",
+      "filePath": "tests/phase13/worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/worker.cjs:fn@1:1.mocks@1:11",
+      "name": "mocks",
+      "type": "Const",
+      "filePath": "tests/phase13/worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/worker.cjs:fn@1:1.runId@1:321",
+      "name": "runId",
+      "type": "Const",
+      "filePath": "tests/phase13/worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase13/worker.cjs:fn@1:1.worker@1:867",
+      "name": "worker",
+      "type": "Const",
+      "filePath": "tests/phase13/worker.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:tests/phase3/helpers.cjs:setup",
+      "name": "setup",
+      "type": "Function",
+      "filePath": "tests/phase3/helpers.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": [
+    {
+      "id": "proc_10_runspage",
+      "name": "RunsPage → ObsGet",
+      "process_type": "intra_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "RunsPage",
+          "step": 1
+        },
+        {
+          "symbol": "RunsTable",
+          "step": 2
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 3
+        },
+        {
+          "symbol": "load",
+          "step": 5
+        },
+        {
+          "symbol": "DeliveryTable",
+          "step": 4
+        },
+        {
+          "symbol": "obsGet",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_11_runspage",
+      "name": "RunsPage → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "RunsPage",
+          "step": 1
+        },
+        {
+          "symbol": "RunsTable",
+          "step": 2
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 3
+        },
+        {
+          "symbol": "RunLogs",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_12_runspage",
+      "name": "RunsPage → Send",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "RunsPage",
+          "step": 1
+        },
+        {
+          "symbol": "RunsTable",
+          "step": 2
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 3
+        },
+        {
+          "symbol": "RunLogs",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_16_observabilityroutes",
+      "name": "ObservabilityRoutes → DecodeJson",
+      "process_type": "intra_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "attempts",
+          "step": 2
+        },
+        {
+          "symbol": "detail",
+          "step": 3
+        },
+        {
+          "symbol": "publicRun",
+          "step": 4
+        },
+        {
+          "symbol": "decodeJson",
+          "step": 5
+        },
+        {
+          "symbol": "observabilityRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_25_execute",
+      "name": "Execute → Journal",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_32_observabilityroutes",
+      "name": "ObservabilityRoutes → SelectRows",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "attempts",
+          "step": 2
+        },
+        {
+          "symbol": "detail",
+          "step": 3
+        },
+        {
+          "symbol": "selectRows",
+          "step": 4
+        },
+        {
+          "symbol": "observabilityRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_96_tasktriggers",
+      "name": "TaskTriggers → Load",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "TaskTriggers",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_110_execute",
+      "name": "Execute → Cancel",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_111_execute",
+      "name": "Execute → Wake",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_112_execute",
+      "name": "Execute → ExecutionLog",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_115_webhook",
+      "name": "Webhook → ParseString",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "webhook",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_130_taskroutes",
+      "name": "TaskRoutes → WorkspaceError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "recover",
+          "step": 4
+        },
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_131_taskroutes",
+      "name": "TaskRoutes → Root",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "recover",
+          "step": 4
+        },
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_132_execute",
+      "name": "Execute → AsError",
+      "process_type": "cross_community",
+      "step_count": 8,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_139_taskspage",
+      "name": "TasksPage → ObsGet",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "TasksPage",
+          "step": 1
+        },
+        {
+          "symbol": "RunsTable",
+          "step": 2
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 3
+        },
+        {
+          "symbol": "load",
+          "step": 5
+        },
+        {
+          "symbol": "DeliveryTable",
+          "step": 4
+        },
+        {
+          "symbol": "obsGet",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "id": "proc_140_taskspage",
+      "name": "TasksPage → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "TasksPage",
+          "step": 1
+        },
+        {
+          "symbol": "RunsTable",
+          "step": 2
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 3
+        },
+        {
+          "symbol": "RunLogs",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_141_taskspage",
+      "name": "TasksPage → Send",
+      "process_type": "cross_community",
+      "step_count": 6,
+      "changed_steps": [
+        {
+          "symbol": "TasksPage",
+          "step": 1
+        },
+        {
+          "symbol": "RunsTable",
+          "step": 2
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 3
+        },
+        {
+          "symbol": "RunLogs",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_202_taskroutes",
+      "name": "TaskRoutes → RuntimeError",
+      "process_type": "cross_community",
+      "step_count": 9,
+      "changed_steps": [
+        {
+          "symbol": "recover",
+          "step": 4
+        },
+        {
+          "symbol": "taskRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_212_dashboard",
+      "name": "Dashboard → ObsGet",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "Dashboard",
+          "step": 1
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 2
+        },
+        {
+          "symbol": "load",
+          "step": 4
+        },
+        {
+          "symbol": "DeliveryTable",
+          "step": 3
+        },
+        {
+          "symbol": "obsGet",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "proc_213_dashboard",
+      "name": "Dashboard → WebSocketManager",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "Dashboard",
+          "step": 1
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 2
+        },
+        {
+          "symbol": "RunLogs",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_214_dashboard",
+      "name": "Dashboard → Send",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "Dashboard",
+          "step": 1
+        },
+        {
+          "symbol": "RunDetail",
+          "step": 2
+        },
+        {
+          "symbol": "RunLogs",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_220_execute",
+      "name": "Execute → SyncDirectory",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_221_execute",
+      "name": "Execute → AssertHeld",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_222_execute",
+      "name": "Execute → ExecutionError",
+      "process_type": "cross_community",
+      "step_count": 5,
+      "changed_steps": [
+        {
+          "symbol": "execute",
+          "step": 1
+        },
+        {
+          "symbol": "run",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "id": "proc_232_taskspage",
+      "name": "TasksPage → Load",
+      "process_type": "cross_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "TasksPage",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_252_render",
+      "name": "Render → Get",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_267_notificationchannels",
+      "name": "NotificationChannelsPage → ObsGet",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "NotificationChannelsPage",
+          "step": 1
+        },
+        {
+          "symbol": "load",
+          "step": 3
+        },
+        {
+          "symbol": "DeliveryTable",
+          "step": 2
+        },
+        {
+          "symbol": "obsGet",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_275_observabilityroutes",
+      "name": "ObservabilityRoutes → ExecutionError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "attempts",
+          "step": 2
+        },
+        {
+          "symbol": "detail",
+          "step": 3
+        },
+        {
+          "symbol": "observabilityRoutes",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_309_render",
+      "name": "Render → ObsGet",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        },
+        {
+          "symbol": "load",
+          "step": 2
+        },
+        {
+          "symbol": "obsGet",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_343_t",
+      "name": "T → ObsGet",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "t",
+          "step": 1
+        },
+        {
+          "symbol": "load",
+          "step": 2
+        },
+        {
+          "symbol": "obsGet",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_364_onok",
+      "name": "OnOk → ObsGet",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "onOk",
+          "step": 1
+        },
+        {
+          "symbol": "load",
+          "step": 2
+        },
+        {
+          "symbol": "obsGet",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_380_save",
+      "name": "Save → ObsGet",
+      "process_type": "intra_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        },
+        {
+          "symbol": "load",
+          "step": 2
+        },
+        {
+          "symbol": "obsGet",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_401_send",
+      "name": "Send → ExecutionError",
+      "process_type": "intra_community",
+      "step_count": 4,
+      "changed_steps": [
+        {
+          "symbol": "request",
+          "step": 2
+        },
+        {
+          "symbol": "send",
+          "step": 1
+        },
+        {
+          "symbol": "notificationUrl",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_405_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_412_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_415_save",
+      "name": "Save → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "save",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_430_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "proc_432_render",
+      "name": "Render → Request",
+      "process_type": "cross_community",
+      "step_count": 3,
+      "changed_steps": [
+        {
+          "symbol": "render",
+          "step": 1
+        }
+      ]
+    }
+  ]
+}

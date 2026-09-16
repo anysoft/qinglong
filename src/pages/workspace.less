@@ -1,0 +1,42 @@
+.code-workspace {
+  padding: 20px;
+}
+.workspace-columns {
+  display: grid;
+  grid-template-columns: minmax(200px, 23%) minmax(300px, 1fr) minmax(
+      260px,
+      26%
+    );
+  gap: 16px;
+}
+.workspace-tree,
+.workspace-git {
+  max-height: 75vh;
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+.workspace-editor {
+  min-width: 0;
+}
+.workspace-git-toggle {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .workspace-columns {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+  .workspace-git {
+    display: none;
+  }
+  .workspace-git-toggle {
+    display: inline-block;
+  }
+}
+@media (max-width: 650px) {
+  .workspace-columns {
+    display: block;
+  }
+  .workspace-tree {
+    max-height: 30vh;
+  }
+}

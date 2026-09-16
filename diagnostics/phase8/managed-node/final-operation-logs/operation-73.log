@@ -1,0 +1,48 @@
+[PREPARING]
+true
+10.17.1
+[INSTALLING_DEPENDENCIES]
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +3
++++
+Progress: resolved 3, reused 3, downloaded 0, added 3, done
+
+dependencies:
++ @phase8/scoped 1.0.0
++ ql-phase8-foo 1.0.0
+
+Done in 215ms using pnpm v10.17.1
+[VERIFYING_BUILD]
+true
+10.17.1
+[
+  {
+    "name": "platform-environment",
+    "version": "0.0.0",
+    "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-hBiTpc/runtime/node/environments/env-18/builds/build-32",
+    "private": true,
+    "dependencies": {
+      "@phase8/scoped": {
+        "from": "@phase8/scoped",
+        "version": "1.0.0",
+        "resolved": "http://127.0.0.1:52329/artifacts/273ebd9a091d52ed6cbda9b65c440594c2c9c796c3e5d821689509e4efc981aa.tgz",
+        "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-hBiTpc/runtime/node/environments/env-18/builds/build-32/node_modules/.pnpm/@phase8+scoped@1.0.0/node_modules/@phase8/scoped"
+      },
+      "ql-phase8-foo": {
+        "from": "ql-phase8-foo",
+        "version": "1.0.0",
+        "resolved": "http://127.0.0.1:52329/artifacts/b16d4050ec0e856abe67f2c878ba856ca62f3b27375db5848193cec7281fef19.tgz",
+        "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-hBiTpc/runtime/node/environments/env-18/builds/build-32/node_modules/.pnpm/ql-phase8-foo@1.0.0/node_modules/ql-phase8-foo",
+        "dependencies": {
+          "ql-phase8-leaf": {
+            "from": "ql-phase8-leaf",
+            "version": "1.0.0",
+            "resolved": "http://127.0.0.1:52329/artifacts/a2e320aa9c74dba4cd087f97b240bd263abe14bd723d58bdc839a07d166e89a7.tgz",
+            "path": "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-hBiTpc/runtime/node/environments/env-18/builds/build-32/node_modules/.pnpm/ql-phase8-leaf@1.0.0/node_modules/ql-phase8-leaf"
+          }
+        }
+      }
+    }
+  }
+]

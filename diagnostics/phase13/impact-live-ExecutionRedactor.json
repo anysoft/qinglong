@@ -1,0 +1,676 @@
+{
+  "target": {
+    "id": "Class:back/services/executionRedactor.ts:ExecutionRedactor",
+    "name": "ExecutionRedactor",
+    "type": "Class",
+    "filePath": "back/services/executionRedactor.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 43,
+  "risk": "CRITICAL",
+  "riskSharedAxes": "MEDIUM",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 9,
+    "processes_affected": 5,
+    "modules_affected": 2
+  },
+  "byDepthCounts": {
+    "1": 9,
+    "2": 15,
+    "3": 19
+  },
+  "affected_processes": [
+    {
+      "name": "execute",
+      "type": "Function",
+      "filePath": "back/services/executionService.ts",
+      "affected_process_count": 8,
+      "total_hits": 13,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "request",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 4,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "taskRoutes",
+      "type": "Function",
+      "filePath": "back/api/tasks.ts",
+      "affected_process_count": 3,
+      "total_hits": 6,
+      "earliest_broken_step": 2
+    },
+    {
+      "name": "consumePrepared",
+      "type": "Function",
+      "filePath": "back/taskExecution.ts",
+      "affected_process_count": 3,
+      "total_hits": 3,
+      "earliest_broken_step": 1
+    },
+    {
+      "name": "execute",
+      "type": "Function",
+      "filePath": "back/services/runtimeOperations.ts",
+      "affected_process_count": 2,
+      "total_hits": 2,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 12,
+      "impact": "direct"
+    },
+    {
+      "name": "Back",
+      "hits": 2,
+      "impact": "indirect"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "File:back/services/executionAttemptCoordinator.ts",
+        "name": "executionAttemptCoordinator.ts",
+        "filePath": "back/services/executionAttemptCoordinator.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/services/executionService.ts",
+        "name": "executionService.ts",
+        "filePath": "back/services/executionService.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/services/runtimeLog.ts",
+        "name": "runtimeLog.ts",
+        "filePath": "back/services/runtimeLog.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:back/services/taskHookLifecycle.ts",
+        "name": "taskHookLifecycle.ts",
+        "filePath": "back/services/taskHookLifecycle.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/executionService.ts:ExecutionService.execute#5",
+        "name": "execute",
+        "filePath": "back/services/executionService.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_219_execute",
+            "label": "Execute → SyncDirectory",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_220_execute",
+            "label": "Execute → AssertHeld",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_110_execute",
+            "label": "Execute → Wake",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_109_execute",
+            "label": "Execute → Cancel",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_25_execute",
+            "label": "Execute → Journal",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_111_execute",
+            "label": "Execute → ExecutionLog",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_131_execute",
+            "label": "Execute → AsError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_221_execute",
+            "label": "Execute → ExecutionError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/runtimeLog.ts:RuntimeOperationLog.close#0",
+        "name": "close",
+        "filePath": "back/services/runtimeLog.ts",
+        "relationType": "ACCESSES",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/runtimeLog.ts:RuntimeOperationLog.constructor#2",
+        "name": "constructor",
+        "filePath": "back/services/runtimeLog.ts",
+        "relationType": "ACCESSES",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/runtimeLog.ts:RuntimeOperationLog.write#1",
+        "name": "write",
+        "filePath": "back/services/runtimeLog.ts",
+        "relationType": "ACCESSES",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run#3",
+        "name": "run",
+        "filePath": "back/services/taskHookLifecycle.ts",
+        "relationType": "ACCESSES",
+        "confidence": 1,
+        "processes": []
+      }
+    ],
+    "2": [
+      {
+        "depth": 2,
+        "id": "File:back/api/nodeEnvironment.ts",
+        "name": "nodeEnvironment.ts",
+        "filePath": "back/api/nodeEnvironment.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/runtime.ts",
+        "name": "runtime.ts",
+        "filePath": "back/api/runtime.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/api/tasks.ts",
+        "name": "tasks.ts",
+        "filePath": "back/api/tasks.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/app.ts",
+        "name": "app.ts",
+        "filePath": "back/app.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/services/cron.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/executionSubmission.ts",
+        "name": "executionSubmission.ts",
+        "filePath": "back/services/executionSubmission.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/runtimeOperations.ts",
+        "name": "runtimeOperations.ts",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/taskExecutionBridge.ts",
+        "name": "taskExecutionBridge.ts",
+        "filePath": "back/services/taskExecutionBridge.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/services/triggerEvents.ts",
+        "name": "triggerEvents.ts",
+        "filePath": "back/services/triggerEvents.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/shared/runCron.ts",
+        "name": "runCron.ts",
+        "filePath": "back/shared/runCron.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "File:back/taskExecution.ts",
+        "name": "taskExecution.ts",
+        "filePath": "back/taskExecution.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:back/taskExecution.ts:consumePrepared",
+        "name": "consumePrepared",
+        "filePath": "back/taskExecution.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_8_consumeprepared",
+            "label": "ConsumePrepared → ConfigAssetError",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_19_consumeprepared",
+            "label": "ConsumePrepared → SyncDirectory",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_20_consumeprepared",
+            "label": "ConsumePrepared → AssertHeld",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator.run#5",
+        "name": "run",
+        "filePath": "back/services/executionAttemptCoordinator.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_219_execute",
+            "label": "Execute → SyncDirectory",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_220_execute",
+            "label": "Execute → AssertHeld",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_25_execute",
+            "label": "Execute → Journal",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_131_execute",
+            "label": "Execute → AsError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_221_execute",
+            "label": "Execute → ExecutionError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/executionService.ts:ExecutionService.tick#0",
+        "name": "tick",
+        "filePath": "back/services/executionService.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_201_taskroutes",
+            "label": "TaskRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_129_taskroutes",
+            "label": "TaskRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 3
+          },
+          {
+            "id": "proc_130_taskroutes",
+            "label": "TaskRoutes → Root",
+            "processType": "cross_community",
+            "step": 3
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.execute#4",
+        "name": "execute",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_120_execute",
+            "label": "Execute → RuntimeOperationLog",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_437_execute",
+            "label": "Execute → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "depth": 3,
+        "id": "File:back/api/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/api/cron.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/api/index.ts",
+        "name": "index.ts",
+        "filePath": "back/api/index.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/api/pythonEnvironment.ts",
+        "name": "pythonEnvironment.ts",
+        "filePath": "back/api/pythonEnvironment.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/api/triggerWebhook.ts",
+        "name": "triggerWebhook.ts",
+        "filePath": "back/api/triggerWebhook.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/schedule/addCron.ts",
+        "name": "addCron.ts",
+        "filePath": "back/schedule/addCron.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/schedule/api.ts",
+        "name": "api.ts",
+        "filePath": "back/schedule/api.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/executionResolver.ts",
+        "name": "executionResolver.ts",
+        "filePath": "back/services/executionResolver.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/gitUpdateTrigger.ts",
+        "name": "gitUpdateTrigger.ts",
+        "filePath": "back/services/gitUpdateTrigger.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/pythonEnvironment.ts",
+        "name": "pythonEnvironment.ts",
+        "filePath": "back/services/pythonEnvironment.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/pythonEnvironmentResolver.ts",
+        "name": "pythonEnvironmentResolver.ts",
+        "filePath": "back/services/pythonEnvironmentResolver.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/schedulerBridge.ts",
+        "name": "schedulerBridge.ts",
+        "filePath": "back/services/schedulerBridge.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/script.ts",
+        "name": "script.ts",
+        "filePath": "back/services/script.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "File:back/services/triggerScheduler.ts",
+        "name": "triggerScheduler.ts",
+        "filePath": "back/services/triggerScheduler.ts",
+        "relationType": "IMPORTS",
+        "confidence": 1,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Function:back/taskExecution.ts:startExecution",
+        "name": "startExecution",
+        "filePath": "back/taskExecution.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/executionService.ts:ExecutionService.start#0",
+        "name": "start",
+        "filePath": "back/services/executionService.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_201_taskroutes",
+            "label": "TaskRoutes → RuntimeError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_130_taskroutes",
+            "label": "TaskRoutes → Root",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_129_taskroutes",
+            "label": "TaskRoutes → WorkspaceError",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.request#2",
+        "name": "request",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_30_request",
+            "label": "Request → ResourceLock",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_401_request",
+            "label": "Request → RuntimeError",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_15_request",
+            "label": "Request → RuntimeLease",
+            "processType": "intra_community",
+            "step": 1
+          },
+          {
+            "id": "proc_3_request",
+            "label": "Request → AsError",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.requestEnvironmentLocked#5",
+        "name": "requestEnvironmentLocked",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 3,
+        "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.requestNode#3",
+        "name": "requestNode",
+        "filePath": "back/services/runtimeOperations.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_401_request",
+            "label": "Request → RuntimeError",
+            "processType": "intra_community",
+            "step": 2
+          },
+          {
+            "id": "proc_30_request",
+            "label": "Request → ResourceLock",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_3_request",
+            "label": "Request → AsError",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_15_request",
+            "label": "Request → RuntimeLease",
+            "processType": "intra_community",
+            "step": 2
+          }
+        ]
+      }
+    ]
+  }
+}

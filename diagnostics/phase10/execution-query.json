@@ -1,0 +1,213 @@
+{
+  "processes": [
+    {
+      "id": "proc_132_definition",
+      "summary": "Definition → AsError",
+      "priority": 0.084,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 7
+    },
+    {
+      "id": "proc_139_definition",
+      "summary": "Definition → RuntimeLease",
+      "priority": 0.084,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 4
+    },
+    {
+      "id": "proc_152_definition",
+      "summary": "Definition → ResourceLock",
+      "priority": 0.084,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_413_definition",
+      "summary": "Definition → RuntimeError",
+      "priority": 0.084,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 7
+    },
+    {
+      "id": "proc_212_prepare",
+      "summary": "Prepare → AsError",
+      "priority": 0.084,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 7
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.definition#2",
+      "name": "definition",
+      "filePath": "back/services/nodeEnvironment.ts",
+      "startLine": 203,
+      "endLine": 345,
+      "module": "Services",
+      "process_id": "proc_132_definition",
+      "step_index": 1
+    },
+    {
+      "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.prepare#5",
+      "name": "prepare",
+      "filePath": "back/services/nodeEnvironment.ts",
+      "startLine": 386,
+      "endLine": 628,
+      "module": "Services",
+      "process_id": "proc_212_prepare",
+      "step_index": 1
+    }
+  ],
+  "definitions": [
+    {
+      "name": "test",
+      "type": "File"
+    },
+    {
+      "id": "Interface:back/services/task.ts:TaskDefinitionInput",
+      "name": "TaskDefinitionInput",
+      "filePath": "back/services/task.ts",
+      "startLine": 8,
+      "endLine": 11
+    },
+    {
+      "name": "installTaskFixture",
+      "type": "File",
+      "filePath": "tests/phase9/task-fixture.cjs"
+    },
+    {
+      "id": "Class:back/services/pythonEnvironmentResolver.ts:PythonEnvironmentResolver",
+      "name": "test",
+      "filePath": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "startLine": 3,
+      "endLine": 3,
+      "module": "Services"
+    },
+    {
+      "id": "Interface:back/services/taskResourceResolver.ts:TaskResourceResolution",
+      "name": "TaskResourceResolution",
+      "filePath": "back/services/taskResourceResolver.ts",
+      "startLine": 50,
+      "endLine": 82
+    },
+    {
+      "id": "Interface:back/data/configAsset.ts:ConfigBinding",
+      "name": "ctx",
+      "filePath": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "startLine": 11,
+      "endLine": 11
+    },
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.runtimes#0",
+      "name": "runtimes",
+      "filePath": "back/services/runtimeOperations.ts",
+      "startLine": 164,
+      "endLine": 192,
+      "module": "Services"
+    },
+    {
+      "id": "Method:back/services/runtimeOperations.ts:RuntimeOperationService.requestEnvironmentLocked#5",
+      "name": "requestEnvironmentLocked",
+      "filePath": "back/services/runtimeOperations.ts",
+      "startLine": 392,
+      "endLine": 449,
+      "module": "Services"
+    },
+    {
+      "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.runtime#2",
+      "name": "runtime",
+      "filePath": "back/services/nodeEnvironment.ts",
+      "startLine": 78,
+      "endLine": 85,
+      "module": "Services"
+    },
+    {
+      "name": "constructor",
+      "type": "File",
+      "filePath": "back/services/pythonEnvironmentBuild.ts"
+    },
+    {
+      "name": "constructor",
+      "type": "File",
+      "filePath": "back/services/pythonEnvironmentPaths.ts"
+    },
+    {
+      "id": "Method:back/services/pythonEnvironment.ts:PythonEnvironmentService.healthyRuntime#1",
+      "name": "healthyRuntime",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "startLine": 147,
+      "endLine": 169,
+      "module": "Services"
+    },
+    {
+      "id": "Const:back/services/pythonEnvironment.ts:PythonEnvironmentService.healthyRuntime.location@155:4",
+      "name": "location",
+      "filePath": "back/services/pythonEnvironment.ts",
+      "startLine": 156,
+      "endLine": 161
+    },
+    {
+      "id": "Method:back/services/pythonVenv.ts:PythonVenvManager.create#3",
+      "name": "create",
+      "filePath": "back/services/pythonVenv.ts",
+      "startLine": 13,
+      "endLine": 36,
+      "module": "Services"
+    },
+    {
+      "id": "Method:back/services/pythonVenv.ts:PythonVenvManager.verify#3",
+      "name": "verify",
+      "filePath": "back/services/pythonVenv.ts",
+      "startLine": 37,
+      "endLine": 86,
+      "module": "Services"
+    },
+    {
+      "id": "Method:test/back/primary-apm.test.cjs:fn@9:89.require@14:77#1",
+      "name": "require",
+      "filePath": "test/back/primary-apm.test.cjs",
+      "startLine": 15,
+      "endLine": 15
+    },
+    {
+      "id": "Method:test/back/primary-apm.test.cjs:fn@9:89.require@14:77.fn@14:226.use@14:232#0",
+      "name": "use",
+      "filePath": "test/back/primary-apm.test.cjs",
+      "startLine": 15,
+      "endLine": 15
+    },
+    {
+      "id": "Class:tests/archived/legacy/tests/phase1/helper.test.cjs:Resolver",
+      "name": "Resolver",
+      "filePath": "tests/archived/legacy/tests/phase1/helper.test.cjs",
+      "startLine": 9,
+      "endLine": 9
+    },
+    {
+      "id": "Function:tests/archived/legacy/tests/phase1/helper.test.cjs:helper.resolve@41:8",
+      "name": "resolve",
+      "filePath": "tests/archived/legacy/tests/phase1/helper.test.cjs",
+      "startLine": 42,
+      "endLine": 45
+    },
+    {
+      "id": "File:tests/phase5/materialization.test.cjs",
+      "name": "materialization.test.cjs",
+      "filePath": "tests/phase5/materialization.test.cjs"
+    }
+  ],
+  "timing": {
+    "vector": 5.8,
+    "bm25": 239.4,
+    "merge": 0.1,
+    "symbol_lookup": 18.4,
+    "ranking": 0.1,
+    "formatting": 0.1,
+    "wall": 258.4
+  }
+}

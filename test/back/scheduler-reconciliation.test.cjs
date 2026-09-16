@@ -15,11 +15,12 @@ function fixture(client) {
     { compilerOptions: { target: ts.ScriptTarget.ES2020 } },
   ).outputText;
   const module = { exports: {} };
-  new Function('module', 'isDemoEnv', 'cronClient', 'withSchedulerMutation', js)(
+  new Function('module', 'isDemoEnv', 'cronClient', 'withSchedulerMutation', 'TaskResourceResolver', js)(
     module,
     () => false,
     client,
     (fn) => fn(),
+    class { async resolve(ids) { return ids.map(id=>({task:{id,enabled:true},readiness:{status:'READY'}})); } },
   );
   const service = new module.exports();
   service.setCrontab = async () => {};

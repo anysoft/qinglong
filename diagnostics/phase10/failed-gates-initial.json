@@ -1,0 +1,19 @@
+[
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/execution-lifecycle.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/log-path-security.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-execution.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase3/cron-publication.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/publication-integrity.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/api.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/discovery.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/subscription-delete.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/discovery.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-domain.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-lease.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs",
+  "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/task-model-bridge.test.cjs"
+]

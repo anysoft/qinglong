@@ -1,0 +1,23 @@
+[
+  {
+    "file": "back/data/runtime.ts",
+    "name": "back/data/runtime.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/data/runtime.ts' not found\",\n  \"target\": {\n    \"name\": \"back/data/runtime.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/layouts/defaultProps.tsx",
+    "name": "src/layouts/defaultProps.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/layouts/defaultProps.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/layouts/defaultProps.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/utils/config.ts",
+    "name": "src/utils/config.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/utils/config.ts' not found\",\n  \"target\": {\n    \"name\": \"src/utils/config.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

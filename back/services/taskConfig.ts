@@ -2,7 +2,8 @@ import { Service } from 'typedi';
 import { Transaction } from 'sequelize';
 import { sequelize } from '../data';
 import { RepositoryModel } from '../data/repository';
-import { CrontabModel } from '../data/cron';
+import { TaskModel } from '../data/task';
+import { taskRepository } from './taskRelationships';
 import { SubscriptionModel } from '../data/subscription';
 import {
   ConfigAssetModel,
@@ -40,7 +41,7 @@ export default class TaskConfigService {
     const owner =
       scope === 'repository'
         ? await RepositoryModel.findByPk(configId(ownerId), { transaction })
-        : await CrontabModel.findByPk(configId(ownerId), { transaction });
+        : await TaskModel.findByPk(configId(ownerId), { transaction });
     if (!owner) throw new ConfigAssetError('CONFIG_OWNER_NOT_FOUND', 404);
     return this.model(scope).findAll({
       where: { [this.ownerKey(scope)]: ownerId },
@@ -136,13 +137,9 @@ export default class TaskConfigService {
     transaction: Transaction,
   ): Promise<ResolvedConfig[]> {
     if (!taskId) return [];
-    const task = await CrontabModel.findByPk(taskId, { transaction });
-    if (!task) throw new ConfigAssetError('TASK_NOT_FOUND', 404);
-    const sub = task.sub_id
-      ? await SubscriptionModel.findByPk(task.sub_id, { transaction })
-      : null;
-    const repository = sub?.repository_id
-      ? await this.list('repository', sub.repository_id, transaction)
+    const { repository_id } = await taskRepository(taskId, transaction);
+    const repository = repository_id
+      ? await this.list('repository', repository_id, transaction)
       : [];
     const taskRows = await this.list('task', taskId, transaction);
     const effective = new Map<

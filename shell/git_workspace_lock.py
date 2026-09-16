@@ -38,17 +38,18 @@ def message():
 def run(request):
     child = None
     try:
-        program = {'git': 'git', 'bash': '/bin/bash'}[request.get('program', 'git')]
-        child = subprocess.Popen([program] + request['args'], cwd=request['cwd'], env=request['env'],
+        program = {'git': ['git'], 'bash': ['/bin/bash'], 'workspace-rename': ['/usr/bin/python3', '-I', '-S', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'workspace_rename.py')]}[request.get('program', 'git')]
+        child = subprocess.Popen(program + request['args'], cwd=request['cwd'], env=request['env'],
                                  stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                                 start_new_session=True, pass_fds=tuple(fds))
+                                 start_new_session=True, pass_fds=tuple(fds + metadata.get('inherited', [])))
         selector = selectors.DefaultSelector()
         selector.register(child.stdout, selectors.EVENT_READ, 'stdout')
         selector.register(child.stderr, selectors.EVENT_READ, 'stderr')
         selector.register(sys.stdin, selectors.EVENT_READ, 'controller')
         output = {'stdout': bytearray(), 'stderr': bytearray()}
         deadline = time.monotonic() + min(max(request.get('timeout', 30000)/1000, .01), 1800)
-        code = None; overflow = False
+        code = None; overflow = False; truncated = False
+        limit = min(max(int(request.get("outputLimit") or 0), 1024), 4*1024*1024) if request.get("outputLimit") else None
         while selector.get_map() and not closing:
             if time.monotonic() >= deadline:
                 code = 124; break
@@ -61,6 +62,8 @@ def run(request):
                 chunk = os.read(key.fileobj.fileno(), 65536)
                 if not chunk: selector.unregister(key.fileobj)
                 elif not overflow:
+                    if limit and len(output[key.data]) + len(chunk) > limit:
+                        chunk = chunk[:max(0, limit-len(output[key.data]))]; truncated = True
                     output[key.data].extend(chunk)
                     if sum(map(len, output.values())) > 4*1024*1024:
                         overflow=True; output={'stdout':bytearray(),'stderr':bytearray()}; code=125; break
@@ -70,7 +73,7 @@ def run(request):
             except ProcessLookupError: pass
         result = child.wait()
         selector.close()
-        return {'code':code if code is not None else result,
+        return {'code':code if code is not None else result, 'truncated':truncated,
                 'stdout':output['stdout'].decode('utf-8','replace'),
                 'stderr': 'Git output limit exceeded' if overflow else output['stderr'].decode('utf-8','replace')}
     finally:

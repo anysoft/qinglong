@@ -1,0 +1,65 @@
+{
+  "status": "ambiguous",
+  "message": "Found 2 symbols matching 'inspect'. Blast radius differs per candidate (max 1 impacted at risk LOW). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+  "target": {
+    "name": "inspect"
+  },
+  "direction": "upstream",
+  "totalCandidates": 2,
+  "impactedCount": null,
+  "risk": "UNKNOWN",
+  "maxImpactedCount": 1,
+  "maxRisk": "LOW",
+  "candidates": [
+    {
+      "uid": "Method:back/services/runtimeReferences.ts:RuntimeReferenceService.inspect#1",
+      "name": "inspect",
+      "kind": "Method",
+      "filePath": "back/services/runtimeReferences.ts",
+      "line": 14,
+      "score": 0.94,
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 1
+    },
+    {
+      "uid": "Method:back/services/runtimeReferences.ts:RuntimeReferenceSource.inspect#1",
+      "name": "inspect",
+      "kind": "Method",
+      "filePath": "back/services/runtimeReferences.ts",
+      "line": 9,
+      "score": 0.94,
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "enrichment-skipped"
+          },
+          {
+            "axis": "modules",
+            "reason": "enrichment-skipped"
+          }
+        ]
+      },
+      "direct": 1
+    }
+  ]
+}

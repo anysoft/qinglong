@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: official managed Node executes CJS, ESM and real tsx using pinned Builds; bindings restore and conflicts fail closed
+ok 1 - official managed Node executes CJS, ESM and real tsx using pinned Builds; bindings restore and conflicts fail closed
+  ---
+  duration_ms: 49438.903625
+  type: 'test'
+  ...
+# Subtest: official managed Python imports from pinned venv across retry and Build promotion, without host dependency paths
+ok 2 - official managed Python imports from pinned venv across retry and Build promotion, without host dependency paths
+  ---
+  duration_ms: 21855.436166
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 71904.964625

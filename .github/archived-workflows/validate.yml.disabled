@@ -1,0 +1,92 @@
+name: Validate
+
+on:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    timeout-minutes: 70
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: '8.3.1'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: cp .env.example .env
+      - run: sudo apt-get update && sudo apt-get install -y git openssh-client openssl python3 jq perl util-linux ripgrep
+      - run: pnpm build:back
+      - run: pnpm test
+      - run: pnpm build:front
+      - run: node diagnostics/phase10/static-audit.cjs
+      - name: Typecheck with recorded pre-existing diagnostic budget
+        run: node diagnostics/phase10/check-typecheck.cjs
+      # Provision a real managed CPython once; package acceptance below uses only local artifacts.
+      - run: sudo apt-get install -y build-essential curl tar libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libffi-dev liblzma-dev
+      - name: Provision official managed CPython for Python Environment gates
+        run: node diagnostics/phase10/prepare-managed-python.cjs
+      - name: Official managed Node binary and exact npm/pnpm toolchains
+        run: node diagnostics/phase10/prepare-managed-node.cjs
+      - name: Phase 10 real Python, CJS, ESM and TypeScript pinned execution
+        run: node --test --test-concurrency=1 tests/phase10/managed-python.test.cjs tests/phase10/managed-node.test.cjs
+      - name: Previous managed Environment lifecycle regressions
+        run: |
+          node diagnostics/phase10/cleanup-execution-definitions.cjs
+          node diagnostics/phase10/run-managed-regression.cjs
+      - name: Install isolated browser acceptance runtime
+        run: |
+          npm install --prefix "$RUNNER_TEMP/platform-browser" --no-audit --no-fund ssh2@1.17.0 playwright@1.58.2
+          node "$RUNNER_TEMP/platform-browser/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Phase 10 fresh browser and restart execution acceptance
+        env:
+          QL_BROWSER_RUNTIME: ${{ runner.temp }}/platform-browser/node_modules
+        run: pnpm test:platform:e2e
+      - name: Verify and remove owned managed fixtures
+        run: node diagnostics/phase10/cleanup-managed-fixtures.cjs
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: phase10-execution-gates
+          path: |
+            diagnostics/phase10/
+            diagnostics/phase9/
+            diagnostics/phase8/platform-e2e.json
+            diagnostics/phase8/platform-e2e-backend.log
+            diagnostics/phase8/browser-*.png
+            diagnostics/phase8/final-typecheck.*
+            diagnostics/phase8/final-static-audit.json
+            diagnostics/phase8/*-result.json
+            diagnostics/phase8/managed-runtime/
+            diagnostics/phase8/managed-node/
+
+  real-python-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: '8.3.1'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # CI image prerequisites, never installed by Runtime Manager.
+      - run: sudo apt-get update && sudo apt-get install -y build-essential git curl tar python3 libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libffi-dev liblzma-dev
+      - name: Official pinned pyenv and real CPython install / verify / remove
+        run: node diagnostics/phase6/real-runtime-smoke.cjs
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: real-python-runtime
+          path: diagnostics/phase6/real-smoke/

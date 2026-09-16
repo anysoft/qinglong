@@ -112,3 +112,7 @@ pnpm start
 《后汉书·律历志下》记载：日周于天，一寒一暑，四时备成，万物毕改，摄提迁次，青龙移辰，谓之岁。
 
 在中国[二十八宿](https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%8D%81%E5%85%AB%E5%AE%BF)中，青龙是东方七宿（角、亢、氐、房、心、尾、箕）的总称。 在早期星宿信仰中，祂是最尊贵的天神。 但被道教信仰吸纳入其神系后，神格大跌，道教将其称为“孟章”，在不同的道经中有“帝君”、“圣将”、“神将”和“捕鬼将”等称呼，与白虎监兵神君一起，是道教的护卫天神。
+
+## Linux CI
+
+Ubuntu 24.04 CI 的入口、手工 full 运行及诊断 artifact 说明见 [本地复现与 GitHub Actions](docs/refactor/phase16a/09-local-reproduction.md)。CI 测试逻辑位于 `scripts/ci/`，不要求 Docker；Linux 最终资格结论另由 Phase15 给出。

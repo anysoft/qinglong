@@ -1,0 +1,590 @@
+[
+  {
+    "file": "back/data/runtime.ts",
+    "name": "back/data/runtime.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/data/runtime.ts' not found\",\n  \"target\": {\n    \"name\": \"back/data/runtime.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/schema/runtimeSchema.ts",
+    "name": "back/schema/runtimeSchema.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/schema/runtimeSchema.ts' not found\",\n  \"target\": {\n    \"name\": \"back/schema/runtimeSchema.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/schema/runtimeSchema.ts",
+    "name": "createRuntimeSchema",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'createRuntimeSchema' not found\",\n  \"target\": {\n    \"name\": \"createRuntimeSchema\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/schema/platformV2.ts",
+    "name": "back/schema/platformV2.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/schema/platformV2.ts' not found\",\n  \"target\": {\n    \"name\": \"back/schema/platformV2.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/runtime.ts",
+    "name": "back/shared/runtime.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/shared/runtime.ts' not found\",\n  \"target\": {\n    \"name\": \"back/shared/runtime.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/runtime.ts",
+    "name": "RuntimeError",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimeError' not found\",\n  \"target\": {\n    \"name\": \"RuntimeError\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/shared/runtime.ts",
+    "name": "exactPythonVersion",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'exactPythonVersion' not found\",\n  \"target\": {\n    \"name\": \"exactPythonVersion\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "back/services/runtimeOperations.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/runtimeOperations.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/runtimeOperations.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "RuntimeOperationService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimeOperationService' not found\",\n  \"target\": {\n    \"name\": \"RuntimeOperationService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "getProvider",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'getProvider' not found\",\n  \"target\": {\n    \"name\": \"getProvider\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "operation",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'operation' not found\",\n  \"target\": {\n    \"name\": \"operation\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "filesystemDiagnostics",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'filesystemDiagnostics' not found\",\n  \"target\": {\n    \"name\": \"filesystemDiagnostics\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "providerHealth",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'providerHealth' not found\",\n  \"target\": {\n    \"name\": \"providerHealth\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "operations",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'operations' not found\",\n  \"target\": {\n    \"name\": \"operations\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "runtime",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runtime' not found\",\n  \"target\": {\n    \"name\": \"runtime\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "runtimes",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runtimes' not found\",\n  \"target\": {\n    \"name\": \"runtimes\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "request",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'request' not found\",\n  \"target\": {\n    \"name\": \"request\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "cancel",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cancel' not found\",\n  \"target\": {\n    \"name\": \"cancel\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "wait",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'wait' not found\",\n  \"target\": {\n    \"name\": \"wait\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "execute",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'execute' not found\",\n  \"target\": {\n    \"name\": \"execute\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "recoverLocked",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'recoverLocked' not found\",\n  \"target\": {\n    \"name\": \"recoverLocked\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "recover",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'recover' not found\",\n  \"target\": {\n    \"name\": \"recover\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "startRecovery",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'startRecovery' not found\",\n  \"target\": {\n    \"name\": \"startRecovery\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeOperations.ts",
+    "name": "close",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'close' not found\",\n  \"target\": {\n    \"name\": \"close\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "back/services/runtimePaths.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/runtimePaths.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/runtimePaths.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "RuntimePathResolver",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimePathResolver' not found\",\n  \"target\": {\n    \"name\": \"RuntimePathResolver\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "root",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'root' not found\",\n  \"target\": {\n    \"name\": \"root\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "directory",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'directory' not found\",\n  \"target\": {\n    \"name\": \"directory\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "privateWrite",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'privateWrite' not found\",\n  \"target\": {\n    \"name\": \"privateWrite\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "readJson",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'readJson' not found\",\n  \"target\": {\n    \"name\": \"readJson\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "lock",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'lock' not found\",\n  \"target\": {\n    \"name\": \"lock\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "provider",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'provider' not found\",\n  \"target\": {\n    \"name\": \"provider\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "code",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'code' not found\",\n  \"target\": {\n    \"name\": \"code\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "version",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'version' not found\",\n  \"target\": {\n    \"name\": \"version\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "assertInstallation",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'assertInstallation' not found\",\n  \"target\": {\n    \"name\": \"assertInstallation\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "createInstallation",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'createInstallation' not found\",\n  \"target\": {\n    \"name\": \"createInstallation\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "ownership",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ownership' not found\",\n  \"target\": {\n    \"name\": \"ownership\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "executable",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'executable' not found\",\n  \"target\": {\n    \"name\": \"executable\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "operation",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'operation' not found\",\n  \"target\": {\n    \"name\": \"operation\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "cache",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cache' not found\",\n  \"target\": {\n    \"name\": \"cache\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "log",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'log' not found\",\n  \"target\": {\n    \"name\": \"log\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "quarantine",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'quarantine' not found\",\n  \"target\": {\n    \"name\": \"quarantine\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimePaths.ts",
+    "name": "diskUsage",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diskUsage' not found\",\n  \"target\": {\n    \"name\": \"diskUsage\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "back/services/pyenvProvider.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/pyenvProvider.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/pyenvProvider.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "parsePythonCatalog",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'parsePythonCatalog' not found\",\n  \"target\": {\n    \"name\": \"parsePythonCatalog\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "PyenvProvider",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PyenvProvider' not found\",\n  \"target\": {\n    \"name\": \"PyenvProvider\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "code",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'code' not found\",\n  \"target\": {\n    \"name\": \"code\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "setup",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'setup' not found\",\n  \"target\": {\n    \"name\": \"setup\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "verifyProvider",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'verifyProvider' not found\",\n  \"target\": {\n    \"name\": \"verifyProvider\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "catalog",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'catalog' not found\",\n  \"target\": {\n    \"name\": \"catalog\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "install",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'install' not found\",\n  \"target\": {\n    \"name\": \"install\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "verify",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'verify' not found\",\n  \"target\": {\n    \"name\": \"verify\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "uninstall",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'uninstall' not found\",\n  \"target\": {\n    \"name\": \"uninstall\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/pyenvProvider.ts",
+    "name": "repair",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'repair' not found\",\n  \"target\": {\n    \"name\": \"repair\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeProcess.ts",
+    "name": "back/services/runtimeProcess.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/runtimeProcess.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/runtimeProcess.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeProcess.ts",
+    "name": "RuntimeLease",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimeLease' not found\",\n  \"target\": {\n    \"name\": \"RuntimeLease\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeProcess.ts",
+    "name": "acquire",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'acquire' not found\",\n  \"target\": {\n    \"name\": \"acquire\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeProcess.ts",
+    "name": "release",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'release' not found\",\n  \"target\": {\n    \"name\": \"release\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeProcess.ts",
+    "name": "RuntimeCommand",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimeCommand' not found\",\n  \"target\": {\n    \"name\": \"RuntimeCommand\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeProcess.ts",
+    "name": "cancel",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'cancel' not found\",\n  \"target\": {\n    \"name\": \"cancel\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeProcess.ts",
+    "name": "run",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'run' not found\",\n  \"target\": {\n    \"name\": \"run\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeLog.ts",
+    "name": "back/services/runtimeLog.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/runtimeLog.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/runtimeLog.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeLog.ts",
+    "name": "RuntimeOperationLog",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimeOperationLog' not found\",\n  \"target\": {\n    \"name\": \"RuntimeOperationLog\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeLog.ts",
+    "name": "open",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'open' not found\",\n  \"target\": {\n    \"name\": \"open\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeLog.ts",
+    "name": "write",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'write' not found\",\n  \"target\": {\n    \"name\": \"write\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeLog.ts",
+    "name": "close",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'close' not found\",\n  \"target\": {\n    \"name\": \"close\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeLog.ts",
+    "name": "read",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'read' not found\",\n  \"target\": {\n    \"name\": \"read\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeDiagnostics.ts",
+    "name": "back/services/runtimeDiagnostics.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/runtimeDiagnostics.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/runtimeDiagnostics.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeDiagnostics.ts",
+    "name": "RuntimeDiagnosticsService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimeDiagnosticsService' not found\",\n  \"target\": {\n    \"name\": \"RuntimeDiagnosticsService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeDiagnostics.ts",
+    "name": "inspect",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'inspect' not found\",\n  \"target\": {\n    \"name\": \"inspect\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeDiagnostics.ts",
+    "name": "beforeInstall",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'beforeInstall' not found\",\n  \"target\": {\n    \"name\": \"beforeInstall\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeReferences.ts",
+    "name": "back/services/runtimeReferences.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/runtimeReferences.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/runtimeReferences.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeReferences.ts",
+    "name": "RuntimeReferenceService",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'RuntimeReferenceService' not found\",\n  \"target\": {\n    \"name\": \"RuntimeReferenceService\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeReferences.ts",
+    "name": "inspect",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'inspect' not found\",\n  \"target\": {\n    \"name\": \"inspect\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeReferences.ts",
+    "name": "requireUnused",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'requireUnused' not found\",\n  \"target\": {\n    \"name\": \"requireUnused\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeBuildEnvironment.ts",
+    "name": "back/services/runtimeBuildEnvironment.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/runtimeBuildEnvironment.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/runtimeBuildEnvironment.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/runtimeBuildEnvironment.ts",
+    "name": "runtimeBuildEnvironment",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runtimeBuildEnvironment' not found\",\n  \"target\": {\n    \"name\": \"runtimeBuildEnvironment\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "back/api/runtime.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/runtime.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/runtime.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "payload",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'payload' not found\",\n  \"target\": {\n    \"name\": \"payload\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "operationDto",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'operationDto' not found\",\n  \"target\": {\n    \"name\": \"operationDto\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "endpoint",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'endpoint' not found\",\n  \"target\": {\n    \"name\": \"endpoint\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/runtime.ts",
+    "name": "runtimeRoutes",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'runtimeRoutes' not found\",\n  \"target\": {\n    \"name\": \"runtimeRoutes\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/runtime/python/index.tsx",
+    "name": "src/pages/runtime/python/index.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/pages/runtime/python/index.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/pages/runtime/python/index.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/pages/runtime/python/index.tsx",
+    "name": "PythonRuntimePage",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'PythonRuntimePage' not found\",\n  \"target\": {\n    \"name\": \"PythonRuntimePage\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

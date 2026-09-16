@@ -1,0 +1,479 @@
+$ pwd
+/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong
+
+$ git branch --show-current
+codex/phase9-task-domain
+
+$ git status --short
+ M .github/workflows/validate.yml
+ M TEMPORARY_BRIDGES.md
+ M back/api/configAssets.ts
+ M back/api/cron.ts
+ M back/api/dashboard.ts
+ M back/api/index.ts
+ M back/api/scopedEnvironment.ts
+ M back/data/configAsset.ts
+ M back/data/cron.ts
+ M back/data/cronStats.ts
+ M back/data/cronView.ts
+ M back/data/runningInstance.ts
+ M back/data/scopedEnv.ts
+ M back/loaders/bootAfter.ts
+ M back/loaders/db.ts
+ M back/loaders/initData.ts
+ M back/schedule/api.ts
+ M back/services/cron.ts
+ M back/services/cronView.ts
+ M back/services/managedSubscription.ts
+ M back/services/nodeEnvironment.ts
+ M back/services/pythonEnvironmentBuild.ts
+ M back/services/repository.ts
+ M back/services/repositoryEnvProfile.ts
+ M back/services/retention.ts
+ M back/services/scopedEnvVariable.ts
+ M back/services/script.ts
+ M back/services/subscription.ts
+ M back/services/subscriptionDiscovery.ts
+ M back/services/taskConfig.ts
+ M back/services/taskEnvironmentResolver.ts
+ M back/services/taskExecutionPreparation.ts
+ M back/services/taskHooks.ts
+ M back/services/taskWorkspace.ts
+ M back/services/worktree.ts
+ M back/shared/operationalSchema.ts
+ M back/shared/runCron.ts
+ M docs/architecture/00-platform-overview.md
+ M docs/architecture/01-domain-model.md
+ M docs/architecture/06-database-target.md
+ M docs/architecture/07-service-boundaries.md
+ M docs/architecture/08-temporary-bridges.md
+ M package.json
+ M src/components/NodeRuntime/index.tsx
+ M src/components/PythonEnvironments/index.tsx
+ M src/components/task-hooks.tsx
+ M src/layouts/defaultProps.tsx
+ D src/pages/crontab/const.ts
+ D src/pages/crontab/detail.tsx
+ D src/pages/crontab/index.tsx
+ D src/pages/crontab/logModal.tsx
+ D src/pages/crontab/modal.tsx
+ D src/pages/crontab/type.ts
+ D src/pages/crontab/viewCreateModal.tsx
+ D src/pages/crontab/viewManageModal.tsx
+ M src/pages/dashboard/failureModal.tsx
+ M src/pages/dashboard/index.tsx
+ M src/pages/repository-workspace.tsx
+ M src/utils/index.ts
+ M test/back/cron-log-name.test.cjs
+ M test/back/dashboard-failures.test.cjs
+ M test/back/execution-lifecycle.test.cjs
+ M test/back/log-path-security.test.cjs
+ M test/back/manual-execution.test.cjs
+ M test/back/manual-stop-claim.test.cjs
+ M test/back/retention.test.cjs
+ M test/back/scheduler-mutation.test.cjs
+ M test/back/scheduler-readiness.test.cjs
+ M test/back/scheduler-reconciliation.test.cjs
+ M test/back/stop-race.test.cjs
+ M tests/phase2/helpers.cjs
+ M tests/phase3/cron-publication.test.cjs
+ M tests/phase3/helpers.cjs
+ M tests/phase4/helpers.cjs
+ M tests/phase4/repository-deletion.test.cjs
+ M tests/phase5/api.test.cjs
+ M tests/phase5/domain.test.cjs
+ M tests/phase5/helpers.cjs
+ M tests/phase5/publication-integrity.test.cjs
+ M tests/phase5/runtime.test.cjs
+ M tests/phase5/schema.test.cjs
+ M tests/phase6/schema.test.cjs
+ M tests/phase7/schema.test.cjs
+ M tests/phase8/schema.test.cjs
+ M tests/platform/bootstrap-data.test.cjs
+ M tests/platform/bootstrap-failure.test.cjs
+ M tests/platform/credential-resources.test.cjs
+ M tests/platform/discovery.test.cjs
+ M tests/platform/environment-account-mode.test.cjs
+ M tests/platform/environment-api.test.cjs
+ M tests/platform/environment-domain.test.cjs
+ M tests/platform/environment-entrypoint.test.cjs
+ M tests/platform/environment-execution.test.cjs
+ M tests/platform/environment-isolation.test.cjs
+ M tests/platform/environment-transport.test.cjs
+ M tests/platform/fresh-schema.test.cjs
+ M tests/platform/subscription-domain.test.cjs
+ M tests/platform/subscription-pipeline.test.cjs
+ M tests/platform/task-model-bridge.test.cjs
+ M tests/platform/test-baseline.json
+?? back/api/tasks.ts
+?? back/data/task.ts
+?? back/schema/platform-v5.json
+?? back/schema/platformV5.ts
+?? back/schema/taskSchema.ts
+?? back/services/schedulerBridge.ts
+?? back/services/task.ts
+?? back/services/taskExecutionBridge.ts
+?? back/services/taskExecutionSourceBridge.ts
+?? back/services/taskReferences.ts
+?? back/services/taskRelationships.ts
+?? back/services/taskResourceResolver.ts
+?? back/services/taskResourceValidator.ts
+?? back/shared/taskDefinition.ts
+?? diagnostics/phase9/
+?? docs/architecture/13-task-domain.md
+?? docs/refactor/phase9/
+?? shell/preload/task_types.py
+?? src/components/task-bridge/
+?? src/components/task-resource-references.tsx
+?? src/pages/tasks/
+?? tests/phase9/
+
+$ git status
+On branch codex/phase9-task-domain
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .github/workflows/validate.yml
+	modified:   TEMPORARY_BRIDGES.md
+	modified:   back/api/configAssets.ts
+	modified:   back/api/cron.ts
+	modified:   back/api/dashboard.ts
+	modified:   back/api/index.ts
+	modified:   back/api/scopedEnvironment.ts
+	modified:   back/data/configAsset.ts
+	modified:   back/data/cron.ts
+	modified:   back/data/cronStats.ts
+	modified:   back/data/cronView.ts
+	modified:   back/data/runningInstance.ts
+	modified:   back/data/scopedEnv.ts
+	modified:   back/loaders/bootAfter.ts
+	modified:   back/loaders/db.ts
+	modified:   back/loaders/initData.ts
+	modified:   back/schedule/api.ts
+	modified:   back/services/cron.ts
+	modified:   back/services/cronView.ts
+	modified:   back/services/managedSubscription.ts
+	modified:   back/services/nodeEnvironment.ts
+	modified:   back/services/pythonEnvironmentBuild.ts
+	modified:   back/services/repository.ts
+	modified:   back/services/repositoryEnvProfile.ts
+	modified:   back/services/retention.ts
+	modified:   back/services/scopedEnvVariable.ts
+	modified:   back/services/script.ts
+	modified:   back/services/subscription.ts
+	modified:   back/services/subscriptionDiscovery.ts
+	modified:   back/services/taskConfig.ts
+	modified:   back/services/taskEnvironmentResolver.ts
+	modified:   back/services/taskExecutionPreparation.ts
+	modified:   back/services/taskHooks.ts
+	modified:   back/services/taskWorkspace.ts
+	modified:   back/services/worktree.ts
+	modified:   back/shared/operationalSchema.ts
+	modified:   back/shared/runCron.ts
+	modified:   docs/architecture/00-platform-overview.md
+	modified:   docs/architecture/01-domain-model.md
+	modified:   docs/architecture/06-database-target.md
+	modified:   docs/architecture/07-service-boundaries.md
+	modified:   docs/architecture/08-temporary-bridges.md
+	modified:   package.json
+	modified:   src/components/NodeRuntime/index.tsx
+	modified:   src/components/PythonEnvironments/index.tsx
+	modified:   src/components/task-hooks.tsx
+	modified:   src/layouts/defaultProps.tsx
+	deleted:    src/pages/crontab/const.ts
+	deleted:    src/pages/crontab/detail.tsx
+	deleted:    src/pages/crontab/index.tsx
+	deleted:    src/pages/crontab/logModal.tsx
+	deleted:    src/pages/crontab/modal.tsx
+	deleted:    src/pages/crontab/type.ts
+	deleted:    src/pages/crontab/viewCreateModal.tsx
+	deleted:    src/pages/crontab/viewManageModal.tsx
+	modified:   src/pages/dashboard/failureModal.tsx
+	modified:   src/pages/dashboard/index.tsx
+	modified:   src/pages/repository-workspace.tsx
+	modified:   src/utils/index.ts
+	modified:   test/back/cron-log-name.test.cjs
+	modified:   test/back/dashboard-failures.test.cjs
+	modified:   test/back/execution-lifecycle.test.cjs
+	modified:   test/back/log-path-security.test.cjs
+	modified:   test/back/manual-execution.test.cjs
+	modified:   test/back/manual-stop-claim.test.cjs
+	modified:   test/back/retention.test.cjs
+	modified:   test/back/scheduler-mutation.test.cjs
+	modified:   test/back/scheduler-readiness.test.cjs
+	modified:   test/back/scheduler-reconciliation.test.cjs
+	modified:   test/back/stop-race.test.cjs
+	modified:   tests/phase2/helpers.cjs
+	modified:   tests/phase3/cron-publication.test.cjs
+	modified:   tests/phase3/helpers.cjs
+	modified:   tests/phase4/helpers.cjs
+	modified:   tests/phase4/repository-deletion.test.cjs
+	modified:   tests/phase5/api.test.cjs
+	modified:   tests/phase5/domain.test.cjs
+	modified:   tests/phase5/helpers.cjs
+	modified:   tests/phase5/publication-integrity.test.cjs
+	modified:   tests/phase5/runtime.test.cjs
+	modified:   tests/phase5/schema.test.cjs
+	modified:   tests/phase6/schema.test.cjs
+	modified:   tests/phase7/schema.test.cjs
+	modified:   tests/phase8/schema.test.cjs
+	modified:   tests/platform/bootstrap-data.test.cjs
+	modified:   tests/platform/bootstrap-failure.test.cjs
+	modified:   tests/platform/credential-resources.test.cjs
+	modified:   tests/platform/discovery.test.cjs
+	modified:   tests/platform/environment-account-mode.test.cjs
+	modified:   tests/platform/environment-api.test.cjs
+	modified:   tests/platform/environment-domain.test.cjs
+	modified:   tests/platform/environment-entrypoint.test.cjs
+	modified:   tests/platform/environment-execution.test.cjs
+	modified:   tests/platform/environment-isolation.test.cjs
+	modified:   tests/platform/environment-transport.test.cjs
+	modified:   tests/platform/fresh-schema.test.cjs
+	modified:   tests/platform/subscription-domain.test.cjs
+	modified:   tests/platform/subscription-pipeline.test.cjs
+	modified:   tests/platform/task-model-bridge.test.cjs
+	modified:   tests/platform/test-baseline.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	back/api/tasks.ts
+	back/data/task.ts
+	back/schema/platform-v5.json
+	back/schema/platformV5.ts
+	back/schema/taskSchema.ts
+	back/services/schedulerBridge.ts
+	back/services/task.ts
+	back/services/taskExecutionBridge.ts
+	back/services/taskExecutionSourceBridge.ts
+	back/services/taskReferences.ts
+	back/services/taskRelationships.ts
+	back/services/taskResourceResolver.ts
+	back/services/taskResourceValidator.ts
+	back/shared/taskDefinition.ts
+	diagnostics/phase9/
+	docs/architecture/13-task-domain.md
+	docs/refactor/phase9/
+	shell/preload/task_types.py
+	src/components/task-bridge/
+	src/components/task-resource-references.tsx
+	src/pages/tasks/
+	tests/phase9/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git log --oneline --decorate -10
+47294399 (HEAD -> codex/phase9-task-domain, codex/phase8-node-environments) Add Node runtime environment operations and CI gates
+33564c77 (codex/phase7-python-environments) feat: phase 7 immutable Python dependency environments
+1eafedc7 (codex/phase6-python-runtime) feat: phase 6 managed Python runtime
+21e733fe (tag: platform-phase5, develop) feat: phase 5 config assets and hooks v2
+9a9ad297 (tag: platform-v1-phase4.5b) refactor: complete phase 4.5b greenfield consolidation
+be893069 Document greenfield-only platform direction
+e3d3f17f Add scoped environment profiles for repositories and tasks
+998a4d66 (tag: refactor-phase3) refactor: phase 3 managed subscription git pipeline
+a2f1ac2d refactor: phase 2 persistent repository storage and worktree
+dc7856c3 (tag: refactor-phase2) refactor: phase 2 persistent repository storage and worktree
+
+$ git diff --stat
+ .github/workflows/validate.yml                   |   12 +-
+ TEMPORARY_BRIDGES.md                             |   19 +
+ back/api/configAssets.ts                         |   17 +-
+ back/api/cron.ts                                 |  380 +-------
+ back/api/dashboard.ts                            |   42 +-
+ back/api/index.ts                                |    2 +
+ back/api/scopedEnvironment.ts                    |   10 +-
+ back/data/configAsset.ts                         |    4 +-
+ back/data/cron.ts                                |    9 +-
+ back/data/cronStats.ts                           |   11 +-
+ back/data/cronView.ts                            |   15 +-
+ back/data/runningInstance.ts                     |    2 +
+ back/data/scopedEnv.ts                           |    6 +-
+ back/loaders/bootAfter.ts                        |    4 +-
+ back/loaders/db.ts                               |   13 +-
+ back/loaders/initData.ts                         |   14 +-
+ back/schedule/api.ts                             |   81 +-
+ back/services/cron.ts                            |  191 ++--
+ back/services/cronView.ts                        |   38 +-
+ back/services/managedSubscription.ts             |   10 +-
+ back/services/nodeEnvironment.ts                 |    2 +
+ back/services/pythonEnvironmentBuild.ts          |    2 +
+ back/services/repository.ts                      |    2 +
+ back/services/repositoryEnvProfile.ts            |    8 +-
+ back/services/retention.ts                       |    6 +-
+ back/services/scopedEnvVariable.ts               |   15 +-
+ back/services/script.ts                          |    4 +-
+ back/services/subscription.ts                    |   24 +-
+ back/services/subscriptionDiscovery.ts           |    8 +-
+ back/services/taskConfig.ts                      |   15 +-
+ back/services/taskEnvironmentResolver.ts         |   15 +-
+ back/services/taskExecutionPreparation.ts        |   11 +-
+ back/services/taskHooks.ts                       |    4 +-
+ back/services/taskWorkspace.ts                   |   11 +-
+ back/services/worktree.ts                        |    3 +
+ back/shared/operationalSchema.ts                 |   19 +-
+ back/shared/runCron.ts                           |    6 +-
+ docs/architecture/00-platform-overview.md        |    3 +
+ docs/architecture/01-domain-model.md             |    3 +
+ docs/architecture/06-database-target.md          |    3 +
+ docs/architecture/07-service-boundaries.md       |    3 +
+ docs/architecture/08-temporary-bridges.md        |    3 +
+ package.json                                     |    2 +-
+ src/components/NodeRuntime/index.tsx             |    5 +-
+ src/components/PythonEnvironments/index.tsx      |    5 +-
+ src/components/task-hooks.tsx                    |    2 +-
+ src/layouts/defaultProps.tsx                     |    6 +-
+ src/pages/crontab/const.ts                       |   13 -
+ src/pages/crontab/detail.tsx                     |  678 -------------
+ src/pages/crontab/index.tsx                      | 1129 ----------------------
+ src/pages/crontab/logModal.tsx                   |  197 ----
+ src/pages/crontab/modal.tsx                      |  323 -------
+ src/pages/crontab/type.ts                        |   47 -
+ src/pages/crontab/viewCreateModal.tsx            |  387 --------
+ src/pages/crontab/viewManageModal.tsx            |  277 ------
+ src/pages/dashboard/failureModal.tsx             |    4 +-
+ src/pages/dashboard/index.tsx                    |    4 +-
+ src/pages/repository-workspace.tsx               |    3 +
+ src/utils/index.ts                               |    4 +-
+ test/back/cron-log-name.test.cjs                 |   48 +-
+ test/back/dashboard-failures.test.cjs            |    4 +-
+ test/back/execution-lifecycle.test.cjs           |    2 +-
+ test/back/log-path-security.test.cjs             |    2 +-
+ test/back/manual-execution.test.cjs              |    2 +-
+ test/back/manual-stop-claim.test.cjs             |    4 +-
+ test/back/retention.test.cjs                     |    8 +-
+ test/back/scheduler-mutation.test.cjs            |    5 +-
+ test/back/scheduler-readiness.test.cjs           |    2 +-
+ test/back/scheduler-reconciliation.test.cjs      |    3 +-
+ test/back/stop-race.test.cjs                     |    2 +-
+ tests/phase2/helpers.cjs                         |    4 +
+ tests/phase3/cron-publication.test.cjs           |    2 +-
+ tests/phase3/helpers.cjs                         |    5 +
+ tests/phase4/helpers.cjs                         |    3 +-
+ tests/phase4/repository-deletion.test.cjs        |    2 +-
+ tests/phase5/api.test.cjs                        |    2 +-
+ tests/phase5/domain.test.cjs                     |   10 +-
+ tests/phase5/helpers.cjs                         |    7 +-
+ tests/phase5/publication-integrity.test.cjs      |    8 +-
+ tests/phase5/runtime.test.cjs                    |   28 +-
+ tests/phase5/schema.test.cjs                     |    6 +-
+ tests/phase6/schema.test.cjs                     |    2 +-
+ tests/phase7/schema.test.cjs                     |    2 +-
+ tests/phase8/schema.test.cjs                     |    2 +-
+ tests/platform/bootstrap-data.test.cjs           |    4 +-
+ tests/platform/bootstrap-failure.test.cjs        |    6 +-
+ tests/platform/credential-resources.test.cjs     |    1 +
+ tests/platform/discovery.test.cjs                |   12 +-
+ tests/platform/environment-account-mode.test.cjs |    2 +-
+ tests/platform/environment-api.test.cjs          |    4 +-
+ tests/platform/environment-domain.test.cjs       |    6 +-
+ tests/platform/environment-entrypoint.test.cjs   |    2 +-
+ tests/platform/environment-execution.test.cjs    |    4 +-
+ tests/platform/environment-isolation.test.cjs    |    2 +-
+ tests/platform/environment-transport.test.cjs    |    2 +-
+ tests/platform/fresh-schema.test.cjs             |    8 +-
+ tests/platform/subscription-domain.test.cjs      |    2 +-
+ tests/platform/subscription-pipeline.test.cjs    |   22 +-
+ tests/platform/task-model-bridge.test.cjs        |   20 +-
+ tests/platform/test-baseline.json                |   28 +
+ 100 files changed, 562 insertions(+), 3864 deletions(-)
+
+$ git diff --name-status
+M	.github/workflows/validate.yml
+M	TEMPORARY_BRIDGES.md
+M	back/api/configAssets.ts
+M	back/api/cron.ts
+M	back/api/dashboard.ts
+M	back/api/index.ts
+M	back/api/scopedEnvironment.ts
+M	back/data/configAsset.ts
+M	back/data/cron.ts
+M	back/data/cronStats.ts
+M	back/data/cronView.ts
+M	back/data/runningInstance.ts
+M	back/data/scopedEnv.ts
+M	back/loaders/bootAfter.ts
+M	back/loaders/db.ts
+M	back/loaders/initData.ts
+M	back/schedule/api.ts
+M	back/services/cron.ts
+M	back/services/cronView.ts
+M	back/services/managedSubscription.ts
+M	back/services/nodeEnvironment.ts
+M	back/services/pythonEnvironmentBuild.ts
+M	back/services/repository.ts
+M	back/services/repositoryEnvProfile.ts
+M	back/services/retention.ts
+M	back/services/scopedEnvVariable.ts
+M	back/services/script.ts
+M	back/services/subscription.ts
+M	back/services/subscriptionDiscovery.ts
+M	back/services/taskConfig.ts
+M	back/services/taskEnvironmentResolver.ts
+M	back/services/taskExecutionPreparation.ts
+M	back/services/taskHooks.ts
+M	back/services/taskWorkspace.ts
+M	back/services/worktree.ts
+M	back/shared/operationalSchema.ts
+M	back/shared/runCron.ts
+M	docs/architecture/00-platform-overview.md
+M	docs/architecture/01-domain-model.md
+M	docs/architecture/06-database-target.md
+M	docs/architecture/07-service-boundaries.md
+M	docs/architecture/08-temporary-bridges.md
+M	package.json
+M	src/components/NodeRuntime/index.tsx
+M	src/components/PythonEnvironments/index.tsx
+M	src/components/task-hooks.tsx
+M	src/layouts/defaultProps.tsx
+D	src/pages/crontab/const.ts
+D	src/pages/crontab/detail.tsx
+D	src/pages/crontab/index.tsx
+D	src/pages/crontab/logModal.tsx
+D	src/pages/crontab/modal.tsx
+D	src/pages/crontab/type.ts
+D	src/pages/crontab/viewCreateModal.tsx
+D	src/pages/crontab/viewManageModal.tsx
+M	src/pages/dashboard/failureModal.tsx
+M	src/pages/dashboard/index.tsx
+M	src/pages/repository-workspace.tsx
+M	src/utils/index.ts
+M	test/back/cron-log-name.test.cjs
+M	test/back/dashboard-failures.test.cjs
+M	test/back/execution-lifecycle.test.cjs
+M	test/back/log-path-security.test.cjs
+M	test/back/manual-execution.test.cjs
+M	test/back/manual-stop-claim.test.cjs
+M	test/back/retention.test.cjs
+M	test/back/scheduler-mutation.test.cjs
+M	test/back/scheduler-readiness.test.cjs
+M	test/back/scheduler-reconciliation.test.cjs
+M	test/back/stop-race.test.cjs
+M	tests/phase2/helpers.cjs
+M	tests/phase3/cron-publication.test.cjs
+M	tests/phase3/helpers.cjs
+M	tests/phase4/helpers.cjs
+M	tests/phase4/repository-deletion.test.cjs
+M	tests/phase5/api.test.cjs
+M	tests/phase5/domain.test.cjs
+M	tests/phase5/helpers.cjs
+M	tests/phase5/publication-integrity.test.cjs
+M	tests/phase5/runtime.test.cjs
+M	tests/phase5/schema.test.cjs
+M	tests/phase6/schema.test.cjs
+M	tests/phase7/schema.test.cjs
+M	tests/phase8/schema.test.cjs
+M	tests/platform/bootstrap-data.test.cjs
+M	tests/platform/bootstrap-failure.test.cjs
+M	tests/platform/credential-resources.test.cjs
+M	tests/platform/discovery.test.cjs
+M	tests/platform/environment-account-mode.test.cjs
+M	tests/platform/environment-api.test.cjs
+M	tests/platform/environment-domain.test.cjs
+M	tests/platform/environment-entrypoint.test.cjs
+M	tests/platform/environment-execution.test.cjs
+M	tests/platform/environment-isolation.test.cjs
+M	tests/platform/environment-transport.test.cjs
+M	tests/platform/fresh-schema.test.cjs
+M	tests/platform/subscription-domain.test.cjs
+M	tests/platform/subscription-pipeline.test.cjs
+M	tests/platform/task-model-bridge.test.cjs
+M	tests/platform/test-baseline.json

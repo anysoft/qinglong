@@ -1,0 +1,163 @@
+{
+  "status": "PASS",
+  "fixtures": [
+    {
+      "kind": "managed-node",
+      "root": "/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-87Ir67",
+      "operations": [
+        {
+          "id": 45,
+          "provider_id": 1,
+          "runtime_id": 1,
+          "operation_type": "NODE_PACKAGE_MANAGER_REMOVE",
+          "status": "SUCCESS",
+          "stage": "COMPLETE",
+          "owner_token": "2612a0a2-a659-484a-8a2f-269e8321a951",
+          "owner_pid": 10007,
+          "cancel_requested": false,
+          "started_at": "2026-09-15T23:41:51.044Z",
+          "finished_at": "2026-09-15T23:41:51.139Z",
+          "exit_code": 0,
+          "log_identity": "runtime-operation-45",
+          "error_code": null,
+          "error_summary": null,
+          "metadata": {
+            "toolchain_id": 2,
+            "timeout_seconds": 3600,
+            "jobs": 4
+          },
+          "createdAt": "2026-09-15T23:41:50.991Z",
+          "updatedAt": "2026-09-15T23:41:51.139Z"
+        },
+        {
+          "id": 46,
+          "provider_id": 1,
+          "runtime_id": 1,
+          "operation_type": "NODE_PACKAGE_MANAGER_REMOVE",
+          "status": "SUCCESS",
+          "stage": "COMPLETE",
+          "owner_token": "e9231dd0-7484-4257-9e01-79dddf0f31e7",
+          "owner_pid": 10007,
+          "cancel_requested": false,
+          "started_at": "2026-09-15T23:41:51.319Z",
+          "finished_at": "2026-09-15T23:41:51.334Z",
+          "exit_code": 0,
+          "log_identity": "runtime-operation-46",
+          "error_code": null,
+          "error_summary": null,
+          "metadata": {
+            "toolchain_id": 1,
+            "timeout_seconds": 3600,
+            "jobs": 4
+          },
+          "createdAt": "2026-09-15T23:41:51.268Z",
+          "updatedAt": "2026-09-15T23:41:51.334Z"
+        },
+        {
+          "id": 47,
+          "provider_id": 1,
+          "runtime_id": 1,
+          "operation_type": "NODE_RUNTIME_VERIFY",
+          "status": "SUCCESS",
+          "stage": "COMPLETE",
+          "owner_token": "afd46fd5-601d-47d0-a0b8-e00d56bdf7fb",
+          "owner_pid": 10007,
+          "cancel_requested": false,
+          "started_at": "2026-09-15T23:41:51.436Z",
+          "finished_at": "2026-09-15T23:41:51.933Z",
+          "exit_code": 0,
+          "log_identity": "runtime-operation-47",
+          "error_code": null,
+          "error_summary": null,
+          "metadata": {
+            "timeout_seconds": 3600,
+            "jobs": 4
+          },
+          "createdAt": "2026-09-15T23:41:51.385Z",
+          "updatedAt": "2026-09-15T23:41:51.934Z"
+        },
+        {
+          "id": 48,
+          "provider_id": 1,
+          "runtime_id": 1,
+          "operation_type": "NODE_RUNTIME_REMOVE",
+          "status": "SUCCESS",
+          "stage": "COMPLETE",
+          "owner_token": "d4fb0eff-15be-485a-91ab-74dfe89bb9b0",
+          "owner_pid": 10007,
+          "cancel_requested": false,
+          "started_at": "2026-09-15T23:41:52.046Z",
+          "finished_at": "2026-09-15T23:41:52.411Z",
+          "exit_code": 0,
+          "log_identity": "runtime-operation-48",
+          "error_code": null,
+          "error_summary": null,
+          "metadata": {
+            "timeout_seconds": 3600,
+            "jobs": 4
+          },
+          "createdAt": "2026-09-15T23:41:51.999Z",
+          "updatedAt": "2026-09-15T23:41:52.411Z"
+        }
+      ],
+      "removed": true
+    },
+    {
+      "kind": "managed-runtime",
+      "root": "/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/platform-phase5-YyUQCd",
+      "operations": [
+        {
+          "id": 16,
+          "provider_id": 1,
+          "runtime_id": 1,
+          "operation_type": "RUNTIME_VERIFY",
+          "status": "SUCCESS",
+          "stage": "COMPLETE",
+          "owner_token": "56fa3a58-0eb8-4383-b10a-4a2234f5d12a",
+          "owner_pid": 10007,
+          "cancel_requested": false,
+          "started_at": "2026-09-15T23:41:52.853Z",
+          "finished_at": "2026-09-15T23:41:53.195Z",
+          "exit_code": 0,
+          "log_identity": "runtime-operation-16",
+          "error_code": null,
+          "error_summary": null,
+          "metadata": {
+            "jobs": 4,
+            "timeout_seconds": 3600,
+            "requested_version": "3.13.15",
+            "target_revision": "c293de3650a2d08ea36c5f6f0d55c5a3841b0c72"
+          },
+          "createdAt": "2026-09-15T23:41:52.850Z",
+          "updatedAt": "2026-09-15T23:41:53.195Z"
+        },
+        {
+          "id": 17,
+          "provider_id": 1,
+          "runtime_id": 1,
+          "operation_type": "RUNTIME_REMOVE",
+          "status": "SUCCESS",
+          "stage": "COMPLETE",
+          "owner_token": "0220a46a-a24b-4b6a-8c4e-3a43916673c8",
+          "owner_pid": 10007,
+          "cancel_requested": false,
+          "started_at": "2026-09-15T23:41:53.252Z",
+          "finished_at": "2026-09-15T23:41:53.700Z",
+          "exit_code": 0,
+          "log_identity": "runtime-operation-17",
+          "error_code": null,
+          "error_summary": null,
+          "metadata": {
+            "jobs": 4,
+            "timeout_seconds": 3600,
+            "requested_version": "3.13.15",
+            "target_revision": "c293de3650a2d08ea36c5f6f0d55c5a3841b0c72"
+          },
+          "createdAt": "2026-09-15T23:41:53.250Z",
+          "updatedAt": "2026-09-15T23:41:53.700Z"
+        }
+      ],
+      "removed": true
+    }
+  ]
+}

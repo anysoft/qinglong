@@ -1,0 +1,44 @@
+[
+  {
+    "file": "tests/phase5/helpers.cjs",
+    "name": "tests/phase5/helpers.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase5/helpers.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase5/helpers.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase5/helpers.cjs",
+    "name": "fixture",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:tests/phase5/helpers.cjs:fixture\",\n    \"name\": \"fixture\",\n    \"type\": \"Function\",\n    \"filePath\": \"tests/phase5/helpers.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 0,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 0,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 1\n  },\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {},\n  \"staleness\": {\n    \"status\": \"behind\",\n    \"commitsBehind\": 1,\n    \"hint\": \"⚠️ Index is 1 commit behind HEAD. Run analyze tool to update.\"\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase5/helpers.cjs",
+    "name": "seedV1",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:tests/phase5/helpers.cjs:seedV1\",\n    \"name\": \"seedV1\",\n    \"type\": \"Function\",\n    \"filePath\": \"tests/phase5/helpers.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 0,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 0,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 1\n  },\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {},\n  \"staleness\": {\n    \"status\": \"behind\",\n    \"commitsBehind\": 1,\n    \"hint\": \"⚠️ Index is 1 commit behind HEAD. Run analyze tool to update.\"\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase5/schema.test.cjs",
+    "name": "tests/phase5/schema.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase5/schema.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase5/schema.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/fresh-schema.test.cjs",
+    "name": "tests/platform/fresh-schema.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/platform/fresh-schema.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/platform/fresh-schema.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/platform/fresh-schema.test.cjs",
+    "name": "fixture",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:tests/platform/fresh-schema.test.cjs:fixture\",\n    \"name\": \"fixture\",\n    \"type\": \"Function\",\n    \"filePath\": \"tests/platform/fresh-schema.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {},\n  \"staleness\": {\n    \"status\": \"behind\",\n    \"commitsBehind\": 1,\n    \"hint\": \"⚠️ Index is 1 commit behind HEAD. Run analyze tool to update.\"\n  }\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

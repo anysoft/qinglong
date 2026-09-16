@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: Installed parser accepts five/six fields and aliases, validates zones, deterministic DST
+ok 1 - Installed parser accepts five/six fields and aliases, validates zones, deterministic DST
+  ---
+  duration_ms: 37.256333
+  type: 'test'
+  ...
+# Subtest: Relative glob rejects escaping and matches nested paths without regex injection
+ok 2 - Relative glob rejects escaping and matches nested paths without regex injection
+  ---
+  duration_ms: 0.374125
+  type: 'test'
+  ...
+# Subtest: Frozen v7 upgrades transactionally to identical fresh v8, retry after rollback
+ok 3 - Frozen v7 upgrades transactionally to identical fresh v8, retry after rollback
+  ---
+  duration_ms: 1826.162041
+  type: 'test'
+  ...
+# Subtest: Trigger schema fresh, typed configurations, webhook hash and rotation
+ok 4 - Trigger schema fresh, typed configurations, webhook hash and rotation
+  ---
+  duration_ms: 1865.426625
+  type: 'test'
+  ...
+# Subtest: Event durable dedup, atomic submit/link, disabled skip, real execution
+ok 5 - Event durable dedup, atomic submit/link, disabled skip, real execution
+  ---
+  duration_ms: 1051.426875
+  type: 'test'
+  ...
+# Subtest: Clock scheduler misfire SKIP and FIRE_ONCE, restart identity
+ok 6 - Clock scheduler misfire SKIP and FIRE_ONCE, restart identity
+  ---
+  duration_ms: 601.853084
+  type: 'test'
+  ...
+# Subtest: Discovery transaction failure preserves resource bindings; retirement preserves history and explicit deletion cascades definitions
+ok 7 - Discovery transaction failure preserves resource bindings; retirement preserves history and explicit deletion cascades definitions
+  ---
+  duration_ms: 1950.3325
+  type: 'test'
+  ...
+# Subtest: subscription deletion protects discovered Tasks; explicit cascade is atomic and leaves manual Tasks intact
+ok 8 - subscription deletion protects discovered Tasks; explicit cascade is atomic and leaves manual Tasks intact
+  ---
+  duration_ms: 1867.432
+  type: 'test'
+  ...
+# Subtest: empty data root creates v4, all bridge/core tables, and restarts without schema writes
+ok 9 - empty data root creates v4, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 569.696208
+  type: 'test'
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 10 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 292.812458
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+ok 11 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 451.484125
+  type: 'test'
+  ...
+# Subtest: unexpected schema objects are rejected on restart
+ok 12 - unexpected schema objects are rejected on restart
+  ---
+  duration_ms: 223.710166
+  type: 'test'
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 13 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 1.872667
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3897.793417

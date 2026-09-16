@@ -1,0 +1,198 @@
+[
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "diagnostics/phase8/platform-e2e.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diagnostics/phase8/platform-e2e.cjs' not found\",\n  \"target\": {\n    \"name\": \"diagnostics/phase8/platform-e2e.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "port",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'port' not found\",\n  \"target\": {\n    \"name\": \"port\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "stop",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'stop' not found\",\n  \"target\": {\n    \"name\": \"stop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "until",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'until' not found\",\n  \"target\": {\n    \"name\": \"until\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "start",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'start' not found\",\n  \"target\": {\n    \"name\": \"start\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "login",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'login' not found\",\n  \"target\": {\n    \"name\": \"login\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "choose",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'choose' not found\",\n  \"target\": {\n    \"name\": \"choose\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "confirm",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'confirm' not found\",\n  \"target\": {\n    \"name\": \"confirm\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "repositoryAction",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'repositoryAction' not found\",\n  \"target\": {\n    \"name\": \"repositoryAction\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "variable",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'variable' not found\",\n  \"target\": {\n    \"name\": \"variable\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "saveDialog",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'saveDialog' not found\",\n  \"target\": {\n    \"name\": \"saveDialog\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "asset",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'asset' not found\",\n  \"target\": {\n    \"name\": \"asset\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "bind",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'bind' not found\",\n  \"target\": {\n    \"name\": \"bind\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "editTask",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'editTask' not found\",\n  \"target\": {\n    \"name\": \"editTask\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/platform-e2e.cjs",
+    "name": "installPython",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'installPython' not found\",\n  \"target\": {\n    \"name\": \"installPython\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/browser-node-flow.cjs",
+    "name": "diagnostics/phase8/browser-node-flow.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diagnostics/phase8/browser-node-flow.cjs' not found\",\n  \"target\": {\n    \"name\": \"diagnostics/phase8/browser-node-flow.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/browser-node-flow.cjs",
+    "name": "done",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'done' not found\",\n  \"target\": {\n    \"name\": \"done\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/browser-node-flow.cjs",
+    "name": "pop",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'pop' not found\",\n  \"target\": {\n    \"name\": \"pop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/browser-node-flow.cjs",
+    "name": "selectPlaceholder",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'selectPlaceholder' not found\",\n  \"target\": {\n    \"name\": \"selectPlaceholder\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase8/browser-node-flow.cjs",
+    "name": "create",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'create' not found\",\n  \"target\": {\n    \"name\": \"create\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/browser-provider.cjs",
+    "name": "tests/phase8/browser-provider.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase8/browser-provider.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase8/browser-provider.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/lifecycle.test.cjs",
+    "name": "tests/phase8/lifecycle.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase8/lifecycle.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase8/lifecycle.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/lifecycle.test.cjs",
+    "name": "until",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'until' not found\",\n  \"target\": {\n    \"name\": \"until\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/lifecycle.test.cjs",
+    "name": "childStopped",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'childStopped' not found\",\n  \"target\": {\n    \"name\": \"childStopped\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/lifecycle.test.cjs",
+    "name": "create",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'create' not found\",\n  \"target\": {\n    \"name\": \"create\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/lifecycle.test.cjs",
+    "name": "start",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'start' not found\",\n  \"target\": {\n    \"name\": \"start\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/lifecycle.test.cjs",
+    "name": "ready",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'ready' not found\",\n  \"target\": {\n    \"name\": \"ready\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "tests/phase8/api.test.cjs",
+    "name": "tests/phase8/api.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'tests/phase8/api.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"tests/phase8/api.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

@@ -1,6 +1,18 @@
-# Operational Schema v2 / 最终 Domain Schema
+# Operational Schema v3 / 最终 Domain Schema
 
-**当前为 Operational v2；v1 冻结内容用于签名验证迁移。下图含后续 Domain 目标。** 4.5B 使用 platform_schema_version=1，空库直接创建最终当前模型，非空未知签名拒绝启动；不支持 QingLong 升级导入。保留当前执行必需的桥表，Task/Schedule/TaskRun最终拆分在9/10。此图是最终目标，不是4.5B必须一次实现的schema。
+> **当前基线：Phase 13 / schema v9。** TaskRun观测、健康状态、Channel/Policy/Outbox/Delivery已生效。下方早期段落保留为历史记录；当前见 [Run Observability](16-task-run-observability.md)、[Notification Platform](17-notification-platform.md) 与 [Phase13报告](../../PHASE13_REPORT.md)。下一阶段固定为Phase14 Backup/Restore，Phase12暂缓。
+
+> **当前基线：Phase 11 / schema v8。** Task 无 schedule 字段；TaskTriggers、TriggerEvents 与 DiscoveryPolicies 已生效。正常触发链为 Trigger → ExecutionService.submit → Phase 10 Runner。下文早期阶段内容为历史演进记录，以 [Discovery / Trigger 架构](15-discovery-triggers.md) 和 [Phase 11 报告](../../PHASE11_REPORT.md) 为当前约束。
+
+
+> Phase 10 当前执行架构：Schema v7、TaskRuns / TaskRunAttempts、Worktree direct execution、immutable Context 与 Runner v2 已生效。下面保留的旧阶段描述不再定义正常执行路径。参见 [Execution Engine](14-execution-engine.md) 与 [当前桥接状态](../../TEMPORARY_BRIDGES.md#phase-10--execution-engine)。
+
+> Phase 9 当前架构：Tasks 是定义事实来源；参见 [Task Domain](13-task-domain.md)。下文与此冲突的 Crontab 定义描述属于此前阶段，调度/结果桥仍按 TEMPORARY_BRIDGES 登记。
+
+
+> **当前基线：Phase 8，schema v5。** Runtime Core 同时支持 Python 与 Node；Node 新增 exact PackageManagerToolchain、NodeEnvironment、不可变 Revision/Build，独立 node_modules 与共享 store。下文早期阶段描述保留为演进记录；当前结构见 [Node Runtime 架构](12-node-runtime-environments.md)，最新约束以该文档和 [Phase 8 schema](../refactor/phase8/10-schema-evolution.md) 为准。Task/Hook 仍使用现有 Runner Bridge，未实现 Phase 9/10 绑定。
+
+**当前为 Operational v3；v1/v2 冻结内容用于签名验证迁移。下图含后续 Domain 目标。** 4.5B 使用 platform_schema_version=1，空库直接创建最终当前模型，非空未知签名拒绝启动；不支持 QingLong 升级导入。保留当前执行必需的桥表，Task/Schedule/TaskRun最终拆分在9/10。此图是最终目标，不是4.5B必须一次实现的schema。
 
 ```mermaid
 erDiagram
@@ -75,3 +87,11 @@ Auth/settings/API clients保持安全引导，未来独立admin_users/platform_s
 ## Phase 5 Operational v2
 
 Fresh 与已验证 v1 通过显式事务迁移得到相同 v2 签名。新增 ConfigAssets、ConfigAssetRevisions、RepositoryConfigBindings、TaskConfigBindings、TaskHooks，移除旧 Task/Subscription Hook 字段。冻结 v1 记录保持不变。见 [Schema v2](../refactor/phase5/09-schema-v2.md)。
+
+## Phase 6 Operational v3
+
+新增 RuntimeProviders、RuntimeInstallations、RuntimeOperations。Fresh、有效 v2→v3 与有效 v1→v2→v3 最终签名相同；Runtime SQL 使用实际 CHECK/FK/唯一约束。冻结 v2 来源 platform-phase5，不能覆盖。详见 [Schema v3](../refactor/phase6/09-schema-v3.md)。
+
+## Phase 7 current schema: v4
+
+冻结 Phase 6 actual v3 后演化到 v4，旧 v1/v2 签名不变。新增 PythonEnvironments/Revisions/Builds，RuntimeOperations 扩展 enum。复合 FK 保证 Current 与 Build/Revision 属于同环境；runtime RESTRICT 与不可变触发器补充服务校验。valid v1→v2→v3→v4 与 fresh 同最终签名。详见 [schema evolution](../refactor/phase7/09-schema-evolution.md)。

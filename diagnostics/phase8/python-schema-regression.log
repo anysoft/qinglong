@@ -1,0 +1,157 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: frozen platform v1 upgrades transactionally to identical fresh latest schema and preserves data/hooks
+ok 1 - frozen platform v1 upgrades transactionally to identical fresh latest schema and preserves data/hooks
+  ---
+  duration_ms: 957.479459
+  type: 'test'
+  ...
+# Subtest: migration failure rolls back DDL, data, hooks and version then permits retry
+ok 2 - migration failure rolls back DDL, data, hooks and version then permits retry
+  ---
+  duration_ms: 208.769125
+  type: 'test'
+  ...
+# Subtest: unknown and tampered v1 databases fail closed without touching user rows
+ok 3 - unknown and tampered v1 databases fail closed without touching user rows
+  ---
+  duration_ms: 121.898625
+  type: 'test'
+  ...
+# Subtest: late migration failure after old columns drop restores all v1 data and hook fields
+ok 4 - late migration failure after old columns drop restores all v1 data and hook fields
+  ---
+  duration_ms: 139.143334
+  type: 'test'
+  ...
+# Subtest: exact catalog filters implementations, prereleases and injection
+ok 5 - exact catalog filters implementations, prereleases and injection
+  ---
+  duration_ms: 1081.419542
+  type: 'test'
+  ...
+# Subtest: provider setup, two runtimes, explicit verify/repair/remove preserve sibling and snapshots
+ok 6 - provider setup, two runtimes, explicit verify/repair/remove preserve sibling and snapshots
+  ---
+  duration_ms: 3215.289166
+  type: 'test'
+  ...
+# Subtest: cross-service lock, cancel and timeout keep operation ownership and descendants bounded
+ok 7 - cross-service lock, cancel and timeout keep operation ownership and descendants bounded
+  ---
+  duration_ms: 1893.342375
+  type: 'test'
+  ...
+# Subtest: paths reject unknown roots, version symlink, parent symlink and executable escape
+ok 8 - paths reject unknown roots, version symlink, parent symlink and executable escape
+  ---
+  duration_ms: 339.997458
+  type: 'test'
+  ...
+# Subtest: recovery never kills stored PID or adopts unknown versions; reference checks block removal
+ok 9 - recovery never kills stored PID or adopts unknown versions; reference checks block removal
+  ---
+  duration_ms: 1470.773292
+  type: 'test'
+  ...
+# Subtest: build environment excludes backend/user secrets and logs redact split UTF-8 secrets
+ok 10 - build environment excludes backend/user secrets and logs redact split UTF-8 secrets
+  ---
+  duration_ms: 316.930666
+  type: 'test'
+  ...
+# Subtest: frozen v2 migrates to identical fresh v4, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+not ok 11 - frozen v2 migrates to identical fresh v4, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+  ---
+  duration_ms: 955.549583
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase6/schema.test.cjs:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    SequelizeUniqueConstraintError: Validation error
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase6/schema.test.cjs:19:2)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: v2 late migration failure rolls back runtime tables, metadata and data, then retries
+ok 12 - v2 late migration failure rolls back runtime tables, metadata and data, then retries
+  ---
+  duration_ms: 273.1245
+  type: 'test'
+  ...
+# Subtest: tampered v2 signature and unknown version fail closed
+ok 13 - tampered v2 signature and unknown version fail closed
+  ---
+  duration_ms: 221.913167
+  type: 'test'
+  ...
+# Subtest: Environment API scopes, strict input, definitions, optimistic revisions, reference protection and safe empty deletion
+ok 14 - Environment API scopes, strict input, definitions, optimistic revisions, reference protection and safe empty deletion
+  ---
+  duration_ms: 2917.807125
+  type: 'test'
+  ...
+# Subtest: frozen v3 to v4 is transactional, preserves runtime/history and equals fresh signature
+ok 15 - frozen v3 to v4 is transactional, preserves runtime/history and equals fresh signature
+  ---
+  duration_ms: 796.961375
+  type: 'test'
+  ...
+# Subtest: v3 tampering fails closed before any schema or user-data changes
+ok 16 - v3 tampering fails closed before any schema or user-data changes
+  ---
+  duration_ms: 330.19725
+  type: 'test'
+  ...
+# Subtest: actual SQLite constraints protect immutable revisions, build identity, current ownership and runtime FKs
+ok 17 - actual SQLite constraints protect immutable revisions, build identity, current ownership and runtime FKs
+  ---
+  duration_ms: 144.43725
+  type: 'test'
+  ...
+# Subtest: empty data root creates v4, all bridge/core tables, and restarts without schema writes
+ok 18 - empty data root creates v4, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 565.870167
+  type: 'test'
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 19 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 144.896125
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+ok 20 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 257.908209
+  type: 'test'
+  ...
+# Subtest: unexpected schema objects are rejected on restart
+ok 21 - unexpected schema objects are rejected on restart
+  ---
+  duration_ms: 152.811709
+  type: 'test'
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 22 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 2.423417
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 21
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8589.763292

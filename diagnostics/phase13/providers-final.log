@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: all existing HTTP provider adapters retain protocol behavior with isolated concurrent state and real HTTP fixture
+ok 1 - all existing HTTP provider adapters retain protocol behavior with isolated concurrent state and real HTTP fixture
+  ---
+  duration_ms: 1120.779583
+  type: 'test'
+  ...
+# Subtest: existing email adapter sends through a real deterministic SMTP receiver
+ok 2 - existing email adapter sends through a real deterministic SMTP receiver
+  ---
+  duration_ms: 661.890125
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1988.61325

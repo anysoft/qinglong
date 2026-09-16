@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "workflow": ".github/workflows/linux-ci.yml",
+  "shellcheck": "UNAVAILABLE",
+  "bash_syntax": "PASS",
+  "permissions": "contents: read",
+  "custom_secrets": 0
+}

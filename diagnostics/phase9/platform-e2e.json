@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "steps": [
+    "empty-root-bootstrap",
+    "browser-fresh-initialize-login",
+    "browser-credential-create",
+    "browser-repository-create",
+    "browser-initialize-fetch",
+    "browser-subscription-create-branch",
+    "browser-prepare-sync-discovery",
+    "browser-worktree-view",
+    "browser-global-create",
+    "browser-profile-create-default",
+    "task-domain-discovery-three-languages",
+    "real-python-venv-and-node-dependency-environments",
+    "browser-discovered-task-runtime-settings-validation",
+    "browser-manual-worktree-entrypoint-create",
+    "browser-arguments-concurrency-and-negative-resource-gates",
+    "browser-task-env-config-hooks",
+    "browser-runtime-default-inherit-override-reset",
+    "browser-clone-disable-enable",
+    "browser-environment-reference-protection",
+    "three-language-current-runner-regression-not-managed-runtime-execution",
+    "restart-validate-all-task-resources",
+    "fresh-v6-restart-fk-secret-audit"
+  ],
+  "linux": false,
+  "response_payloads_inspected": 687,
+  "websocket_frames_inspected": 23,
+  "runtime_execution_activation": "PHASE_10"
+}

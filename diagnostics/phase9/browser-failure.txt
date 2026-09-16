@@ -1,0 +1,103 @@
+青龙
+v2.21.0
+仪表盘
+Tasks
+订阅管理
+仓库管理
+环境变量
+配置资产
+脚本管理
+Runtime
+依赖管理
+日志管理
+对比工具
+系统设置
+platform-owner
+Tasks
+Create Task
+Refresh
+Configured Resources
+Runtime binding execution activation is Phase 10. 当前 Run 使用 Current Temporary Execution Bridge，未使用绑定的 Python/Node Environment。Structured Arguments 在 Phase 10 激活，当前桥接拒绝执行带 Arguments 的定义。没有已发布来源的 Manual Task 可配置和校验，直接执行将在 Phase 10 提供。
+Name	Source	Runtime	Schedule	Last run bridge status	Readiness	Enabled	Actions
+
+ 
+	
+ 
+	
+ 
+	
+ 
+	
+ 
+	
+ 
+	
+ 
+	
+ 
+
+Manual Python Task	job.py	PYTHON · 1
+TASK	0 0 1 1 *	IDLE	READY	
+	
+Validate
+Clone
+Run bridge
+Stop
+Log
+Delete
+
+E2E sh	job.sh	SHELL · —
+TASK	0 0 1 1 *	IDLE	READY	
+	
+Validate
+Clone
+Run bridge
+Stop
+Log
+Delete
+
+E2E py	job.py	PYTHON · 1
+TASK	0 0 1 1 *	IDLE	READY	
+	
+Validate
+Clone
+Run bridge
+Stop
+Log
+Delete
+
+E2E js	job.js	NODE · 1
+TASK	0 0 1 1 *	IDLE	READY	
+	
+Validate
+Clone
+Run bridge
+Stop
+Log
+Delete
+1
+Task: Manual Python Task
+General
+Source
+Runtime
+ENV
+Config
+Hooks
+Schedule
+Execution Settings
+Resource Preview
+PYTHON · Configured Resources
+Environment 是逻辑绑定；Current Build 仅用于展示，不固定到 Task。TypeScript 执行工具在 Phase 10 决定。
+Python Environment
+Inherit — Subscription / Repository Default
+Inherit — Subscription / Repository Default
+Selection: UNBOUND
+Repository Runtime Default
+Unset / inherit
+Save Repository Default
+Validate Task
+Close
+Save Task
+1
+Inherit — Subscription / Repository Default
+Task Python Environment · READY · Current Build 1

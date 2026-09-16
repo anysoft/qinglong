@@ -17,17 +17,11 @@ export class Subscription {
   schedule_type?: 'crontab' | 'interval';
   schedule?: string;
   interval_schedule?: { type: SimpleIntervalScheduleUnit; value: number };
-  whitelist?: string;
-  blacklist?: string;
-  dependences?: string;
   branch?: string;
   status?: SubscriptionStatus;
   pid?: number;
   is_disabled?: 1 | 0;
   log_path?: string;
-  extensions?: string;
-  autoAddCron?: 1 | 0;
-  autoDelCron?: 1 | 0;
 
   constructor(options: Subscription) {
     this.id = options.id;
@@ -45,18 +39,12 @@ export class Subscription {
       typeof options.status === 'number' && SubscriptionStatus[options.status]
         ? options.status
         : SubscriptionStatus.idle;
-    this.whitelist = options.whitelist;
-    this.blacklist = options.blacklist;
-    this.dependences = options.dependences;
     this.branch = options.branch;
     this.pid = options.pid;
     this.is_disabled = options.is_disabled;
     this.log_path = options.log_path;
     this.schedule_type = options.schedule_type;
     this.interval_schedule = options.interval_schedule;
-    this.extensions = options.extensions;
-    this.autoAddCron = options.autoAddCron == null || options.autoAddCron ? 1 : 0;
-    this.autoDelCron = options.autoDelCron == null || options.autoDelCron ? 1 : 0;
   }
 }
 
@@ -100,17 +88,11 @@ export const SubscriptionModel = sequelize.define<SubscriptionInstance>(
     interval_schedule: {
       type: DataTypes.JSON,
     },
-    whitelist: DataTypes.STRING,
-    blacklist: DataTypes.STRING,
     status: DataTypes.NUMBER,
-    dependences: DataTypes.STRING,
-    extensions: DataTypes.STRING,
     branch: DataTypes.STRING,
     pid: DataTypes.NUMBER,
     is_disabled: DataTypes.NUMBER,
     log_path: DataTypes.STRING,
     schedule_type: DataTypes.STRING,
-    autoAddCron: { type: DataTypes.NUMBER, allowNull: true },
-    autoDelCron: { type: DataTypes.NUMBER, allowNull: true },
   },
 );

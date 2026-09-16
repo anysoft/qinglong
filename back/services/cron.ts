@@ -1,3 +1,4 @@
+import { executionLauncher } from '../shared/executionLauncher';
 import { randomUUID } from 'crypto';
 import {
   withSchedulerMutation,
@@ -6,7 +7,11 @@ import {
 import { Service, Inject } from 'typedi';
 import winston from 'winston';
 import config from '../config';
-import { Crontab, CrontabModel, CrontabStatus } from '../data/cron';
+import {
+  SchedulerProjection,
+  SchedulerProjectionModel,
+  CrontabStatus,
+} from '../data/cron';
 import { RunningInstanceModel, InstanceStatus } from '../data/runningInstance';
 import { exec, execSync } from 'child_process';
 import fs from 'fs/promises';
@@ -19,7 +24,19 @@ import {
   safeJSONParse,
   isDemoEnv,
 } from '../config/util';
-import { Op, where, col as colFn, FindOptions, fn, Order } from 'sequelize';
+import {
+  Op,
+  where,
+  col as colFn,
+  FindOptions,
+  fn,
+  Order,
+  Transaction,
+} from 'sequelize';
+import { sequelize } from '../data';
+import { TaskModel } from '../data/task';
+import TaskExecutionSourceBridge from './taskExecutionSourceBridge';
+import TaskResourceResolver from './taskResourceResolver';
 import path from 'path';
 import { TASK_PREFIX } from '../config/const';
 import cronClient from '../schedule/client';
@@ -38,10 +55,104 @@ import { LogReadOptions, readLogChunk } from '../shared/logReader';
 import { resolveFileAccess } from '../shared/fileAccess';
 
 @Service()
-export default class CronService {
-  constructor(@Inject('logger') private logger: winston.Logger) { }
+export default class CurrentTaskBridgeService {
+  constructor(@Inject('logger') private logger: winston.Logger) {}
 
-  private isNodeCron(cron: Crontab) {
+  /** Task definitions and their scheduler projection commit together. Scheduler
+   * failures roll back SQLite, including Task-owned ENV/Config/Hooks cascades. */
+  async mutateTaskDefinitions<T extends { id?: number } | null>(
+    mutation: (transaction: Transaction) => Promise<T>,
+  ): Promise<T> {
+    return withSchedulerMutation(async () => {
+      const previous = (await SchedulerProjectionModel.findAll()).map((row) =>
+        row.get({ plain: true }),
+      );
+      let attempted: number[] = previous.map((row) => row.id!);
+      const register = async (rows: SchedulerProjection[]) => {
+        if (isDemoEnv()) return;
+        await cronClient.addCron(
+          rows
+            .filter(
+              (row) => row.isDisabled !== 1 && this.shouldUseCronClient(row),
+            )
+            .map((row) => ({
+              name: row.name ?? '',
+              id: String(row.id),
+              schedule: row.schedule!,
+              command: this.makeCommand(row),
+              extra_schedules: row.extra_schedules ?? [],
+            })),
+        );
+      };
+      try {
+        return await sequelize.transaction(
+          { type: Transaction.TYPES.IMMEDIATE },
+          async (transaction) => {
+            const result = await mutation(transaction);
+            if (
+              result?.id &&
+              (await TaskModel.findByPk(result.id, { transaction }))
+            )
+              await new TaskExecutionSourceBridge().refresh(
+                result.id,
+                transaction,
+              );
+            const rows = (
+              await SchedulerProjectionModel.findAll({ transaction })
+            ).map((row) => row.get({ plain: true }));
+            const resources = new Map(
+              (
+                await new TaskResourceResolver().resolve(
+                  rows.map((row) => row.id!),
+                  transaction,
+                )
+              ).map((resource) => [resource.task.id, resource]),
+            );
+            for (const row of rows) {
+              const resource = resources.get(row.id!);
+              if (
+                !resource?.task.enabled ||
+                resource.readiness.status !== 'READY' ||
+                !row.schedule
+              )
+                row.isDisabled = 1;
+            }
+            attempted = [
+              ...new Set([...attempted, ...rows.map((row) => row.id!)]),
+            ];
+            if (!isDemoEnv() && previous.length)
+              await cronClient.delCron(previous.map((row) => String(row.id)));
+            await register(rows);
+            await this.setCrontab(
+              { data: rows, total: rows.length },
+              true,
+              transaction,
+            );
+            return result;
+          },
+        );
+      } catch (error) {
+        try {
+          if (!isDemoEnv() && attempted.length)
+            await cronClient.delCron(attempted.map(String));
+          await register(previous);
+          await this.setCrontab(
+            { data: previous, total: previous.length },
+            true,
+          );
+        } catch (recoveryError) {
+          throw Object.assign(new Error('TASK_SCHEDULER_RECOVERY_REQUIRED'), {
+            error_code: 'TASK_SCHEDULER_RECOVERY_REQUIRED',
+            status: 503,
+            cause: recoveryError,
+          });
+        }
+        throw error;
+      }
+    });
+  }
+
+  private isNodeCron(cron: SchedulerProjection) {
     const { schedule, extra_schedules } = cron;
     if (Number(schedule?.split(/ +/).length) > 5 || extra_schedules?.length) {
       return true;
@@ -61,7 +172,7 @@ export default class CronService {
     }
   }
 
-  private shouldUseCronClient(cron: Crontab): boolean {
+  private shouldUseCronClient(cron: SchedulerProjection): boolean {
     if (this.schedulerMode === 'node') {
       return !this.isSpecialSchedule(cron.schedule);
     }
@@ -80,7 +191,7 @@ export default class CronService {
     return this.isOnceSchedule(schedule) || this.isBootSchedule(schedule);
   }
 
-  private async getLogName(cron: Crontab) {
+  private async getLogName(cron: SchedulerProjection) {
     const { log_name, command, id } = cron;
     if (log_name === '/dev/null') {
       return log_name;
@@ -99,9 +210,11 @@ export default class CronService {
     return uniqPath;
   }
 
-  public async create(payload: Crontab): Promise<Crontab> {
+  public async create(
+    payload: SchedulerProjection,
+  ): Promise<SchedulerProjection> {
     return withSchedulerMutation(async () => {
-      const tab = new Crontab(payload);
+      const tab = new SchedulerProjection(payload);
       tab.saved = false;
       tab.log_name = await this.getLogName(tab);
       const doc = await this.insert(tab);
@@ -124,13 +237,15 @@ export default class CronService {
         } catch (error: any) {
           // gRPC 注册失败时回滚 DB 记录，避免产生"僵尸任务"
           // （DB 和 crontab.list 有记录但调度器永远不会执行）
-          await CrontabModel.destroy({ where: { id: doc.id } });
+          await SchedulerProjectionModel.destroy({ where: { id: doc.id } });
           this.logger.error(
             '[crontab] Failed to register cron job in scheduler, task creation rolled back:',
             error?.message || error,
           );
           throw schedulerRegistrationError(
-            `${t('调度器注册失败，任务创建已回滚')}: ${(error as any)?.details || error?.message}`,
+            `${t('调度器注册失败，任务创建已回滚')}: ${
+              (error as any)?.details || error?.message
+            }`,
             error,
           );
         }
@@ -145,36 +260,57 @@ export default class CronService {
   // Source identity survives definition updates; publication compensates files, DB and scheduler.
   public async publishSubscription(
     discover: () => Promise<{
-      adds: Crontab[];
+      adds: SchedulerProjection[];
       drops: number[];
       subscriptionId: number;
-      updates: Array<Partial<Pick<Crontab, 'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'>>>;
-      checkpoint?: (tasks: Crontab[]) => Promise<void>;
+      updates: Array<
+        Partial<
+          Pick<
+            SchedulerProjection,
+            'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'
+          >
+        >
+      >;
+      checkpoint?: (tasks: SchedulerProjection[]) => Promise<void>;
       notify?: () => Promise<void>;
       publish: () => Promise<void>;
       rollback: () => Promise<void>;
       cleanup: () => Promise<void>;
+      definitions: {
+        add: (
+          draft: SchedulerProjection,
+        ) => Promise<{ id: number; isDisabled: number }>;
+        update: (draft: any) => Promise<void>;
+        remove: (ids: number[]) => Promise<unknown>;
+        rollback: () => Promise<unknown>;
+      };
     }>,
     publishing: () => Promise<void>,
   ) {
     return withSchedulerMutation(async () => {
       const plan = await discover();
       const previous = (
-        await CrontabModel.findAll({ where: { id: [...plan.drops, ...plan.updates.map(x => x.id!)] } })
+        await SchedulerProjectionModel.findAll({
+          where: { id: [...plan.drops, ...plan.updates.map((x) => x.id!)] },
+        })
       ).map((x) => x.get({ plain: true }));
       if (
-        previous.some((row) => row.sub_id !== plan.subscriptionId || !row.discovery_key) ||
-        plan.adds.some(row => row.sub_id !== plan.subscriptionId || !row.discovery_key)
+        previous.some(
+          (row) => row.sub_id !== plan.subscriptionId || !row.discovery_key,
+        ) ||
+        plan.adds.some(
+          (row) => row.sub_id !== plan.subscriptionId || !row.discovery_key,
+        )
       ) {
         await plan.cleanup();
         throw Object.assign(new Error('INVALID_DISCOVERY_PLAN'), {
           error_code: 'INVALID_DISCOVERY_PLAN',
         });
       }
-      const added: Crontab[] = [];
+      const added: SchedulerProjection[] = [];
       let started = false,
         recovered = true;
-      const register = (rows: Crontab[]) =>
+      const register = (rows: SchedulerProjection[]) =>
         cronClient.addCron(
           rows
             .filter((x) => x.isDisabled !== 1 && this.shouldUseCronClient(x))
@@ -187,7 +323,13 @@ export default class CronService {
             })),
         );
       try {
-        for (const tab of [...plan.adds, ...plan.updates.map(update => ({ ...previous.find(x => x.id === update.id), ...update }))]) {
+        for (const tab of [
+          ...plan.adds,
+          ...plan.updates.map((update) => ({
+            ...previous.find((x) => x.id === update.id),
+            ...update,
+          })),
+        ]) {
           if (
             !tab.schedule ||
             !CronExpressionParser.parse(tab.schedule).hasNext()
@@ -200,21 +342,46 @@ export default class CronService {
         await plan.publish();
         // Deletes and creates reuse the existing scheduler protocol. Compensation
         // restores original IDs instead of recreating user Tasks with new IDs.
-        if (previous.length) await cronClient.delCron(previous.map(x => String(x.id)));
+        if (previous.length)
+          await cronClient.delCron(previous.map((x) => String(x.id)));
         for (const input of plan.adds) {
-          const tab = new Crontab(input);
+          const tab = new SchedulerProjection(input);
+          const definition = await plan.definitions.add(input);
+          tab.id = definition.id;
+          tab.isDisabled = definition.isDisabled as 0 | 1;
           tab.saved = false;
           tab.log_name = await this.getLogName(tab);
-          added.push(await this.insert(tab));
+          const inserted = await this.insert(tab);
+          await new TaskExecutionSourceBridge().refresh(definition.id);
+          added.push(
+            (await SchedulerProjectionModel.findByPk(inserted.id!))!.get({
+              plain: true,
+            }),
+          );
         }
-        for (const update of plan.updates) await CrontabModel.update(update, { where: { id: update.id } });
-        const updated = (await CrontabModel.findAll({ where: { id: plan.updates.map(x => x.id!) } })).map(row => row.get({ plain: true }));
+        for (const update of plan.updates) {
+          await plan.definitions.update(update);
+          await SchedulerProjectionModel.update(update, {
+            where: { id: update.id },
+          });
+          await new TaskExecutionSourceBridge().refresh(update.id!);
+        }
+        const updated = (
+          await SchedulerProjectionModel.findAll({
+            where: { id: plan.updates.map((x) => x.id!) },
+          })
+        ).map((row) => row.get({ plain: true }));
         await register([...added, ...updated]);
-        const projection = (await CrontabModel.findAll()).map(row => row.get({plain:true})).filter(row => !plan.drops.includes(row.id!));
-        await this.setCrontab({data:projection,total:projection.length}, true);
+        const projection = (await SchedulerProjectionModel.findAll())
+          .map((row) => row.get({ plain: true }))
+          .filter((row) => !plan.drops.includes(row.id!));
+        await this.setCrontab(
+          { data: projection, total: projection.length },
+          true,
+        );
         // Final fallible publication operation: retain Task-owned ENV/Config/Hooks
         // until filesystem and both schedulers have accepted the new projection.
-        await CrontabModel.destroy({ where: { id: plan.drops } });
+        await plan.definitions.remove(plan.drops);
         try {
           await plan.notify?.();
         } catch {
@@ -224,11 +391,21 @@ export default class CronService {
         if (started) {
           try {
             await plan.rollback();
-            await CrontabModel.destroy({
+            await plan.definitions.rollback();
+            await SchedulerProjectionModel.destroy({
               where: { id: added.map((x) => x.id!) },
             });
             for (const row of previous) {
-              if (!plan.drops.includes(row.id!)) await CrontabModel.update({ name: row.name, command: row.command, schedule: row.schedule, discovery_definition: row.discovery_definition }, { where: { id: row.id } });
+              if (!plan.drops.includes(row.id!))
+                await SchedulerProjectionModel.update(
+                  {
+                    name: row.name,
+                    command: row.command,
+                    schedule: row.schedule,
+                    discovery_definition: row.discovery_definition,
+                  },
+                  { where: { id: row.id } },
+                );
             }
             if (added.length)
               await cronClient.delCron(added.map((x) => String(x.id)));
@@ -258,14 +435,18 @@ export default class CronService {
     });
   }
 
-  public async insert(payload: Crontab): Promise<Crontab> {
-    return await CrontabModel.create(payload, { returning: true });
+  public async insert(
+    payload: SchedulerProjection,
+  ): Promise<SchedulerProjection> {
+    return await SchedulerProjectionModel.create(payload, { returning: true });
   }
 
-  public async update(payload: Partial<Crontab>): Promise<Crontab> {
+  public async update(
+    payload: Partial<SchedulerProjection>,
+  ): Promise<SchedulerProjection> {
     return withSchedulerMutation(async () => {
       const doc = await this.getDb({ id: payload.id });
-      const tab = new Crontab({ ...doc, ...payload });
+      const tab = new SchedulerProjection({ ...doc, ...payload });
       tab.saved = false;
       tab.log_name = await this.getLogName(tab);
       if (doc.isDisabled === 1 || isDemoEnv()) {
@@ -290,7 +471,7 @@ export default class CronService {
           ]);
         } catch (error: any) {
           // gRPC 注册新任务失败 → 回滚 DB 到旧数据，并尝试恢复旧调度注册
-          await CrontabModel.update(omit(doc, ['queued_token']), {
+          await SchedulerProjectionModel.update(omit(doc, ['queued_token']), {
             where: { id: doc.id },
           });
           if (this.shouldUseCronClient(doc)) {
@@ -316,7 +497,9 @@ export default class CronService {
             error?.message || error,
           );
           throw schedulerRegistrationError(
-            `${t('调度器注册失败，任务更新已回滚')}: ${(error as any)?.details || error?.message}`,
+            `${t('调度器注册失败，任务更新已回滚')}: ${
+              (error as any)?.details || error?.message
+            }`,
             error,
           );
         }
@@ -327,8 +510,12 @@ export default class CronService {
     });
   }
 
-  public async updateDb(payload: Crontab): Promise<Crontab> {
-    await CrontabModel.update(payload, { where: { id: payload.id } });
+  public async updateDb(
+    payload: SchedulerProjection,
+  ): Promise<SchedulerProjection> {
+    await SchedulerProjectionModel.update(payload, {
+      where: { id: payload.id },
+    });
     return await this.getDb({ id: payload.id });
   }
 
@@ -363,7 +550,7 @@ export default class CronService {
       let cron;
       try {
         cron = await this.getDb({ id });
-      } catch (err) { }
+      } catch (err) {}
       if (!cron) {
         continue;
       }
@@ -404,7 +591,7 @@ export default class CronService {
         );
       }
 
-      await CrontabModel.update(
+      await SchedulerProjectionModel.update(
         { ...pickBy(options, (v) => v === 0 || !!v) },
         { where: { id } },
       );
@@ -414,23 +601,29 @@ export default class CronService {
   public async remove(ids: number[]) {
     return withSchedulerMutation(async () => {
       await cronClient.delCron(ids.map(String));
-      await CrontabModel.destroy({ where: { id: ids } });
+      await SchedulerProjectionModel.destroy({ where: { id: ids } });
       await this.setCrontab();
     });
   }
 
   public async pin(ids: number[]) {
-    await CrontabModel.update({ isPinned: 1 }, { where: { id: ids } });
+    await SchedulerProjectionModel.update(
+      { isPinned: 1 },
+      { where: { id: ids } },
+    );
   }
 
   public async unPin(ids: number[]) {
-    await CrontabModel.update({ isPinned: 0 }, { where: { id: ids } });
+    await SchedulerProjectionModel.update(
+      { isPinned: 0 },
+      { where: { id: ids } },
+    );
   }
 
   public async addLabels(ids: string[], labels: string[]) {
-    const docs = await CrontabModel.findAll({ where: { id: ids } });
+    const docs = await SchedulerProjectionModel.findAll({ where: { id: ids } });
     for (const doc of docs) {
-      await CrontabModel.update(
+      await SchedulerProjectionModel.update(
         {
           labels: Array.from(new Set((doc.labels || []).concat(labels))),
         },
@@ -440,9 +633,9 @@ export default class CronService {
   }
 
   public async removeLabels(ids: string[], labels: string[]) {
-    const docs = await CrontabModel.findAll({ where: { id: ids } });
+    const docs = await SchedulerProjectionModel.findAll({ where: { id: ids } });
     for (const doc of docs) {
-      await CrontabModel.update(
+      await SchedulerProjectionModel.update(
         {
           labels: (doc.labels || []).filter((label) => !labels.includes(label)),
         },
@@ -618,9 +811,11 @@ export default class CronService {
     log_path,
   }: {
     log_path: string;
-  }): Promise<Crontab | undefined> {
+  }): Promise<SchedulerProjection | undefined> {
     try {
-      const result = await CrontabModel.findOne({ where: { log_path } });
+      const result = await SchedulerProjectionModel.findOne({
+        where: { log_path },
+      });
       return result?.get({ plain: true });
     } catch (error) {
       throw error;
@@ -634,7 +829,7 @@ export default class CronService {
     sorter: string;
     filters: string;
     queryString: string;
-  }): Promise<{ data: Crontab[]; total: number }> {
+  }): Promise<{ data: SchedulerProjection[]; total: number }> {
     const searchText = params?.searchValue;
     const page = Number(params?.page || '0');
     const size = Number(params?.size || '0');
@@ -661,7 +856,7 @@ export default class CronService {
         order.unshift([field, type]);
       }
     }
-    let condition: FindOptions<Crontab> = {
+    let condition: FindOptions<SchedulerProjection> = {
       where: query,
       order: order as Order,
     };
@@ -670,16 +865,20 @@ export default class CronService {
       condition.limit = size;
     }
     try {
-      const result = await CrontabModel.findAll(condition);
-      const count = await CrontabModel.count({ where: query });
+      const result = await SchedulerProjectionModel.findAll(condition);
+      const count = await SchedulerProjectionModel.count({ where: query });
       return { data: result.map((x) => x.get({ plain: true })), total: count };
     } catch (error) {
       throw error;
     }
   }
 
-  public async getDb(query: FindOptions<Crontab>['where']): Promise<Crontab> {
-    const doc: any = await CrontabModel.findOne({ where: { ...query } });
+  public async getDb(
+    query: FindOptions<SchedulerProjection>['where'],
+  ): Promise<SchedulerProjection> {
+    const doc: any = await SchedulerProjectionModel.findOne({
+      where: { ...query },
+    });
     if (!doc) {
       throw new Error(`Cron ${JSON.stringify(query)} not found`);
     }
@@ -687,133 +886,20 @@ export default class CronService {
   }
 
   public async run(ids: number[]) {
-    const queuedToken = randomUUID();
-    await CrontabModel.update(
-      { status: CrontabStatus.queued, queued_token: queuedToken },
-      { where: { id: ids } },
-    );
-    ids.forEach((id) => {
-      this.runSingle(id, queuedToken);
-    });
+    const { executionService } = await import('./executionService');
+    const runs = [];
+    for (const id of ids) runs.push(await executionService.submit(id, 'API'));
+    return runs;
   }
 
   public async stop(ids: number[]) {
-    const docs = await CrontabModel.findAll({ where: { id: ids } });
-    // Cancel the queued snapshot first, so a late spawn cannot claim it.
-    for (const doc of docs) {
-      if (doc.status === CrontabStatus.queued) {
-        const [cancelled] = await CrontabModel.update(
-          { status: CrontabStatus.idle, pid: null, queued_token: null } as any,
-          {
-            where: {
-              id: doc.id,
-              status: CrontabStatus.queued,
-              [Op.and]: [
-                where(colFn('log_path'), { [Op.eq]: doc.log_path ?? null }),
-                where(colFn('queued_token'), {
-                  [Op.eq]: doc.queued_token ?? null,
-                }),
-              ],
-            },
-          }
-        );
-        // A concurrent claim may have won; capture its PID before signalling.
-        if (!cancelled) await doc.reload();
-      }
-    }
-    const stoppingInstances = await RunningInstanceModel.findAll({
-      attributes: ['id', 'pid', 'cron_id'],
-      where: { cron_id: ids, status: InstanceStatus.running },
-    });
-    const targets = new Set<number>(
-      [
-        ...stoppingInstances.map((instance) => instance.pid),
-        ...docs
-          .filter((doc) => doc.status === CrontabStatus.running)
-          .map((doc) => doc.pid),
-      ].filter((pid): pid is number => typeof pid === 'number' && pid > 0)
-    );
-    const stopped = new Set<number>();
-    for (const pid of targets) {
-      try {
-        await killTask(pid, true);
-        stopped.add(pid);
-      } catch (error) {
-        this.logger.error(
-          '[panel][停止任务失败] PID: %s, 错误: %s',
-          pid,
-          asError(error).message
-        );
-      }
-    }
-    const stoppedIds = stoppingInstances
-      .filter((instance) => instance.pid && stopped.has(instance.pid))
-      .map((instance) => instance.id!);
-    if (stoppedIds.length) {
-      await RunningInstanceModel.update(
-        { status: InstanceStatus.stopped, finished_at: dayjs().unix() },
-        { where: { id: stoppedIds } }
-      );
-    }
-    for (const doc of docs) {
-      if (
-        doc.status !== CrontabStatus.running ||
-        (doc.pid && !stopped.has(doc.pid))
-      )
-        continue;
-      const remaining = await RunningInstanceModel.count({
-        where: { cron_id: doc.id, status: InstanceStatus.running },
-      });
-      if (remaining) continue;
-      await CrontabModel.update(
-        { status: CrontabStatus.idle, pid: null, queued_token: null } as any,
-        {
-          where: {
-            id: doc.id,
-            status: CrontabStatus.running,
-            [Op.and]: [
-              where(colFn('queued_token'), { [Op.eq]: doc.queued_token ?? null }),
-              where(colFn('pid'), { [Op.eq]: doc.pid ?? null }),
-              where(colFn('log_path'), { [Op.eq]: doc.log_path ?? null }),
-            ],
-          },
-        }
-      );
-    }
+    const { executionService } = await import('./executionService');
+    for (const id of ids) await executionService.cancelTask(id);
   }
 
   public async stopInstance(instanceId: number) {
-    const instance = await RunningInstanceModel.findOne({
-      where: { id: instanceId, status: InstanceStatus.running },
-    });
-    if (!instance) {
-      return { code: 400, message: t('实例不存在或已停止') };
-    }
-    if (instance.pid) {
-      try {
-        await killTask(instance.pid);
-      } catch (error) {
-        this.logger.error(
-          `[panel][停止实例失败] 实例ID: ${instanceId}, PID: ${instance.pid}, 错误: ${error}`,
-        );
-      }
-    }
-    await RunningInstanceModel.update(
-      { status: InstanceStatus.stopped, finished_at: dayjs().unix(), exit_code: 143 },
-      { where: { id: instanceId } },
-    );
-
-    // Check if there are still other running instances for this cron
-    const otherRunning = await RunningInstanceModel.count({
-      where: { cron_id: instance.cron_id, status: InstanceStatus.running },
-    });
-    if (otherRunning === 0) {
-      await CrontabModel.update(
-        { status: CrontabStatus.idle, pid: undefined },
-        { where: { id: instance.cron_id } },
-      );
-    }
-    return { code: 200, message: t('实例已停止') };
+    // Stored PIDs cannot establish ownership after a restart or PID reuse.
+    return { code: 409, message: 'Use TaskRun cancellation by run ID' };
   }
 
   private async runSingle(
@@ -831,7 +917,8 @@ export default class CronService {
         if (
           cron.status !== CrontabStatus.queued ||
           (expectedToken !== undefined && cron.queued_token !== expectedToken)
-        ) return;
+        )
+          return;
         queuedToken = cron.queued_token ?? null;
         queuedLogPath = cron.log_path ?? null;
         const { id, command, log_name } = cron;
@@ -849,15 +936,15 @@ export default class CronService {
         const cp = spawn(
           `real_log_path=${logPath} no_delay=true ${this.makeCommand(
             cron,
-            true
+            true,
           )}`,
-          { shell: '/bin/bash' }
+          { shell: '/bin/bash' },
         );
         // Install observers before the first await: very short children may already exit.
         const { completed } = observeChildProcess(cp, {
           onStart: async () => {
             try {
-              const [count] = await CrontabModel.update(
+              const [count] = await SchedulerProjectionModel.update(
                 {
                   status: CrontabStatus.running,
                   pid: cp.pid,
@@ -872,11 +959,11 @@ export default class CronService {
                       where(colFn('log_path'), { [Op.eq]: queuedLogPath }),
                     ],
                   },
-                }
+                },
               );
               if (count !== 1)
                 throw new Error(
-                  'Task was stopped or superseded before startup'
+                  'Task was stopped or superseded before startup',
                 );
               claimed = true;
             } catch (error) {
@@ -892,20 +979,20 @@ export default class CronService {
           this.logger.error(
             '[panel][执行任务失败] 任务ID: %s, 错误: %s',
             id,
-            result.error.message
+            result.error.message,
           );
         }
         this.logger.info(
           '[panel][执行任务结束] 任务ID: %s, 退出码: %j',
           id,
-          result.code
+          result.code,
         );
         return { ...cron, pid: cp.pid, ...result } as any;
       } catch (error) {
         this.logger.error(
           '[panel][创建任务失败] 任务ID: %s, 错误: %s',
           cronId,
-          asError(error).message
+          asError(error).message,
         );
       } finally {
         try {
@@ -913,17 +1000,23 @@ export default class CronService {
         } catch (error) {
           this.logger.error(
             '[panel][关闭任务日志失败] %s',
-            asError(error).message
+            asError(error).message,
           );
         }
         try {
           // Do not overwrite a newer run's state or its script-reported exit code.
-          await CrontabModel.update(
-            { status: CrontabStatus.idle, pid: null, queued_token: null } as any,
+          await SchedulerProjectionModel.update(
+            {
+              status: CrontabStatus.idle,
+              pid: null,
+              queued_token: null,
+            } as any,
             {
               where: {
                 id: cronId,
-                [Op.and]: where(colFn('queued_token'), { [Op.eq]: queuedToken }),
+                [Op.and]: where(colFn('queued_token'), {
+                  [Op.eq]: queuedToken,
+                }),
                 [Op.or]: [
                   ...(queuedLogPath !== undefined && !claimed
                     ? [
@@ -940,12 +1033,12 @@ export default class CronService {
                     : []),
                 ],
               },
-            }
+            },
           );
         } catch (error) {
           this.logger.error(
             '[panel][清理任务状态失败] %s',
-            asError(error).message
+            asError(error).message,
           );
         }
       }
@@ -955,15 +1048,23 @@ export default class CronService {
   public async disabled(ids: number[]) {
     return withSchedulerMutation(async () => {
       await cronClient.delCron(ids.map(String));
-      await CrontabModel.update({ isDisabled: 1 }, { where: { id: ids } });
+      await SchedulerProjectionModel.update(
+        { isDisabled: 1 },
+        { where: { id: ids } },
+      );
       await this.setCrontab();
     });
   }
 
   public async enabled(ids: number[]) {
     return withSchedulerMutation(async () => {
-      await CrontabModel.update({ isDisabled: 0 }, { where: { id: ids } });
-      const docs = await CrontabModel.findAll({ where: { id: ids } });
+      await SchedulerProjectionModel.update(
+        { isDisabled: 0 },
+        { where: { id: ids } },
+      );
+      const docs = await SchedulerProjectionModel.findAll({
+        where: { id: ids },
+      });
       const crons = docs
         .filter((x) => this.shouldUseCronClient(x))
         .map((doc) => ({
@@ -982,13 +1083,18 @@ export default class CronService {
         await cronClient.addCron(crons);
       } catch (error: any) {
         // gRPC 注册失败 → 回滚启用状态，避免 DB 显示已启用但调度器未注册
-        await CrontabModel.update({ isDisabled: 1 }, { where: { id: ids } });
+        await SchedulerProjectionModel.update(
+          { isDisabled: 1 },
+          { where: { id: ids } },
+        );
         this.logger.error(
           '[crontab] Failed to register cron job in scheduler, enable rolled back:',
           error?.message || error,
         );
         throw schedulerRegistrationError(
-          `${t('调度器注册失败，任务启用已回滚')}: ${(error as any)?.details || error?.message}`,
+          `${t('调度器注册失败，任务启用已回滚')}: ${
+            (error as any)?.details || error?.message
+          }`,
           error,
         );
       }
@@ -1081,25 +1187,15 @@ export default class CronService {
     }
   }
 
-  private makeCommand(tab: Crontab, realTime?: boolean) {
-    let command = tab.command.trim();
-    if (!command.startsWith(TASK_PREFIX)) {
-      command = `${TASK_PREFIX}${tab.command}`;
-    }
-    let commandVariable = `real_time=${Boolean(realTime)} no_tee=true ID=${tab.id} `;
-    // Only include log_name if it has a truthy value to avoid passing null/undefined to shell
-    if (tab.log_name) {
-      commandVariable += `log_name=${tab.log_name} `;
-    }
-    if (tab.work_dir) {
-      commandVariable += `work_dir='${tab.work_dir.replace(/'/g, "'\\''")}' `;
-    }
-
-    const crontab_job_string = `${commandVariable}${command}`;
-    return crontab_job_string;
+  private makeCommand(tab: SchedulerProjection, realTime?: boolean) {
+    return executionLauncher(tab.id!);
   }
 
-  private async setCrontab(data?: { data: Crontab[]; total: number }, strict = false) {
+  private async setCrontab(
+    data?: { data: SchedulerProjection[]; total: number },
+    strict = false,
+    transaction?: Transaction,
+  ) {
     const tabs = data ?? (await this.crontabs());
     var crontab_string = '';
     tabs.data.forEach((tab) => {
@@ -1111,12 +1207,12 @@ export default class CronService {
         crontab_string += '# ';
         crontab_string += tab.schedule;
         crontab_string += ' ';
-        crontab_string += this.makeCommand(tab);
+        crontab_string += this.makeCommand(tab).replace(/%/g, '\\%');
         crontab_string += '\n';
       } else {
         crontab_string += tab.schedule;
         crontab_string += ' ';
-        crontab_string += this.makeCommand(tab);
+        crontab_string += this.makeCommand(tab).replace(/%/g, '\\%');
         crontab_string += '\n';
       }
     });
@@ -1128,25 +1224,37 @@ export default class CronService {
         execSync(`crontab ${config.crontabFile}`);
       } catch (error: any) {
         const errorMsg = error.message || String(error);
-        this.logger.error('[crontab] Failed to update system crontab:', errorMsg);
+        this.logger.error(
+          '[crontab] Failed to update system crontab:',
+          errorMsg,
+        );
         if (strict) throw error;
       }
     }
 
-    await CrontabModel.update({ saved: true }, { where: {} });
+    await SchedulerProjectionModel.update(
+      { saved: true },
+      { where: {}, transaction },
+    );
   }
-
-
 
   public async autosave_crontab(requireScheduler = false) {
     return withSchedulerMutation(async () => {
       const tabs = await this.crontabs();
+      const readiness = new Map(
+        (
+          await new TaskResourceResolver().resolve(
+            tabs.data.map((row) => row.id!),
+          )
+        ).map((resource) => [resource.task.id, resource]),
+      );
+      for (const row of tabs.data) {
+        const resource = readiness.get(row.id!);
+        if (!resource?.task.enabled || resource.readiness.status !== 'READY')
+          row.isDisabled = 1;
+      }
       const regularCrons = tabs.data
-        .filter(
-          (x) =>
-            x.isDisabled !== 1 &&
-            this.shouldUseCronClient(x),
-        )
+        .filter((x) => x.isDisabled !== 1 && this.shouldUseCronClient(x))
         .map((doc) => ({
           name: doc.name || '',
           id: String(doc.id),
@@ -1178,8 +1286,19 @@ export default class CronService {
 
   public async bootTask() {
     const tabs = await this.crontabs();
+    const readiness = new Map(
+      (
+        await new TaskResourceResolver().resolve(
+          tabs.data.map((row) => row.id!),
+        )
+      ).map((resource) => [resource.task.id, resource]),
+    );
     const bootTasks = tabs.data.filter(
-      (x) => !x.isDisabled && this.isBootSchedule(x.schedule),
+      (x) =>
+        !x.isDisabled &&
+        readiness.get(x.id!)?.task.enabled &&
+        readiness.get(x.id!)?.readiness.status === 'READY' &&
+        this.isBootSchedule(x.schedule),
     );
     if (bootTasks.length > 0) {
       await this.run(bootTasks.map((task) => task.id!));

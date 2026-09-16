@@ -1,0 +1,9 @@
+{
+  "error": "Target 'task' not found",
+  "target": {
+    "name": "task"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

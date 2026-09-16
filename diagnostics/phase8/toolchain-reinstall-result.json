@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "operations": [
+    {
+      "id": 145,
+      "provider_id": 1,
+      "runtime_id": 1,
+      "operation_type": "NODE_PACKAGE_MANAGER_REMOVE",
+      "status": "SUCCESS",
+      "stage": "COMPLETE",
+      "owner_token": "8d7cbca1-f373-4843-b58e-2c3c28ef001a",
+      "owner_pid": 11611,
+      "cancel_requested": false,
+      "started_at": "2026-09-15T17:47:32.896Z",
+      "finished_at": "2026-09-15T17:47:32.982Z",
+      "exit_code": 0,
+      "log_identity": "runtime-operation-145",
+      "error_code": null,
+      "error_summary": null,
+      "metadata": {
+        "toolchain_id": 2,
+        "timeout_seconds": 600,
+        "jobs": 4
+      },
+      "createdAt": "2026-09-15T17:47:32.852Z",
+      "updatedAt": "2026-09-15T17:47:32.982Z"
+    },
+    {
+      "id": 146,
+      "provider_id": 1,
+      "runtime_id": 1,
+      "operation_type": "NODE_PACKAGE_MANAGER_INSTALL",
+      "status": "SUCCESS",
+      "stage": "COMPLETE",
+      "owner_token": "928fcf36-a894-4e7e-a5b9-64a881772578",
+      "owner_pid": 11611,
+      "cancel_requested": false,
+      "started_at": "2026-09-15T17:47:33.107Z",
+      "finished_at": "2026-09-15T17:47:35.593Z",
+      "exit_code": 0,
+      "log_identity": "runtime-operation-146",
+      "error_code": null,
+      "error_summary": null,
+      "metadata": {
+        "toolchain_id": 2,
+        "timeout_seconds": 600,
+        "jobs": 4
+      },
+      "createdAt": "2026-09-15T17:47:33.064Z",
+      "updatedAt": "2026-09-15T17:47:35.593Z"
+    },
+    {
+      "id": 147,
+      "provider_id": 1,
+      "runtime_id": 1,
+      "operation_type": "NODE_PACKAGE_MANAGER_VERIFY",
+      "status": "SUCCESS",
+      "stage": "COMPLETE",
+      "owner_token": "4ee9b57d-92ad-44e5-978c-63adafa3b879",
+      "owner_pid": 11611,
+      "cancel_requested": false,
+      "started_at": "2026-09-15T17:47:35.736Z",
+      "finished_at": "2026-09-15T17:47:36.280Z",
+      "exit_code": 0,
+      "log_identity": "runtime-operation-147",
+      "error_code": null,
+      "error_summary": null,
+      "metadata": {
+        "toolchain_id": 2,
+        "timeout_seconds": 600,
+        "jobs": 4
+      },
+      "createdAt": "2026-09-15T17:47:35.695Z",
+      "updatedAt": "2026-09-15T17:47:36.280Z"
+    }
+  ],
+  "toolchain": {
+    "id": 2,
+    "runtime_id": 1,
+    "manager_type": "PNPM",
+    "version": "10.17.1",
+    "state": "READY",
+    "metadata": {
+      "version": "10.17.1",
+      "engines": {
+        "node": ">=18.12"
+      },
+      "cli_sha256": "b276da51dc8ca5b0d3ee3371695b50fc8b3244b281b091c63a3f082a88dadeb9",
+      "runtime_executable_sha256": "e4b5a3af0e05c75de2eae013904145f40fe7fc2a6e6f17510128bf45cca4e79b"
+    },
+    "verified_at": "2026-09-15T17:47:36.279Z",
+    "last_error": null,
+    "createdAt": "2026-09-15T17:11:22.649Z",
+    "updatedAt": "2026-09-15T17:47:36.279Z"
+  }
+}

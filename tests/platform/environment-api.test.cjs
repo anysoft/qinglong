@@ -5,7 +5,7 @@ test('real HTTP APIs mask secrets and validation errors, enforce scope and block
   const h = await setup(t);
   for (const [module, instance] of [['repositoryEnvProfile', h.profiles], ['scopedEnvVariable', h.variables], ['taskEnvironmentResolver', h.resolver]]) Container.set(h.get('services/' + module).default, instance);
   const repo = await h.RepositoryModel.create({ name: 'repo', provider: 'generic', remote_url: 'https://a.invalid/a', normalized_url: 'a.invalid/a' });
-  const task = await h.CrontabModel.create({ command: 'task manual.py' });
+  const task = await h.SchedulerProjectionModel.create({ command: 'task manual.py' });
   const app = express(); app.use(express.json());
   h.get('api/scopedEnvironment').default(app);
   const open = express.Router(); h.get('api/scopedEnvironment').default(open); app.use('/open', open); app.use('/panel/open', open);
@@ -24,5 +24,5 @@ test('real HTTP APIs mask secrets and validation errors, enforce scope and block
   assert.equal((await call(`/scoped-env/profiles/${id}/variables`, 'PUT', [{ name: 'TOKEN', value: secret, arbitrary: secret }])).status, 400);
   assert.equal((await call(`/open/scoped-env/profiles/${id}`)).status, 403);
   assert.equal((await call(`/panel/open/scoped-env/profiles/${id}`)).status, 403);
-  assert.equal((await call('/scoped-env/repositories')).body.data[0].profiles_count, 1);
+  assert.equal((await call('/scoped-env/repositories')).body.data.find(row=>row.id===repo.id).profiles_count, 1);
 });

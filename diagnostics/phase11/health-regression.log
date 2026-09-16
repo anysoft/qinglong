@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: readiness stays false through failed restoration and retries without idle polling
+ok 1 - readiness stays false through failed restoration and retries without idle polling
+  ---
+  duration_ms: 83.117833
+  type: 'test'
+  ...
+# Subtest: single-flight recovery cannot mark an invalidated generation ready
+ok 2 - single-flight recovery cannot mark an invalidated generation ready
+  ---
+  duration_ms: 32.077834
+  type: 'test'
+  ...
+# Subtest: mutation waiting is bounded, a later recovery can succeed
+ok 3 - mutation waiting is bounded, a later recovery can succeed
+  ---
+  duration_ms: 17.271042
+  type: 'test'
+  ...
+# Subtest: probe failure immediately invalidates a previously ready scheduler
+ok 4 - probe failure immediately invalidates a previously ready scheduler
+  ---
+  duration_ms: 42.167916
+  type: 'test'
+  ...
+# Subtest: health checks actual gRPC transport without requiring Task projection restoration
+ok 5 - health checks actual gRPC transport without requiring Task projection restoration
+  ---
+  duration_ms: 136.921208
+  type: 'test'
+  ...
+# Subtest: recovery registration errors propagate while ordinary autosave retains file synchronization
+ok 6 - recovery registration errors propagate while ordinary autosave retains file synchronization
+  ---
+  duration_ms: 7.320209
+  type: 'test'
+  ...
+# Subtest: scheduler probe uses the cron channel and failed writes are not replayed
+ok 7 - scheduler probe uses the cron channel and failed writes are not replayed
+  ---
+  duration_ms: 104.981667
+  type: 'test'
+  ...
+# Subtest: scheduler health probe never calls back into HTTP health
+ok 8 - scheduler health probe never calls back into HTTP health
+  ---
+  duration_ms: 9.557542
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 677.676666

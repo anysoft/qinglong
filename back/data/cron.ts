@@ -1,7 +1,7 @@
 import { sequelize } from '.';
 import { DataTypes, Model, ModelDefined } from 'sequelize';
 
-export class Crontab {
+export class SchedulerProjection {
   name?: string;
   command: string;
   schedule?: string;
@@ -28,7 +28,7 @@ export class Crontab {
   allow_multiple_instances?: 1 | 0;
   work_dir?: string;
 
-  constructor(options: Crontab) {
+  constructor(options: SchedulerProjection) {
     this.name = options.name;
     this.command = options.command.trim();
     this.schedule = options.schedule;
@@ -66,8 +66,9 @@ export enum CrontabStatus {
   'queued' = 3,
 }
 
-export interface CronInstance extends Model<Crontab, Crontab>, Crontab {}
-export const CrontabModel = sequelize.define<CronInstance>('Crontab', {
+export interface CronInstance extends Model<SchedulerProjection, SchedulerProjection>, SchedulerProjection {}
+export const SchedulerProjectionModel = sequelize.define<CronInstance>('SchedulerProjection', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: false, references: { model: 'Tasks', key: 'id' }, onDelete: 'CASCADE' },
   name: {
     type: DataTypes.STRING,
   },

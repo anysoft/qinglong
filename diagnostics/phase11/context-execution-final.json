@@ -1,0 +1,84 @@
+{
+  "status": "found",
+  "symbol": {
+    "uid": "Class:back/services/executionService.ts:ExecutionService",
+    "name": "ExecutionService",
+    "kind": "Class",
+    "filePath": "back/services/executionService.ts",
+    "startLine": 33,
+    "endLine": 619
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "name": "executionService.ts",
+        "filePath": "back/services/executionService.ts"
+      }
+    ],
+    "imports": [
+      {
+        "name": "tasks.ts",
+        "filePath": "back/api/tasks.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "has_method": [
+      {
+        "name": "constructor"
+      },
+      {
+        "name": "dto"
+      },
+      {
+        "name": "get"
+      },
+      {
+        "name": "list"
+      },
+      {
+        "name": "cancel"
+      },
+      {
+        "name": "cancelTask"
+      },
+      {
+        "name": "log"
+      },
+      {
+        "name": "start"
+      },
+      {
+        "name": "stop"
+      },
+      {
+        "name": "tick"
+      },
+      {
+        "name": "execute"
+      },
+      {
+        "name": "recover"
+      },
+      {
+        "name": "submit"
+      }
+    ],
+    "has_property": [
+      {
+        "name": "active"
+      },
+      {
+        "name": "timer"
+      },
+      {
+        "name": "ticking"
+      },
+      {
+        "name": "closed"
+      }
+    ]
+  },
+  "processes": []
+}

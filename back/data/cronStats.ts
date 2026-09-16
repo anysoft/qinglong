@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import { sequelize } from '.';
 
-export class CrontabStat {
+export class TaskStat {
   id?: number;
   ref_id!: number;
   date!: string;
@@ -11,7 +11,7 @@ export class CrontabStat {
   total_time?: number;
   max_time?: number;
 
-  constructor(options: CrontabStat) {
+  constructor(options: TaskStat) {
     this.id = options.id;
     this.ref_id = options.ref_id;
     this.date = options.date;
@@ -23,10 +23,10 @@ export class CrontabStat {
   }
 }
 
-export interface CrontabStatInstance extends Model<CrontabStat, CrontabStat>, CrontabStat {}
+export interface TaskStatInstance extends Model<TaskStat, TaskStat>, TaskStat {}
 
-export const CrontabStatModel = sequelize.define<CrontabStatInstance>(
-  'CrontabStat',
+export const TaskStatModel = sequelize.define<TaskStatInstance>(
+  'TaskStat',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -63,6 +63,7 @@ export const CrontabStatModel = sequelize.define<CrontabStatInstance>(
     },
   },
   {
+    tableName: 'TaskStats',
     indexes: [
       { unique: true, fields: ['ref_id', 'date'] },
       { fields: ['date'] },

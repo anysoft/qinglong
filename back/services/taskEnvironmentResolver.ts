@@ -1,7 +1,8 @@
 import { Service } from 'typedi';
 import { Transaction } from 'sequelize';
 import { sequelize } from '../data';
-import { Crontab, CrontabModel } from '../data/cron';
+import { TaskModel } from '../data/task';
+import { taskRepository } from './taskRelationships';
 import { EnvModel } from '../data/env';
 import { SubscriptionModel } from '../data/subscription';
 import { RepositoryModel } from '../data/repository';
@@ -41,18 +42,20 @@ export function mergeTaskEnvironment(base: NodeJS.ProcessEnv, globals: ScopedVar
 @Service()
 export default class TaskEnvironmentResolver {
   constructor(private profiles: RepositoryEnvProfileService) {}
-  async resolve(taskOrId: number | Crontab | null, baseEnv: NodeJS.ProcessEnv = process.env, existingTransaction?: Transaction): Promise<ResolvedTaskEnvironment> {
+  async resolve(taskOrId: number | { id?: number } | null, baseEnv: NodeJS.ProcessEnv = process.env, existingTransaction?: Transaction): Promise<ResolvedTaskEnvironment> {
     const read = async (transaction: Transaction) => {
-      const task = typeof taskOrId === 'number' ? (await CrontabModel.findByPk(taskOrId, { transaction }))?.get({ plain: true }) : taskOrId ?? { command: '' };
+      const taskId = typeof taskOrId === 'number' ? taskOrId : taskOrId?.id;
+      const task = taskId ? (await TaskModel.findByPk(taskId, { transaction }))?.get({ plain: true }) : { id: undefined, subscription_id: null, env_profile_id: null };
       if (!task) throw new ScopedEnvironmentError('ENV_TASK_NOT_FOUND', 404);
-      const sub = task.sub_id ? await SubscriptionModel.findByPk(task.sub_id, { transaction }) : null;
-      const repo = sub?.repository_id ? await RepositoryModel.findByPk(sub.repository_id, { transaction }) : null;
+      const sub = task.subscription_id ? await SubscriptionModel.findByPk(task.subscription_id, { transaction }) : null;
+      const repositoryId = taskId ? (await taskRepository(taskId, transaction)).repository_id : null;
+      const repo = repositoryId ? await RepositoryModel.findByPk(repositoryId, { transaction }) : null;
       const profileId = task.env_profile_id ?? sub?.env_profile_id ?? repo?.default_env_profile_id;
       const profile = profileId == null ? null : await this.profiles.validateBinding(profileId, repo?.id, transaction) ?? null;
       if (profile?.status === 'disabled') throw new ScopedEnvironmentError('ENV_PROFILE_DISABLED');
       const globals = await EnvModel.unscoped().findAll({ transaction });
       const repoVariables = profile ? await RepositoryEnvVariableModel.unscoped().findAll({ where: { profile_id: profile.id }, transaction }) : [];
-      const taskVariables = task.id ? await TaskEnvVariableModel.unscoped().findAll({ where: { cron_id: task.id }, transaction }) : [];
+      const taskVariables = task.id ? await TaskEnvVariableModel.unscoped().findAll({ where: { task_id: task.id }, transaction }) : [];
       return mergeTaskEnvironment(baseEnv, globals.map(x => ({ ...x.get({ plain: true }), name: x.name!, status: x.status === 1 ? 'disabled' as const : 'enabled' as const })), repoVariables.map(x => x.get({ plain: true })), taskVariables.map(x => x.get({ plain: true })), profile, {
         scoped: true, task_id: task.id, repository_id: repo?.id ?? null,
         selected_by: task.env_profile_id != null ? 'TASK' : sub?.env_profile_id != null ? 'SUBSCRIPTION' : repo?.default_env_profile_id != null ? 'REPOSITORY' : 'NONE', version: 1,

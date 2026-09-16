@@ -1,0 +1,93 @@
+[
+  {
+    "file": "src/components/NodeRuntime/index.tsx",
+    "name": "src/components/NodeRuntime/index.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/components/NodeRuntime/index.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/components/NodeRuntime/index.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/NodeRuntime/index.tsx",
+    "name": "NodeRuntime",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'NodeRuntime' not found\",\n  \"target\": {\n    \"name\": \"NodeRuntime\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/NodeRuntime/index.tsx",
+    "name": "load",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'load' not found\",\n  \"target\": {\n    \"name\": \"load\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/NodeRuntime/index.tsx",
+    "name": "perform",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'perform' not found\",\n  \"target\": {\n    \"name\": \"perform\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/NodeRuntime/index.tsx",
+    "name": "openEnvironment",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'openEnvironment' not found\",\n  \"target\": {\n    \"name\": \"openEnvironment\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/NodeRuntime/index.tsx",
+    "name": "begin",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'begin' not found\",\n  \"target\": {\n    \"name\": \"begin\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/NodeRuntime/index.tsx",
+    "name": "edit",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'edit' not found\",\n  \"target\": {\n    \"name\": \"edit\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/nodeEnvironment.ts",
+    "name": "back/api/nodeEnvironment.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/api/nodeEnvironment.ts' not found\",\n  \"target\": {\n    \"name\": \"back/api/nodeEnvironment.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/nodeEnvironment.ts",
+    "name": "body",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'body' not found\",\n  \"target\": {\n    \"name\": \"body\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/api/nodeEnvironment.ts",
+    "name": "nodeEnvironmentRoutes",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'nodeEnvironmentRoutes' not found\",\n  \"target\": {\n    \"name\": \"nodeEnvironmentRoutes\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironmentResolver.ts",
+    "name": "back/services/nodeEnvironmentResolver.ts",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'back/services/nodeEnvironmentResolver.ts' not found\",\n  \"target\": {\n    \"name\": \"back/services/nodeEnvironmentResolver.ts\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironmentResolver.ts",
+    "name": "NodeEnvironmentResolver",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'NodeEnvironmentResolver' not found\",\n  \"target\": {\n    \"name\": \"NodeEnvironmentResolver\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "back/services/nodeEnvironmentResolver.ts",
+    "name": "resolve",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'resolve' not found\",\n  \"target\": {\n    \"name\": \"resolve\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]
