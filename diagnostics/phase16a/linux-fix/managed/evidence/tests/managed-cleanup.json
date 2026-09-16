@@ -1,0 +1,10 @@
+{
+  "name": "managed-cleanup",
+  "status": "PASS",
+  "supervision_failed": false,
+  "exit_code": 0,
+  "started": "2026-09-16T11:58:51.521Z",
+  "finished": "2026-09-16T11:58:58.398Z",
+  "bytes": 0,
+  "truncated": false
+}

@@ -1,0 +1,10 @@
+{
+  "name": "ci-foundation-tests",
+  "status": "PASS",
+  "supervision_failed": false,
+  "exit_code": 0,
+  "started": "2026-09-16T11:48:18.539Z",
+  "finished": "2026-09-16T11:48:26.778Z",
+  "bytes": 2593,
+  "truncated": false
+}

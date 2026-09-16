@@ -1,0 +1,10 @@
+{
+  "name": "platform-final",
+  "status": "PASS",
+  "supervision_failed": false,
+  "exit_code": 0,
+  "started": "2026-09-16T11:54:54.442Z",
+  "finished": "2026-09-16T11:57:33.339Z",
+  "bytes": 116280,
+  "truncated": false
+}

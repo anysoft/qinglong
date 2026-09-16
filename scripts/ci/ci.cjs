@@ -136,13 +136,19 @@ async function install(s, mode) {
     300,
   );
 }
-async function build(s) {
+async function buildBackend(s) {
   await run(s, 'backend-build', [process.execPath, 'scripts/build-back.cjs']);
+}
+async function buildFrontend(s) {
   await run(s, 'frontend-build', [
     process.execPath,
     'node_modules/@umijs/max/bin/max.js',
     'build',
   ]);
+}
+async function build(s) {
+  await buildBackend(s);
+  await buildFrontend(s);
 }
 async function typecheck(s) {
   const baseline = require('./typecheck-baseline.json');
@@ -279,85 +285,125 @@ async function provision(s) {
       4200,
     );
 }
+// Summaries read the runner's stage records; no parallel stage state machine.
+function stageEvidence(s, name, withTests = false) {
+  const file = path.join(s.output, 'tests', name + '.json');
+  if (!fs.existsSync(file)) return { status: 'NOT_RUN' };
+  const result = JSON.parse(fs.readFileSync(file));
+  if (withTests) {
+    try {
+      result.tests = tap(
+        fs.readFileSync(path.join(s.output, 'logs', name + '.log'), 'utf8'),
+      );
+    } catch {
+      result.tests = null;
+    }
+  }
+  return result;
+}
 async function managed(s) {
-  await provision(s);
-  await run(
-    s,
-    'managed-environments',
-    [process.execPath, 'scripts/ci/managed-tests.cjs', 'environment'],
-    {},
-    1800,
-  );
-  await run(
-    s,
-    'managed-execution',
-    [process.execPath, 'scripts/ci/managed-tests.cjs', 'execution'],
-    {},
-    1800,
-  );
-  await run(
-    s,
-    'shell-execution',
-    [process.execPath, '--test', 'tests/phase10/execution.test.cjs'],
-    {},
-    600,
-  );
-  atomic(path.join(s.output, 'managed-summary.json'), {
-    status: 'PASS',
-    environment: tap(
-      fs.readFileSync(
-        path.join(s.output, 'logs/managed-environments.log'),
-        'utf8',
-      ),
-    ),
-    execution: tap(
-      fs.readFileSync(
-        path.join(s.output, 'logs/managed-execution.log'),
-        'utf8',
-      ),
-    ),
-  });
+  let failure;
+  try {
+    await buildBackend(s);
+    await provision(s);
+    await run(
+      s,
+      'managed-environments',
+      [process.execPath, 'scripts/ci/managed-tests.cjs', 'environment'],
+      {},
+      1800,
+    );
+    await run(
+      s,
+      'managed-execution',
+      [process.execPath, 'scripts/ci/managed-tests.cjs', 'execution'],
+      {},
+      1800,
+    );
+    await run(
+      s,
+      'shell-execution',
+      [process.execPath, '--test', 'tests/phase10/execution.test.cjs'],
+      {},
+      600,
+    );
+    // Preserve the original TAP completeness gate while retaining failure summaries.
+    for (const name of [
+      'managed-environments',
+      'managed-execution',
+      'shell-execution',
+    ])
+      if (!stageEvidence(s, name, true).tests)
+        throw Object.assign(Error('TAP_SUMMARY_MISSING: ' + name), {
+          stage: name,
+        });
+  } catch (e) {
+    failure = e;
+    throw e;
+  } finally {
+    atomic(path.join(s.output, 'managed-summary.json'), {
+      status: failure ? 'FAIL' : 'PASS',
+      failed_stage: failure ? failure.stage || 'managed' : null,
+      backend_build: stageEvidence(s, 'backend-build'),
+      environment: stageEvidence(s, 'managed-environments', true),
+      execution: stageEvidence(s, 'managed-execution', true),
+      shell: stageEvidence(s, 'shell-execution', true),
+    });
+  }
 }
 async function browser(s) {
-  await build(s);
-  await provision(s);
-  const chrome = command([
-    'sh',
-    '-c',
-    'command -v google-chrome || command -v chromium || command -v chromium-browser',
-  ]);
-  const extra = {};
-  if (chrome) extra.QL_BROWSER_EXECUTABLE = chrome;
-  else
-    await run(
-      s,
-      'chromium-install',
-      [
-        process.execPath,
-        path.join(s.root, 'tools/node_modules/playwright/cli.js'),
-        'install',
-        '--with-deps',
-        'chromium',
-      ],
-      {},
-      1200,
-    );
-  for (const [phase, file] of [
-    ['phase12', 'browser-e2e.cjs'],
-    ['phase14', 'platform-e2e.cjs'],
-  ])
-    await run(
-      s,
-      'browser-' + phase,
-      [process.execPath, `diagnostics/${phase}/${file}`],
-      { ...extra, QL_ACCEPTANCE_DIR: path.join(s.output, 'browser', phase) },
-      2400,
-    );
-  atomic(path.join(s.output, 'browser-summary.json'), {
-    status: 'PASS',
-    scenarios: ['phase12', 'phase14'],
-    real_managed_runtime: true,
-  });
+  let failure;
+  try {
+    await build(s);
+    await provision(s);
+    const chrome = command([
+      'sh',
+      '-c',
+      'command -v google-chrome || command -v chromium || command -v chromium-browser',
+    ]);
+    const extra = {};
+    if (chrome) extra.QL_BROWSER_EXECUTABLE = chrome;
+    else
+      await run(
+        s,
+        'chromium-install',
+        [
+          process.execPath,
+          path.join(s.root, 'tools/node_modules/playwright/cli.js'),
+          'install',
+          '--with-deps',
+          'chromium',
+        ],
+        {},
+        1200,
+      );
+    for (const [phase, file] of [
+      ['phase12', 'browser-e2e.cjs'],
+      ['phase14', 'platform-e2e.cjs'],
+    ])
+      await run(
+        s,
+        'browser-' + phase,
+        [process.execPath, `diagnostics/${phase}/${file}`],
+        { ...extra, QL_ACCEPTANCE_DIR: path.join(s.output, 'browser', phase) },
+        2400,
+      );
+  } catch (e) {
+    failure = e;
+    throw e;
+  } finally {
+    atomic(path.join(s.output, 'browser-summary.json'), {
+      status: failure ? 'FAIL' : 'PASS',
+      failed_stage: failure ? failure.stage || 'browser' : null,
+      backend_build: stageEvidence(s, 'backend-build'),
+      frontend_build: stageEvidence(s, 'frontend-build'),
+      scenarios: ['phase12', 'phase14'].map((phase) => ({
+        phase,
+        ...stageEvidence(s, 'browser-' + phase),
+      })),
+      real_managed_runtime: true,
+    });
+  }
 }
 async function runtimeCleanup(s) {
   if (!fs.existsSync(s.root)) return;

@@ -1,0 +1,36 @@
+{
+  "phase": "16A",
+  "job": "final-regression",
+  "status": "PASS",
+  "collection": "PASS",
+  "error_code": null,
+  "run_id": "1789559694439",
+  "commit": "a4e95c57302707994eb1d6c8b006146b36f374a4",
+  "bytes": 117954,
+  "inventory": [
+    {
+      "path": "logs/platform-final.log",
+      "bytes": 116280
+    },
+    {
+      "path": "logs/static-final.log",
+      "bytes": 282
+    },
+    {
+      "path": "tests/platform-final.json",
+      "bytes": 224
+    },
+    {
+      "path": "tests/static-final.json",
+      "bytes": 219
+    },
+    {
+      "path": "static/audit.json",
+      "bytes": 322
+    },
+    {
+      "path": "static/host.json",
+      "bytes": 627
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+[PREPARING]
+true
+11.19.0
+[INSTALLING_DEPENDENCIES]
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "package-manager-strict-version". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> fsevents@2.3.3 install
+> node-gyp rebuild
+
+gyp info it worked if it ends with ok
+gyp info using node-gyp@12.4.0
+gyp info using node@24.21.0 | darwin | arm64
+gyp info find Python using Python version 3.9.6 found at "/Library/Developer/CommandLineTools/usr/bin/python3"
+
+gyp http GET https://nodejs.org/download/release/v24.21.0/node-v24.21.0-headers.tar.gz
+gyp http 200 https://nodejs.org/download/release/v24.21.0/node-v24.21.0-headers.tar.gz
+gyp http GET https://nodejs.org/download/release/v24.21.0/SHASUMS256.txt
+gyp http 200 https://nodejs.org/download/release/v24.21.0/SHASUMS256.txt
+gyp info spawn /Library/Developer/CommandLineTools/usr/bin/python3
+gyp info spawn args [
+gyp info spawn args '/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/versions/runtime-1/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+gyp info spawn args 'binding.gyp',
+gyp info spawn args '-f',
+gyp info spawn args 'make',
+gyp info spawn args '-I',
+gyp info spawn args '/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/environments/env-12/builds/build-19/node_modules/fsevents/build/config.gypi',
+gyp info spawn args '-I',
+gyp info spawn args '/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/versions/runtime-1/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+gyp info spawn args '-I',
+gyp info spawn args '********/Library/Caches/node-gyp/24.21.0/include/node/common.gypi',
+gyp info spawn args '-Dlibrary=shared_library',
+gyp info spawn args '-Dvisibility=default',
+gyp info spawn args '-Dnode_root_dir=********/Library/Caches/node-gyp/24.21.0',
+gyp info spawn args '-Dnode_gyp_dir=/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/versions/runtime-1/lib/node_modules/npm/node_modules/node-gyp',
+gyp info spawn args '-Dnode_lib_file=********/Library/Caches/node-gyp/24.21.0/<(target_arch)/node.lib',
+gyp info spawn args '-Dmodule_root_dir=/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/environments/env-12/builds/build-19/node_modules/fsevents',
+gyp info spawn args '-Dnode_engine=v8',
+gyp info spawn args '--depth=.',
+gyp info spawn args '--no-parallel',
+gyp info spawn args '--generator-output',
+gyp info spawn args 'build',
+gyp info spawn args '-Goutput_dir=.'
+gyp info spawn args ]
+gyp: binding.gyp not found (cwd: /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/environments/env-12/builds/build-19/node_modules/fsevents) while trying to load binding.gyp
+gyp ERR! configure error 
+gyp ERR! stack Error: `gyp` failed with exit code: 1
+gyp ERR! stack at ChildProcess.<anonymous> (/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/versions/runtime-1/lib/node_modules/npm/node_modules/node-gyp/lib/configure.js:317:18)
+gyp ERR! stack at ChildProcess.emit (node:events:514:28)
+gyp ERR! stack at ChildProcess._handle.onexit (node:internal/child_process:295:12)
+gyp ERR! System Darwin 25.6.0
+gyp ERR! command "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/versions/runtime-1/bin/node" "/private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/versions/runtime-1/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /private/var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/pci-0vumhR/tmp/platform-phase5-9bySHV/runtime/node/environments/env-12/builds/build-19/node_modules/fsevents
+gyp ERR! node -v v24.21.0
+gyp ERR! node-gyp -v v12.4.0
+gyp ERR! $npm_package_name fsevents
+gyp ERR! $npm_package_version 2.3.3
+gyp ERR! not ok 
+
+> esbuild@0.25.12 postinstall
+> node install.js
+
+
+added 6 packages in 47s
+npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn install-scripts   esbuild@0.25.12 (postinstall: node install.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[VERIFYING_BUILD]
+true
+11.19.0
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "package-manager-strict-version". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+{
+  "version": "0.0.0",
+  "name": "platform-environment",
+  "dependencies": {
+    "is-number": {
+      "version": "7.0.0",
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
+      "overridden": false
+    },
+    "tsx": {
+      "version": "4.20.6",
+      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.20.6.tgz",
+      "overridden": false,
+      "dependencies": {
+        "esbuild": {
+          "version": "0.25.12",
+          "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.25.12.tgz",
+          "overridden": false,
+          "dependencies": {
+            "@esbuild/aix-ppc64": {},
+            "@esbuild/android-arm": {},
+            "@esbuild/android-arm64": {},
+            "@esbuild/android-x64": {},
+            "@esbuild/darwin-arm64": {
+              "version": "0.25.12",
+              "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.25.12.tgz",
+              "overridden": false
+            },
+            "@esbuild/darwin-x64": {},
+            "@esbuild/freebsd-arm64": {},
+            "@esbuild/freebsd-x64": {},
+            "@esbuild/linux-arm": {},
+            "@esbuild/linux-arm64": {},
+            "@esbuild/linux-ia32": {},
+            "@esbuild/linux-loong64": {},
+            "@esbuild/linux-mips64el": {},
+            "@esbuild/linux-ppc64": {},
+            "@esbuild/linux-riscv64": {},
+            "@esbuild/linux-s390x": {},
+            "@esbuild/linux-x64": {},
+            "@esbuild/netbsd-arm64": {},
+            "@esbuild/netbsd-x64": {},
+            "@esbuild/openbsd-arm64": {},
+            "@esbuild/openbsd-x64": {},
+            "@esbuild/openharmony-arm64": {},
+            "@esbuild/sunos-x64": {},
+            "@esbuild/win32-arm64": {},
+            "@esbuild/win32-ia32": {},
+            "@esbuild/win32-x64": {}
+          }
+        },
+        "fsevents": {},
+        "get-tsconfig": {
+          "version": "4.14.3",
+          "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.14.3.tgz",
+          "overridden": false,
+          "dependencies": {
+            "resolve-pkg-maps": {
+              "version": "1.0.0",
+              "resolved": "https://registry.npmjs.org/resolve-pkg-maps/-/resolve-pkg-maps-1.0.0.tgz",
+              "overridden": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

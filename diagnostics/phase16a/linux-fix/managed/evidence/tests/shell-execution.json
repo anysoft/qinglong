@@ -1,0 +1,10 @@
+{
+  "name": "shell-execution",
+  "status": "PASS",
+  "supervision_failed": false,
+  "exit_code": 0,
+  "started": "2026-09-16T11:58:38.133Z",
+  "finished": "2026-09-16T11:58:51.510Z",
+  "bytes": 1289,
+  "truncated": false
+}

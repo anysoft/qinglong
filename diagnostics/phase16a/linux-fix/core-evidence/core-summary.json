@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "tests": {
+    "tests": 469,
+    "pass": 466,
+    "fail": 0,
+    "skipped": 3,
+    "skip_names": [
+      "simultaneous cold and expired lookups share one successful refresh",
+      "waiters with different configuration do not reuse another key",
+      "lock timeout falls back while a holder is still alive"
+    ]
+  },
+  "typecheck": {
+    "historical": 22,
+    "remaining": 22,
+    "new": 0,
+    "diagnostics": [],
+    "raw_failed": true,
+    "status": "PASS"
+  },
+  "preflight": {
+    "arch": "arm64",
+    "os": "Darwin"
+  }
+}

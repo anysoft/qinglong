@@ -1,0 +1,10 @@
+{
+  "name": "managed-execution",
+  "status": "PASS",
+  "supervision_failed": false,
+  "exit_code": 0,
+  "started": "2026-09-16T11:56:55.931Z",
+  "finished": "2026-09-16T11:58:38.133Z",
+  "bytes": 728,
+  "truncated": false
+}

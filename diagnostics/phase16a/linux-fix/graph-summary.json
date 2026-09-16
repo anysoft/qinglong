@@ -1,0 +1,16 @@
+{
+  "HEAD": {
+    "changed_count": 57,
+    "affected_count": 0,
+    "changed_files": 166,
+    "risk_level": "low"
+  },
+  "develop": {
+    "changed_count": 57,
+    "affected_count": 0,
+    "changed_files": 166,
+    "risk_level": "low"
+  },
+  "index_process_budget_truncated": true,
+  "manual_scope_check": "CI and diagnostic tests only; protected product paths unchanged"
+}

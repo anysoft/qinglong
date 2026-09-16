@@ -1,0 +1,16 @@
+{
+  "git_status": " M .github/workflows/linux-ci.yml\n M PHASE16A_REPORT.md\n M docs/refactor/phase16a/10-phase16a-test-report.md\n M scripts/ci/ci.cjs\n M scripts/ci/static.cjs\n M tests/ci/foundation.test.cjs\n M tests/phase5/snapshot-main.cjs\n M tests/platform/environment-execution.test.cjs\n?? diagnostics/phase16a/linux-fix-attempt1.md\n?? diagnostics/phase16a/linux-fix/\n",
+  "disk": {
+    "type": 26,
+    "bsize": 4096,
+    "blocks": 242837545,
+    "bfree": 113241358,
+    "bavail": 113241358,
+    "files": 4532173237,
+    "ffree": 4529654320
+  },
+  "memory": {
+    "total": 34359738368,
+    "free": 5935087616
+  }
+}

@@ -1,0 +1,23 @@
+TAP version 13
+# Subtest: actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+ok 1 - actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+  ---
+  duration_ms: 1871.166459
+  type: 'test'
+  ...
+# {"global_ts_runner_used":false,"repository_local_runner":"node_modules/.bin/ts-node-transpile-only","typescript_diagnostic":"PASS"}
+# Subtest: 50 simultaneously live runs across repositories/profiles/tasks isolate snapshots and preserve A across update to B
+ok 2 - 50 simultaneously live runs across repositories/profiles/tasks isolate snapshots and preserve A across update to B
+  ---
+  duration_ms: 6984.805958
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9108.194666

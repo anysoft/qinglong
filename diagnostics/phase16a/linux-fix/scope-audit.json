@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "baseline_sha": "a4e95c57302707994eb1d6c8b006146b36f374a4",
+  "protected_files": {
+    "scripts/ci/typecheck-baseline.json": {
+      "unchanged": true,
+      "sha256": "5fcca4874bf936c9b36adf0b2607b423808a22e778fd444ceabdad746292181d"
+    },
+    "shell/otask.sh": {
+      "unchanged": true,
+      "sha256": "c4467aad346eb790f2ee5e5722bfbf957b99adc060dc340cf4bb281747394389"
+    },
+    "scripts/ci/install-system.sh": {
+      "unchanged": true,
+      "sha256": "67050f300b02e02a4f570e88eb6cc8f22ccb6f2848f0e05e31bb761f74098b5d"
+    },
+    "pnpm-lock.yaml": {
+      "unchanged": true,
+      "sha256": "e53b7042db0740d8728b9d92e7b8123348d261731cc54db7d8b8509e6a9995dc"
+    },
+    "package.json": {
+      "unchanged": true,
+      "sha256": "672212e3f5b5bb904734504db459ab58ea65030b9ded3ccb21cfcde3bbd70ec4"
+    },
+    "TEMPORARY_BRIDGES.md": {
+      "unchanged": true,
+      "sha256": "5120b74c2201093d70c562fda37fbbe4f24c57ffa4b5c9bb0a5805f40ebb065a"
+    }
+  },
+  "production_back_src_shell_changes": 0,
+  "generated_task_run_submit_tracked": false,
+  "changed_tracked_files": [
+    ".github/workflows/linux-ci.yml",
+    "PHASE16A_REPORT.md",
+    "docs/refactor/phase16a/10-phase16a-test-report.md",
+    "scripts/ci/ci.cjs",
+    "scripts/ci/static.cjs",
+    "tests/ci/foundation.test.cjs",
+    "tests/phase5/snapshot-main.cjs",
+    "tests/platform/environment-execution.test.cjs"
+  ],
+  "commit_created": false,
+  "push_performed": false
+}

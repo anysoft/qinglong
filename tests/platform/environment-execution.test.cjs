@@ -1,5 +1,5 @@
 const test = require('node:test'), assert = require('node:assert/strict'), fs = require('node:fs'), path = require('node:path');
-const { spawn } = require('node:child_process');
+const { spawn, spawnSync, execFileSync } = require('node:child_process');
 const setup = require('../phase4/helpers.cjs');
 function run(h, language, snapshot, extra = {}) {
   return new Promise((resolve, reject) => {
@@ -19,15 +19,28 @@ test('actual Python/Node/Shell snapshot complex values, UNSET, no interpolation 
   fs.writeFileSync(path.join(h.dir, 'data/scripts/check.sh'), 'node -e \'require("fs").writeFileSync(process.env.OUT,JSON.stringify(Object.fromEntries(' + JSON.stringify(names) + '.filter(k=>k in process.env).map(k=>[k,process.env[k]]))))\'\nprintf "%s\\n" "$TOKEN"\n');
   await h.variables.save('task', task.id, [{ name: 'OUT', value: outPath }]);
   fs.copyFileSync(path.join(h.dir, 'data/scripts/check.js'), path.join(h.dir, 'data/scripts/check.ts'));
+  // Keep host npm/global bins out of this diagnostic child's environment.
+  const hostBin = path.join(h.dir, 'host-bin'); fs.mkdirSync(hostBin);
+  fs.symlinkSync(process.execPath, path.join(hostBin, 'node'));
+  fs.symlinkSync(execFileSync('/bin/sh', ['-c', 'command -v python3'], { encoding: 'utf8' }).trim(), path.join(hostBin, 'python3'));
+  const cleanPath = [hostBin, '/usr/bin', '/bin', '/usr/sbin', '/sbin'].join(path.delimiter);
+  assert.notEqual(spawnSync('/bin/sh', ['-c', 'command -v ts-node-transpile-only'], { env: { PATH: cleanPath } }).status, 0);
+  const repositoryRunner = path.join(h.root, 'node_modules/.bin/ts-node-transpile-only');
+  assert.ok(fs.existsSync(repositoryRunner));
+  fs.appendFileSync(path.join(h.dir, 'data/scripts/check.ts'), `\nrequire('fs').writeFileSync(process.env.OUT+'.runner',require('child_process').execFileSync('/bin/sh',['-c','command -v ts-node-transpile-only'],{encoding:'utf8'}).trim());\n`);
   const transport = new (h.get('services/executionEnvironmentTransport').default)();
   for (const language of ['js', 'py', 'sh', 'ts']) {
     const resolved = await h.resolver.resolve(task.id), snapshot = await transport.prepare(resolved, process.pid);
     assert.equal(fs.statSync(snapshot.directory).mode & 0o777, 0o700);
     for (const file of fs.readdirSync(snapshot.directory)) assert.equal(fs.statSync(path.join(snapshot.directory, file)).mode & 0o777, 0o600);
-    const result = await run(h, language, snapshot, { OUT: outPath, HOST_REMOVE: 'host', JWT_SECRET: 'backend-secret', BACKEND_TOKEN: 'backend-token' });
+    const result = await run(h, language, snapshot, { PATH: cleanPath, OUT: outPath, HOST_REMOVE: 'host', JWT_SECRET: 'backend-secret', BACKEND_TOKEN: 'backend-token' });
     assert.equal(result.code, 0, result.output); assert.deepEqual(JSON.parse(fs.readFileSync(outPath)), JSON.parse(expected), result.output);
     assert.doesNotMatch(result.output, /private-four-secret/); assert.match(result.output, /\*{8}/);
     assert.equal(fs.existsSync(path.join(h.dir, 'pwned')), false);
+    if (language === 'ts') {
+      assert.equal(fs.readFileSync(outPath + '.runner', 'utf8'), repositoryRunner);
+      t.diagnostic(JSON.stringify({ global_ts_runner_used: false, repository_local_runner: 'node_modules/.bin/ts-node-transpile-only', typescript_diagnostic: 'PASS' }));
+    }
     await snapshot.cleanup(); assert.equal(fs.existsSync(snapshot.directory), false);
   }
   assert.equal(process.env.TOKEN, undefined);

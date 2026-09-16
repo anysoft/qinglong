@@ -1,0 +1,35 @@
+TAP version 13
+# Subtest: actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+not ok 1 - actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+  ---
+  duration_ms: 1716.230208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-execution.test.cjs:10:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    [MAIN]
+    /var/folders/zw/3r78x0_95dl5_cj7tpslfdq40000gn/T/ql-env4-hH6S14/shell/otask.sh: line 172: ts-node-transpile-only: command not found
+    
+    
+    127 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 127
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-execution.test.cjs:37:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2021.639834

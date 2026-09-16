@@ -1,0 +1,497 @@
+[
+  {
+    "target": "Function:scripts/ci/ci.cjs:managed",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:managed",
+        "name": "managed",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 0,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 1
+      },
+      "summary": {
+        "direct": 2,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 1
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 2,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "Function:scripts/ci/ci.cjs:build",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:build",
+        "name": "build",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 5,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "9 call sites invoking `build` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 9,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 3,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 3,
+        "2": 2
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 4,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:browser",
+            "name": "browser",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:core",
+            "name": "core",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "Function:scripts/ci/ci.cjs:browser",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:browser",
+        "name": "browser",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 0,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 1
+      },
+      "summary": {
+        "direct": 2,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 1
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 2,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "File:tests/phase5/snapshot-main.cjs",
+    "result": {
+      "target": {
+        "id": "File:tests/phase5/snapshot-main.cjs",
+        "name": "snapshot-main.cjs",
+        "type": "File",
+        "filePath": "tests/phase5/snapshot-main.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          },
+          {
+            "axis": "modules",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          }
+        ]
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "target": "File:tests/platform/environment-execution.test.cjs",
+    "result": {
+      "target": {
+        "id": "File:tests/platform/environment-execution.test.cjs",
+        "name": "environment-execution.test.cjs",
+        "type": "File",
+        "filePath": "tests/platform/environment-execution.test.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": false,
+        "unusedAxes": [
+          {
+            "axis": "processes",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          },
+          {
+            "axis": "modules",
+            "reason": "file-nodes-have-no-process-or-community-membership"
+          }
+        ]
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "exact",
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {}
+    }
+  },
+  {
+    "target": "Function:scripts/ci/static.cjs:audit",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/static.cjs:audit",
+        "name": "audit",
+        "type": "Function",
+        "filePath": "scripts/ci/static.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `audit` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:scripts/ci/static.cjs",
+            "name": "static.cjs",
+            "filePath": "scripts/ci/static.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  }
+]

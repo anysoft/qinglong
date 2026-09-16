@@ -1,0 +1,71 @@
+TAP version 13
+# CI stage: timeout-fixture
+# Subtest: failed test still collects and packages bounded diagnostics with machine summary
+ok 1 - failed test still collects and packages bounded diagnostics with machine summary
+  ---
+  duration_ms: 95.209791
+  type: 'test'
+  ...
+# Subtest: canary rejects publication and invalidates a previous archive
+ok 2 - canary rejects publication and invalidates a previous archive
+  ---
+  duration_ms: 160.058
+  type: 'test'
+  ...
+# Subtest: random fixture secrets and private keys are blocked
+ok 3 - random fixture secrets and private keys are blocked
+  ---
+  duration_ms: 139.483333
+  type: 'test'
+  ...
+# Subtest: artifact paths reject traversal, symlinks, operational DB and oversized logs
+ok 4 - artifact paths reject traversal, symlinks, operational DB and oversized logs
+  ---
+  duration_ms: 213.318917
+  type: 'test'
+  ...
+# Subtest: cleanup rejects foreign roots and is idempotent for its owned root
+ok 5 - cleanup rejects foreign roots and is idempotent for its owned root
+  ---
+  duration_ms: 4.85225
+  type: 'test'
+  ...
+# Subtest: summary derives counts and exposes failures, cancellations, scope skips and upload failures
+ok 6 - summary derives counts and exposes failures, cancellations, scope skips and upload failures
+  ---
+  duration_ms: 0.604542
+  type: 'test'
+  ...
+# Subtest: workflow parses and uses read-only fixed Ubuntu official-action orchestration
+ok 7 - workflow parses and uses read-only fixed Ubuntu official-action orchestration
+  ---
+  duration_ms: 62.044916
+  type: 'test'
+  ...
+# Subtest: summary cannot turn blocked core or missing successful-core evidence into PASS
+ok 8 - summary cannot turn blocked core or missing successful-core evidence into PASS
+  ---
+  duration_ms: 0.166958
+  type: 'test'
+  ...
+# Subtest: supervised stage timeout stops owned child and grandchild and retains failure evidence
+ok 9 - supervised stage timeout stops owned child and grandchild and retains failure evidence
+  ---
+  duration_ms: 2921.085208
+  type: 'test'
+  ...
+# Subtest: managed clean checkout builds real backend before provision and preserves failure summary
+ok 10 - managed clean checkout builds real backend before provision and preserves failure summary
+  ---
+  duration_ms: 8504.514708
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12160.852084

@@ -1,0 +1,10 @@
+{
+  "name": "frontend-build",
+  "status": "PASS",
+  "supervision_failed": false,
+  "exit_code": 0,
+  "started": "2026-09-16T11:45:22.911Z",
+  "finished": "2026-09-16T11:45:46.568Z",
+  "bytes": 15657,
+  "truncated": false
+}

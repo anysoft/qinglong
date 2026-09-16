@@ -66,7 +66,7 @@ jobs:
           path: |
             ci-packages/*.tar.gz
             ci-artifacts/preflight-*/ci-summary.json
-            ci-artifacts/preflight-*/core-summary.json
+            ci-artifacts/preflight-*/preflight.json
 
   core:
     needs: preflight
@@ -137,7 +137,7 @@ jobs:
           path: |
             ci-packages/*.tar.gz
             ci-artifacts/managed-runtime-*/ci-summary.json
-            ci-artifacts/managed-runtime-*/core-summary.json
+            ci-artifacts/managed-runtime-*/managed-summary.json
 
   browser:
     needs: preflight
@@ -173,7 +173,7 @@ jobs:
           path: |
             ci-packages/*.tar.gz
             ci-artifacts/browser-*/ci-summary.json
-            ci-artifacts/browser-*/core-summary.json
+            ci-artifacts/browser-*/browser-summary.json
 
   ci-summary:
     needs: [preflight, core, managed-runtime, browser]

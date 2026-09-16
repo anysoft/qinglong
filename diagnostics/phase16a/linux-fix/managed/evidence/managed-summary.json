@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "failed_stage": null,
+  "backend_build": {
+    "name": "backend-build",
+    "status": "PASS",
+    "supervision_failed": false,
+    "exit_code": 0,
+    "started": "2026-09-16T11:44:39.980Z",
+    "finished": "2026-09-16T11:44:44.926Z",
+    "bytes": 0,
+    "truncated": false
+  },
+  "environment": {
+    "name": "managed-environments",
+    "status": "PASS",
+    "supervision_failed": false,
+    "exit_code": 0,
+    "started": "2026-09-16T11:53:27.416Z",
+    "finished": "2026-09-16T11:56:55.930Z",
+    "bytes": 1062,
+    "truncated": false,
+    "tests": {
+      "tests": 3,
+      "pass": 3,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    }
+  },
+  "execution": {
+    "name": "managed-execution",
+    "status": "PASS",
+    "supervision_failed": false,
+    "exit_code": 0,
+    "started": "2026-09-16T11:56:55.931Z",
+    "finished": "2026-09-16T11:58:38.133Z",
+    "bytes": 728,
+    "truncated": false,
+    "tests": {
+      "tests": 2,
+      "pass": 2,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    }
+  },
+  "shell": {
+    "name": "shell-execution",
+    "status": "PASS",
+    "supervision_failed": false,
+    "exit_code": 0,
+    "started": "2026-09-16T11:58:38.133Z",
+    "finished": "2026-09-16T11:58:51.510Z",
+    "bytes": 1289,
+    "truncated": false,
+    "tests": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    }
+  }
+}

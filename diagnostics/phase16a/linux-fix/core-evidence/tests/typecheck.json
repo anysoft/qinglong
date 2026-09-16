@@ -1,0 +1,10 @@
+{
+  "name": "typecheck",
+  "status": "FAIL",
+  "supervision_failed": false,
+  "exit_code": 2,
+  "started": "2026-09-16T11:48:14.839Z",
+  "finished": "2026-09-16T11:48:18.538Z",
+  "bytes": 2294,
+  "truncated": false
+}

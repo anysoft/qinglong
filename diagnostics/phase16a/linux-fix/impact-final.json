@@ -1,0 +1,767 @@
+[
+  {
+    "target": "Function:scripts/ci/ci.cjs:buildBackend",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:buildBackend",
+        "name": "buildBackend",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 7,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 2,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 4,
+        "3": 1
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 6,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:build",
+            "name": "build",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:managed",
+            "name": "managed",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:browser",
+            "name": "browser",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:core",
+            "name": "core",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "Function:scripts/ci/ci.cjs:buildFrontend",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:buildFrontend",
+        "name": "buildFrontend",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 6,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 1,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 1,
+        "2": 3,
+        "3": 2
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 5,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:build",
+            "name": "build",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:browser",
+            "name": "browser",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:core",
+            "name": "core",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 3,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "Function:scripts/ci/ci.cjs:build",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:build",
+        "name": "build",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 5,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "9 call sites invoking `build` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 9,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 3,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 3,
+        "2": 2
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 4,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:browser",
+            "name": "browser",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:core",
+            "name": "core",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "Function:scripts/ci/ci.cjs:stageEvidence",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:stageEvidence",
+        "name": "stageEvidence",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 5,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 2,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 2,
+        "3": 1
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 4,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:browser",
+            "name": "browser",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:managed",
+            "name": "managed",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 2,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "3": [
+          {
+            "depth": 3,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "Function:scripts/ci/ci.cjs:managed",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:managed",
+        "name": "managed",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 0,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 1
+      },
+      "summary": {
+        "direct": 2,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 1
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 2,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "target": "Function:scripts/ci/ci.cjs:browser",
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/ci.cjs:browser",
+        "name": "browser",
+        "type": "Function",
+        "filePath": "scripts/ci/ci.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 3,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 0,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 1
+      },
+      "summary": {
+        "direct": 2,
+        "processes_affected": 1,
+        "modules_affected": 1
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 1
+      },
+      "affected_processes": [
+        {
+          "name": "job",
+          "type": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "affected_process_count": 4,
+          "total_hits": 4,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Ci",
+          "hits": 2,
+          "impact": "direct"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:job",
+            "name": "job",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_165_job",
+                "label": "Job → Owned",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_194_job",
+                "label": "Job → Atomic",
+                "processType": "intra_community",
+                "step": 1
+              },
+              {
+                "id": "proc_82_job",
+                "label": "Job → Walk",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_40_job",
+                "label": "Job → SafeName",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Function:scripts/ci/ci.cjs:main",
+            "name": "main",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "USES",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:scripts/ci/ci.cjs",
+            "name": "ci.cjs",
+            "filePath": "scripts/ci/ci.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      }
+    }
+  }
+]

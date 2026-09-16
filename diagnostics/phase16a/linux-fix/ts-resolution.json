@@ -1,0 +1,5 @@
+{
+  "global_ts_runner_used": false,
+  "repository_local_runner": "node_modules/.bin/ts-node-transpile-only",
+  "typescript_diagnostic": "PASS"
+}

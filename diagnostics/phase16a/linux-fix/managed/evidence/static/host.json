@@ -1,0 +1,16 @@
+{
+  "git_status": " M .github/workflows/linux-ci.yml\n M scripts/ci/ci.cjs\n M scripts/ci/static.cjs\n M tests/ci/foundation.test.cjs\n M tests/phase5/snapshot-main.cjs\n M tests/platform/environment-execution.test.cjs\n",
+  "disk": {
+    "type": 26,
+    "bsize": 4096,
+    "blocks": 242837545,
+    "bfree": 113398525,
+    "bavail": 113398525,
+    "files": 4538438051,
+    "ffree": 4535941000
+  },
+  "memory": {
+    "total": 34359738368,
+    "free": 5964529664
+  }
+}

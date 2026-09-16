@@ -1,0 +1,16 @@
+{
+  "host": "darwin",
+  "validation": "managed phase after dependency installation; not Ubuntu bootstrap",
+  "static_build_preexisting": false,
+  "exit_code": 0,
+  "backend_build_executed": true,
+  "task_run_submit_exists_after_build": true,
+  "build_before_provision": true,
+  "managed_environment": "PASS",
+  "managed_execution": "PASS",
+  "shell_execution": "PASS",
+  "artifact": "ci-packages/phase16a-managed-runtime-1789559079930-a4e95c573027.tar.gz",
+  "secret_scrub": "PASS",
+  "cleanup": "PASS",
+  "status": "PASS"
+}

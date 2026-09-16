@@ -1,0 +1,10 @@
+{
+  "name": "static-final",
+  "status": "PASS",
+  "supervision_failed": false,
+  "exit_code": 0,
+  "started": "2026-09-16T11:57:33.340Z",
+  "finished": "2026-09-16T11:57:33.684Z",
+  "bytes": 282,
+  "truncated": false
+}

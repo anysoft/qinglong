@@ -1,0 +1,416 @@
+{
+  "phase": "16A",
+  "job": "managed-runtime",
+  "status": "PASS",
+  "collection": "PASS",
+  "error_code": null,
+  "run_id": "1789559079930",
+  "commit": "a4e95c57302707994eb1d6c8b006146b36f374a4",
+  "bytes": 3437562,
+  "inventory": [
+    {
+      "path": "logs/backend-build.log",
+      "bytes": 0
+    },
+    {
+      "path": "logs/managed-cleanup.log",
+      "bytes": 0
+    },
+    {
+      "path": "logs/managed-environments.log",
+      "bytes": 1062
+    },
+    {
+      "path": "logs/managed-execution.log",
+      "bytes": 728
+    },
+    {
+      "path": "logs/provision-node.log",
+      "bytes": 284
+    },
+    {
+      "path": "logs/provision-python.log",
+      "bytes": 4643
+    },
+    {
+      "path": "logs/shell-execution.log",
+      "bytes": 1289
+    },
+    {
+      "path": "tests/backend-build.json",
+      "bytes": 218
+    },
+    {
+      "path": "tests/managed-cleanup.json",
+      "bytes": 220
+    },
+    {
+      "path": "tests/managed-environments.json",
+      "bytes": 228
+    },
+    {
+      "path": "tests/managed-execution.json",
+      "bytes": 224
+    },
+    {
+      "path": "tests/provision-node.json",
+      "bytes": 221
+    },
+    {
+      "path": "tests/provision-python.json",
+      "bytes": 224
+    },
+    {
+      "path": "tests/shell-execution.json",
+      "bytes": 223
+    },
+    {
+      "path": "runtime/cleanup-result.json",
+      "bytes": 7210
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-1.log",
+      "bytes": 33
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-10.log",
+      "bytes": 1538
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-11.log",
+      "bytes": 4424
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-12.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-13.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-14.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-15.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-16.log",
+      "bytes": 2012
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-17.log",
+      "bytes": 2042
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-18.log",
+      "bytes": 2012
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-19.log",
+      "bytes": 1996
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-2.log",
+      "bytes": 1593
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-20.log",
+      "bytes": 1726
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-21.log",
+      "bytes": 2016
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-22.log",
+      "bytes": 1239
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-23.log",
+      "bytes": 780
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-24.log",
+      "bytes": 1049
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-25.log",
+      "bytes": 780
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-26.log",
+      "bytes": 1643
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-27.log",
+      "bytes": 836
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-28.log",
+      "bytes": 1643
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-29.log",
+      "bytes": 1250
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-3.log",
+      "bytes": 754
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-30.log",
+      "bytes": 836
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-31.log",
+      "bytes": 1250
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-32.log",
+      "bytes": 479
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-33.log",
+      "bytes": 99
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-34.log",
+      "bytes": 2020
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-35.log",
+      "bytes": 33
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-36.log",
+      "bytes": 1730
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-37.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-38.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-39.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-4.log",
+      "bytes": 25
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-40.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-41.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-42.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-43.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-44.log",
+      "bytes": 12
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-45.log",
+      "bytes": 7379
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-46.log",
+      "bytes": 1044
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-47.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-48.log",
+      "bytes": 12
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-49.log",
+      "bytes": 12
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-5.log",
+      "bytes": 100
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-50.log",
+      "bytes": 754
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-51.log",
+      "bytes": 31
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-6.log",
+      "bytes": 4444
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-7.log",
+      "bytes": 4444
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-8.log",
+      "bytes": 50
+    },
+    {
+      "path": "runtime/managed-node/final-operation-logs/operation-9.log",
+      "bytes": 4442
+    },
+    {
+      "path": "runtime/managed-node/operation-1.log",
+      "bytes": 33
+    },
+    {
+      "path": "runtime/managed-node/operation-2.log",
+      "bytes": 1593
+    },
+    {
+      "path": "runtime/managed-node/operation-3.log",
+      "bytes": 754
+    },
+    {
+      "path": "runtime/managed-node/operation-4.log",
+      "bytes": 25
+    },
+    {
+      "path": "runtime/managed-node/operation-5.log",
+      "bytes": 100
+    },
+    {
+      "path": "runtime/managed-node/result.json",
+      "bytes": 7102
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-1.log",
+      "bytes": 17073
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-10.log",
+      "bytes": 6087
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-11.log",
+      "bytes": 6067
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-12.log",
+      "bytes": 3746
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-13.log",
+      "bytes": 3746
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-14.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-15.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-16.log",
+      "bytes": 3746
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-17.log",
+      "bytes": 3759
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-18.log",
+      "bytes": 35
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-19.log",
+      "bytes": 672
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-2.log",
+      "bytes": 1630522
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-20.log",
+      "bytes": 23
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-3.log",
+      "bytes": 3746
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-4.log",
+      "bytes": 3746
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-5.log",
+      "bytes": 1674
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-6.log",
+      "bytes": 1674
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-7.log",
+      "bytes": 29
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-8.log",
+      "bytes": 2808
+    },
+    {
+      "path": "runtime/managed-runtime/final-operation-logs/operation-9.log",
+      "bytes": 4527
+    },
+    {
+      "path": "runtime/managed-runtime/operation-1.log",
+      "bytes": 17073
+    },
+    {
+      "path": "runtime/managed-runtime/operation-2.log",
+      "bytes": 1630522
+    },
+    {
+      "path": "runtime/managed-runtime/result.json",
+      "bytes": 5001
+    },
+    {
+      "path": "runtime/phase10-managed-node-execution.json",
+      "bytes": 256
+    },
+    {
+      "path": "runtime/phase10-managed-python-execution.json",
+      "bytes": 233
+    },
+    {
+      "path": "runtime/phase7-offline-result.json",
+      "bytes": 313
+    },
+    {
+      "path": "runtime/phase8-lifecycle-result.json",
+      "bytes": 272
+    },
+    {
+      "path": "runtime/phase8-offline-result.json",
+      "bytes": 2883
+    },
+    {
+      "path": "static/host.json",
+      "bytes": 467
+    }
+  ]
+}

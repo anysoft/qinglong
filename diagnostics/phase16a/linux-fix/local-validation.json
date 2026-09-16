@@ -1,0 +1,113 @@
+{
+  "status": "LOCAL_FIX_VALIDATED",
+  "phase16a_status": "PARTIAL",
+  "hosted_full_revalidation": "REQUIRED",
+  "qualification": "NOT_PHASE15_QUALIFICATION",
+  "host": "Darwin arm64",
+  "host_node": "v22.23.2",
+  "first_hosted_run": 35078896295,
+  "base_commit": "a4e95c57302707994eb1d6c8b006146b36f374a4",
+  "platform": {
+    "tests": 469,
+    "pass": 466,
+    "fail": 0,
+    "skipped": 3,
+    "skip_names": [
+      "simultaneous cold and expired lookups share one successful refresh",
+      "waiters with different configuration do not reuse another key",
+      "lock timeout falls back while a holder is still alive"
+    ]
+  },
+  "focused": {
+    "tests": 2,
+    "pass": 2,
+    "fail": 0,
+    "skipped": 0,
+    "skip_names": []
+  },
+  "ci_foundation": {
+    "tests": 11,
+    "pass": 11,
+    "fail": 0,
+    "skipped": 0,
+    "skip_names": []
+  },
+  "backend_build": "PASS",
+  "frontend_build": "PASS",
+  "typecheck": {
+    "historical": 22,
+    "remaining": 22,
+    "new": 0,
+    "diagnostics": [],
+    "raw_failed": true,
+    "status": "PASS"
+  },
+  "managed": {
+    "host": "darwin",
+    "validation": "managed phase after dependency installation; not Ubuntu bootstrap",
+    "static_build_preexisting": false,
+    "exit_code": 0,
+    "backend_build_executed": true,
+    "task_run_submit_exists_after_build": true,
+    "build_before_provision": true,
+    "managed_environment": "PASS",
+    "managed_execution": "PASS",
+    "shell_execution": "PASS",
+    "artifact": "ci-packages/phase16a-managed-runtime-1789559079930-a4e95c573027.tar.gz",
+    "secret_scrub": "PASS",
+    "cleanup": "PASS",
+    "status": "PASS"
+  },
+  "managed_tests": {
+    "environment": {
+      "tests": 3,
+      "pass": 3,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    },
+    "execution": {
+      "tests": 2,
+      "pass": 2,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    },
+    "shell": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "skipped": 0,
+      "skip_names": []
+    }
+  },
+  "ts_resolution": {
+    "global_ts_runner_used": false,
+    "repository_local_runner": "node_modules/.bin/ts-node-transpile-only",
+    "typescript_diagnostic": "PASS"
+  },
+  "static": "PASS",
+  "shellcheck": "UNAVAILABLE_ON_DARWIN; mandatory on Ubuntu",
+  "security": "PASS",
+  "archives": [
+    {
+      "path": "ci-packages/phase16a-local-1789559117837-a4e95c573027.tar.gz",
+      "bytes": 31187,
+      "sha256": "b7982f7b643eaced87094d564ed7319c896f64696fed6dc811e06ee33b3a581d"
+    },
+    {
+      "path": "ci-packages/phase16a-final-regression-1789559694439-a4e95c573027.tar.gz",
+      "bytes": 25403,
+      "sha256": "2505bc04f7408e4c5fe7f315f0ba4dcecb20067ab14b270993c7f913cb85a6fd"
+    },
+    {
+      "path": "ci-packages/phase16a-managed-runtime-1789559079930-a4e95c573027.tar.gz",
+      "bytes": 150433,
+      "sha256": "97891e83af9b72c60a127d11e434df6d804f9bbb9e27ba4c09b41b85f11642bc"
+    }
+  ],
+  "commit_created": false,
+  "push_performed": false,
+  "linux_bootstrap_limit": "Darwin ran the exact managed phase after installed dependency reuse in an owned checkout; Ubuntu run-job apt/preflight/install awaits new hosted full run.",
+  "browser": "Attempt 1 SKIPPED_BY_SCOPE; harness unchanged; new full acceptance pending"
+}

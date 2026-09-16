@@ -1,0 +1,410 @@
+{
+  "summary": {
+    "changed_count": 57,
+    "affected_count": 0,
+    "changed_files": 166,
+    "risk_level": "low"
+  },
+  "changed_symbols": [
+    {
+      "id": "Section:PHASE16A_REPORT.md:L1:Phase 16A Status: PARTIAL",
+      "name": "Phase 16A Status: PARTIAL",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L7:状态矩阵",
+      "name": "状态矩阵",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L23:Linux Fix Attempt 1",
+      "name": "Linux Fix Attempt 1",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L29:本轮已完成的本地验证",
+      "name": "本轮已完成的本地验证",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L39:Workflow 与范围",
+      "name": "Workflow 与范围",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L51:执行与隔离",
+      "name": "执行与隔离",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:PHASE16A_REPORT.md:L75:初版本机历史验证（首次 hosted run 之前）",
+      "name": "初版本机历史验证（首次 hosted run 之前）",
+      "type": "Section",
+      "filePath": "PHASE16A_REPORT.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase16a/linux-fix-attempt1.md:L1:Phase16A — First Hosted Run / Linux Fix Attempt 1",
+      "name": "Phase16A — First Hosted Run / Linux Fix Attempt 1",
+      "type": "Section",
+      "filePath": "diagnostics/phase16a/linux-fix-attempt1.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase16a/linux-fix-attempt1.md:L3:First Hosted Run",
+      "name": "First Hosted Run",
+      "type": "Section",
+      "filePath": "diagnostics/phase16a/linux-fix-attempt1.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase16a/linux-fix-attempt1.md:L21:Root Cause / Fix",
+      "name": "Root Cause / Fix",
+      "type": "Section",
+      "filePath": "diagnostics/phase16a/linux-fix-attempt1.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase16a/linux-fix-attempt1.md:L23:1. Diagnostic TypeScript resolution",
+      "name": "1. Diagnostic TypeScript resolution",
+      "type": "Section",
+      "filePath": "diagnostics/phase16a/linux-fix-attempt1.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase16a/linux-fix-attempt1.md:L31:2. Managed job backend prerequisite",
+      "name": "2. Managed job backend prerequisite",
+      "type": "Section",
+      "filePath": "diagnostics/phase16a/linux-fix-attempt1.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase16a/linux-fix-attempt1.md:L39:3. Summary / artifacts",
+      "name": "3. Summary / artifacts",
+      "type": "Section",
+      "filePath": "diagnostics/phase16a/linux-fix-attempt1.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase16a/linux-fix-attempt1.md:L45:Local verification",
+      "name": "Local verification",
+      "type": "Section",
+      "filePath": "diagnostics/phase16a/linux-fix-attempt1.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:diagnostics/phase16a/linux-fix-attempt1.md:L49:Revalidation procedure / pending gate",
+      "name": "Revalidation procedure / pending gate",
+      "type": "Section",
+      "filePath": "diagnostics/phase16a/linux-fix-attempt1.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:assert",
+      "name": "assert",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:repository",
+      "name": "repository",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:root",
+      "name": "root",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:checkout",
+      "name": "checkout",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:output",
+      "name": "output",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:destination",
+      "name": "destination",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:fn@12:1.ci@13:2",
+      "name": "ci",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:fn@12:1.evidence@13:2",
+      "name": "evidence",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/clean-managed.cjs:fn@12:1.failure@13:2",
+      "name": "failure",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase16a/linux-fix/clean-managed.cjs:fn@12:1.host@15:4",
+      "name": "host",
+      "type": "Property",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase16a/linux-fix/clean-managed.cjs:fn@12:1.validation@16:4",
+      "name": "validation",
+      "type": "Property",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:diagnostics/phase16a/linux-fix/clean-managed.cjs:fn@12:1.static_build_preexisting@18:4",
+      "name": "static_build_preexisting",
+      "type": "Property",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:diagnostics/phase16a/linux-fix/clean-managed.cjs:fn@12:1.stage@64:4",
+      "name": "stage",
+      "type": "Function",
+      "filePath": "diagnostics/phase16a/linux-fix/clean-managed.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/graph-review.cjs:fs",
+      "name": "fs",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/graph-review.cjs:os",
+      "name": "os",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:diagnostics/phase16a/linux-fix/graph-review.cjs:path",
+      "name": "path",
+      "type": "Const",
+      "filePath": "diagnostics/phase16a/linux-fix/graph-review.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/10-phase16a-test-report.md:L1:Phase16A validation",
+      "name": "Phase16A validation",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/10-phase16a-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/10-phase16a-test-report.md:L3:初版历史验证（首次 hosted run 前）",
+      "name": "初版历史验证（首次 hosted run 前）",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/10-phase16a-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/10-phase16a-test-report.md:L14:First Hosted Run",
+      "name": "First Hosted Run",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/10-phase16a-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/10-phase16a-test-report.md:L18:Root Cause / Linux Fix",
+      "name": "Root Cause / Linux Fix",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/10-phase16a-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Section:docs/refactor/phase16a/10-phase16a-test-report.md:L25:Revalidation Procedure",
+      "name": "Revalidation Procedure",
+      "type": "Section",
+      "filePath": "docs/refactor/phase16a/10-phase16a-test-report.md",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:buildBackend",
+      "name": "buildBackend",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:buildFrontend",
+      "name": "buildFrontend",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:build",
+      "name": "build",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:stageEvidence",
+      "name": "stageEvidence",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/ci.cjs:stageEvidence.status@290:37",
+      "name": "status",
+      "type": "Property",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:managed",
+      "name": "managed",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/ci.cjs:browser",
+      "name": "browser",
+      "type": "Function",
+      "filePath": "scripts/ci/ci.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Function:scripts/ci/static.cjs:audit",
+      "name": "audit",
+      "type": "Function",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.isolated_managed_build@130:4",
+      "name": "isolated_managed_build",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.job_summary_paths@131:4",
+      "name": "job_summary_paths",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.diagnostic_only_ts_resolution@132:4",
+      "name": "diagnostic_only_ts_resolution",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:scripts/ci/static.cjs:audit.legacy_normal_exit@133:4",
+      "name": "legacy_normal_exit",
+      "type": "Property",
+      "filePath": "scripts/ci/static.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:fn@203:98.checkout@204:2",
+      "name": "checkout",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/ci/foundation.test.cjs:fn@282:93.checkout@283:2",
+      "name": "checkout",
+      "type": "Const",
+      "filePath": "tests/ci/foundation.test.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Const:tests/phase5/snapshot-main.cjs:variables",
+      "name": "variables",
+      "type": "Const",
+      "filePath": "tests/phase5/snapshot-main.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase5/snapshot-main.cjs:variables.PATH",
+      "name": "PATH",
+      "type": "Property",
+      "filePath": "tests/phase5/snapshot-main.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase5/snapshot-main.cjs:variables.QL_DATA_DIR",
+      "name": "QL_DATA_DIR",
+      "type": "Property",
+      "filePath": "tests/phase5/snapshot-main.cjs",
+      "change_type": "touched"
+    },
+    {
+      "id": "Property:tests/phase5/snapshot-main.cjs:variables.QL_DIR",
+      "name": "QL_DIR",
+      "type": "Property",
+      "filePath": "tests/phase5/snapshot-main.cjs",
+      "change_type": "touched"
+    }
+  ],
+  "affected_processes": []
+}

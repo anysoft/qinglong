@@ -1,24 +1,54 @@
 # Phase 16A Status: PARTIAL
 
-**WORKFLOW_IMPLEMENTED / GITHUB_HOSTED_RUNNER_NOT_YET_EXECUTED**
+**WORKFLOW_IMPLEMENTED / FIRST_GITHUB_UBUNTU_RUN_ANALYZED / LINUX_FIX_VALIDATED_LOCALLY / HOSTED_FULL_REVALIDATION_PENDING**
 
-本阶段建立 CI Foundation。当前验证主机是 Darwin arm64；没有 push、GitHub Run URL/ID，也没有 Ubuntu 24.04 PASS 结论。Phase15 Linux Qualification 和 Temporary Bridge 删除仍未开始。
+本阶段建立 CI Foundation。首轮 GitHub Ubuntu Run [35078896295](https://github.com/anysoft/qinglong/actions/runs/35078896295) 已执行并分析：preflight PASS、core/managed FAIL、browser SKIPPED_BY_SCOPE。本轮在 Darwin arm64 修复并重新验证两个 fixture/CI 问题；完整 hosted 修复验证仍待新 SHA 的 workflow_dispatch full。Phase15 Linux Qualification 和 Temporary Bridge 删除未开始。
 
 ## 状态矩阵
 
 | Item | Status |
 |---|---|
-| CI Script Foundation | PASS：仓库内可独立执行 |
-| Ubuntu 24.04 Workflow | PARTIAL：已实现，待 GitHub 执行 |
-| Core Job | PARTIAL：本机回归通过，Linux 待执行 |
-| Managed Runtime Job | PARTIAL：本机真实 Runtime 验证通过，Linux 待执行 |
-| Browser Job | PARTIAL：本机 Phase12/14 完整通过，Linux 待执行 |
-| Artifact Collection | PASS：失败收集、尺寸/路径边界与打包自测 |
-| Machine-readable Summary | PASS：实际 TAP、失败/取消/依赖阻断/上传失败 |
-| Secret Scrub | PASS：随机 canary、私钥标记、禁止不安全包发布 |
-| Workflow Security | PASS：YAML/静态审计；官方 Actions、只读权限 |
-| Local Reproduction | PASS：Ubuntu 命令与 Actions 相同 |
-| GitHub-hosted Execution | PARTIAL：尚未执行 |
+| CI Script Foundation | PASS |
+| Ubuntu Workflow | PASS — executed once |
+| Ubuntu Preflight | PASS |
+| Core Attempt #1 | FAIL — fixed locally |
+| Managed Attempt #1 | FAIL — fixed locally |
+| Browser Attempt #1 | SKIPPED_BY_SCOPE |
+| TS Diagnostic Fix | PASS：排除 global runner；正式 suite 2/2 |
+| Managed Clean Build Fix | PASS：owned clean checkout 自行 build → provision → 正式测试 |
+| Artifact Collection / Secret Scrub | PASS：本轮 core / final regression / managed 均收集、扫描并清理 |
+| Full Hosted Revalidation | PENDING |
+| Phase15 Qualification | NOT STARTED |
+
+## Linux Fix Attempt 1
+
+首轮 SHA `a4e95c57302707994eb1d6c8b006146b36f374a4`。Ubuntu platform 467 / 466 pass / 1 fail / 0 skip；历史 22 项 TypeScript baseline 保持，Ubuntu remaining 4 / new 0 / raw failed / budget PASS。browser 因 normal scope 未执行，不是浏览器失败。
+
+修复仅涉及 CI、diagnostic fixture 与测试：显式 fixture-local TS runner；managed 自行 backend build 并先于 provision；managed/browser 失败摘要复用阶段 JSON；按 job 修正显式 artifact 路径。新增回归均先在旧代码下复现，再验证修复。安全边界、生产模型、Runner、otask 与 Temporary Bridges 不变。
+
+### 本轮已完成的本地验证
+
+Darwin arm64 / host Node22.23.2。完整 core：**469 tests / 466 pass / 0 fail / 3 原有 Darwin skip**（新增 2 项 CI 回归，未删测试）。CI foundation **11/11**；focused environment-execution **2/2**；后端/前端构建 PASS。TypeScript **22 historical / 22 remaining / 0 new**，raw tsc 仍失败，budget PASS，原 baseline 字节未改。
+
+静态审计 PASS：权限 contents:read、0 custom secrets、artifact 显式路径、managed build 前置、无全局 TS/PATH workaround；正常 otask 返回 64 / LEGACY_EXECUTION_DISABLED。Bash syntax PASS；Darwin 未安装 ShellCheck，Ubuntu 仍强制执行，未冒称本机 ShellCheck PASS。Core canary、私钥、尺寸/路径边界及 owned cleanup 均 PASS。
+
+证据：[core-validation.json](diagnostics/phase16a/linux-fix/core-validation.json)、[TS resolution](diagnostics/phase16a/linux-fix/ts-resolution.json)、[core-summary](diagnostics/phase16a/linux-fix/core-evidence/core-summary.json)、[static audit](diagnostics/phase16a/linux-fix/core-evidence/static/audit.json)。本轮生成包文件名使用工作树基准 SHA，不表示修复已提交；本轮未 commit / push。
+
+### 本轮真实 managed 隔离验证
+
+独立 owned checkout 从 **static/build 不存在**开始，通过 CI managed 入口自行构建 taskRunSubmit，然后 provision CPython3.13.15 / Node24.21.0。**Environment 3/3、managed execution 2/2（Python、Node CJS/ESM、真实 tsx）、Shell 5/5**。正式 Runtime VERIFY/REMOVE、canary/私钥/尺寸检查、artifact 打包、owned 根与 checkout 删除全部 PASS。
+
+[clean-state.json](diagnostics/phase16a/linux-fix/managed/clean-state.json) 记录 `static_build_preexisting=false`、`backend_build_executed=true`、`task_run_submit_exists_after_build=true`、`build_before_provision=true`；[managed-summary](diagnostics/phase16a/linux-fix/managed/evidence/managed-summary.json) 保留逐阶段时间与实际计数。
+
+边界：Darwin 实际执行 `scripts/ci/test-managed-runtime.sh`（run-job 安装后的同一 managed phase）；隔离 checkout 复用已安装 node_modules，未复制 static/build、未手工预先 build、未复用 host Task Runtime。Ubuntu 的完整 `run-job.sh` apt/preflight/依赖安装入口仍须新 hosted full run 验证；本轮未重新跑 browser 业务 harness，已验证共享 build 和失败摘要，browser full acceptance 仍待 hosted。
+
+最终增加 TAP 完整性保护后再次执行 platform，仍为 469 / 466 / 0 / 3；CI 自测 11/11，含“子进程 exit0 但无 TAP 计数不得 PASS”。[最终回归](diagnostics/phase16a/linux-fix/final-validation.json) 和 [本轮统一机器报告](diagnostics/phase16a/linux-fix/local-validation.json) 记录所有结果及三份本地诊断包的 SHA256。
+
+GitNexus 在当前 develop/worktree 上强制重建。定点 impact 的 buildBackend/buildFrontend/build/stageEvidence/managed/browser 为 LOW，调用范围集中 CI。detect_changes 已对 HEAD、develop 执行；当前索引的流程预算有截断提示，不能把图中未出现流程解释为无影响，已用调用搜索、完整回归和保护文件 hash 审计补充。无生产 back/src/shell 变更，baseline/锁文件/bridge 均未改。
+
+本轮状态：**LOCAL_FIX_VALIDATED / HOSTED_FULL_REVALIDATION_REQUIRED**。未创建 commit，未 push，未触发或重跑 hosted workflow。Phase15 和 Phase16B 未开始。
+
+完整首轮分析、修复与复验流程：[linux-fix-attempt1.md](diagnostics/phase16a/linux-fix-attempt1.md)。本轮新证据只写入 `diagnostics/phase16a/linux-fix/`，下文初版历史证据保留。
 
 ## Workflow 与范围
 
@@ -42,7 +72,7 @@
 
 Core：backend build → frontend build → `tests/platform/run.cjs` → 精确 TypeScript baseline → CI 自测/静态审计。历史 22 项错误按规范化诊断签名计数，新错误不允许进入 baseline。Ubuntu 上任何 skip 均失败；Darwin 仅保留原有 3 项 Linux 条件 skip。
 
-Managed：正式 provider 安装/校验 CPython 与 Node，复用 Phase7/8 环境生命周期、Phase10 managed Python/Node/TypeScript 与 Shell 测试。真实 Runtime 解释器执行 Task；host Python/Node 仅用于工具和监督。浏览器复用刚验证的官方 runtime 安装作为原有 provider fixture 输入，明确不把 host Runtime 冒充 managed Runtime。
+Managed：独立 backend build 完成后，正式 provider 安装/校验 CPython 与 Node，复用 Phase7/8 环境生命周期、Phase10 managed Python/Node/TypeScript 与 Shell 测试。真实 Runtime 解释器执行 Task；host Python/Node 仅用于工具和监督。浏览器复用刚验证的官方 runtime 安装作为原有 provider fixture 输入，明确不把 host Runtime 冒充 managed Runtime。
 
 Browser：优先 runner 已有 Chrome，否则安装锁定 Playwright 配套 Chromium；执行 Phase12 Workspace/Git 与 Phase14 Runtime/ENV/Config/Hook/Task/Trigger/Observability/Backup/Restore 完整场景。输出目录可配置，新增 console/network 记录、秘密遮罩截图与 PID 登记；CLI portable passphrase 通过 stdin，不写口令文件。
 
@@ -56,9 +86,9 @@ Browser：优先 runner 已有 Chrome，否则安装锁定 Playwright 配套 Chr
 
 `ci-summary` 使用 needs 实际结果，区别 scope skip、依赖阻断、取消、测试失败和 `ARTIFACT_UPLOAD_FAILED`；从实际 TAP 读取测试数。成功 core 缺少报告也失败。输出 `$GITHUB_STEP_SUMMARY` 和 `diagnostics/ci/final-summary.json`，下载的 tar 不解包。权限只有 contents:read，checkout 不保留 credential，0 自定义 secrets；无 pull_request_target，不插值执行 PR title/body/branch。
 
-## 本机验证
+## 初版本机历史验证（首次 hosted run 之前）
 
-所有数值仅代表 Darwin，不替代 Linux。
+本节保留初版验证事实；不作为本轮修复的新测试结果。所有数值仅代表 Darwin，不替代 Linux。
 
 | 验证 | 实际结果 |
 |---|---|
@@ -104,4 +134,4 @@ CI_OUTPUT="$PWD/diagnostics/ci/browser-run" scripts/ci/run-job.sh browser
 
 每次独立运行选择新 CI_OUTPUT。详细脚本、依赖、矩阵、安全和复现说明位于 `docs/refactor/phase16a/01..10`。
 
-用户推送后可在 GitHub Actions 执行 full，下载 job artifacts 与 linux-summary。新 workflow 的 UI 手动发现受默认分支注册规则约束。实际 Run URL/ID：**未执行，无**。当前不能确认 Linux flock/FD、GNU timeout、renameat2、SIGKILL、Unix socket 或 hosted runner 网络/资源行为；Phase15 应以真实 Ubuntu artifacts 完成资格验证。本阶段在 Phase16A 停止。
+用户提交并推送本轮修复后，必须在 GitHub Actions 手动执行 scope=full，下载 job artifacts 与 linux-summary；不要重跑旧 Run 验证新代码。新 workflow 的 UI 手动发现受默认分支注册规则约束。首轮 Run 为 **35078896295**，结果与本轮修复见上文；新 SHA 的 full Run 尚未执行。当前不能确认 Linux flock/FD、GNU timeout、renameat2、SIGKILL、Unix socket 或 hosted runner 网络/资源行为；Phase15 应以真实 Ubuntu artifacts 完成资格验证。本阶段在 Phase16A 停止。

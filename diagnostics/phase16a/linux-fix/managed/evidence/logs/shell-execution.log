@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: native shell argv, direct Worktree cwd, immutable resolver, no host secrets
+ok 1 - native shell argv, direct Worktree cwd, immutable resolver, no host secrets
+  ---
+  duration_ms: 1980.596917
+  type: 'test'
+  ...
+# Subtest: real exit 124 is FAILED, supervisor timeout is TIMEOUT, cancellation is CANCELLED
+ok 2 - real exit 124 is FAILED, supervisor timeout is TIMEOUT, cancellation is CANCELLED
+  ---
+  duration_ms: 3569.690625
+  type: 'test'
+  ...
+# Subtest: FORBID persists skipped submission, QUEUE is FIFO, queued cancel never spawns
+ok 3 - FORBID persists skipped submission, QUEUE is FIFO, queued cancel never spawns
+  ---
+  duration_ms: 3042.701042
+  type: 'test'
+  ...
+# Subtest: retry attempts freeze scoped ENV and settings; each BEFORE patch starts from snapshot
+ok 4 - retry attempts freeze scoped ENV and settings; each BEFORE patch starts from snapshot
+  ---
+  duration_ms: 2626.909667
+  type: 'test'
+  ...
+# Subtest: BEFORE generated secret is redacted before buffered output and MAIN, FINALLY runs
+ok 5 - BEFORE generated secret is redacted before buffered output and MAIN, FINALLY runs
+  ---
+  duration_ms: 1651.258208
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13118.199958

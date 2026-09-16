@@ -1,0 +1,47 @@
+{
+  "host": "darwin",
+  "node": "v22.23.2",
+  "platform": {
+    "status": "PASS",
+    "tests": {
+      "tests": 469,
+      "pass": 466,
+      "fail": 0,
+      "skipped": 3,
+      "skip_names": [
+        "simultaneous cold and expired lookups share one successful refresh",
+        "waiters with different configuration do not reuse another key",
+        "lock timeout falls back while a holder is still alive"
+      ]
+    },
+    "typecheck": {
+      "historical": 22,
+      "remaining": 22,
+      "new": 0,
+      "diagnostics": [],
+      "raw_failed": true,
+      "status": "PASS"
+    },
+    "preflight": {
+      "arch": "arm64",
+      "os": "Darwin"
+    }
+  },
+  "focused": {
+    "tests": 2,
+    "pass": 2,
+    "fail": 0,
+    "skipped": 0,
+    "skip_names": []
+  },
+  "ci_tests": {
+    "tests": 11,
+    "pass": 11,
+    "fail": 0,
+    "skipped": 0,
+    "skip_names": []
+  },
+  "artifact": "ci-packages/phase16a-local-1789559117837-a4e95c573027.tar.gz",
+  "secret_scrub": "PASS",
+  "cleanup": "PASS"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "tests": {
+    "tests": 469,
+    "pass": 466,
+    "fail": 0,
+    "skipped": 3,
+    "skip_names": [
+      "simultaneous cold and expired lookups share one successful refresh",
+      "waiters with different configuration do not reuse another key",
+      "lock timeout falls back while a holder is still alive"
+    ]
+  },
+  "artifact": "ci-packages/phase16a-final-regression-1789559694439-a4e95c573027.tar.gz",
+  "secret_scrub": "PASS",
+  "cleanup": "PASS"
+}

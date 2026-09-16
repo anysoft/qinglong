@@ -1,0 +1,37 @@
+{
+  "id": 35078896295,
+  "html_url": "https://github.com/anysoft/qinglong/actions/runs/35078896295",
+  "head_sha": "a4e95c57302707994eb1d6c8b006146b36f374a4",
+  "event": "push",
+  "head_branch": "develop",
+  "status": "completed",
+  "conclusion": "failure",
+  "source": "GitHub public REST API",
+  "jobs": [
+    {
+      "name": "preflight",
+      "conclusion": "success",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35078896295/job/104737822764"
+    },
+    {
+      "name": "core",
+      "conclusion": "failure",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35078896295/job/104737972889"
+    },
+    {
+      "name": "managed-runtime",
+      "conclusion": "failure",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35078896295/job/104737972936"
+    },
+    {
+      "name": "browser",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35078896295/job/104737975279"
+    },
+    {
+      "name": "ci-summary",
+      "conclusion": "failure",
+      "html_url": "https://github.com/anysoft/qinglong/actions/runs/35078896295/job/104740492454"
+    }
+  ]
+}

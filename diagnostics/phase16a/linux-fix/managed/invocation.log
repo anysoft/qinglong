@@ -1,0 +1,6 @@
+CI stage: backend-build
+CI stage: provision-python
+CI stage: provision-node
+CI stage: managed-environments
+CI stage: managed-execution
+CI stage: shell-execution

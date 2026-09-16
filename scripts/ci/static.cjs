@@ -33,6 +33,73 @@ function audit() {
       if (step.run) assert.ok(!/\$\{\{/.test(step.run));
     }
   }
+  for (const [name, summary] of Object.entries({
+    preflight: 'preflight.json',
+    core: 'core-summary.json',
+    'managed-runtime': 'managed-summary.json',
+    browser: 'browser-summary.json',
+  })) {
+    const job = workflow.jobs[name];
+    if (name !== 'preflight') assert.equal(job.needs, 'preflight');
+    const upload = job.steps.find((step) => step.id === 'artifact');
+    assert.equal(upload.with['retention-days'], 30);
+    assert.equal(upload.if, 'always()');
+    for (const expected of [
+      'ci-packages/*.tar.gz',
+      `ci-artifacts/${name}-*/ci-summary.json`,
+      `ci-artifacts/${name}-*/${summary}`,
+    ])
+      assert.ok(upload.with.path.split('\n').includes(expected));
+    assert.equal(
+      job.steps.find((step) => step.uses?.startsWith('actions/checkout@')).with[
+        'persist-credentials'
+      ],
+      false,
+    );
+    assert.ok(
+      !job.steps.some((step) =>
+        step.uses?.startsWith('actions/download-artifact@'),
+      ),
+    );
+  }
+  const ciSource = fs.readFileSync('scripts/ci/ci.cjs', 'utf8');
+  assert.match(
+    ciSource,
+    /async function managed\(s\)[\s\S]*?await buildBackend\(s\);\s*await provision\(s\);/,
+  );
+  const orchestration =
+    text +
+    fs
+      .readdirSync('scripts/ci')
+      .filter((name) => /\.(?:sh|cjs)$/.test(name) && name !== 'static.cjs')
+      .map((name) => fs.readFileSync(path.join('scripts/ci', name), 'utf8'))
+      .join('\n');
+  assert.ok(
+    !/(?:npm|pnpm)\s+(?:install|add)\s+[^\n]*(?:-g|--global)[^\n]*ts-node/.test(
+      orchestration,
+    ),
+  );
+  assert.ok(!/PATH[^\n]*node_modules\/\.bin/.test(orchestration));
+  assert.equal(
+    execFileSync('git', ['ls-files', '--', 'static/build/taskRunSubmit.js'], {
+      encoding: 'utf8',
+    }).trim(),
+    '',
+  );
+  const diagnosticTest = fs.readFileSync(
+    'tests/platform/environment-execution.test.cjs',
+    'utf8',
+  );
+  assert.ok(!/\bskip\b/.test(diagnosticTest));
+  const guardEnv = { ...process.env };
+  delete guardEnv.PLATFORM_RECOVERY_TEST_ONLY;
+  const guard = require('node:child_process').spawnSync(
+    'bash',
+    ['shell/otask.sh'],
+    { env: guardEnv, encoding: 'utf8' },
+  );
+  assert.equal(guard.status, 64);
+  assert.match(guard.stderr, /LEGACY_EXECUTION_DISABLED/);
   const scripts = fs.readdirSync('scripts/ci').filter((f) => f.endsWith('.sh'));
   for (const name of scripts) {
     const f = 'scripts/ci/' + name,
@@ -61,6 +128,10 @@ function audit() {
     bash_syntax: 'PASS',
     permissions: 'contents: read',
     custom_secrets: 0,
+    isolated_managed_build: 'PASS',
+    job_summary_paths: 'PASS',
+    diagnostic_only_ts_resolution: 'PASS',
+    legacy_normal_exit: guard.status,
   };
 }
 if (require.main === module) {

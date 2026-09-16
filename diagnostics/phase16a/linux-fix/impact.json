@@ -1,0 +1,887 @@
+[
+  {
+    "tool": "query",
+    "args": {
+      "query": "snapshot-main PLATFORM_RECOVERY_TEST_ONLY diagnostic environment execution"
+    },
+    "result": {
+      "processes": [
+        {
+          "id": "proc_415_snapshot",
+          "summary": "Snapshot → BackupError",
+          "priority": 0.12,
+          "symbol_count": 2,
+          "process_type": "intra_community",
+          "step_count": 5
+        },
+        {
+          "id": "proc_407_mutation",
+          "summary": "Mutation → BackupError",
+          "priority": 0.108,
+          "symbol_count": 1,
+          "process_type": "intra_community",
+          "step_count": 5
+        },
+        {
+          "id": "proc_275_snapshot",
+          "summary": "Snapshot → RuntimeLease",
+          "priority": 0.108,
+          "symbol_count": 1,
+          "process_type": "cross_community",
+          "step_count": 4
+        },
+        {
+          "id": "proc_306_snapshot",
+          "summary": "Snapshot → AsError",
+          "priority": 0.108,
+          "symbol_count": 1,
+          "process_type": "cross_community",
+          "step_count": 7
+        },
+        {
+          "id": "proc_448_snapshot",
+          "summary": "Snapshot → RuntimeError",
+          "priority": 0.108,
+          "symbol_count": 1,
+          "process_type": "cross_community",
+          "step_count": 7
+        }
+      ],
+      "process_symbols": [
+        {
+          "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.state#0",
+          "name": "state",
+          "filePath": "back/services/backup/barrier.ts",
+          "startLine": 45,
+          "endLine": 59,
+          "module": "Backup",
+          "process_id": "proc_415_snapshot",
+          "step_index": 2
+        },
+        {
+          "id": "Method:back/services/backup/barrier.ts:PlatformBackupBarrier.snapshot#3",
+          "name": "snapshot",
+          "filePath": "back/services/backup/barrier.ts",
+          "startLine": 82,
+          "endLine": 138,
+          "module": "Backup",
+          "process_id": "proc_415_snapshot",
+          "step_index": 1
+        }
+      ],
+      "definitions": [
+        {
+          "id": "Class:back/services/taskHookLifecycle.ts:TaskHookLifecycle",
+          "name": "TaskHookLifecycle",
+          "filePath": "back/services/taskHookLifecycle.ts",
+          "startLine": 51,
+          "endLine": 262,
+          "module": "Services"
+        },
+        {
+          "id": "Method:back/services/taskHookLifecycle.ts:TaskHookLifecycle.run#3",
+          "name": "run",
+          "filePath": "back/services/taskHookLifecycle.ts",
+          "startLine": 58,
+          "endLine": 261,
+          "module": "Services"
+        },
+        {
+          "id": "File:back/services/taskHookLifecycle.ts",
+          "name": "taskHookLifecycle.ts",
+          "filePath": "back/services/taskHookLifecycle.ts"
+        },
+        {
+          "id": "Property:scripts/ci/ci.cjs:typecheck.diagnostics@182:4",
+          "name": "diagnostics",
+          "filePath": "scripts/ci/ci.cjs",
+          "startLine": 183,
+          "endLine": 183
+        },
+        {
+          "id": "Function:scripts/ci/ci.cjs:managed",
+          "name": "managed",
+          "filePath": "scripts/ci/ci.cjs",
+          "startLine": 282,
+          "endLine": 320,
+          "module": "Ci"
+        },
+        {
+          "id": "File:scripts/ci/ci.cjs",
+          "name": "ci.cjs",
+          "filePath": "scripts/ci/ci.cjs"
+        },
+        {
+          "id": "Class:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator",
+          "name": "ExecutionAttemptCoordinator",
+          "filePath": "back/services/executionAttemptCoordinator.ts",
+          "startLine": 18,
+          "endLine": 192,
+          "module": "Services"
+        },
+        {
+          "id": "Function:back/services/executionAttemptCoordinator.ts:ExecutionAttemptCoordinator.run.main@123:10",
+          "name": "main",
+          "filePath": "back/services/executionAttemptCoordinator.ts",
+          "startLine": 124,
+          "endLine": 125,
+          "module": "Services"
+        },
+        {
+          "id": "Const:tests/phase5/snapshot-main.cjs:plan",
+          "name": "plan",
+          "filePath": "tests/phase5/snapshot-main.cjs",
+          "startLine": 11,
+          "endLine": 11
+        },
+        {
+          "id": "Property:tests/phase5/snapshot-main.cjs:plan.environment",
+          "name": "environment",
+          "filePath": "tests/phase5/snapshot-main.cjs",
+          "startLine": 11,
+          "endLine": 11
+        },
+        {
+          "id": "File:tests/phase5/snapshot-main.cjs",
+          "name": "snapshot-main.cjs",
+          "filePath": "tests/phase5/snapshot-main.cjs"
+        },
+        {
+          "id": "Function:tests/phase5/runtime.test.cjs:runtime.run@17:11.output@19:458",
+          "name": "output",
+          "filePath": "tests/phase5/runtime.test.cjs",
+          "startLine": 20,
+          "endLine": 20
+        },
+        {
+          "id": "Const:tests/phase5/runtime.test.cjs:fn@72:121.task@73:1",
+          "name": "task",
+          "filePath": "tests/phase5/runtime.test.cjs",
+          "startLine": 74,
+          "endLine": 74
+        },
+        {
+          "id": "File:tests/phase5/runtime.test.cjs",
+          "name": "runtime.test.cjs",
+          "filePath": "tests/phase5/runtime.test.cjs"
+        },
+        {
+          "id": "Const:tests/phase10/hardening.test.cjs:fn@43:80.f@44:1",
+          "name": "f",
+          "filePath": "tests/phase10/hardening.test.cjs",
+          "startLine": 45,
+          "endLine": 45
+        },
+        {
+          "id": "Const:tests/phase10/hardening.test.cjs:fn@43:80.owner@44:1",
+          "name": "owner",
+          "filePath": "tests/phase10/hardening.test.cjs",
+          "startLine": 45,
+          "endLine": 45
+        },
+        {
+          "id": "File:tests/phase10/hardening.test.cjs",
+          "name": "hardening.test.cjs",
+          "filePath": "tests/phase10/hardening.test.cjs"
+        },
+        {
+          "id": "Const:diagnostics/phase10/finalize-evidence.cjs:managed",
+          "name": "managed",
+          "filePath": "diagnostics/phase10/finalize-evidence.cjs",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "id": "Const:diagnostics/phase10/finalize-evidence.cjs:platform",
+          "name": "platform",
+          "filePath": "diagnostics/phase10/finalize-evidence.cjs",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "id": "Const:diagnostics/phase10/finalize-evidence.cjs:policies",
+          "name": "policies",
+          "filePath": "diagnostics/phase10/finalize-evidence.cjs",
+          "startLine": 3,
+          "endLine": 3
+        }
+      ],
+      "timing": {
+        "vector": 7.1,
+        "bm25": 294.8,
+        "merge": 0.2,
+        "symbol_lookup": 24.3,
+        "ranking": 0.1,
+        "formatting": 0.1,
+        "wall": 320
+      },
+      "staleness": {
+        "status": "behind",
+        "commitsBehind": 2,
+        "hint": "⚠️ Index is 2 commits behind HEAD. Run analyze tool to update."
+      }
+    }
+  },
+  {
+    "tool": "query",
+    "args": {
+      "query": "managed runtime CI backend build taskRunSubmit"
+    },
+    "result": {
+      "processes": [
+        {
+          "id": "proc_460_execute",
+          "summary": "Execute → RuntimeError",
+          "priority": 0.119,
+          "symbol_count": 3,
+          "process_type": "intra_community",
+          "step_count": 7
+        },
+        {
+          "id": "proc_38_nodeflow",
+          "summary": "NodeFlow → OperationModal",
+          "priority": 0.118,
+          "symbol_count": 2,
+          "process_type": "intra_community",
+          "step_count": 4
+        },
+        {
+          "id": "proc_474_execute",
+          "summary": "Execute → RuntimeError",
+          "priority": 0.108,
+          "symbol_count": 2,
+          "process_type": "cross_community",
+          "step_count": 6
+        },
+        {
+          "id": "proc_29_installbuild",
+          "summary": "InstallBuild → NodeFileHash",
+          "priority": 0.098,
+          "symbol_count": 1,
+          "process_type": "intra_community",
+          "step_count": 5
+        },
+        {
+          "id": "proc_476_installbuild",
+          "summary": "InstallBuild → RuntimeError",
+          "priority": 0.098,
+          "symbol_count": 1,
+          "process_type": "intra_community",
+          "step_count": 6
+        }
+      ],
+      "process_symbols": [
+        {
+          "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.build#2",
+          "name": "build",
+          "filePath": "back/services/pythonEnvironmentPaths.ts",
+          "startLine": 85,
+          "endLine": 135,
+          "module": "Services",
+          "process_id": "proc_460_execute",
+          "step_index": 3
+        },
+        {
+          "id": "Method:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.removeBuild#1",
+          "name": "removeBuild",
+          "filePath": "back/services/pythonEnvironmentPaths.ts",
+          "startLine": 165,
+          "endLine": 203,
+          "module": "Services",
+          "process_id": "proc_460_execute",
+          "step_index": 2
+        },
+        {
+          "id": "Method:back/services/pythonEnvironmentBuild.ts:PythonEnvironmentBuildService.execute#2",
+          "name": "execute",
+          "filePath": "back/services/pythonEnvironmentBuild.ts",
+          "startLine": 130,
+          "endLine": 255,
+          "module": "Services",
+          "process_id": "proc_460_execute",
+          "step_index": 1
+        },
+        {
+          "id": "Function:diagnostics/phase8/browser-node-flow.cjs:nodeFlow",
+          "name": "nodeFlow",
+          "filePath": "diagnostics/phase8/browser-node-flow.cjs",
+          "startLine": 2,
+          "endLine": 31,
+          "module": "Phase8",
+          "process_id": "proc_38_nodeflow",
+          "step_index": 1
+        },
+        {
+          "id": "Function:diagnostics/phase8/browser-node-flow.cjs:nodeFlow.create@14:1",
+          "name": "create",
+          "filePath": "diagnostics/phase8/browser-node-flow.cjs",
+          "startLine": 15,
+          "endLine": 15,
+          "module": "Phase8",
+          "process_id": "proc_38_nodeflow",
+          "step_index": 2
+        },
+        {
+          "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.execute#3",
+          "name": "execute",
+          "filePath": "back/services/nodeEnvironment.ts",
+          "startLine": 632,
+          "endLine": 794,
+          "module": "Services",
+          "process_id": "proc_474_execute",
+          "step_index": 1
+        },
+        {
+          "id": "Method:back/services/nodePaths.ts:NodePathResolver.relative#3",
+          "name": "relative",
+          "filePath": "back/services/nodePaths.ts",
+          "startLine": 28,
+          "endLine": 37,
+          "module": "Services",
+          "process_id": "proc_474_execute",
+          "step_index": 4
+        },
+        {
+          "id": "Method:back/services/nodePackageManager.ts:NodePackageManager.installBuild#6",
+          "name": "installBuild",
+          "filePath": "back/services/nodePackageManager.ts",
+          "startLine": 363,
+          "endLine": 431,
+          "module": "Services",
+          "process_id": "proc_29_installbuild",
+          "step_index": 1
+        }
+      ],
+      "definitions": [
+        {
+          "id": "Function:scripts/ci/ci.cjs:managed",
+          "name": "managed",
+          "filePath": "scripts/ci/ci.cjs",
+          "startLine": 282,
+          "endLine": 320,
+          "module": "Ci"
+        },
+        {
+          "id": "Function:scripts/ci/ci.cjs:main",
+          "name": "main",
+          "filePath": "scripts/ci/ci.cjs",
+          "startLine": 517,
+          "endLine": 541,
+          "module": "Ci"
+        },
+        {
+          "id": "File:scripts/ci/ci.cjs",
+          "name": "ci.cjs",
+          "filePath": "scripts/ci/ci.cjs"
+        },
+        {
+          "id": "Method:back/services/nodePackageManager.ts:NodePackageManager.verifyBuild#5",
+          "name": "verifyBuild",
+          "filePath": "back/services/nodePackageManager.ts",
+          "startLine": 604,
+          "endLine": 635,
+          "module": "Services"
+        },
+        {
+          "id": "File:back/services/nodePackageManager.ts",
+          "name": "nodePackageManager.ts",
+          "filePath": "back/services/nodePackageManager.ts"
+        },
+        {
+          "id": "Class:back/services/nodeEnvironmentResolver.ts:NodeEnvironmentResolver",
+          "name": "NodeEnvironmentResolver",
+          "filePath": "back/services/nodeEnvironmentResolver.ts",
+          "startLine": 7,
+          "endLine": 96,
+          "module": "Services"
+        },
+        {
+          "id": "Method:back/services/nodeEnvironmentResolver.ts:NodeEnvironmentResolver.resolve#1",
+          "name": "resolve",
+          "filePath": "back/services/nodeEnvironmentResolver.ts",
+          "startLine": 9,
+          "endLine": 95,
+          "module": "Services"
+        },
+        {
+          "id": "Const:back/services/nodeEnvironmentResolver.ts:NodeEnvironmentResolver.resolve.tool@29:6",
+          "name": "tool",
+          "filePath": "back/services/nodeEnvironmentResolver.ts",
+          "startLine": 30,
+          "endLine": 31
+        },
+        {
+          "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.failed#4",
+          "name": "failed",
+          "filePath": "back/services/nodeEnvironment.ts",
+          "startLine": 795,
+          "endLine": 857,
+          "module": "Services"
+        },
+        {
+          "id": "Method:back/services/nodeEnvironment.ts:NodeEnvironmentService.cleanupCancelled#1",
+          "name": "cleanupCancelled",
+          "filePath": "back/services/nodeEnvironment.ts",
+          "startLine": 858,
+          "endLine": 875,
+          "module": "Services"
+        },
+        {
+          "id": "Const:back/services/pythonEnvironmentPaths.ts:PythonEnvironmentPathResolver.executable.base@139:4",
+          "name": "base",
+          "filePath": "back/services/pythonEnvironmentPaths.ts",
+          "startLine": 140,
+          "endLine": 145
+        },
+        {
+          "id": "Const:tests/phase9/resources.test.cjs:nodeEnvironment.build@2:506",
+          "name": "build",
+          "filePath": "tests/phase9/resources.test.cjs",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "id": "Const:tests/phase9/resources.test.cjs:nodeEnvironment.runtime@2:34",
+          "name": "runtime",
+          "filePath": "tests/phase9/resources.test.cjs",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "id": "Function:tests/phase9/resources.test.cjs:nodeEnvironment",
+          "name": "nodeEnvironment",
+          "filePath": "tests/phase9/resources.test.cjs",
+          "startLine": 3,
+          "endLine": 3,
+          "module": "Platform"
+        },
+        {
+          "id": "Const:diagnostics/phase12/browser-e2e.cjs:acceptance",
+          "name": "acceptance",
+          "filePath": "diagnostics/phase12/browser-e2e.cjs",
+          "startLine": 1,
+          "endLine": 1
+        },
+        {
+          "id": "Function:diagnostics/phase12/browser-e2e.cjs:fn@71:1.start@218:2",
+          "name": "start",
+          "filePath": "diagnostics/phase12/browser-e2e.cjs",
+          "startLine": 219,
+          "endLine": 231,
+          "module": "Ci"
+        },
+        {
+          "id": "File:diagnostics/phase12/browser-e2e.cjs",
+          "name": "browser-e2e.cjs",
+          "filePath": "diagnostics/phase12/browser-e2e.cjs"
+        },
+        {
+          "id": "Const:diagnostics/phase14/platform-e2e.cjs:acceptance",
+          "name": "acceptance",
+          "filePath": "diagnostics/phase14/platform-e2e.cjs",
+          "startLine": 1,
+          "endLine": 1
+        },
+        {
+          "id": "Function:diagnostics/phase14/platform-e2e.cjs:fn@15:1.start@49:1",
+          "name": "start",
+          "filePath": "diagnostics/phase14/platform-e2e.cjs",
+          "startLine": 50,
+          "endLine": 50,
+          "module": "Ci"
+        },
+        {
+          "id": "File:diagnostics/phase14/platform-e2e.cjs",
+          "name": "platform-e2e.cjs",
+          "filePath": "diagnostics/phase14/platform-e2e.cjs"
+        }
+      ],
+      "timing": {
+        "vector": 0.9,
+        "bm25": 256.3,
+        "merge": 0.1,
+        "symbol_lookup": 17.9,
+        "ranking": 0,
+        "formatting": 0,
+        "wall": 274.4
+      },
+      "staleness": {
+        "status": "behind",
+        "commitsBehind": 2,
+        "hint": "⚠️ Index is 2 commits behind HEAD. Run analyze tool to update."
+      }
+    }
+  },
+  {
+    "tool": "impact",
+    "args": {
+      "target": "managed",
+      "file_path": "scripts/ci/ci.cjs",
+      "direction": "upstream"
+    },
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 2 symbols matching 'managed'. Blast radius differs per candidate (max 3 impacted at risk UNKNOWN; LOW among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "managed"
+      },
+      "direction": "upstream",
+      "totalCandidates": 2,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 3,
+      "maxRisk": "UNKNOWN",
+      "knownMaxRisk": "LOW",
+      "candidates": [
+        {
+          "uid": "Function:scripts/ci/ci.cjs:managed",
+          "name": "managed",
+          "kind": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "line": 282,
+          "score": 0.96,
+          "impactedCount": 3,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 2
+        },
+        {
+          "uid": "Property:scripts/ci/ci.cjs:main.managed@525:4",
+          "name": "managed",
+          "kind": "",
+          "filePath": "scripts/ci/ci.cjs",
+          "line": 526,
+          "score": 0.9,
+          "impactedCount": 0,
+          "risk": "UNKNOWN",
+          "riskSharedAxes": "UNKNOWN",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 0,
+          "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+        }
+      ],
+      "staleness": {
+        "status": "behind",
+        "commitsBehind": 2,
+        "hint": "⚠️ Index is 2 commits behind HEAD. Run analyze tool to update."
+      }
+    }
+  },
+  {
+    "tool": "impact",
+    "args": {
+      "target": "build",
+      "file_path": "scripts/ci/ci.cjs",
+      "direction": "upstream"
+    },
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 2 symbols matching 'build'. Blast radius differs per candidate (max 5 impacted at risk UNKNOWN; LOW among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "build"
+      },
+      "direction": "upstream",
+      "totalCandidates": 2,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 5,
+      "maxRisk": "UNKNOWN",
+      "knownMaxRisk": "LOW",
+      "candidates": [
+        {
+          "uid": "Function:scripts/ci/ci.cjs:build",
+          "name": "build",
+          "kind": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "line": 139,
+          "score": 0.96,
+          "impactedCount": 5,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 3
+        },
+        {
+          "uid": "Property:scripts/ci/ci.cjs:main.build@523:4",
+          "name": "build",
+          "kind": "",
+          "filePath": "scripts/ci/ci.cjs",
+          "line": 524,
+          "score": 0.9,
+          "impactedCount": 0,
+          "risk": "UNKNOWN",
+          "riskSharedAxes": "UNKNOWN",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 0,
+          "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+        }
+      ],
+      "staleness": {
+        "status": "behind",
+        "commitsBehind": 2,
+        "hint": "⚠️ Index is 2 commits behind HEAD. Run analyze tool to update."
+      }
+    }
+  },
+  {
+    "tool": "impact",
+    "args": {
+      "target": "browser",
+      "file_path": "scripts/ci/ci.cjs",
+      "direction": "upstream"
+    },
+    "result": {
+      "status": "ambiguous",
+      "message": "Found 2 symbols matching 'browser'. Blast radius differs per candidate (max 3 impacted at risk UNKNOWN; LOW among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.",
+      "target": {
+        "name": "browser"
+      },
+      "direction": "upstream",
+      "totalCandidates": 2,
+      "impactedCount": null,
+      "risk": "UNKNOWN",
+      "maxImpactedCount": 3,
+      "maxRisk": "UNKNOWN",
+      "knownMaxRisk": "LOW",
+      "candidates": [
+        {
+          "uid": "Function:scripts/ci/ci.cjs:browser",
+          "name": "browser",
+          "kind": "Function",
+          "filePath": "scripts/ci/ci.cjs",
+          "line": 321,
+          "score": 0.96,
+          "impactedCount": 3,
+          "risk": "LOW",
+          "riskSharedAxes": "LOW",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 2
+        },
+        {
+          "uid": "Property:scripts/ci/ci.cjs:main.browser@526:4",
+          "name": "browser",
+          "kind": "",
+          "filePath": "scripts/ci/ci.cjs",
+          "line": 527,
+          "score": 0.9,
+          "impactedCount": 0,
+          "risk": "UNKNOWN",
+          "riskSharedAxes": "UNKNOWN",
+          "riskScale": {
+            "comparableAcrossKinds": false,
+            "unusedAxes": [
+              {
+                "axis": "processes",
+                "reason": "enrichment-skipped"
+              },
+              {
+                "axis": "modules",
+                "reason": "enrichment-skipped"
+              }
+            ]
+          },
+          "direct": 0,
+          "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe."
+        }
+      ],
+      "staleness": {
+        "status": "behind",
+        "commitsBehind": 2,
+        "hint": "⚠️ Index is 2 commits behind HEAD. Run analyze tool to update."
+      }
+    }
+  },
+  {
+    "tool": "impact",
+    "args": {
+      "target": "run",
+      "file_path": "tests/platform/environment-execution.test.cjs",
+      "direction": "upstream"
+    },
+    "result": {
+      "target": {
+        "id": "Function:tests/platform/environment-execution.test.cjs:run",
+        "name": "run",
+        "type": "Function",
+        "filePath": "tests/platform/environment-execution.test.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 0,
+      "risk": "UNKNOWN",
+      "riskSharedAxes": "UNKNOWN",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "riskNote": "No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.",
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "99 call sites invoking `run` were dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 99,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 0,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {},
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {},
+      "staleness": {
+        "status": "behind",
+        "commitsBehind": 2,
+        "hint": "⚠️ Index is 2 commits behind HEAD. Run analyze tool to update."
+      }
+    }
+  },
+  {
+    "tool": "impact",
+    "args": {
+      "target": "snapshot-main",
+      "file_path": "tests/phase5/snapshot-main.cjs",
+      "direction": "upstream"
+    },
+    "result": {
+      "error": "Target 'snapshot-main' not found",
+      "target": {
+        "name": "snapshot-main"
+      },
+      "direction": "upstream",
+      "impactedCount": null,
+      "risk": "UNKNOWN"
+    }
+  },
+  {
+    "tool": "impact",
+    "args": {
+      "target": "audit",
+      "file_path": "scripts/ci/static.cjs",
+      "direction": "upstream"
+    },
+    "result": {
+      "target": {
+        "id": "Function:scripts/ci/static.cjs:audit",
+        "name": "audit",
+        "type": "Function",
+        "filePath": "scripts/ci/static.cjs"
+      },
+      "direction": "upstream",
+      "impactedCount": 1,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "lower-bound",
+      "boundaries": [
+        "1 call site invoking `audit` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher."
+      ],
+      "causes": {
+        "scopeExtractionFiles": 0,
+        "receiverTyping": 1,
+        "dispatchBoundary": 0,
+        "externalBoundary": 0,
+        "undecidedSatisfaction": 0,
+        "callableValueReferences": 0
+      },
+      "summary": {
+        "direct": 1,
+        "processes_affected": 0,
+        "modules_affected": 0
+      },
+      "byDepthCounts": {
+        "1": 1
+      },
+      "affected_processes": [],
+      "affected_modules": [],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "File:scripts/ci/static.cjs",
+            "name": "static.cjs",
+            "filePath": "scripts/ci/static.cjs",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ]
+      },
+      "staleness": {
+        "status": "behind",
+        "commitsBehind": 2,
+        "hint": "⚠️ Index is 2 commits behind HEAD. Run analyze tool to update."
+      }
+    }
+  }
+]
