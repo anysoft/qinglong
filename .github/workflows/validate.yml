@@ -27,9 +27,9 @@ jobs:
       - run: pnpm build:back
       - run: pnpm test
       - run: pnpm build:front
-      - run: node diagnostics/phase8/static-audit.cjs
+      - run: node diagnostics/phase9/static-audit.cjs
       - name: Typecheck with recorded pre-existing diagnostic budget
-        run: node diagnostics/phase8/check-typecheck.cjs
+        run: node diagnostics/phase9/check-typecheck.cjs
       # Provision a real managed CPython once; package acceptance below uses only local artifacts.
       - run: sudo apt-get install -y build-essential curl tar libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libffi-dev liblzma-dev
       - name: Provision official managed CPython for Python Environment gates
@@ -46,10 +46,17 @@ jobs:
         run: |
           npm install --prefix "$RUNNER_TEMP/platform-browser" --no-audit --no-fund ssh2@1.17.0 playwright@1.58.2
           node "$RUNNER_TEMP/platform-browser/node_modules/playwright/cli.js" install --with-deps chromium
-      - name: Fresh platform browser and restart acceptance
+      - name: Reuse verified official distributions for Phase 9 acceptance
+        run: |
+          mkdir -p diagnostics/phase9/managed-runtime diagnostics/phase9/managed-node
+          cp diagnostics/phase8/managed-runtime/result.json diagnostics/phase9/managed-runtime/result.json
+          cp diagnostics/phase8/managed-node/result.json diagnostics/phase9/managed-node/result.json
+      - name: Phase 9 fresh Task resource binding browser and restart acceptance
         env:
           QL_BROWSER_RUNTIME: ${{ runner.temp }}/platform-browser/node_modules
-        run: pnpm test:platform:e2e
+        run: |
+          pnpm test:platform:e2e
+          node diagnostics/phase9/browser-restart-editor.cjs
       - name: Verify and remove owned managed fixtures
         run: node diagnostics/phase8/cleanup-managed-fixtures.cjs
       - run: pnpm benchmark:execution -- --runs=10 --output=execution-baseline.json
@@ -59,6 +66,7 @@ jobs:
           name: execution-baseline
           path: |
             execution-baseline.json
+            diagnostics/phase9/
             diagnostics/phase8/platform-e2e.json
             diagnostics/phase8/platform-e2e-backend.log
             diagnostics/phase8/browser-*.png

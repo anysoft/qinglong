@@ -1,0 +1,793 @@
+{
+  "status": "success",
+  "old_name": "CrontabModel",
+  "new_name": "SchedulerProjectionModel",
+  "files_affected": 41,
+  "total_edits": 96,
+  "graph_edits": 0,
+  "text_search_edits": 96,
+  "changes": [
+    {
+      "file_path": "test/back/execution-lifecycle.test.cjs",
+      "edits": [
+        {
+          "line": 39,
+          "old_text": "CrontabModel: { findOne: async () => null },",
+          "new_text": "SchedulerProjectionModel: { findOne: async () => null },",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "test/back/stop-race.test.cjs",
+      "edits": [
+        {
+          "line": 46,
+          "old_text": "CrontabModel: crons,",
+          "new_text": "SchedulerProjectionModel: crons,",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase0/database-baseline.test.cjs",
+      "edits": [
+        {
+          "line": 10,
+          "old_text": "const {SchedulerProjection,CrontabModel}=load(path.join(root,'back/data/cron.ts'),mocks);",
+          "new_text": "const {SchedulerProjection,SchedulerProjectionModel}=load(path.join(root,'back/data/cron.ts'),mocks);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 22,
+          "old_text": "assert.equal(CrontabModel.getTableName(),'Crontabs');",
+          "new_text": "assert.equal(SchedulerProjectionModel.getTableName(),'Crontabs');",
+          "confidence": "text_search"
+        },
+        {
+          "line": 25,
+          "old_text": "const manual=await CrontabModel.create(new SchedulerProjection({name:'manual',command:'task example.py',schedule:'0 0 * * *'}));",
+          "new_text": "const manual=await SchedulerProjectionModel.create(new SchedulerProjection({name:'manual',command:'task example.py',schedule:'0 0 * * *'}));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 26,
+          "old_text": "const discovered=await CrontabModel.create(new SchedulerProjection({name:'auto',command:'task fixture/example.py',schedule:'0 0 * * *',sub_id:sub.id}));",
+          "new_text": "const discovered=await SchedulerProjectionModel.create(new SchedulerProjection({name:'auto',command:'task fixture/example.py',schedule:'0 0 * * *',sub_id:sub.id}));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 29,
+          "old_text": "'../data/cron':{CrontabModel,SchedulerProjection,CrontabStatus:{running:0,idle:1,queued:3}},",
+          "new_text": "'../data/cron':{SchedulerProjectionModel,SchedulerProjection,CrontabStatus:{running:0,idle:1,queued:3}},",
+          "confidence": "text_search"
+        },
+        {
+          "line": 40,
+          "old_text": "assert.equal((await CrontabModel.findByPk(discovered.id)).status,1);",
+          "new_text": "assert.equal((await SchedulerProjectionModel.findByPk(discovered.id)).status,1);",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "test/back/dashboard-failures.test.cjs",
+      "edits": [
+        {
+          "line": 26,
+          "old_text": "'../../back/data/cron': { CrontabModel: crons },",
+          "new_text": "'../../back/data/cron': { SchedulerProjectionModel: crons },",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/test/back/schema-migrations.test.cjs",
+      "edits": [
+        {
+          "line": 112,
+          "old_text": "['cron', 'CrontabModel'],",
+          "new_text": "['cron', 'SchedulerProjectionModel'],",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "diagnostics/phase5/freeze-v1.cjs",
+      "edits": [
+        {
+          "line": 7,
+          "old_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','CrontabModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','CrontabStatModel','RunningInstanceModel'];",
+          "new_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','SchedulerProjectionModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','CrontabStatModel','RunningInstanceModel'];",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase3/pipeline.test.cjs",
+      "edits": [
+        {
+          "line": 48,
+          "old_text": "const original = (await h.CrontabModel.findAll()).map((x) =>",
+          "new_text": "const original = (await h.SchedulerProjectionModel.findAll()).map((x) =>",
+          "confidence": "text_search"
+        },
+        {
+          "line": 54,
+          "old_text": "assert.equal(await h.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await h.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 64,
+          "old_text": "(await h.CrontabModel.findByPk(original[0].id)).schedule,",
+          "new_text": "(await h.SchedulerProjectionModel.findByPk(original[0].id)).schedule,",
+          "confidence": "text_search"
+        },
+        {
+          "line": 84,
+          "old_text": "(await h.CrontabModel.findAll()).map((x) => x.get({ plain: true })),",
+          "new_text": "(await h.SchedulerProjectionModel.findAll()).map((x) => x.get({ plain: true })),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 103,
+          "old_text": "(await h.CrontabModel.findAll()).map((x) => x.get({ plain: true })),",
+          "new_text": "(await h.SchedulerProjectionModel.findAll()).map((x) => x.get({ plain: true })),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 119,
+          "old_text": "assert.equal(await h.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await h.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 146,
+          "old_text": "const saved = await h.CrontabModel.findOne(),",
+          "new_text": "const saved = await h.SchedulerProjectionModel.findOne(),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 158,
+          "old_text": "assert.equal(await h.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await h.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 182,
+          "old_text": "const tasks = await h.CrontabModel.findAll();",
+          "new_text": "const tasks = await h.SchedulerProjectionModel.findAll();",
+          "confidence": "text_search"
+        },
+        {
+          "line": 193,
+          "old_text": "const rows = await h.CrontabModel.findAll();",
+          "new_text": "const rows = await h.SchedulerProjectionModel.findAll();",
+          "confidence": "text_search"
+        },
+        {
+          "line": 306,
+          "old_text": "assert.equal(await h.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await h.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "diagnostics/phase3/ui-smoke.cjs",
+      "edits": [
+        {
+          "line": 146,
+          "old_text": "assert.equal(await x.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await x.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 159,
+          "old_text": "assert.equal(await x.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await x.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/phase5/api.test.cjs",
+      "edits": [
+        {
+          "line": 12,
+          "old_text": "const task=await h.CrontabModel.create({command:'task main.sh'}),binding=await api(`/tasks/${task.id}/config-bindings`,'POST',{asset_id:a.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});assert.equal(binding.code,200);",
+          "new_text": "const task=await h.SchedulerProjectionModel.create({command:'task main.sh'}),binding=await api(`/tasks/${task.id}/config-bindings`,'POST',{asset_id:a.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});assert.equal(binding.code,200);",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "test/back/manual-execution.test.cjs",
+      "edits": [
+        {
+          "line": 24,
+          "old_text": "CrontabModel: {",
+          "new_text": "SchedulerProjectionModel: {",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase4/execution.test.cjs",
+      "edits": [
+        {
+          "line": 11,
+          "old_text": "const h = await setup(t), task = await h.CrontabModel.create({ command: 'task check.py' });",
+          "new_text": "const h = await setup(t), task = await h.SchedulerProjectionModel.create({ command: 'task check.py' });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 38,
+          "old_text": "const task = await h.CrontabModel.create({ command: `task ${value}.sh` });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: `task ${value}.sh` });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase4/api.test.cjs",
+      "edits": [
+        {
+          "line": 8,
+          "old_text": "const task = await h.CrontabModel.create({ command: 'task manual.py' });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: 'task manual.py' });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "diagnostics/phase4/ui-smoke.cjs",
+      "edits": [
+        {
+          "line": 20,
+          "old_text": "tasks.push(await h.CrontabModel.create({ name: `Browser ${language}`, command: `task browser.${language}`, schedule: '0 0 * * *', sub_id: sub.id }));",
+          "new_text": "tasks.push(await h.SchedulerProjectionModel.create({ name: `Browser ${language}`, command: `task browser.${language}`, schedule: '0 0 * * *', sub_id: sub.id }));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 36,
+          "old_text": "const task = await h.CrontabModel.findByPk(id), resolved = await h.resolver.resolve(id);",
+          "new_text": "const task = await h.SchedulerProjectionModel.findByPk(id), resolved = await h.resolver.resolve(id);",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "test/back/manual-stop-claim.test.cjs",
+      "edits": [
+        {
+          "line": 59,
+          "old_text": "CrontabModel: crons,",
+          "new_text": "SchedulerProjectionModel: crons,",
+          "confidence": "text_search"
+        },
+        {
+          "line": 181,
+          "old_text": "CrontabModel: crons,",
+          "new_text": "SchedulerProjectionModel: crons,",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/phase5/schema.test.cjs",
+      "edits": [
+        {
+          "line": 14,
+          "old_text": "assert.equal((await upgrade.CrontabModel.findByPk(42)).get('command'),'task main.py');",
+          "new_text": "assert.equal((await upgrade.SchedulerProjectionModel.findByPk(42)).get('command'),'task main.py');",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase4/isolation.test.cjs",
+      "edits": [
+        {
+          "line": 13,
+          "old_text": "const task = await h.CrontabModel.create({ command: `task ${repoName}-${profileName}.sh`, sub_id: sub.id });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: `task ${repoName}-${profileName}.sh`, sub_id: sub.id });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "test/back/log-path-security.test.cjs",
+      "edits": [
+        {
+          "line": 100,
+          "old_text": "CrontabModel: { update: async () => {} },",
+          "new_text": "SchedulerProjectionModel: { update: async () => {} },",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase4/transport.test.cjs",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "const task = await h.CrontabModel.create({ command: 'task a.sh' });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: 'task a.sh' });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 21,
+          "old_text": "const h = await setup(t), task = await h.CrontabModel.create({ command: 'task a.sh' }); await h.globals.set_envs();",
+          "new_text": "const h = await setup(t), task = await h.SchedulerProjectionModel.create({ command: 'task a.sh' }); await h.globals.set_envs();",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "test/back/scheduler-mutation.test.cjs",
+      "edits": [
+        {
+          "line": 57,
+          "old_text": "CrontabModel: crons,",
+          "new_text": "SchedulerProjectionModel: crons,",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/phase5/runtime.test.cjs",
+      "edits": [
+        {
+          "line": 22,
+          "old_text": "const h=await runtime(t),file=`main.${language}`,task=await h.CrontabModel.create({command:`task ${file}`});",
+          "new_text": "const h=await runtime(t),file=`main.${language}`,task=await h.SchedulerProjectionModel.create({command:`task ${file}`});",
+          "confidence": "text_search"
+        },
+        {
+          "line": 34,
+          "old_text": "const h=await runtime(t),task=await h.CrontabModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'echo MUST_NOT_RUN');",
+          "new_text": "const h=await runtime(t),task=await h.SchedulerProjectionModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'echo MUST_NOT_RUN');",
+          "confidence": "text_search"
+        },
+        {
+          "line": 47,
+          "old_text": "const h=await runtime(t),task=await h.CrontabModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),scenario.main);",
+          "new_text": "const h=await runtime(t),task=await h.SchedulerProjectionModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),scenario.main);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 53,
+          "old_text": "const h=await runtime(t),task=await h.CrontabModel.create({command:'task main.sh'}),target=path.join(h.config.scriptPath,'config.yaml');await fs.writeFile(target,'ORIGINAL');await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'echo ready > ready; sleep 20');",
+          "new_text": "const h=await runtime(t),task=await h.SchedulerProjectionModel.create({command:'task main.sh'}),target=path.join(h.config.scriptPath,'config.yaml');await fs.writeFile(target,'ORIGINAL');await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'echo ready > ready; sleep 20');",
+          "confidence": "text_search"
+        },
+        {
+          "line": 60,
+          "old_text": "const h=await runtime(t),task=await h.CrontabModel.create({command:'task main.sh'}),target=path.join(h.config.scriptPath,'config.yaml');await fs.writeFile(target,'ORIGINAL');await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'echo ready > ready; sleep 20');",
+          "new_text": "const h=await runtime(t),task=await h.SchedulerProjectionModel.create({command:'task main.sh'}),target=path.join(h.config.scriptPath,'config.yaml');await fs.writeFile(target,'ORIGINAL');await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'echo ready > ready; sleep 20');",
+          "confidence": "text_search"
+        },
+        {
+          "line": 64,
+          "old_text": "await fs.mkdir(path.join(h.config.scriptPath,'subscription-99'));await fs.writeFile(path.join(h.config.scriptPath,'subscription-99/other.sh'),'cat config.yaml; echo PARALLEL_OK');const other=await h.CrontabModel.create({command:'task subscription-99/other.sh'});await h.bindings.save('task',other.id,{asset_id:asset.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});",
+          "new_text": "await fs.mkdir(path.join(h.config.scriptPath,'subscription-99'));await fs.writeFile(path.join(h.config.scriptPath,'subscription-99/other.sh'),'cat config.yaml; echo PARALLEL_OK');const other=await h.SchedulerProjectionModel.create({command:'task subscription-99/other.sh'});await h.bindings.save('task',other.id,{asset_id:asset.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});",
+          "confidence": "text_search"
+        },
+        {
+          "line": 70,
+          "old_text": "const h=await runtime(t),task=await h.CrontabModel.create({command:'task main.sh'});await h.EnvModel.create({name:'SNAPSHOT_ENV',value:'ENV_OLD'});",
+          "new_text": "const h=await runtime(t),task=await h.SchedulerProjectionModel.create({command:'task main.sh'});await h.EnvModel.create({name:'SNAPSHOT_ENV',value:'ENV_OLD'});",
+          "confidence": "text_search"
+        },
+        {
+          "line": 78,
+          "old_text": "require('reflect-metadata');const h=await runtime(t),task=await h.CrontabModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'cat config.yaml; echo MAIN_PARITY; exit 7');const a=await h.assets.save({name:'parity',is_secret:false,content:'CONFIG_PARITY'});await h.bindings.save('task',task.id,{asset_id:a.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});await h.addHook(task,'BEFORE','echo BEFORE_PARITY');await h.addHook(task,'AFTER_FAILURE','echo FAILURE_PARITY');await h.addHook(task,'FINALLY','echo FINALLY_PARITY');",
+          "new_text": "require('reflect-metadata');const h=await runtime(t),task=await h.SchedulerProjectionModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'cat config.yaml; echo MAIN_PARITY; exit 7');const a=await h.assets.save({name:'parity',is_secret:false,content:'CONFIG_PARITY'});await h.bindings.save('task',task.id,{asset_id:a.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});await h.addHook(task,'BEFORE','echo BEFORE_PARITY');await h.addHook(task,'AFTER_FAILURE','echo FAILURE_PARITY');await h.addHook(task,'FINALLY','echo FINALLY_PARITY');",
+          "confidence": "text_search"
+        },
+        {
+          "line": 90,
+          "old_text": "const h=await runtime(t),task=await h.CrontabModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'echo USER_PHASE_MUST_NOT_RUN');await fs.writeFile(path.join(h.config.scriptPath,'config.yaml'),'ORIGINAL');const a=await h.assets.save({name:'conflict',is_secret:false,content:'INJECTED'});await h.bindings.save('task',task.id,{asset_id:a.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});for(const phase of ['BEFORE','AFTER_FAILURE','FINALLY'])await h.addHook(task,phase,'echo USER_PHASE_MUST_NOT_RUN');const r=await h.run(task,'main.sh').done;assert.equal(r.code,1,r.output);assert.match(r.output,/CONFIG_TARGET_EXISTS/);assert.doesNotMatch(r.output,/USER_PHASE_MUST_NOT_RUN|\\[BEFORE\\]|\\[MAIN\\]|\\[FINALLY\\]/);assert.equal(await fs.readFile(path.join(h.config.scriptPath,'config.yaml'),'utf8'),'ORIGINAL');assert.deepEqual(await fs.readdir(path.join(h.root,'.tmp/task-env')),[]);",
+          "new_text": "const h=await runtime(t),task=await h.SchedulerProjectionModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'echo USER_PHASE_MUST_NOT_RUN');await fs.writeFile(path.join(h.config.scriptPath,'config.yaml'),'ORIGINAL');const a=await h.assets.save({name:'conflict',is_secret:false,content:'INJECTED'});await h.bindings.save('task',task.id,{asset_id:a.id,operation:'ATTACH',target_base:'TASK_DIR',target_path:'config.yaml',materialization_mode:'COPY',conflict_policy:'FAIL_IF_EXISTS',writable:false,enabled:true});for(const phase of ['BEFORE','AFTER_FAILURE','FINALLY'])await h.addHook(task,phase,'echo USER_PHASE_MUST_NOT_RUN');const r=await h.run(task,'main.sh').done;assert.equal(r.code,1,r.output);assert.match(r.output,/CONFIG_TARGET_EXISTS/);assert.doesNotMatch(r.output,/USER_PHASE_MUST_NOT_RUN|\\[BEFORE\\]|\\[MAIN\\]|\\[FINALLY\\]/);assert.equal(await fs.readFile(path.join(h.config.scriptPath,'config.yaml'),'utf8'),'ORIGINAL');assert.deepEqual(await fs.readdir(path.join(h.root,'.tmp/task-env')),[]);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 93,
+          "old_text": "const h=await runtime(t),task=await h.CrontabModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'sleep 20');await h.addHook(task,'AFTER_FAILURE','echo MAIN_TIMEOUT_FAILURE');await h.addHook(task,'FINALLY','echo MAIN_TIMEOUT_FINALLY');const r=await h.run(task,'main.sh',{CommandTimeoutTime:'1s'}).done;assert.equal(r.code,124,r.output);assert.match(r.output,/MAIN:TIMEOUT/);assert.match(r.output,/MAIN_TIMEOUT_FAILURE/);assert.match(r.output,/MAIN_TIMEOUT_FINALLY/);",
+          "new_text": "const h=await runtime(t),task=await h.SchedulerProjectionModel.create({command:'task main.sh'});await fs.writeFile(path.join(h.config.scriptPath,'main.sh'),'sleep 20');await h.addHook(task,'AFTER_FAILURE','echo MAIN_TIMEOUT_FAILURE');await h.addHook(task,'FINALLY','echo MAIN_TIMEOUT_FINALLY');const r=await h.run(task,'main.sh',{CommandTimeoutTime:'1s'}).done;assert.equal(r.code,124,r.output);assert.match(r.output,/MAIN:TIMEOUT/);assert.match(r.output,/MAIN_TIMEOUT_FAILURE/);assert.match(r.output,/MAIN_TIMEOUT_FINALLY/);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 96,
+          "old_text": "const h=await runtime(t);await fs.mkdir(path.join(h.config.scriptPath,'subscription-42'));await fs.writeFile(path.join(h.config.scriptPath,'subscription-42/main.sh'),'echo PUBLICATION_OK');const task=await h.CrontabModel.create({command:'task subscription-42/main.sh'});await fs.mkdir(path.join(h.root,'.locks'));",
+          "new_text": "const h=await runtime(t);await fs.mkdir(path.join(h.config.scriptPath,'subscription-42'));await fs.writeFile(path.join(h.config.scriptPath,'subscription-42/main.sh'),'echo PUBLICATION_OK');const task=await h.SchedulerProjectionModel.create({command:'task subscription-42/main.sh'});await fs.mkdir(path.join(h.root,'.locks'));",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase4/entrypoint.test.cjs",
+      "edits": [
+        {
+          "line": 8,
+          "old_text": "const task = await h.CrontabModel.create({ command: 'task bridge.sh', sub_id: sub.id });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: 'task bridge.sh', sub_id: sub.id });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "diagnostics/phase9/rename.cjs",
+      "edits": [
+        {
+          "line": 2,
+          "old_text": "(async()=>{const{LocalBackend}=await import(pathToFileURL('/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js'));const b=new LocalBackend();await b.init();try{for(const [symbol_name,new_name,file_path] of [['SchedulerProjection','SchedulerProjection','back/data/cron.ts'],['CrontabModel','SchedulerProjectionModel','back/data/cron.ts'],['CronService','SchedulerBridgeService','back/services/cron.ts']]){const r=await b.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path,dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-${symbol_name}-${process.argv[2]||'preview'}.json`,JSON.stringify(r,null,2));console.log(symbol_name,JSON.stringify(r).slice(0,1200));}}finally{await b.cleanup?.();}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+          "new_text": "(async()=>{const{LocalBackend}=await import(pathToFileURL('/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js'));const b=new LocalBackend();await b.init();try{for(const [symbol_name,new_name,file_path] of [['SchedulerProjection','SchedulerProjection','back/data/cron.ts'],['SchedulerProjectionModel','SchedulerProjectionModel','back/data/cron.ts'],['CronService','SchedulerBridgeService','back/services/cron.ts']]){const r=await b.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path,dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-${symbol_name}-${process.argv[2]||'preview'}.json`,JSON.stringify(r,null,2));console.log(symbol_name,JSON.stringify(r).slice(0,1200));}}finally{await b.cleanup?.();}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/phase5/publication-integrity.test.cjs",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "const task=await h.CrontabModel.create({name:'old',command:'task subscription-1/job.sh',schedule:'0 8 * * *',sub_id:1,discovery_key:'stable',isDisabled:1});",
+          "new_text": "const task=await h.SchedulerProjectionModel.create({name:'old',command:'task subscription-1/job.sh',schedule:'0 8 * * *',sub_id:1,discovery_key:'stable',isDisabled:1});",
+          "confidence": "text_search"
+        },
+        {
+          "line": 9,
+          "old_text": "await assert.rejects(service.publishSubscription(plan,async()=>{}));assert.equal(live,'old');assert.ok(await h.CrontabModel.findByPk(task.id));assert.equal((await h.TaskHookModel.findByPk(hook.get('id'))).get('command'),'echo keep');assert.ok(await h.TaskConfigBindingModel.findByPk(binding.get('id')));assert.equal((await h.TaskEnvVariableModel.unscoped().findByPk(variable.get('id'))).get('value'),'KEEP_VALUE');",
+          "new_text": "await assert.rejects(service.publishSubscription(plan,async()=>{}));assert.equal(live,'old');assert.ok(await h.SchedulerProjectionModel.findByPk(task.id));assert.equal((await h.TaskHookModel.findByPk(hook.get('id'))).get('command'),'echo keep');assert.ok(await h.TaskConfigBindingModel.findByPk(binding.get('id')));assert.equal((await h.TaskEnvVariableModel.unscoped().findByPk(variable.get('id'))).get('value'),'KEEP_VALUE');",
+          "confidence": "text_search"
+        },
+        {
+          "line": 10,
+          "old_text": "service.setCrontab=original;await service.publishSubscription(plan,async()=>{});assert.equal(live,'new');assert.equal(await h.CrontabModel.findByPk(task.id),null);for(const model of [h.TaskHookModel,h.TaskConfigBindingModel])assert.equal(await model.count({where:{task_id:task.id}}),0);assert.equal(await h.TaskEnvVariableModel.count({where:{cron_id:task.id}}),0);assert.ok(await h.ConfigAssetModel.findByPk(asset.get('id')));",
+          "new_text": "service.setCrontab=original;await service.publishSubscription(plan,async()=>{});assert.equal(live,'new');assert.equal(await h.SchedulerProjectionModel.findByPk(task.id),null);for(const model of [h.TaskHookModel,h.TaskConfigBindingModel])assert.equal(await model.count({where:{task_id:task.id}}),0);assert.equal(await h.TaskEnvVariableModel.count({where:{cron_id:task.id}}),0);assert.ok(await h.ConfigAssetModel.findByPk(asset.get('id')));",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase4/domain.test.cjs",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "const task = await h.CrontabModel.create({ name: 'task', command: 'task a.py', sub_id: sub.id });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ name: 'task', command: 'task a.py', sub_id: sub.id });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 58,
+          "old_text": "const manual = await h.CrontabModel.create({ command: 'task manual.py' });",
+          "new_text": "const manual = await h.SchedulerProjectionModel.create({ command: 'task manual.py' });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "diagnostics/phase9/rename-test-references.cjs",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "(async()=>{const original='/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js';const temporary=path.join(path.dirname(original),'phase9-rename-backend.js');const source=fs.readFileSync(original,'utf8'),updated=source.replace('code:*.{ts,tsx,js,jsx,py,','code:*.{ts,tsx,js,jsx,cjs,mjs,py,');if(source===updated)throw Error('Unexpected GitNexus source');fs.writeFileSync(temporary,updated);let backend;try{const{LocalBackend}=await import(pathToFileURL(temporary));backend=new LocalBackend();await backend.init();for(const [symbol_name,new_name]of[['SchedulerProjection','SchedulerProjection'],['CrontabModel','SchedulerProjectionModel']]){const result=await backend.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path:'back/data/cron.ts',dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-cjs-${symbol_name}-${process.argv[2]}.json`,JSON.stringify(result,null,2));console.log(symbol_name,result.files_affected,result.total_edits,result.status);}}finally{await backend?.cleanup?.();fs.unlinkSync(temporary);}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+          "new_text": "(async()=>{const original='/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js';const temporary=path.join(path.dirname(original),'phase9-rename-backend.js');const source=fs.readFileSync(original,'utf8'),updated=source.replace('code:*.{ts,tsx,js,jsx,py,','code:*.{ts,tsx,js,jsx,cjs,mjs,py,');if(source===updated)throw Error('Unexpected GitNexus source');fs.writeFileSync(temporary,updated);let backend;try{const{LocalBackend}=await import(pathToFileURL(temporary));backend=new LocalBackend();await backend.init();for(const [symbol_name,new_name]of[['SchedulerProjection','SchedulerProjection'],['SchedulerProjectionModel','SchedulerProjectionModel']]){const result=await backend.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path:'back/data/cron.ts',dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-cjs-${symbol_name}-${process.argv[2]}.json`,JSON.stringify(result,null,2));console.log(symbol_name,result.files_affected,result.total_edits,result.status);}}finally{await backend?.cleanup?.();fs.unlinkSync(temporary);}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/phase5/domain.test.cjs",
+      "edits": [
+        {
+          "line": 27,
+          "old_text": "const repo=await h.RepositoryModel.create({name:'fixture',provider:'GENERIC',remote_url:'https://example.invalid/repo.git',normalized_url:'https://example.invalid/repo.git'}),sub=await h.SubscriptionModel.create({name:'sub',repository_id:repo.id}),task=await h.CrontabModel.create({command:'task subscription-1/main.sh',sub_id:sub.id});",
+          "new_text": "const repo=await h.RepositoryModel.create({name:'fixture',provider:'GENERIC',remote_url:'https://example.invalid/repo.git',normalized_url:'https://example.invalid/repo.git'}),sub=await h.SubscriptionModel.create({name:'sub',repository_id:repo.id}),task=await h.SchedulerProjectionModel.create({command:'task subscription-1/main.sh',sub_id:sub.id});",
+          "confidence": "text_search"
+        },
+        {
+          "line": 35,
+          "old_text": "const manual=await h.CrontabModel.create({command:'task manual.sh'});await configs.save('task',manual.id,binding(b));assert.equal((await configs.preview(manual.id))[0].source,'TASK');",
+          "new_text": "const manual=await h.SchedulerProjectionModel.create({command:'task manual.sh'});await configs.save('task',manual.id,binding(b));assert.equal((await configs.preview(manual.id))[0].source,'TASK');",
+          "confidence": "text_search"
+        },
+        {
+          "line": 40,
+          "old_text": "const h=await fixture(t),service=new(h.load('back/services/taskHooks.ts').default)(),task=await h.CrontabModel.create({command:'task main.sh'});",
+          "new_text": "const h=await fixture(t),service=new(h.load('back/services/taskHooks.ts').default)(),task=await h.SchedulerProjectionModel.create({command:'task main.sh'});",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase4/account-mode.test.cjs",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "const task = await h.CrontabModel.create({ command: `task accounts.${language}` });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: `task accounts.${language}` });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/task-model-bridge.test.cjs",
+      "edits": [
+        {
+          "line": 10,
+          "old_text": "const {SchedulerProjection,CrontabModel}=load(path.join(root,'back/data/cron.ts'),mocks);",
+          "new_text": "const {SchedulerProjection,SchedulerProjectionModel}=load(path.join(root,'back/data/cron.ts'),mocks);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 22,
+          "old_text": "assert.equal(CrontabModel.getTableName(),'Crontabs');",
+          "new_text": "assert.equal(SchedulerProjectionModel.getTableName(),'Crontabs');",
+          "confidence": "text_search"
+        },
+        {
+          "line": 26,
+          "old_text": "const manual=await CrontabModel.create(new SchedulerProjection({name:'manual',command:'task example.py',schedule:'0 0 * * *'}));",
+          "new_text": "const manual=await SchedulerProjectionModel.create(new SchedulerProjection({name:'manual',command:'task example.py',schedule:'0 0 * * *'}));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 27,
+          "old_text": "const discovered=await CrontabModel.create(new SchedulerProjection({name:'auto',command:'task fixture/example.py',schedule:'0 0 * * *',sub_id:sub.id}));",
+          "new_text": "const discovered=await SchedulerProjectionModel.create(new SchedulerProjection({name:'auto',command:'task fixture/example.py',schedule:'0 0 * * *',sub_id:sub.id}));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 30,
+          "old_text": "'../data/cron':{CrontabModel,SchedulerProjection,CrontabStatus:{running:0,idle:1,queued:3}},",
+          "new_text": "'../data/cron':{SchedulerProjectionModel,SchedulerProjection,CrontabStatus:{running:0,idle:1,queued:3}},",
+          "confidence": "text_search"
+        },
+        {
+          "line": 41,
+          "old_text": "assert.equal((await CrontabModel.findByPk(discovered.id)).status,1);",
+          "new_text": "assert.equal((await SchedulerProjectionModel.findByPk(discovered.id)).status,1);",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/bootstrap-data.test.cjs",
+      "edits": [
+        {
+          "line": 18,
+          "old_text": "'../data/cron':{CrontabModel:{update:async()=>calls.push('reset task status')},CrontabStatus:{idle:1}},",
+          "new_text": "'../data/cron':{SchedulerProjectionModel:{update:async()=>calls.push('reset task status')},CrontabStatus:{idle:1}},",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/subscription-pipeline.test.cjs",
+      "edits": [
+        {
+          "line": 43,
+          "old_text": "const original = (await h.CrontabModel.findAll()).map((x) =>",
+          "new_text": "const original = (await h.SchedulerProjectionModel.findAll()).map((x) =>",
+          "confidence": "text_search"
+        },
+        {
+          "line": 49,
+          "old_text": "assert.equal(await h.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await h.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 59,
+          "old_text": "(await h.CrontabModel.findByPk(original[0].id)).schedule,",
+          "new_text": "(await h.SchedulerProjectionModel.findByPk(original[0].id)).schedule,",
+          "confidence": "text_search"
+        },
+        {
+          "line": 79,
+          "old_text": "(await h.CrontabModel.findAll()).map((x) => x.get({ plain: true })),",
+          "new_text": "(await h.SchedulerProjectionModel.findAll()).map((x) => x.get({ plain: true })),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 98,
+          "old_text": "(await h.CrontabModel.findAll()).map((x) => x.get({ plain: true })),",
+          "new_text": "(await h.SchedulerProjectionModel.findAll()).map((x) => x.get({ plain: true })),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 114,
+          "old_text": "assert.equal(await h.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await h.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 140,
+          "old_text": "const saved = await h.CrontabModel.findOne(),",
+          "new_text": "const saved = await h.SchedulerProjectionModel.findOne(),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 152,
+          "old_text": "assert.equal(await h.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await h.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 176,
+          "old_text": "const tasks = await h.CrontabModel.findAll();",
+          "new_text": "const tasks = await h.SchedulerProjectionModel.findAll();",
+          "confidence": "text_search"
+        },
+        {
+          "line": 187,
+          "old_text": "const rows = await h.CrontabModel.findAll();",
+          "new_text": "const rows = await h.SchedulerProjectionModel.findAll();",
+          "confidence": "text_search"
+        },
+        {
+          "line": 301,
+          "old_text": "assert.equal(await h.CrontabModel.count(), 1);",
+          "new_text": "assert.equal(await h.SchedulerProjectionModel.count(), 1);",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/discovery.test.cjs",
+      "edits": [
+        {
+          "line": 41,
+          "old_text": "const old = await h.CrontabModel.create({ name: 'Old', command: 'task subscription-1/job.js', schedule: '0 8 * * *', sub_id: 1, discovery_key: 'source-key', source_relative_path: 'job.js', discovery_definition: { name: 'Old', command: 'task subscription-1/job.js', schedule: '0 8 * * *' }, isDisabled: 1 });",
+          "new_text": "const old = await h.SchedulerProjectionModel.create({ name: 'Old', command: 'task subscription-1/job.js', schedule: '0 8 * * *', sub_id: 1, discovery_key: 'source-key', source_relative_path: 'job.js', discovery_definition: { name: 'Old', command: 'task subscription-1/job.js', schedule: '0 8 * * *' }, isDisabled: 1 });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 44,
+          "old_text": "const update = h.CrontabModel.update, set = cron.setCrontab;",
+          "new_text": "const update = h.SchedulerProjectionModel.update, set = cron.setCrontab;",
+          "confidence": "text_search"
+        },
+        {
+          "line": 45,
+          "old_text": "if (failure === 'db') h.CrontabModel.update = async (...args) => { if (once) { once = false; throw new Error('fixture DB failure'); } return update.apply(h.CrontabModel, args); };",
+          "new_text": "if (failure === 'db') h.SchedulerProjectionModel.update = async (...args) => { if (once) { once = false; throw new Error('fixture DB failure'); } return update.apply(h.SchedulerProjectionModel, args); };",
+          "confidence": "text_search"
+        },
+        {
+          "line": 49,
+          "old_text": "h.CrontabModel.update = update; cron.setCrontab = set;",
+          "new_text": "h.SchedulerProjectionModel.update = update; cron.setCrontab = set;",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/environment-account-mode.test.cjs",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "const task = await h.CrontabModel.create({ command: `task accounts.${language}` });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: `task accounts.${language}` });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/environment-domain.test.cjs",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "const task = await h.CrontabModel.create({ name: 'task', command: 'task a.py', sub_id: sub.id });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ name: 'task', command: 'task a.py', sub_id: sub.id });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 58,
+          "old_text": "const manual = await h.CrontabModel.create({ command: 'task manual.py' });",
+          "new_text": "const manual = await h.SchedulerProjectionModel.create({ command: 'task manual.py' });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/phase3/cron-publication.test.cjs",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "'../data/cron':{CrontabModel:{update:async()=>{}},SchedulerProjection:class {}},'../data/runningInstance':{},'../config':{crontabFile:path.join(dir,'crontab.list')},'../config/util':{},'../config/const':{TASK_PREFIX:'task ',QL_PREFIX:'ql '},'../schedule/client':{},'../shared/pLimit':{},'../shared/utils':{writeFileWithLock:fs.writeFile},'../shared/i18n':{t:x=>x},'../shared/logStreamManager':{},'../shared/schedulerMutationLock':{},'child_process':{...require('node:child_process'),execSync:()=>{throw new Error('fixture install failure');}}",
+          "new_text": "'../data/cron':{SchedulerProjectionModel:{update:async()=>{}},SchedulerProjection:class {}},'../data/runningInstance':{},'../config':{crontabFile:path.join(dir,'crontab.list')},'../config/util':{},'../config/const':{TASK_PREFIX:'task ',QL_PREFIX:'ql '},'../schedule/client':{},'../shared/pLimit':{},'../shared/utils':{writeFileWithLock:fs.writeFile},'../shared/i18n':{t:x=>x},'../shared/logStreamManager':{},'../shared/schedulerMutationLock':{},'child_process':{...require('node:child_process'),execSync:()=>{throw new Error('fixture install failure');}}",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/environment-execution.test.cjs",
+      "edits": [
+        {
+          "line": 11,
+          "old_text": "const h = await setup(t), task = await h.CrontabModel.create({ command: 'task check.py' });",
+          "new_text": "const h = await setup(t), task = await h.SchedulerProjectionModel.create({ command: 'task check.py' });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 45,
+          "old_text": "const task = await h.CrontabModel.create({ command: 'task check.sh', sub_id: sub.id }); tasks.push(task);",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: 'task check.sh', sub_id: sub.id }); tasks.push(task);",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/bootstrap-failure.test.cjs",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "['cron', 'CrontabModel'],",
+          "new_text": "['cron', 'SchedulerProjectionModel'],",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/environment-entrypoint.test.cjs",
+      "edits": [
+        {
+          "line": 8,
+          "old_text": "const task = await h.CrontabModel.create({ command: 'task subscription-1/bridge.sh', sub_id: sub.id });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: 'task subscription-1/bridge.sh', sub_id: sub.id });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/environment-transport.test.cjs",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "const task = await h.CrontabModel.create({ command: 'task a.sh' });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: 'task a.sh' });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/environment-api.test.cjs",
+      "edits": [
+        {
+          "line": 8,
+          "old_text": "const task = await h.CrontabModel.create({ command: 'task manual.py' });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: 'task manual.py' });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/environment-isolation.test.cjs",
+      "edits": [
+        {
+          "line": 13,
+          "old_text": "const task = await h.CrontabModel.create({ command: `task ${repoName}-${profileName}.sh`, sub_id: sub.id });",
+          "new_text": "const task = await h.SchedulerProjectionModel.create({ command: `task ${repoName}-${profileName}.sh`, sub_id: sub.id });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/subscription-domain.test.cjs",
+      "edits": [
+        {
+          "line": 15,
+          "old_text": "const service=new Service({error(){}},schedule,{sendMessage(){}},{remove:async ids=>h.CrontabModel.destroy({where:{id:ids}})});",
+          "new_text": "const service=new Service({error(){}},schedule,{sendMessage(){}},{remove:async ids=>h.SchedulerProjectionModel.destroy({where:{id:ids}})});",
+          "confidence": "text_search"
+        }
+      ]
+    }
+  ],
+  "applied": true
+}

@@ -2,7 +2,7 @@ import { spawn } from 'cross-spawn';
 import taskLimit from './pLimit';
 import Logger from '../loaders/logger';
 import { ICron } from '../protos/cron';
-import { CrontabModel, CrontabStatus } from '../data/cron';
+import { SchedulerProjectionModel, CrontabStatus } from '../data/cron';
 import { killTask } from '../config/util';
 import { RunningInstanceModel, InstanceStatus } from '../data/runningInstance';
 import dayjs from 'dayjs';
@@ -13,7 +13,7 @@ export function runCron(cmd: string, cron: ICron): Promise<number | void> {
     try {
       // Check if the cron is already running and stop it (only if multiple instances are not allowed)
       try {
-        const existingCron = await CrontabModel.findOne({
+        const existingCron = await SchedulerProjectionModel.findOne({
           where: { id: Number(cron.id) },
         });
 
@@ -44,7 +44,7 @@ export function runCron(cmd: string, cron: ICron): Promise<number | void> {
             },
           );
           // Update the status to idle after killing
-          await CrontabModel.update(
+          await SchedulerProjectionModel.update(
             { status: CrontabStatus.idle, pid: undefined },
             { where: { id: Number(cron.id) } },
           );

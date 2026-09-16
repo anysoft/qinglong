@@ -1,4 +1,5 @@
 import { Transaction } from 'sequelize';
+import TaskReferenceService from './taskReferences';
 import {
   PythonEnvironmentModel as Environments,
   PythonEnvironmentRevisionModel as Revisions,
@@ -84,6 +85,7 @@ export default class PythonEnvironmentBuildService {
         { transaction },
       );
     } else if (type === 'PYTHON_ENV_DELETE') {
+      await new TaskReferenceService().requireUnusedEnvironment('PYTHON', environment.id, transaction);
       const builds = await Builds.findAll({
         where: { environment_id: environment.id },
         transaction,

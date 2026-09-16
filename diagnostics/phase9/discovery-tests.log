@@ -1,0 +1,57 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=d4bc53fbcefda1ed02bab4942e49062006145c31 -> d4bc53fbcefda1ed02bab4942e49062006145c31
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=d4bc53fbcefda1ed02bab4942e49062006145c31 -> ff69e40ee352c0b2d4141bbc85fa282cdb247cbc
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=0
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=ff69e40ee352c0b2d4141bbc85fa282cdb247cbc -> 7fce37d8375943177a15dda0d3c4daf17f50b8df
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=7fce37d8375943177a15dda0d3c4daf17f50b8df -> 5973a21bd7680a063068e1937fc5c2627cc7b28b
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=0 drop=1
+# [Managed] COPY_AND_CRON subscription=1
+# Subtest: real Git discovery retains canonical user resources and renames create new stable identities
+ok 1 - real Git discovery retains canonical user resources and renames create new stable identities
+  ---
+  duration_ms: 10253.1785
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=eea8f79a828322c426c97bf83f04ab14800ea97c -> eea8f79a828322c426c97bf83f04ab14800ea97c
+# [Managed] DISCOVERY subscription=1
+# [Managed] DISCOVERY: UNSAFE_DISCOVERY_PATH
+# Subtest: unsafe discovery fails closed; manual bridge quotes source and escapes crontab percent
+ok 2 - unsafe discovery fails closed; manual bridge quotes source and escapes crontab percent
+  ---
+  duration_ms: 4096.560125
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 14641.470375

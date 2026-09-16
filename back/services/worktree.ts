@@ -4,6 +4,7 @@ import path from 'path';
 import { Worktree, WorktreeModel } from '../data/worktree';
 import { Repository } from '../data/repository';
 import { SubscriptionModel } from '../data/subscription';
+import TaskReferenceService from './taskReferences';
 import RepositoryStorageService, { exists } from './repositoryStorage';
 import { WorkspaceGuard, LockOwner } from './workspaceLocks';
 import { WorkspaceError } from '../shared/workspaceError';
@@ -435,6 +436,8 @@ export default class WorktreeService {
     });
   }
   private async assertUnreferenced(id: number) {
+    const references = await new TaskReferenceService().worktree(id);
+    if (references.tasks_count) throw new WorkspaceError('WORKTREE_TASK_REFERENCED', `Tasks: ${references.tasks_count} (${references.tasks.map(task => task.id).join(', ')})`);
     const subscriptions = await SubscriptionModel.findAll({
       where: { worktree_id: id },
       attributes: ['id'],

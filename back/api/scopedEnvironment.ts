@@ -3,7 +3,8 @@ import { Container } from 'typedi';
 import { Joi } from 'celebrate';
 import { QueryTypes } from 'sequelize';
 import { sequelize } from '../data';
-import { CrontabModel } from '../data/cron';
+import { TaskModel } from '../data/task';
+import { taskRepository } from '../services/taskRelationships';
 import { SubscriptionModel } from '../data/subscription';
 import RepositoryEnvProfileService from '../services/repositoryEnvProfile';
 import ScopedEnvVariableService from '../services/scopedEnvVariable';
@@ -36,7 +37,7 @@ export default function scopedEnvironmentRoutes(app: Router) {
   router.put('/global/variables', endpoint(async req => Container.get(ScopedEnvVariableService).save('global', 0, validate(variableSchema, req.body))));
   const id = (req: Request) => validate(idSchema, req.params.id);
   router.get('/repositories', endpoint(async () => sequelize.query('SELECT r.id,r.name,r.default_env_profile_id,COUNT(p.id) AS profiles_count FROM Repositories r LEFT JOIN EnvironmentProfiles p ON p.repository_id=r.id GROUP BY r.id ORDER BY r.name', { type: QueryTypes.SELECT })));
-  router.get('/tasks', endpoint(async () => sequelize.query('SELECT c.id,c.name,c.env_profile_id,c.sub_id,COUNT(v.id) AS variables_count FROM Crontabs c LEFT JOIN TaskEnvVariables v ON v.cron_id=c.id GROUP BY c.id ORDER BY c.id DESC', { type: QueryTypes.SELECT })));
+  router.get('/tasks', endpoint(async () => sequelize.query('SELECT c.id,c.name,c.env_profile_id,c.subscription_id,COUNT(v.id) AS variables_count FROM Tasks c LEFT JOIN TaskEnvVariables v ON v.task_id=c.id GROUP BY c.id ORDER BY c.id DESC', { type: QueryTypes.SELECT })));
   router.get('/repositories/:id/profiles', endpoint(async req => Container.get(RepositoryEnvProfileService).list(id(req))));
   router.get('/profiles/:id', endpoint(async req => Container.get(RepositoryEnvProfileService).detail(id(req))));
   router.post('/profiles', endpoint(async req => { const input = validate(profileSchema, req.body); delete input.id; return Container.get(RepositoryEnvProfileService).save(input); }));
@@ -50,10 +51,9 @@ export default function scopedEnvironmentRoutes(app: Router) {
   for (const scope of ['task', 'subscription'] as const) {
     router.put(`/${scope}s/:id/profile`, endpoint(async req => Container.get(ScopedEnvVariableService).bind(scope, id(req), validate(Joi.object({ env_profile_id: Joi.number().integer().positive().allow(null).required() }), req.body).env_profile_id)));
     router.get(`/${scope}s/:id/context`, endpoint(async req => {
-      const owner = scope === 'task' ? await CrontabModel.findByPk(id(req)) : await SubscriptionModel.findByPk(id(req));
+      const owner = scope === 'task' ? await TaskModel.findByPk(id(req)) : await SubscriptionModel.findByPk(id(req));
       if (!owner) throw new ScopedEnvironmentError('ENV_OWNER_NOT_FOUND', 404);
-      const sub = scope === 'task' ? (owner as any).sub_id ? await SubscriptionModel.findByPk((owner as any).sub_id) : null : owner;
-      const repository_id = (sub as any)?.repository_id ?? null;
+      const repository_id = scope === 'task' ? (await taskRepository(id(req))).repository_id : (owner as any).repository_id;
       return { id: owner.id, env_profile_id: owner.env_profile_id, repository_id, profiles: repository_id ? await Container.get(RepositoryEnvProfileService).list(repository_id) : [] };
     }));
   }

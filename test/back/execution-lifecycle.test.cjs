@@ -36,7 +36,7 @@ test(
       },
       '../loaders/logger': logger,
       '../data/cron': {
-        CrontabModel: { findOne: async () => null },
+        SchedulerProjectionModel: { findOne: async () => null },
         CrontabStatus: {},
       },
       '../data/runningInstance': {

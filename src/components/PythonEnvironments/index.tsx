@@ -18,6 +18,7 @@ import {
 } from 'antd';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
+import { TaskResourceReferences } from '@/components/task-resource-references';
 const base = `${config.apiPrefix}runtime/python/environments`;
 interface Props {
   runtimes: any[];
@@ -35,6 +36,7 @@ export default function PythonEnvironments({
     [revisions, setRevisions] = useState<any[]>([]),
     [builds, setBuilds] = useState<any[]>([]),
     [operations, setOperations] = useState<any[]>([]);
+  const [taskReferencesBlocked, setTaskReferencesBlocked] = useState(true);
   const [editor, setEditor] = useState<
       'create' | 'dependencies' | 'metadata' | 'clone'
     >(),
@@ -266,7 +268,7 @@ export default function PythonEnvironments({
                   setEnvironment(undefined);
                 }}
               >
-                <Button danger disabled={disabled}>
+                <Button danger disabled={disabled || taskReferencesBlocked}>
                   删除环境
                 </Button>
               </Popconfirm>
@@ -280,6 +282,7 @@ export default function PythonEnvironments({
                 label: 'Overview',
                 children: (
                   <>
+                    <TaskResourceReferences kind="python" id={environment.id} onBlocked={setTaskReferencesBlocked} />
                     <Descriptions column={2}>
                       <Descriptions.Item label="Environment ID">
                         {environment.id}

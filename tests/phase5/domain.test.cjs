@@ -24,7 +24,7 @@ test('immutable revisions, optimistic edits, private storage, Secret response an
 test('Repository inheritance, Task override/MASK, normalized uniqueness, disabled and manual bindings, references and cascades',async t=>{
  const h=await fixture(t),assets=new(h.load('back/services/configAsset.ts').default)(),configs=new(h.load('back/services/taskConfig.ts').default)();
  const a=await assets.save({name:'repo',is_secret:false,content:'repo'}),b=await assets.save({name:'task',is_secret:false,content:'task'});
- const repo=await h.RepositoryModel.create({name:'fixture',provider:'GENERIC',remote_url:'https://example.invalid/repo.git',normalized_url:'https://example.invalid/repo.git'}),sub=await h.SubscriptionModel.create({name:'sub',repository_id:repo.id}),task=await h.CrontabModel.create({command:'task subscription-1/main.sh',sub_id:sub.id});
+ const repo=await h.RepositoryModel.create({name:'fixture',provider:'GENERIC',remote_url:'https://example.invalid/repo.git',normalized_url:'https://example.invalid/repo.git'}),sub=await h.SubscriptionModel.create({name:'sub',repository_id:repo.id}),task=await h.SchedulerProjectionModel.create({command:'task subscription-1/main.sh',sub_id:sub.id});
  await configs.save('repository',repo.id,binding(a));assert.equal((await configs.preview(task.id))[0].source,'REPOSITORY');
  let override=await configs.save('task',task.id,binding(b));assert.equal((await configs.preview(task.id))[0].asset_id,b.id);
  override=await configs.save('task',task.id,{...override,operation:'MASK',expected_version:override.version});assert.equal((await configs.preview(task.id)).length,0);
@@ -32,19 +32,19 @@ test('Repository inheritance, Task override/MASK, normalized uniqueness, disable
  await assert.rejects(assets.remove(a.id,a.version),{code:'CONFIG_ASSET_IN_USE'});
  await assert.rejects(configs.save('repository',repo.id,binding(b)));
  await configs.save('repository',repo.id,binding(a,{target_path:'cafe\u0301.json'}));await assert.rejects(configs.save('repository',repo.id,binding(a,{target_path:'café.json'})));
- const manual=await h.CrontabModel.create({command:'task manual.sh'});await configs.save('task',manual.id,binding(b));assert.equal((await configs.preview(manual.id))[0].source,'TASK');
- await manual.destroy();assert.equal(await h.TaskConfigBindingModel.count({where:{task_id:manual.id}}),0);
+ const manual=await h.SchedulerProjectionModel.create({command:'task manual.sh'});await configs.save('task',manual.id,binding(b));assert.equal((await configs.preview(manual.id))[0].source,'TASK');
+ await h.TaskModel.destroy({where:{id:manual.id}});assert.equal(await h.TaskConfigBindingModel.count({where:{task_id:manual.id}}),0);
  await repo.update({storage_state:'DELETING'});await assert.rejects(configs.save('repository',repo.id,binding(b,{target_path:'new'})),{code:'CONFIG_OWNER_DELETING'});
 });
 test('Hook CRUD, stable order, transactional reorder conflict rollback and Task cascade',async t=>{
- const h=await fixture(t),service=new(h.load('back/services/taskHooks.ts').default)(),task=await h.CrontabModel.create({command:'task main.sh'});
+ const h=await fixture(t),service=new(h.load('back/services/taskHooks.ts').default)(),task=await h.SchedulerProjectionModel.create({command:'task main.sh'});
  const a=await service.save(task.id,hook()),b=await service.save(task.id,hook({name:'second',position:20}));
  await service.reorder(task.id,[{id:a.id,position:20,version:a.version},{id:b.id,position:10,version:b.version}]);
  let rows=(await service.list(task.id)).map(x=>x.get({plain:true}));assert.deepEqual(rows.map(x=>x.id),[b.id,a.id]);
  await assert.rejects(service.reorder(task.id,rows.map(x=>({id:x.id,position:30,version:x.version}))));
  assert.deepEqual((await service.list(task.id)).map(x=>x.get('position')),[10,20]);
  await assert.rejects(service.save(task.id,{...a,expected_version:a.version}),{code:'HOOK_EDIT_CONFLICT'});
- await task.destroy();assert.equal(await h.TaskHookModel.count(),0);
+ await h.TaskModel.destroy({where:{id:task.id}});assert.equal(await h.TaskHookModel.count(),0);
 });
 module.exports={binding,hook};
 test('uncommitted revision directory is retained and next edit allocates a fresh immutable path',async t=>{

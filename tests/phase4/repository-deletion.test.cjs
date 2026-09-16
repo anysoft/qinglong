@@ -4,7 +4,7 @@ test('profile references block repository filesystem deletion before mutation', 
   const h = await setup(t); await h.storage.initialize(h.repo.id);
   const ProfileService = require('../../test/helpers/load-security-module.cjs')('back/services/repositoryEnvProfile.ts', {
     '../loaders/logger': { info() {}, warn() {}, error() {} }, '../data': { sequelize: h.sequelize },
-    '../data/scopedEnv': h, '../data/repository': h, '../data/subscription': h, '../data/cron': h,
+    '../data/scopedEnv': h, '../data/repository': h, '../data/subscription': h, '../data/cron': h, '../data/task': h,
   }).default;
   const profiles = new ProfileService();
   const profile = await profiles.save({ repository_id: h.repo.id, name: 'prod' });

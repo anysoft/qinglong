@@ -24,6 +24,7 @@ async function setup(t) {
   get('data/worktree'); // Subscription now has a nullable Worktree foreign key.
   get('data/cron');
   get('data/scopedEnv'); // Phase 4 nullable profile references.
+  for (const module of ['task', 'runtime', 'pythonEnvironment', 'nodeEnvironment']) get('data/' + module);
   await sequelize.sync();
   const Secret = get('services/credentialSecret').default,
     Resolver = get('services/gitCredentialResolver').default;

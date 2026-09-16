@@ -10,7 +10,7 @@ test('cross-repository and same-repository profiles stay isolated with task over
     for (const profileName of ['prod', 'test']) {
       const profile = await h.profiles.save({ repository_id: repo.id, name: profileName });
       await h.variables.save('repository', profile.id, [{ name: 'PROFILE_VALUE', value: `${repoName}-${profileName}` }, { name: 'ACCOUNT_VALUE', value: 'repo' }]);
-      const task = await h.CrontabModel.create({ command: `task ${repoName}-${profileName}.sh`, sub_id: sub.id });
+      const task = await h.SchedulerProjectionModel.create({ command: `task ${repoName}-${profileName}.sh`, sub_id: sub.id });
       await h.variables.bind('task', task.id, profile.id);
       await h.variables.save('task', task.id, [{ name: 'ACCOUNT_VALUE', value: `task-${task.id}` }]);
       resolved.push({ value: `${repoName}-${profileName}:task-${task.id}`, env: await h.resolver.resolve(task.id) });

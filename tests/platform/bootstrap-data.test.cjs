@@ -15,8 +15,8 @@ test('fresh seed is local, idempotent and creates no usable password or legacy s
   const mocks={
     typedi:{Container:{get:key=>services.get(key)}},
     '../services/cron':'cron','../services/env':'env','../services/user':'user','../services/open':'open',
-    '../data/cron':{CrontabModel:{update:async()=>calls.push('reset task status')},CrontabStatus:{idle:1}},
-    '../data/cronView':{CrontabViewModel:{findAll:async()=>[{}]},CronViewType:{系统:0}},
+    '../data/cron':{SchedulerProjectionModel:{update:async()=>calls.push('reset task status')},CrontabStatus:{idle:1}},
+    '../data/cronView':{TaskViewModel:{findAll:async()=>[{}]},CronViewType:{系统:0}},
     '../data/env':{initPosition:100},
     '../data/dependence':{DependenceModel:{update:async(value,options)=>{
       assert.deepEqual(value,{status:7});assert.deepEqual(options,{where:{status:[0,3,6]}});calls.push('cancel interrupted dependency jobs');

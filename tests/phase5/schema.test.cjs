@@ -7,14 +7,14 @@ test('frozen platform v1 upgrades transactionally to identical fresh latest sche
  await upgrade.db.query("INSERT INTO Envs (name,value,createdAt,updatedAt) VALUES ('KEEP',' 私有 value 🌱 ',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)");
  await upgrade.initializeOperationalSchema(upgrade.db,upgrade.models);
  assert.equal(upgrade.schemaSignature(await objects(upgrade)),fresh.schemaSignature(await objects(fresh)));
- const meta=await upgrade.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});assert.equal(meta[0].platform_schema_version,5);
+ const meta=await upgrade.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT});assert.equal(meta[0].platform_schema_version,6);
  assert.equal(meta[0].model_signature,(await fresh.db.query('SELECT * FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0].model_signature);
  assert.deepEqual((await upgrade.TaskHookModel.findAll({order:[['id','ASC']]})).map(x=>[x.get('phase'),x.get('command'),x.get('failure_policy')]),[['BEFORE','printf before','CONTINUE'],['FINALLY','printf after','CONTINUE']]);
  assert.equal((await upgrade.EnvModel.unscoped().findOne()).get('value'),' 私有 value 🌱 ');
- assert.equal((await upgrade.CrontabModel.findByPk(42)).get('command'),'task main.py');
+ assert.equal((await upgrade.SchedulerProjectionModel.findByPk(42)).get('command'),'task main.py');
  assert.deepEqual(await upgrade.db.query('PRAGMA foreign_key_check',{type:QueryTypes.SELECT}),[]);
  await upgrade.initializeOperationalSchema(upgrade.db,upgrade.models);
- const columns=await upgrade.db.getQueryInterface().describeTable('Crontabs');assert.equal('task_before' in columns,false);assert.equal('task_after' in columns,false);
+ const columns=await upgrade.db.getQueryInterface().describeTable('SchedulerProjections');assert.equal('task_before' in columns,false);assert.equal('task_after' in columns,false);
 });
 test('migration failure rolls back DDL, data, hooks and version then permits retry',async t=>{
  const h=await fixture(t,{initialize:false});await seedV1(h);const before=await objects(h);

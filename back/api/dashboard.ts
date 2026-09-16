@@ -1,8 +1,8 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { Container } from 'typedi';
 import { fn, col, where, Op } from 'sequelize';
-import { CrontabModel } from '../data/cron';
-import { CrontabStatModel } from '../data/cronStats';
+import { SchedulerProjectionModel } from '../data/cron';
+import { TaskStatModel } from '../data/cronStats';
 import {
   RunningInstanceModel,
   InstanceStatus,
@@ -27,12 +27,12 @@ export default (app: Router) => {
       const isFail = code !== 0 ? 1 : 0;
       const elapsedMs = (Number(elapsed) || 0) * 1000;
 
-      const existing = await CrontabStatModel.findOne({
+      const existing = await TaskStatModel.findOne({
         where: { ref_id: Number(ref_id), date: today },
       });
 
       if (existing) {
-        await CrontabStatModel.update(
+        await TaskStatModel.update(
           {
             run_count: (existing.run_count || 0) + 1,
             success_count: (existing.success_count || 0) + isSuccess,
@@ -43,7 +43,7 @@ export default (app: Router) => {
           { where: { id: existing.id } },
         );
       } else {
-        await CrontabStatModel.create({
+        await TaskStatModel.create({
           ref_id: Number(ref_id),
           date: today,
           run_count: 1,
@@ -67,10 +67,10 @@ export default (app: Router) => {
         const today = dayjs().format('YYYY-MM-DD');
 
         const [total, enabled, disabled, stats] = await Promise.all([
-          CrontabModel.count(),
-          CrontabModel.count({ where: { isDisabled: 0 } }),
-          CrontabModel.count({ where: { isDisabled: 1 } }),
-          CrontabStatModel.findOne({
+          SchedulerProjectionModel.count(),
+          SchedulerProjectionModel.count({ where: { isDisabled: 0 } }),
+          SchedulerProjectionModel.count({ where: { isDisabled: 1 } }),
+          TaskStatModel.findOne({
             attributes: [
               [fn('SUM', col('run_count')), 'total_runs'],
               [fn('SUM', col('success_count')), 'total_success'],
@@ -111,14 +111,14 @@ export default (app: Router) => {
     '/failures',
     async (req: Request, res: Response, next: NextFunction) => {
       try {
-        const rows = (await CrontabStatModel.findAll({
+        const rows = (await TaskStatModel.findAll({
           attributes: ['ref_id', [fn('SUM', col('fail_count')), 'fail_count']],
           where: { date: dayjs().format('YYYY-MM-DD'), fail_count: { [Op.gt]: 0 } },
           group: ['ref_id'],
           order: [[fn('SUM', col('fail_count')), 'DESC'], ['ref_id', 'ASC']],
           raw: true,
         })) as any[];
-        const crons = rows.length > 0 ? await CrontabModel.findAll({
+        const crons = rows.length > 0 ? await SchedulerProjectionModel.findAll({
           attributes: ['id', 'name', 'command'],
           where: { id: { [Op.in]: rows.map((row) => Number(row.ref_id)) } },
           raw: true,
@@ -154,7 +154,7 @@ export default (app: Router) => {
           dates.push(dayjs().subtract(i, 'day').format('YYYY-MM-DD'));
         }
 
-        const rows = (await CrontabStatModel.findAll({
+        const rows = (await TaskStatModel.findAll({
           attributes: [
             'date',
             [fn('SUM', col('run_count')), 'total_runs'],
@@ -196,7 +196,7 @@ export default (app: Router) => {
       try {
         const today = dayjs().format('YYYY-MM-DD');
 
-        const rows = (await CrontabStatModel.findAll({
+        const rows = (await TaskStatModel.findAll({
           attributes: [
             'ref_id',
             [fn('SUM', col('total_time')), 'total_time'],
@@ -211,7 +211,7 @@ export default (app: Router) => {
         })) as any[];
 
         const ids = rows.map((r) => Number(r.ref_id));
-        const crons = await CrontabModel.findAll({
+        const crons = await SchedulerProjectionModel.findAll({
           where: { id: { [Op.in]: ids } },
           raw: true,
         });
@@ -238,7 +238,7 @@ export default (app: Router) => {
       try {
         const today = dayjs().format('YYYY-MM-DD');
 
-        const rows = (await CrontabStatModel.findAll({
+        const rows = (await TaskStatModel.findAll({
           attributes: [
             'ref_id',
             [fn('SUM', col('run_count')), 'run_count'],
@@ -253,7 +253,7 @@ export default (app: Router) => {
         })) as any[];
 
         const ids = rows.map((r) => Number(r.ref_id));
-        const crons = await CrontabModel.findAll({
+        const crons = await SchedulerProjectionModel.findAll({
           where: { id: { [Op.in]: ids } },
           raw: true,
         });
@@ -289,7 +289,7 @@ export default (app: Router) => {
           raw: true,
         });
 
-        const queuedCrons = await CrontabModel.findAll({
+        const queuedCrons = await SchedulerProjectionModel.findAll({
           where: {
             status: 3, // queued
           },
@@ -302,7 +302,7 @@ export default (app: Router) => {
         ];
         const crons =
           cronIds.length > 0
-            ? await CrontabModel.findAll({
+            ? await SchedulerProjectionModel.findAll({
               where: { id: cronIds },
               raw: true,
             })
@@ -323,7 +323,7 @@ export default (app: Router) => {
         });
 
         const dayAgo = dayjs().subtract(24, 'hour').unix();
-        const idleTasks = await CrontabModel.findAll({
+        const idleTasks = await SchedulerProjectionModel.findAll({
           where: {
             isDisabled: 0,
             status: 1,
@@ -361,8 +361,8 @@ export default (app: Router) => {
       try {
         const today = dayjs().format('YYYY-MM-DD');
         const [crons, stats] = (await Promise.all([
-          CrontabModel.findAll({ where: { isDisabled: 0 }, raw: true }),
-          CrontabStatModel.findAll({ where: { date: today }, raw: true }),
+          SchedulerProjectionModel.findAll({ where: { isDisabled: 0 }, raw: true }),
+          TaskStatModel.findAll({ where: { date: today }, raw: true }),
         ]));
 
         const statMap: Record<number, any> = {};

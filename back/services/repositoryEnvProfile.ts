@@ -4,7 +4,7 @@ import { sequelize } from '../data';
 import { EnvironmentProfile, EnvironmentProfileModel, RepositoryEnvVariableModel } from '../data/scopedEnv';
 import { RepositoryModel } from '../data/repository';
 import { SubscriptionModel } from '../data/subscription';
-import { CrontabModel } from '../data/cron';
+import { TaskModel } from '../data/task';
 import { ScopedEnvironmentError } from '../shared/scopedEnv';
 import Logger from '../loaders/logger';
 
@@ -26,7 +26,7 @@ export default class RepositoryEnvProfileService {
     const [repository, subscriptions, tasks, count] = await Promise.all([
       RepositoryModel.findByPk(profile.repository_id),
       SubscriptionModel.count({ where: { env_profile_id: id } }),
-      CrontabModel.count({ where: { env_profile_id: id } }),
+      TaskModel.count({ where: { env_profile_id: id } }),
       RepositoryEnvVariableModel.count({ where: { profile_id: id } }),
     ]);
     return { ...profile, is_default: repository?.default_env_profile_id === id, variables_count: count, used_by: { subscriptions, tasks, repository_default: repository?.default_env_profile_id === id } };
@@ -35,7 +35,7 @@ export default class RepositoryEnvProfileService {
     const rows = await sequelize.query<any>(`SELECT p.*, r.default_env_profile_id=p.id AS is_default,
       (SELECT COUNT(*) FROM RepositoryEnvVariables v WHERE v.profile_id=p.id) AS variables_count,
       (SELECT COUNT(*) FROM Subscriptions s WHERE s.env_profile_id=p.id) AS subscriptions_count,
-      (SELECT COUNT(*) FROM Crontabs c WHERE c.env_profile_id=p.id) AS tasks_count
+      (SELECT COUNT(*) FROM Tasks c WHERE c.env_profile_id=p.id) AS tasks_count
       FROM EnvironmentProfiles p JOIN Repositories r ON r.id=p.repository_id
       WHERE p.repository_id=:repositoryId ORDER BY p.name`, { replacements: { repositoryId }, type: QueryTypes.SELECT });
     return rows.map(({ subscriptions_count, tasks_count, ...row }) => ({ ...row, is_default: !!row.is_default, used_by: { subscriptions: subscriptions_count, tasks: tasks_count, repository_default: !!row.is_default } }));
@@ -83,7 +83,7 @@ export default class RepositoryEnvProfileService {
   async remove(id: number) {
     await sequelize.transaction(async transaction => {
       await this.get(id, transaction);
-      for (const [model, key] of [[RepositoryModel, 'default_env_profile_id'], [SubscriptionModel, 'env_profile_id'], [CrontabModel, 'env_profile_id']] as const) {
+      for (const [model, key] of [[RepositoryModel, 'default_env_profile_id'], [SubscriptionModel, 'env_profile_id'], [TaskModel, 'env_profile_id']] as const) {
         if (await (model as any).count({ where: { [key]: id }, transaction })) throw new ScopedEnvironmentError('ENV_PROFILE_IN_USE', 409);
       }
       await EnvironmentProfileModel.destroy({ where: { id }, transaction });

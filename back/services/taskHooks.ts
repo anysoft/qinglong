@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 import { Transaction } from 'sequelize';
 import { sequelize } from '../data';
-import { CrontabModel } from '../data/cron';
+import { TaskModel } from '../data/task';
 import {
   TaskHook,
   TaskHookModel,
@@ -20,7 +20,7 @@ export const defaultHookPolicy = (phase: HookPhase): FailurePolicy =>
 @Service()
 export default class TaskHookService {
   async list(taskId: number, transaction?: Transaction) {
-    if (!(await CrontabModel.findByPk(configId(taskId), { transaction })))
+    if (!(await TaskModel.findByPk(configId(taskId), { transaction })))
       throw new ConfigAssetError('TASK_NOT_FOUND', 404);
     return TaskHookModel.findAll({
       where: { task_id: taskId },

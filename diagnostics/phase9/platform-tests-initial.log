@@ -1,0 +1,3179 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: platform sessions validate and obsolete single-token shapes fail closed
+ok 1 - platform sessions validate and obsolete single-token shapes fail closed
+  ---
+  duration_ms: 5.954709
+  type: 'test'
+  ...
+# Subtest: session membership never bypasses JWT signature, expiry, algorithm or nbf
+ok 2 - session membership never bypasses JWT signature, expiry, algorithm or nbf
+  ---
+  duration_ms: 1.870958
+  type: 'test'
+  ...
+# Subtest: platform token metadata can shorten but cannot extend JWT expiration
+ok 3 - platform token metadata can shorten but cannot extend JWT expiration
+  ---
+  duration_ms: 0.52825
+  type: 'test'
+  ...
+# Subtest: passwords are salted and plaintext credentials are rejected
+ok 4 - passwords are salted and plaintext credentials are rejected
+  ---
+  duration_ms: 189.52925
+  type: 'test'
+  ...
+# Subtest: build verification accepts matching source and rejects stale or dirty artifacts
+ok 5 - build verification accepts matching source and rejects stale or dirty artifacts
+  ---
+  duration_ms: 673.56025
+  type: 'test'
+  ...
+# Subtest: release images receive the same-run artifact and verify it before use
+ok 6 - release images receive the same-run artifact and verify it before use
+  ---
+  duration_ms: 10.998959
+  type: 'test'
+  ...
+# Subtest: complete artifact manifests reject changed, missing, extra files and untracked build inputs
+ok 7 - complete artifact manifests reject changed, missing, extra files and untracked build inputs
+  ---
+  duration_ms: 2044.586417
+  type: 'test'
+  ...
+# Subtest: form and API accept Chinese log names and existing supported names
+ok 8 - form and API accept Chinese log names and existing supported names
+  ---
+  duration_ms: 1.435041
+  type: 'test'
+  ...
+# Subtest: form and API still reject unsafe relative names and excessive length
+ok 9 - form and API still reject unsafe relative names and excessive length
+  ---
+  duration_ms: 0.998417
+  type: 'test'
+  ...
+# Subtest: API restricts absolute log paths to the configured directory or /dev/null
+ok 10 - API restricts absolute log paths to the configured directory or /dev/null
+  ---
+  duration_ms: 0.093083
+  type: 'test'
+  ...
+# Subtest: cron validation accepts leading-zero schedules and legacy null labels
+ok 11 - cron validation accepts leading-zero schedules and legacy null labels
+  ---
+  duration_ms: 19.546958
+  type: 'test'
+  ...
+# Subtest: cron validation identifies invalid fields
+ok 12 - cron validation identifies invalid fields
+  ---
+  duration_ms: 2.347125
+  type: 'test'
+  ...
+# Subtest: today failures includes recovered and deleted tasks, excluding previous days and successes
+not ok 13 - today failures includes recovered and deleted tasks, excluding previous days and successes
+  ---
+  duration_ms: 278.353958
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/dashboard-failures.test.cjs:9:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/back/api/dashboard.ts:121:72
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/dashboard-failures.test.cjs:72:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: dependency listing marks cache entries missing from disk for reinstall
+ok 14 - dependency listing marks cache entries missing from disk for reinstall
+  ---
+  duration_ms: 224.003917
+  type: 'test'
+  ...
+# Subtest: container logging discards stdout and forwards startup errors without persistent copies
+ok 15 - container logging discards stdout and forwards startup errors without persistent copies
+  ---
+  duration_ms: 35.830417
+  type: 'test'
+  ...
+# Subtest: non-container installs keep the PM2 logging defaults
+ok 16 - non-container installs keep the PM2 logging defaults
+  ---
+  duration_ms: 5.394583
+  type: 'test'
+  ...
+# Subtest: spawn failure settles without exit, and the next scheduled run can proceed
+ok 17 - spawn failure settles without exit, and the next scheduled run can proceed
+  ---
+  duration_ms: 33.771125
+  type: 'test'
+  ...
+# Subtest: completion waits for slow log consumers and preserves the final output
+ok 18 - completion waits for slow log consumers and preserves the final output
+  ---
+  duration_ms: 85.293542
+  type: 'test'
+  ...
+# Subtest: exit is not completion, and UTF-8 split across writes remains intact
+ok 19 - exit is not completion, and UTF-8 split across writes remains intact
+  ---
+  duration_ms: 13.546417
+  type: 'test'
+  ...
+# Subtest: failed log sink drains large output instead of blocking the child
+ok 20 - failed log sink drains large output instead of blocking the child
+  ---
+  duration_ms: 84.939625
+  type: 'test'
+  ...
+# Subtest: PID response keeps queue capacity occupied until cleanup completes
+ok 21 - PID response keeps queue capacity occupied until cleanup completes
+  ---
+  duration_ms: 307.431667
+  type: 'test'
+  ...
+# Subtest: before/error/end callback failures settle and release capacity
+ok 22 - before/error/end callback failures settle and release capacity
+  ---
+  duration_ms: 20.283667
+  type: 'test'
+  ...
+# Subtest: concurrent writes and closes preserve all bytes, and failed files can be closed
+ok 23 - concurrent writes and closes preserve all bytes, and failed files can be closed
+  ---
+  duration_ms: 197.767542
+  type: 'test'
+  ...
+# Subtest: file access enforces directory boundaries, blacklist descendants and symlinks
+ok 24 - file access enforces directory boundaries, blacklist descendants and symlinks
+  ---
+  duration_ms: 3.709667
+  type: 'test'
+  ...
+# Subtest: readDirs preserves the recursive tree contract and ignores blocked entries
+ok 25 - readDirs preserves the recursive tree contract and ignores blocked entries
+  ---
+  duration_ms: 60.152084
+  type: 'test'
+  ...
+# Subtest: gRPC cron response preserves Sequelize model fields through protobuf serialization
+ok 26 - gRPC cron response preserves Sequelize model fields through protobuf serialization
+  ---
+  duration_ms: 61.727459
+  type: 'test'
+  ...
+# Subtest: legacy plain cron rows normalize absent repeated fields
+ok 27 - legacy plain cron rows normalize absent repeated fields
+  ---
+  duration_ms: 0.189916
+  type: 'test'
+  ...
+# Subtest: HTTP listener preserves private binding and releases its port after shutdown
+ok 28 - HTTP listener preserves private binding and releases its port after shutdown
+  ---
+  duration_ms: 100.55375
+  type: 'test'
+  ...
+# Subtest: custom cluster deployments can restore shared listening
+ok 29 - custom cluster deployments can restore shared listening
+  ---
+  duration_ms: 1.143834
+  type: 'test'
+  ...
+# Subtest: HTTP authentication protects init, scopes, expired sessions and config secrets
+ok 30 - HTTP authentication protects init, scopes, expired sessions and config secrets
+  ---
+  duration_ms: 587.370292
+  type: 'test'
+  ...
+# Subtest: HTTP binding 127.0.0.1 never broadens an explicit private address
+ok 31 - HTTP binding 127.0.0.1 never broadens an explicit private address
+  ---
+  duration_ms: 18.073333
+  type: 'test'
+  ...
+# Subtest: gRPC binding 127.0.0.1 never broadens an explicit private address
+ok 32 - gRPC binding 127.0.0.1 never broadens an explicit private address
+  ---
+  duration_ms: 46.094292
+  type: 'test'
+  ...
+# Subtest: HTTP binding ::1 never broadens an explicit private address
+ok 33 - HTTP binding ::1 never broadens an explicit private address
+  ---
+  duration_ms: 9.4945
+  type: 'test'
+  ...
+# Subtest: gRPC binding ::1 never broadens an explicit private address
+ok 34 - gRPC binding ::1 never broadens an explicit private address
+  ---
+  duration_ms: 26.80225
+  type: 'test'
+  ...
+# Subtest: HTTP binding 192.0.2.1 never broadens an explicit private address
+ok 35 - HTTP binding 192.0.2.1 never broadens an explicit private address
+  ---
+  duration_ms: 12.081708
+  type: 'test'
+  ...
+# Subtest: gRPC binding 192.0.2.1 never broadens an explicit private address
+ok 36 - gRPC binding 192.0.2.1 never broadens an explicit private address
+  ---
+  duration_ms: 16.197417
+  type: 'test'
+  ...
+# Subtest: HTTP binding :: never broadens an explicit private address
+ok 37 - HTTP binding :: never broadens an explicit private address
+  ---
+  duration_ms: 39.070209
+  type: 'test'
+  ...
+# Subtest: gRPC binding :: never broadens an explicit private address
+ok 38 - gRPC binding :: never broadens an explicit private address
+  ---
+  duration_ms: 32.215334
+  type: 'test'
+  ...
+# Subtest: log streams reject traversal, sibling prefixes and escaping symlinks before writing
+ok 39 - log streams reject traversal, sibling prefixes and escaping symlinks before writing
+  ---
+  duration_ms: 88.30275
+  type: 'test'
+  ...
+# Subtest: log initialization rejects unsafe paths before mkdir or file writes
+ok 40 - log initialization rejects unsafe paths before mkdir or file writes
+  ---
+  duration_ms: 313.9565
+  type: 'test'
+  ...
+# Subtest: manual execution rejects escaping log names before creating directories or spawning
+ok 41 - manual execution rejects escaping log names before creating directories or spawning
+  ---
+  duration_ms: 539.73375
+  type: 'test'
+  ...
+# Subtest: log reader defaults to a bounded tail and supports incremental reads
+ok 42 - log reader defaults to a bounded tail and supports incremental reads
+  ---
+  duration_ms: 9.469166
+  type: 'test'
+  ...
+# Subtest: log reader enforces the maximum chunk size
+ok 43 - log reader enforces the maximum chunk size
+  ---
+  duration_ms: 10.157834
+  type: 'test'
+  ...
+# Subtest: log reader preserves UTF-8 characters across byte boundaries
+ok 44 - log reader preserves UTF-8 characters across byte boundaries
+  ---
+  duration_ms: 6.504084
+  type: 'test'
+  ...
+# Subtest: missing logs return an empty chunk
+ok 45 - missing logs return an empty chunk
+  ---
+  duration_ms: 0.940584
+  type: 'test'
+  ...
+# Subtest: manual execution captures a short child before slow status storage and flushes before release
+not ok 46 - manual execution captures a short child before slow status storage and flushes before release
+  ---
+  duration_ms: 691.369791
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-execution.test.cjs:11:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'data')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-execution.test.cjs:79:32)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: manual startup loses its conditional claim after stop and terminates the late child
+not ok 47 - manual startup loses its conditional claim after stop and terminates the late child
+  ---
+  duration_ms: 257.91075
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs:15:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs:120:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: manual startup loses its conditional claim after newer-queue and terminates the late child
+not ok 48 - manual startup loses its conditional claim after newer-queue and terminates the late child
+  ---
+  duration_ms: 258.504166
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs:15:5'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /stopped or superseded/. Input:
+    
+    "Cannot read properties of undefined (reading 'update')"
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: "Cannot read properties of undefined (reading 'update')"
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs:124:14)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: manual startup loses its conditional claim after stop-requeue and terminates the late child
+not ok 49 - manual startup loses its conditional claim after stop-requeue and terminates the late child
+  ---
+  duration_ms: 160.998584
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs:15:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs:110:23)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: verified termination waits for a SIGTERM-resistant target to exit
+ok 50 - verified termination waits for a SIGTERM-resistant target to exit
+  ---
+  duration_ms: 1126.064833
+  type: 'test'
+  ...
+# Subtest: a runner waiting for a concurrency slot cannot adopt a newer queued generation
+not ok 51 - a runner waiting for a concurrency slot cannot adopt a newer queued generation
+  ---
+  duration_ms: 165.110125
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs:147:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'update')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.run (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:650:47)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/manual-stop-claim.test.cjs:207:17)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: metrics keep only the newest bounded samples
+ok 52 - metrics keep only the newest bounded samples
+  ---
+  duration_ms: 10.158834
+  type: 'test'
+  ...
+# Subtest: empty metric queries return finite aggregates
+ok 53 - empty metric queries return finite aggregates
+  ---
+  duration_ms: 0.4865
+  type: 'test'
+  ...
+# Subtest: health probes bypass request metric retention with or without base URL
+ok 54 - health probes bypass request metric retention with or without base URL
+  ---
+  duration_ms: 0.587167
+  type: 'test'
+  ...
+# Subtest: non-health requests keep bounded service metrics
+ok 55 - non-health requests keep bounded service metrics
+  ---
+  duration_ms: 0.186292
+  type: 'test'
+  ...
+# Subtest: ordinary request metrics are sampled instead of retained per request
+ok 56 - ordinary request metrics are sampled instead of retained per request
+  ---
+  duration_ms: 0.2375
+  type: 'test'
+  ...
+# Subtest: warm cache avoids pnpm, preserves spaces, and never evaluates cached text
+ok 57 - warm cache avoids pnpm, preserves spaces, and never evaluates cached text
+  ---
+  duration_ms: 639.229917
+  type: 'test'
+  ...
+# Subtest: config, environment, cwd, and executable changes invalidate discovery
+ok 58 - config, environment, cwd, and executable changes invalidate discovery
+  ---
+  duration_ms: 1763.166917
+  type: 'test'
+  ...
+# Subtest: expired or malformed records refresh and failed lookups are not cached
+ok 59 - expired or malformed records refresh and failed lookups are not cached
+  ---
+  duration_ms: 932.369375
+  type: 'test'
+  ...
+# Subtest: disabled or unavailable cache falls back without changing discovery output
+ok 60 - disabled or unavailable cache falls back without changing discovery output
+  ---
+  duration_ms: 291.539834
+  type: 'test'
+  ...
+# Subtest: concurrent refreshes publish complete records and do not overwrite symlink targets
+ok 61 - concurrent refreshes publish complete records and do not overwrite symlink targets
+  ---
+  duration_ms: 384.172166
+  type: 'test'
+  ...
+# Subtest: task entry tolerates discovery failure with errexit enabled
+ok 62 - task entry tolerates discovery failure with errexit enabled
+  ---
+  duration_ms: 810.868167
+  type: 'test'
+  ...
+# Subtest: simultaneous cold and expired lookups share one successful refresh
+ok 63 - simultaneous cold and expired lookups share one successful refresh # SKIP
+  ---
+  duration_ms: 0.389083
+  type: 'test'
+  ...
+# Subtest: waiters with different configuration do not reuse another key
+ok 64 - waiters with different configuration do not reuse another key # SKIP
+  ---
+  duration_ms: 0.053125
+  type: 'test'
+  ...
+# Subtest: lock timeout falls back while a holder is still alive
+ok 65 - lock timeout falls back while a holder is still alive # SKIP
+  ---
+  duration_ms: 0.088875
+  type: 'test'
+  ...
+# Subtest: absent or unsupported flock and unsafe lock paths preserve discovery
+ok 66 - absent or unsupported flock and unsafe lock paths preserve discovery
+  ---
+  duration_ms: 2570.185083
+  type: 'test'
+  ...
+# Subtest: failed refresh releases lock and does not publish a success
+ok 67 - failed refresh releases lock and does not publish a success
+  ---
+  duration_ms: 935.276375
+  type: 'test'
+  ...
+# Subtest: refresh leaves the caller file descriptor and umask unchanged
+ok 68 - refresh leaves the caller file descriptor and umask unchanged
+  ---
+  duration_ms: 568.470792
+  type: 'test'
+  ...
+# Subtest: container APM policy keeps worker isolation and can restore all inherited probes
+ok 69 - container APM policy keeps worker isolation and can restore all inherited probes
+  ---
+  duration_ms: 3.283083
+  type: 'test'
+  ...
+# Subtest: standalone PM2 monitoring stays enabled
+ok 70 - standalone PM2 monitoring stays enabled
+  ---
+  duration_ms: 0.813125
+  type: 'test'
+  ...
+# Subtest: termination accepts Linux exited state Z before PID reaping
+ok 71 - termination accepts Linux exited state Z before PID reaping
+  ---
+  duration_ms: 26.71325
+  type: 'test'
+  ...
+# Subtest: termination accepts Linux exited state X before PID reaping
+ok 72 - termination accepts Linux exited state X before PID reaping
+  ---
+  duration_ms: 8.190458
+  type: 'test'
+  ...
+# Subtest: termination accepts Linux exited state x before PID reaping
+ok 73 - termination accepts Linux exited state x before PID reaping
+  ---
+  duration_ms: 7.836583
+  type: 'test'
+  ...
+# Subtest: termination keeps waiting while the process is running
+ok 74 - termination keeps waiting while the process is running
+  ---
+  duration_ms: 29.198
+  type: 'test'
+  ...
+# Subtest: a process disappearing during the procfs read is accepted
+ok 75 - a process disappearing during the procfs read is accepted
+  ---
+  duration_ms: 7.299666
+  type: 'test'
+  ...
+# Subtest: permission failures are not reported as successful termination
+ok 76 - permission failures are not reported as successful termination
+  ---
+  duration_ms: 5.967958
+  type: 'test'
+  ...
+# Subtest: rejects case variations under protected API namespaces
+ok 77 - rejects case variations under protected API namespaces
+  ---
+  duration_ms: 1.0775
+  type: 'test'
+  ...
+# Subtest: allows normalized protected paths and unrelated paths
+ok 78 - allows normalized protected paths and unrelated paths
+  ---
+  duration_ms: 0.178042
+  type: 'test'
+  ...
+# Subtest: ql log reads the requested system log history without PM2
+ok 79 - ql log reads the requested system log history without PM2
+  ---
+  duration_ms: 19.6075
+  type: 'test'
+  ...
+# Subtest: ql log follows the current Winston system log without PM2
+ok 80 - ql log follows the current Winston system log without PM2
+  ---
+  duration_ms: 1249.9945
+  type: 'test'
+  ...
+# Subtest: ql log reports when no persisted system log exists
+ok 81 - ql log reports when no persisted system log exists
+  ---
+  duration_ms: 11.288333
+  type: 'test'
+  ...
+# Subtest: retention policy defaults to disabled and clamps invalid values
+ok 82 - retention policy defaults to disabled and clamps invalid values
+  ---
+  duration_ms: 0.797042
+  type: 'test'
+  ...
+# Subtest: directory preview counts files recursively and ignores symlinks
+ok 83 - directory preview counts files recursively and ignores symlinks
+  ---
+  duration_ms: 28.992875
+  type: 'test'
+  ...
+# Subtest: cleanup previews first, protects running instances, and uses explicit options
+ok 84 - cleanup previews first, protects running instances, and uses explicit options
+  ---
+  duration_ms: 60.431875
+  type: 'test'
+  ...
+# Subtest: schedule health check uses the HTTP health endpoint and system logs
+    # Subtest: returns serving for a healthy prefixed HTTP service
+    ok 1 - returns serving for a healthy prefixed HTTP service
+      ---
+      duration_ms: 24.867
+      type: 'test'
+      ...
+    # Subtest: reports recent system logs when HTTP startup fails
+    ok 2 - reports recent system logs when HTTP startup fails
+      ---
+      duration_ms: 11.013875
+      type: 'test'
+      ...
+    1..2
+ok 85 - schedule health check uses the HTTP health endpoint and system logs
+  ---
+  duration_ms: 39.498041
+  type: 'test'
+  ...
+# Subtest: scheduler lock survives nested file writes and releases after success
+ok 86 - scheduler lock survives nested file writes and releases after success
+  ---
+  duration_ms: 86.189625
+  type: 'test'
+  ...
+# Subtest: scheduler lock survives nested file writes and releases after failure
+ok 87 - scheduler lock survives nested file writes and releases after failure
+  ---
+  duration_ms: 30.490083
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent create
+not ok 88 - recovery snapshot cannot overwrite concurrent create
+  ---
+  duration_ms: 478.579084
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:82:5'
+  failureType: 'testCodeFailure'
+  error: 'cron_1.SchedulerProjection is not a constructor'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:153:25)
+    withSchedulerMutation (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:33:22)
+    async Promise.all (index 1)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:118:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent update
+not ok 89 - recovery snapshot cannot overwrite concurrent update
+  ---
+  duration_ms: 385.367292
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:82:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findOne')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.getDb (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:642:59)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:291:36)
+    withSchedulerMutation (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:33:22)
+    async Promise.all (index 1)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:118:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent remove
+not ok 90 - recovery snapshot cannot overwrite concurrent remove
+  ---
+  duration_ms: 299.737375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:82:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'destroy')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:404:51)
+    async withSchedulerMutation (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:33:16)
+    async Promise.all (index 1)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:118:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent disabled
+not ok 91 - recovery snapshot cannot overwrite concurrent disabled
+  ---
+  duration_ms: 271.005167
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:82:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'update')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:858:51)
+    async withSchedulerMutation (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:33:16)
+    async Promise.all (index 1)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:118:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent enabled
+not ok 92 - recovery snapshot cannot overwrite concurrent enabled
+  ---
+  duration_ms: 249.038833
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:82:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'update')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:864:51)
+    withSchedulerMutation (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:33:22)
+    async Promise.all (index 1)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:118:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: recovery waits for an admitted mutation to finish registration before reading the DB
+not ok 93 - recovery waits for an admitted mutation to finish registration before reading the DB
+  ---
+  duration_ms: 131.182208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:118:1'
+  failureType: 'unhandledRejection'
+  error: 'cron_1.SchedulerProjection is not a constructor'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:153:25)
+    withSchedulerMutation (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:33:22)
+  ...
+# Subtest: create preserves scheduler 503 after rollback and releases its lock
+not ok 94 - create preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 135.142958
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:145:5'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    TypeError: cron_1.SchedulerProjection is not a constructor
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:178:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: update preserves scheduler 503 after rollback and releases its lock
+not ok 95 - update preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 130.22175
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:145:5'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    TypeError: Cannot read properties of undefined (reading 'findOne')
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:178:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: enabled preserves scheduler 503 after rollback and releases its lock
+not ok 96 - enabled preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 162.542291
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:145:5'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    TypeError: Cannot read properties of undefined (reading 'update')
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:178:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: scheduler lock excludes a second OS process and leaves no lock after completion
+ok 97 - scheduler lock excludes a second OS process and leaves no lock after completion
+  ---
+  duration_ms: 475.853917
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+not ok 98 - update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 135.982375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:221:13'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    TypeError: Cannot read properties of undefined (reading 'findOne')
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:271:9)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+not ok 99 - update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 130.851708
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:221:13'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    TypeError: Cannot read properties of undefined (reading 'findOne')
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:271:9)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+not ok 100 - update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 132.0255
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:221:13'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    TypeError: Cannot read properties of undefined (reading 'findOne')
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:271:9)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+not ok 101 - update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 126.151583
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:221:13'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    TypeError: Cannot read properties of undefined (reading 'findOne')
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:271:9)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+ok 102 - remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 116.695084
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+ok 103 - remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 121.011667
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+ok 104 - remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 137.849125
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+ok 105 - remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 151.003042
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+ok 106 - disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 171.51675
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+ok 107 - disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 172.283667
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+ok 108 - disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 144.485625
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+ok 109 - disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 161.830708
+  type: 'test'
+  ...
+# Subtest: configuration rollback cannot restore an obsolete manual queue token
+not ok 110 - configuration rollback cannot restore an obsolete manual queue token
+  ---
+  duration_ms: 160.251167
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:252:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    TypeError: Cannot read properties of undefined (reading 'findOne')
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/scheduler-mutation.test.cjs:305:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: readiness stays false through failed restoration and retries without idle polling
+ok 111 - readiness stays false through failed restoration and retries without idle polling
+  ---
+  duration_ms: 86.080208
+  type: 'test'
+  ...
+# Subtest: single-flight recovery cannot mark an invalidated generation ready
+ok 112 - single-flight recovery cannot mark an invalidated generation ready
+  ---
+  duration_ms: 45.12475
+  type: 'test'
+  ...
+# Subtest: mutation waiting is bounded, a later recovery can succeed
+ok 113 - mutation waiting is bounded, a later recovery can succeed
+  ---
+  duration_ms: 23.629959
+  type: 'test'
+  ...
+# Subtest: probe failure immediately invalidates a previously ready scheduler
+ok 114 - probe failure immediately invalidates a previously ready scheduler
+  ---
+  duration_ms: 44.574916
+  type: 'test'
+  ...
+# Subtest: health uses actual readiness and returns HTTP 503 until recovery
+ok 115 - health uses actual readiness and returns HTTP 503 until recovery
+  ---
+  duration_ms: 115.911583
+  type: 'test'
+  ...
+# Subtest: recovery registration errors propagate while ordinary autosave retains file synchronization
+ok 116 - recovery registration errors propagate while ordinary autosave retains file synchronization
+  ---
+  duration_ms: 6.501125
+  type: 'test'
+  ...
+# Subtest: scheduler probe uses the cron channel and failed writes are not replayed
+ok 117 - scheduler probe uses the cron channel and failed writes are not replayed
+  ---
+  duration_ms: 181.5955
+  type: 'test'
+  ...
+# Subtest: scheduler health probe never calls back into HTTP health
+ok 118 - scheduler health probe never calls back into HTTP health
+  ---
+  duration_ms: 10.65875
+  type: 'test'
+  ...
+# Subtest: recovery reconciles a surviving scheduler after missed deletes and disables, including an empty DB
+ok 119 - recovery reconciles a surviving scheduler after missed deletes and disables, including an empty DB
+  ---
+  duration_ms: 22.476291
+  type: 'test'
+  ...
+# Subtest: invalid replacement leaves the previous schedule intact
+ok 120 - invalid replacement leaves the previous schedule intact
+  ---
+  duration_ms: 18.027541
+  type: 'test'
+  ...
+# Subtest: pre-RPC channel failures invalidate readiness and return 503 without executing or replaying writes
+ok 121 - pre-RPC channel failures invalidate readiness and return 503 without executing or replaying writes
+  ---
+  duration_ms: 71.539458
+  type: 'test'
+  ...
+# Subtest: addCron invalidates an uncertain timed-out write without replaying it
+ok 122 - addCron invalidates an uncertain timed-out write without replaying it
+  ---
+  duration_ms: 86.576542
+  type: 'test'
+  ...
+# Subtest: delCron invalidates an uncertain timed-out write without replaying it
+ok 123 - delCron invalidates an uncertain timed-out write without replaying it
+  ---
+  duration_ms: 44.592167
+  type: 'test'
+  ...
+# Subtest: valid token cache is read with one jq and reused without generation
+ok 124 - valid token cache is read with one jq and reused without generation
+  ---
+  duration_ms: 1198.534209
+  type: 'test'
+  ...
+# Subtest: expired, corrupt, missing or header-unsafe token cache refreshes under errexit
+ok 125 - expired, corrupt, missing or header-unsafe token cache refreshes under errexit
+  ---
+  duration_ms: 602.844292
+  type: 'test'
+  ...
+# Subtest: success with a message still parses once and stays silent
+ok 126 - success with a message still parses once and stays silent
+  ---
+  duration_ms: 182.732083
+  type: 'test'
+  ...
+# Subtest: status and statistics errors preserve multiline Unicode messages
+ok 127 - status and statistics errors preserve multiline Unicode messages
+  ---
+  duration_ms: 327.019458
+  type: 'test'
+  ...
+# Subtest: non-JSON errors fall back to raw text and absent messages retain legacy null
+ok 128 - non-JSON errors fall back to raw text and absent messages retain legacy null
+  ---
+  duration_ms: 428.580917
+  type: 'test'
+  ...
+# Subtest: statistics without a task id perform no JSON parsing
+ok 129 - statistics without a task id perform no JSON parsing
+  ---
+  duration_ms: 5.496833
+  type: 'test'
+  ...
+# Subtest: canonical success resets prior errors and matches jq missing-message semantics
+ok 130 - canonical success resets prior errors and matches jq missing-message semantics
+  ---
+  duration_ms: 22.4335
+  type: 'test'
+  ...
+# Subtest: noncanonical JSON always uses jq, including whitespace, duplicate keys and embedded success text
+ok 131 - noncanonical JSON always uses jq, including whitespace, duplicate keys and embedded success text
+  ---
+  duration_ms: 1004.46375
+  type: 'test'
+  ...
+# Subtest: success-shaped invalid documents retain the raw-response error fallback
+ok 132 - success-shaped invalid documents retain the raw-response error fallback
+  ---
+  duration_ms: 290.652833
+  type: 'test'
+  ...
+# Subtest: WebSocket connections reject expired tokens and close when sessions are revoked
+ok 133 - WebSocket connections reject expired tokens and close when sessions are revoked
+  ---
+  duration_ms: 1028.799875
+  type: 'test'
+  ...
+# Subtest: stop wins when shell exit writes error or success during termination, preserving exit codes
+not ok 134 - stop wins when shell exit writes error or success during termination, preserving exit codes
+  ---
+  duration_ms: 490.694291
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:89:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:92:19)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: late shell completion cannot overwrite stopped instances
+not ok 135 - late shell completion cannot overwrite stopped instances
+  ---
+  duration_ms: 196.336833
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:104:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:107:19)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: rows created after the stop snapshot are not relabelled
+not ok 136 - rows created after the stop snapshot are not relabelled
+  ---
+  duration_ms: 183.824834
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:111:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:117:19)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: repeated stop does not rewrite historical rows or their finished timestamps
+not ok 137 - repeated stop does not rewrite historical rows or their finished timestamps
+  ---
+  duration_ms: 168.546375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:120:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:123:19)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: batch stop captures running instances from every requested cron
+not ok 138 - batch stop captures running instances from every requested cron
+  ---
+  duration_ms: 280.063916
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:130:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:136:19)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: stop signals every snapshotted PID exactly once and preserves a later running instance
+not ok 139 - stop signals every snapshotted PID exactly once and preserves a later running instance
+  ---
+  duration_ms: 268.18525
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:136:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:151:19)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: failed termination is not finalized as stopped
+not ok 140 - failed termination is not finalized as stopped
+  ---
+  duration_ms: 151.183709
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:149:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'findAll')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.stop (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:656:60)
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/back/stop-race.test.cjs:162:19)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: subscription becomes idle and closes its log even when completion logging fails
+ok 141 - subscription becomes idle and closes its log even when completion logging fails
+  ---
+  duration_ms: 553.150334
+  type: 'test'
+  ...
+# Subtest: clearing a dependency cache marks installed entries for reinstall
+ok 142 - clearing a dependency cache marks installed entries for reinstall
+  ---
+  duration_ms: 232.82875
+  type: 'test'
+  ...
+# Subtest: Linux task timestamps share a snapshot and retain millisecond log names across midnight
+ok 143 - Linux task timestamps share a snapshot and retain millisecond log names across midnight
+  ---
+  duration_ms: 45.47775
+  type: 'test'
+  ...
+# Subtest: explicit log paths and output mode remain intact
+ok 144 - explicit log paths and output mode remain intact
+  ---
+  duration_ms: 11.526375
+  type: 'test'
+  ...
+# Subtest: task failure keeps exit code and minimum one-second runtime
+ok 145 - task failure keeps exit code and minimum one-second runtime
+  ---
+  duration_ms: 7.146333
+  type: 'test'
+  ...
+# Subtest: manual stop retains stopped message and exit status reporting
+ok 146 - manual stop retains stopped message and exit status reporting
+  ---
+  duration_ms: 6.633041
+  type: 'test'
+  ...
+# Subtest: macos keeps legacy time conversion helpers
+ok 147 - macos keeps legacy time conversion helpers
+  ---
+  duration_ms: 14.062875
+  type: 'test'
+  ...
+# Subtest: custom keeps legacy time conversion helpers
+ok 148 - custom keeps legacy time conversion helpers
+  ---
+  duration_ms: 14.492834
+  type: 'test'
+  ...
+# Subtest: initialization returns the username and password validation result
+ok 149 - initialization returns the username and password validation result
+  ---
+  duration_ms: 246.0325
+  type: 'test'
+  ...
+# Subtest: initialization checks state inside a serialized mutation
+ok 150 - initialization checks state inside a serialized mutation
+  ---
+  duration_ms: 260.677458
+  type: 'test'
+  ...
+# Subtest: password change revokes sessions and closes connected clients
+ok 151 - password change revokes sessions and closes connected clients
+  ---
+  duration_ms: 294.070125
+  type: 'test'
+  ...
+# Subtest: a concurrent old-password login cannot restore a session after reset
+ok 152 - a concurrent old-password login cannot restore a session after reset
+  ---
+  duration_ms: 205.765375
+  type: 'test'
+  ...
+# Subtest: plaintext passwords are rejected without conversion
+ok 153 - plaintext passwords are rejected without conversion
+  ---
+  duration_ms: 79.153666
+  type: 'test'
+  ...
+# Subtest: TOTP failures are counted serially and further attempts are throttled
+ok 154 - TOTP failures are counted serially and further attempts are throttled
+  ---
+  duration_ms: 255.173667
+  type: 'test'
+  ...
+# Subtest: TOTP challenge expires and valid codes cannot be reused in the same step
+ok 155 - TOTP challenge expires and valid codes cannot be reused in the same step
+  ---
+  duration_ms: 301.756542
+  type: 'test'
+  ...
+# Subtest: active two-factor secret cannot be silently replaced and disabling revokes sessions
+ok 156 - active two-factor secret cannot be silently replaced and disabling revokes sessions
+  ---
+  duration_ms: 64.057291
+  type: 'test'
+  ...
+# Subtest: unknown default credentials do not grant fresh initialization
+ok 157 - unknown default credentials do not grant fresh initialization
+  ---
+  duration_ms: 41.314791
+  type: 'test'
+  ...
+# Subtest: PM2-managed primary disables only inherited worker APM and keeps worker metadata
+ok 158 - PM2-managed primary disables only inherited worker APM and keeps worker metadata
+  ---
+  duration_ms: 1.536875
+  type: 'test'
+  ...
+# Subtest: worker APM opt-in restores inherited PM2 settings, including explicit disable
+ok 159 - worker APM opt-in restores inherited PM2 settings, including explicit disable
+  ---
+  duration_ms: 0.693417
+  type: 'test'
+  ...
+# Subtest: standalone startup does not introduce a PM2-specific override
+ok 160 - standalone startup does not introduce a PM2-specific override
+  ---
+  duration_ms: 0.342
+  type: 'test'
+  ...
+# Subtest: replacement workers receive the same monitoring policy
+ok 161 - replacement workers receive the same monitoring policy
+  ---
+  duration_ms: 0.400542
+  type: 'test'
+  ...
+# Subtest: WPUSH survives protobuf and JSON round trips without changing existing modes
+ok 162 - WPUSH survives protobuf and JSON round trips without changing existing modes
+  ---
+  duration_ms: 3.755292
+  type: 'test'
+  ...
+# Subtest: decoded SystemNotify requests reach WPUSH with explicit or saved configuration
+ok 163 - decoded SystemNotify requests reach WPUSH with explicit or saved configuration
+  ---
+  duration_ms: 305.047708
+  type: 'test'
+  ...
+# Subtest: validation errors include the failing field names
+ok 164 - validation errors include the failing field names
+  ---
+  duration_ms: 5.526
+  type: 'test'
+  ...
+# Subtest: existing API error details remain visible
+ok 165 - existing API error details remain visible
+  ---
+  duration_ms: 0.122459
+  type: 'test'
+  ...
+# Subtest: Git resource HTTP boundary never reflects submitted secrets or internal errors; routes are read/write specific
+ok 166 - Git resource HTTP boundary never reflects submitted secrets or internal errors; routes are read/write specific
+  ---
+  duration_ms: 278.777
+  type: 'test'
+  ...
+# Subtest: same GitHub identity: https://github.com/anysoft/test.git
+ok 167 - same GitHub identity: https://github.com/anysoft/test.git
+  ---
+  duration_ms: 0.904625
+  type: 'test'
+  ...
+# Subtest: same GitHub identity: https://GITHUB.COM/anysoft/test
+ok 168 - same GitHub identity: https://GITHUB.COM/anysoft/test
+  ---
+  duration_ms: 0.174084
+  type: 'test'
+  ...
+# Subtest: same GitHub identity: git@github.com:anysoft/test.git
+ok 169 - same GitHub identity: git@github.com:anysoft/test.git
+  ---
+  duration_ms: 0.0815
+  type: 'test'
+  ...
+# Subtest: same GitHub identity: ssh://git@github.com/anysoft/test.git
+ok 170 - same GitHub identity: ssh://git@github.com/anysoft/test.git
+  ---
+  duration_ms: 0.068625
+  type: 'test'
+  ...
+# Subtest: provider neutral nested identity: gitlab.com
+ok 171 - provider neutral nested identity: gitlab.com
+  ---
+  duration_ms: 0.137167
+  type: 'test'
+  ...
+# Subtest: provider neutral nested identity: gitee.com
+ok 172 - provider neutral nested identity: gitee.com
+  ---
+  duration_ms: 0.051375
+  type: 'test'
+  ...
+# Subtest: provider neutral nested identity: git.example.internal
+ok 173 - provider neutral nested identity: git.example.internal
+  ---
+  duration_ms: 0.100917
+  type: 'test'
+  ...
+# Subtest: generic paths remain case sensitive and nondefault ports distinct
+ok 174 - generic paths remain case sensitive and nondefault ports distinct
+  ---
+  duration_ms: 0.176416
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 175 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.462834
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 176 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.354709
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 177 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.116958
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 178 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.045
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 179 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.043666
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 180 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.032041
+  type: 'test'
+  ...
+# Subtest: reject unsafe or credentialized URL without reflecting input
+ok 181 - reject unsafe or credentialized URL without reflecting input
+  ---
+  duration_ms: 0.031292
+  type: 'test'
+  ...
+# Subtest: redacts split output, authorization, URL, private material and encoded secrets
+ok 182 - redacts split output, authorization, URL, private material and encoded secrets
+  ---
+  duration_ms: 80.723667
+  type: 'test'
+  ...
+# Subtest: concurrent HTTPS contexts have private immutable snapshots and idempotent cleanup
+ok 183 - concurrent HTTPS contexts have private immutable snapshots and idempotent cleanup
+  ---
+  duration_ms: 740.246291
+  type: 'test'
+  ...
+# Subtest: SSH contexts isolate keys and require verified known_hosts
+ok 184 - SSH contexts isolate keys and require verified known_hosts
+  ---
+  duration_ms: 10.327958
+  type: 'test'
+  ...
+# Subtest: disabled, missing, wrong transport and READ push fail closed
+ok 185 - disabled, missing, wrong transport and READ push fail closed
+  ---
+  duration_ms: 4.705417
+  type: 'test'
+  ...
+# Subtest: bounded output cannot leak a partial secret at truncation boundary; timeout terminates
+ok 186 - bounded output cannot leak a partial secret at truncation boundary; timeout terminates
+  ---
+  duration_ms: 129.128959
+  type: 'test'
+  ...
+# Subtest: timeout terminates a child process group before credential cleanup
+ok 187 - timeout terminates a child process group before credential cleanup
+  ---
+  duration_ms: 210.41225
+  type: 'test'
+  ...
+# Subtest: workspace HTTP API rejects paths/force/ref injection and preserves operation error codes
+ok 188 - workspace HTTP API rejects paths/force/ref injection and preserves operation error codes
+  ---
+  duration_ms: 4115.360459
+  type: 'test'
+  ...
+# Subtest: cross-process POSIX locks release after owner crash, success and errors
+ok 189 - cross-process POSIX locks release after owner crash, success and errors
+  ---
+  duration_ms: 2412.436333
+  type: 'test'
+  ...
+# Subtest: repository mutation matrix and execution lease exclusivity
+ok 190 - repository mutation matrix and execution lease exclusivity
+  ---
+  duration_ms: 7497.76925
+  type: 'test'
+  ...
+# Subtest: real Git timeout and controller crash during Git release locks after child termination
+ok 191 - real Git timeout and controller crash during Git release locks after child termination
+  ---
+  duration_ms: 1727.911417
+  type: 'test'
+  ...
+# Subtest: bare initialization is persistent; fetch updates/prunes remote refs and uses current credentials
+ok 192 - bare initialization is persistent; fetch updates/prunes remote refs and uses current credentials
+  ---
+  duration_ms: 4859.559667
+  type: 'test'
+  ...
+# Subtest: branch worktrees share objects; fetch never moves a worktree; update is explicit FF only
+ok 193 - branch worktrees share objects; fetch never moves a worktree; update is explicit FF only
+  ---
+  duration_ms: 6168.434583
+  type: 'test'
+  ...
+# Subtest: dirty, staged, ignored/untracked and conflicts are visible and protected
+ok 194 - dirty, staged, ignored/untracked and conflicts are visible and protected
+  ---
+  duration_ms: 8703.166792
+  type: 'test'
+  ...
+# Subtest: local commits are retained; diverged and detached worktrees cannot be reset by update/delete
+ok 195 - local commits are retained; diverged and detached worktrees cannot be reset by update/delete
+  ---
+  duration_ms: 4804.420042
+  type: 'test'
+  ...
+# Subtest: execution leases block mutation and prune; missing worktrees remain records and repair preserves branch
+ok 196 - execution leases block mutation and prune; missing worktrees remain records and repair preserves branch
+  ---
+  duration_ms: 4180.507458
+  type: 'test'
+  ...
+# Subtest: non-git storage and managed-path symlink replacements never trigger recursive deletion
+ok 197 - non-git storage and managed-path symlink replacements never trigger recursive deletion
+  ---
+  duration_ms: 546.023292
+  type: 'test'
+  ...
+# Subtest: strict Managed crontab install reports errors while original default behavior is preserved
+not ok 198 - strict Managed crontab install reports errors while original default behavior is preserved
+  ---
+  duration_ms: 800.552292
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase3/cron-publication.test.cjs:5:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'update')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    SchedulerBridgeService.setCrontab (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:1006:47)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase3/cron-publication.test.cjs:7:46)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: profile references block repository filesystem deletion before mutation
+not ok 199 - profile references block repository filesystem deletion before mutation
+  ---
+  duration_ms: 1868.015041
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase4/repository-deletion.test.cjs:5:1'
+  failureType: 'testCodeFailure'
+  error: 'SQLITE_ERROR: no such table: Tasks'
+  code: 'ERR_TEST_FAILURE'
+  name: 'SequelizeDatabaseError'
+  stack: |-
+    Database.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:236:27)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:234:50
+    new Promise (<anonymous>)
+    Query.run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:234:12)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/sequelize.js:650:28
+    async SQLiteQueryInterface.rawSelect (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/abstract/query-interface.js:1043:18)
+    async Function.aggregate (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/model.js:2067:19)
+    async Function.count (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/model.js:2124:20)
+    async Promise.all (index 2)
+    async RepositoryEnvProfileService.detail (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:40:59)
+  ...
+# Subtest: Config/Hook API contracts deny Secret plaintext in all responses and sanitize malformed payloads
+not ok 200 - Config/Hook API contracts deny Secret plaintext in all responses and sanitize malformed payloads
+  ---
+  duration_ms: 1406.732958
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/api.test.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/api.test.cjs:12:34)
+    processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: immutable revisions, optimistic edits, private storage, Secret response and downgrade protection
+ok 201 - immutable revisions, optimistic edits, private storage, Secret response and downgrade protection
+  ---
+  duration_ms: 1618.255667
+  type: 'test'
+  ...
+# Subtest: Repository inheritance, Task override/MASK, normalized uniqueness, disabled and manual bindings, references and cascades
+not ok 202 - Repository inheritance, Task override/MASK, normalized uniqueness, disabled and manual bindings, references and cascades
+  ---
+  duration_ms: 716.354792
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/domain.test.cjs:34:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/domain.test.cjs:27:276)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Hook CRUD, stable order, transactional reorder conflict rollback and Task cascade
+not ok 203 - Hook CRUD, stable order, transactional reorder conflict rollback and Task cascade
+  ---
+  duration_ms: 519.538333
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/domain.test.cjs:58:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/domain.test.cjs:40:113)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: uncommitted revision directory is retained and next edit allocates a fresh immutable path
+ok 204 - uncommitted revision directory is retained and next edit allocates a fresh immutable path
+  ---
+  duration_ms: 583.432208
+  type: 'test'
+  ...
+# Subtest: BEFORE JSON set/unset/secret produces derived snapshot only and retains historical secrets
+ok 205 - BEFORE JSON set/unset/secret produces derived snapshot only and retains historical secrets
+  ---
+  duration_ms: 934.823125
+  type: 'test'
+  ...
+# Subtest: invalid output, reserved/invalid names, oversized values, unknown operations and symlink reject without secret errors
+ok 206 - invalid output, reserved/invalid names, oversized values, unknown operations and symlink reject without secret errors
+  ---
+  duration_ms: 487.231792
+  type: 'test'
+  ...
+# Subtest: UTF-8 streaming redactor covers chunk boundaries and newly tracked secrets
+ok 207 - UTF-8 streaming redactor covers chunk boundaries and newly tracked secrets
+  ---
+  duration_ms: 511.358875
+  type: 'test'
+  ...
+# Subtest: Secret names require own ENV entries and unset never reintroduces prototype properties
+ok 208 - Secret names require own ENV entries and unset never reintroduces prototype properties
+  ---
+  duration_ms: 527.775125
+  type: 'test'
+  ...
+# Subtest: COPY readonly=true, per-run copy, canonical immutable and cleanup
+ok 209 - COPY readonly=true, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 1330.502959
+  type: 'test'
+  ...
+# Subtest: COPY readonly=false, per-run copy, canonical immutable and cleanup
+ok 210 - COPY readonly=false, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 826.410625
+  type: 'test'
+  ...
+# Subtest: SYMLINK readonly=true, per-run copy, canonical immutable and cleanup
+ok 211 - SYMLINK readonly=true, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 919.969583
+  type: 'test'
+  ...
+# Subtest: SYMLINK readonly=false, per-run copy, canonical immutable and cleanup
+ok 212 - SYMLINK readonly=false, per-run copy, canonical immutable and cleanup
+  ---
+  duration_ms: 803.37875
+  type: 'test'
+  ...
+# Subtest: replace restores original exact bytes/mode after simulated process loss and next acquire
+ok 213 - replace restores original exact bytes/mode after simulated process loss and next acquire
+  ---
+  duration_ms: 825.453292
+  type: 'test'
+  ...
+# Subtest: unsafe paths, symlink parents/targets, special files, duplicate physical aliases fail without touching user data
+ok 214 - unsafe paths, symlink parents/targets, special files, duplicate physical aliases fail without touching user data
+  ---
+  duration_ms: 681.051291
+  type: 'test'
+  ...
+# Subtest: unexpected replacement is preserved with backup and recoverable journal
+ok 215 - unexpected replacement is preserved with backup and recoverable journal
+  ---
+  duration_ms: 732.584084
+  type: 'test'
+  ...
+# Subtest: pinned revision remains old through asset edit; next resolve sees new revision
+ok 216 - pinned revision remains old through asset edit; next resolve sees new revision
+  ---
+  duration_ms: 890.504
+  type: 'test'
+  ...
+# Subtest: recovery rejects a journal task root outside the leased workspace without writing outside
+ok 217 - recovery rejects a journal task root outside the leased workspace without writing outside
+  ---
+  duration_ms: 602.067917
+  type: 'test'
+  ...
+# Subtest: POSIX group cleanup accepts only a verified dead Darwin group, never live permission failures
+ok 218 - POSIX group cleanup accepts only a verified dead Darwin group, never live permission failures
+  ---
+  duration_ms: 435.876042
+  type: 'test'
+  ...
+# Subtest: failed publication retains Task Hooks, Config bindings and ENV; successful deletion cascades once
+not ok 219 - failed publication retains Task Hooks, Config bindings and ENV; successful deletion cascades once
+  ---
+  duration_ms: 1510.171208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/publication-integrity.test.cjs:5:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/publication-integrity.test.cjs:5:34)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+not ok 220 - real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 1123.241334
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:32:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:22:77)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+not ok 221 - real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 740.964542
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:32:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:22:77)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+not ok 222 - real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 541.948458
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:32:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:22:77)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+not ok 223 - real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+  ---
+  duration_ms: 821.292208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:56:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:34:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: lifecycle: main failure
+not ok 224 - lifecycle: main failure
+  ---
+  duration_ms: 544.666959
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:84:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:47:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+not ok 225 - lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+  ---
+  duration_ms: 544.03575
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:84:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:47:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: lifecycle: FINALLY failure changes success
+not ok 226 - lifecycle: FINALLY failure changes success
+  ---
+  duration_ms: 353.571625
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:84:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:47:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: lifecycle: FINALLY failure preserves primary
+not ok 227 - lifecycle: FINALLY failure preserves primary
+  ---
+  duration_ms: 566.907917
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:84:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:47:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: lifecycle: CONTINUE before failure permits MAIN
+not ok 228 - lifecycle: CONTINUE before failure permits MAIN
+  ---
+  duration_ms: 562.727292
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:84:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:47:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: lifecycle: invalid BEFORE output fails without leaking generated log
+not ok 229 - lifecycle: invalid BEFORE output fails without leaking generated log
+  ---
+  duration_ms: 510.591958
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:84:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:47:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: graceful cancellation tee=false executes AFTER_FAILURE/FINALLY with config, then restores original
+not ok 230 - graceful cancellation tee=false executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 488.936708
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:99:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:53:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: graceful cancellation tee=true executes AFTER_FAILURE/FINALLY with config, then restores original
+not ok 231 - graceful cancellation tee=true executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 523.95075
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:99:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:53:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+not ok 232 - same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+  ---
+  duration_ms: 324.782375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:117:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:60:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: live execution pins Config revision, ENV and Hook plan across edits; next run observes new values
+not ok 233 - live execution pins Config revision, ENV and Hook plan across edits; next run observes new values
+  ---
+  duration_ms: 320.582083
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:150:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:70:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: manual, Node runCron and system command entrypoints share Config/Hooks and exit semantics
+not ok 234 - manual, Node runCron and system command entrypoints share Config/Hooks and exit semantics
+  ---
+  duration_ms: 199.497458
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:175:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:78:81)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: PREPARE conflict starts no user phase and preserves existing data
+not ok 235 - PREPARE conflict starts no user phase and preserves existing data
+  ---
+  duration_ms: 215.88075
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:211:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:90:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: MAIN timeout invokes failure and finally independently of hook deadlines
+not ok 236 - MAIN timeout invokes failure and finally independently of hook deadlines
+  ---
+  duration_ms: 285.289833
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:226:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:93:53)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: all publication sources share the existing global publication-1 lease
+not ok 237 - all publication sources share the existing global publication-1 lease
+  ---
+  duration_ms: 227.901917
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:237:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:96:223)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: frozen platform v1 upgrades transactionally to identical fresh latest schema and preserves data/hooks
+not ok 238 - frozen platform v1 upgrades transactionally to identical fresh latest schema and preserves data/hooks
+  ---
+  duration_ms: 1529.484541
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/schema.test.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    6 !== 5
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 5
+  actual: 6
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/schema.test.cjs:10:102)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: migration failure rolls back DDL, data, hooks and version then permits retry
+ok 239 - migration failure rolls back DDL, data, hooks and version then permits retry
+  ---
+  duration_ms: 536.661
+  type: 'test'
+  ...
+# Subtest: unknown and tampered v1 databases fail closed without touching user rows
+ok 240 - unknown and tampered v1 databases fail closed without touching user rows
+  ---
+  duration_ms: 431.678125
+  type: 'test'
+  ...
+# Subtest: late migration failure after old columns drop restores all v1 data and hook fields
+ok 241 - late migration failure after old columns drop restores all v1 data and hook fields
+  ---
+  duration_ms: 652.664917
+  type: 'test'
+  ...
+# Subtest: Script HTTP access is excluded by Config SH lease and blocked by stale journals, then resumes
+ok 242 - Script HTTP access is excluded by Config SH lease and blocked by stale journals, then resumes
+  ---
+  duration_ms: 1832.183
+  type: 'test'
+  ...
+# Subtest: Node retains API flock after helper exit through asynchronous action and response completion
+ok 243 - Node retains API flock after helper exit through asynchronous action and response completion
+  ---
+  duration_ms: 1103.286959
+  type: 'test'
+  ...
+# Subtest: Runtime API returns tracked async IDs, denies arbitrary commands/paths and sanitizes every error
+ok 244 - Runtime API returns tracked async IDs, denies arbitrary commands/paths and sanitizes every error
+  ---
+  duration_ms: 3293.93875
+  type: 'test'
+  ...
+# Subtest: backend SIGKILL retains inherited provider lease until supervised descendants exit, then recovery succeeds
+ok 245 - backend SIGKILL retains inherited provider lease until supervised descendants exit, then recovery succeeds
+  ---
+  duration_ms: 2788.861958
+  type: 'test'
+  ...
+# Subtest: partial remove failure retains record and ownership for retry; provider failure preserves interpreter
+ok 246 - partial remove failure retains record and ownership for retry; provider failure preserves interpreter
+  ---
+  duration_ms: 4241.837292
+  type: 'test'
+  ...
+# Subtest: disk full and command failures produce bounded static errors and leave partial runtime repairable
+ok 247 - disk full and command failures produce bounded static errors and leave partial runtime repairable
+  ---
+  duration_ms: 1048.238167
+  type: 'test'
+  ...
+# Subtest: bounded runtime logs drain oversized output without exposing private HOME or symlink targets
+ok 248 - bounded runtime logs drain oversized output without exposing private HOME or symlink targets
+  ---
+  duration_ms: 2871.36725
+  type: 'test'
+  ...
+# Subtest: real provider validation rejects dirty code, mismatched revision and .git symlink before execution
+ok 249 - real provider validation rejects dirty code, mismatched revision and .git symlink before execution
+  ---
+  duration_ms: 3107.273917
+  type: 'test'
+  ...
+# Subtest: unknown nonempty provider root is preserved; symlinked cache reports missing requirement
+ok 250 - unknown nonempty provider root is preserved; symlinked cache reports missing requirement
+  ---
+  duration_ms: 661.928875
+  type: 'test'
+  ...
+# Subtest: fixed interpreter diagnostic rejects incorrect version and prefix even on first installation
+ok 251 - fixed interpreter diagnostic rejects incorrect version and prefix even on first installation
+  ---
+  duration_ms: 3341.055542
+  type: 'test'
+  ...
+# Subtest: exact catalog filters implementations, prereleases and injection
+ok 252 - exact catalog filters implementations, prereleases and injection
+  ---
+  duration_ms: 1117.105542
+  type: 'test'
+  ...
+# Subtest: provider setup, two runtimes, explicit verify/repair/remove preserve sibling and snapshots
+ok 253 - provider setup, two runtimes, explicit verify/repair/remove preserve sibling and snapshots
+  ---
+  duration_ms: 4867.445959
+  type: 'test'
+  ...
+# Subtest: cross-service lock, cancel and timeout keep operation ownership and descendants bounded
+ok 254 - cross-service lock, cancel and timeout keep operation ownership and descendants bounded
+  ---
+  duration_ms: 2578.1675
+  type: 'test'
+  ...
+# Subtest: paths reject unknown roots, version symlink, parent symlink and executable escape
+ok 255 - paths reject unknown roots, version symlink, parent symlink and executable escape
+  ---
+  duration_ms: 865.435666
+  type: 'test'
+  ...
+# Subtest: recovery never kills stored PID or adopts unknown versions; reference checks block removal
+ok 256 - recovery never kills stored PID or adopts unknown versions; reference checks block removal
+  ---
+  duration_ms: 2187.523583
+  type: 'test'
+  ...
+# Subtest: build environment excludes backend/user secrets and logs redact split UTF-8 secrets
+ok 257 - build environment excludes backend/user secrets and logs redact split UTF-8 secrets
+  ---
+  duration_ms: 796.310209
+  type: 'test'
+  ...
+# Subtest: frozen v2 migrates to identical fresh latest schema, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+not ok 258 - frozen v2 migrates to identical fresh latest schema, preserves ENV/Config/Hooks and enforces runtime CHECK/FK constraints
+  ---
+  duration_ms: 1291.342916
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase6/schema.test.cjs:12:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    6 !== 5
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 5
+  actual: 6
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase6/schema.test.cjs:17:9)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: v2 late migration failure rolls back runtime tables, metadata and data, then retries
+ok 259 - v2 late migration failure rolls back runtime tables, metadata and data, then retries
+  ---
+  duration_ms: 658.945625
+  type: 'test'
+  ...
+# Subtest: tampered v2 signature and unknown version fail closed
+ok 260 - tampered v2 signature and unknown version fail closed
+  ---
+  duration_ms: 529.900375
+  type: 'test'
+  ...
+# Subtest: Environment API scopes, strict input, definitions, optimistic revisions, reference protection and safe empty deletion
+ok 261 - Environment API scopes, strict input, definitions, optimistic revisions, reference protection and safe empty deletion
+  ---
+  duration_ms: 4936.341792
+  type: 'test'
+  ...
+# Subtest: staging write failure, timeout and cancellation release locks, never publish or damage Runtime
+ok 262 - staging write failure, timeout and cancellation release locks, never publish or damage Runtime
+  ---
+  duration_ms: 4812.941875
+  type: 'test'
+  ...
+# Subtest: partial filesystem deletion remains ERROR and retryable; publication DB failure never switches Current
+ok 263 - partial filesystem deletion remains ERROR and retryable; publication DB failure never switches Current
+  ---
+  duration_ms: 2617.350709
+  type: 'test'
+  ...
+# Subtest: Environment ownership refuses symlinks, replaced roots, foreign IDs, unknown files and lease collisions
+ok 264 - Environment ownership refuses symlinks, replaced roots, foreign IDs, unknown files and lease collisions
+  ---
+  duration_ms: 960.57325
+  type: 'test'
+  ...
+# Subtest: frozen v3 to v4 is transactional, preserves runtime/history and equals fresh signature
+not ok 265 - frozen v3 to v4 is transactional, preserves runtime/history and equals fresh signature
+  ---
+  duration_ms: 1311.567292
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase7/schema.test.cjs:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    6 !== 5
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 5
+  actual: 6
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase7/schema.test.cjs:15:9)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: v3 tampering fails closed before any schema or user-data changes
+ok 266 - v3 tampering fails closed before any schema or user-data changes
+  ---
+  duration_ms: 605.348209
+  type: 'test'
+  ...
+# Subtest: actual SQLite constraints protect immutable revisions, build identity, current ownership and runtime FKs
+ok 267 - actual SQLite constraints protect immutable revisions, build identity, current ownership and runtime FKs
+  ---
+  duration_ms: 379.404875
+  type: 'test'
+  ...
+# Subtest: Node panel-only strict API, identity scoping, optimistic definitions and resource-owned operations
+ok 268 - Node panel-only strict API, identity scoping, optimistic definitions and resource-owned operations
+  ---
+  duration_ms: 2987.545334
+  type: 'test'
+  ...
+# Subtest: Node Build publish transaction failure and ENOSPC keep Current and Runtime healthy
+ok 269 - Node Build publish transaction failure and ENOSPC keep Current and Runtime healthy
+  ---
+  duration_ms: 2981.194375
+  type: 'test'
+  ...
+# Subtest: Node partial filesystem deletion remains ERROR, preserves unknown files, and explicit retry finalizes DB
+ok 270 - Node partial filesystem deletion remains ERROR, preserves unknown files, and explicit retry finalizes DB
+  ---
+  duration_ms: 2434.030791
+  type: 'test'
+  ...
+# Subtest: official-provider download boundary: checksum mismatch and cancellation never publish Runtime and clean private staging
+ok 271 - official-provider download boundary: checksum mismatch and cancellation never publish Runtime and clean private staging
+  ---
+  duration_ms: 2675.352125
+  type: 'test'
+  ...
+# Subtest: v4 → v5 preserves real Python environment references; fresh matches migration and late failure rolls back
+not ok 272 - v4 → v5 preserves real Python environment references; fresh matches migration and late failure rolls back
+  ---
+  duration_ms: 644.05175
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase8/schema.test.cjs:8:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    6 !== 5
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 5
+  actual: 6
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase8/schema.test.cjs:16:156)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: v4 tampering is rejected without mutation
+ok 273 - v4 tampering is rejected without mutation
+  ---
+  duration_ms: 238.509709
+  type: 'test'
+  ...
+# Subtest: Node actual SQLite constraints protect language/toolchain and immutable revision/build ownership
+ok 274 - Node actual SQLite constraints protect language/toolchain and immutable revision/build ownership
+  ---
+  duration_ms: 314.385791
+  type: 'test'
+  ...
+# Subtest: archive preflight rejects traversal, absolute paths, symlink/hardlink escape, special files and link ancestors before extraction
+ok 275 - archive preflight rejects traversal, absolute paths, symlink/hardlink escape, special files and link ancestors before extraction
+  ---
+  duration_ms: 1424.96175
+  type: 'test'
+  ...
+# Subtest: Node resource IDs, ownership, inode and symlink boundary fail closed without deleting unknown data
+ok 276 - Node resource IDs, ownership, inode and symlink boundary fail closed without deleting unknown data
+  ---
+  duration_ms: 1029.542916
+  type: 'test'
+  ...
+# Subtest: Node catalog, exact versions, platform and registry credential/source policy
+ok 277 - Node catalog, exact versions, platform and registry credential/source policy
+  ---
+  duration_ms: 390.005333
+  type: 'test'
+  ...
+# Subtest: script filename route is removed while the detail API remains
+ok 278 - script filename route is removed while the detail API remains
+  ---
+  duration_ms: 211.512084
+  type: 'test'
+  ...
+# Subtest: log filename route is removed while the detail API remains
+ok 279 - log filename route is removed while the detail API remains
+  ---
+  duration_ms: 26.554167
+  type: 'test'
+  ...
+# Subtest: arbitrary Config editor has no public controller or service
+ok 280 - arbitrary Config editor has no public controller or service
+  ---
+  duration_ms: 0.131875
+  type: 'test'
+  ...
+# Subtest: fresh seed is local, idempotent and creates no usable password or legacy startup task
+not ok 281 - fresh seed is local, idempotent and creates no usable password or legacy startup task
+  ---
+  duration_ms: 23.702125
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/bootstrap-data.test.cjs:5:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'update')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    exports.default (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:74:43)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/bootstrap-data.test.cjs:37:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: database loader rejects initialization failure rather than allowing workers to start
+ok 282 - database loader rejects initialization failure rather than allowing workers to start
+  ---
+  duration_ms: 290.53725
+  type: 'test'
+  ...
+# Subtest: A/B/D/H/I: stable identity, reusable credentials, secret replacement and deletion protection
+ok 283 - A/B/D/H/I: stable identity, reusable credentials, secret replacement and deletion protection
+  ---
+  duration_ms: 532.512042
+  type: 'test'
+  ...
+# Subtest: C: encrypted SSH key validation derives public key, preserves secret privacy and supports reuse
+ok 284 - C: encrypted SSH key validation derives public key, preserves secret privacy and supports reuse
+  ---
+  duration_ms: 1966.520667
+  type: 'test'
+  ...
+# Subtest: access tests use only ls-remote, update status, hide remote errors and clean contexts
+ok 285 - access tests use only ls-remote, update status, hide remote errors and clean contexts
+  ---
+  duration_ms: 126.4725
+  type: 'test'
+  ...
+# Subtest: credential update does not mutate the snapshot of a running invocation
+ok 286 - credential update does not mutate the snapshot of a running invocation
+  ---
+  duration_ms: 222.46425
+  type: 'test'
+  ...
+# Subtest: DB projection controls identity, nested filters, metadata updates, user edits and removal policy
+ok 287 - DB projection controls identity, nested filters, metadata updates, user edits and removal policy
+  ---
+  duration_ms: 878.791666
+  type: 'test'
+  ...
+# Subtest: symlinks fail closed and no cron metadata never invents a schedule
+ok 288 - symlinks fail closed and no cron metadata never invents a schedule
+  ---
+  duration_ms: 541.274292
+  type: 'test'
+  ...
+# Subtest: definition DB failure and scheduler failure compensate updates without changing task identity or overrides
+not ok 289 - definition DB failure and scheduler failure compensate updates without changing task identity or overrides
+  ---
+  duration_ms: 806.202792
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/discovery.test.cjs:49:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/discovery.test.cjs:41:36)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: scoped sh account concurrency keeps split secrets in private temporary logs
+not ok 290 - scoped sh account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 478.662333
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-account-mode.test.cjs:7:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-account-mode.test.cjs:6:37)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: scoped js account concurrency keeps split secrets in private temporary logs
+not ok 291 - scoped js account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 319.6635
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-account-mode.test.cjs:7:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-account-mode.test.cjs:6:37)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: scoped py account concurrency keeps split secrets in private temporary logs
+not ok 292 - scoped py account concurrency keeps split secrets in private temporary logs
+  ---
+  duration_ms: 177.004584
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-account-mode.test.cjs:7:5'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-account-mode.test.cjs:6:37)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+not ok 293 - real HTTP APIs mask secrets and validation errors, enforce scope and block open access
+  ---
+  duration_ms: 404.445083
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-api.test.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-api.test.cjs:8:37)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: profile CRUD, uniqueness, default, clone secrets, and reference protection
+not ok 294 - profile CRUD, uniqueness, default, clone secrets, and reference protection
+  ---
+  duration_ms: 355.927208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:11:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    resources (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:6:37)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:10:51)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors
+not ok 295 - secret keep/replace/clear, metadata edits, atomic batch rollback and safe errors
+  ---
+  duration_ms: 181.241042
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:31:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    resources (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:6:37)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:30:40)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: profile precedence, manual task, disabled and wrong repository fail closed
+not ok 296 - profile precedence, manual task, disabled and wrong repository fail closed
+  ---
+  duration_ms: 232.079875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:50:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    resources (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:6:37)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:48:51)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation
+not ok 297 - SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation
+  ---
+  duration_ms: 308.714792
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:71:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    resources (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:6:37)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-domain.test.cjs:67:46)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Global unique contract masks secrets across SDK responses and rejects inherited backend secrets
+ok 298 - Global unique contract masks secrets across SDK responses and rejects inherited backend secrets
+  ---
+  duration_ms: 423.257708
+  type: 'test'
+  ...
+# Subtest: real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+not ok 299 - real ID-to-SQLite shell bridge resolves current config, cleans per-run files and fails disabled profiles
+  ---
+  duration_ms: 415.901375
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-entrypoint.test.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-entrypoint.test.cjs:8:37)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+not ok 300 - actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs
+  ---
+  duration_ms: 488.076208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-execution.test.cjs:16:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-execution.test.cjs:11:57)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: 50 simultaneously live runs across repositories/profiles/tasks isolate snapshots and preserve A across update to B
+not ok 301 - 50 simultaneously live runs across repositories/profiles/tasks isolate snapshots and preserve A across update to B
+  ---
+  duration_ms: 410.107792
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-execution.test.cjs:45:1'
+  failureType: 'testCodeFailure'
+  error: 'SQLITE_ERROR: no such table: Tasks'
+  code: 'ERR_TEST_FAILURE'
+  name: 'SequelizeDatabaseError'
+  stack: |-
+    Database.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:236:27)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:234:50
+    new Promise (<anonymous>)
+    Query.run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:234:12)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/sequelize.js:650:28
+    async SQLiteQueryInterface.rawSelect (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/abstract/query-interface.js:1043:18)
+    async Function.aggregate (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/model.js:2067:19)
+    async Function.count (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/model.js:2124:20)
+    async Promise.all (index 2)
+    async RepositoryEnvProfileService.detail (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:40:59)
+  ...
+# Subtest: cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue
+not ok 302 - cross-repository and same-repository profiles stay isolated with task overrides; next unscoped run has no residue
+  ---
+  duration_ms: 543.026334
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-isolation.test.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: 'SQLITE_ERROR: no such table: Tasks'
+  code: 'ERR_TEST_FAILURE'
+  name: 'SequelizeDatabaseError'
+  stack: |-
+    Database.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:236:27)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:234:50
+    new Promise (<anonymous>)
+    Query.run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:234:12)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/sequelize.js:650:28
+    async SQLiteQueryInterface.rawSelect (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/abstract/query-interface.js:1043:18)
+    async Function.aggregate (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/model.js:2067:19)
+    async Function.count (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/model.js:2124:20)
+    async Promise.all (index 2)
+    async RepositoryEnvProfileService.detail (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:40:59)
+  ...
+# Subtest: malformed scoped request JSON is never echoed by the HTTP error boundary
+ok 303 - malformed scoped request JSON is never echoed by the HTTP error boundary
+  ---
+  duration_ms: 454.903833
+  type: 'test'
+  ...
+# Subtest: streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values
+ok 304 - streaming secret redaction preserves UTF-8 and masks literal and JSON-escaped multiline values
+  ---
+  duration_ms: 220.465916
+  type: 'test'
+  ...
+# Subtest: snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment
+not ok 305 - snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment
+  ---
+  duration_ms: 602.384834
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-transport.test.cjs:5:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'create')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/environment-transport.test.cjs:5:37)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: global-only execution allocates a private full snapshot
+ok 306 - global-only execution allocates a private full snapshot
+  ---
+  duration_ms: 315.04
+  type: 'test'
+  ...
+# Subtest: empty data root creates v4, all bridge/core tables, and restarts without schema writes
+not ok 307 - empty data root creates v4, all bridge/core tables, and restarts without schema writes
+  ---
+  duration_ms: 300.54225
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/fresh-schema.test.cjs:30:1'
+  failureType: 'testCodeFailure'
+  error: 'TASK_SCHEMA_MODEL_MISSING:Tasks'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    createTaskDomainSchema (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:67:19)
+    createFreshTaskPlatform (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:75:11)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:124:60)
+    async /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/sequelize.js:1197:18
+    async initializeOperationalSchema (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:45:5)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/fresh-schema.test.cjs:28:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: unknown nonempty database fails closed and preserves rows and schema
+ok 308 - unknown nonempty database fails closed and preserves rows and schema
+  ---
+  duration_ms: 135.112583
+  type: 'test'
+  ...
+# Subtest: partial DDL failure rolls back all objects and allows a clean retry
+not ok 309 - partial DDL failure rolls back all objects and allows a clean retry
+  ---
+  duration_ms: 143.332167
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/fresh-schema.test.cjs:54:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /INJECTED_DDL_FAILURE/. Input:
+    
+    'Error: TASK_SCHEMA_MODEL_MISSING:Tasks'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: 'TASK_SCHEMA_MODEL_MISSING:Tasks'
+  stack: |-
+    createTaskDomainSchema (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:67:19)
+    createFreshTaskPlatform (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:75:11)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:124:60)
+    async /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/sequelize.js:1197:18
+    async initializeOperationalSchema (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:45:5)
+    async waitForActual (node:assert:644:5)
+    async Function.rejects (node:assert:767:25)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/fresh-schema.test.cjs:53:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/fresh-schema.test.cjs:53:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: unexpected schema objects are rejected on restart
+not ok 310 - unexpected schema objects are rejected on restart
+  ---
+  duration_ms: 139.1945
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/fresh-schema.test.cjs:64:1'
+  failureType: 'testCodeFailure'
+  error: 'TASK_SCHEMA_MODEL_MISSING:Tasks'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    createTaskDomainSchema (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:67:19)
+    createFreshTaskPlatform (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:75:11)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:124:60)
+    async /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/sequelize.js:1197:18
+    async initializeOperationalSchema (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:45:5)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/fresh-schema.test.cjs:60:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: fresh directory bootstrap refuses symlinked database directory
+ok 311 - fresh directory bootstrap refuses symlinked database directory
+  ---
+  duration_ms: 2.931458
+  type: 'test'
+  ...
+# Subtest: worktree deletion DB failure is recoverable by reconstruction without resetting local history
+ok 312 - worktree deletion DB failure is recoverable by reconstruction without resetting local history
+  ---
+  duration_ms: 3486.71375
+  type: 'test'
+  ...
+# Subtest: repository delete can retry after filesystem success and DB failure
+ok 313 - repository delete can retry after filesystem success and DB failure
+  ---
+  duration_ms: 1304.834583
+  type: 'test'
+  ...
+# Subtest: operation timeout persists ERROR and releases mutation lease
+ok 314 - operation timeout persists ERROR and releases mutation lease
+  ---
+  duration_ms: 1845.053708
+  type: 'test'
+  ...
+# Subtest: ignored files and symlink replacement protect user data; orphan worktrees are diagnosed
+ok 315 - ignored files and symlink replacement protect user data; orphan worktrees are diagnosed
+  ---
+  duration_ms: 2659.651458
+  type: 'test'
+  ...
+# Subtest: remote spelling changes preserve identity, storage and subscription references
+ok 316 - remote spelling changes preserve identity, storage and subscription references
+  ---
+  duration_ms: 1510.487875
+  type: 'test'
+  ...
+# Subtest: Git core.worktree override cannot redirect status or mutations outside managed checkout
+ok 317 - Git core.worktree override cannot redirect status or mutations outside managed checkout
+  ---
+  duration_ms: 1837.359959
+  type: 'test'
+  ...
+# Subtest: dependency command generation retains global Node and optional Python prefix without installing packages
+ok 318 - dependency command generation retains global Node and optional Python prefix without installing packages
+  ---
+  duration_ms: 437.768542
+  type: 'test'
+  ...
+# Subtest: real node-schedule trigger reaches production runTask and drains stdout/stderr
+ok 319 - real node-schedule trigger reaches production runTask and drains stdout/stderr
+  ---
+  duration_ms: 233.05775
+  type: 'test'
+  ...
+# Subtest: repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns
+ok 320 - repository required at domain and DB boundaries; obsolete API fields cannot become persisted columns
+  ---
+  duration_ms: 1031.346625
+  type: 'test'
+  ...
+# Subtest: CRUD, cron/interval registration, manual dispatch, stop and ID log identity use one pipeline
+ok 321 - CRUD, cron/interval registration, manual dispatch, stop and ID log identity use one pipeline
+  ---
+  duration_ms: 830.807125
+  type: 'test'
+  ...
+# Subtest: only repository credential is resolved; disabled credential fails instead of anonymous fallback
+ok 322 - only repository credential is resolved; disabled credential fails instead of anonymous fallback
+  ---
+  duration_ms: 453.127625
+  type: 'test'
+  ...
+# Subtest: staging Bash timeout kills its process group and releases the existing POSIX lease
+ok 323 - staging Bash timeout kills its process group and releases the existing POSIX lease
+  ---
+  duration_ms: 1148.7235
+  type: 'test'
+  ...
+# Subtest: preflight refuses an execution lease instead of accepting cached clean status
+ok 324 - preflight refuses an execution lease instead of accepting cached clean status
+  ---
+  duration_ms: 2494.862667
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=a0bdf8a663a30024ddd2a75fc1e14099e80865dc -> a0bdf8a663a30024ddd2a75fc1e14099e80865dc
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: repository-only prepare, first sync, no-change retry and FF update retain stable namespace
+not ok 325 - repository-only prepare, first sync, no-change retry and FF update retain stable namespace
+  ---
+  duration_ms: 4531.02425
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:28:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:41:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=f19c9fbe7e86ef0e6f58d1f37b3c1e2015916e5d -> f19c9fbe7e86ef0e6f58d1f37b3c1e2015916e5d
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: dirty Worktree preserves last scripts and Tasks
+not ok 326 - dirty Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 4126.443875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:49:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:71:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=74cd578cccf3dd059f3c3f285025791c13521c3b -> 74cd578cccf3dd059f3c3f285025791c13521c3b
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: untracked Worktree preserves last scripts and Tasks
+not ok 327 - untracked Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 3912.237792
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:49:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:71:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=d900ead337f6dd857fe5b1469284f96887734a2a -> d900ead337f6dd857fe5b1469284f96887734a2a
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: ahead Worktree preserves last scripts and Tasks
+not ok 328 - ahead Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 3502.948583
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:49:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:71:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=8118c913ea13ba8245c96324991ed40703af530f -> 8118c913ea13ba8245c96324991ed40703af530f
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: missing Worktree preserves last scripts and Tasks
+not ok 329 - missing Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 3586.048875
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:49:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:71:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=88f1ad55ea0635b1b4a34ecb388c76363b54a006 -> 88f1ad55ea0635b1b4a34ecb388c76363b54a006
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: detached Worktree preserves last scripts and Tasks
+not ok 330 - detached Worktree preserves last scripts and Tasks
+  ---
+  duration_ms: 3481.950542
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:49:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:71:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=0de4bc0a248bde1c21555886f36c960e621c3d5d -> 0de4bc0a248bde1c21555886f36c960e621c3d5d
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: discovery failure preserves last good state and retry at same commit succeeds
+not ok 331 - discovery failure preserves last good state and retry at same commit succeeds
+  ---
+  duration_ms: 3261.591833
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:71:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:107:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: shared repository/branch binding is retained and blocks worktree deletion
+ok 332 - shared repository/branch binding is retained and blocks worktree deletion
+  ---
+  duration_ms: 3273.841625
+  type: 'test'
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=c3f6ad0df3f8eadeb098b378620e3750b6a85fda -> c3f6ad0df3f8eadeb098b378620e3750b6a85fda
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: fetch, scanner, copy and Cron failures preserve Tasks; every failure can retry
+not ok 333 - fetch, scanner, copy and Cron failures preserve Tasks; every failure can retry
+  ---
+  duration_ms: 3258.281166
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:98:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:139:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=622494748fa0bc53f43dfcf273648088f443e820 -> 622494748fa0bc53f43dfcf273648088f443e820
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: Managed leases block overlapping sync, update and binding changes
+not ok 334 - Managed leases block overlapping sync, update and binding changes
+  ---
+  duration_ms: 4631.92125
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:153:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:223:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=c557259cfc5860e482368abb88c3014df205010a -> c557259cfc5860e482368abb88c3014df205010a
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: symlink source is refused without reading or copying outside data root
+not ok 335 - symlink source is refused without reading or copying outside data root
+  ---
+  duration_ms: 3245.77525
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:167:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:228:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=447759443400972e96f5b41ef253b2f9cf094cc1 -> 447759443400972e96f5b41ef253b2f9cf094cc1
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: branch selection creates a new binding and preserves the old Worktree
+not ok 336 - branch selection creates a new binding and preserves the old Worktree
+  ---
+  duration_ms: 3545.753208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:179:1'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:243:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=26ae904aceb99fad8745afd93aa2eae138acc949 -> 26ae904aceb99fad8745afd93aa2eae138acc949
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: branch deleted stops before scripts and Task diff
+not ok 337 - branch deleted stops before scripts and Task diff
+  ---
+  duration_ms: 3441.99675
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:197:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:270:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=0f4e875a0c4364a6ff96e2767f104ddd5ac3950c -> 0f4e875a0c4364a6ff96e2767f104ddd5ac3950c
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: force push stops before scripts and Task diff
+not ok 338 - force push stops before scripts and Task diff
+  ---
+  duration_ms: 3250.577666
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:197:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:270:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=49c4ef5d9e06bccde166cfb94c21f3502c30eb64 -> 49c4ef5d9e06bccde166cfb94c21f3502c30eb64
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: storage missing stops before scripts and Task diff
+not ok 339 - storage missing stops before scripts and Task diff
+  ---
+  duration_ms: 3189.567541
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:197:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:270:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# [Managed] REPOSITORY_FETCH subscription=1
+# [Managed] WORKTREE_ENSURE subscription=1
+# [Managed] WORKTREE_UPDATE subscription=1
+# [Managed] worktree=1 commit=e8a6a0aa6841a54365f186805c3259732cde856d -> e8a6a0aa6841a54365f186805c3259732cde856d
+# [Managed] DISCOVERY subscription=1
+# [Managed] discovery add=1 drop=0
+# [Managed] DISCOVERY: SUBSCRIPTION_SYNC_FAILED
+# Subtest: disabled credential stops before scripts and Task diff
+not ok 340 - disabled credential stops before scripts and Task diff
+  ---
+  duration_ms: 3406.38475
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:197:5'
+  failureType: 'testCodeFailure'
+  error: 'SUBSCRIPTION_SYNC_FAILED'
+  code: 'ERR_TEST_FAILURE'
+  name: 'WorkspaceError'
+  stack: |-
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:142:23)
+    async WorkspaceLocks.with (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:93:20)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/subscription-pipeline.test.cjs:270:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: actual ORM tables, automatic and manual tasks, and execution exit code in isolated SQLite
+not ok 341 - actual ORM tables, automatic and manual tasks, and execution exit code in isolated SQLite
+  ---
+  duration_ms: 152.466791
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/task-model-bridge.test.cjs:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'TaskViews'
+    - 'CrontabViews'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'CrontabViews'
+  actual: 'TaskViews'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/platform/task-model-bridge.test.cjs:18:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: managed paths use IDs, reject traversal, symlink escape and case collisions
+ok 342 - managed paths use IDs, reject traversal, symlink escape and case collisions
+  ---
+  duration_ms: 74.63775
+  type: 'test'
+  ...
+1..342
+# tests 344
+# suites 0
+# pass 252
+# fail 89
+# cancelled 0
+# skipped 3
+# todo 0
+# duration_ms 82419.582458

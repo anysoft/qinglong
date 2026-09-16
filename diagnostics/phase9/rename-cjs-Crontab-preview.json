@@ -1,0 +1,131 @@
+{
+  "status": "success",
+  "old_name": "Crontab",
+  "new_name": "SchedulerProjection",
+  "files_affected": 7,
+  "total_edits": 14,
+  "graph_edits": 0,
+  "text_search_edits": 14,
+  "changes": [
+    {
+      "file_path": "src/pages/crontab/index.tsx",
+      "edits": [
+        {
+          "line": 67,
+          "old_text": "const Crontab = () => {",
+          "new_text": "const SchedulerProjection = () => {",
+          "confidence": "text_search"
+        },
+        {
+          "line": 1129,
+          "old_text": "export default Crontab;",
+          "new_text": "export default SchedulerProjection;",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/archived/legacy/tests/phase0/database-baseline.test.cjs",
+      "edits": [
+        {
+          "line": 10,
+          "old_text": "const {Crontab,CrontabModel}=load(path.join(root,'back/data/cron.ts'),mocks);",
+          "new_text": "const {SchedulerProjection,CrontabModel}=load(path.join(root,'back/data/cron.ts'),mocks);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 25,
+          "old_text": "const manual=await CrontabModel.create(new Crontab({name:'manual',command:'task example.py',schedule:'0 0 * * *'}));",
+          "new_text": "const manual=await CrontabModel.create(new SchedulerProjection({name:'manual',command:'task example.py',schedule:'0 0 * * *'}));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 26,
+          "old_text": "const discovered=await CrontabModel.create(new Crontab({name:'auto',command:'task fixture/example.py',schedule:'0 0 * * *',sub_id:sub.id}));",
+          "new_text": "const discovered=await CrontabModel.create(new SchedulerProjection({name:'auto',command:'task fixture/example.py',schedule:'0 0 * * *',sub_id:sub.id}));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 29,
+          "old_text": "'../data/cron':{CrontabModel,Crontab,CrontabStatus:{running:0,idle:1,queued:3}},",
+          "new_text": "'../data/cron':{CrontabModel,SchedulerProjection,CrontabStatus:{running:0,idle:1,queued:3}},",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/platform/task-model-bridge.test.cjs",
+      "edits": [
+        {
+          "line": 10,
+          "old_text": "const {Crontab,CrontabModel}=load(path.join(root,'back/data/cron.ts'),mocks);",
+          "new_text": "const {SchedulerProjection,CrontabModel}=load(path.join(root,'back/data/cron.ts'),mocks);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 26,
+          "old_text": "const manual=await CrontabModel.create(new Crontab({name:'manual',command:'task example.py',schedule:'0 0 * * *'}));",
+          "new_text": "const manual=await CrontabModel.create(new SchedulerProjection({name:'manual',command:'task example.py',schedule:'0 0 * * *'}));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 27,
+          "old_text": "const discovered=await CrontabModel.create(new Crontab({name:'auto',command:'task fixture/example.py',schedule:'0 0 * * *',sub_id:sub.id}));",
+          "new_text": "const discovered=await CrontabModel.create(new SchedulerProjection({name:'auto',command:'task fixture/example.py',schedule:'0 0 * * *',sub_id:sub.id}));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 30,
+          "old_text": "'../data/cron':{CrontabModel,Crontab,CrontabStatus:{running:0,idle:1,queued:3}},",
+          "new_text": "'../data/cron':{CrontabModel,SchedulerProjection,CrontabStatus:{running:0,idle:1,queued:3}},",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "test/back/scheduler-mutation.test.cjs",
+      "edits": [
+        {
+          "line": 58,
+          "old_text": "Crontab: class {",
+          "new_text": "SchedulerProjection: class {",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "tests/phase3/cron-publication.test.cjs",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "'../data/cron':{CrontabModel:{update:async()=>{}},Crontab:class {}},'../data/runningInstance':{},'../config':{crontabFile:path.join(dir,'crontab.list')},'../config/util':{},'../config/const':{TASK_PREFIX:'task ',QL_PREFIX:'ql '},'../schedule/client':{},'../shared/pLimit':{},'../shared/utils':{writeFileWithLock:fs.writeFile},'../shared/i18n':{t:x=>x},'../shared/logStreamManager':{},'../shared/schedulerMutationLock':{},'child_process':{...require('node:child_process'),execSync:()=>{throw new Error('fixture install failure');}}",
+          "new_text": "'../data/cron':{CrontabModel:{update:async()=>{}},SchedulerProjection:class {}},'../data/runningInstance':{},'../config':{crontabFile:path.join(dir,'crontab.list')},'../config/util':{},'../config/const':{TASK_PREFIX:'task ',QL_PREFIX:'ql '},'../schedule/client':{},'../shared/pLimit':{},'../shared/utils':{writeFileWithLock:fs.writeFile},'../shared/i18n':{t:x=>x},'../shared/logStreamManager':{},'../shared/schedulerMutationLock':{},'child_process':{...require('node:child_process'),execSync:()=>{throw new Error('fixture install failure');}}",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "diagnostics/phase9/rename.cjs",
+      "edits": [
+        {
+          "line": 2,
+          "old_text": "(async()=>{const{LocalBackend}=await import(pathToFileURL('/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js'));const b=new LocalBackend();await b.init();try{for(const [symbol_name,new_name,file_path] of [['Crontab','SchedulerProjection','back/data/cron.ts'],['CrontabModel','SchedulerProjectionModel','back/data/cron.ts'],['CronService','SchedulerBridgeService','back/services/cron.ts']]){const r=await b.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path,dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-${symbol_name}-${process.argv[2]||'preview'}.json`,JSON.stringify(r,null,2));console.log(symbol_name,JSON.stringify(r).slice(0,1200));}}finally{await b.cleanup?.();}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+          "new_text": "(async()=>{const{LocalBackend}=await import(pathToFileURL('/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js'));const b=new LocalBackend();await b.init();try{for(const [symbol_name,new_name,file_path] of [['SchedulerProjection','SchedulerProjection','back/data/cron.ts'],['CrontabModel','SchedulerProjectionModel','back/data/cron.ts'],['CronService','SchedulerBridgeService','back/services/cron.ts']]){const r=await b.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path,dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-${symbol_name}-${process.argv[2]||'preview'}.json`,JSON.stringify(r,null,2));console.log(symbol_name,JSON.stringify(r).slice(0,1200));}}finally{await b.cleanup?.();}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "diagnostics/phase9/rename-test-references.cjs",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "(async()=>{const original='/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js';const temporary=path.join(path.dirname(original),'phase9-rename-backend.js');const source=fs.readFileSync(original,'utf8'),updated=source.replace('code:*.{ts,tsx,js,jsx,py,','code:*.{ts,tsx,js,jsx,cjs,mjs,py,');if(source===updated)throw Error('Unexpected GitNexus source');fs.writeFileSync(temporary,updated);let backend;try{const{LocalBackend}=await import(pathToFileURL(temporary));backend=new LocalBackend();await backend.init();for(const [symbol_name,new_name]of[['Crontab','SchedulerProjection'],['CrontabModel','SchedulerProjectionModel']]){const result=await backend.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path:'back/data/cron.ts',dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-cjs-${symbol_name}-${process.argv[2]}.json`,JSON.stringify(result,null,2));console.log(symbol_name,result.files_affected,result.total_edits,result.status);}}finally{await backend?.cleanup?.();fs.unlinkSync(temporary);}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+          "new_text": "(async()=>{const original='/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js';const temporary=path.join(path.dirname(original),'phase9-rename-backend.js');const source=fs.readFileSync(original,'utf8'),updated=source.replace('code:*.{ts,tsx,js,jsx,py,','code:*.{ts,tsx,js,jsx,cjs,mjs,py,');if(source===updated)throw Error('Unexpected GitNexus source');fs.writeFileSync(temporary,updated);let backend;try{const{LocalBackend}=await import(pathToFileURL(temporary));backend=new LocalBackend();await backend.init();for(const [symbol_name,new_name]of[['SchedulerProjection','SchedulerProjection'],['CrontabModel','SchedulerProjectionModel']]){const result=await backend.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path:'back/data/cron.ts',dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-cjs-${symbol_name}-${process.argv[2]}.json`,JSON.stringify(result,null,2));console.log(symbol_name,result.files_affected,result.total_edits,result.status);}}finally{await backend?.cleanup?.();fs.unlinkSync(temporary);}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+          "confidence": "text_search"
+        }
+      ]
+    }
+  ],
+  "applied": false
+}

@@ -1,0 +1,81 @@
+{
+  "platform_tests": {
+    "status": "PASS",
+    "total": 366,
+    "passed": 363,
+    "failed": 0,
+    "skipped": 3
+  },
+  "managed_regression": {
+    "status": "PASS",
+    "passed": 3,
+    "failed": 0
+  },
+  "backend_build": "PASS",
+  "frontend_build": "PASS",
+  "typecheck": {
+    "status": "PARTIAL",
+    "original": 53,
+    "remaining": 34,
+    "new": [],
+    "raw_exit_code": 2,
+    "regression_gate": "PASS"
+  },
+  "static_audit": "PASS",
+  "browser": {
+    "status": "PASS",
+    "steps": [
+      "empty-root-bootstrap",
+      "browser-fresh-initialize-login",
+      "browser-credential-create",
+      "browser-repository-create",
+      "browser-initialize-fetch",
+      "browser-subscription-create-branch",
+      "browser-prepare-sync-discovery",
+      "browser-worktree-view",
+      "browser-global-create",
+      "browser-profile-create-default",
+      "task-domain-discovery-three-languages",
+      "real-python-venv-and-node-dependency-environments",
+      "browser-discovered-task-runtime-settings-validation",
+      "browser-manual-worktree-entrypoint-create",
+      "browser-arguments-concurrency-and-negative-resource-gates",
+      "browser-task-env-config-hooks",
+      "browser-runtime-default-inherit-override-reset",
+      "browser-clone-disable-enable",
+      "browser-environment-reference-protection",
+      "three-language-current-runner-regression-not-managed-runtime-execution",
+      "restart-validate-all-task-resources",
+      "fresh-v6-restart-fk-secret-audit"
+    ],
+    "linux": false,
+    "response_payloads_inspected": 687,
+    "websocket_frames_inspected": 23,
+    "runtime_execution_activation": "PHASE_10"
+  },
+  "linux": "PARTIAL — actual CI pending",
+  "git_commit_push_deploy": "NOT PERFORMED",
+  "phase10": "NOT STARTED",
+  "browser_restart_editor": {
+    "status": "PASS",
+    "steps": [
+      "empty-root-bootstrap",
+      "browser-fresh-initialize-login",
+      "browser-credential-create",
+      "browser-repository-create",
+      "browser-initialize-fetch",
+      "browser-subscription-create-branch",
+      "browser-prepare-sync-discovery",
+      "browser-worktree-view",
+      "browser-global-create",
+      "browser-profile-create-default",
+      "browser-save-structured-definition-before-restart",
+      "browser-restart-reopen-task-editor-fields-persisted"
+    ],
+    "linux": false,
+    "response_payloads_inspected": 174,
+    "websocket_frames_inspected": 11
+  },
+  "owned_fixture_cleanup": "PASS",
+  "overall": "PARTIAL"
+}

@@ -2,7 +2,7 @@ const test = require('node:test'), assert = require('node:assert/strict'), fs = 
 const setup = require('../phase4/helpers.cjs');
 test('snapshot cleanup preserves live owners, removes stale dead owners, rejects symlinks and oversized environment', async t => {
   const h = await setup(t); 
-  const task = await h.CrontabModel.create({ command: 'task a.sh' });
+  const task = await h.SchedulerProjectionModel.create({ command: 'task a.sh' });
   await h.variables.save('task', task.id, [{ name: 'TOKEN', value: 'private', is_secret: true }]);
   const transport = new (h.get('services/executionEnvironmentTransport').default)();
   const resolved = await h.resolver.resolve(task.id), snapshot = await transport.prepare(resolved, process.pid);

@@ -15,7 +15,7 @@ import intl from 'react-intl-universal';
 import { SharedContext } from '@/layouts';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
-import CronLogModal from '../crontab/logModal';
+import TaskBridgeLogModal from '@/components/task-bridge/logModal';
 import FailureModal from './failureModal';
 
 interface Overview {
@@ -363,7 +363,7 @@ const Dashboard = () => {
       </Row>
       {showFailures && <FailureModal onCancel={() => setShowFailures(false)} />}
       {logCron && (
-        <CronLogModal
+        <TaskBridgeLogModal
           cron={logCron}
           handleCancel={() => setLogCron(null)}
         />

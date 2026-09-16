@@ -9,8 +9,9 @@ module.exports = async function setup(t) {
   const config = { rootPath: dir, dataPath: path.join(dir, 'data'), envFile: path.join(dir, 'shell/preload/env.sh'), jsEnvFile: path.join(dir, 'shell/preload/env.js'), pyEnvFile: path.join(dir, 'shell/preload/env.py') };
   const mocks = { '.': { sequelize }, '../data': { sequelize }, '../config': config, '../loaders/logger': logger, '../shared/utils': { writeFileWithLock: async (f, s) => fs.writeFileSync(f, s) } };
   const cache = new Map(), get = f => load(path.join(root, 'back', f + '.ts'), mocks, cache);
-  const models = Object.assign({}, ...['gitCredential', 'repository', 'worktree', 'subscription', 'cron', 'env', 'scopedEnv', 'configAsset'].map(f => get('data/' + f)));
+  const models = Object.assign({}, ...['gitCredential', 'repository', 'worktree', 'subscription', 'cron', 'env', 'scopedEnv', 'configAsset', 'task', 'runtime', 'pythonEnvironment', 'nodeEnvironment'].map(f => get('data/' + f)));
   await sequelize.sync();
+  require('../phase9/task-fixture.cjs')(models, sequelize, () => ({ scriptRoot: path.join(dir, 'data/scripts') }));
   const profiles = new (get('services/repositoryEnvProfile').default)();
   const variables = new (get('services/scopedEnvVariable').default)(profiles);
   const resolver = new (get('services/taskEnvironmentResolver').default)(profiles);

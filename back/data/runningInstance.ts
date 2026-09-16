@@ -49,6 +49,8 @@ export const RunningInstanceModel = sequelize.define<RunningInstanceModel>(
   'RunningInstance',
   {
     cron_id: {
+      // B08 scheduler/result transport keeps its wire field; storage is Task-owned.
+      field: 'task_id',
       type: DataTypes.NUMBER,
       allowNull: false,
     },

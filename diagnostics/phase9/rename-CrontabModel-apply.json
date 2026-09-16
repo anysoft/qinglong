@@ -1,0 +1,560 @@
+{
+  "status": "success",
+  "old_name": "CrontabModel",
+  "new_name": "SchedulerProjectionModel",
+  "files_affected": 16,
+  "total_edits": 78,
+  "graph_edits": 1,
+  "text_search_edits": 77,
+  "changes": [
+    {
+      "file_path": "back/data/cron.ts",
+      "edits": [
+        {
+          "line": 70,
+          "old_text": "export const CrontabModel = sequelize.define<CronInstance>('SchedulerProjection', {",
+          "new_text": "export const SchedulerProjectionModel = sequelize.define<CronInstance>('SchedulerProjection', {",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/taskEnvironmentResolver.ts",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "import { SchedulerProjection, CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjection, SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 46,
+          "old_text": "const task = typeof taskOrId === 'number' ? (await CrontabModel.findByPk(taskOrId, { transaction }))?.get({ plain: true }) : taskOrId ?? { command: '' };",
+          "new_text": "const task = typeof taskOrId === 'number' ? (await SchedulerProjectionModel.findByPk(taskOrId, { transaction }))?.get({ plain: true }) : taskOrId ?? { command: '' };",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/subscription.ts",
+      "edits": [
+        {
+          "line": 34,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 274,
+          "old_text": "const crons = await CrontabModel.findAll({ where: { sub_id: ids } });",
+          "new_text": "const crons = await SchedulerProjectionModel.findAll({ where: { sub_id: ids } });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/shared/runCron.ts",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "import { CrontabModel, CrontabStatus } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel, CrontabStatus } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 16,
+          "old_text": "const existingCron = await CrontabModel.findOne({",
+          "new_text": "const existingCron = await SchedulerProjectionModel.findOne({",
+          "confidence": "text_search"
+        },
+        {
+          "line": 47,
+          "old_text": "await CrontabModel.update(",
+          "new_text": "await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/api/dashboard.ts",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 70,
+          "old_text": "CrontabModel.count(),",
+          "new_text": "SchedulerProjectionModel.count(),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 71,
+          "old_text": "CrontabModel.count({ where: { isDisabled: 0 } }),",
+          "new_text": "SchedulerProjectionModel.count({ where: { isDisabled: 0 } }),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 72,
+          "old_text": "CrontabModel.count({ where: { isDisabled: 1 } }),",
+          "new_text": "SchedulerProjectionModel.count({ where: { isDisabled: 1 } }),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 121,
+          "old_text": "const crons = rows.length > 0 ? await CrontabModel.findAll({",
+          "new_text": "const crons = rows.length > 0 ? await SchedulerProjectionModel.findAll({",
+          "confidence": "text_search"
+        },
+        {
+          "line": 214,
+          "old_text": "const crons = await CrontabModel.findAll({",
+          "new_text": "const crons = await SchedulerProjectionModel.findAll({",
+          "confidence": "text_search"
+        },
+        {
+          "line": 256,
+          "old_text": "const crons = await CrontabModel.findAll({",
+          "new_text": "const crons = await SchedulerProjectionModel.findAll({",
+          "confidence": "text_search"
+        },
+        {
+          "line": 292,
+          "old_text": "const queuedCrons = await CrontabModel.findAll({",
+          "new_text": "const queuedCrons = await SchedulerProjectionModel.findAll({",
+          "confidence": "text_search"
+        },
+        {
+          "line": 305,
+          "old_text": "? await CrontabModel.findAll({",
+          "new_text": "? await SchedulerProjectionModel.findAll({",
+          "confidence": "text_search"
+        },
+        {
+          "line": 326,
+          "old_text": "const idleTasks = await CrontabModel.findAll({",
+          "new_text": "const idleTasks = await SchedulerProjectionModel.findAll({",
+          "confidence": "text_search"
+        },
+        {
+          "line": 364,
+          "old_text": "CrontabModel.findAll({ where: { isDisabled: 0 }, raw: true }),",
+          "new_text": "SchedulerProjectionModel.findAll({ where: { isDisabled: 0 }, raw: true }),",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/repositoryEnvProfile.ts",
+      "edits": [
+        {
+          "line": 7,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 29,
+          "old_text": "CrontabModel.count({ where: { env_profile_id: id } }),",
+          "new_text": "SchedulerProjectionModel.count({ where: { env_profile_id: id } }),",
+          "confidence": "text_search"
+        },
+        {
+          "line": 86,
+          "old_text": "for (const [model, key] of [[RepositoryModel, 'default_env_profile_id'], [SubscriptionModel, 'env_profile_id'], [CrontabModel, 'env_profile_id']] as const) {",
+          "new_text": "for (const [model, key] of [[RepositoryModel, 'default_env_profile_id'], [SubscriptionModel, 'env_profile_id'], [SchedulerProjectionModel, 'env_profile_id']] as const) {",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/scopedEnvVariable.ts",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 23,
+          "old_text": "const task = await CrontabModel.findByPk(id, { transaction });",
+          "new_text": "const task = await SchedulerProjectionModel.findByPk(id, { transaction });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 75,
+          "old_text": "const task = await CrontabModel.findByPk(id, { transaction });",
+          "new_text": "const task = await SchedulerProjectionModel.findByPk(id, { transaction });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/managedSubscription.ts",
+      "edits": [
+        {
+          "line": 12,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 220,
+          "old_text": "const current = (await CrontabModel.findAll({ where: { sub_id: sub.id } })).map(row => row.get({ plain: true }));",
+          "new_text": "const current = (await SchedulerProjectionModel.findAll({ where: { sub_id: sub.id } })).map(row => row.get({ plain: true }));",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/cron.ts",
+      "edits": [
+        {
+          "line": 9,
+          "old_text": "import { SchedulerProjection, CrontabModel, CrontabStatus } from '../data/cron';",
+          "new_text": "import { SchedulerProjection, SchedulerProjectionModel, CrontabStatus } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 127,
+          "old_text": "await CrontabModel.destroy({ where: { id: doc.id } });",
+          "new_text": "await SchedulerProjectionModel.destroy({ where: { id: doc.id } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 163,
+          "old_text": "await CrontabModel.findAll({ where: { id: [...plan.drops, ...plan.updates.map(x => x.id!)] } })",
+          "new_text": "await SchedulerProjectionModel.findAll({ where: { id: [...plan.drops, ...plan.updates.map(x => x.id!)] } })",
+          "confidence": "text_search"
+        },
+        {
+          "line": 210,
+          "old_text": "for (const update of plan.updates) await CrontabModel.update(update, { where: { id: update.id } });",
+          "new_text": "for (const update of plan.updates) await SchedulerProjectionModel.update(update, { where: { id: update.id } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 211,
+          "old_text": "const updated = (await CrontabModel.findAll({ where: { id: plan.updates.map(x => x.id!) } })).map(row => row.get({ plain: true }));",
+          "new_text": "const updated = (await SchedulerProjectionModel.findAll({ where: { id: plan.updates.map(x => x.id!) } })).map(row => row.get({ plain: true }));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 213,
+          "old_text": "const projection = (await CrontabModel.findAll()).map(row => row.get({plain:true})).filter(row => !plan.drops.includes(row.id!));",
+          "new_text": "const projection = (await SchedulerProjectionModel.findAll()).map(row => row.get({plain:true})).filter(row => !plan.drops.includes(row.id!));",
+          "confidence": "text_search"
+        },
+        {
+          "line": 217,
+          "old_text": "await CrontabModel.destroy({ where: { id: plan.drops } });",
+          "new_text": "await SchedulerProjectionModel.destroy({ where: { id: plan.drops } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 227,
+          "old_text": "await CrontabModel.destroy({",
+          "new_text": "await SchedulerProjectionModel.destroy({",
+          "confidence": "text_search"
+        },
+        {
+          "line": 231,
+          "old_text": "if (!plan.drops.includes(row.id!)) await CrontabModel.update({ name: row.name, command: row.command, schedule: row.schedule, discovery_definition: row.discovery_definition }, { where: { id: row.id } });",
+          "new_text": "if (!plan.drops.includes(row.id!)) await SchedulerProjectionModel.update({ name: row.name, command: row.command, schedule: row.schedule, discovery_definition: row.discovery_definition }, { where: { id: row.id } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 262,
+          "old_text": "return await CrontabModel.create(payload, { returning: true });",
+          "new_text": "return await SchedulerProjectionModel.create(payload, { returning: true });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 293,
+          "old_text": "await CrontabModel.update(omit(doc, ['queued_token']), {",
+          "new_text": "await SchedulerProjectionModel.update(omit(doc, ['queued_token']), {",
+          "confidence": "text_search"
+        },
+        {
+          "line": 331,
+          "old_text": "await CrontabModel.update(payload, { where: { id: payload.id } });",
+          "new_text": "await SchedulerProjectionModel.update(payload, { where: { id: payload.id } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 407,
+          "old_text": "await CrontabModel.update(",
+          "new_text": "await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 417,
+          "old_text": "await CrontabModel.destroy({ where: { id: ids } });",
+          "new_text": "await SchedulerProjectionModel.destroy({ where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 423,
+          "old_text": "await CrontabModel.update({ isPinned: 1 }, { where: { id: ids } });",
+          "new_text": "await SchedulerProjectionModel.update({ isPinned: 1 }, { where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 427,
+          "old_text": "await CrontabModel.update({ isPinned: 0 }, { where: { id: ids } });",
+          "new_text": "await SchedulerProjectionModel.update({ isPinned: 0 }, { where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 431,
+          "old_text": "const docs = await CrontabModel.findAll({ where: { id: ids } });",
+          "new_text": "const docs = await SchedulerProjectionModel.findAll({ where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 433,
+          "old_text": "await CrontabModel.update(",
+          "new_text": "await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 443,
+          "old_text": "const docs = await CrontabModel.findAll({ where: { id: ids } });",
+          "new_text": "const docs = await SchedulerProjectionModel.findAll({ where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 445,
+          "old_text": "await CrontabModel.update(",
+          "new_text": "await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 623,
+          "old_text": "const result = await CrontabModel.findOne({ where: { log_path } });",
+          "new_text": "const result = await SchedulerProjectionModel.findOne({ where: { log_path } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 673,
+          "old_text": "const result = await CrontabModel.findAll(condition);",
+          "new_text": "const result = await SchedulerProjectionModel.findAll(condition);",
+          "confidence": "text_search"
+        },
+        {
+          "line": 674,
+          "old_text": "const count = await CrontabModel.count({ where: query });",
+          "new_text": "const count = await SchedulerProjectionModel.count({ where: query });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 682,
+          "old_text": "const doc: any = await CrontabModel.findOne({ where: { ...query } });",
+          "new_text": "const doc: any = await SchedulerProjectionModel.findOne({ where: { ...query } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 691,
+          "old_text": "await CrontabModel.update(",
+          "new_text": "await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 701,
+          "old_text": "const docs = await CrontabModel.findAll({ where: { id: ids } });",
+          "new_text": "const docs = await SchedulerProjectionModel.findAll({ where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 705,
+          "old_text": "const [cancelled] = await CrontabModel.update(",
+          "new_text": "const [cancelled] = await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 768,
+          "old_text": "await CrontabModel.update(",
+          "new_text": "await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 811,
+          "old_text": "await CrontabModel.update(",
+          "new_text": "await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 860,
+          "old_text": "const [count] = await CrontabModel.update(",
+          "new_text": "const [count] = await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 921,
+          "old_text": "await CrontabModel.update(",
+          "new_text": "await SchedulerProjectionModel.update(",
+          "confidence": "text_search"
+        },
+        {
+          "line": 958,
+          "old_text": "await CrontabModel.update({ isDisabled: 1 }, { where: { id: ids } });",
+          "new_text": "await SchedulerProjectionModel.update({ isDisabled: 1 }, { where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 965,
+          "old_text": "await CrontabModel.update({ isDisabled: 0 }, { where: { id: ids } });",
+          "new_text": "await SchedulerProjectionModel.update({ isDisabled: 0 }, { where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 966,
+          "old_text": "const docs = await CrontabModel.findAll({ where: { id: ids } });",
+          "new_text": "const docs = await SchedulerProjectionModel.findAll({ where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 985,
+          "old_text": "await CrontabModel.update({ isDisabled: 1 }, { where: { id: ids } });",
+          "new_text": "await SchedulerProjectionModel.update({ isDisabled: 1 }, { where: { id: ids } });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 1136,
+          "old_text": "await CrontabModel.update({ saved: true }, { where: {} });",
+          "new_text": "await SchedulerProjectionModel.update({ saved: true }, { where: {} });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/taskHooks.ts",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 23,
+          "old_text": "if (!(await CrontabModel.findByPk(configId(taskId), { transaction })))",
+          "new_text": "if (!(await SchedulerProjectionModel.findByPk(configId(taskId), { transaction })))",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/api/configAssets.ts",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 171,
+          "old_text": "const task = await CrontabModel.findByPk(",
+          "new_text": "const task = await SchedulerProjectionModel.findByPk(",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/taskConfig.ts",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 43,
+          "old_text": ": await CrontabModel.findByPk(configId(ownerId), { transaction });",
+          "new_text": ": await SchedulerProjectionModel.findByPk(configId(ownerId), { transaction });",
+          "confidence": "text_search"
+        },
+        {
+          "line": 139,
+          "old_text": "const task = await CrontabModel.findByPk(taskId, { transaction });",
+          "new_text": "const task = await SchedulerProjectionModel.findByPk(taskId, { transaction });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/loaders/db.ts",
+      "edits": [
+        {
+          "line": 7,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 30,
+          "old_text": "SubscriptionModel, CrontabModel, RepositoryEnvVariableModel, TaskEnvVariableModel,",
+          "new_text": "SubscriptionModel, SchedulerProjectionModel, RepositoryEnvVariableModel, TaskEnvVariableModel,",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/loaders/initData.ts",
+      "edits": [
+        {
+          "line": 2,
+          "old_text": "import { SchedulerProjection, CrontabModel, CrontabStatus } from '../data/cron';",
+          "new_text": "import { SchedulerProjection, SchedulerProjectionModel, CrontabStatus } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 80,
+          "old_text": "await CrontabModel.update({ status: CrontabStatus.idle }, { where: {} });",
+          "new_text": "await SchedulerProjectionModel.update({ status: CrontabStatus.idle }, { where: {} });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/api/scopedEnvironment.ts",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "import { CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 53,
+          "old_text": "const owner = scope === 'task' ? await CrontabModel.findByPk(id(req)) : await SubscriptionModel.findByPk(id(req));",
+          "new_text": "const owner = scope === 'task' ? await SchedulerProjectionModel.findByPk(id(req)) : await SubscriptionModel.findByPk(id(req));",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/taskExecutionPreparation.ts",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "import { SchedulerProjection, CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjection, SchedulerProjectionModel } from '../data/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 42,
+          "old_text": "? (await CrontabModel.findByPk(configId(taskId), { transaction }))?.get(",
+          "new_text": "? (await SchedulerProjectionModel.findByPk(configId(taskId), { transaction }))?.get(",
+          "confidence": "text_search"
+        }
+      ]
+    }
+  ],
+  "applied": true
+}

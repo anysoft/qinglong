@@ -1,4 +1,5 @@
 import { ConfigBindings } from '@/components/config-bindings';
+import { TaskResourceReferences } from '@/components/task-resource-references';
 import React, { useEffect, useState } from 'react';
 import {
   Alert,
@@ -180,6 +181,7 @@ export default function RepositoryWorkspacePage() {
           description={`PID ${diagnostics.lock.owner?.pid || '—'}`}
         />
       )}
+      {id > 0 && <TaskResourceReferences kind="repository" id={id} />}
       <Tabs
         defaultActiveKey="overview"
         items={[
@@ -560,6 +562,7 @@ export default function RepositoryWorkspacePage() {
           </Space>
         }
       >
+        {detail?.id && <TaskResourceReferences kind="worktree" id={detail.id} />}
         <Descriptions column={2} bordered size="small">
           <Descriptions.Item label="Repository">{repo?.name}</Descriptions.Item>
           <Descriptions.Item label="Ref">

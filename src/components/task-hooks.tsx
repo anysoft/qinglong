@@ -128,7 +128,7 @@ export function TaskHooks({ id }: { id: number }) {
         onOk={save}
         destroyOnClose
       >
-        <Form form={form} layout="vertical" preserve={false}>
+        <Form name={`task-hook-${id}`} form={form} layout="vertical" preserve={false}>
           <Form.Item name="name" label="Hook 名称" rules={[{ required: true }]}>
             <Input />
           </Form.Item>

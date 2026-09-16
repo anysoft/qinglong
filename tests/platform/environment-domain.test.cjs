@@ -3,7 +3,7 @@ const setup = require('../phase4/helpers.cjs');
 async function resources(h) {
   const repo = await h.RepositoryModel.create({ name: 'repo', provider: 'generic', remote_url: 'https://example.invalid/a', normalized_url: 'example.invalid/a' });
   const sub = await h.SubscriptionModel.create({ name: 'sub', repository_id: repo.id });
-  const task = await h.CrontabModel.create({ name: 'task', command: 'task a.py', sub_id: sub.id });
+  const task = await h.SchedulerProjectionModel.create({ name: 'task', command: 'task a.py', sub_id: sub.id });
   return { repo, sub, task };
 }
 test('profile CRUD, uniqueness, default, clone secrets, and reference protection', async t => {
@@ -55,13 +55,13 @@ test('profile precedence, manual task, disabled and wrong repository fail closed
   assert.equal((await h.resolver.resolve(task.id)).profile.id, ps[2].id);
   await h.profiles.save({ id: ps[2].id, status: 'disabled' });
   await assert.rejects(h.resolver.resolve(task.id), /ENV_PROFILE_DISABLED/);
-  const manual = await h.CrontabModel.create({ command: 'task manual.py' });
+  const manual = await h.SchedulerProjectionModel.create({ command: 'task manual.py' });
   await assert.rejects(h.variables.bind('task', manual.id, ps[0].id), /ENV_PROFILE_REPOSITORY_MISMATCH/);
   await assert.rejects(h.variables.bind('task', task.id, 99999), /ENV_PROFILE_NOT_FOUND/);
   assert.equal((await h.resolver.resolve(manual.id)).metadata.scoped, true);
   await h.variables.save('task', manual.id, [{ name: 'MANUAL', value: 'yes' }]);
   assert.equal((await h.resolver.resolve(manual.id)).variables.MANUAL, 'yes');
-  await manual.destroy(); assert.equal(await h.TaskEnvVariableModel.count(), 0);
+  await h.TaskModel.destroy({where:{id:manual.id}}); assert.equal(await h.TaskEnvVariableModel.count(), 0);
 });
 test('SET/UNSET/disabled/empty precedence, immutable snapshot and parent isolation', async t => {
   const h = await setup(t), { repo, task } = await resources(h);

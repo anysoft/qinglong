@@ -1,0 +1,386 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+node_modules/.pnpm/@ant-design+pro-layout@6.38.22_prop-types@15.8.1_react-dom@18.3.1_react@18.3.1/node_modules/@ant-design/pro-layout/lib/typings.d.ts(8,73): error TS2694: Namespace '"/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/history@5.3.0/node_modules/history/index"' has no exported member 'LocationState'.
+node_modules/.pnpm/@ant-design+pro-layout@6.38.22_prop-types@15.8.1_react-dom@18.3.1_react@18.3.1/node_modules/@ant-design/pro-layout/lib/typings.d.ts(9,14): error TS2315: Type 'History' is not generic.
+node_modules/.pnpm/@ant-design+pro-layout@6.38.22_prop-types@15.8.1_react-dom@18.3.1_react@18.3.1/node_modules/@ant-design/pro-layout/lib/typings.d.ts(10,15): error TS2315: Type 'Location' is not generic.
+node_modules/.pnpm/@ant-design+pro-layout@6.38.22_prop-types@15.8.1_react-dom@18.3.1_react@18.3.1/node_modules/@ant-design/pro-layout/lib/typings.d.ts(23,11): error TS2694: Namespace '"/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/history@5.3.0/node_modules/history/index"' has no exported member 'LocationDescriptor'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/camera/Camera.d.ts(21,5): error TS2416: Property 'canvas' in type 'Camera' is not assignable to the same property in base type 'ICamera'.
+  Type 'Canvas' is not assignable to type 'ICanvas'.
+    Types of property 'mountChildren' are incompatible.
+      Type '(child: DisplayObject<any, any>, skipTriggerEvent?: boolean | undefined) => void' is not assignable to type '(parent: INode) => void'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/camera/Camera.d.ts(272,5): error TS2416: Property 'createLandmark' in type 'Camera' is not assignable to the same property in base type 'ICamera'.
+  Type '(name: string, params?: Partial<{ position: Float32Array | [number, number] | [number, number, number]; focalPoint: Float32Array | [number, number] | [number, number, number]; zoom: number; roll: number; }> | undefined) => Landmark' is not assignable to type '(name: string, params?: Partial<{ position: [number, number] | [number, number, number] | IndexedCollection; focalPoint: [number, number] | [number, number, number] | IndexedCollection; zoom: number; roll: number; }> | undefined) => Landmark'.
+    Types of parameters 'params' and 'params' are incompatible.
+      Type 'Partial<{ position: [number, number] | [number, number, number] | IndexedCollection; focalPoint: [number, number] | [number, number, number] | IndexedCollection; zoom: number; roll: number; }> | undefined' is not assignable to type 'Partial<{ position: Float32Array | [number, number] | [number, number, number]; focalPoint: Float32Array | [number, number] | [number, number, number]; zoom: number; roll: number; }> | undefined'.
+        Type 'Partial<{ position: [number, number] | [number, number, number] | IndexedCollection; focalPoint: [number, number] | [number, number, number] | IndexedCollection; zoom: number; roll: number; }>' is not assignable to type 'Partial<{ position: Float32Array | [number, number] | [number, number, number]; focalPoint: Float32Array | [number, number] | [number, number, number]; zoom: number; roll: number; }>'.
+          Types of property 'position' are incompatible.
+            Type '[number, number] | [number, number, number] | IndexedCollection | undefined' is not assignable to type 'Float32Array | [number, number] | [number, number, number] | undefined'.
+              Type 'IndexedCollection' is not assignable to type 'Float32Array | [number, number] | [number, number, number] | undefined'.
+                Type 'IndexedCollection' is not assignable to type 'Float32Array'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/Canvas.d.ts(104,20): error TS2304: Cannot find name 'XRFrame'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/Canvas.d.ts(111,5): error TS2416: Property 'unmountChildren' in type 'Canvas' is not assignable to the same property in base type 'ICanvas'.
+  Type '(parent: DisplayObject<any, any>) => void' is not assignable to type '(parent: INode) => void'.
+    Types of parameters 'parent' and 'parent' are incompatible.
+      Type 'INode' is missing the following properties from type 'DisplayObject<any, any>': config, isCustomElement, isMutationObserved, activeAnimations, and 138 more.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/Canvas.d.ts(112,5): error TS2416: Property 'mountChildren' in type 'Canvas' is not assignable to the same property in base type 'ICanvas'.
+  Type '(child: DisplayObject<any, any>, skipTriggerEvent?: boolean | undefined) => void' is not assignable to type '(parent: INode) => void'.
+    Types of parameters 'child' and 'parent' are incompatible.
+      Type 'INode' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/Canvas.d.ts(113,5): error TS2416: Property 'mountFragment' in type 'Canvas' is not assignable to the same property in base type 'ICanvas'.
+  Type '(child: DisplayObject<any, any>) => void' is not assignable to type '(fragment: INode) => void'.
+    Types of parameters 'child' and 'fragment' are incompatible.
+      Type 'INode' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyAngle.d.ts(7,5): error TS2416: Property 'calculator' in type 'CSSPropertyAngle' is not assignable to the same property in base type 'Partial<CSSProperty<CSSUnitValue, number>>'.
+  Type '(name: string, oldParsed: CSSUnitValue, parsed: CSSUnitValue, object: DisplayObject<any, any>) => number' is not assignable to type 'CSSPropertyCalculator<CSSUnitValue, number>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is missing the following properties from type 'DisplayObject<any, any>': config, isCustomElement, isMutationObserved, activeAnimations, and 98 more.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyClipPath.d.ts(8,5): error TS2416: Property 'calculator' in type 'CSSPropertyClipPath' is not assignable to the same property in base type 'Partial<CSSProperty<DisplayObject<any, any>, DisplayObject<any, any>>>'.
+  Type '(name: string, oldPath: DisplayObject<any, any>, newPath: DisplayObject<any, any>, object: DisplayObject<any, any>, runtime: GlobalRuntime) => DisplayObject<...>' is not assignable to type 'CSSPropertyCalculator<DisplayObject<any, any>, DisplayObject<any, any>>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyColor.d.ts(9,5): error TS2416: Property 'calculator' in type 'CSSPropertyColor' is not assignable to the same property in base type 'Partial<CSSProperty<CSSKeywordValue | CSSRGB | Pattern | CSSGradientValue[], CSSRGB | Pattern | CSSGradientValue[]>>'.
+  Type '(name: string, oldParsed: CSSKeywordValue | CSSRGB | Pattern | CSSGradientValue[], parsed: CSSKeywordValue | CSSRGB | Pattern | CSSGradientValue[], object: DisplayObject<...>) => CSSRGB | ... 1 more ... | CSSGradientValue[]' is not assignable to type 'CSSPropertyCalculator<CSSKeywordValue | CSSRGB | Pattern | CSSGradientValue[], CSSRGB | Pattern | CSSGradientValue[]>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyLengthOrPercentage.d.ts(17,5): error TS2416: Property 'calculator' in type 'CSSPropertyLengthOrPercentage' is not assignable to the same property in base type 'Partial<CSSProperty<CSSUnitValue, number>>'.
+  Type '(name: string, oldParsed: CSSUnitValue, computed: CSSUnitValue, object: DisplayObject<any, any>, runtime: GlobalRuntime) => number' is not assignable to type 'CSSPropertyCalculator<CSSUnitValue, number>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyMarker.d.ts(4,5): error TS2416: Property 'calculator' in type 'CSSPropertyMarker' is not assignable to the same property in base type 'Partial<CSSProperty<DisplayObject<any, any>, DisplayObject<any, any>>>'.
+  Type '(name: string, oldMarker: DisplayObject<any, any>, newMarker: DisplayObject<any, any>, object: DisplayObject<any, any>) => DisplayObject<...>' is not assignable to type 'CSSPropertyCalculator<DisplayObject<any, any>, DisplayObject<any, any>>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyOffsetDistance.d.ts(7,5): error TS2416: Property 'postProcessor' in type 'CSSPropertyOffsetDistance' is not assignable to the same property in base type 'Partial<CSSProperty<CSSUnitValue, number>>'.
+  Type '(object: DisplayObject<any, any>) => void' is not assignable to type '(object: IElement<any, any>) => void'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyPath.d.ts(21,5): error TS2416: Property 'mixer' in type 'CSSPropertyPath' is not assignable to the same property in base type 'Partial<CSSProperty<{ absolutePath: AbsoluteArray; hasArc: boolean; segments: PathSegment[]; polygons: [number, number][][]; polylines: [number, number][][]; curve: CurveArray; totalLength: number; rect: Rectangle; }, { ...; }>>'.
+  Type '(left: { absolutePath: AbsoluteArray; hasArc: boolean; segments: PathSegment[]; polygons: [number, number][][]; polylines: [number, number][][]; curve: CurveArray; totalLength: number; rect: Rectangle; }, right: { ...; }, object?: IElement<...> | undefined) => [...]' is not assignable to type 'CSSPropertyMixer<{ absolutePath: AbsoluteArray; hasArc: boolean; segments: PathSegment[]; polygons: [number, number][][]; polylines: [number, number][][]; curve: CurveArray; totalLength: number; rect: Rectangle; }, any>'.
+    Types of parameters 'object' and 'displayObject' are incompatible.
+      Type 'IElement<any, any> | null' is not assignable to type 'IElement<any, any> | undefined'.
+        Type 'null' is not assignable to type 'IElement<any, any> | undefined'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyText.d.ts(5,5): error TS2416: Property 'calculator' in type 'CSSPropertyText' is not assignable to the same property in base type 'Partial<CSSProperty<string | CSSKeywordValue, string>>'.
+  Type '(name: string, oldParsed: string | CSSKeywordValue, parsed: string | CSSKeywordValue, object: DisplayObject<any, any>) => string' is not assignable to type 'CSSPropertyCalculator<string | CSSKeywordValue, string>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyText.d.ts(6,5): error TS2416: Property 'postProcessor' in type 'CSSPropertyText' is not assignable to the same property in base type 'Partial<CSSProperty<string | CSSKeywordValue, string>>'.
+  Type '(object: DisplayObject<any, any>) => void' is not assignable to type '(object: IElement<any, any>) => void'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyTextTransform.d.ts(10,5): error TS2416: Property 'calculator' in type 'CSSPropertyTextTransform' is not assignable to the same property in base type 'Partial<CSSProperty<CSSKeywordValue, TextTransform>>'.
+  Type '(name: string, oldParsed: CSSKeywordValue, parsed: CSSKeywordValue, object: DisplayObject<any, any>) => TextTransform' is not assignable to type 'CSSPropertyCalculator<CSSKeywordValue, TextTransform>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyTransform.d.ts(38,5): error TS2416: Property 'calculator' in type 'CSSPropertyTransform' is not assignable to the same property in base type 'Partial<CSSProperty<CSSKeywordValue | ParsedTransform[], ParsedTransform[]>>'.
+  Type '(name: string, oldParsed: CSSKeywordValue | ParsedTransform[], parsed: CSSKeywordValue | ParsedTransform[], object: DisplayObject<...>) => ParsedTransform[]' is not assignable to type 'CSSPropertyCalculator<CSSKeywordValue | ParsedTransform[], ParsedTransform[]>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyTransform.d.ts(39,5): error TS2416: Property 'mixer' in type 'CSSPropertyTransform' is not assignable to the same property in base type 'Partial<CSSProperty<CSSKeywordValue | ParsedTransform[], ParsedTransform[]>>'.
+  Type '(left: ParsedTransform[], right: ParsedTransform[], target: DisplayObject<any, any> | null) => [number[][], number[][], (d: number[][]) => string]' is not assignable to type 'CSSPropertyMixer<ParsedTransform[], any>'.
+    Types of parameters 'target' and 'displayObject' are incompatible.
+      Type 'IElement<any, any> | null' is not assignable to type 'DisplayObject<any, any> | null'.
+        Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyTransform.d.ts(40,5): error TS2416: Property 'postProcessor' in type 'CSSPropertyTransform' is not assignable to the same property in base type 'Partial<CSSProperty<CSSKeywordValue | ParsedTransform[], ParsedTransform[]>>'.
+  Type '(object: DisplayObject<any, any>) => void' is not assignable to type '(object: IElement<any, any>) => void'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyTransformOrigin.d.ts(10,5): error TS2416: Property 'postProcessor' in type 'CSSPropertyTransformOrigin' is not assignable to the same property in base type 'Partial<CSSProperty<[CSSUnitValue, CSSUnitValue], [CSSUnitValue, CSSUnitValue]>>'.
+  Type '(object: DisplayObject<any, any>) => void' is not assignable to type '(object: IElement<any, any>) => void'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyZIndex.d.ts(5,5): error TS2416: Property 'calculator' in type 'CSSPropertyZIndex' is not assignable to the same property in base type 'Partial<CSSProperty<CSSUnitValue, number>>'.
+  Type '(name: string, oldParsed: CSSUnitValue, computed: CSSUnitValue, object: DisplayObject<any, any>) => number' is not assignable to type 'CSSPropertyCalculator<CSSUnitValue, number>'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/css/properties/CSSPropertyZIndex.d.ts(6,5): error TS2416: Property 'postProcessor' in type 'CSSPropertyZIndex' is not assignable to the same property in base type 'Partial<CSSProperty<CSSUnitValue, number>>'.
+  Type '(object: DisplayObject<any, any>) => void' is not assignable to type '(object: IElement<any, any>) => void'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Type 'IElement<any, any>' is not assignable to type 'DisplayObject<any, any>'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/dom/FederatedMouseEvent.d.ts(16,5): error TS2416: Property 'relatedTarget' in type 'FederatedMouseEvent' is not assignable to the same property in base type 'MouseEvent'.
+  Type 'DisplayObject<any, any> | null' is not assignable to type 'EventTarget | null'.
+    Type 'DisplayObject<any, any>' is not assignable to type 'EventTarget'.
+      Types of property 'addEventListener' are incompatible.
+        Type '(type: string, listener: EventListenerOrEventListenerObject | ((...args: any[]) => void), options?: boolean | AddEventListenerOptions | undefined) => DisplayObject<...>' is not assignable to type '(type: string, callback: EventListenerOrEventListenerObject | null, options?: boolean | AddEventListenerOptions | undefined) => void'.
+          Types of parameters 'listener' and 'callback' are incompatible.
+            Type 'EventListenerOrEventListenerObject | null' is not assignable to type 'EventListenerOrEventListenerObject | ((...args: any[]) => void)'.
+              Type 'null' is not assignable to type 'EventListenerOrEventListenerObject | ((...args: any[]) => void)'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/dom/FederatedPointerEvent.d.ts(2,22): error TS2420: Class 'FederatedPointerEvent' incorrectly implements interface 'PointerEvent'.
+  Types of property 'relatedTarget' are incompatible.
+    Type 'DisplayObject<any, any> | null' is not assignable to type 'EventTarget | null'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/dom/FederatedWheelEvent.d.ts(2,22): error TS2420: Class 'FederatedWheelEvent' incorrectly implements interface 'WheelEvent'.
+  Types of property 'relatedTarget' are incompatible.
+    Type 'DisplayObject<any, any> | null' is not assignable to type 'EventTarget | null'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/services/aabb/HTMLUpdater.d.ts(4,5): error TS2416: Property 'update' in type 'HTMLUpdater' is not assignable to the same property in base type 'GeometryAABBUpdater<ParsedHTMLStyleProps>'.
+  Type '(parsedStyle: ParsedHTMLStyleProps, object: HTML) => { cx: number; cy: number; hwidth: number; hheight: number; }' is not assignable to type '(parsedStyle: ParsedHTMLStyleProps, object: DisplayObject<any, any>) => { cx: number; cy: number; cz?: number | undefined; hwidth: number; hheight: number; hdepth?: number | undefined; }'.
+    Types of parameters 'object' and 'object' are incompatible.
+      Property 'getDomElement' is missing in type 'DisplayObject<any, any>' but required in type 'HTML'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/services/RenderingService.d.ts(56,31): error TS2304: Cannot find name 'XRFrame'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/services/RenderingService.d.ts(72,29): error TS2304: Cannot find name 'XRFrame'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/services/RenderingService.d.ts(111,35): error TS2304: Cannot find name 'XRFrame'.
+node_modules/.pnpm/@antv+g-lite@2.7.0/node_modules/@antv/g-lite/types/services/SceneGraphService.d.ts(131,5): error TS2416: Property 'notifyMutationObservers' in type 'DefaultSceneGraphService' is not assignable to the same property in base type 'SceneGraphService'.
+  Type '(canvas: Canvas) => void' is not assignable to type '(canvas: ICanvas) => void'.
+    Types of parameters 'canvas' and 'canvas' are incompatible.
+      Type 'ICanvas' is missing the following properties from type 'Canvas': Element, inited, readyPromise, resolveReadyPromise, and 26 more.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/api/extend.d.ts(11,41): error TS2344: Type 'Library' does not satisfy the constraint 'Record<string, any>'.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/api/extend.d.ts(12,87): error TS2344: Type 'Library' does not satisfy the constraint 'Record<string, any>'.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/api/extend.d.ts(12,137): error TS2344: Type 'Library' does not satisfy the constraint 'Record<string, any>'.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/api/extend.d.ts(13,42): error TS2344: Type 'Spec' does not satisfy the constraint 'G2Spec'.
+  Type 'Spec' is not assignable to type 'TimingKeyframeComposition & { width?: number | undefined; height?: number | undefined; depth?: number | undefined; autoFit?: boolean | undefined; }'.
+    Type 'Spec' is not assignable to type 'TimingKeyframeComposition'.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/api/extend.d.ts(13,57): error TS2344: Type 'Library' does not satisfy the constraint 'Record<string, any>'.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/interaction/drillDown.d.ts(1,38): error TS2307: Cannot find module 'spec' or its corresponding type declarations.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/runtime/types/common.d.ts(82,5): error TS2411: Property 'x' of type 'number[][] | undefined' is not assignable to 'string' index type 'MaybeArray<Primitive>[]'.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/runtime/types/common.d.ts(83,5): error TS2411: Property 'y' of type 'number[][] | undefined' is not assignable to 'string' index type 'MaybeArray<Primitive>[]'.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/runtime/types/common.d.ts(84,5): error TS2411: Property 'position' of type 'number[][] | undefined' is not assignable to 'string' index type 'MaybeArray<Primitive>[]'.
+node_modules/.pnpm/@antv+g2@5.4.8/node_modules/@antv/g2/lib/spec/dataTransform.d.ts(14,5): error TS2411: Property 'type' of type '"rename" | undefined' is not assignable to 'string' index type 'string'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/Animation.d.ts(11,5): error TS2416: Property 'effect' in type 'Animation' is not assignable to the same property in base type 'IAnimation'.
+  Type 'KeyframeEffect' is not assignable to type 'IKeyframeEffect'.
+    Types of property 'animation' are incompatible.
+      Type 'Animation | null' is not assignable to type 'IAnimation | null'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/Animation.d.ts(15,5): error TS2416: Property 'timeline' in type 'Animation' is not assignable to the same property in base type 'IAnimation'.
+  Type 'AnimationTimeline' is not assignable to type 'IAnimationTimeline'.
+    Types of property 'play' are incompatible.
+      Type '(target: IElement<any, any>, keyframes: PropertyIndexedKeyframes | Keyframe[] | null, options?: number | KeyframeAnimationOptions | undefined) => Animation' is not assignable to type '(target: IElement<any, any>, keyframes: PropertyIndexedKeyframes | Keyframe[] | null, options?: number | KeyframeAnimationOptions | undefined) => IAnimation'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/Animation.d.ts(86,9): error TS2416: Property 'currentTime' in type 'Animation' is not assignable to the same property in base type 'IAnimation'.
+  Type 'number | null' is not assignable to type 'number'.
+    Type 'null' is not assignable to type 'number'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/Animation.d.ts(87,9): error TS2416: Property 'currentTime' in type 'Animation' is not assignable to the same property in base type 'IAnimation'.
+  Type 'number | null' is not assignable to type 'number'.
+    Type 'null' is not assignable to type 'number'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/Animation.d.ts(92,9): error TS2416: Property 'startTime' in type 'Animation' is not assignable to the same property in base type 'IAnimation'.
+  Type 'number | null' is not assignable to type 'number'.
+    Type 'null' is not assignable to type 'number'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/Animation.d.ts(93,9): error TS2416: Property 'startTime' in type 'Animation' is not assignable to the same property in base type 'IAnimation'.
+  Type 'number | null' is not assignable to type 'number'.
+    Type 'null' is not assignable to type 'number'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/AnimationEvent.d.ts(7,22): error TS2420: Class 'AnimationEvent' incorrectly implements interface 'AnimationPlaybackEvent'.
+  Types of property 'currentTarget' are incompatible.
+    Type 'IEventTarget | null' is not assignable to type 'EventTarget | null'.
+      Type 'IEventTarget' is not assignable to type 'EventTarget'.
+        Types of property 'addEventListener' are incompatible.
+          Type '(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined) => void' is not assignable to type '(type: string, callback: EventListenerOrEventListenerObject | null, options?: boolean | AddEventListenerOptions | undefined) => void'.
+            Types of parameters 'listener' and 'callback' are incompatible.
+              Type 'EventListenerOrEventListenerObject | null' is not assignable to type 'EventListenerOrEventListenerObject'.
+                Type 'null' is not assignable to type 'EventListenerOrEventListenerObject'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/AnimationTimeline.d.ts(24,5): error TS2416: Property 'getAnimations' in type 'AnimationTimeline' is not assignable to the same property in base type 'IAnimationTimeline'.
+  Type '() => Animation[]' is not assignable to type '() => IAnimation[]'.
+    Type 'Animation[]' is not assignable to type 'IAnimation[]'.
+      Type 'Animation' is not assignable to type 'IAnimation'.
+        Types of property 'onfinish' are incompatible.
+          Type '((this: Animation, ev: AnimationPlaybackEvent) => any) | null' is not assignable to type '((this: IAnimation, ev: AnimationPlaybackEvent) => any) | null'.
+            Type '(this: Animation, ev: AnimationPlaybackEvent) => any' is not assignable to type '(this: IAnimation, ev: AnimationPlaybackEvent) => any'.
+              The 'this' types of each signature are incompatible.
+                Type 'IAnimation' is missing the following properties from type 'Animation': currentTimePending, _idle, _paused, _finishedFlag, and 30 more.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/AnimationTimeline.d.ts(26,5): error TS2416: Property 'play' in type 'AnimationTimeline' is not assignable to the same property in base type 'IAnimationTimeline'.
+  Type '(target: IElement<any, any>, keyframes: PropertyIndexedKeyframes | Keyframe[] | null, options?: number | KeyframeAnimationOptions | undefined) => Animation' is not assignable to type '(target: IElement<any, any>, keyframes: PropertyIndexedKeyframes | Keyframe[] | null, options?: number | KeyframeAnimationOptions | undefined) => IAnimation'.
+    Type 'Animation' is not assignable to type 'IAnimation'.
+node_modules/.pnpm/@antv+g@6.3.1/node_modules/@antv/g/types/plugins/web-animations-api/dom/KeyframeEffect.d.ts(24,5): error TS2416: Property 'animation' in type 'KeyframeEffect' is not assignable to the same property in base type 'IKeyframeEffect'.
+  Type 'Animation | null' is not assignable to type 'IAnimation | null'.
+    Type 'Animation' is not assignable to type 'IAnimation'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/band.d.ts(37,5): error TS2416: Property 'clone' in type 'Band<O>' is not assignable to the same property in base type 'Ordinal<O>'.
+  Type '() => Band<O>' is not assignable to type '() => Ordinal<O>'.
+    Call signature return types 'Band<O>' and 'Ordinal<O>' are incompatible.
+      The types returned by 'getRange()' are incompatible between these types.
+        Type 'O["range"]' is not assignable to type 'any[]'.
+          Type 'number[] | undefined' is not assignable to type 'any[]'.
+            Type 'undefined' is not assignable to type 'any[]'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/band.d.ts(40,5): error TS2416: Property 'getRange' in type 'Band<O>' is not assignable to the same property in base type 'Ordinal<O>'.
+  Type '() => O["range"]' is not assignable to type '() => any[]'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/diverging.d.ts(3,18): error TS2430: Interface 'Diverging' incorrectly extends interface 'Linear'.
+  The types of 'clone().invert' are incompatible between these types.
+    Type 'undefined' is not assignable to type '(x: unknown) => any'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/diverging.d.ts(16,5): error TS2416: Property 'clone' in type 'Diverging' is not assignable to the same property in base type 'Linear'.
+  Type '() => Diverging' is not assignable to type '() => Base<LinearOptions>'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/linear.d.ts(9,48): error TS2344: Type 'LinearOptions' does not satisfy the constraint 'ContinuousOptions'.
+  Types of property 'tickMethod' are incompatible.
+    Type 'TickMethod<number> | undefined' is not assignable to type 'TickMethod<number | Date> | undefined'.
+      Type 'TickMethod<number>' is not assignable to type 'TickMethod<number | Date>'.
+        Types of parameters 'min' and 'min' are incompatible.
+          Type 'number | Date' is not assignable to type 'number'.
+            Type 'Date' is not assignable to type 'number'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/log.d.ts(8,45): error TS2344: Type 'LogOptions' does not satisfy the constraint 'ContinuousOptions'.
+  Types of property 'tickMethod' are incompatible.
+    Type 'TickMethod<number> | undefined' is not assignable to type 'TickMethod<number | Date> | undefined'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/log.d.ts(10,15): error TS2416: Property 'chooseNice' in type 'Log' is not assignable to the same property in base type 'Continuous<LogOptions>'.
+  Type '() => TickMethod<number>' is not assignable to type '() => NiceMethod<number | Date>'.
+    Type 'TickMethod<number>' is not assignable to type 'NiceMethod<number | Date>'.
+      Types of parameters 'min' and 'min' are incompatible.
+        Type 'number | Date' is not assignable to type 'number'.
+          Type 'Date' is not assignable to type 'number'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/pow.d.ts(10,80): error TS2344: Type 'O' does not satisfy the constraint 'ContinuousOptions'.
+  Type 'PowOptions' is not assignable to type 'ContinuousOptions'.
+    Types of property 'tickMethod' are incompatible.
+      Type 'TickMethod<number> | undefined' is not assignable to type 'TickMethod<number | Date> | undefined'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/sequential.d.ts(3,18): error TS2430: Interface 'Sequential' incorrectly extends interface 'Linear'.
+  The types of 'clone().invert' are incompatible between these types.
+    Type 'undefined' is not assignable to type '(x: unknown) => any'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/sequential.d.ts(16,5): error TS2416: Property 'clone' in type 'Sequential' is not assignable to the same property in base type 'Linear'.
+  Type '() => Sequential' is not assignable to type '() => Base<LinearOptions>'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/time.d.ts(3,46): error TS2344: Type 'TimeOptions' does not satisfy the constraint 'ContinuousOptions'.
+  Types of property 'tickMethod' are incompatible.
+    Type 'TickMethod<Date> | undefined' is not assignable to type 'TickMethod<number | Date> | undefined'.
+      Type 'TickMethod<Date>' is not assignable to type 'TickMethod<number | Date>'.
+        Types of parameters 'min' and 'min' are incompatible.
+          Type 'number | Date' is not assignable to type 'Date'.
+            Type 'number' is not assignable to type 'Date'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/scales/time.d.ts(6,15): error TS2416: Property 'chooseNice' in type 'Time' is not assignable to the same property in base type 'Continuous<TimeOptions>'.
+  Type '() => NiceMethod<Date>' is not assignable to type '() => NiceMethod<number | Date>'.
+    Type 'NiceMethod<Date>' is not assignable to type 'NiceMethod<number | Date>'.
+      Types of parameters 'min' and 'min' are incompatible.
+        Type 'number | Date' is not assignable to type 'Date'.
+          Type 'number' is not assignable to type 'Date'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/types.d.ts(29,45): error TS2536: Type 'number' cannot be used to index type 'O["domain"]'.
+node_modules/.pnpm/@antv+scale@0.4.16/node_modules/@antv/scale/lib/types.d.ts(31,44): error TS2536: Type 'number' cannot be used to index type 'O["range"]'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/band.d.ts(37,5): error TS2416: Property 'clone' in type 'Band<O>' is not assignable to the same property in base type 'Ordinal<O>'.
+  Type '() => Band<O>' is not assignable to type '() => Ordinal<O>'.
+    Call signature return types 'Band<O>' and 'Ordinal<O>' are incompatible.
+      The types returned by 'getRange()' are incompatible between these types.
+        Type 'O["range"]' is not assignable to type 'any[]'.
+          Type 'number[] | undefined' is not assignable to type 'any[]'.
+            Type 'undefined' is not assignable to type 'any[]'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/band.d.ts(40,5): error TS2416: Property 'getRange' in type 'Band<O>' is not assignable to the same property in base type 'Ordinal<O>'.
+  Type '() => O["range"]' is not assignable to type '() => any[]'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/diverging.d.ts(3,18): error TS2430: Interface 'Diverging' incorrectly extends interface 'Linear'.
+  The types of 'clone().invert' are incompatible between these types.
+    Type 'undefined' is not assignable to type '(x: unknown) => any'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/diverging.d.ts(16,5): error TS2416: Property 'clone' in type 'Diverging' is not assignable to the same property in base type 'Linear'.
+  Type '() => Diverging' is not assignable to type '() => Base<LinearOptions>'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/linear.d.ts(9,48): error TS2344: Type 'LinearOptions' does not satisfy the constraint 'ContinuousOptions'.
+  Types of property 'tickMethod' are incompatible.
+    Type 'TickMethod<number> | undefined' is not assignable to type 'TickMethod<number | Date> | undefined'.
+      Type 'TickMethod<number>' is not assignable to type 'TickMethod<number | Date>'.
+        Types of parameters 'min' and 'min' are incompatible.
+          Type 'number | Date' is not assignable to type 'number'.
+            Type 'Date' is not assignable to type 'number'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/log.d.ts(8,45): error TS2344: Type 'LogOptions' does not satisfy the constraint 'ContinuousOptions'.
+  Types of property 'tickMethod' are incompatible.
+    Type 'TickMethod<number> | undefined' is not assignable to type 'TickMethod<number | Date> | undefined'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/log.d.ts(10,15): error TS2416: Property 'chooseNice' in type 'Log' is not assignable to the same property in base type 'Continuous<LogOptions>'.
+  Type '() => TickMethod<number>' is not assignable to type '() => NiceMethod<number | Date>'.
+    Type 'TickMethod<number>' is not assignable to type 'NiceMethod<number | Date>'.
+      Types of parameters 'min' and 'min' are incompatible.
+        Type 'number | Date' is not assignable to type 'number'.
+          Type 'Date' is not assignable to type 'number'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/pow.d.ts(10,80): error TS2344: Type 'O' does not satisfy the constraint 'ContinuousOptions'.
+  Type 'PowOptions' is not assignable to type 'ContinuousOptions'.
+    Types of property 'tickMethod' are incompatible.
+      Type 'TickMethod<number> | undefined' is not assignable to type 'TickMethod<number | Date> | undefined'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/sequential.d.ts(3,18): error TS2430: Interface 'Sequential' incorrectly extends interface 'Linear'.
+  The types of 'clone().invert' are incompatible between these types.
+    Type 'undefined' is not assignable to type '(x: unknown) => any'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/sequential.d.ts(16,5): error TS2416: Property 'clone' in type 'Sequential' is not assignable to the same property in base type 'Linear'.
+  Type '() => Sequential' is not assignable to type '() => Base<LinearOptions>'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/time.d.ts(3,46): error TS2344: Type 'TimeOptions' does not satisfy the constraint 'ContinuousOptions'.
+  Types of property 'tickMethod' are incompatible.
+    Type 'TickMethod<Date> | undefined' is not assignable to type 'TickMethod<number | Date> | undefined'.
+      Type 'TickMethod<Date>' is not assignable to type 'TickMethod<number | Date>'.
+        Types of parameters 'min' and 'min' are incompatible.
+          Type 'number | Date' is not assignable to type 'Date'.
+            Type 'number' is not assignable to type 'Date'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/scales/time.d.ts(6,15): error TS2416: Property 'chooseNice' in type 'Time' is not assignable to the same property in base type 'Continuous<TimeOptions>'.
+  Type '() => NiceMethod<Date>' is not assignable to type '() => NiceMethod<number | Date>'.
+    Type 'NiceMethod<Date>' is not assignable to type 'NiceMethod<number | Date>'.
+      Types of parameters 'min' and 'min' are incompatible.
+        Type 'number | Date' is not assignable to type 'Date'.
+          Type 'number' is not assignable to type 'Date'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/types.d.ts(36,45): error TS2536: Type 'number' cannot be used to index type 'O["domain"]'.
+node_modules/.pnpm/@antv+scale@0.5.2/node_modules/@antv/scale/lib/types.d.ts(38,44): error TS2536: Type 'number' cannot be used to index type 'O["range"]'.
+node_modules/.pnpm/@types+node@17.0.45/node_modules/@types/node/globals.d.ts(72,13): error TS2403: Subsequent variable declarations must have the same type.  Variable 'AbortSignal' must be of type '{ new (): AbortSignal; prototype: AbortSignal; abort(reason?: any): AbortSignal; timeout(milliseconds: number): AbortSignal; }', but here has type '{ new (): AbortSignal; prototype: AbortSignal; }'.
+node_modules/.pnpm/@umijs+bundler-utils@4.4.4/node_modules/@umijs/bundler-utils/compiled/http-proxy-middleware/dist/index.d.ts(3,15): error TS2307: Cannot find module './handlers' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+bundler-utils@4.4.4/node_modules/@umijs/bundler-utils/dist/https.d.ts(3,18): error TS7016: Could not find a declaration file for module 'spdy'. '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/spdy@4.0.2/node_modules/spdy/lib/spdy.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/spdy` if it exists or add a new declaration (.d.ts) file containing `declare module 'spdy';`
+node_modules/.pnpm/@umijs+bundler-utils@4.4.4/node_modules/@umijs/bundler-utils/dist/https.d.ts(5,43): error TS7016: Could not find a declaration file for module 'spdy'. '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/spdy@4.0.2/node_modules/spdy/lib/spdy.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/spdy` if it exists or add a new declaration (.d.ts) file containing `declare module 'spdy';`
+node_modules/.pnpm/@umijs+bundler-webpack@4.4.4_sockjs-client@1.6.1_typescript@5.2.2/node_modules/@umijs/bundler-webpack/compiled/webpack-5-chain/types/index.d.ts(7,8): error TS2307: Cannot find module '@umijs/bunder-webpack/compiled/webpack' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+bundler-webpack@4.4.4_sockjs-client@1.6.1_typescript@5.2.2/node_modules/@umijs/bundler-webpack/compiled/webpack/schema-utils/declarations/validate.d.ts(4,34): error TS2307: Cannot find module '../../ajv' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+bundler-webpack@4.4.4_sockjs-client@1.6.1_typescript@5.2.2/node_modules/@umijs/bundler-webpack/compiled/webpack/types.d.ts(84,8): error TS2307: Cannot find module 'estree' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+bundler-webpack@4.4.4_sockjs-client@1.6.1_typescript@5.2.2/node_modules/@umijs/bundler-webpack/compiled/webpack/types.d.ts(87,46): error TS2307: Cannot find module './schema-utils' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+bundler-webpack@4.4.4_sockjs-client@1.6.1_typescript@5.2.2/node_modules/@umijs/bundler-webpack/dist/types.d.ts(1,43): error TS2307: Cannot find module '@swc/core' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+bundler-webpack@4.4.4_sockjs-client@1.6.1_typescript@5.2.2/node_modules/@umijs/bundler-webpack/dist/types.d.ts(4,43): error TS2307: Cannot find module 'webpack-bundle-analyzer' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+mfsu@4.4.4/node_modules/@umijs/mfsu/dist/depBuilder/depBuilder.d.ts(33,16): error TS2307: Cannot find module 'webpack' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+mfsu@4.4.4/node_modules/@umijs/mfsu/dist/loader/esbuild.d.ts(1,36): error TS2307: Cannot find module 'webpack' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+mfsu@4.4.4/node_modules/@umijs/mfsu/dist/mfsu/mfsu.d.ts(3,40): error TS2307: Cannot find module 'webpack' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+mfsu@4.4.4/node_modules/@umijs/mfsu/dist/webpackPlugins/buildDepPlugin.d.ts(1,31): error TS2307: Cannot find module 'webpack' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/@ampproject/remapping/dist/types/source-map.d.ts(1,33): error TS2307: Cannot find module '../../@jridgewell/gen-mapping' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/@ampproject/remapping/dist/types/types.d.ts(1,37): error TS2307: Cannot find module '../../@jridgewell/trace-mapping' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/@clack/prompts/dist/index.d.ts(1,26): error TS2307: Cannot find module '@clack/core' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/api/attributes.d.ts(6,36): error TS2307: Cannot find module '../../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/api/css.d.ts(1,36): error TS2307: Cannot find module '../../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/api/forms.d.ts(1,27): error TS2307: Cannot find module '../../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/api/manipulation.d.ts(6,22): error TS2307: Cannot find module '../../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/api/traversing.d.ts(6,41): error TS2307: Cannot find module '../../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/cheerio.d.ts(2,37): error TS2307: Cannot find module '../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/load.d.ts(5,46): error TS2307: Cannot find module '../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/options.d.ts(1,40): error TS2307: Cannot find module '../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/options.d.ts(2,36): error TS2307: Cannot find module '../htmlparser2' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/static.d.ts(2,32): error TS2307: Cannot find module '../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/cheerio/lib/types.d.ts(10,27): error TS2307: Cannot find module '../domhandler' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/fs-extra/index.d.ts(20,34): error TS2307: Cannot find module './jsonfile/utils' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/fs-extra/index.d.ts(1007,86): error TS7016: Could not find a declaration file for module 'jsonfile'. '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/jsonfile@6.1.0/node_modules/jsonfile/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/jsonfile` if it exists or add a new declaration (.d.ts) file containing `declare module 'jsonfile';`
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/tsconfig-paths/lib/index.d.ts(1,69): error TS2307: Cannot find module './match-path-sync' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/tsconfig-paths/lib/index.d.ts(2,84): error TS2307: Cannot find module './match-path-async' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/tsconfig-paths/lib/index.d.ts(3,26): error TS2307: Cannot find module './register' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/tsconfig-paths/lib/index.d.ts(4,100): error TS2307: Cannot find module './config-loader' or its corresponding type declarations.
+node_modules/.pnpm/@umijs+utils@4.4.4/node_modules/@umijs/utils/compiled/tsconfig-paths/lib/index.d.ts(5,79): error TS2307: Cannot find module './filesystem' or its corresponding type declarations.
+node_modules/.pnpm/ahooks@3.8.1_react@18.3.1/node_modules/ahooks/lib/useCookieState/index.d.ts(1,21): error TS7016: Could not find a declaration file for module 'js-cookie'. '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/js-cookie@3.0.5/node_modules/js-cookie/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/js-cookie` if it exists or add a new declaration (.d.ts) file containing `declare module 'js-cookie';`
+node_modules/.pnpm/rc-tree@5.7.12_react-dom@18.3.1_react@18.3.1/node_modules/rc-tree/lib/interface.d.ts(59,70): error TS2344: Type 'DateType' does not satisfy the constraint 'BasicDataNode'.
+node_modules/.pnpm/tween-one@1.2.7/node_modules/tween-one/es/animate/ease.d.ts(1,25): error TS7016: Could not find a declaration file for module 'tween-functions'. '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/tween-functions@1.2.0/node_modules/tween-functions/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/tween-functions` if it exists or add a new declaration (.d.ts) file containing `declare module 'tween-functions';`
+node_modules/.pnpm/umi@4.4.4_@types+node@17.0.45_@types+react@18.3.12_eslint@8.35.0_prettier@2.8.8_react-dom@18._3uashsdxqqx3vglke5f3jz42aq/node_modules/umi/dist/defineConfig.d.ts(1,36): error TS2307: Cannot find module '@@/core/pluginConfig' or its corresponding type declarations.
+src/app.ts(2,10): error TS2305: Module '"@umijs/max"' has no exported member 'setLocale'.
+src/components/tag.tsx(29,30): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/layouts/index.tsx(11,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/layouts/index.tsx(11,19): error TS2305: Module '"@umijs/max"' has no exported member 'Link'.
+src/layouts/index.tsx(11,25): error TS2305: Module '"@umijs/max"' has no exported member 'Outlet'.
+src/layouts/index.tsx(11,33): error TS2305: Module '"@umijs/max"' has no exported member 'useLocation'.
+src/pages/crontab/detail.tsx(597,50): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(26,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/crontab/index.tsx(26,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/crontab/index.tsx(395,36): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(402,39): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(406,23): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(896,22): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/index.tsx(897,19): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/logModal.tsx(59,28): error TS2339: Property 'logStatus' does not exist on type 'IResponseData'.
+src/pages/crontab/logModal.tsx(59,39): error TS2339: Property 'nextOffset' does not exist on type 'IResponseData'.
+src/pages/crontab/viewCreateModal.tsx(81,29): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/viewCreateModal.tsx(125,21): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/viewCreateModal.tsx(151,37): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(77,29): error TS7006: Parameter 'record' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(86,16): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(92,16): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(188,6): error TS7006: Parameter 'dragIndex' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(188,17): error TS7006: Parameter 'hoverIndex' implicitly has an 'any' type.
+src/pages/crontab/viewManageModal.tsx(256,11): error TS2322: Type '(record: any, index: number) => any' is not assignable to type 'GetComponentProps<any>'.
+  Types of parameters 'index' and 'index' are incompatible.
+    Type 'number | undefined' is not assignable to type 'number'.
+      Type 'undefined' is not assignable to type 'number'.
+src/pages/dashboard/index.tsx(12,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/dependence/index.tsx(35,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/diff/index.tsx(10,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/diff/index.tsx(76,44): error TS7006: Parameter 'op' implicitly has an 'any' type.
+src/pages/error/index.tsx(6,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/error/index.tsx(6,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/initialization/index.tsx(14,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/log/index.tsx(10,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/log/index.tsx(108,6): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/login/index.tsx(13,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/login/index.tsx(13,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/script/editNameModal.tsx(72,23): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/script/editNameModal.tsx(76,20): error TS7006: Parameter 'data' implicitly has an 'any' type.
+src/pages/script/editNameModal.tsx(80,20): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/script/editNameModal.tsx(81,17): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/script/index.tsx(19,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/script/index.tsx(19,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/script/index.tsx(132,9): error TS2739: Type 'Record<string, any> & { children?: unknown[] | undefined; }' is missing the following properties from type '{ title: string | (string | null)[]; key: string | (string | null)[]; parent: string | (string | null)[] | null; }': title, key, parent
+src/pages/script/index.tsx(202,6): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/script/index.tsx(382,16): error TS18048: 'item' is possibly 'undefined'.
+src/pages/script/index.tsx(383,23): error TS18048: 'item' is possibly 'undefined'.
+src/pages/setting/index.tsx(32,10): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/pages/setting/notification.tsx(82,31): error TS7006: Parameter 'y' implicitly has an 'any' type.
+src/pages/setting/security.tsx(6,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/setting/security.tsx(98,21): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/subscription/index.tsx(34,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.
+src/pages/subscription/index.tsx(34,19): error TS2305: Module '"@umijs/max"' has no exported member 'useOutletContext'.
+src/utils/http.tsx(4,10): error TS2305: Module '"@umijs/max"' has no exported member 'history'.

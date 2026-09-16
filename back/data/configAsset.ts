@@ -130,7 +130,7 @@ export const TaskConfigBindingModel = sequelize.define<
   Model<ConfigBinding, Partial<ConfigBinding>>
 >(
   'TaskConfigBinding',
-  { id, task_id: fk('Crontabs', false, 'CASCADE'), ...bindingAttributes() },
+  { id, task_id: fk('Tasks', false, 'CASCADE'), ...bindingAttributes() },
   {
     indexes: [
       { unique: true, fields: ['task_id', 'target_base', 'target_path'] },
@@ -143,7 +143,7 @@ export const TaskHookModel = sequelize.define<
   'TaskHook',
   {
     id,
-    task_id: fk('Crontabs', false, 'CASCADE'),
+    task_id: fk('Tasks', false, 'CASCADE'),
     name: { type: DataTypes.STRING, allowNull: false },
     phase: { type: DataTypes.STRING, allowNull: false },
     command: { type: DataTypes.TEXT, allowNull: false },

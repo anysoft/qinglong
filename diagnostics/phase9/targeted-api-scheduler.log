@@ -1,0 +1,171 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: recovery snapshot cannot overwrite concurrent create
+ok 1 - recovery snapshot cannot overwrite concurrent create
+  ---
+  duration_ms: 379.977209
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent update
+ok 2 - recovery snapshot cannot overwrite concurrent update
+  ---
+  duration_ms: 211.205875
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent remove
+ok 3 - recovery snapshot cannot overwrite concurrent remove
+  ---
+  duration_ms: 184.05925
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent disabled
+ok 4 - recovery snapshot cannot overwrite concurrent disabled
+  ---
+  duration_ms: 179.761375
+  type: 'test'
+  ...
+# Subtest: recovery snapshot cannot overwrite concurrent enabled
+ok 5 - recovery snapshot cannot overwrite concurrent enabled
+  ---
+  duration_ms: 181.3945
+  type: 'test'
+  ...
+# Subtest: recovery waits for an admitted mutation to finish registration before reading the DB
+ok 6 - recovery waits for an admitted mutation to finish registration before reading the DB
+  ---
+  duration_ms: 192.130917
+  type: 'test'
+  ...
+# Subtest: create preserves scheduler 503 after rollback and releases its lock
+ok 7 - create preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 78.980125
+  type: 'test'
+  ...
+# Subtest: update preserves scheduler 503 after rollback and releases its lock
+ok 8 - update preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 73.045166
+  type: 'test'
+  ...
+# Subtest: enabled preserves scheduler 503 after rollback and releases its lock
+ok 9 - enabled preserves scheduler 503 after rollback and releases its lock
+  ---
+  duration_ms: 68.153917
+  type: 'test'
+  ...
+# Subtest: scheduler lock excludes a second OS process and leaves no lock after completion
+ok 10 - scheduler lock excludes a second OS process and leaves no lock after completion
+  ---
+  duration_ms: 371.624208
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+ok 11 - update aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 67.973708
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+ok 12 - update aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 63.88175
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+ok 13 - update aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 64.550791
+  type: 'test'
+  ...
+# Subtest: update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+ok 14 - update aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 60.91325
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+ok 15 - remove aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 61.971333
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+ok 16 - remove aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 59.980917
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+ok 17 - remove aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 60.141916
+  type: 'test'
+  ...
+# Subtest: remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+ok 18 - remove aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 59.44575
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+ok 19 - disabled aborts on RPC 4 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 60.577458
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+ok 20 - disabled aborts on RPC 4 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 60.7995
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+ok 21 - disabled aborts on RPC 14 with deletion applied=false and reconciles the original DB
+  ---
+  duration_ms: 60.480083
+  type: 'test'
+  ...
+# Subtest: disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+ok 22 - disabled aborts on RPC 14 with deletion applied=true and reconciles the original DB
+  ---
+  duration_ms: 60.130833
+  type: 'test'
+  ...
+# Subtest: configuration rollback cannot restore an obsolete manual queue token
+ok 23 - configuration rollback cannot restore an obsolete manual queue token
+  ---
+  duration_ms: 59.00725
+  type: 'test'
+  ...
+# Subtest: real Task HTTP routes coordinate domain/scheduler rollback, conflict and canonical source projections
+not ok 24 - real Task HTTP routes coordinate domain/scheduler rollback, conflict and canonical source projections
+  ---
+  duration_ms: 870.483042
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/api.test.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: 'The "path" argument must be of type string. Received undefined'
+  code: 'ERR_INVALID_ARG_TYPE'
+  name: 'TypeError'
+  stack: |-
+    Object.join (node:path:1354:7)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:34:30)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:22:34)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    requireModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:21:16)
+    eval (eval at loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:3), <anonymous>:16:48)
+    loadSecurityModule (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/test/helpers/load-security-module.cjs:35:72)
+    Object.load (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/helpers.cjs:20:74)
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 23
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3024.970167

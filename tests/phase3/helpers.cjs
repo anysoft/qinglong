@@ -84,8 +84,13 @@ module.exports = async function setup(t) {
     ...get('data/cron'),
     ...get('data/scopedEnv'),
     ...get('data/configAsset'),
+    ...get('data/task'),
+    ...get('data/runtime'),
+    ...get('data/pythonEnvironment'),
+    ...get('data/nodeEnvironment'),
   };
   await sequelize.sync();
+  require('../phase9/task-fixture.cjs')(Models, sequelize, () => ({ scriptRoot: path.join(dir, 'scripts') }));
   for (const folder of ['scripts', 'config', 'log', 'deps'])
     await fs.mkdir(path.join(dir, folder));
   await fs.writeFile(

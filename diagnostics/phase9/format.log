@@ -1,0 +1,17 @@
+back/api/tasks.ts 120ms
+back/data/task.ts 12ms
+back/schema/platformV5.ts 7ms
+back/schema/taskSchema.ts 13ms
+back/services/schedulerBridge.ts 4ms
+back/services/task.ts 26ms
+back/services/taskExecutionBridge.ts 2ms
+back/services/taskExecutionSourceBridge.ts 5ms
+back/services/taskReferences.ts 5ms
+back/services/taskRelationships.ts 2ms
+back/services/taskResourceResolver.ts 15ms
+back/services/taskResourceValidator.ts 1ms
+back/shared/taskDefinition.ts 8ms
+src/components/task-bridge/logModal.tsx 14ms
+src/components/task-bridge/type.ts 2ms
+src/components/task-resource-references.tsx 5ms
+src/pages/tasks/index.tsx 28ms

@@ -8,7 +8,7 @@ function run(h, language, snapshot, extra = {}) {
   });
 }
 test('actual Python/Node/Shell snapshot complex values, UNSET, no interpolation or secret logs', async t => {
-  const h = await setup(t), task = await h.CrontabModel.create({ command: 'task check.py' });
+  const h = await setup(t), task = await h.SchedulerProjectionModel.create({ command: 'task check.py' });
   await h.EnvModel.bulkCreate([{ name: 'TOKEN', value: 'global', status: 0 }, { name: 'REMOVE', value: 'global', status: 0 }]); 
   const values = { TOKEN: 'private-four-secret', EMPTY: '', SPACE: ' around ', UNICODE: '中文😀', SPECIAL: `a=b&$'"`, JSON: '{"a":"b=c"}', MULTILINE: 'line1\nline2\n', URL: 'https://a.invalid/?a=b&c=d', INJECTION: '$(touch ' + path.join(h.dir, 'pwned') + ')`false`', LONG: 'x'.repeat(16000) };
   await h.variables.save('task', task.id, [...Object.entries(values).map(([name, value]) => ({ name, value, is_secret: name === 'TOKEN' })), { name: 'REMOVE', operation: 'UNSET' }, { name: 'HOST_REMOVE', operation: 'UNSET' }]);
@@ -42,7 +42,7 @@ test('50 simultaneously live runs across repositories/profiles/tasks isolate sna
     const sub = await h.SubscriptionModel.create({ name: `sub-${i}`, repository_id: repo.id });
     const profile = await h.profiles.save({ repository_id: repo.id, name: 'profile' });
     await h.variables.save('repository', profile.id, [{ name: 'PROFILE_VALUE', value: `repo-${i}` }]);
-    const task = await h.CrontabModel.create({ command: 'task check.sh', sub_id: sub.id }); tasks.push(task);
+    const task = await h.SchedulerProjectionModel.create({ command: 'task check.sh', sub_id: sub.id }); tasks.push(task);
     await h.variables.bind('task', task.id, profile.id);
     await h.variables.save('task', task.id, [{ name: 'TASK_VALUE', value: `A-${i}` }, { name: 'BARRIER', value: barrier }, { name: 'INSTANCE', value: String(i) }]);
     snapshots.push(await transport.prepare(await h.resolver.resolve(task.id), process.pid));

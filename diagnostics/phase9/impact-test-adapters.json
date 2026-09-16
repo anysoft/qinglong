@@ -1,0 +1,226 @@
+[
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "name": "test/back/scheduler-mutation.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'test/back/scheduler-mutation.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"test/back/scheduler-mutation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "name": "gate",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:test/back/scheduler-mutation.test.cjs:gate\",\n    \"name\": \"gate\",\n    \"type\": \"Function\",\n    \"filePath\": \"test/back/scheduler-mutation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "name": "fixture",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:test/back/scheduler-mutation.test.cjs:fixture\",\n    \"name\": \"fixture\",\n    \"type\": \"Function\",\n    \"filePath\": \"test/back/scheduler-mutation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "name": "error",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:test/back/scheduler-mutation.test.cjs:fixture.error@73:36#0\",\n    \"name\": \"error\",\n    \"type\": \"Method\",\n    \"filePath\": \"test/back/scheduler-mutation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "name": "warn",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:test/back/scheduler-mutation.test.cjs:fixture.warn@73:48#0\",\n    \"name\": \"warn\",\n    \"type\": \"Method\",\n    \"filePath\": \"test/back/scheduler-mutation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-mutation.test.cjs",
+    "name": "info",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:test/back/scheduler-mutation.test.cjs:fixture.info@73:59#0\",\n    \"name\": \"info\",\n    \"type\": \"Method\",\n    \"filePath\": \"test/back/scheduler-mutation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"1 call site invoking `info` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 1,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 0,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "name": "test/back/scheduler-reconciliation.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'test/back/scheduler-reconciliation.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"test/back/scheduler-reconciliation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "name": "fixture",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:test/back/scheduler-reconciliation.test.cjs:fixture\",\n    \"name\": \"fixture\",\n    \"type\": \"Function\",\n    \"filePath\": \"test/back/scheduler-reconciliation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "name": "warn",
+    "status": 0,
+    "output": "{\n  \"status\": \"ambiguous\",\n  \"message\": \"Found 2 symbols matching 'warn'. Blast radius differs per candidate (max 0 impacted at risk UNKNOWN). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.\",\n  \"target\": {\n    \"name\": \"warn\"\n  },\n  \"direction\": \"upstream\",\n  \"totalCandidates\": 2,\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\",\n  \"maxImpactedCount\": 0,\n  \"maxRisk\": \"UNKNOWN\",\n  \"candidates\": [\n    {\n      \"uid\": \"Method:test/back/scheduler-reconciliation.test.cjs:fixture.warn@25:21#0\",\n      \"name\": \"warn\",\n      \"kind\": \"Method\",\n      \"filePath\": \"test/back/scheduler-reconciliation.test.cjs\",\n      \"line\": 26,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    },\n    {\n      \"uid\": \"Method:test/back/scheduler-reconciliation.test.cjs:fn@31:107.warn@45:38#0\",\n      \"name\": \"warn\",\n      \"kind\": \"Method\",\n      \"filePath\": \"test/back/scheduler-reconciliation.test.cjs\",\n      \"line\": 46,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    }\n  ]\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-reconciliation.test.cjs",
+    "name": "info",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:test/back/scheduler-reconciliation.test.cjs:fn@31:107.info@45:27#0\",\n    \"name\": \"info\",\n    \"type\": \"Method\",\n    \"filePath\": \"test/back/scheduler-reconciliation.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"lower-bound\",\n  \"boundaries\": [\n    \"1 call site invoking `info` was dropped at index time because the receiver's type could not be established (e.g. an unresolved constructor, factory or chained expression). Those callers are absent from this result — actual impact may be higher.\"\n  ],\n  \"causes\": {\n    \"scopeExtractionFiles\": 0,\n    \"receiverTyping\": 1,\n    \"dispatchBoundary\": 0,\n    \"externalBoundary\": 0,\n    \"undecidedSatisfaction\": 0,\n    \"callableValueReferences\": 0\n  },\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "name": "test/back/scheduler-readiness.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'test/back/scheduler-readiness.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"test/back/scheduler-readiness.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "name": "error",
+    "status": 0,
+    "output": "{\n  \"status\": \"ambiguous\",\n  \"message\": \"Found 2 symbols matching 'error'. Blast radius differs per candidate (max 47 impacted at risk UNKNOWN; CRITICAL among the candidates that resolved, and at least one could not be walked). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.\",\n  \"target\": {\n    \"name\": \"error\"\n  },\n  \"direction\": \"upstream\",\n  \"totalCandidates\": 2,\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\",\n  \"maxImpactedCount\": 47,\n  \"maxRisk\": \"UNKNOWN\",\n  \"knownMaxRisk\": \"CRITICAL\",\n  \"candidates\": [\n    {\n      \"uid\": \"Method:test/back/scheduler-readiness.test.cjs:fn@37:72.error@40:49#0\",\n      \"name\": \"error\",\n      \"kind\": \"Method\",\n      \"filePath\": \"test/back/scheduler-readiness.test.cjs\",\n      \"line\": 41,\n      \"score\": 0.94,\n      \"impactedCount\": 47,\n      \"risk\": \"CRITICAL\",\n      \"riskSharedAxes\": \"CRITICAL\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 36\n    },\n    {\n      \"uid\": \"Method:test/back/scheduler-readiness.test.cjs:fn@37:72.error@45:85#0\",\n      \"name\": \"error\",\n      \"kind\": \"Method\",\n      \"filePath\": \"test/back/scheduler-readiness.test.cjs\",\n      \"line\": 46,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    }\n  ]\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "name": "warn",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:test/back/scheduler-readiness.test.cjs:fn@54:99.warn@59:129#0\",\n    \"name\": \"warn\",\n    \"type\": \"Method\",\n    \"filePath\": \"test/back/scheduler-readiness.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "name": "waitForReady",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:test/back/scheduler-readiness.test.cjs:fn@63:80.waitForReady@65:2#2\",\n    \"name\": \"waitForReady\",\n    \"type\": \"Method\",\n    \"filePath\": \"test/back/scheduler-readiness.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "name": "makeUnaryRequest",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Method:test/back/scheduler-readiness.test.cjs:fn@63:80.makeUnaryRequest@66:2#6\",\n    \"name\": \"makeUnaryRequest\",\n    \"type\": \"Method\",\n    \"filePath\": \"test/back/scheduler-readiness.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/scheduler-readiness.test.cjs",
+    "name": "addCron",
+    "status": 0,
+    "output": "{\n  \"status\": \"ambiguous\",\n  \"message\": \"Found 2 symbols matching 'addCron'. Blast radius differs per candidate (max 0 impacted at risk UNKNOWN). Disambiguate with target_uid (or file_path/kind) for a single authoritative result.\",\n  \"target\": {\n    \"name\": \"addCron\"\n  },\n  \"direction\": \"upstream\",\n  \"totalCandidates\": 2,\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\",\n  \"maxImpactedCount\": 0,\n  \"maxRisk\": \"UNKNOWN\",\n  \"candidates\": [\n    {\n      \"uid\": \"Function:test/back/scheduler-readiness.test.cjs:fn@54:99.addCron@58:94\",\n      \"name\": \"addCron\",\n      \"kind\": \"Function\",\n      \"filePath\": \"test/back/scheduler-readiness.test.cjs\",\n      \"line\": 59,\n      \"score\": 0.96,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    },\n    {\n      \"uid\": \"Method:test/back/scheduler-readiness.test.cjs:fn@63:80.addCron@67:2#4\",\n      \"name\": \"addCron\",\n      \"kind\": \"Method\",\n      \"filePath\": \"test/back/scheduler-readiness.test.cjs\",\n      \"line\": 68,\n      \"score\": 0.94,\n      \"impactedCount\": 0,\n      \"risk\": \"UNKNOWN\",\n      \"riskSharedAxes\": \"UNKNOWN\",\n      \"riskScale\": {\n        \"comparableAcrossKinds\": false,\n        \"unusedAxes\": [\n          {\n            \"axis\": \"processes\",\n            \"reason\": \"enrichment-skipped\"\n          },\n          {\n            \"axis\": \"modules\",\n            \"reason\": \"enrichment-skipped\"\n          }\n        ]\n      },\n      \"direct\": 0,\n      \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\"\n    }\n  ]\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/cron-log-name.test.cjs",
+    "name": "test/back/cron-log-name.test.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'test/back/cron-log-name.test.cjs' not found\",\n  \"target\": {\n    \"name\": \"test/back/cron-log-name.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "test/back/cron-log-name.test.cjs",
+    "name": "visit",
+    "status": 0,
+    "output": "{\n  \"target\": {\n    \"id\": \"Function:test/back/cron-log-name.test.cjs:visit\",\n    \"name\": \"visit\",\n    \"type\": \"Function\",\n    \"filePath\": \"test/back/cron-log-name.test.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": 0,\n  \"risk\": \"UNKNOWN\",\n  \"riskSharedAxes\": \"UNKNOWN\",\n  \"riskScale\": {\n    \"comparableAcrossKinds\": true,\n    \"unusedAxes\": []\n  },\n  \"riskNote\": \"No callers resolved. Absence of edges is not evidence the symbol is unused: a caller reaching it through a reference class this index does not record — plain-object property access, a bare-identifier read of a module-scope const — produces no edge to find. Confirm with a text search before treating the change as safe.\",\n  \"epistemic\": \"exact\",\n  \"summary\": {\n    \"direct\": 0,\n    \"processes_affected\": 0,\n    \"modules_affected\": 0\n  },\n  \"byDepthCounts\": {},\n  \"affected_processes\": [],\n  \"affected_modules\": [],\n  \"byDepth\": {}\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "src/components/task-bridge/logModal.tsx",
+    "name": "src/components/task-bridge/logModal.tsx",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'src/components/task-bridge/logModal.tsx' not found\",\n  \"target\": {\n    \"name\": \"src/components/task-bridge/logModal.tsx\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "diagnostics/phase9/platform-e2e.cjs",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'diagnostics/phase9/platform-e2e.cjs' not found\",\n  \"target\": {\n    \"name\": \"diagnostics/phase9/platform-e2e.cjs\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "port",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'port' not found\",\n  \"target\": {\n    \"name\": \"port\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "stop",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'stop' not found\",\n  \"target\": {\n    \"name\": \"stop\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "until",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'until' not found\",\n  \"target\": {\n    \"name\": \"until\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "start",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'start' not found\",\n  \"target\": {\n    \"name\": \"start\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "login",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'login' not found\",\n  \"target\": {\n    \"name\": \"login\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "choose",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'choose' not found\",\n  \"target\": {\n    \"name\": \"choose\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "confirm",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'confirm' not found\",\n  \"target\": {\n    \"name\": \"confirm\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "repositoryAction",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'repositoryAction' not found\",\n  \"target\": {\n    \"name\": \"repositoryAction\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "variable",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'variable' not found\",\n  \"target\": {\n    \"name\": \"variable\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "operation",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'operation' not found\",\n  \"target\": {\n    \"name\": \"operation\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "edit",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'edit' not found\",\n  \"target\": {\n    \"name\": \"edit\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  },
+  {
+    "file": "diagnostics/phase9/platform-e2e.cjs",
+    "name": "save",
+    "status": 1,
+    "output": "{\n  \"error\": \"Target 'save' not found\",\n  \"target\": {\n    \"name\": \"save\"\n  },\n  \"direction\": \"upstream\",\n  \"impactedCount\": null,\n  \"risk\": \"UNKNOWN\"\n}\n",
+    "stderr": "\n  GitNexus Impact (1.6.12)\n"
+  }
+]

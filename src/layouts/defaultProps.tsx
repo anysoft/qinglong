@@ -31,10 +31,10 @@ export default {
         component: '@/pages/dashboard/index',
       },
       {
-        path: '/crontab',
-        name: intl.get('定时任务'),
+        path: '/tasks',
+        name: 'Tasks',
         icon: <IconFont type="ql-icon-crontab" />,
-        component: '@/pages/crontab/index',
+        component: '@/pages/tasks/index',
       },
       {
         path: '/subscription',

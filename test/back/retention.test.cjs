@@ -49,7 +49,7 @@ test('cleanup previews first, protects running instances, and uses explicit opti
   const config = require('../../back/config').default;
   const originalCachePath = config.dependenceCachePath;
   const RunningInstanceModel = {};
-  const CrontabStatModel = {};
+  const TaskStatModel = {};
   const InstanceStatus = { running: 0 };
   const sequelize = {};
   const stubModule = (modulePath, exports) => {
@@ -63,7 +63,7 @@ test('cleanup previews first, protects running instances, and uses explicit opti
     };
   };
   stubModule('../../back/data', { sequelize });
-  stubModule('../../back/data/cronStats', { CrontabStatModel });
+  stubModule('../../back/data/cronStats', { TaskStatModel });
   stubModule('../../back/data/runningInstance', {
     InstanceStatus,
     RunningInstanceModel,
@@ -94,11 +94,11 @@ test('cleanup previews first, protects running instances, and uses explicit opti
     instanceWhere = where;
     return 2;
   };
-  CrontabStatModel.count = async () => {
+  TaskStatModel.count = async () => {
     statCountCalls++;
     return 3;
   };
-  CrontabStatModel.destroy = async () => 3;
+  TaskStatModel.destroy = async () => 3;
   sequelize.transaction = async (callback) => callback({});
   sequelize.query = async (query) => {
     vacuumed = query === 'VACUUM';

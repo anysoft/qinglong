@@ -23,8 +23,8 @@ test('today failures includes recovered and deleted tasks, excluding previous da
     success_count: DataTypes.INTEGER,
   });
   const replacements = {
-    '../../back/data/cron': { CrontabModel: crons },
-    '../../back/data/cronStats': { CrontabStatModel: stats },
+    '../../back/data/cron': { SchedulerProjectionModel: crons },
+    '../../back/data/cronStats': { TaskStatModel: stats },
     '../../back/data/runningInstance': {},
     '../../back/shared/i18n': { tf: (format, id) => format.replace('%s', id) },
   };

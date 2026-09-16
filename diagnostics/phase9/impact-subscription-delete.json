@@ -1,0 +1,55 @@
+{
+  "target": {
+    "id": "Method:back/services/subscription.ts:SubscriptionService.removeUnlocked#2",
+    "name": "removeUnlocked",
+    "type": "Method",
+    "filePath": "back/services/subscription.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 2,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 2,
+    "processes_affected": 0,
+    "modules_affected": 1
+  },
+  "byDepthCounts": {
+    "1": 2
+  },
+  "affected_processes": [],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 2,
+      "impact": "direct"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Function:back/services/subscription.ts:SubscriptionService.remove.acquire@254:6",
+        "name": "acquire",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "Method:back/services/subscription.ts:SubscriptionService.remove#2",
+        "name": "remove",
+        "filePath": "back/services/subscription.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ]
+  }
+}

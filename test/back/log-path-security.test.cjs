@@ -97,7 +97,7 @@ test('manual execution rejects escaping log names before creating directories or
     '../config': { logPath: root },
     '../data/cron': {
       CrontabStatus: { queued: 3, idle: 1 },
-      CrontabModel: { update: async () => {} },
+      SchedulerProjectionModel: { update: async () => {} },
     },
     '../data/runningInstance': { RunningInstanceModel: {}, InstanceStatus: {} },
     '../config/util': {},

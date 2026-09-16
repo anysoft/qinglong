@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express';
 import { Container } from 'typedi';
 import { Joi } from 'celebrate';
 import { sequelize } from '../data';
-import { CrontabModel } from '../data/cron';
+import { taskRepository } from '../services/taskRelationships';
 import { SubscriptionModel } from '../data/subscription';
 import { ConfigAssetModel } from '../data/configAsset';
 import ConfigAssetService from '../services/configAsset';
@@ -168,18 +168,11 @@ export default function configAssetRoutes(app: Router) {
     '/tasks/:id/config-context',
     endpoint(async (req) =>
       sequelize.transaction(async (transaction) => {
-        const task = await CrontabModel.findByPk(
-          configId(Number(req.params.id)),
-          { transaction },
-        );
-        if (!task) throw new ConfigAssetError('TASK_NOT_FOUND', 404);
-        const sub = task.sub_id
-          ? await SubscriptionModel.findByPk(task.sub_id, { transaction })
-          : null;
+        const { repository_id } = await taskRepository(configId(Number(req.params.id)), transaction);
         return {
-          repository_id: sub?.repository_id ?? null,
-          inherited: sub?.repository_id
-            ? await bindings.list('repository', sub.repository_id, transaction)
+          repository_id,
+          inherited: repository_id
+            ? await bindings.list('repository', repository_id, transaction)
             : [],
         };
       }),

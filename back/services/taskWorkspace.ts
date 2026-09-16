@@ -2,13 +2,20 @@ import fs from 'fs/promises';
 import path from 'path';
 import { createHash } from 'crypto';
 import config from '../config';
-import { Crontab } from '../data/cron';
+import { SchedulerProjection } from '../data/cron';
 import { TaskWorkspace } from './configMaterialization';
 import { ConfigAssetError, safeParents } from '../shared/configAssets';
+import TaskExecutionSourceBridge from './taskExecutionSourceBridge';
 
 /** B17: sole mapping from the current scripts execution source into Config Domain. */
 export default class TaskWorkspaceResolver {
-  async resolve(task: Crontab | null, args: string[]): Promise<TaskWorkspace> {
+  async resolve(task: SchedulerProjection | null, args: string[]): Promise<TaskWorkspace> {
+    if (task?.id) {
+      const { source, root } = await new TaskExecutionSourceBridge().source(task.id);
+      const taskDir = path.dirname(path.join(root, source.relative_entrypoint));
+      const cwd = source.cwd_mode === 'WORKTREE_ROOT' ? root : source.cwd_mode === 'CUSTOM_RELATIVE' ? path.join(root, source.cwd_relative_path!) : taskDir;
+      return { workspaceRoot: root, taskDir, cwd, resourceKey: createHash('sha256').update(root).digest('hex'), publicationId: 1 };
+    }
     const sourceStat = await fs.lstat(config.scriptPath);
     if (!sourceStat.isDirectory() || sourceStat.isSymbolicLink())
       throw new ConfigAssetError('TASK_WORKSPACE_UNSAFE');

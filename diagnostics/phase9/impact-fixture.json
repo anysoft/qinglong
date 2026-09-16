@@ -1,0 +1,69 @@
+{
+  "target": {
+    "id": "Function:tests/phase5/helpers.cjs:fixture",
+    "name": "fixture",
+    "type": "Function",
+    "filePath": "tests/phase5/helpers.cjs"
+  },
+  "direction": "upstream",
+  "impactedCount": 3,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "lower-bound",
+  "boundaries": [
+    "1 symbol references this callable as a VALUE rather than calling it (a registration table, a callback argument, a stored function pointer). The reference is recorded, but the call made THROUGH that value is not: it is dispatched later from wherever the value is stored. Callers reached that way are absent from this result — actual impact may be higher."
+  ],
+  "causes": {
+    "scopeExtractionFiles": 0,
+    "receiverTyping": 0,
+    "dispatchBoundary": 0,
+    "externalBoundary": 0,
+    "undecidedSatisfaction": 0,
+    "callableValueReferences": 1
+  },
+  "summary": {
+    "direct": 3,
+    "processes_affected": 0,
+    "modules_affected": 0
+  },
+  "byDepthCounts": {
+    "1": 3
+  },
+  "affected_processes": [],
+  "affected_modules": [],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase6/freeze-v2.cjs",
+        "name": "freeze-v2.cjs",
+        "filePath": "diagnostics/phase6/freeze-v2.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase7/freeze-v3.cjs",
+        "name": "freeze-v3.cjs",
+        "filePath": "diagnostics/phase7/freeze-v3.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 1,
+        "id": "File:diagnostics/phase8/prepare-managed-node.cjs",
+        "name": "prepare-managed-node.cjs",
+        "filePath": "diagnostics/phase8/prepare-managed-node.cjs",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ]
+  }
+}

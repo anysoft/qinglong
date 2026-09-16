@@ -8,6 +8,7 @@ import { normalizeRepositoryUrl } from '../shared/gitProvider';
 import { GitResourceError } from '../shared/gitSecurity';
 import CredentialSecretService from './credentialSecret';
 import GitCredentialResolver, { runGitProcess } from './gitCredentialResolver';
+import TaskReferenceService from './taskReferences';
 @Service()
 export default class RepositoryService {
   constructor(
@@ -22,6 +23,7 @@ export default class RepositoryService {
   async detail(id: number) {
     return {
       ...(await this.get(id)),
+      ...(await new TaskReferenceService().repository(id)),
       subscriptions_count: await SubscriptionModel.count({
         where: { repository_id: id },
       }),

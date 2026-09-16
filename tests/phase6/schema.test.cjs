@@ -14,7 +14,7 @@ test('frozen v2 migrates to identical fresh latest schema, preserves ENV/Config/
  await b.db.query("INSERT INTO TaskHooks (task_id,name,phase,command,position,failure_policy,createdAt,updatedAt) VALUES (1,'keep','FINALLY','true',10,'CONTINUE',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)");
  await b.initializeOperationalSchema(b.db,b.models);
  assert.equal(a.schemaSignature(await objects(a)),b.schemaSignature(await objects(b)));
- assert.equal((await b.db.query('SELECT platform_schema_version FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0].platform_schema_version,5);
+ assert.equal((await b.db.query('SELECT platform_schema_version FROM PlatformMetadata',{type:QueryTypes.SELECT}))[0].platform_schema_version,6);
  assert.equal((await b.EnvModel.unscoped().findOne()).get('value'),'literal 🌱');assert.equal(await b.ConfigAssetModel.count(),1);assert.equal(await b.TaskHookModel.count(),1);
  await assert.rejects(b.db.query("INSERT INTO RuntimeProviders(language,provider_type,state,install_root,createdAt,updatedAt) VALUES ('NODE','PYENV','READY','python/pyenv',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)"),e=>/RUNTIME_PROVIDER_INVALID/.test(e.parent?.message));
  await assert.rejects(b.db.query("INSERT INTO RuntimeInstallations(provider_id,language,implementation,version,state,executable_relative_path,createdAt,updatedAt) VALUES (999,'PYTHON','CPYTHON','3.12.12','READY','bin/python',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)"),e=>/RUNTIME_PROVIDER_INVALID/.test(e.parent?.message));

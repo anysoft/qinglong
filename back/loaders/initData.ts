@@ -1,9 +1,9 @@
 import { Container } from 'typedi';
-import { Crontab, CrontabModel, CrontabStatus } from '../data/cron';
-import CronService from '../services/cron';
+import { SchedulerProjection, SchedulerProjectionModel, CrontabStatus } from '../data/cron';
+import CurrentTaskBridgeService from '../services/cron';
 import { DependenceModel, DependenceStatus } from '../data/dependence';
 import config from '../config';
-import { CrontabViewModel, CronViewType } from '../data/cronView';
+import { TaskViewModel, CronViewType } from '../data/cronView';
 import { initPosition } from '../data/env';
 import { AuthDataType, SystemModel } from '../data/system';
 import UserService from '../services/user';
@@ -18,7 +18,7 @@ import { InstanceStatus, RunningInstanceModel } from '../data/runningInstance';
 import { setLang, systemLang } from '../shared/i18n';
 
 export default async () => {
-  const cronService = Container.get(CronService);
+  const cronService = Container.get(CurrentTaskBridgeService);
   const userService = Container.get(UserService);
   const openService = Container.get(OpenService);
 
@@ -63,12 +63,12 @@ export default async () => {
   );
 
   // 初始化新增默认全部任务视图
-  CrontabViewModel.findAll({
+  TaskViewModel.findAll({
     where: { type: CronViewType.系统, name: '全部任务' },
     raw: true,
   }).then((docs) => {
     if (docs.length === 0) {
-      CrontabViewModel.create({
+      TaskViewModel.create({
         name: '全部任务',
         type: CronViewType.系统,
         position: initPosition / 2,
@@ -77,7 +77,7 @@ export default async () => {
   });
 
   // 初始化更新所有任务状态为空闲
-  await CrontabModel.update({ status: CrontabStatus.idle }, { where: {} });
+  await SchedulerProjectionModel.update({ status: CrontabStatus.idle }, { where: {} });
 
   // 清空所有运行中的实例记录（服务重启后进程已不存在）
   await RunningInstanceModel.update(

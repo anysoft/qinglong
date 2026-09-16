@@ -511,5 +511,33 @@
   {
     "path": "tests/phase8/failures.test.cjs",
     "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/api.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/domain.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/resources.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/schema.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/source.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/discovery.test.cjs",
+    "classification": "PLATFORM_CORE"
+  },
+  {
+    "path": "tests/phase9/subscription-delete.test.cjs",
+    "classification": "PLATFORM_CORE"
   }
 ]

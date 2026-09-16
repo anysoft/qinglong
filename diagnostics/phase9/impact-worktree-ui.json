@@ -1,0 +1,9 @@
+{
+  "error": "Target 'RepositoryWorkspace' not found",
+  "target": {
+    "name": "RepositoryWorkspace"
+  },
+  "direction": "upstream",
+  "impactedCount": null,
+  "risk": "UNKNOWN"
+}

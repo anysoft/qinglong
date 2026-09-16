@@ -1,0 +1,219 @@
+{
+  "processes": [
+    {
+      "id": "proc_318_autosave_crontab",
+      "summary": "Autosave_crontab → FormatViewSort",
+      "priority": 0.119,
+      "symbol_count": 2,
+      "process_type": "cross_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_36_autosave_crontab",
+      "summary": "Autosave_crontab → FormatFilterQuery",
+      "priority": 0.119,
+      "symbol_count": 2,
+      "process_type": "cross_community",
+      "step_count": 4
+    },
+    {
+      "id": "proc_37_autosave_crontab",
+      "summary": "Autosave_crontab → FormatSearchText",
+      "priority": 0.119,
+      "symbol_count": 2,
+      "process_type": "cross_community",
+      "step_count": 4
+    },
+    {
+      "id": "proc_38_autosave_crontab",
+      "summary": "Autosave_crontab → FormatViewQuery",
+      "priority": 0.119,
+      "symbol_count": 2,
+      "process_type": "cross_community",
+      "step_count": 4
+    },
+    {
+      "id": "proc_101_autosave_crontab",
+      "summary": "Autosave_crontab → IsNodeCron",
+      "priority": 0.103,
+      "symbol_count": 1,
+      "process_type": "intra_community",
+      "step_count": 3
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Method:back/services/cron.ts:CronService.crontabs#1",
+      "name": "crontabs",
+      "filePath": "back/services/cron.ts",
+      "startLine": 630,
+      "endLine": 679,
+      "module": "Services",
+      "process_id": "proc_318_autosave_crontab",
+      "step_index": 2
+    },
+    {
+      "id": "Method:back/services/cron.ts:CronService.autosave_crontab#1",
+      "name": "autosave_crontab",
+      "filePath": "back/services/cron.ts",
+      "startLine": 1141,
+      "endLine": 1177,
+      "module": "Services",
+      "process_id": "proc_318_autosave_crontab",
+      "step_index": 1
+    }
+  ],
+  "definitions": [
+    {
+      "id": "File:tests/archived/legacy/tests/phase1/resources.test.cjs",
+      "name": "logger",
+      "filePath": "back/services/cronView.ts",
+      "startLine": 14,
+      "endLine": 14
+    },
+    {
+      "id": "File:tests/platform/credential-resources.test.cjs",
+      "name": "name",
+      "filePath": "back/api/nodeEnvironment.ts",
+      "startLine": 16,
+      "endLine": 16
+    },
+    {
+      "id": "Class:back/data/cron.ts:Crontab",
+      "name": "Crontab",
+      "filePath": "back/data/cron.ts",
+      "startLine": 4,
+      "endLine": 60,
+      "module": "Services"
+    },
+    {
+      "id": "Interface:back/data/cron.ts:CronInstance",
+      "name": "CronInstance",
+      "filePath": "back/data/cron.ts",
+      "startLine": 69,
+      "endLine": 69,
+      "module": "Services"
+    },
+    {
+      "id": "File:back/data/cron.ts",
+      "name": "cron.ts",
+      "filePath": "back/data/cron.ts"
+    },
+    {
+      "id": "Class:back/services/cron.ts:CronService",
+      "name": "CronService",
+      "filePath": "back/services/cron.ts",
+      "startLine": 41,
+      "endLine": 1188
+    },
+    {
+      "id": "TypeAlias:back/services/subscriptionDiscovery.ts:DiscoveryUpdate",
+      "name": "DiscoveryUpdate",
+      "filePath": "back/services/subscriptionDiscovery.ts",
+      "startLine": 9,
+      "endLine": 9
+    },
+    {
+      "id": "Class:back/services/subscriptionDiscovery.ts:SubscriptionDiscoveryAdapter",
+      "name": "SubscriptionDiscoveryAdapter",
+      "filePath": "back/services/subscriptionDiscovery.ts",
+      "startLine": 13,
+      "endLine": 72,
+      "module": "Services"
+    },
+    {
+      "id": "Const:tests/phase5/runtime.test.cjs:fn@20:167.task@21:1",
+      "name": "task",
+      "filePath": "tests/phase5/runtime.test.cjs",
+      "startLine": 22,
+      "endLine": 22
+    },
+    {
+      "id": "Const:tests/phase5/runtime.test.cjs:fn@32:122.task@33:1",
+      "name": "task",
+      "filePath": "tests/phase5/runtime.test.cjs",
+      "startLine": 34,
+      "endLine": 34
+    },
+    {
+      "id": "Const:tests/phase5/runtime.test.cjs:fn@45:53.task@46:1",
+      "name": "task",
+      "filePath": "tests/phase5/runtime.test.cjs",
+      "startLine": 47,
+      "endLine": 47
+    },
+    {
+      "id": "Class:back/data/subscription.ts:Subscription",
+      "name": "Subscription",
+      "filePath": "back/data/subscription.ts",
+      "startLine": 6,
+      "endLine": 61,
+      "module": "Services"
+    },
+    {
+      "id": "File:back/data/subscription.ts",
+      "name": "subscription.ts",
+      "filePath": "back/data/subscription.ts"
+    },
+    {
+      "id": "Class:back/data/sock.ts:SockMessage",
+      "name": "SockMessage",
+      "filePath": "back/data/sock.ts",
+      "startLine": 1,
+      "endLine": 13
+    },
+    {
+      "id": "File:back/data/sock.ts",
+      "name": "sock.ts",
+      "filePath": "back/data/sock.ts"
+    },
+    {
+      "id": "Interface:back/services/taskExecutionPreparation.ts:TaskExecutionPreparation",
+      "name": "TaskExecutionPreparation",
+      "filePath": "back/services/taskExecutionPreparation.ts",
+      "startLine": 21,
+      "endLine": 32
+    },
+    {
+      "id": "Class:back/services/taskExecutionPreparation.ts:TaskExecutionPreparationService",
+      "name": "TaskExecutionPreparationService",
+      "filePath": "back/services/taskExecutionPreparation.ts",
+      "startLine": 33,
+      "endLine": 99,
+      "module": "Services"
+    },
+    {
+      "id": "Function:tests/platform/discovery.test.cjs:fn@37:115.discover@46:21.cleanup@46:285",
+      "name": "cleanup",
+      "filePath": "tests/platform/discovery.test.cjs",
+      "startLine": 47,
+      "endLine": 47
+    },
+    {
+      "id": "Function:tests/platform/discovery.test.cjs:fn@37:115.discover@46:21.publish@46:204",
+      "name": "publish",
+      "filePath": "tests/platform/discovery.test.cjs",
+      "startLine": 47,
+      "endLine": 47
+    },
+    {
+      "id": "File:tests/platform/discovery.test.cjs",
+      "name": "discovery.test.cjs",
+      "filePath": "tests/platform/discovery.test.cjs"
+    }
+  ],
+  "timing": {
+    "vector": 4.9,
+    "bm25": 197.9,
+    "merge": 0.1,
+    "symbol_lookup": 17.6,
+    "ranking": 0.1,
+    "formatting": 0.1,
+    "wall": 216.3
+  },
+  "staleness": {
+    "status": "behind",
+    "commitsBehind": 1,
+    "hint": "⚠️ Index is 1 commit behind HEAD. Run analyze tool to update."
+  }
+}

@@ -1,0 +1,1206 @@
+[
+  {
+    "symbol_name": "SchedulerBridgeService",
+    "result": {
+      "status": "success",
+      "old_name": "SchedulerBridgeService",
+      "new_name": "CurrentTaskBridgeService",
+      "files_affected": 10,
+      "total_edits": 46,
+      "graph_edits": 45,
+      "text_search_edits": 1,
+      "changes": [
+        {
+          "file_path": "back/services/cron.ts",
+          "edits": [
+            {
+              "line": 45,
+              "old_text": "export default class SchedulerBridgeService {",
+              "new_text": "export default class CurrentTaskBridgeService {",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/api/cron.ts",
+          "edits": [
+            {
+              "line": 4,
+              "old_text": "import SchedulerBridgeService from '../services/cron';",
+              "new_text": "import CurrentTaskBridgeService from '../services/cron';",
+              "confidence": "graph"
+            },
+            {
+              "line": 170,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 184,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 202,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 219,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 236,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 256,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 279,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 296,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 313,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 342,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 374,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 391,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 408,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 425,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 446,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 470,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 516,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 535,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/api/tasks.ts",
+          "edits": [
+            {
+              "line": 6,
+              "old_text": "import SchedulerBridgeService from '../services/cron';",
+              "new_text": "import CurrentTaskBridgeService from '../services/cron';",
+              "confidence": "graph"
+            },
+            {
+              "line": 30,
+              "old_text": "const tasks = () => Container.get(TaskService), scheduler = () => Container.get(SchedulerBridgeService);",
+              "new_text": "const tasks = () => Container.get(TaskService), scheduler = () => Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/loaders/bootAfter.ts",
+          "edits": [
+            {
+              "line": 2,
+              "old_text": "import SchedulerBridgeService from '../services/cron';",
+              "new_text": "import CurrentTaskBridgeService from '../services/cron';",
+              "confidence": "graph"
+            },
+            {
+              "line": 5,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/loaders/initData.ts",
+          "edits": [
+            {
+              "line": 3,
+              "old_text": "import SchedulerBridgeService from '../services/cron';",
+              "new_text": "import CurrentTaskBridgeService from '../services/cron';",
+              "confidence": "graph"
+            },
+            {
+              "line": 21,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/schedule/api.ts",
+          "edits": [
+            {
+              "line": 25,
+              "old_text": "import SchedulerBridgeService from '../services/cron';",
+              "new_text": "import CurrentTaskBridgeService from '../services/cron';",
+              "confidence": "graph"
+            },
+            {
+              "line": 274,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 289,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 302,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 327,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 340,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 376,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 400,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 420,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 440,
+              "old_text": "const cronService = Container.get(SchedulerBridgeService);",
+              "new_text": "const cronService = Container.get(CurrentTaskBridgeService);",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/services/managedSubscription.ts",
+          "edits": [
+            {
+              "line": 11,
+              "old_text": "import SchedulerBridgeService from './cron';",
+              "new_text": "import CurrentTaskBridgeService from './cron';",
+              "confidence": "graph"
+            },
+            {
+              "line": 122,
+              "old_text": "Container.get(SchedulerBridgeService),",
+              "new_text": "Container.get(CurrentTaskBridgeService),",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/services/script.ts",
+          "edits": [
+            {
+              "line": 6,
+              "old_text": "import SchedulerBridgeService from './cron';",
+              "new_text": "import CurrentTaskBridgeService from './cron';",
+              "confidence": "graph"
+            },
+            {
+              "line": 18,
+              "old_text": "private cronService: SchedulerBridgeService,",
+              "new_text": "private cronService: CurrentTaskBridgeService,",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/services/taskExecutionBridge.ts",
+          "edits": [
+            {
+              "line": 2,
+              "old_text": "import SchedulerBridgeService from './cron';",
+              "new_text": "import CurrentTaskBridgeService from './cron';",
+              "confidence": "graph"
+            },
+            {
+              "line": 19,
+              "old_text": "return Container.get(SchedulerBridgeService).run([id]);",
+              "new_text": "return Container.get(CurrentTaskBridgeService).run([id]);",
+              "confidence": "graph"
+            },
+            {
+              "line": 21,
+              "old_text": "async stop(id: number) { return Container.get(SchedulerBridgeService).stop([id]); }",
+              "new_text": "async stop(id: number) { return Container.get(CurrentTaskBridgeService).stop([id]); }",
+              "confidence": "graph"
+            },
+            {
+              "line": 22,
+              "old_text": "async log(id: number) { return Container.get(SchedulerBridgeService).log(id); }",
+              "new_text": "async log(id: number) { return Container.get(CurrentTaskBridgeService).log(id); }",
+              "confidence": "graph"
+            },
+            {
+              "line": 23,
+              "old_text": "async logs(id: number) { return Container.get(SchedulerBridgeService).logs(id); }",
+              "new_text": "async logs(id: number) { return Container.get(CurrentTaskBridgeService).logs(id); }",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "diagnostics/phase9/rename.cjs",
+          "edits": [
+            {
+              "line": 2,
+              "old_text": "(async()=>{const{LocalBackend}=await import(pathToFileURL('/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js'));const b=new LocalBackend();await b.init();try{for(const [symbol_name,new_name,file_path] of [['SchedulerProjection','SchedulerProjection','back/data/cron.ts'],['SchedulerProjectionModel','SchedulerProjectionModel','back/data/cron.ts'],['CronService','SchedulerBridgeService','back/services/cron.ts']]){const r=await b.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path,dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-${symbol_name}-${process.argv[2]||'preview'}.json`,JSON.stringify(r,null,2));console.log(symbol_name,JSON.stringify(r).slice(0,1200));}}finally{await b.cleanup?.();}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+              "new_text": "(async()=>{const{LocalBackend}=await import(pathToFileURL('/Users/jonhy/.npm/_npx/e18c207a63d109df/node_modules/gitnexus/dist/mcp/local/local-backend.js'));const b=new LocalBackend();await b.init();try{for(const [symbol_name,new_name,file_path] of [['SchedulerProjection','SchedulerProjection','back/data/cron.ts'],['SchedulerProjectionModel','SchedulerProjectionModel','back/data/cron.ts'],['CronService','CurrentTaskBridgeService','back/services/cron.ts']]){const r=await b.callTool('rename',{repo:'qinglong',symbol_name,new_name,file_path,dry_run:process.argv[2]!=='apply'});fs.writeFileSync(`diagnostics/phase9/rename-${symbol_name}-${process.argv[2]||'preview'}.json`,JSON.stringify(r,null,2));console.log(symbol_name,JSON.stringify(r).slice(0,1200));}}finally{await b.cleanup?.();}})().then(()=>process.exit(),e=>{console.error(e);process.exit(1)});",
+              "confidence": "text_search"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CrontabStat",
+    "result": {
+      "status": "success",
+      "old_name": "CrontabStat",
+      "new_name": "TaskStat",
+      "files_affected": 1,
+      "total_edits": 4,
+      "graph_edits": 4,
+      "text_search_edits": 0,
+      "changes": [
+        {
+          "file_path": "back/data/cronStats.ts",
+          "edits": [
+            {
+              "line": 4,
+              "old_text": "export class CrontabStat {",
+              "new_text": "export class TaskStat {",
+              "confidence": "graph"
+            },
+            {
+              "line": 14,
+              "old_text": "constructor(options: CrontabStat) {",
+              "new_text": "constructor(options: TaskStat) {",
+              "confidence": "graph"
+            },
+            {
+              "line": 26,
+              "old_text": "export interface CrontabStatInstance extends Model<CrontabStat, CrontabStat>, CrontabStat {}",
+              "new_text": "export interface CrontabStatInstance extends Model<TaskStat, TaskStat>, TaskStat {}",
+              "confidence": "graph"
+            },
+            {
+              "line": 29,
+              "old_text": "'CrontabStat',",
+              "new_text": "'TaskStat',",
+              "confidence": "graph"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CrontabStatModel",
+    "result": {
+      "status": "success",
+      "old_name": "CrontabStatModel",
+      "new_name": "TaskStatModel",
+      "files_affected": 10,
+      "total_edits": 25,
+      "graph_edits": 1,
+      "text_search_edits": 24,
+      "changes": [
+        {
+          "file_path": "back/data/cronStats.ts",
+          "edits": [
+            {
+              "line": 28,
+              "old_text": "export const CrontabStatModel = sequelize.define<CrontabStatInstance>(",
+              "new_text": "export const TaskStatModel = sequelize.define<CrontabStatInstance>(",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "diagnostics/phase5/freeze-v1.cjs",
+          "edits": [
+            {
+              "line": 7,
+              "old_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','CrontabModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','CrontabStatModel','RunningInstanceModel'];",
+              "new_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','CrontabModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','TaskStatModel','RunningInstanceModel'];",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "test/back/retention.test.cjs",
+          "edits": [
+            {
+              "line": 52,
+              "old_text": "const CrontabStatModel = {};",
+              "new_text": "const TaskStatModel = {};",
+              "confidence": "text_search"
+            },
+            {
+              "line": 66,
+              "old_text": "stubModule('../../back/data/cronStats', { CrontabStatModel });",
+              "new_text": "stubModule('../../back/data/cronStats', { TaskStatModel });",
+              "confidence": "text_search"
+            },
+            {
+              "line": 97,
+              "old_text": "CrontabStatModel.count = async () => {",
+              "new_text": "TaskStatModel.count = async () => {",
+              "confidence": "text_search"
+            },
+            {
+              "line": 101,
+              "old_text": "CrontabStatModel.destroy = async () => 3;",
+              "new_text": "TaskStatModel.destroy = async () => 3;",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "test/back/dashboard-failures.test.cjs",
+          "edits": [
+            {
+              "line": 27,
+              "old_text": "'../../back/data/cronStats': { CrontabStatModel: stats },",
+              "new_text": "'../../back/data/cronStats': { TaskStatModel: stats },",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "tests/phase5/helpers.cjs",
+          "edits": [
+            {
+              "line": 13,
+              "old_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','SchedulerProjectionModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','CrontabStatModel','RunningInstanceModel'];",
+              "new_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','SchedulerProjectionModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','TaskStatModel','RunningInstanceModel'];",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "tests/platform/bootstrap-failure.test.cjs",
+          "edits": [
+            {
+              "line": 12,
+              "old_text": "['cronStats', 'CrontabStatModel'],",
+              "new_text": "['cronStats', 'TaskStatModel'],",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "tests/archived/legacy/test/back/schema-migrations.test.cjs",
+          "edits": [
+            {
+              "line": 118,
+              "old_text": "['cronStats', 'CrontabStatModel'],",
+              "new_text": "['cronStats', 'TaskStatModel'],",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "back/api/dashboard.ts",
+          "edits": [
+            {
+              "line": 5,
+              "old_text": "import { CrontabStatModel } from '../data/cronStats';",
+              "new_text": "import { TaskStatModel } from '../data/cronStats';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 30,
+              "old_text": "const existing = await CrontabStatModel.findOne({",
+              "new_text": "const existing = await TaskStatModel.findOne({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 35,
+              "old_text": "await CrontabStatModel.update(",
+              "new_text": "await TaskStatModel.update(",
+              "confidence": "text_search"
+            },
+            {
+              "line": 46,
+              "old_text": "await CrontabStatModel.create({",
+              "new_text": "await TaskStatModel.create({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 73,
+              "old_text": "CrontabStatModel.findOne({",
+              "new_text": "TaskStatModel.findOne({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 114,
+              "old_text": "const rows = (await CrontabStatModel.findAll({",
+              "new_text": "const rows = (await TaskStatModel.findAll({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 157,
+              "old_text": "const rows = (await CrontabStatModel.findAll({",
+              "new_text": "const rows = (await TaskStatModel.findAll({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 199,
+              "old_text": "const rows = (await CrontabStatModel.findAll({",
+              "new_text": "const rows = (await TaskStatModel.findAll({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 241,
+              "old_text": "const rows = (await CrontabStatModel.findAll({",
+              "new_text": "const rows = (await TaskStatModel.findAll({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 365,
+              "old_text": "CrontabStatModel.findAll({ where: { date: today }, raw: true }),",
+              "new_text": "TaskStatModel.findAll({ where: { date: today }, raw: true }),",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "back/loaders/db.ts",
+          "edits": [
+            {
+              "line": 14,
+              "old_text": "import { CrontabStatModel } from '../data/cronStats';",
+              "new_text": "import { TaskStatModel } from '../data/cronStats';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 33,
+              "old_text": "CrontabStatModel, RunningInstanceModel, ...configAssetModels, ...runtimeModels, ...pythonEnvironmentModels, ...nodeEnvironmentModels, ...taskModels,",
+              "new_text": "TaskStatModel, RunningInstanceModel, ...configAssetModels, ...runtimeModels, ...pythonEnvironmentModels, ...nodeEnvironmentModels, ...taskModels,",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "back/services/retention.ts",
+          "edits": [
+            {
+              "line": 7,
+              "old_text": "import { CrontabStatModel } from '../data/cronStats';",
+              "new_text": "import { TaskStatModel } from '../data/cronStats';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 78,
+              "old_text": "? CrontabStatModel.count({",
+              "new_text": "? TaskStatModel.count({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 119,
+              "old_text": "? await CrontabStatModel.destroy({",
+              "new_text": "? await TaskStatModel.destroy({",
+              "confidence": "text_search"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CrontabStatInstance",
+    "result": {
+      "status": "success",
+      "old_name": "CrontabStatInstance",
+      "new_name": "TaskStatInstance",
+      "files_affected": 1,
+      "total_edits": 2,
+      "graph_edits": 2,
+      "text_search_edits": 0,
+      "changes": [
+        {
+          "file_path": "back/data/cronStats.ts",
+          "edits": [
+            {
+              "line": 26,
+              "old_text": "export interface CrontabStatInstance extends Model<TaskStat, TaskStat>, TaskStat {}",
+              "new_text": "export interface TaskStatInstance extends Model<TaskStat, TaskStat>, TaskStat {}",
+              "confidence": "graph"
+            },
+            {
+              "line": 28,
+              "old_text": "export const TaskStatModel = sequelize.define<CrontabStatInstance>(",
+              "new_text": "export const TaskStatModel = sequelize.define<TaskStatInstance>(",
+              "confidence": "graph"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CrontabView",
+    "result": {
+      "status": "success",
+      "old_name": "CrontabView",
+      "new_name": "TaskView",
+      "files_affected": 2,
+      "total_edits": 16,
+      "graph_edits": 16,
+      "text_search_edits": 0,
+      "changes": [
+        {
+          "file_path": "back/data/cronView.ts",
+          "edits": [
+            {
+              "line": 20,
+              "old_text": "export class CrontabView {",
+              "new_text": "export class TaskView {",
+              "confidence": "graph"
+            },
+            {
+              "line": 30,
+              "old_text": "constructor(options: CrontabView) {",
+              "new_text": "constructor(options: TaskView) {",
+              "confidence": "graph"
+            },
+            {
+              "line": 43,
+              "old_text": "extends Model<CrontabView, CrontabView>,",
+              "new_text": "extends Model<TaskView, TaskView>,",
+              "confidence": "graph"
+            },
+            {
+              "line": 44,
+              "old_text": "CrontabView {}",
+              "new_text": "TaskView {}",
+              "confidence": "graph"
+            },
+            {
+              "line": 46,
+              "old_text": "'CrontabView',",
+              "new_text": "'TaskView',",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/services/cronView.ts",
+          "edits": [
+            {
+              "line": 3,
+              "old_text": "import { CrontabView, CrontabViewModel } from '../data/cronView';",
+              "new_text": "import { TaskView, CrontabViewModel } from '../data/cronView';",
+              "confidence": "graph"
+            },
+            {
+              "line": 16,
+              "old_text": "public async create(payload: CrontabView): Promise<CrontabView> {",
+              "new_text": "public async create(payload: TaskView): Promise<TaskView> {",
+              "confidence": "graph"
+            },
+            {
+              "line": 23,
+              "old_text": "const tab = new CrontabView({ ...payload, position });",
+              "new_text": "const tab = new TaskView({ ...payload, position });",
+              "confidence": "graph"
+            },
+            {
+              "line": 30,
+              "old_text": "public async insert(payload: CrontabView): Promise<CrontabView> {",
+              "new_text": "public async insert(payload: TaskView): Promise<TaskView> {",
+              "confidence": "graph"
+            },
+            {
+              "line": 34,
+              "old_text": "public async update(payload: CrontabView): Promise<CrontabView> {",
+              "new_text": "public async update(payload: TaskView): Promise<TaskView> {",
+              "confidence": "graph"
+            },
+            {
+              "line": 36,
+              "old_text": "const tab = new CrontabView({ ...doc, ...payload });",
+              "new_text": "const tab = new TaskView({ ...doc, ...payload });",
+              "confidence": "graph"
+            },
+            {
+              "line": 41,
+              "old_text": "public async updateDb(payload: CrontabView): Promise<CrontabView> {",
+              "new_text": "public async updateDb(payload: TaskView): Promise<TaskView> {",
+              "confidence": "graph"
+            },
+            {
+              "line": 50,
+              "old_text": "public async list(): Promise<CrontabView[]> {",
+              "new_text": "public async list(): Promise<TaskView[]> {",
+              "confidence": "graph"
+            },
+            {
+              "line": 63,
+              "old_text": "query: FindOptions<CrontabView>['where'],",
+              "new_text": "query: FindOptions<TaskView>['where'],",
+              "confidence": "graph"
+            },
+            {
+              "line": 64,
+              "old_text": "): Promise<CrontabView> {",
+              "new_text": "): Promise<TaskView> {",
+              "confidence": "graph"
+            },
+            {
+              "line": 104,
+              "old_text": "}): Promise<CrontabView> {",
+              "new_text": "}): Promise<TaskView> {",
+              "confidence": "graph"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CrontabViewModel",
+    "result": {
+      "status": "success",
+      "old_name": "CrontabViewModel",
+      "new_name": "TaskViewModel",
+      "files_affected": 9,
+      "total_edits": 19,
+      "graph_edits": 1,
+      "text_search_edits": 18,
+      "changes": [
+        {
+          "file_path": "back/data/cronView.ts",
+          "edits": [
+            {
+              "line": 45,
+              "old_text": "export const CrontabViewModel = sequelize.define<CronViewInstance>(",
+              "new_text": "export const TaskViewModel = sequelize.define<CronViewInstance>(",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/loaders/db.ts",
+          "edits": [
+            {
+              "line": 13,
+              "old_text": "import { CrontabViewModel } from '../data/cronView';",
+              "new_text": "import { TaskViewModel } from '../data/cronView';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 32,
+              "old_text": "EnvModel, DependenceModel, AppModel, SystemModel, CrontabViewModel,",
+              "new_text": "EnvModel, DependenceModel, AppModel, SystemModel, TaskViewModel,",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "back/services/cronView.ts",
+          "edits": [
+            {
+              "line": 3,
+              "old_text": "import { TaskView, CrontabViewModel } from '../data/cronView';",
+              "new_text": "import { TaskView, TaskViewModel } from '../data/cronView';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 31,
+              "old_text": "return await CrontabViewModel.create(payload, { returning: true });",
+              "new_text": "return await TaskViewModel.create(payload, { returning: true });",
+              "confidence": "text_search"
+            },
+            {
+              "line": 42,
+              "old_text": "await CrontabViewModel.update(payload, { where: { id: payload.id } });",
+              "new_text": "await TaskViewModel.update(payload, { where: { id: payload.id } });",
+              "confidence": "text_search"
+            },
+            {
+              "line": 47,
+              "old_text": "await CrontabViewModel.destroy({ where: { id: ids } });",
+              "new_text": "await TaskViewModel.destroy({ where: { id: ids } });",
+              "confidence": "text_search"
+            },
+            {
+              "line": 52,
+              "old_text": "const result = await CrontabViewModel.findAll({",
+              "new_text": "const result = await TaskViewModel.findAll({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 65,
+              "old_text": "const doc: any = await CrontabViewModel.findOne({ where: { ...query } });",
+              "new_text": "const doc: any = await TaskViewModel.findOne({ where: { ...query } });",
+              "confidence": "text_search"
+            },
+            {
+              "line": 73,
+              "old_text": "await CrontabViewModel.update({ isDisabled: 1 }, { where: { id: ids } });",
+              "new_text": "await TaskViewModel.update({ isDisabled: 1 }, { where: { id: ids } });",
+              "confidence": "text_search"
+            },
+            {
+              "line": 77,
+              "old_text": "await CrontabViewModel.update({ isDisabled: 0 }, { where: { id: ids } });",
+              "new_text": "await TaskViewModel.update({ isDisabled: 0 }, { where: { id: ids } });",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "back/loaders/initData.ts",
+          "edits": [
+            {
+              "line": 6,
+              "old_text": "import { CrontabViewModel, CronViewType } from '../data/cronView';",
+              "new_text": "import { TaskViewModel, CronViewType } from '../data/cronView';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 66,
+              "old_text": "CrontabViewModel.findAll({",
+              "new_text": "TaskViewModel.findAll({",
+              "confidence": "text_search"
+            },
+            {
+              "line": 71,
+              "old_text": "CrontabViewModel.create({",
+              "new_text": "TaskViewModel.create({",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "tests/archived/legacy/test/back/schema-migrations.test.cjs",
+          "edits": [
+            {
+              "line": 117,
+              "old_text": "['cronView', 'CrontabViewModel'],",
+              "new_text": "['cronView', 'TaskViewModel'],",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "tests/phase5/helpers.cjs",
+          "edits": [
+            {
+              "line": 13,
+              "old_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','SchedulerProjectionModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','TaskStatModel','RunningInstanceModel'];",
+              "new_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','SchedulerProjectionModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','TaskViewModel','TaskStatModel','RunningInstanceModel'];",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "tests/platform/bootstrap-failure.test.cjs",
+          "edits": [
+            {
+              "line": 11,
+              "old_text": "['cronView', 'CrontabViewModel'],",
+              "new_text": "['cronView', 'TaskViewModel'],",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "diagnostics/phase5/freeze-v1.cjs",
+          "edits": [
+            {
+              "line": 7,
+              "old_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','CrontabModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','CrontabViewModel','TaskStatModel','RunningInstanceModel'];",
+              "new_text": "const names=['GitCredentialModel','RepositoryModel','WorktreeModel','EnvironmentProfileModel','SubscriptionModel','CrontabModel','RepositoryEnvVariableModel','TaskEnvVariableModel','EnvModel','DependenceModel','AppModel','SystemModel','TaskViewModel','TaskStatModel','RunningInstanceModel'];",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "tests/platform/bootstrap-data.test.cjs",
+          "edits": [
+            {
+              "line": 19,
+              "old_text": "'../data/cronView':{CrontabViewModel:{findAll:async()=>[{}]},CronViewType:{系统:0}},",
+              "new_text": "'../data/cronView':{TaskViewModel:{findAll:async()=>[{}]},CronViewType:{系统:0}},",
+              "confidence": "text_search"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CronViewInstance",
+    "result": {
+      "status": "success",
+      "old_name": "CronViewInstance",
+      "new_name": "TaskViewInstance",
+      "files_affected": 1,
+      "total_edits": 2,
+      "graph_edits": 2,
+      "text_search_edits": 0,
+      "changes": [
+        {
+          "file_path": "back/data/cronView.ts",
+          "edits": [
+            {
+              "line": 42,
+              "old_text": "export interface CronViewInstance",
+              "new_text": "export interface TaskViewInstance",
+              "confidence": "graph"
+            },
+            {
+              "line": 45,
+              "old_text": "export const TaskViewModel = sequelize.define<CronViewInstance>(",
+              "new_text": "export const TaskViewModel = sequelize.define<TaskViewInstance>(",
+              "confidence": "graph"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CronViewService",
+    "result": {
+      "status": "success",
+      "old_name": "CronViewService",
+      "new_name": "TaskViewService",
+      "files_affected": 2,
+      "total_edits": 9,
+      "graph_edits": 9,
+      "text_search_edits": 0,
+      "changes": [
+        {
+          "file_path": "back/services/cronView.ts",
+          "edits": [
+            {
+              "line": 13,
+              "old_text": "export default class CronViewService {",
+              "new_text": "export default class TaskViewService {",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "back/api/cron.ts",
+          "edits": [
+            {
+              "line": 5,
+              "old_text": "import CronViewService from '../services/cronView';",
+              "new_text": "import TaskViewService from '../services/cronView';",
+              "confidence": "graph"
+            },
+            {
+              "line": 41,
+              "old_text": "const cronViewService = Container.get(CronViewService);",
+              "new_text": "const cronViewService = Container.get(TaskViewService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 62,
+              "old_text": "const cronViewService = Container.get(CronViewService);",
+              "new_text": "const cronViewService = Container.get(TaskViewService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 84,
+              "old_text": "const cronViewService = Container.get(CronViewService);",
+              "new_text": "const cronViewService = Container.get(TaskViewService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 104,
+              "old_text": "const cronViewService = Container.get(CronViewService);",
+              "new_text": "const cronViewService = Container.get(TaskViewService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 124,
+              "old_text": "const cronViewService = Container.get(CronViewService);",
+              "new_text": "const cronViewService = Container.get(TaskViewService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 141,
+              "old_text": "const cronViewService = Container.get(CronViewService);",
+              "new_text": "const cronViewService = Container.get(TaskViewService);",
+              "confidence": "graph"
+            },
+            {
+              "line": 158,
+              "old_text": "const cronViewService = Container.get(CronViewService);",
+              "new_text": "const cronViewService = Container.get(TaskViewService);",
+              "confidence": "graph"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CrontabStatus",
+    "result": {
+      "error": "Symbol 'CrontabStatus' not found"
+    }
+  },
+  {
+    "symbol_name": "ICrontab",
+    "result": {
+      "status": "success",
+      "old_name": "ICrontab",
+      "new_name": "SchedulerProjectionView",
+      "files_affected": 3,
+      "total_edits": 5,
+      "graph_edits": 5,
+      "text_search_edits": 0,
+      "changes": [
+        {
+          "file_path": "src/pages/crontab/type.ts",
+          "edits": [
+            {
+              "line": 26,
+              "old_text": "export interface ICrontab {",
+              "new_text": "export interface SchedulerProjectionView {",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "src/pages/crontab/index.tsx",
+          "edits": [
+            {
+              "line": 55,
+              "old_text": "ICrontab,",
+              "new_text": "SchedulerProjectionView,",
+              "confidence": "graph"
+            },
+            {
+              "line": 70,
+              "old_text": "const columns: ColumnProps<ICrontab>[] = [",
+              "new_text": "const columns: ColumnProps<SchedulerProjectionView>[] = [",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "src/utils/index.ts",
+          "edits": [
+            {
+              "line": 4,
+              "old_text": "import { ICrontab } from '@/pages/crontab/type';",
+              "new_text": "import { SchedulerProjectionView } from '@/pages/crontab/type';",
+              "confidence": "graph"
+            },
+            {
+              "line": 347,
+              "old_text": "extra_schedules: ICrontab['extra_schedules'],",
+              "new_text": "extra_schedules: SchedulerProjectionView['extra_schedules'],",
+              "confidence": "graph"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  },
+  {
+    "symbol_name": "CronLogModal",
+    "result": {
+      "status": "success",
+      "old_name": "CronLogModal",
+      "new_name": "TaskBridgeLogModal",
+      "files_affected": 5,
+      "total_edits": 10,
+      "graph_edits": 2,
+      "text_search_edits": 8,
+      "changes": [
+        {
+          "file_path": "src/pages/crontab/logModal.tsx",
+          "edits": [
+            {
+              "line": 26,
+              "old_text": "const CronLogModal = ({",
+              "new_text": "const TaskBridgeLogModal = ({",
+              "confidence": "graph"
+            },
+            {
+              "line": 197,
+              "old_text": "export default CronLogModal;",
+              "new_text": "export default TaskBridgeLogModal;",
+              "confidence": "graph"
+            }
+          ]
+        },
+        {
+          "file_path": "src/pages/dashboard/failureModal.tsx",
+          "edits": [
+            {
+              "line": 6,
+              "old_text": "import CronLogModal from '../crontab/logModal';",
+              "new_text": "import TaskBridgeLogModal from '../crontab/logModal';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 113,
+              "old_text": "<CronLogModal cron={logCron} handleCancel={() => setLogCron(null)} />",
+              "new_text": "<TaskBridgeLogModal cron={logCron} handleCancel={() => setLogCron(null)} />",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "src/pages/dashboard/index.tsx",
+          "edits": [
+            {
+              "line": 18,
+              "old_text": "import CronLogModal from '../crontab/logModal';",
+              "new_text": "import TaskBridgeLogModal from '../crontab/logModal';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 366,
+              "old_text": "<CronLogModal",
+              "new_text": "<TaskBridgeLogModal",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "src/pages/crontab/detail.tsx",
+          "edits": [
+            {
+              "line": 29,
+              "old_text": "import CronLogModal from './logModal';",
+              "new_text": "import TaskBridgeLogModal from './logModal';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 664,
+              "old_text": "<CronLogModal",
+              "new_text": "<TaskBridgeLogModal",
+              "confidence": "text_search"
+            }
+          ]
+        },
+        {
+          "file_path": "src/pages/crontab/index.tsx",
+          "edits": [
+            {
+              "line": 51,
+              "old_text": "import CronLogModal from './logModal';",
+              "new_text": "import TaskBridgeLogModal from './logModal';",
+              "confidence": "text_search"
+            },
+            {
+              "line": 1071,
+              "old_text": "<CronLogModal",
+              "new_text": "<TaskBridgeLogModal",
+              "confidence": "text_search"
+            }
+          ]
+        }
+      ],
+      "applied": true
+    }
+  }
+]

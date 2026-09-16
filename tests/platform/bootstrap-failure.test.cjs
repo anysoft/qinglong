@@ -3,13 +3,13 @@ test('database loader rejects initialization failure rather than allowing worker
   const mocks = { './logger': { error() {}, info() {} } };
   for (const [file, model] of [
     ['env', 'EnvModel'],
-    ['cron', 'CrontabModel'],
+    ['cron', 'SchedulerProjectionModel'],
     ['dependence', 'DependenceModel'],
     ['open', 'AppModel'],
     ['system', 'SystemModel'],
     ['subscription', 'SubscriptionModel'],
-    ['cronView', 'CrontabViewModel'],
-    ['cronStats', 'CrontabStatModel'],
+    ['cronView', 'TaskViewModel'],
+    ['cronStats', 'TaskStatModel'],
     ['runningInstance', 'RunningInstanceModel'],
   ])
     mocks[`../data/${file}`] = { [model]: { sync: async () => {} } };

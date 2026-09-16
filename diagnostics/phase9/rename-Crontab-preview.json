@@ -1,0 +1,286 @@
+{
+  "status": "success",
+  "old_name": "Crontab",
+  "new_name": "SchedulerProjection",
+  "files_affected": 8,
+  "total_edits": 39,
+  "graph_edits": 37,
+  "text_search_edits": 2,
+  "changes": [
+    {
+      "file_path": "back/data/cron.ts",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "export class Crontab {",
+          "new_text": "export class SchedulerProjection {",
+          "confidence": "graph"
+        },
+        {
+          "line": 31,
+          "old_text": "constructor(options: Crontab) {",
+          "new_text": "constructor(options: SchedulerProjection) {",
+          "confidence": "graph"
+        },
+        {
+          "line": 69,
+          "old_text": "export interface CronInstance extends Model<Crontab, Crontab>, Crontab {}",
+          "new_text": "export interface CronInstance extends Model<SchedulerProjection, SchedulerProjection>, SchedulerProjection {}",
+          "confidence": "graph"
+        },
+        {
+          "line": 70,
+          "old_text": "export const CrontabModel = sequelize.define<CronInstance>('Crontab', {",
+          "new_text": "export const CrontabModel = sequelize.define<CronInstance>('SchedulerProjection', {",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/cron.ts",
+      "edits": [
+        {
+          "line": 9,
+          "old_text": "import { Crontab, CrontabModel, CrontabStatus } from '../data/cron';",
+          "new_text": "import { SchedulerProjection, CrontabModel, CrontabStatus } from '../data/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 44,
+          "old_text": "private isNodeCron(cron: Crontab) {",
+          "new_text": "private isNodeCron(cron: SchedulerProjection) {",
+          "confidence": "graph"
+        },
+        {
+          "line": 64,
+          "old_text": "private shouldUseCronClient(cron: Crontab): boolean {",
+          "new_text": "private shouldUseCronClient(cron: SchedulerProjection): boolean {",
+          "confidence": "graph"
+        },
+        {
+          "line": 83,
+          "old_text": "private async getLogName(cron: Crontab) {",
+          "new_text": "private async getLogName(cron: SchedulerProjection) {",
+          "confidence": "graph"
+        },
+        {
+          "line": 102,
+          "old_text": "public async create(payload: Crontab): Promise<Crontab> {",
+          "new_text": "public async create(payload: SchedulerProjection): Promise<SchedulerProjection> {",
+          "confidence": "graph"
+        },
+        {
+          "line": 104,
+          "old_text": "const tab = new Crontab(payload);",
+          "new_text": "const tab = new SchedulerProjection(payload);",
+          "confidence": "graph"
+        },
+        {
+          "line": 148,
+          "old_text": "adds: Crontab[];",
+          "new_text": "adds: SchedulerProjection[];",
+          "confidence": "graph"
+        },
+        {
+          "line": 151,
+          "old_text": "updates: Array<Partial<Pick<Crontab, 'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'>>>;",
+          "new_text": "updates: Array<Partial<Pick<SchedulerProjection, 'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'>>>;",
+          "confidence": "graph"
+        },
+        {
+          "line": 152,
+          "old_text": "checkpoint?: (tasks: Crontab[]) => Promise<void>;",
+          "new_text": "checkpoint?: (tasks: SchedulerProjection[]) => Promise<void>;",
+          "confidence": "graph"
+        },
+        {
+          "line": 174,
+          "old_text": "const added: Crontab[] = [];",
+          "new_text": "const added: SchedulerProjection[] = [];",
+          "confidence": "graph"
+        },
+        {
+          "line": 177,
+          "old_text": "const register = (rows: Crontab[]) =>",
+          "new_text": "const register = (rows: SchedulerProjection[]) =>",
+          "confidence": "graph"
+        },
+        {
+          "line": 205,
+          "old_text": "const tab = new Crontab(input);",
+          "new_text": "const tab = new SchedulerProjection(input);",
+          "confidence": "graph"
+        },
+        {
+          "line": 261,
+          "old_text": "public async insert(payload: Crontab): Promise<Crontab> {",
+          "new_text": "public async insert(payload: SchedulerProjection): Promise<SchedulerProjection> {",
+          "confidence": "graph"
+        },
+        {
+          "line": 265,
+          "old_text": "public async update(payload: Partial<Crontab>): Promise<Crontab> {",
+          "new_text": "public async update(payload: Partial<SchedulerProjection>): Promise<SchedulerProjection> {",
+          "confidence": "graph"
+        },
+        {
+          "line": 268,
+          "old_text": "const tab = new Crontab({ ...doc, ...payload });",
+          "new_text": "const tab = new SchedulerProjection({ ...doc, ...payload });",
+          "confidence": "graph"
+        },
+        {
+          "line": 330,
+          "old_text": "public async updateDb(payload: Crontab): Promise<Crontab> {",
+          "new_text": "public async updateDb(payload: SchedulerProjection): Promise<SchedulerProjection> {",
+          "confidence": "graph"
+        },
+        {
+          "line": 621,
+          "old_text": "}): Promise<Crontab | undefined> {",
+          "new_text": "}): Promise<SchedulerProjection | undefined> {",
+          "confidence": "graph"
+        },
+        {
+          "line": 637,
+          "old_text": "}): Promise<{ data: Crontab[]; total: number }> {",
+          "new_text": "}): Promise<{ data: SchedulerProjection[]; total: number }> {",
+          "confidence": "graph"
+        },
+        {
+          "line": 664,
+          "old_text": "let condition: FindOptions<Crontab> = {",
+          "new_text": "let condition: FindOptions<SchedulerProjection> = {",
+          "confidence": "graph"
+        },
+        {
+          "line": 681,
+          "old_text": "public async getDb(query: FindOptions<Crontab>['where']): Promise<Crontab> {",
+          "new_text": "public async getDb(query: FindOptions<SchedulerProjection>['where']): Promise<SchedulerProjection> {",
+          "confidence": "graph"
+        },
+        {
+          "line": 1084,
+          "old_text": "private makeCommand(tab: Crontab, realTime?: boolean) {",
+          "new_text": "private makeCommand(tab: SchedulerProjection, realTime?: boolean) {",
+          "confidence": "graph"
+        },
+        {
+          "line": 1102,
+          "old_text": "private async setCrontab(data?: { data: Crontab[]; total: number }, strict = false) {",
+          "new_text": "private async setCrontab(data?: { data: SchedulerProjection[]; total: number }, strict = false) {",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/loaders/initData.ts",
+      "edits": [
+        {
+          "line": 2,
+          "old_text": "import { Crontab, CrontabModel, CrontabStatus } from '../data/cron';",
+          "new_text": "import { SchedulerProjection, CrontabModel, CrontabStatus } from '../data/cron';",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/subscriptionDiscovery.ts",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "import { Crontab } from '../data/cron';",
+          "new_text": "import { SchedulerProjection } from '../data/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 9,
+          "old_text": "export type DiscoveryUpdate = Partial<Pick<Crontab, 'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'>>;",
+          "new_text": "export type DiscoveryUpdate = Partial<Pick<SchedulerProjection, 'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'>>;",
+          "confidence": "graph"
+        },
+        {
+          "line": 14,
+          "old_text": "async discover(source: string, staged: string, sub: Subscription, current: Crontab[]) {",
+          "new_text": "async discover(source: string, staged: string, sub: Subscription, current: SchedulerProjection[]) {",
+          "confidence": "graph"
+        },
+        {
+          "line": 31,
+          "old_text": "const adds: Crontab[] = [], updates: DiscoveryUpdate[] = [], drops: number[] = [];",
+          "new_text": "const adds: SchedulerProjection[] = [], updates: DiscoveryUpdate[] = [], drops: number[] = [];",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/taskEnvironmentResolver.ts",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "import { Crontab, CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjection, CrontabModel } from '../data/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 44,
+          "old_text": "async resolve(taskOrId: number | Crontab | null, baseEnv: NodeJS.ProcessEnv = process.env, existingTransaction?: Transaction): Promise<ResolvedTaskEnvironment> {",
+          "new_text": "async resolve(taskOrId: number | SchedulerProjection | null, baseEnv: NodeJS.ProcessEnv = process.env, existingTransaction?: Transaction): Promise<ResolvedTaskEnvironment> {",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/taskExecutionPreparation.ts",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "import { Crontab, CrontabModel } from '../data/cron';",
+          "new_text": "import { SchedulerProjection, CrontabModel } from '../data/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 23,
+          "old_text": "task: Crontab | null;",
+          "new_text": "task: SchedulerProjection | null;",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/taskWorkspace.ts",
+      "edits": [
+        {
+          "line": 5,
+          "old_text": "import { Crontab } from '../data/cron';",
+          "new_text": "import { SchedulerProjection } from '../data/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 11,
+          "old_text": "async resolve(task: Crontab | null, args: string[]): Promise<TaskWorkspace> {",
+          "new_text": "async resolve(task: SchedulerProjection | null, args: string[]): Promise<TaskWorkspace> {",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "src/pages/crontab/index.tsx",
+      "edits": [
+        {
+          "line": 67,
+          "old_text": "const Crontab = () => {",
+          "new_text": "const SchedulerProjection = () => {",
+          "confidence": "text_search"
+        },
+        {
+          "line": 1129,
+          "old_text": "export default Crontab;",
+          "new_text": "export default SchedulerProjection;",
+          "confidence": "text_search"
+        }
+      ]
+    }
+  ],
+  "applied": false
+}

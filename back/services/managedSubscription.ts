@@ -8,9 +8,10 @@ import RepositoryStorageService, { exists } from './repositoryStorage';
 import WorktreeService from './worktree';
 import { WorkspaceError } from '../shared/workspaceError';
 import { WorkspaceGuard } from './workspaceLocks';
-import CronService from './cron';
-import { CrontabModel } from '../data/cron';
+import SchedulerBridgeService from './schedulerBridge';
+import { SchedulerProjectionModel } from '../data/cron';
 import SubscriptionDiscoveryAdapter from './subscriptionDiscovery';
+import TaskService from './task';
 
 @Service()
 export default class ManagedSubscriptionService {
@@ -117,7 +118,8 @@ export default class ManagedSubscriptionService {
               'SUBSCRIPTION_PUBLISH',
               async () => {
                 await mark('DISCOVERY');
-                await Container.get(CronService).publishSubscription(
+                await Container.get(TaskService).reconcileDiscoveredTasks(
+                  Container.get(SchedulerBridgeService),
                   async () => {
                     const plan = await this.stage(
                       sub.get({ plain: true }),
@@ -217,7 +219,7 @@ export default class ManagedSubscriptionService {
       await fs.mkdir(staged, { recursive: true });
       if (await exists(destination))
         await fs.cp(destination, staged, { recursive: true });
-      const current = (await CrontabModel.findAll({ where: { sub_id: sub.id } })).map(row => row.get({ plain: true }));
+      const current = (await SchedulerProjectionModel.findAll({ where: { sub_id: sub.id } })).map(row => row.get({ plain: true }));
       const plan = await new SubscriptionDiscoveryAdapter().discover(source, staged, sub, current);
       const { adds, updates, drops, diagnostics } = plan;
       await this.validateFiles(staged);

@@ -1,0 +1,161 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 1 - real sh current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 2635.427708
+  type: 'test'
+  ...
+# Subtest: real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 2 - real js current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 2377.020209
+  type: 'test'
+  ...
+# Subtest: real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+ok 3 - real py current MAIN bridge, config in all phases, generated Secret patch/redaction and cleanup
+  ---
+  duration_ms: 2429.892125
+  type: 'test'
+  ...
+# Subtest: real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+ok 4 - real BEFORE timeout kills descendants, skips remaining BEFORE/MAIN, runs AFTER_FAILURE and FINALLY
+  ---
+  duration_ms: 2733.633833
+  type: 'test'
+  ...
+# Subtest: lifecycle: main failure
+ok 5 - lifecycle: main failure
+  ---
+  duration_ms: 1939.561708
+  type: 'test'
+  ...
+# Subtest: lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+ok 6 - lifecycle: AFTER_SUCCESS failure never triggers AFTER_FAILURE
+  ---
+  duration_ms: 2147.901167
+  type: 'test'
+  ...
+# Subtest: lifecycle: FINALLY failure changes success
+ok 7 - lifecycle: FINALLY failure changes success
+  ---
+  duration_ms: 2203.510084
+  type: 'test'
+  ...
+# Subtest: lifecycle: FINALLY failure preserves primary
+ok 8 - lifecycle: FINALLY failure preserves primary
+  ---
+  duration_ms: 2139.274333
+  type: 'test'
+  ...
+# Subtest: lifecycle: CONTINUE before failure permits MAIN
+ok 9 - lifecycle: CONTINUE before failure permits MAIN
+  ---
+  duration_ms: 2105.79475
+  type: 'test'
+  ...
+# Subtest: lifecycle: invalid BEFORE output fails without leaking generated log
+ok 10 - lifecycle: invalid BEFORE output fails without leaking generated log
+  ---
+  duration_ms: 1599.433083
+  type: 'test'
+  ...
+# Subtest: graceful cancellation tee=false executes AFTER_FAILURE/FINALLY with config, then restores original
+ok 11 - graceful cancellation tee=false executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 2040.675542
+  type: 'test'
+  ...
+# Subtest: graceful cancellation tee=true executes AFTER_FAILURE/FINALLY with config, then restores original
+ok 12 - graceful cancellation tee=true executes AFTER_FAILURE/FINALLY with config, then restores original
+  ---
+  duration_ms: 2053.115708
+  type: 'test'
+  ...
+# Subtest: same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+not ok 13 - same workspace BUSY, different workspace parallel, SIGKILL lease recovery restores config
+  ---
+  duration_ms: 2203.949334
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:63:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    ## 开始执行... 2026-09-16 03:02:34
+    
+    TASK_NOT_READY
+    
+    ## 失败 ❌(退出码 1)... 2026-09-16 03:02:34  耗时 1 秒　　　　　
+    
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:69:75)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: live execution pins Config revision, ENV and Hook plan across edits; next run observes new values
+ok 14 - live execution pins Config revision, ENV and Hook plan across edits; next run observes new values
+  ---
+  duration_ms: 3363.140542
+  type: 'test'
+  ...
+# Subtest: manual, Node runCron and system command entrypoints share Config/Hooks and exit semantics
+ok 15 - manual, Node runCron and system command entrypoints share Config/Hooks and exit semantics
+  ---
+  duration_ms: 6839.746125
+  type: 'test'
+  ...
+# Subtest: PREPARE conflict starts no user phase and preserves existing data
+ok 16 - PREPARE conflict starts no user phase and preserves existing data
+  ---
+  duration_ms: 962.654125
+  type: 'test'
+  ...
+# Subtest: MAIN timeout invokes failure and finally independently of hook deadlines
+ok 17 - MAIN timeout invokes failure and finally independently of hook deadlines
+  ---
+  duration_ms: 2674.503042
+  type: 'test'
+  ...
+# Subtest: all publication sources share the existing global publication-1 lease
+not ok 18 - all publication sources share the existing global publication-1 lease
+  ---
+  duration_ms: 606.262792
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:99:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    ## 开始执行... 2026-09-16 03:02:48
+    
+    TASK_NOT_READY
+    
+    ## 失败 ❌(退出码 1)... 2026-09-16 03:02:49  耗时 1 秒　　　　　
+    
+    
+    1 !== 75
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 75
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase5/runtime.test.cjs:101:378)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 16
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 48109.663292

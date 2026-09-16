@@ -1,0 +1,207 @@
+{
+  "status": "found",
+  "symbol": {
+    "uid": "Class:back/services/cron.ts:CronService",
+    "name": "CronService",
+    "kind": "Class",
+    "filePath": "back/services/cron.ts",
+    "startLine": 41,
+    "endLine": 1188
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "imports": [
+      {
+        "uid": "File:back/api/cron.ts",
+        "name": "cron.ts",
+        "filePath": "back/api/cron.ts"
+      },
+      {
+        "uid": "File:back/loaders/bootAfter.ts",
+        "name": "bootAfter.ts",
+        "filePath": "back/loaders/bootAfter.ts"
+      },
+      {
+        "uid": "File:back/loaders/initData.ts",
+        "name": "initData.ts",
+        "filePath": "back/loaders/initData.ts"
+      },
+      {
+        "uid": "File:back/schedule/api.ts",
+        "name": "api.ts",
+        "filePath": "back/schedule/api.ts"
+      },
+      {
+        "uid": "File:back/services/managedSubscription.ts",
+        "name": "managedSubscription.ts",
+        "filePath": "back/services/managedSubscription.ts"
+      },
+      {
+        "uid": "File:back/services/script.ts",
+        "name": "script.ts",
+        "filePath": "back/services/script.ts"
+      },
+      {
+        "uid": "File:back/services/subscription.ts",
+        "name": "subscription.ts",
+        "filePath": "back/services/subscription.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "has_property": [
+      {
+        "name": "logger",
+        "filePath": "back/services/cron.ts"
+      }
+    ],
+    "has_method": [
+      {
+        "uid": "Function:back/services/cron.ts:CronService.publishSubscription.fn@159:33.register@176:6",
+        "name": "register",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Function:back/services/cron.ts:CronService.runSingle.fn@822:44.onStart@857:10",
+        "name": "onStart",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Function:back/services/cron.ts:CronService.runSingle.fn@822:44.onStderr@887:10",
+        "name": "onStderr",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Function:back/services/cron.ts:CronService.runSingle.fn@822:44.onStdout@886:10",
+        "name": "onStdout",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.addLabels#2",
+        "name": "addLabels",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.autosave_crontab#1",
+        "name": "autosave_crontab",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.bootTask#0",
+        "name": "bootTask",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.constructor#1",
+        "name": "constructor",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.create#1",
+        "name": "create",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.crontabs#1",
+        "name": "crontabs",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.disabled#1",
+        "name": "disabled",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.enabled#1",
+        "name": "enabled",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.find#1",
+        "name": "find",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.formatFilterQuery#2",
+        "name": "formatFilterQuery",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.formatSearchText#2",
+        "name": "formatSearchText",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.formatViewQuery#2",
+        "name": "formatViewQuery",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.formatViewSort#2",
+        "name": "formatViewSort",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.getDb#1",
+        "name": "getDb",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.getLogName#1",
+        "name": "getLogName",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.insert#1",
+        "name": "insert",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.isBootSchedule#1",
+        "name": "isBootSchedule",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.isNodeCron#1",
+        "name": "isNodeCron",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.isOnceSchedule#1",
+        "name": "isOnceSchedule",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.isSpecialSchedule#1",
+        "name": "isSpecialSchedule",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.log#2",
+        "name": "log",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.logs#1",
+        "name": "logs",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.makeCommand#2",
+        "name": "makeCommand",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.pin#1",
+        "name": "pin",
+        "filePath": "back/services/cron.ts"
+      },
+      {
+        "uid": "Method:back/services/cron.ts:CronService.publishSubscription#2",
+        "name": "publishSubscription",
+        "filePath": "back/services/cron.ts"
+      }
+    ]
+  },
+  "processes": []
+}

@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import TaskReferenceService from './taskReferences';
 import path from 'path';
 import { randomUUID } from 'crypto';
 import { Op, Transaction } from 'sequelize';
@@ -596,6 +597,7 @@ export default class NodeEnvironmentService {
           { where: { id: env.id }, transaction },
         );
       } else if (type === 'NODE_ENV_DELETE') {
+        await new TaskReferenceService().requireUnusedEnvironment('NODE', env.id, transaction);
         for (const b of await Builds.findAll({
           where: { environment_id: env.id },
           order: [['id', 'ASC']],

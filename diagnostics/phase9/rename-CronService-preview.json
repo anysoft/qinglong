@@ -1,0 +1,321 @@
+{
+  "status": "success",
+  "old_name": "CronService",
+  "new_name": "SchedulerBridgeService",
+  "files_affected": 9,
+  "total_edits": 44,
+  "graph_edits": 38,
+  "text_search_edits": 6,
+  "changes": [
+    {
+      "file_path": "back/services/cron.ts",
+      "edits": [
+        {
+          "line": 41,
+          "old_text": "export default class CronService {",
+          "new_text": "export default class SchedulerBridgeService {",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/api/cron.ts",
+      "edits": [
+        {
+          "line": 4,
+          "old_text": "import CronService from '../services/cron';",
+          "new_text": "import SchedulerBridgeService from '../services/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 166,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 180,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 198,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 215,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 232,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 252,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 275,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 292,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 309,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 338,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 370,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 387,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 404,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 421,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 442,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 466,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 512,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 531,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/loaders/bootAfter.ts",
+      "edits": [
+        {
+          "line": 2,
+          "old_text": "import CronService from '../services/cron';",
+          "new_text": "import SchedulerBridgeService from '../services/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 5,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/loaders/initData.ts",
+      "edits": [
+        {
+          "line": 3,
+          "old_text": "import CronService from '../services/cron';",
+          "new_text": "import SchedulerBridgeService from '../services/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 21,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/schedule/api.ts",
+      "edits": [
+        {
+          "line": 25,
+          "old_text": "import CronService from '../services/cron';",
+          "new_text": "import SchedulerBridgeService from '../services/cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 274,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 289,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 302,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 327,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 340,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 376,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 400,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 420,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        },
+        {
+          "line": 440,
+          "old_text": "const cronService = Container.get(CronService);",
+          "new_text": "const cronService = Container.get(SchedulerBridgeService);",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/managedSubscription.ts",
+      "edits": [
+        {
+          "line": 11,
+          "old_text": "import CronService from './cron';",
+          "new_text": "import SchedulerBridgeService from './cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 120,
+          "old_text": "await Container.get(CronService).publishSubscription(",
+          "new_text": "await Container.get(SchedulerBridgeService).publishSubscription(",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/script.ts",
+      "edits": [
+        {
+          "line": 6,
+          "old_text": "import CronService from './cron';",
+          "new_text": "import SchedulerBridgeService from './cron';",
+          "confidence": "graph"
+        },
+        {
+          "line": 18,
+          "old_text": "private cronService: CronService,",
+          "new_text": "private cronService: SchedulerBridgeService,",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "back/services/grpc.ts",
+      "edits": [
+        {
+          "line": 2,
+          "old_text": "import { CronService } from '../protos/cron';",
+          "new_text": "import { SchedulerBridgeService } from '../protos/cron';",
+          "confidence": "text_search"
+        },
+        {
+          "line": 30,
+          "old_text": "this.server.addService(CronService, { addCron, delCron });",
+          "new_text": "this.server.addService(SchedulerBridgeService, { addCron, delCron });",
+          "confidence": "text_search"
+        }
+      ]
+    },
+    {
+      "file_path": "back/protos/cron.ts",
+      "edits": [
+        {
+          "line": 455,
+          "old_text": "export type CronService = typeof CronService;",
+          "new_text": "export type SchedulerBridgeService = typeof SchedulerBridgeService;",
+          "confidence": "text_search"
+        },
+        {
+          "line": 456,
+          "old_text": "export const CronService = {",
+          "new_text": "export const SchedulerBridgeService = {",
+          "confidence": "text_search"
+        },
+        {
+          "line": 515,
+          "old_text": "export const CronClient = makeGenericClientConstructor(CronService, \"com.ql.cron.Cron\") as unknown as {",
+          "new_text": "export const CronClient = makeGenericClientConstructor(SchedulerBridgeService, \"com.ql.cron.Cron\") as unknown as {",
+          "confidence": "text_search"
+        },
+        {
+          "line": 517,
+          "old_text": "service: typeof CronService;",
+          "new_text": "service: typeof SchedulerBridgeService;",
+          "confidence": "text_search"
+        }
+      ]
+    }
+  ],
+  "applied": false
+}

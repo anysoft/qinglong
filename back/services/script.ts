@@ -3,7 +3,7 @@ import { Service, Inject } from 'typedi';
 import winston from 'winston';
 import path, { join } from 'path';
 import SockService from './sock';
-import CronService from './cron';
+import CurrentTaskBridgeService from './cron';
 import ScheduleService, { TaskCallbacks } from './schedule';
 import config from '../config';
 import { TASK_COMMAND } from '../config/const';
@@ -15,7 +15,7 @@ export default class ScriptService {
   constructor(
     @Inject('logger') private logger: winston.Logger,
     private sockService: SockService,
-    private cronService: CronService,
+    private cronService: CurrentTaskBridgeService,
     private scheduleService: ScheduleService,
   ) {}
 

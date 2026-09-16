@@ -1,0 +1,75 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: Task CRUD, optimistic version, literal arguments, enable readiness and clone secrets
+ok 1 - Task CRUD, optimistic version, literal arguments, enable readiness and clone secrets
+  ---
+  duration_ms: 442.391625
+  type: 'test'
+  ...
+# Subtest: runtime inheritance changes readiness dynamically, explicit override wins, references protect deletion
+ok 2 - runtime inheritance changes readiness dynamically, explicit override wins, references protect deletion
+  ---
+  duration_ms: 266.083666
+  type: 'test'
+  ...
+# Subtest: cross-repository source/profile updates roll back atomically and client paths are rejected
+ok 3 - cross-repository source/profile updates roll back atomically and client paths are rejected
+  ---
+  duration_ms: 188.22875
+  type: 'test'
+  ...
+# Subtest: 1000 Task list uses bounded batch queries and does not expose execution paths
+ok 4 - 1000 Task list uses bounded batch queries and does not expose execution paths
+  ---
+  duration_ms: 2163.763708
+  type: 'test'
+  ...
+# Subtest: Python/JS/TS/Shell binding matrix, missing/wrong environments and effective references
+not ok 5 - Python/JS/TS/Shell binding matrix, missing/wrong environments and effective references
+  ---
+  duration_ms: 506.667208
+  type: 'test'
+  location: '/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/resources.test.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: 'Validation error'
+  code: 'ERR_TEST_FAILURE'
+  name: 'SequelizeUniqueConstraintError'
+  stack: |-
+    Database.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:236:27)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:234:50
+    new Promise (<anonymous>)
+    Query.run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/sqlite/query.js:234:12)
+    /Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/sequelize.js:650:28
+    async SQLiteQueryInterface.update (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/dialects/abstract/query-interface.js:898:12)
+    async model.save (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/model.js:4154:35)
+    async model.update (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/node_modules/.pnpm/sequelize@6.37.5_@whyour+sqlite3@1.1.2/node_modules/sequelize/src/model.js:4343:12)
+    async TestContext.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/tests/phase9/resources.test.cjs:5:198)
+    async Test.run (node:internal/test_runner/test:1054:7)
+  ...
+# Subtest: Task > Subscription > Repository precedence and clone retain subscription-owned logical resources
+ok 6 - Task > Subscription > Repository precedence and clone retain subscription-owned logical resources
+  ---
+  duration_ms: 294.714167
+  type: 'test'
+  ...
+# Subtest: readiness responds to source loss, disabled profile and malformed Config/Hook without execution snapshots
+ok 7 - readiness responds to source loss, disabled profile and malformed Config/Hook without execution snapshots
+  ---
+  duration_ms: 205.677375
+  type: 'test'
+  ...
+# Subtest: clone copies Config/Hooks/settings while Task delete keeps independent resources and run history
+ok 8 - clone copies Config/Hooks/settings while Task delete keeps independent resources and run history
+  ---
+  duration_ms: 195.198417
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 7
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3331.944084

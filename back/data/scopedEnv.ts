@@ -11,7 +11,7 @@ export interface EnvironmentProfile {
 export interface ScopedVariable {
   id?: number;
   profile_id?: number;
-  cron_id?: number;
+  task_id?: number;
   name: string;
   value?: string | null;
   status?: 'enabled' | 'disabled';
@@ -42,5 +42,5 @@ export const RepositoryEnvVariableModel = sequelize.define<Model<ScopedVariable>
 }, { defaultScope: { attributes: { exclude: ['value'] } }, indexes: [{ unique: true, fields: ['profile_id', 'name'] }] });
 export const TaskEnvVariableModel = sequelize.define<Model<ScopedVariable> & ScopedVariable>('TaskEnvVariable', {
   ...variableFields,
-  cron_id: { type: DataTypes.INTEGER, allowNull: false, references: { model: 'Crontabs', key: 'id' }, onDelete: 'CASCADE' },
-}, { defaultScope: { attributes: { exclude: ['value'] } }, indexes: [{ unique: true, fields: ['cron_id', 'name'] }] });
+  task_id: { type: DataTypes.INTEGER, allowNull: false, references: { model: 'Tasks', key: 'id' }, onDelete: 'CASCADE' },
+}, { defaultScope: { attributes: { exclude: ['value'] } }, indexes: [{ unique: true, fields: ['task_id', 'name'] }] });

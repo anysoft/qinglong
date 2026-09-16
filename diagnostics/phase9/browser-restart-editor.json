@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "steps": [
+    "empty-root-bootstrap",
+    "browser-fresh-initialize-login",
+    "browser-credential-create",
+    "browser-repository-create",
+    "browser-initialize-fetch",
+    "browser-subscription-create-branch",
+    "browser-prepare-sync-discovery",
+    "browser-worktree-view",
+    "browser-global-create",
+    "browser-profile-create-default",
+    "browser-save-structured-definition-before-restart",
+    "browser-restart-reopen-task-editor-fields-persisted"
+  ],
+  "linux": false,
+  "response_payloads_inspected": 174,
+  "websocket_frames_inspected": 11
+}

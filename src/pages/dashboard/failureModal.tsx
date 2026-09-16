@@ -3,7 +3,7 @@ import { Alert, Button, Modal, Table, Tag } from 'antd';
 import intl from 'react-intl-universal';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
-import CronLogModal from '../crontab/logModal';
+import TaskBridgeLogModal from '@/components/task-bridge/logModal';
 
 interface FailedTask {
   id: number;
@@ -110,7 +110,7 @@ export default function FailureModal({ onCancel }: { onCancel: () => void }) {
         )}
       </Modal>
       {logCron && (
-        <CronLogModal cron={logCron} handleCancel={() => setLogCron(null)} />
+        <TaskBridgeLogModal cron={logCron} handleCancel={() => setLogCron(null)} />
       )}
     </>
   );

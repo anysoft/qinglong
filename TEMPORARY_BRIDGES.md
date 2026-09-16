@@ -80,3 +80,24 @@ B05 已退出；B07 缩减为独立 Backend adapter；B03 仅为 scheduler 输�
 | Docker、shell/lang | 平台 Node/pm2/ts-node 和 bootstrap 提示 | 单独审计平台工具职责，不作为业务 Runtime |
 
 Python dependency bridge 同样保留既有当前 Runner consumer；Linux packages 不属于 Node 清理授权。B05 已移除，B01–B04、B06–B17 的其余退出条件沿用当前登记。本阶段无自动 Task/Repository package.json/lockfile 绑定，无 NODE_PATH 新核心设计。静态证据：`diagnostics/phase8/final-static-audit.json`。
+
+
+## Phase 9 — Task Domain 合流
+
+本节是以下 Bridge 的当前状态，覆盖前面阶段记录中“Crontab 为定义”的描述。
+
+| Bridge | 状态 | 当前消费者与退出条件 |
+|---|---|---|
+| B01 scripts staging | TEMPORARY | TaskExecutionSourceBridge → 已发布 subscription namespace；Phase 10 Worktree direct execution 完成后替换；Editor 消费者另行退出 |
+| B02 task.sh / otask.sh | TEMPORARY | CurrentTaskBridgeService 与原 Runner；Phase 10 统一执行解析后替换 |
+| B03 system crontab | TEMPORARY | SchedulerBridgeService 的派生输出，禁止反向恢复 Task |
+| B04 scheduler adapters | TEMPORARY | node/gRPC/protobuf transport，Phase 10/11 退出 |
+| B06 preload | TEMPORARY | 当前 Shell/语言 Runner 注入与 SDK transport；Phase 10 新 Runner 接管后再退出 |
+| B09/B10 dependency bridges | TEMPORARY | 当前 Runner 仍消费全局依赖布局；Task 已绑定 Environment 不代表执行已切换，须等待 Phase 10 实际 Build/lease 执行 gates |
+| B07 discovery adapter | REDUCED | 现有发现 plan → TaskService 定义协调 → SchedulerProjection，Phase 11 替换 |
+| B08 results | TEMPORARY | 保留 `/crons/status`、`/crons/detail` 和 cron_id wire 属性；RunningInstances 物理 task_id；Phase 10 替换 |
+| B14 logs identity | TEMPORARY | 保留原 Task ID、日志路径与历史记录；删除 Task 不删除日志 |
+| B15 Crontab domain | REMOVED（定义职责） | Tasks + TaskSource + RuntimeBinding + Settings 为唯一领域定义。SchedulerProjections 仅临时输出，CurrentTaskBridgeService 保留原调度/执行实现，分别由窄 SchedulerBridgeService / TaskExecutionBridge 接入 |
+| B17 TaskWorkspaceResolver | REDUCED | Task 使用 canonical TaskSource 经 SourceBridge 映射当前 staging；ConfigMaterializationLease / 恢复继续保留；Phase 10 完成 workspace lease 后退出 |
+
+Runtime Binding 和 Settings 在 Phase 9 只声明、验证、展示。没有 managed Environment 实际 Task 执行，没有 ExecutionContext v2。非空 structured arguments 在当前桥执行时明确拒绝，Phase 10 使用原生 argv。未发布 Manual source 可保存与校验，当前桥无法直接执行。

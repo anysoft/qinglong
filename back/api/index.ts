@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import user from './user';
 import runtimeRoutes from './runtime';
+import taskRoutes from './tasks';
 import configAssets from './configAssets';
 import log from './log';
 import cron from './cron';
@@ -21,6 +22,7 @@ export default () => {
   const app = Router();
   user(app);
   runtimeRoutes(app);
+  taskRoutes(app);
   configAssets(app);
   log(app);
   cron(app);

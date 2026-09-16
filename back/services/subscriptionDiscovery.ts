@@ -2,16 +2,16 @@ import fs from 'fs/promises';
 import path from 'path';
 import { createHash } from 'crypto';
 import { CronExpressionParser } from 'cron-parser';
-import { Crontab } from '../data/cron';
+import { SchedulerProjection } from '../data/cron';
 import { Subscription } from '../data/subscription';
 import { WorkspaceError } from '../shared/workspaceError';
 
-export type DiscoveryUpdate = Partial<Pick<Crontab, 'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'>>;
+export type DiscoveryUpdate = Partial<Pick<SchedulerProjection, 'id' | 'name' | 'command' | 'schedule' | 'discovery_definition'>>;
 
 // Discovery owns only a private stage and a typed plan. The caller owns Git,
 // database access, publication, scheduler installation and compensation.
 export default class SubscriptionDiscoveryAdapter {
-  async discover(source: string, staged: string, sub: Subscription, current: Crontab[]) {
+  async discover(source: string, staged: string, sub: Subscription, current: SchedulerProjection[]) {
     const regex = (value?: string) => {
       try { return value ? new RegExp(value) : undefined; }
       catch { throw new WorkspaceError('INVALID_DISCOVERY_FILTER'); }
@@ -28,7 +28,7 @@ export default class SubscriptionDiscoveryAdapter {
       }
     };
     await walk('');
-    const adds: Crontab[] = [], updates: DiscoveryUpdate[] = [], drops: number[] = [];
+    const adds: SchedulerProjection[] = [], updates: DiscoveryUpdate[] = [], drops: number[] = [];
     const diagnostics: Array<{ code: string; relative_path: string }> = [];
     const selected = new Set<string>();
     const owned = new Map(current.filter(x => x.sub_id === sub.id && x.discovery_key).map(x => [x.discovery_key!, x]));

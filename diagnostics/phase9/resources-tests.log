@@ -1,0 +1,35 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+TAP version 13
+# Subtest: Python/JS/TS/Shell binding matrix, missing/wrong environments and effective references
+ok 1 - Python/JS/TS/Shell binding matrix, missing/wrong environments and effective references
+  ---
+  duration_ms: 505.197334
+  type: 'test'
+  ...
+# Subtest: Task > Subscription > Repository precedence and clone retain subscription-owned logical resources
+ok 2 - Task > Subscription > Repository precedence and clone retain subscription-owned logical resources
+  ---
+  duration_ms: 270.058167
+  type: 'test'
+  ...
+# Subtest: readiness responds to source loss, disabled profile and malformed Config/Hook without execution snapshots
+ok 3 - readiness responds to source loss, disabled profile and malformed Config/Hook without execution snapshots
+  ---
+  duration_ms: 196.211916
+  type: 'test'
+  ...
+# Subtest: clone copies Config/Hooks/settings while Task delete keeps independent resources and run history
+ok 4 - clone copies Config/Hooks/settings while Task delete keeps independent resources and run history
+  ---
+  duration_ms: 188.728833
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1432.522708

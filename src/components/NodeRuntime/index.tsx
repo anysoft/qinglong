@@ -18,6 +18,7 @@ import {
 } from 'antd';
 import { request } from '@/utils/http';
 import config from '@/utils/config';
+import { TaskResourceReferences } from '@/components/task-resource-references';
 const base = `${config.apiPrefix}runtime/node`;
 export default function NodeRuntime({
   onOperation,
@@ -29,6 +30,7 @@ export default function NodeRuntime({
     [catalog, setCatalog] = useState<any[]>([]),
     [envs, setEnvs] = useState<any[]>([]),
     [operations, setOperations] = useState<any[]>([]);
+  const [taskReferencesBlocked, setTaskReferencesBlocked] = useState(true);
   const [tab, setTab] = useState('versions'),
     [modal, setModal] = useState(''),
     [selected, setSelected] = useState<any>(),
@@ -637,6 +639,7 @@ export default function NodeRuntime({
                 label: 'Overview',
                 children: (
                   <>
+                    <TaskResourceReferences kind="node" id={selected.id} onBlocked={setTaskReferencesBlocked} />
                     <Descriptions bordered size="small">
                       <Descriptions.Item label="ID">
                         {selected.id}
@@ -706,7 +709,7 @@ export default function NodeRuntime({
                             setSelected(undefined);
                         }}
                       >
-                        <Button danger>删除环境</Button>
+                        <Button danger disabled={taskReferencesBlocked}>删除环境</Button>
                       </Popconfirm>
                     </Space>
                   </>

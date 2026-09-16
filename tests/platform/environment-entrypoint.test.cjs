@@ -5,7 +5,7 @@ test('real ID-to-SQLite shell bridge resolves current config, cleans per-run fil
   const h = await setup({ after: fn => t.after(fn), fileDatabase: true });
   const repo = await h.RepositoryModel.create({ name: 'bridge', provider: 'generic', remote_url: 'https://bridge.invalid/a', normalized_url: 'bridge.invalid/a' });
   const sub = await h.SubscriptionModel.create({ name: 'bridge', repository_id: repo.id });
-  const task = await h.CrontabModel.create({ command: 'task subscription-1/bridge.sh', sub_id: sub.id });
+  const task = await h.SchedulerProjectionModel.create({ command: 'task subscription-1/bridge.sh', sub_id: sub.id });
   const p = await h.profiles.save({ repository_id: repo.id, name: 'prod', is_default: true });
   await h.variables.save('repository', p.id, [{ name: 'BRIDGE_TOKEN', value: 'bridge-private', is_secret: true }]); 
   fs.mkdirSync(path.join(h.dir, 'data/db'), { recursive: true });

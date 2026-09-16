@@ -1,16 +1,17 @@
 import { nodeEnvironmentModels } from '../data/nodeEnvironment';
+import { taskModels } from '../data/task';
 import { pythonEnvironmentModels } from '../data/pythonEnvironment';
 import Logger from './logger';
 import { runtimeModels } from '../data/runtime';
 import { configAssetModels } from '../data/configAsset';
 import { EnvModel } from '../data/env';
-import { CrontabModel } from '../data/cron';
+import { SchedulerProjectionModel } from '../data/cron';
 import { DependenceModel } from '../data/dependence';
 import { AppModel } from '../data/open';
 import { SystemModel } from '../data/system';
 import { SubscriptionModel } from '../data/subscription';
-import { CrontabViewModel } from '../data/cronView';
-import { CrontabStatModel } from '../data/cronStats';
+import { TaskViewModel } from '../data/cronView';
+import { TaskStatModel } from '../data/cronStats';
 import { RunningInstanceModel } from '../data/runningInstance';
 import { sequelize } from '../data';
 import { initializeOperationalSchema } from '../shared/operationalSchema';
@@ -27,9 +28,9 @@ export default async () => {
     await bootstrapDirectories(config.dataPath);
     await initializeOperationalSchema(sequelize, [
       GitCredentialModel, RepositoryModel, WorktreeModel, EnvironmentProfileModel,
-      SubscriptionModel, CrontabModel, RepositoryEnvVariableModel, TaskEnvVariableModel,
-      EnvModel, DependenceModel, AppModel, SystemModel, CrontabViewModel,
-      CrontabStatModel, RunningInstanceModel, ...configAssetModels, ...runtimeModels, ...pythonEnvironmentModels, ...nodeEnvironmentModels,
+      SubscriptionModel, SchedulerProjectionModel, RepositoryEnvVariableModel, TaskEnvVariableModel,
+      EnvModel, DependenceModel, AppModel, SystemModel, TaskViewModel,
+      TaskStatModel, RunningInstanceModel, ...configAssetModels, ...runtimeModels, ...pythonEnvironmentModels, ...nodeEnvironmentModels, ...taskModels,
     ]);
     await new ExecutionEnvironmentTransport().cleanupStale().catch(() => {
       Logger.warn('[environment] stale snapshot cleanup deferred');
