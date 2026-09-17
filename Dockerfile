@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --gid 10001 platform && useradd --uid 10001 --gid 10001 --home-dir /data/home --no-create-home platform \
     && mkdir /app /data /backup && chown 10001:10001 /data /backup
+RUN npm install --global npm@11.19.1
 WORKDIR /app
 COPY --from=build /build/node_modules ./node_modules
 COPY --from=build /build/static ./static
