@@ -69,7 +69,10 @@
     "overrides": {
       "sqlite3": "npm:@whyour/sqlite3@1.1.2",
       "@codemirror/state": "6.5.4",
-      "@codemirror/view": "6.39.16"
+      "@codemirror/view": "6.39.16",
+      "protobufjs": "7.5.5",
+      "tar": "7.5.20",
+      "websocket-driver": "0.7.5"
     }
   },
   "dependencies": {

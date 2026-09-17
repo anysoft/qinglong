@@ -1,0 +1,5 @@
+# CVE-2026-55445 applies to upstream QingLong versions before 2.20.1. This
+# greenfield platform retains the package name at version 1.0.0, but guards
+# both /api/user/init and /open/user/init before the /open rewrite in
+# back/loaders/express.ts. The vulnerable unauthenticated reset path is absent.
+CVE-2026-55445
