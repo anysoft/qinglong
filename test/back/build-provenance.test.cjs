@@ -69,14 +69,14 @@ test('archived release recipe preserves same-run artifact provenance without act
       build.with['build-args'],
       /SOURCE_COMMIT=\$\{\{ github.sha \}\}/,
     );
-    const dockerfile = fs.readFileSync(build.with.file, 'utf8');
-    assert.doesNotMatch(dockerfile, /git clone.*qinglong-static/);
-    assert.match(
-      dockerfile,
-      /git fetch --depth=1 origin "\$\{SOURCE_COMMIT\}"/,
-    );
-    assert.match(dockerfile, /node \/tmp\/verify-build.cjs/);
+    // Historical jobs remain inactive; their legacy runtime recipes are retired.
+    assert.equal(fs.existsSync(build.with.file), false);
   }
+  const dockerfile = fs.readFileSync('Dockerfile', 'utf8');
+  assert.doesNotMatch(dockerfile, /git clone|git fetch|BUILDPLATFORM/);
+  assert.match(dockerfile, /ARG SOURCE_COMMIT/);
+  assert.match(dockerfile, /node scripts\/release\/build-info\.cjs/);
+  assert.match(dockerfile, /COPY --from=build \/build\/static \.\/static/);
 });
 
 test('complete artifact manifests reject changed, missing, extra files and untracked build inputs', (t) => {

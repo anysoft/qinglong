@@ -1,0 +1,93 @@
+name: Container Qualification
+on:
+  workflow_dispatch:
+  workflow_call:
+  pull_request:
+    branches: [develop]
+  push:
+    branches: [develop]
+permissions:
+  contents: read
+concurrency:
+  group: container-qualification-${{ github.ref }}-${{ github.run_id }}
+  cancel-in-progress: false
+jobs:
+  linux:
+    uses: ./.github/workflows/linux-qualification.yml
+  container:
+    needs: linux
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 150
+    env:
+      TEST_ARCH: ${{ matrix.arch }}
+      TEST_IMAGE: platform-candidate:${{ matrix.arch }}
+      RELEASE_OUTPUT: release-output
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22.23.2'
+          package-manager-cache: false
+      - uses: docker/setup-buildx-action@v4
+      - name: Install archive promotion tool
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends skopeo
+      - name: Validate release harness
+        run: node --test tests/phase16b/release.test.cjs
+      - name: Build target-native OCI image with SBOM and provenance
+        run: node scripts/release/build.cjs
+      - name: Real container acceptance
+        run: node scripts/release/container-acceptance.cjs
+      - name: Compose acceptance
+        run: node scripts/release/compose-test.cjs
+      - name: Install checksum-verified scanner
+        run: python3 scripts/release/install-scanner.py
+      - name: Reject fixed critical vulnerabilities
+        run: release-tools/trivy image --scanners vuln --severity CRITICAL --ignore-unfixed --exit-code 1 --format json --output release-output/vulnerabilities.json "$TEST_IMAGE"
+      - name: Aggregate real gates
+        run: node scripts/release/gates.cjs
+      - name: Upload compact gate receipt
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: container-gates-${{ matrix.arch }}-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.sha }}
+          if-no-files-found: error
+          path: release-output/container-gates.json
+      - name: Upload exact qualified image and evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: container-${{ matrix.arch }}-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.sha }}
+          retention-days: 7
+          if-no-files-found: error
+          path: release-output/
+  summary:
+    needs: [linux, container]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v7
+        with:
+          pattern: container-gates-*-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.sha }}
+          path: qualification-input
+      - name: Enforce every job and both architecture receipts
+        env:
+          NEEDS: ${{ toJSON(needs) }}
+        run: node scripts/release/qualification-summary.cjs
+      - uses: actions/upload-artifact@v6
+        with:
+          name: container-summary-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.sha }}
+          if-no-files-found: error
+          path: container-qualification-summary.json

@@ -1,0 +1,1 @@
+time="2026-09-17T09:29:16+08:00" level=fatal msg="choosing an image from manifest list oci-archive:release-output/image.tar:: no image found in image index for architecture \"arm64\", variant \"\", OS \"darwin\""

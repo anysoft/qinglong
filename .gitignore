@@ -52,3 +52,8 @@ ci-downloaded/
 /diagnostics/phase15/managed-local/
 /diagnostics/qualification/
 /qualification-downloaded/
+
+# Owned release build artifacts; never commit images or scanner binaries.
+/release-output/
+/release-input/
+/release-tools/

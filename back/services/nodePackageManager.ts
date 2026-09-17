@@ -487,7 +487,9 @@ export default class NodePackageManager {
       ])
         for (const [key, value] of Object.entries(row[group] ?? {})) {
           const item = value as any,
-            name = item.name ?? key;
+            name = item.name ?? key,
+            isOptional =
+              group === 'optionalDependencies' || optional.has(key);
           // npm ls represents omitted platform-specific optional dependencies as {}.
           // Accept only an empty placeholder declared optional by the parent lock entry.
           if (
@@ -511,8 +513,20 @@ export default class NodePackageManager {
                 ? 'DEV_DEPENDENCY'
                 : 'DEPENDENCY'
               : type;
+          let target: string | undefined;
           if (item.path) {
-            const target = await fs.realpath(item.path);
+            try {
+              target = await fs.realpath(item.path);
+            } catch (error) {
+              if (
+                (error as NodeJS.ErrnoException).code === 'ENOENT' &&
+                isOptional
+              )
+                continue;
+              if ((error as NodeJS.ErrnoException).code === 'ENOENT')
+                throw new RuntimeError('NODE_DEPENDENCY_MISSING');
+              throw error;
+            }
             if (!target.startsWith(root + path.sep))
               throw new RuntimeError('NODE_PATH_INVALID');
           }
@@ -527,6 +541,29 @@ export default class NodePackageManager {
               : dependency_type,
           });
           const optionalChildren = new Set<string>();
+          if (target) {
+            let packageManifest: any;
+            try {
+              packageManifest = JSON.parse(
+                await fs.readFile(path.join(target, 'package.json'), 'utf8'),
+              );
+            } catch {
+              throw new RuntimeError('NODE_DEPENDENCY_GRAPH_INVALID');
+            }
+            if (
+              packageManifest.name !== name ||
+              packageManifest.version !== item.version ||
+              (packageManifest.optionalDependencies !== undefined &&
+                (!packageManifest.optionalDependencies ||
+                  typeof packageManifest.optionalDependencies !== 'object' ||
+                  Array.isArray(packageManifest.optionalDependencies)))
+            )
+              throw new RuntimeError('NODE_DEPENDENCY_GRAPH_INVALID');
+            for (const child of Object.keys(
+              packageManifest.optionalDependencies ?? {},
+            ))
+              optionalChildren.add(child);
+          }
           if (tool.manager_type === 'NPM')
             for (const [location, entry] of Object.entries(
               (parsed as any).packages ?? {},

@@ -1,0 +1,12 @@
+✔ strict release identity and prerelease tags fail closed (4.06475ms)
+✔ container gate rejects missing or failed acceptance evidence (81.825416ms)
+✔ image boundaries keep secret sources out and native compilation target-specific (0.484834ms)
+✔ container gate rejects empty scanner output even with passing other receipts (82.967916ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 288.717709

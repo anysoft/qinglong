@@ -1,0 +1,8 @@
+fresh-nonroot-readonly-no-capabilities-health
+fresh-account-version
+repository-worktree-local-commit
+shell-task
+real-python-node-npm-pnpm-cjs-esm-tsx-managed-tasks
+Command failed: docker exec platform-qa-2e04f9179d19-a mv /data/state/runtime/python/versions/runtime-1/bin/python /data/state/runtime/python/versions/runtime-1/bin/python.qualification-missing
+mv: cannot stat '/data/state/runtime/python/versions/runtime-1/bin/python': No such file or directory
+

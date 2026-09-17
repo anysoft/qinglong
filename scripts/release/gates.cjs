@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const output=process.env.RELEASE_OUTPUT||'release-output';const read=n=>JSON.parse(fs.readFileSync(output+'/'+n+'.json'));
+const a=read('acceptance'),image=read('image-audit'),compose=read('compose'),vulns=read('vulnerabilities');
+assert.equal(a.status,'PASS');assert.equal(a.cleanup,'PASS');assert.equal(compose.status,'PASS');assert.equal(compose.cleanup,'PASS');assert.equal(image.status,'PASS');
+assert.equal(image.commit,process.env.GITHUB_SHA);assert.equal(a.commit,image.commit);assert.equal(a.architecture,image.architecture);
+assert.equal(vulns.SchemaVersion,2,'INVALID_VULNERABILITY_REPORT');assert.ok(Array.isArray(vulns.Results)&&vulns.Results.length>0,'EMPTY_VULNERABILITY_REPORT');assert.equal(vulns.ArtifactType,'container_image');
+const critical=vulns.Results.flatMap(r=>r.Vulnerabilities||[]).filter(v=>v.Severity==='CRITICAL'&&v.FixedVersion);assert.equal(critical.length,0);
+for(const step of ['fresh-nonroot-readonly-no-capabilities-health','fresh-account-version','repository-worktree-local-commit','shell-task','real-python-node-npm-pnpm-cjs-esm-tsx-managed-tasks','no-host-runtime-fallback','replacement-container-persistence','graceful-stop-descendants-restart','sigkill-task-recovery','sigkill-runtime-operation-journal-recovery','sigkill-notification-recovery','encrypted-portable-backup','different-data-volume-restore-rebuild-execute'])assert.ok(a.steps.includes(step),'MISSING_GATE:'+step);
+fs.writeFileSync(output+'/container-gates.json',JSON.stringify({status:'PASS',commit:image.commit,architecture:image.architecture,image,acceptance:a,compose,vulnerability_scan:'PASS'},null,2)+'\n');

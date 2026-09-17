@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/scripts/release/oci-audit.py", line 55, in <module>
+    assert not re.search(rb'-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----\r?\n(?:[A-Za-z0-9+/=]{16,}\r?\n){2}|fixture-[a-f0-9]{64}|eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}',data),'IMAGE_SECRET_PATTERN:'+name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IMAGE_SECRET_PATTERN:usr/lib/aarch64-linux-gnu/libgnutls.so.30.34.3

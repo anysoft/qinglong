@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: strict release identity and prerelease tags fail closed
+ok 1 - strict release identity and prerelease tags fail closed
+  ---
+  duration_ms: 2.5995
+  type: 'test'
+  ...
+# Subtest: container gate rejects missing or failed acceptance evidence
+ok 2 - container gate rejects missing or failed acceptance evidence
+  ---
+  duration_ms: 42.130959
+  type: 'test'
+  ...
+# Subtest: image boundaries keep secret sources out and native compilation target-specific
+ok 3 - image boundaries keep secret sources out and native compilation target-specific
+  ---
+  duration_ms: 1.918917
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 113.671875

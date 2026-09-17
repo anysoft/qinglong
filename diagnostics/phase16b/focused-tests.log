@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: build verification accepts matching source and rejects stale or dirty artifacts
+ok 1 - build verification accepts matching source and rejects stale or dirty artifacts
+  ---
+  duration_ms: 406.242875
+  type: 'test'
+  ...
+# Subtest: archived release recipe preserves same-run artifact provenance without activation
+ok 2 - archived release recipe preserves same-run artifact provenance without activation
+  ---
+  duration_ms: 18.043791
+  type: 'test'
+  ...
+# Subtest: complete artifact manifests reject changed, missing, extra files and untracked build inputs
+ok 3 - complete artifact manifests reject changed, missing, extra files and untracked build inputs
+  ---
+  duration_ms: 1352.949834
+  type: 'test'
+  ...
+# Subtest: strict release identity and prerelease tags fail closed
+ok 4 - strict release identity and prerelease tags fail closed
+  ---
+  duration_ms: 1.740167
+  type: 'test'
+  ...
+# Subtest: container gate rejects missing or failed acceptance evidence
+ok 5 - container gate rejects missing or failed acceptance evidence
+  ---
+  duration_ms: 33.983084
+  type: 'test'
+  ...
+# Subtest: image boundaries keep secret sources out and native compilation target-specific
+ok 6 - image boundaries keep secret sources out and native compilation target-specific
+  ---
+  duration_ms: 0.466666
+  type: 'test'
+  ...
+# Subtest: container gate rejects empty scanner output even with passing other receipts
+ok 7 - container gate rejects empty scanner output even with passing other receipts
+  ---
+  duration_ms: 34.727042
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1827.034792

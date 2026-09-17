@@ -1,0 +1,22 @@
+{
+  "status": "PARTIAL",
+  "phase": "16B",
+  "arm64_build": "PASS",
+  "arm64_smoke": "PASS",
+  "arm64_full_acceptance": "FAIL",
+  "last_failure": "Managed Python 3.13.15 source download timed out after three bounded curl attempts (curl 28)",
+  "download_environment_regression": "PASS",
+  "next_attempt": "FAILED_AT_PYTHON_SOURCE_DOWNLOAD",
+  "next_attempt_report": "release-output/pnpm-fix-arm64-release/acceptance.json",
+  "next_attempt_log": "diagnostics/phase16b/container-acceptance-arm64-pnpm-fix-release.log",
+  "isolated_download_image_build": "PASS",
+  "isolated_download_image_parameter_check": "PASS",
+  "amd64_qualification": "PENDING",
+  "hosted_qualification": "PENDING",
+  "vulnerability_scan": "PENDING",
+  "compose": "PENDING",
+  "publish": "NOT_PERFORMED",
+  "push": "NOT_PERFORMED",
+  "tag": "NOT_PERFORMED",
+  "cleanup": "PASS"
+}

@@ -1,0 +1,10 @@
+fresh-nonroot-readonly-no-capabilities-health
+fresh-account-version
+repository-worktree-local-commit
+shell-task
+RUNTIME_COMMAND_FAILED
++ actual - expected
+
++ 'FAILED'
+- 'SUCCESS'
+

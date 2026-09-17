@@ -1,0 +1,5 @@
+fresh-nonroot-readonly-no-capabilities-health
+fresh-account-version
+repository-worktree-local-commit
+shell-task
+API_REJECTED:POST:/runtime/node/toolchains:400:NODE_PNPM_VERSION_UNSUPPORTED

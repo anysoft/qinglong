@@ -1,0 +1,8 @@
+fresh-nonroot-readonly-no-capabilities-health
+fresh-account-version
+repository-worktree-local-commit
+shell-task
+real-python-node-npm-pnpm-cjs-esm-tsx-managed-tasks
+Command failed: docker exec platform-qa-ea2a63e2ae5f-a mv /data/state/bin/python /data/state/bin/python.qualification-missing
+mv: cannot stat '/data/state/bin/python': No such file or directory
+

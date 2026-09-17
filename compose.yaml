@@ -1,0 +1,29 @@
+services:
+  platform:
+    image: ${DOCKERHUB_IMAGE:?Set DOCKERHUB_IMAGE to the qualified image}:${PLATFORM_VERSION:-1.0.0}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${PLATFORM_PORT:-5700}:5700"
+    environment:
+      DATA_DIR: /data/state
+      BACKUP_DIR: /backup
+      HOME: /data/home
+    volumes:
+      - data:/data
+      - backup:/backup
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+volumes:
+  data:
+  backup:

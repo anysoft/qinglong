@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "paths": [
+    {"path":"static/build", "owner":"Backend", "reason":"Compiled services, cluster workers and generated gRPC modules"},
+    {"path":"static/dist", "owner":"Web UI", "reason":"Production assets and Monaco workers"},
+    {"path":"static/build-info.json", "owner":"Release", "reason":"Version, exact source SHA, timestamp and dependency lock digest"},
+    {"path":"node_modules", "owner":"Dependencies", "reason":"Target-native production dependency graph"},
+    {"path":"shell/*.py", "owner":"Execution/Workspace/Runtime/Backup", "reason":"Explicit syscall, archive, process group, lease and no-replace helpers"},
+    {"path":"scripts/release/entrypoint.cjs", "owner":"Startup", "reason":"Non-root persistent secret initialization and direct backend entry"},
+    {"path":"scripts/release/healthcheck.cjs", "owner":"Operations", "reason":"HTTP/gRPC readiness probe"},
+    {"path":"package.json", "owner":"Release", "reason":"Canonical application version"},
+    {"path":"version.yaml", "owner":"System", "reason":"Existing UI and backup version reader"},
+    {"path":"LICENSE", "owner":"Legal", "reason":"Preserved upstream Apache-2.0 license"}
+  ]
+}

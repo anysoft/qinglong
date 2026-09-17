@@ -1,0 +1,4 @@
+buildx-stable-1: Pulling from moby/buildkit
+Digest: sha256:28a898719c18a33f4e8000685287fa36fd0dd9560c6440227d3a732d79bb41d8
+Status: Image is up to date for moby/buildkit:buildx-stable-1
+docker.io/moby/buildkit:buildx-stable-1

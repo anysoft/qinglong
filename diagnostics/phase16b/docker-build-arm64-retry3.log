@@ -1,0 +1,105 @@
+#0 building with "phase16b-local" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.78kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/buildkit-syft-scanner:stable-1
+#2 DONE 1.4s
+
+#3 [internal] load metadata for docker.io/library/node:22.23.2-bookworm-slim
+#3 DONE 0.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 429B done
+#4 DONE 0.0s
+
+#5 [toolchain 1/4] FROM docker.io/library/node:22.23.2-bookworm-slim@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5
+#5 resolve docker.io/library/node:22.23.2-bookworm-slim@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 ...
+
+#7 docker-image://docker.io/docker/buildkit-syft-scanner:stable-1
+#7 resolve docker.io/docker/buildkit-syft-scanner:stable-1 0.4s done
+#7 DONE 0.4s
+
+#6 [internal] load build context
+#6 transferring context: 45.65kB 4.3s done
+#6 DONE 4.3s
+
+#8 [dependencies 2/3] RUN pnpm install --frozen-lockfile --ignore-scripts
+#8 CACHED
+
+#9 [toolchain 3/4] RUN npm install --global pnpm@8.3.1
+#9 CACHED
+
+#10 [toolchain 4/4] WORKDIR /build
+#10 CACHED
+
+#11 [toolchain 2/4] RUN apt-get update && apt-get install -y --no-install-recommends     build-essential python3 git ca-certificates     && rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [dependencies 1/3] COPY package.json pnpm-lock.yaml .npmrc ./
+#12 CACHED
+
+#13 [dependencies 3/3] RUN pnpm rebuild
+#13 CACHED
+
+#14 [build 1/3] COPY . .
+#14 DONE 0.1s
+
+#15 [build 2/3] RUN node scripts/build-back.cjs && node node_modules/@umijs/max/bin/max.js build     && node scripts/release/build-info.cjs
+#15 9.024 info  - [你知道吗？] 全局布局用 layout ，多层布局用 wrappers ，从文档了解更多路由的控制方法，详见 https://umijs.org/docs/guides/routes
+#15 9.025 info  - Umi v4.4.4
+#15 9.473 info  - Preparing...
+#15 10.29 Browserslist: browsers data (caniuse-lite) is 22 months old. Please run:
+#15 10.29   npx update-browserslist-db@latest
+#15 10.29   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+#15 10.53 ℹ Compiling Webpack
+#15 34.32 Killed
+#15 ERROR: process "/bin/sh -c node scripts/build-back.cjs && node node_modules/@umijs/max/bin/max.js build     && node scripts/release/build-info.cjs" did not complete successfully: cannot allocate memory
+------
+ > [build 2/3] RUN node scripts/build-back.cjs && node node_modules/@umijs/max/bin/max.js build     && node scripts/release/build-info.cjs:
+9.024 info  - [你知道吗？] 全局布局用 layout ，多层布局用 wrappers ，从文档了解更多路由的控制方法，详见 https://umijs.org/docs/guides/routes
+9.025 info  - Umi v4.4.4
+9.473 info  - Preparing...
+10.29 Browserslist: browsers data (caniuse-lite) is 22 months old. Please run:
+10.29   npx update-browserslist-db@latest
+10.29   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+10.53 ℹ Compiling Webpack
+34.32 Killed
+------
+Dockerfile:19
+--------------------
+  18 |     ARG BUILD_CREATED
+  19 | >>> RUN node scripts/build-back.cjs && node node_modules/@umijs/max/bin/max.js build \
+  20 | >>>     && node scripts/release/build-info.cjs
+  21 |     RUN npm_config_ignore_scripts=true pnpm prune --prod && node scripts/release/prune-fixtures.cjs
+--------------------
+ERROR: failed to build: failed to solve: ResourceExhausted: process "/bin/sh -c node scripts/build-back.cjs && node node_modules/@umijs/max/bin/max.js build     && node scripts/release/build-info.cjs" did not complete successfully: cannot allocate memory
+node:child_process:965
+    throw err;
+    ^
+
+Error: Command failed: docker buildx build --platform linux/arm64 --build-arg SOURCE_COMMIT=45a163bdf59efef8ac535353e435daa1a594143d --build-arg BUILD_CREATED=2026-09-17T01:35:24.333Z --build-arg APP_VERSION=1.0.0 --sbom=true --provenance=mode=max --metadata-file release-output/build-metadata.json --output type=oci,dest=release-output/image.tar .
+    at genericNodeError (node:internal/errors:998:15)
+    at wrappedFn (node:internal/errors:543:14)
+    at checkExecSyncError (node:child_process:926:11)
+    at execFileSync (node:child_process:962:15)
+    at run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/scripts/release/build.cjs:9:27)
+    at Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/scripts/release/build.cjs:10:1)
+    at Module._compile (node:internal/modules/cjs/loader:1873:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:2013:10)
+    at Module.load (node:internal/modules/cjs/loader:1596:32)
+    at Module._load (node:internal/modules/cjs/loader:1398:12) {
+  status: 102,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 34619,
+  stdout: null,
+  stderr: null
+}
+
+Node.js v26.3.1

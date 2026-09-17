@@ -37,41 +37,25 @@ Timed task management platform supporting Python3, JavaScript, Shell, Typescript
 - 支持暗黑模式
 - 支持手机端操作
 
-## 版本
+## Platform 1.0 Docker（资格验证中）
 
-### docker
+本分支采用 Git-native Task / Managed Runtime 架构。Phase16B 镜像尚未发布；实际状态见 [Phase16B 报告](PHASE16B_REPORT.md)。上方徽章及上游链接保留用于项目归属说明，不代表本分支已有正式镜像。
 
-`latest` 镜像是基于 `alpine` 构建，`debian` 镜像是基于 `debian-slim` 构建。如果需要使用 `alpine` 不支持的依赖，建议使用 `debian` 镜像
-
-**⚠️ 重要提示**: 如果您需要以**非 root 用户**运行 Docker，请使用 `debian` 镜像。Alpine 的 `crond` 需要 root 权限。
+正式发布后，从同一个已验证 Release 下载 `compose.yaml` 和 `.env.example`，复制后者为 `.env`，按 `release-manifest.json` 配置镜像名称和精确版本，再运行：
 
 ```bash
-docker pull whyour/qinglong:latest
-docker pull whyour/qinglong:debian
+docker compose config --quiet
+docker compose pull
+docker compose up -d --wait
 ```
 
-使用 `debian` 镜像以非 root 用户运行时，需指定 `--user qinglong`：
+- 访问 `http://127.0.0.1:5700` 创建管理员；默认只监听本机端口。
+- 数据卷挂载 `/data`，实际 `DATA_DIR=/data/state`；备份卷挂载 `/backup`。
+- 镜像以 UID/GID 10001 运行，Task 使用正式 Managed Python/Node 与 Dependency Environment。
+- 升级前创建备份及加密导出，并保存到 Docker 主机以外；不要使用 `down --volumes` 删除持久数据。
+- 目标平台为 `linux/amd64`、`linux/arm64`，支持声明以真实 Hosted Container Qualification 结果为准。
 
-```bash
-docker run -d \
-  -v /path/to/ql/data:/ql/data \
-  -p 5700:5700 \
-  --user qinglong \
-  --name qinglong \
-  whyour/qinglong:debian
-```
-
-### npm
-
-npm 版本支持 `debian/ubuntu/alpine` 系统，需要自行安装 `node/npm/python3/pip3/pnpm`
-
-```bash
-npm i @whyour/qinglong
-```
-
-## 部署
-
-[查看文档](https://qinglong.online/guide/getting-started/installation-guide)
+完整步骤、恢复和权限说明见 [Docker 部署](docs/deploy/docker.md)。
 
 ## 内置 API
 

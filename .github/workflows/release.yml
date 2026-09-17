@@ -1,0 +1,89 @@
+name: Platform Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+concurrency:
+  group: platform-release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  policy:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22.23.2'
+          package-manager-cache: false
+      - name: Validate exact version and approved branch ancestry
+        env:
+          RELEASE_BRANCH: ${{ vars.RELEASE_BRANCH }}
+        run: node scripts/release/metadata.cjs
+  qualification:
+    needs: policy
+    uses: ./.github/workflows/container-qualification.yml
+  publish:
+    needs: [policy, qualification]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    env:
+      RELEASE_BRANCH: ${{ vars.RELEASE_BRANCH }}
+      DOCKERHUB_IMAGE: ${{ vars.DOCKERHUB_IMAGE }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22.23.2'
+          package-manager-cache: false
+      - uses: docker/setup-buildx-action@v4
+      - uses: actions/download-artifact@v7
+        with:
+          name: container-amd64-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.sha }}
+          path: release-input/amd64
+      - uses: actions/download-artifact@v7
+        with:
+          name: container-arm64-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.sha }}
+          path: release-input/arm64
+      - name: Install exact-image promotion tool
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends skopeo
+      - uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Publish qualified OCI bytes and verify manifests
+        run: node scripts/release/publish.cjs
+      - name: Pull published version and smoke test
+        env:
+          TEST_ARCH: amd64
+          SMOKE_ONLY: 'true'
+        run: |
+          export TEST_IMAGE="$DOCKERHUB_IMAGE:${GITHUB_REF_NAME#v}"
+          docker pull "$TEST_IMAGE"
+          node scripts/release/container-acceptance.cjs
+      - name: Create checksummed release assets
+        run: node scripts/release/release-assets.cjs
+      - name: Create GitHub Release
+        run: |
+          prerelease=()
+          if [[ "$GITHUB_REF_NAME" == *-* ]]; then prerelease=(--prerelease); fi
+          gh release create "$GITHUB_REF_NAME" --verify-tag --title "$GITHUB_REF_NAME" --notes-file release-output/release-notes.md "${prerelease[@]}" release-output/*.json release-output/compose.yaml release-output/.env.example release-output/SHA256SUMS release-output/release-notes.md
+      - name: Verify published release flags and assets
+        run: |
+          gh release view "$GITHUB_REF_NAME" --json tagName,isDraft,isPrerelease,assets > release-output/github-release.json
+          node scripts/release/verify-github-release.cjs
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: release-verification-${{ github.run_id }}-${{ github.sha }}
+          if-no-files-found: error
+          path: release-output/

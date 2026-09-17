@@ -89,7 +89,7 @@ if (process.env.QL_DATA_DIR) {
 }
 
 const shellPath = path.join(rootPath, 'shell/');
-const tmpPath = path.join(rootPath, '.tmp/');
+const tmpPath = path.join(dataPath, '.tmp/');
 const samplePath = path.join(rootPath, 'sample/');
 const configPath = path.join(dataPath, 'config/');
 const logPath = path.join(dataPath, 'log/');
@@ -100,7 +100,7 @@ const systemLogPath = path.join(dataPath, 'syslog/');
 
 const versionFile = path.join(rootPath, 'version.yaml');
 
-if (envFound.error) {
+if (envFound.error && !process.env.JWT_SECRET) {
   throw new Error("⚠️  Couldn't find .env file  ⚠️");
 }
 

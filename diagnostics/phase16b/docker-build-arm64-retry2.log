@@ -1,0 +1,421 @@
+#0 building with "phase16b-local" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.74kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/buildkit-syft-scanner:stable-1
+#2 DONE 2.6s
+
+#3 [internal] load metadata for docker.io/library/node:22.23.2-bookworm-slim
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 393B done
+#4 DONE 0.0s
+
+#5 [toolchain 1/4] FROM docker.io/library/node:22.23.2-bookworm-slim@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5
+#5 resolve docker.io/library/node:22.23.2-bookworm-slim@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 ...
+
+#7 docker-image://docker.io/docker/buildkit-syft-scanner:stable-1
+#7 resolve docker.io/docker/buildkit-syft-scanner:stable-1 0.4s done
+#7 DONE 0.4s
+
+#6 [internal] load build context
+#6 transferring context: 43.20kB 3.3s done
+#6 DONE 3.3s
+
+#8 [dependencies 1/3] COPY package.json pnpm-lock.yaml .npmrc ./
+#8 CACHED
+
+#9 [dependencies 2/3] RUN pnpm install --frozen-lockfile --ignore-scripts
+#9 CACHED
+
+#10 [toolchain 2/4] RUN apt-get update && apt-get install -y --no-install-recommends     build-essential python3 git ca-certificates     && rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [toolchain 3/4] RUN npm install --global pnpm@8.3.1
+#11 CACHED
+
+#12 [toolchain 4/4] WORKDIR /build
+#12 CACHED
+
+#13 [dependencies 3/3] RUN pnpm rebuild
+#13 CACHED
+
+#14 [build 1/3] COPY . .
+#14 DONE 0.1s
+
+#15 [build 2/3] RUN node scripts/build-back.cjs && node node_modules/@umijs/max/bin/max.js build     && node scripts/release/build-info.cjs
+#15 9.338 info  - [你知道吗？] dev 模式下访问 /__umi 路由，可以发现很多有用的内部信息。
+#15 9.339 info  - Umi v4.4.4
+#15 9.821 info  - Preparing...
+#15 10.68 Browserslist: browsers data (caniuse-lite) is 22 months old. Please run:
+#15 10.68   npx update-browserslist-db@latest
+#15 10.68   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+#15 10.96 ℹ Compiling Webpack
+#15 104.8 ✔ Webpack: Compiled successfully in 1.60m
+#15 104.8 info  - Memory Usage: 393.42 MB (RSS: 700.91 MB)
+#15 108.3 
+#15 108.3 info  - File sizes after gzip:
+#15 108.3 
+#15 109.0   1.08 MB    dist/monaco-editor/min/vs/language/typescript/tsWorker.js
+#15 109.0   731.03 kB  dist/monaco-editor/min/vs/editor/editor.main.js
+#15 109.0   216.91 kB  dist/umi.b6a9c191.js
+#15 109.0   149.29 kB  dist/monaco-editor/min/vs/language/css/cssWorker.js
+#15 109.0   137.17 kB  dist/2432.fa72f292.async.js
+#15 109.0   104.57 kB  dist/monaco-editor/min/vs/language/html/htmlWorker.js
+#15 109.0   87.96 kB   dist/monaco-editor/min/vs/base/worker/workerMain.js
+#15 109.0   67.83 kB   dist/umi.a4d14b92.css
+#15 109.0   53.59 kB   dist/8216.247cb334.async.js
+#15 109.0   36.78 kB   dist/monaco-editor/min/vs/language/json/jsonWorker.js
+#15 109.0   32.91 kB   dist/5282.0c784da2.async.js
+#15 109.0   31.16 kB   dist/monaco-editor/min/vs/editor/editor.main.nls.ru.js
+#15 109.0   29.3 kB    dist/1379.f91563a1.async.js
+#15 109.0   27.82 kB   dist/1571.94ddca13.async.js
+#15 109.0   26.37 kB   dist/7355.8f310b8b.async.js
+#15 109.0   26.05 kB   dist/src__pages__setting__index.d5538585.async.js
+#15 109.0   24.3 kB    dist/monaco-editor/min/vs/editor/editor.main.nls.ja.js
+#15 109.0   23.69 kB   dist/9313.37acaf13.async.js
+#15 109.0   23.2 kB    dist/5675.5c728d0b.async.js
+#15 109.0   22.36 kB   dist/monaco-editor/min/vs/editor/editor.main.nls.ko.js
+#15 109.0   21.72 kB   dist/monaco-editor/min/vs/editor/editor.main.nls.de.js
+#15 109.0   21.56 kB   dist/6013.0c04d650.async.js
+#15 109.0   21.5 kB    dist/monaco-editor/min/vs/editor/editor.main.nls.zh-tw.js
+#15 109.0   21.24 kB   dist/monaco-editor/min/vs/editor/editor.main.nls.zh-cn.js
+#15 109.0   21.16 kB   dist/monaco-editor/min/vs/editor/editor.main.nls.fr.js
+#15 109.0   20.46 kB   dist/monaco-editor/min/vs/editor/editor.main.nls.es.js
+#15 109.0   19.86 kB   dist/monaco-editor/min/vs/editor/editor.main.nls.it.js
+#15 109.0   18.37 kB   dist/6532.a47a577f.async.js
+#15 109.0   17.48 kB   dist/1858.2dee70e1.async.js
+#15 109.0   17.48 kB   dist/monaco-editor/min/vs/editor/editor.main.nls.js
+#15 109.0   16.51 kB   dist/2821.651f31e5.async.js
+#15 109.0   15.89 kB   dist/3600.7637c822.async.js
+#15 109.0   15.13 kB   dist/255.8a80b983.async.js
+#15 109.0   14.43 kB   dist/8078.8586c875.async.js
+#15 109.0   14.01 kB   dist/src__pages__runtime-python.0d3e7191.async.js
+#15 109.0   13.4 kB    dist/monaco-editor/min/vs/editor/editor.main.css
+#15 109.0   12.73 kB   dist/src__pages__tasks__index.d1db06c4.async.js
+#15 109.0   11.73 kB   dist/src__pages__workspace.e2c064ef.async.js
+#15 109.0   11.49 kB   dist/src__pages__setting__other.fa2da95e.async.js
+#15 109.0   11.34 kB   dist/monaco-editor/min/vs/language/json/jsonMode.js
+#15 109.0   11.11 kB   dist/4622.d4d2f9f9.async.js
+#15 109.0   10.39 kB   dist/src__pages__repository-workspace.7fd87071.async.js
+#15 109.0   10.37 kB   dist/src__pages__setting__systemLog.506509b2.async.js
+#15 109.0   9.92 kB    dist/7508.3fffed15.chunk.css
+#15 109.0   9.55 kB    dist/monaco-editor/min/vs/loader.js
+#15 109.0   9.52 kB    dist/4111.4d348ff8.async.js
+#15 109.0   9.38 kB    dist/src__pages__setting__backup.c7767115.async.js
+#15 109.0   9.33 kB    dist/src__pages__setting__loginLog.efbbccee.async.js
+#15 109.0   9.29 kB    dist/monaco-editor/min/vs/language/html/htmlMode.js
+#15 109.0   9.14 kB    dist/monaco-editor/min/vs/language/css/cssMode.js
+#15 109.0   8.91 kB    dist/2338.d678967d.async.js
+#15 109.0   8.86 kB    dist/src__pages__setting__clientIp.6b529681.async.js
+#15 109.0   8.84 kB    dist/7508.354a9295.async.js
+#15 109.0   7.54 kB    dist/src__pages__login__index.cbc70da0.async.js
+#15 109.0   7.38 kB    dist/8384.c76794d0.async.js
+#15 109.0   7.09 kB    dist/src__pages__setting__about.44c298c2.async.js
+#15 109.0   6.69 kB    dist/5970.d3a6e7bd.async.js
+#15 109.0   6.65 kB    dist/monaco-editor/min/vs/language/typescript/tsMode.js
+#15 109.0   6.61 kB    dist/1017.e3780d15.async.js
+#15 109.0   6.55 kB    dist/6573.b51f2475.async.js
+#15 109.0   6.45 kB    dist/9278.0926a9b0.async.js
+#15 109.0   6.36 kB    dist/src__pages__subscription__discovery.0be46d2a.async.js
+#15 109.0   6.34 kB    dist/src__pages__subscription__index.e6c5c4a8.async.js
+#15 109.0   6.05 kB    dist/119.9c35ab81.async.js
+#15 109.0   5.93 kB    dist/4901.c72ac0b1.async.js
+#15 109.0   5.86 kB    dist/3743.7ef5c0d1.async.js
+#15 109.0   5.84 kB    dist/monaco-editor/min/vs/basic-languages/abap/abap.js
+#15 109.0   5.6 kB     dist/6212.a6a308e4.async.js
+#15 109.0   5.57 kB    dist/src__pages__tasks__triggers.8a6331c1.async.js
+#15 109.0   5.56 kB    dist/6646.dd51b153.async.js
+#15 109.0   5.48 kB    dist/src__pages__initialization__index.0a0eeaf7.async.js
+#15 109.0   5.44 kB    dist/layouts__index.adf0692f.chunk.css
+#15 109.0   5.39 kB    dist/monaco-editor/min/vs/basic-languages/powerquery/powerquery.js
+#15 109.0   5.33 kB    dist/src__pages__subscription__logModal.f219c7a5.async.js
+#15 109.0   5.04 kB    dist/monaco-editor/min/vs/basic-languages/solidity/solidity.js
+#15 109.0   5.01 kB    dist/monaco-editor/min/vs/basic-languages/pgsql/pgsql.js
+#15 109.0   4.87 kB    dist/3191.2976dfc9.async.js
+#15 109.0   4.87 kB    dist/layouts__index.46dc307d.async.js
+#15 109.0   4.86 kB    dist/monaco-editor/min/vs/basic-languages/redshift/redshift.js
+#15 109.0   4.74 kB    dist/3383.090f92dc.async.js
+#15 109.0   4.74 kB    dist/src__pages__setting__security.a808fa7f.async.js
+#15 109.0   4.7 kB     dist/1883.675b6a18.chunk.css
+#15 109.0   4.69 kB    dist/monaco-editor/min/vs/basic-languages/freemarker2/freemarker2.js
+#15 109.0   4.67 kB    dist/4736.3814ba8a.async.js
+#15 109.0   4.61 kB    dist/monaco-editor/min/vs/basic-languages/mysql/mysql.js
+#15 109.0   4.6 kB     dist/7268.092a65a8.async.js
+#15 109.0   4.6 kB     dist/9251.ff05f416.async.js
+#15 109.0   4.41 kB    dist/monaco-editor/min/vs/basic-languages/sql/sql.js
+#15 109.0   4.38 kB    dist/src__pages__error__index.02171c79.async.js
+#15 109.0   4.37 kB    dist/9730.801665a3.async.js
+#15 109.0   4.33 kB    dist/1765.5ac01a93.async.js
+#15 109.0   4.3 kB     dist/3045.c3ba7cd6.async.js
+#15 109.0   4.15 kB    dist/7656.9bd6bd47.async.js
+#15 109.0   4.14 kB    dist/monaco-editor/min/vs/basic-languages/clojure/clojure.js
+#15 109.0   3.99 kB    dist/src__pages__env__index.6707daf1.async.js
+#15 109.0   3.97 kB    dist/src__pages__scoped-env.d8ac3b3b.async.js
+#15 109.0   3.93 kB    dist/6411.0bdecedb.async.js
+#15 109.0   3.86 kB    dist/3481.333c2962.async.js
+#15 109.0   3.83 kB    dist/7285.c1a3c5e9.async.js
+#15 109.0   3.81 kB    dist/src__pages__repository__index.a2daa249.async.js
+#15 109.0   3.72 kB    dist/1410.3d54c71d.async.js
+#15 109.0   3.71 kB    dist/src__pages__notifications__index.055feda0.async.js
+#15 109.0   3.68 kB    dist/7839.8e401ec9.async.js
+#15 109.0   3.65 kB    dist/monaco-editor/min/vs/basic-languages/perl/perl.js
+#15 109.0   3.58 kB    dist/6016.6bcb2be9.async.js
+#15 109.0   3.55 kB    dist/2901.b8d04361.async.js
+#15 109.0   3.31 kB    dist/3390.fb4b6851.async.js
+#15 109.0   3.28 kB    dist/monaco-editor/min/vs/basic-languages/systemverilog/systemverilog.js
+#15 109.0   3.14 kB    dist/8330.4b65092f.async.js
+#15 109.0   3.14 kB    dist/monaco-editor/min/vs/basic-languages/julia/julia.js
+#15 109.0   3.08 kB    dist/monaco-editor/min/vs/basic-languages/ruby/ruby.js
+#15 109.0   3 kB       dist/monaco-editor/min/vs/basic-languages/elixir/elixir.js
+#15 109.0   2.95 kB    dist/monaco-editor/min/vs/basic-languages/postiats/postiats.js
+#15 109.0   2.83 kB    dist/monaco-editor/min/vs/basic-languages/razor/razor.js
+#15 109.0   2.79 kB    dist/monaco-editor/min/vs/basic-languages/javascript/javascript.js
+#15 109.0   2.74 kB    dist/monaco-editor/min/vs/basic-languages/ecl/ecl.js
+#15 109.0   2.74 kB    dist/monaco-editor/min/vs/basic-languages/st/st.js
+#15 109.0   2.68 kB    dist/monaco-editor/min/vs/basic-languages/typescript/typescript.js
+#15 109.0   2.64 kB    dist/monaco-editor/min/vs/basic-languages/cpp/cpp.js
+#15 109.0   2.6 kB     dist/monaco-editor/min/vs/basic-languages/scala/scala.js
+#15 109.0   2.59 kB    dist/monaco-editor/min/vs/basic-languages/protobuf/protobuf.js
+#15 109.0   2.58 kB    dist/monaco-editor/min/vs/basic-languages/swift/swift.js
+#15 109.0   2.57 kB    dist/monaco-editor/min/vs/basic-languages/php/php.js
+#15 109.0   2.57 kB    dist/monaco-editor/min/vs/basic-languages/vb/vb.js
+#15 109.0   2.57 kB    dist/src__pages__log__index.f2c3dcaa.async.js
+#15 109.0   2.51 kB    dist/src__pages__config__index.68caf54e.async.js
+#15 109.0   2.49 kB    dist/monaco-editor/min/vs/basic-languages/msdax/msdax.js
+#15 109.0   2.46 kB    dist/src__pages__setting__appModal.7eaeb9d3.async.js
+#15 109.0   2.34 kB    dist/monaco-editor/min/vs/basic-languages/rust/rust.js
+#15 109.0   2.27 kB    dist/monaco-editor/min/vs/basic-languages/apex/apex.js
+#15 109.0   2.25 kB    dist/monaco-editor/min/vs/basic-languages/scss/scss.js
+#15 109.0   2.23 kB    dist/monaco-editor/min/vs/basic-languages/csharp/csharp.js
+#15 109.0   2.18 kB    dist/monaco-editor/min/vs/basic-languages/liquid/liquid.js
+#15 109.0   2.15 kB    dist/monaco-editor/min/vs/basic-languages/pug/pug.js
+#15 109.0   2.15 kB    dist/monaco-editor/min/vs/basic-languages/dart/dart.js
+#15 109.0   2.13 kB    dist/monaco-editor/min/vs/basic-languages/handlebars/handlebars.js
+#15 109.0   2.09 kB    dist/monaco-editor/min/vs/basic-languages/python/python.js
+#15 109.0   2.03 kB    dist/src__pages__setting__security.7c80dd0f.chunk.css
+#15 109.0   2.03 kB    dist/monaco-editor/min/vs/basic-languages/twig/twig.js
+#15 109.0   2.01 kB    dist/monaco-editor/min/vs/basic-languages/redis/redis.js
+#15 109.0   1.99 kB    dist/monaco-editor/min/vs/basic-languages/hcl/hcl.js
+#15 109.0   1.98 kB    dist/monaco-editor/min/vs/basic-languages/kotlin/kotlin.js
+#15 109.0   1.92 kB    dist/monaco-editor/min/vs/basic-languages/less/less.js
+#15 109.0   1.91 kB    dist/monaco-editor/min/vs/basic-languages/java/java.js
+#15 109.0   1.9 kB     dist/monaco-editor/min/vs/basic-languages/pascal/pascal.js
+#15 109.0   1.9 kB     dist/monaco-editor/min/vs/basic-languages/markdown/markdown.js
+#15 109.0   1.9 kB     dist/monaco-editor/min/vs/basic-languages/html/html.js
+#15 109.0   1.89 kB    dist/monaco-editor/min/vs/basic-languages/css/css.js
+#15 109.0   1.89 kB    dist/monaco-editor/min/vs/basic-languages/restructuredtext/restructuredtext.js
+#15 109.0   1.89 kB    dist/monaco-editor/min/vs/basic-languages/powershell/powershell.js
+#15 109.0   1.88 kB    dist/monaco-editor/min/vs/basic-languages/tcl/tcl.js
+#15 109.0   1.87 kB    dist/monaco-editor/min/vs/basic-languages/qsharp/qsharp.js
+#15 109.0   1.84 kB    dist/monaco-editor/min/vs/basic-languages/m3/m3.js
+#15 109.0   1.83 kB    dist/monaco-editor/min/vs/basic-languages/fsharp/fsharp.js
+#15 109.0   1.81 kB    dist/monaco-editor/min/vs/basic-languages/coffee/coffee.js
+#15 109.0   1.8 kB     dist/src__pages__404.417b4bac.async.js
+#15 109.0   1.78 kB    dist/monaco-editor/min/vs/basic-languages/r/r.js
+#15 109.0   1.74 kB    dist/monaco-editor/min/vs/basic-languages/yaml/yaml.js
+#15 109.0   1.71 kB    dist/monaco-editor/min/vs/basic-languages/sophia/sophia.js
+#15 109.0   1.71 kB    dist/monaco-editor/min/vs/basic-languages/shell/shell.js
+#15 109.0   1.66 kB    dist/monaco-editor/min/vs/basic-languages/go/go.js
+#15 109.0   1.66 kB    dist/monaco-editor/min/vs/basic-languages/sparql/sparql.js
+#15 109.0   1.58 kB    dist/monaco-editor/min/vs/basic-languages/mips/mips.js
+#15 109.0   1.56 kB    dist/monaco-editor/min/vs/basic-languages/objective-c/objective-c.js
+#15 109.0   1.54 kB    dist/monaco-editor/min/vs/basic-languages/graphql/graphql.js
+#15 109.0   1.49 kB    dist/monaco-editor/min/vs/basic-languages/xml/xml.js
+#15 109.0   1.48 kB    dist/monaco-editor/min/vs/basic-languages/bicep/bicep.js
+#15 109.0   1.47 kB    dist/monaco-editor/min/vs/basic-languages/cameligo/cameligo.js
+#15 109.0   1.43 kB    dist/src__pages__dashboard__index.d272e917.async.js
+#15 109.0   1.43 kB    dist/monaco-editor/min/vs/basic-languages/lua/lua.js
+#15 109.0   1.42 kB    dist/monaco-editor/min/vs/basic-languages/lexon/lexon.js
+#15 109.0   1.42 kB    dist/monaco-editor/min/vs/basic-languages/pascaligo/pascaligo.js
+#15 109.0   1.41 kB    dist/src__pages__runs__index.5cbb1b01.async.js
+#15 109.0   1.36 kB    dist/monaco-editor/min/vs/basic-languages/bat/bat.js
+#15 109.0   1.35 kB    dist/monaco-editor/min/vs/basic-languages/flow9/flow9.js
+#15 109.0   1.33 kB    dist/monaco-editor/min/vs/basic-languages/sb/sb.js
+#15 109.0   1.32 kB    dist/monaco-editor/min/vs/basic-languages/scheme/scheme.js
+#15 109.0   1.27 kB    dist/src__pages__setting__progress.80476bf4.async.js
+#15 109.0   1.24 kB    dist/src__pages__setting__index.7cf46d4a.chunk.css
+#15 109.0   1.18 kB    dist/monaco-editor/min/vs/basic-languages/dockerfile/dockerfile.js
+#15 109.0   1.15 kB    dist/monaco-editor/min/vs/basic-languages/pla/pla.js
+#15 109.0   1.04 kB    dist/monaco-editor/min/vs/basic-languages/ini/ini.js
+#15 109.0   1.02 kB    dist/monaco-editor/min/vs/basic-languages/csp/csp.js
+#15 109.0   835 B      dist/src__pages__subscription__modal.c1748930.async.js
+#15 109.0   825 B      dist/monaco-editor/min/vs/basic-languages/azcli/azcli.js
+#15 109.0   695 B      dist/src__pages__login__index.d00b91e8.chunk.css
+#15 109.0   586 B      dist/src__pages__initialization__index.66819338.chunk.css
+#15 109.0   433 B      dist/src__pages__error__index.b047bb77.chunk.css
+#15 109.0   319 B      dist/src__pages__setting__about.e6db5090.chunk.css
+#15 109.0   266 B      dist/src__pages__workspace.22b70fed.chunk.css
+#15 109.0   261 B      dist/src__pages__setting__other.28ecea01.chunk.css
+#15 109.0   241 B      dist/src__pages__log__index.9f2eae80.chunk.css
+#15 109.0   93 B       dist/src__pages__subscription__index.4b5150de.chunk.css
+#15 109.0 
+#15 109.0 The bundle size is significantly larger than recommended.
+#15 109.0 Consider reducing it with code splitting:  https://umijs.org/blog/code-splitting
+#15 109.0 You can also analyze the project dependencies:  https://umijs.org/docs/guides/env-variables#analyze
+#15 109.0 
+#15 109.0 event - Build index.html
+#15 DONE 110.4s
+
+#16 [build 3/3] RUN npm_config_ignore_scripts=true pnpm prune --prod
+#16 1.150 Lockfile is up to date, resolution step is skipped
+#16 1.310 Packages: -1319
+#16 1.310 --------------------------------------------------------------------------------
+#16 29.12 
+#16 29.12 devDependencies:
+#16 29.12 - @ant-design/icons 5.5.2
+#16 29.12 - @ant-design/pro-layout 6.38.22
+#16 29.12 - @codemirror/state 6.5.4
+#16 29.12 - @codemirror/view 6.39.16
+#16 29.12 - @monaco-editor/react 4.2.1
+#16 29.12 - @react-hook/resize-observer 2.0.2
+#16 29.12 - @types/body-parser 1.19.5
+#16 29.12 - @types/compression 1.7.5
+#16 29.12 - @types/cors 2.8.17
+#16 29.12 - @types/cross-spawn 6.0.6
+#16 29.12 - @types/express 4.17.21
+#16 29.12 - @types/express-jwt 6.0.4
+#16 29.12 - @types/file-saver 2.0.2
+#16 29.12 - @types/helmet 4.0.0
+#16 29.12 - @types/js-yaml 4.0.9
+#16 29.12 - @types/jsonwebtoken 8.5.9
+#16 29.12 - @types/lodash 4.17.13
+#16 29.12 - @types/multer 1.4.12
+#16 29.12 - @types/node 17.0.45
+#16 29.12 - @types/node-schedule 1.3.2
+#16 29.12 - @types/nodemailer 6.4.17
+#16 29.12 - @types/proper-lockfile 4.1.4
+#16 29.12 - @types/ps-tree 1.1.6
+#16 29.12 - @types/qrcode.react 1.0.5
+#16 29.12 - @types/react 18.3.12
+#16 29.12 - @types/react-copy-to-clipboard 5.0.7
+#16 29.12 - @types/react-dom 18.3.1
+#16 29.12 - @types/request-ip 0.0.41
+#16 29.12 - @types/serve-handler 6.1.4
+#16 29.12 - @types/sockjs 0.3.36
+#16 29.12 - @types/sockjs-client 1.5.4
+#16 29.12 - @types/uuid 8.3.4
+#16 29.12 - @uiw/codemirror-extensions-langs 4.23.6
+#16 29.12 - @uiw/react-codemirror 4.23.6
+#16 29.12 - @umijs/max 4.4.4
+#16 29.12 - @umijs/ssr-darkreader 4.9.45
+#16 29.12 - ahooks 3.8.1
+#16 29.12 - ansi-to-react 6.1.6
+#16 29.12 - antd 4.24.16
+#16 29.12 - antd-img-crop 4.23.0
+#16 29.12 - axios 1.7.8
+#16 29.12 - compression-webpack-plugin 9.2.0
+#16 29.12 - concurrently 7.6.0
+#16 29.12 - file-saver 2.0.2
+#16 29.12 - lint-staged 13.3.0
+#16 29.12 - moment 2.30.1
+#16 29.12 - monaco-editor 0.33.0
+#16 29.12 - nodemon 3.1.7
+#16 29.12 - prettier 2.8.8
+#16 29.12 - pretty-bytes 6.1.1
+#16 29.12 - qiniu 7.14.0
+#16 29.12 - qrcode.react 1.0.1
+#16 29.12 - query-string 7.1.3
+#16 29.12 - rc-tween-one 3.0.6
+#16 29.12 - rc-virtual-list 3.15.0
+#16 29.12 - react 18.3.1
+#16 29.12 - react-copy-to-clipboard 5.1.0
+#16 29.12 - react-diff-viewer 3.1.1
+#16 29.12 - react-dnd 16.0.1
+#16 29.12 - react-dnd-html5-backend 16.0.1
+#16 29.12 - react-dom 18.3.1
+#16 29.12 - react-hotkeys-hook 4.6.1
+#16 29.12 - react-intl-universal 2.12.0
+#16 29.12 - react-router-dom 6.26.1
+#16 29.12 - react-split-pane 0.1.92
+#16 29.12 - sockjs-client 1.6.1
+#16 29.12 - ts-node 10.9.2
+#16 29.12 - ts-proto 2.6.1
+#16 29.12 - tslib 2.8.1
+#16 29.12 - typescript 5.2.2
+#16 29.12 - vh-check 2.0.5
+#16 29.12 - virtualizedtableforantd4 1.3.0
+#16 29.12 
+#16 DONE 29.3s
+
+#17 [runtime 2/9] RUN apt-get update && apt-get install -y --no-install-recommends     tini bash coreutils util-linux git openssh-client openssl ca-certificates curl     tar gzip xz-utils tzdata python3 build-essential libssl-dev zlib1g-dev     libbz2-dev libreadline-dev libsqlite3-dev libffi-dev liblzma-dev libncurses-dev uuid-dev     && rm -rf /var/lib/apt/lists/*     && groupadd --gid 10001 platform && useradd --uid 10001 --gid 10001 --home-dir /data/home --no-create-home platform     && mkdir /app /data /backup && chown 10001:10001 /data /backup
+#17 CACHED
+
+#18 [runtime 3/9] WORKDIR /app
+#18 CACHED
+
+#19 [runtime 4/9] COPY --from=build /build/node_modules ./node_modules
+#19 DONE 3.0s
+
+#20 [runtime 5/9] COPY --from=build /build/static ./static
+#20 DONE 0.2s
+
+#21 [runtime 6/9] COPY --from=build /build/package.json /build/version.yaml /build/LICENSE ./
+#21 DONE 0.0s
+
+#22 [runtime 7/9] COPY --from=build /build/shell/*.py ./shell/
+#22 DONE 0.0s
+
+#23 [runtime 8/9] COPY --from=build /build/scripts/release/entrypoint.cjs /build/scripts/release/healthcheck.cjs ./scripts/release/
+#23 DONE 0.0s
+
+#24 [runtime 9/9] RUN chmod 0700 /data /backup
+#24 DONE 0.1s
+
+#7 docker-image://docker.io/docker/buildkit-syft-scanner:stable-1
+#7 CACHED
+
+#25 [linux/arm64] generating sbom using docker.io/docker/buildkit-syft-scanner:stable-1
+#25 0.265 time="2026-09-17T01:34:24Z" level=info msg="starting syft scanner for buildkit v1.12.0"
+#25 DONE 9.7s
+
+#26 exporting to oci image format
+#26 exporting layers
+#26 exporting layers 6.5s done
+#26 exporting manifest sha256:4e80318eaccd54d3c18fbd4e7c3578f2055e594776f3ac0fcaf3d9c7f819e03d done
+#26 exporting config sha256:6ab91b8e6fde808b22d85eab751ec06c24b8f8d005b3f2cd171c240ee95e10c4 done
+#26 exporting attestation manifest sha256:fb5378f9e1fd92bd037af74bccb8cdbf46f77ccbe49598fd08477aeb152c2df3
+#26 exporting attestation manifest sha256:fb5378f9e1fd92bd037af74bccb8cdbf46f77ccbe49598fd08477aeb152c2df3 done
+#26 exporting manifest list sha256:a6d7234b15bc0ddcce94174ca3ac4ed78eb3145ab70cab419177bd96c5d7f80e done
+#26 sending tarball
+#26 sending tarball 2.7s done
+#26 DONE 10.4s
+
+#27 resolving provenance for metadata file
+#27 DONE 0.0s
+Traceback (most recent call last):
+  File "/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/scripts/release/oci-audit.py", line 49, in <module>
+    assert not (name.startswith('app/node_modules/') and any(part in ('test','tests','__tests__','fixtures') for part in name.split('/'))), 'DEPENDENCY_FIXTURES_IN_IMAGE'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DEPENDENCY_FIXTURES_IN_IMAGE
+node:child_process:965
+    throw err;
+    ^
+
+Error: Command failed: python3 scripts/release/oci-audit.py release-output/image.tar arm64 45a163bdf59efef8ac535353e435daa1a594143d release-output
+    at genericNodeError (node:internal/errors:998:15)
+    at wrappedFn (node:internal/errors:543:14)
+    at checkExecSyncError (node:child_process:926:11)
+    at execFileSync (node:child_process:962:15)
+    at run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/scripts/release/build.cjs:6:27)
+    at Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/scripts/release/build.cjs:8:1)
+    at Module._compile (node:internal/modules/cjs/loader:1873:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:2013:10)
+    at Module.load (node:internal/modules/cjs/loader:1596:32)
+    at Module._load (node:internal/modules/cjs/loader:1398:12) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 34164,
+  stdout: null,
+  stderr: null
+}
+
+Node.js v26.3.1

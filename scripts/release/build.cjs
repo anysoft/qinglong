@@ -1,0 +1,17 @@
+'use strict';
+const fs=require('node:fs'),{execFileSync}=require('node:child_process'),assert=require('node:assert/strict');
+const arch=process.env.TEST_ARCH;assert.ok(['amd64','arm64'].includes(arch));
+const sha=process.env.GITHUB_SHA||execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();assert.match(sha,/^[a-f0-9]{40}$/);
+const out=process.env.RELEASE_OUTPUT||'release-output';fs.mkdirSync(out,{recursive:true});
+const dirty=execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim().length>0;
+if(process.env.GITHUB_ACTIONS==='true')assert.equal(dirty,false,'HOSTED_BUILD_REQUIRES_CLEAN_SOURCE');
+fs.writeFileSync(out+'/source-state.json',JSON.stringify({commit:sha,worktree_dirty:dirty,scope:dirty?'LOCAL_WORKTREE_ONLY':'COMMITTED_SOURCE'},null,2)+'\n');
+const run=(command,args)=>execFileSync(command,args,{stdio:'inherit'});
+run('docker',['buildx','build','--platform','linux/'+arch,'--build-arg','SOURCE_COMMIT='+sha,'--build-arg','BUILD_CREATED='+new Date().toISOString(),'--build-arg','APP_VERSION='+require('../../package.json').version,'--sbom=true','--provenance=mode=max','--metadata-file',out+'/build-metadata.json','--output','type=oci,dest='+out+'/image.tar','.']);
+run('python3',['scripts/release/oci-audit.py',out+'/image.tar',arch,sha,out]);
+const daemon=process.env.DOCKER_HOST||execFileSync('docker',['context','inspect','--format','{{.Endpoints.docker.Host}}'],{encoding:'utf8'}).trim();
+run('skopeo',['copy','--dest-daemon-host',daemon,'--override-os','linux','--override-arch',arch,'oci-archive:'+out+'/image.tar','docker-daemon:platform-candidate:'+arch]);
+const audit=JSON.parse(fs.readFileSync(out+'/image-audit.json'));
+const inspect=JSON.parse(execFileSync('docker',['image','inspect','platform-candidate:'+arch],{encoding:'utf8'}))[0];const loadedConfig=execFileSync('skopeo',['inspect','--daemon-host',daemon,'--config','--raw','docker-daemon:platform-candidate:'+arch]);
+assert.equal('sha256:'+require('node:crypto').createHash('sha256').update(loadedConfig).digest('hex'),audit.config_digest,'TESTED_BYTES_MISMATCH');
+fs.writeFileSync(out+'/image-size.json',JSON.stringify({uncompressed_bytes:inspect.Size,layers:inspect.RootFS.Layers},null,2)+'\n');
