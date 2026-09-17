@@ -365,6 +365,7 @@ export default class ExecutionService {
     let resolved: Awaited<ReturnType<ExecutionResolver['resolve']>> | undefined,
       log: ExecutionLog | undefined;
     let final: ExecutionResult | undefined;
+    let failureStage = 'RESOLVE';
     try {
       resolved = await this.resolver.resolve(taskId, id);
       const context = resolved.context;
@@ -415,6 +416,7 @@ export default class ExecutionService {
           resolved.materializationLease,
           redactor,
         );
+        failureStage = 'ATTEMPT_FINALIZE';
         await TaskRunAttemptModel.update(
           {
             status: final.status,
@@ -452,8 +454,10 @@ export default class ExecutionService {
       await redactor.flush();
       await log.close();
       log = undefined;
+      failureStage = 'LOG_METADATA';
       await new RunLogService(this.paths).metadata(id);
       if (!final) throw new ExecutionError('EXECUTION_RESULT_MISSING');
+      failureStage = 'RUN_FINALIZE';
       await TaskRunModel.update(
         {
           status: final.status,
@@ -474,7 +478,7 @@ export default class ExecutionService {
       );
 
     } catch (error) {
-      const code = safeExecutionError(error);
+      const code = safeExecutionError(error, `EXECUTION_${failureStage}_FAILED`);
       const busy =
         [
           'RUNTIME_BUSY',

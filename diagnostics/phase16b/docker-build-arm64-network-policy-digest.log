@@ -1,0 +1,22 @@
+#0 building with "phase16b-local" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.78kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/buildkit-syft-scanner@sha256:ae4f3b554449e7e25548e7d8ccc029d17357348e30c6e3df01b92bc93654d6a9
+#2 DONE 60.0s
+
+#3 [internal] load metadata for docker.io/library/node:22.23.2-bookworm-slim
+#3 ERROR: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/22.23.2-bookworm-slim": dial tcp 108.160.170.43:443: i/o timeout
+------
+ > [internal] load metadata for docker.io/library/node:22.23.2-bookworm-slim:
+------
+Dockerfile:2
+--------------------
+   1 |     # Native addons are installed in target-platform stages, never copied across architectures.
+   2 | >>> FROM node:22.23.2-bookworm-slim AS toolchain
+   3 |     RUN apt-get update && apt-get install -y --no-install-recommends \
+   4 |         build-essential python3 git ca-certificates \
+--------------------
+ERROR: failed to build: failed to solve: DeadlineExceeded: node:22.23.2-bookworm-slim: failed to resolve source metadata for docker.io/library/node:22.23.2-bookworm-slim: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/22.23.2-bookworm-slim": dial tcp 108.160.170.43:443: i/o timeout

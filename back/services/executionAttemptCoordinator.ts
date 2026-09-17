@@ -1,4 +1,5 @@
 import { runEvent } from './runObservability';
+import { performance } from 'node:perf_hooks';
 import {
   ExecutionContext,
   ExecutionResult,
@@ -14,6 +15,18 @@ import ExecutionNodeBinding from './executionNodeBinding';
 import ExecutionPaths from './executionPaths';
 import ExecutionRedactor from './executionRedactor';
 import RunnerV2 from './runnerV2';
+
+export function executionTiming(
+  startedWallClock: number,
+  startedMonotonic: number,
+  finishedMonotonic = performance.now(),
+) {
+  const duration = Math.max(0, Math.round(finishedMonotonic - startedMonotonic));
+  return {
+    duration,
+    finishedAt: new Date(startedWallClock + duration).toISOString(),
+  };
+}
 
 export default class ExecutionAttemptCoordinator {
   private lifecycle?: TaskHookLifecycle;
@@ -64,6 +77,7 @@ export default class ExecutionAttemptCoordinator {
     redactor: ExecutionRedactor,
   ): Promise<ExecutionResult> {
     const started = Date.now();
+    const startedMonotonic = performance.now();
     const result: ExecutionResult = {
       status: 'RUNNING',
       taskRunId: context.identity.taskRunId,
@@ -181,8 +195,9 @@ export default class ExecutionAttemptCoordinator {
         result.status = 'RECOVERY_REQUIRED';
         result.cleanupResult = 'RECOVERY_REQUIRED';
       }
-      result.finishedAt = new Date().toISOString();
-      result.duration = Date.now() - started;
+      const timing = executionTiming(started, startedMonotonic);
+      result.finishedAt = timing.finishedAt;
+      result.duration = timing.duration;
       await redactor.write(`[RESULT ${result.status}]\n`);
       await redactor.flush();
     }

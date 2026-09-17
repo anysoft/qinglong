@@ -18,6 +18,7 @@ test('Python download policy reaches a child while host secrets stay excluded', 
       ['-e', 'console.log(JSON.stringify(process.env))'], { env: environment, encoding: 'utf8' }));
     assert.match(output.PYTHON_BUILD_CURL_OPTS, /--http1\.1/);
     assert.match(output.PYTHON_BUILD_CURL_OPTS, /--retry 5/);
+    assert.match(output.PYTHON_BUILD_CURL_OPTS, /--max-time 900/);
     assert.match(output.PYTHON_BUILD_CURL_OPTS, /--retry-max-time 900/);
     assert.doesNotMatch(output.PYTHON_BUILD_CURL_OPTS, /--insecure/);
     for (const key of ['JWT_SECRET', 'NODE_OPTIONS', 'PYTHONPATH', 'PYTHONHOME'])

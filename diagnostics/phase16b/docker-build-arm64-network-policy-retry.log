@@ -1,0 +1,36 @@
+#0 building with "phase16b-local" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.78kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/buildkit-syft-scanner:stable-1
+#2 ERROR: failed to do request: Head "https://registry-1.docker.io/v2/docker/buildkit-syft-scanner/manifests/stable-1": dial tcp 31.13.85.169:443: i/o timeout
+------
+ > resolve image config for docker-image://docker.io/docker/buildkit-syft-scanner:stable-1:
+------
+ERROR: failed to build: failed to solve: DeadlineExceeded: failed to resolve source metadata for docker.io/docker/buildkit-syft-scanner:stable-1: failed to do request: Head "https://registry-1.docker.io/v2/docker/buildkit-syft-scanner/manifests/stable-1": dial tcp 31.13.85.169:443: i/o timeout
+node:child_process:965
+    throw err;
+    ^
+
+Error: Command failed: docker buildx build --platform linux/arm64 --build-arg SOURCE_COMMIT=879544049d929eb99c835ff4b45b11ffef56b078 --build-arg BUILD_CREATED=2026-09-17T14:26:53.930Z --build-arg APP_VERSION=1.0.0 --sbom=true --provenance=mode=max --metadata-file release-output/pnpm-fix-arm64-network-policy/build-metadata.json --output type=oci,dest=release-output/pnpm-fix-arm64-network-policy/image.tar .
+    at genericNodeError (node:internal/errors:998:15)
+    at wrappedFn (node:internal/errors:543:14)
+    at checkExecSyncError (node:child_process:926:11)
+    at execFileSync (node:child_process:962:15)
+    at run (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/scripts/release/build.cjs:9:27)
+    at Object.<anonymous> (/Users/jonhy/PersonalDatas/Codes/github/anysoft/qinglong/scripts/release/build.cjs:10:1)
+    at Module._compile (node:internal/modules/cjs/loader:1873:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:2013:10)
+    at Module.load (node:internal/modules/cjs/loader:1596:32)
+    at Module._load (node:internal/modules/cjs/loader:1398:12) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 8382,
+  stdout: null,
+  stderr: null
+}
+
+Node.js v26.3.1

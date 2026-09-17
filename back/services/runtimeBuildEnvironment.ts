@@ -32,7 +32,7 @@ export default async function runtimeBuildEnvironment(
     // python-build receives only this isolated environment, not Docker's ENV.
     // Bound retries for interrupted downloads without disabling TLS validation.
     PYTHON_BUILD_CURL_OPTS:
-      '--http1.1 --retry 5 --retry-all-errors --connect-timeout 30 --max-time 300 --retry-max-time 900',
+      '--http1.1 --retry 5 --retry-all-errors --connect-timeout 30 --max-time 900 --retry-max-time 900',
     MAKE_OPTS: `-j${jobs}`,
     GIT_CONFIG_NOSYSTEM: '1',
     GIT_CONFIG_GLOBAL: '/dev/null',

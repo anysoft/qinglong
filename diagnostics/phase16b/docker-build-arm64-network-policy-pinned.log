@@ -1,0 +1,29 @@
+#0 building with "phase16b-local" instance using docker-container driver
+
+#1 [internal] load build definition from qinglong-phase16b-Dockerfile
+#1 transferring dockerfile: 2.85kB 0.0s done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/buildkit-syft-scanner@sha256:ae4f3b554449e7e25548e7d8ccc029d17357348e30c6e3df01b92bc93654d6a9
+#2 DONE 60.0s
+
+#3 [internal] load metadata for docker.io/library/node@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5
+#3 ...
+
+#4 [internal] load metadata for docker.io/library/node:22.23.2-bookworm-slim
+#4 ERROR: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/22.23.2-bookworm-slim": dial tcp 173.252.108.3:443: i/o timeout
+
+#3 [internal] load metadata for docker.io/library/node@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5
+#3 DONE 30.0s
+------
+ > [internal] load metadata for docker.io/library/node:22.23.2-bookworm-slim:
+------
+qinglong-phase16b-Dockerfile:23
+--------------------
+  21 |     RUN npm_config_ignore_scripts=true pnpm prune --prod && node scripts/release/prune-fixtures.cjs
+  22 |     
+  23 | >>> FROM node:22.23.2-bookworm-slim AS runtime
+  24 |     RUN apt-get update && apt-get install -y --no-install-recommends \
+  25 |         tini bash coreutils util-linux git openssh-client openssl ca-certificates curl \
+--------------------
+ERROR: failed to build: failed to solve: DeadlineExceeded: node:22.23.2-bookworm-slim: failed to resolve source metadata for docker.io/library/node:22.23.2-bookworm-slim: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/22.23.2-bookworm-slim": dial tcp 173.252.108.3:443: i/o timeout

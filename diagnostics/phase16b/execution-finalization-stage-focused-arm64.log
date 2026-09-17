@@ -1,0 +1,10 @@
+fresh-nonroot-readonly-no-capabilities-health
+fresh-account-version
+repository-worktree-local-commit
+shell-task
+EXECUTION_INTERRUPTED
++ actual - expected
+
++ 'INTERRUPTED'
+- 'SUCCESS'
+

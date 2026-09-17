@@ -1,5 +1,10 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs/promises'),path=require('node:path');
 const {fixture,task,wait}=require('./helpers.cjs');
+test('attempt timing stays ordered when the wall clock moves backwards',async t=>{
+ const h=await fixture(t),{executionTiming}=h.load('back/services/executionAttemptCoordinator.ts');
+ const timing=executionTiming(Date.parse('2026-09-17T16:18:05.980Z'),1000,1000.4);
+ assert.equal(timing.duration,0);assert.equal(timing.finishedAt,'2026-09-17T16:18:05.980Z');
+});
 async function hook(h,id,command,phase='BEFORE'){return h.TaskHookModel.create({task_id:id,name:'test '+phase,phase,command,cwd_base:'TASK_CWD',position:1,timeout_seconds:5,failure_policy:'FAIL_EXECUTION',enabled:true});}
 async function attempted(h,id){for(let i=0;i<200;i++){if(await h.TaskRunAttemptModel.count({where:{task_run_id:id,status:'FAILED'}}))return;await new Promise(r=>setTimeout(r,20));}throw Error('No failed attempt');}
 test('retry resets BEFORE patches, freezes Config and Hooks, keeps run-wide secrets, removes private Hook files',async t=>{
