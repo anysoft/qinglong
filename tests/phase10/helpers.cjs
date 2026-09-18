@@ -1,12 +1,12 @@
 const fs=require('node:fs/promises'),path=require('node:path');
 const base=require('../phase5/helpers.cjs');
 async function fixture(t){
- const h=await base.fixture(t);h.config.rootPath=process.cwd();
+ let cleanup;const h=await base.fixture({after(fn){cleanup=fn;}});h.config.rootPath=process.cwd();
  h.mocks['../loaders/logger']={default:{info(){},warn(){},error(){},debug(){}},__esModule:true};
  const Paths=h.load('back/services/executionPaths.ts').default;
  const Service=h.load('back/services/executionService.ts').default;
  h.paths=new Paths(h.root);h.execution=new Service(h.paths);h.taskService=new(h.load('back/services/task.ts').default)();
- t.after(()=>h.execution.stop());
+ t.after(async()=>{try{await h.execution.stop();}finally{await cleanup();}});
  return h;
 }
 async function task(h,code='printf "hello"',settings={},options={}){

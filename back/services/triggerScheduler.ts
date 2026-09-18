@@ -11,6 +11,7 @@ export interface TriggerClock {
 export default class TriggerScheduler {
   private timer?: NodeJS.Timeout;
   private running = false;
+  private readonly pending = new Set<Promise<void>>();
   constructor(
     readonly clock: TriggerClock = { now: () => new Date() },
     readonly events = new TriggerEvents(),
@@ -71,17 +72,21 @@ export default class TriggerScheduler {
   }
   start() {
     if (this.timer) return;
-    const tick = () =>
-      void this.tick().catch(() =>
-        console.error('TRIGGER_SCHEDULER_TICK_FAILED'),
-      );
-    this.timer = setInterval(tick, 1000);
+    const schedule = () => {
+      let pending: Promise<void>;
+      pending = this.tick()
+        .catch(() => console.error('TRIGGER_SCHEDULER_TICK_FAILED'))
+        .finally(() => this.pending.delete(pending));
+      this.pending.add(pending);
+    };
+    this.timer = setInterval(schedule, 1000);
     this.timer.unref();
-    tick();
+    schedule();
   }
   async stop() {
     if (this.timer) clearInterval(this.timer);
     this.timer = undefined;
+    await Promise.all([...this.pending]);
     while (this.running) await new Promise((resolve) => setTimeout(resolve, 5));
   }
 }
